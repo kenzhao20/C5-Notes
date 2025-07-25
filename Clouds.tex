@@ -1,0 +1,182 @@
+\part{Clouds}\label{Clouds}
+
+\section*{Introduction}
+
+This section of the course was lectured by \href{https://www.physics.ox.ac.uk/our-people/stier}{Philip Stier} covering Geophysical Fluid Dynamics.\vspace{5 mm}
+
+\noindent This section consists of three chapters:\vspace{5 mm}
+
+\begin{enumerate}
+    \item \hyperref[Dynamical Systems]{Dynamical Systems}: 
+        
+        \begin{quote}
+            Meow
+        \end{quote}
+
+    \item \hyperref[Predictability]{Predictability}: 
+    
+        \begin{quote}
+            Meow
+        \end{quote}
+    
+    \item \hyperref[Estimation]{Estimation}:
+        
+        \begin{quote}
+            Meow
+        \end{quote}
+\end{enumerate}
+
+\chapter{Convection and Thermodynamics}\label{Convection Clouds}
+
+\section{Definitions of Humidity}
+
+\subsection{hi}
+
+\subsection{Clausius-Clapeyron Relation}
+
+\section{Convection and Tephigrams}
+
+\section{Radiative-Convective Equilibrium}\label{Radiative-Convective Equilibrium}
+
+\chapter{Warm Cloud Microphysics}
+
+\section{Growth in Thermodynamic Equilibrium}
+
+We first consider the very initial formation of a cloud droplet, formed when water vapour (gas) condenses into a liquid water droplet. If a water droplet is to begin forming, the process must be thermodynamically favourable; i.e., the process is set by what thermodynamic equilibrium is. This is an assumption we are making: it is a good assumption for now, but it will break down when other factors limit growth (e.g., kinetic non-equilibrium processes). One reason it is a good assumption now is because the processes that take place which push the system towards thermodynamic equilibrium occur on very small time-scales, and so the system is what is called \textit{quais-steady} (a concept we will be reintroduced to in Part \ref{Climate Dynamics}): it evolves so quickly that it is effectively always in equilibrium.
+
+\subsection{Homogenous Nucleation: The Kelvin Equation}
+
+We first consider the pure water vapour with no aerosols. In the atmosphere, these tiny cloud droplets are coupled to an effectively infinite heat bath and are held at fixed pressure (from atmospheric temperature). We thus assume that the pressure and temperature are held fixed.
+
+If the pressure and temperature are feld fixed, it can be shown that any spontaneous thermodynamic process must, in equilibrium, evolve in order to decrease the Gibbs Free Energy $G$. The Gibbs Free Energy $G$ is defined as:
+\begin{align}\label{Gibbs}
+    G=U-TS+pV
+\end{align}
+
+\noindent Actually, the situation is a bit more complicated than simply decreasing the Gibbs Free Energy. It is more accurate to require the system to result in a \textit{local} decrease in Gibbs Free Energy. To explain what \textit{local} decrease means, consider a system with a Gibbs Free Energy $G(\lambda)$ that depends on some continuous parameter $\lambda$. Suppose that the system is initially in a state of $\lambda=\lambda_0$. Then $\lambda$ will evolve such that $\delta \lambda\sim-\frac{\partial G}{\partial \lambda}(\lambda_0)$. The idea is that the system does not 'know' where the global minimum of the Gibbs Free Energy is, so it will only evolve locally to decrease the Gibbs Free Energy.
+
+We now consider the formation of a cloud droplet, and let our parameter $\lambda=r$ where $r$ is the radius of our cloud droplet. The Gibbs Free Energy of the system is the sum of the Gibbs Free Energy of $N_{drop}(r)$ molecules of condensed water vapour in the droplet and $N-N_{drop}$ molecules of \textit{un}condensed water vapour, where $N=$ the total number of water molecules. We keep $N$ fixed to represent conservation of water molecules. 
+
+\begin{align*}
+    G(r)=\underbrace{N_{drop}(r)\,g_v+4\pi r^2\sigma}_{G \text{ of droplet}}+\underbrace{(N-N_{drop}(r))g_l}_{G \text{ of vapour}}
+\end{align*}
+
+\noindent where $g_v$, $g_l$ are Gibbs Free Energy per molecule of the vapour and liquid phases of water; $\sigma=$ the surface tension; and $r=$ the radius of the water droplet. The Gibbs Free Energy of the droplet is the sum of the Gibbs Free Energy of the liquid water molecules in the droplet ($N_{drop}\,g_v$) and the Gibbs Free Energy of the liquid-gas interface (represented by the $4\pi r^2\sigma$ surface tension term).
+
+We write $N_{drop}(r)$ in terms of $r$ by assuming that the droplet is spherical, therefore $N_{drop}= \frac{4}{3}\pi r r^3/v_l$, where $v_l=$ the volume of one liquid molecule of water. Therefore:
+\begin{align}
+    G = \frac{4\pi}{3v_l}r^3(g_l-g_v)+4\pi\sigma r^2+Ng_v
+\end{align}
+
+\noindent Our goal now is to calculate $g_l-g_v$. We can take the differential of $G$ in \ref{Gibbs} then divide by the number of water molecules to find that:
+\begin{align*}
+    dG &= dU - T\,dS - dT\,S + p\,dV + dp\,V\\
+    &= \underbrace{\bcancel{T\,dS} - \bcancel{p\,dV}}_{dU} - \bcancel{T\,dS} - dT\,S + \bcancel{p\,dV} + dp\,V\\
+    dG&=-S\,dT + V\,dp\\
+    \therefore dg&=-\frac{1}{N}S\,dT + \frac{V}{N}\,dp
+\end{align*}
+
+We make two assumptions here. First, we assume that the temperature is constant (recall the effective infinite heat bath of the atmosphere!), and therefore neglect the $S\,dT$ term. Second, we assume that $v_g=\frac{V_g}{N}\gg v_l=\frac{V_l}{N}$ (i.e., that the volume per gaseous water molecules is much bigger than the volume per liquid water molecule). Therefore, we ignore the change in Gibbs Free Energy in the liquid and so $dg=(v_l-v_g)dp\approx -v_g \,dp$.
+
+\begin{align*}
+    g_l-g_v&=\int_{\text{no droplet}}^{\text{droplet}}
+\end{align*}
+
+
+assuming that the \ref{Ideal Gas Primitive}, $\frac{k_B T}{p_g}\gg \frac{k_B T}{p_l}$, and so the 
+
+\begin{align*}
+    g_l-g_v&=
+\end{align*}
+
+Therefore:
+
+\begin{align}
+    e_S(r)=e_S(\infty)\exp\left( \frac{2\sigma v_l}{k_B T r} \right)
+    \label{Kelvin}
+\end{align}
+
+For ease of notation, we let $A=\frac{2\sigma v_l}{k_BT}=\frac{2\sigma}{R_v\rho T}$ (recalling the definition of $v_l$ and $R_v$ in \ref{Specific Gas Constant One}). Therefore:
+\begin{align*}
+    e_S(r)=e_S(\infty)\exp\left( \frac{A}{r} \right)
+\end{align*}
+
+\subsection{Homogenous Nucleation: The Raoult Equation}
+
+\begin{align}
+    e_S^{sol}(\infty)=e_S^0(\infty)\frac{n_w}{n_{sol}+n_w}
+    \label{Raoult}
+\end{align}
+
+In other words, the vapour pressure is set by the mole-fraction of water. Generally, $n_{sol}\ll n_w$, so:
+\begin{align*}
+    \frac{n_w}{n_{sol}+n_w}&=\frac{1}{n_{sol}/n_w+1}\\
+    &=\left( 1+\frac{n_{sol}}{n_w} \right)^{-2}\\
+    &\approx 1 - \frac{n_{sol}}{n_w}
+\end{align*}
+
+\subsection{The Köhler Equation}
+
+We can combine \ref{Kelvin} and \ref{Raoult} into one equation by considering a cloud droplet which has a curved interface (taking into account \ref{Kelvin}) and has a dissolved solute (taking into account \ref{Raoult}).
+
+The saturation vapour pressure is therefore:
+\begin{align*}
+    e_S^{sol}(r)&=e_S^{sol}(\infty)\exp\left( \frac{2\sigma v_l}{k_B T r} \right)\\
+    &=e_S^0(0)\frac{n_w}{n_{sol}+n_w}\exp\left( \frac{2\sigma v_l}{k_B T r} \right)
+\end{align*}
+
+
+\begin{align}
+    e_S^{sol}(r)=e^0_{S}(0)\left( 1-\frac{B}{r^3} \right)e^{\frac{A}{r}}
+\end{align}
+
+\section{Growth by Condensation}
+
+We now assume that the droplet has grown to such as size that the rate of droplet formation now becomes kinetically limited: that it is limited primarily by the rate at which water molecules and heat may diffuse away/towards the droplet.
+
+\subsection{Diffusion of Water Molecules}
+
+We begin from the diffusion equation governing the diffusion of water vapour \textit{outside} the droplet:
+\begin{align}
+    \frac{\partial n}{\partial t}=\vec{\nabla}\cdot\vec{\Phi}\\
+    \label{Flux}
+    \vec{\Phi}=D\vec{\nabla}n
+\end{align}
+
+\noindent where $n=$ the number concentration of water molecules; $\vec{\Phi}=$ the flux of water molecules; and $D=$ the diffusivity of water in air. We assume, again, that the droplet is quasi-steady, and so that $\frac{\partial n}{\partial t}=0$. Furthermore, we assume that the water vapour outside the droplet is spherically symmetric, and so $n=n(r)$ only. We can then solve $\nabla^2 n=0$. In spherical coordinates, the solution is:
+\begin{align*}
+    n(r)=C_1-\frac{C_2}{r}
+\end{align*}
+
+To find the constants, we apply the boundary conditions that far away from the droplet ($r\to\infty$) the number density is the ambient vapour density ($n_\infty$) and near the droplet ($r=R$, where $R=$ the radius of the droplet), the number density is the vapour density of the surface. This gives:
+\begin{align*}
+    n(r)=n_\infty-\frac{R}{r}(n_\infty-n_r)
+\end{align*}
+
+We now apply mass conservation to the water molecules \textit{within} the droplet:
+\begin{align}
+    \label{number density}
+    \frac{d}{dt}\int_V(t) \rho\, dV = \int_S(t) m_{\text{H$_2$O}} \vec{\Phi} \cdot d\vec{S}
+\end{align}
+
+\noindent where $m_\text{H$_2$O}=$ the mass of one water molecule. The left-hand-side is the rate of change of the mass of the water droplet and the right-hand-side is the flux of water molecules into/out of the boundaries. $V(t)$ and $S(t)$ indicate the volume of the droplet and surface of the droplet over which we are integrating, and these time-vary due to the fact that the droplet is changing size.
+
+We write the left-hand-side as just $dM/dt$ where $M=$ the total mass of the droplet, and substitute in \ref{Flux} and \ref{number density} for the right-hand-side to obtain:
+
+\begin{align}
+    \boxed{
+        \frac{dM}{dt}=
+        4\pi R D (\rho_\infty-\rho_R)
+    }
+\end{align}
+
+
+\subsection{Diffusion of Heat}
+
+\section{Growth by Collision/Collection/Coallescence}
+
+\subsection{Collision Processes}
+
+\chapter{Cold Cloud Microphysics}
+
+\chapter{Cloud Morphology, Radiation, and Climate}

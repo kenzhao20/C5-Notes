@@ -1,0 +1,772 @@
+PWD /Users/kenzhao/Desktop/C5 Figures
+INPUT /usr/local/texlive/2025/texmf.cnf
+INPUT /usr/local/texlive/2025/texmf-dist/web2c/texmf.cnf
+INPUT /usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt
+INPUT /Users/kenzhao/Desktop/C5 Figures/main.tex
+OUTPUT main.log
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/base/report.cls
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/base/report.cls
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/base/size11.clo
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/base/size11.clo
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/base/size11.clo
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/cancel/cancel.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/cancel/cancel.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/pgf.revision.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/pgf.revision.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/graphics/graphicx.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/graphics/graphicx.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/graphics/keyval.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/graphics/keyval.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/graphics/graphics.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/graphics/graphics.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/graphics/trig.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/graphics/trig.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/graphics-def/pdftex.def
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/graphics-def/pdftex.def
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/graphics-def/pdftex.def
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfiltered.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/xcolor/xcolor.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/xcolor/xcolor.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/graphics-cfg/color.cfg
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/graphics-cfg/color.cfg
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/graphics-cfg/color.cfg
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/graphics/mathcolor.ltx
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/graphics/mathcolor.ltx
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/graphics/mathcolor.ltx
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfint.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/tools/verbatim.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/tools/verbatim.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/environ/environ.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/environ/environ.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/trimspaces/trimspaces.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/trimspaces/trimspaces.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/tcolorbox/tcbraster.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/tcolorbox/tcbskins.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/tikzfill/tikzfill.image.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/tikzfill/tikzfill.image.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/tikzfill/tikzfill-common.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/tikzfill/tikzfill-common.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/tikzfill/tikzlibraryfill.image.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/tikzfill/tikzlibraryfill.image.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/tcolorbox/tcbskinsjigsaw.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/tcolorbox/tcbbreakable.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/pdfcol/pdfcol.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/pdfcol/pdfcol.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/iftex/iftex.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/iftex/iftex.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/graphics/color.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/tcolorbox/tcbhooks.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/tcolorbox/tcbtheorems.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/amsmath/amsmath.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/amsmath/amsmath.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/amsmath/amsopn.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/amsmath/amstext.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/amsmath/amstext.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/amsmath/amsgen.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/amsmath/amsgen.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/amsmath/amsbsy.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/amsmath/amsbsy.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/amsmath/amsopn.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/tcolorbox/tcbfitting.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/tcolorbox/tcblistingsutf8.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/tcolorbox/tcblistings.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/listings/listings.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/listings/listings.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstpatch.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstpatch.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstpatch.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstmisc.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstmisc.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstmisc.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/listings/listings.cfg
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/listings/listings.cfg
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/listings/listings.cfg
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/tcolorbox/tcblistingscore.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/tcolorbox/tcbprocessing.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/listingsutf8/listingsutf8.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/listingsutf8/listingsutf8.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/stringenc/stringenc.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/stringenc/stringenc.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/tcolorbox/tcbexternal.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/tcolorbox/tcbmagazine.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/tcolorbox/tcbvignette.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryfadings.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryfadings.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/libraries/pgflibraryfadings.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/libraries/pgflibraryfadings.code.tex
+OUTPUT main.pdf
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/tcolorbox/tcbposter.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/tools/xr.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/tools/xr.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/comment/comment.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/comment/comment.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.geometric.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.geometric.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.geometric.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.geometric.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryperspective.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryperspective.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/pgf/frontendlayer/libraries/tikzlibraryexternal.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/pgf/frontendlayer/libraries/tikzlibraryexternal.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/atveryend/atveryend.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/atveryend/atveryend.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/base/atveryend-ltx.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/base/atveryend-ltx.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzexternalshared.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryangles.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryangles.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryquotes.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryquotes.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypatterns.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypatterns.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/libraries/pgflibrarypatterns.code.tex
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/pgf/libraries/pgflibrarypatterns.code.tex
+OUTPUT main.auxlock
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/tools/multicol.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/tools/multicol.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/braket/braket.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/braket/braket.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/svg/svg.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/svg/svg.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/koma-script/scrbase.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/koma-script/scrbase.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/koma-script/scrlfile.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/koma-script/scrlfile.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/koma-script/scrlfile-hook.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/koma-script/scrlfile-hook.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/koma-script/scrlogo.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/koma-script/scrlogo.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/tools/shellesc.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/tools/shellesc.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/ifplatform/ifplatform.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/ifplatform/ifplatform.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/catchfile/catchfile.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/catchfile/catchfile.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/etexcmds/etexcmds.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/etexcmds/etexcmds.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/iftex/ifluatex.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/iftex/ifluatex.sty
+INPUT ./main.w18
+INPUT ./main.w18
+INPUT main.w18
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/transparent/transparent.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/transparent/transparent.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/transparent/transparent-nometadata.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/transparent/transparent-nometadata.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/auxhook/auxhook.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/auxhook/auxhook.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/siunitx/siunitx.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/siunitx/siunitx.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/translations/translations.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/translations/translations.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/tools/array.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/tools/array.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/enumitem/enumitem.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/enumitem/enumitem.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/amssymb.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/amssymb.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/caption/subcaption.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/caption/subcaption.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/caption/caption.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/caption/caption.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/caption/caption3.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/caption/caption3.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/setspace/setspace.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/setspace/setspace.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/float/float.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/float/float.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/jknapltx/mathrsfs.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/jknapltx/mathrsfs.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/geometry/geometry.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/geometry/geometry.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/iftex/ifvtex.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/iftex/ifvtex.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/hyperref.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/hyperref.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/hycolor/hycolor.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/hycolor/hycolor.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/nameref.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/nameref.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/refcount/refcount.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/refcount/refcount.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/pd1enc.def
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/pd1enc.def
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/pd1enc.def
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/intcalc/intcalc.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/intcalc/intcalc.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/puenc.def
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/puenc.def
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/puenc.def
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/url/url.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/url/url.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/bitset/bitset.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/bitset/bitset.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/atbegshi/atbegshi.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/base/atbegshi-ltx.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/base/atbegshi-ltx.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/hpdftex.def
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/hpdftex.def
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/hpdftex.def
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/biblatex/biblatex.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/biblatex/biblatex.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/logreq/logreq.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/logreq/logreq.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/logreq/logreq.def
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/logreq/logreq.def
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/logreq/logreq.def
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/base/ifthen.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/base/ifthen.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/biblatex/blx-dm.def
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/biblatex/blx-dm.def
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/biblatex/blx-dm.def
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/biblatex/blx-compat.def
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/biblatex/blx-compat.def
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/biblatex/blx-compat.def
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/biblatex/biblatex.def
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/biblatex/biblatex.def
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/biblatex/biblatex.def
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/biblatex/bbx/numeric.bbx
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/biblatex/bbx/numeric.bbx
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/biblatex/bbx/numeric.bbx
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/biblatex/cbx/numeric.cbx
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/biblatex/cbx/numeric.cbx
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/biblatex/cbx/numeric.cbx
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/biblatex/biblatex.cfg
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/biblatex/biblatex.cfg
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/biblatex/biblatex.cfg
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/l3kernel/expl3.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/l3kernel/expl3.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/biblatex/blx-case-expl3.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/biblatex/blx-case-expl3.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/multirow/multirow.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/multirow/multirow.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/titling/titling.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/titling/titling.sty
+INPUT ./main.aux
+INPUT ./main.aux
+INPUT main.aux
+INPUT ./Thermodynamics.aux
+INPUT ./Thermodynamics.aux
+INPUT Thermodynamics.aux
+INPUT ./Radiative Transfer.aux
+INPUT ./Radiative Transfer.aux
+INPUT Radiative Transfer.aux
+INPUT ./Clouds.aux
+INPUT ./Clouds.aux
+INPUT Clouds.aux
+INPUT ./Instrumentation.aux
+INPUT ./Instrumentation.aux
+INPUT Instrumentation.aux
+INPUT ./Climate Dynamics.aux
+INPUT ./Climate Dynamics.aux
+INPUT Climate Dynamics.aux
+INPUT ./GFD.aux
+INPUT ./GFD.aux
+INPUT GFD.aux
+OUTPUT main.aux
+INPUT /usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+INPUT /usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+INPUT /usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/base/inputenc.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/base/inputenc.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/translations/translations-basic-dictionary-english.trsl
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/translations/translations-basic-dictionary-english.trsl
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/translations/translations-basic-dictionary-english.trsl
+INPUT ./main.out
+INPUT ./main.out
+INPUT main.out
+INPUT main.out
+INPUT ./main.out
+INPUT ./main.out
+OUTPUT main.out
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/biblatex/lbx/english.lbx
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/biblatex/lbx/english.lbx
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/biblatex/lbx/english.lbx
+OUTPUT main.bcf
+INPUT main.bbl
+INPUT ./main.bbl
+INPUT ./main.bbl
+INPUT ./main.bbl
+INPUT main.bbl
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmr17.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmr8.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmr6.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmmi8.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmmi6.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/jknapltx/ursfs.fd
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/jknapltx/ursfs.fd
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/jknapltx/ursfs.fd
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/rsfs/rsfs5.tfm
+INPUT /usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmr17.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
+INPUT ./main.toc
+INPUT ./main.toc
+INPUT main.toc
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm
+OUTPUT main.toc
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
+INPUT ./Thermodynamics.tex
+INPUT ./Thermodynamics.tex
+OUTPUT Thermodynamics.aux
+INPUT ./Thermodynamics.tex
+INPUT ./Thermodynamics.tex
+INPUT Thermodynamics.tex
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmr17.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmsl10.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmsl8.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmsl8.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmr9.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmmi9.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmsy9.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex9.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/rsfs/rsfs5.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmti9.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/tcrm1095.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
+INPUT tikz/main-figure0.md5
+INPUT tikz/main-figure0.pdf
+INPUT tikz/main-figure0.dpth
+INPUT tikz/main-figure0.pdf
+INPUT ./tikz/main-figure0.pdf
+INPUT tikz/main-figure1.md5
+INPUT tikz/main-figure1.pdf
+INPUT tikz/main-figure1.dpth
+INPUT tikz/main-figure1.pdf
+INPUT ./tikz/main-figure1.pdf
+INPUT tikz/main-figure2.md5
+INPUT tikz/main-figure2.pdf
+INPUT tikz/main-figure2.dpth
+INPUT tikz/main-figure2.pdf
+INPUT ./tikz/main-figure2.pdf
+INPUT tikz/main-figure3.md5
+INPUT tikz/main-figure3.pdf
+INPUT tikz/main-figure3.dpth
+INPUT tikz/main-figure3.pdf
+INPUT ./tikz/main-figure3.pdf
+INPUT tikz/main-figure4.md5
+INPUT tikz/main-figure4.pdf
+INPUT tikz/main-figure4.dpth
+INPUT tikz/main-figure4.pdf
+INPUT ./tikz/main-figure4.pdf
+INPUT tikz/main-figure5.md5
+INPUT tikz/main-figure5.pdf
+INPUT tikz/main-figure5.dpth
+INPUT tikz/main-figure5.pdf
+INPUT ./tikz/main-figure5.pdf
+INPUT ./Figures/Thermodynamics/Hydrostatic.svg
+INPUT ./Figures/Thermodynamics/Hydrostatic.svg
+INPUT ./Figures/Thermodynamics/Hydrostatic.svg
+INPUT ./svg-inkscape/Hydrostatic_svg-tex.pdf
+INPUT ./svg-inkscape/Hydrostatic_svg-tex.pdf_tex
+INPUT ./svg-inkscape/Hydrostatic_svg-tex.pdf_tex
+INPUT ./svg-inkscape/Hydrostatic_svg-tex.pdf
+INPUT ./svg-inkscape/Hydrostatic_svg-tex.pdf
+INPUT ./svg-inkscape/Hydrostatic_svg-tex.pdf_tex
+INPUT ./svg-inkscape/Hydrostatic_svg-tex.pdf_tex
+INPUT ./svg-inkscape/Hydrostatic_svg-tex.pdf
+INPUT ./svg-inkscape/Hydrostatic_svg-tex.pdf_tex
+INPUT ./svg-inkscape/Hydrostatic_svg-tex.pdf
+INPUT ./svg-inkscape/Hydrostatic_svg-tex.pdf
+INPUT ./Figures/Thermodynamics/Radiosonde 2.jpg
+INPUT ./Figures/Thermodynamics/Radiosonde 2.jpg
+INPUT ./Figures/Thermodynamics/Radiosonde 2.jpg
+INPUT ./Figures/Thermodynamics/Radiosonde 2.jpg
+INPUT ./Figures/Thermodynamics/Radiosonde 2.jpg
+INPUT ./Figures/Thermodynamics/Earth Radiosonde Pressure.png
+INPUT ./Figures/Thermodynamics/Earth Radiosonde Pressure.png
+INPUT ./Figures/Thermodynamics/Earth Radiosonde Pressure.png
+INPUT ./Figures/Thermodynamics/Earth Radiosonde Pressure.png
+INPUT ./Figures/Thermodynamics/Earth Radiosonde Pressure.png
+INPUT ./Figures/Thermodynamics/Earth Temperature Profile Radiosonde.png
+INPUT ./Figures/Thermodynamics/Earth Temperature Profile Radiosonde.png
+INPUT ./Figures/Thermodynamics/Earth Temperature Profile Radiosonde.png
+INPUT ./Figures/Thermodynamics/Earth Temperature Profile Radiosonde.png
+INPUT ./Figures/Thermodynamics/Earth Temperature Profile Radiosonde.png
+INPUT ./Figures/Thermodynamics/Jupiter Radiosonde.png
+INPUT ./Figures/Thermodynamics/Jupiter Radiosonde.png
+INPUT ./Figures/Thermodynamics/Jupiter Radiosonde.png
+INPUT ./Figures/Thermodynamics/Jupiter Radiosonde.png
+INPUT ./Figures/Thermodynamics/Jupiter Radiosonde.png
+INPUT ./Figures/Thermodynamics/Venus Radiosonde.png
+INPUT ./Figures/Thermodynamics/Venus Radiosonde.png
+INPUT ./Figures/Thermodynamics/Venus Radiosonde.png
+INPUT ./Figures/Thermodynamics/Venus Radiosonde.png
+INPUT ./Figures/Thermodynamics/Venus Radiosonde.png
+INPUT ./Figures/Thermodynamics/Mars Radiosonde.png
+INPUT ./Figures/Thermodynamics/Mars Radiosonde.png
+INPUT ./Figures/Thermodynamics/Mars Radiosonde.png
+INPUT ./Figures/Thermodynamics/Mars Radiosonde.png
+INPUT ./Figures/Thermodynamics/Mars Radiosonde.png
+INPUT ./Figures/Thermodynamics/Titan Radiosonde.png
+INPUT ./Figures/Thermodynamics/Titan Radiosonde.png
+INPUT ./Figures/Thermodynamics/Titan Radiosonde.png
+INPUT ./Figures/Thermodynamics/Titan Radiosonde.png
+INPUT ./Figures/Thermodynamics/Titan Radiosonde.png
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmbx9.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmbxsl10.tfm
+INPUT tikz/main-figure6.md5
+INPUT tikz/main-figure6.pdf
+INPUT tikz/main-figure6.dpth
+INPUT tikz/main-figure6.pdf
+INPUT ./tikz/main-figure6.pdf
+INPUT ./Figures/Thermodynamics/Earth Temperature Profile Radiosonde.png
+INPUT ./Figures/Thermodynamics/Earth Temperature Profile Radiosonde.png
+INPUT ./Figures/Thermodynamics/Earth Temperature Profile Radiosonde.png
+INPUT ./Figures/Thermodynamics/Earth Temperature Profile Radiosonde.png
+INPUT tikz/main-figure7.md5
+INPUT tikz/main-figure7.pdf
+INPUT tikz/main-figure7.dpth
+INPUT tikz/main-figure7.pdf
+INPUT ./tikz/main-figure7.pdf
+INPUT tikz/main-figure8.md5
+INPUT tikz/main-figure8.pdf
+INPUT tikz/main-figure8.dpth
+INPUT tikz/main-figure8.pdf
+INPUT ./tikz/main-figure8.pdf
+INPUT tikz/main-figure9.md5
+INPUT tikz/main-figure9.pdf
+INPUT tikz/main-figure9.dpth
+INPUT tikz/main-figure9.pdf
+INPUT ./tikz/main-figure9.pdf
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/rsfs/rsfs7.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
+INPUT ./Figures/Thermodynamics/Phase_diagram_of_water_simplified.svg.png
+INPUT ./Figures/Thermodynamics/Phase_diagram_of_water_simplified.svg.png
+INPUT ./Figures/Thermodynamics/Phase_diagram_of_water_simplified.svg.png
+INPUT ./Figures/Thermodynamics/Phase_diagram_of_water_simplified.svg.png
+INPUT ./Figures/Thermodynamics/Phase_diagram_of_water_simplified.svg.png
+INPUT ./Figures/Thermodynamics/Phase_diagram_of_water_simplified.png
+INPUT ./Figures/Thermodynamics/Phase_diagram_of_water_simplified.png
+INPUT ./Figures/Thermodynamics/Phase_diagram_of_water_simplified.png
+INPUT ./Figures/Thermodynamics/Phase_diagram_of_water_simplified.png
+INPUT ./Figures/Thermodynamics/Phase_diagram_of_water_simplified.png
+INPUT ./Radiative Transfer.tex
+INPUT ./Radiative Transfer.tex
+OUTPUT Radiative Transfer.aux
+INPUT ./Radiative Transfer.tex
+INPUT ./Radiative Transfer.tex
+INPUT Radiative Transfer.tex
+INPUT tikz/main-figure10.md5
+INPUT tikz/main-figure10.pdf
+INPUT tikz/main-figure10.dpth
+INPUT tikz/main-figure10.pdf
+INPUT ./tikz/main-figure10.pdf
+INPUT tikz/main-figure11.md5
+INPUT tikz/main-figure11.pdf
+INPUT tikz/main-figure11.dpth
+INPUT tikz/main-figure11.pdf
+INPUT ./tikz/main-figure11.pdf
+INPUT tikz/main-figure12.md5
+INPUT tikz/main-figure12.pdf
+INPUT tikz/main-figure12.dpth
+INPUT tikz/main-figure12.pdf
+INPUT ./tikz/main-figure12.pdf
+INPUT ./Figures/Radiative Transfer/BB Spectral Radiance.png
+INPUT ./Figures/Radiative Transfer/BB Spectral Radiance.png
+INPUT ./Figures/Radiative Transfer/BB Spectral Radiance.png
+INPUT ./Figures/Radiative Transfer/BB Spectral Radiance.png
+INPUT ./Figures/Radiative Transfer/BB Spectral Radiance.png
+INPUT ./Figures/Radiative Transfer/BB Cumulative.png
+INPUT ./Figures/Radiative Transfer/BB Cumulative.png
+INPUT ./Figures/Radiative Transfer/BB Cumulative.png
+INPUT ./Figures/Radiative Transfer/BB Cumulative.png
+INPUT ./Figures/Radiative Transfer/BB Cumulative.png
+INPUT ./Figures/Radiative Transfer/Spectral Gap.jpg
+INPUT ./Figures/Radiative Transfer/Spectral Gap.jpg
+INPUT ./Figures/Radiative Transfer/Spectral Gap.jpg
+INPUT ./Figures/Radiative Transfer/Spectral Gap.jpg
+INPUT ./Figures/Radiative Transfer/Spectral Gap.jpg
+INPUT tikz/main-figure13.md5
+INPUT tikz/main-figure13.pdf
+INPUT tikz/main-figure13.dpth
+INPUT tikz/main-figure13.pdf
+INPUT ./tikz/main-figure13.pdf
+INPUT ./Clouds.tex
+INPUT ./Clouds.tex
+OUTPUT Clouds.aux
+INPUT ./Clouds.tex
+INPUT ./Clouds.tex
+INPUT Clouds.tex
+INPUT ./Instrumentation.tex
+INPUT ./Instrumentation.tex
+OUTPUT Instrumentation.aux
+INPUT ./Instrumentation.tex
+INPUT ./Instrumentation.tex
+INPUT Instrumentation.tex
+INPUT ./Climate Dynamics.tex
+INPUT ./Climate Dynamics.tex
+OUTPUT Climate Dynamics.aux
+INPUT ./Climate Dynamics.tex
+INPUT ./Climate Dynamics.tex
+INPUT Climate Dynamics.tex
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm
+INPUT ./GFD.tex
+INPUT ./GFD.tex
+OUTPUT GFD.aux
+INPUT ./GFD.tex
+INPUT ./GFD.tex
+INPUT GFD.tex
+INPUT ./Figures/GFD/Diff Heating.jpg
+INPUT ./Figures/GFD/Diff Heating.jpg
+INPUT ./Figures/GFD/Diff Heating.jpg
+INPUT ./Figures/GFD/Diff Heating.jpg
+INPUT ./Figures/GFD/Diff Heating.jpg
+INPUT tikz/main-figure14.md5
+INPUT tikz/main-figure14.pdf
+INPUT tikz/main-figure14.dpth
+INPUT tikz/main-figure14.pdf
+INPUT ./tikz/main-figure14.pdf
+INPUT tikz/main-figure15.md5
+INPUT tikz/main-figure15.pdf
+INPUT tikz/main-figure15.dpth
+INPUT tikz/main-figure15.pdf
+INPUT ./tikz/main-figure15.pdf
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmcsc10.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm
+INPUT main.aux
+INPUT ./Thermodynamics.aux
+INPUT ./Thermodynamics.aux
+INPUT Thermodynamics.aux
+INPUT ./Radiative Transfer.aux
+INPUT ./Radiative Transfer.aux
+INPUT Radiative Transfer.aux
+INPUT ./Clouds.aux
+INPUT ./Clouds.aux
+INPUT Clouds.aux
+INPUT ./Instrumentation.aux
+INPUT ./Instrumentation.aux
+INPUT Instrumentation.aux
+INPUT ./Climate Dynamics.aux
+INPUT ./Climate Dynamics.aux
+INPUT Climate Dynamics.aux
+INPUT ./GFD.aux
+INPUT ./GFD.aux
+INPUT GFD.aux
+INPUT ./main.out
+INPUT ./main.out
+INPUT main.run.xml
+OUTPUT main.run.xml
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxsl10.pfb
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl8.pfb
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb

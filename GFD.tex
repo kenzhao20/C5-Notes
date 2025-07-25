@@ -1,0 +1,625 @@
+\part{Geophysical Fluid Dynamics}\label{Geophysical Fluid Dynamics}
+
+\section*{Introduction}
+
+This section of the course was lectured by \href{https://www.physics.ox.ac.uk/our-people/woollings}{Tim Woollings} covering Geophysical Fluid Dynamics.\vspace{5 mm}
+
+\noindent This section consists of three chapters:\vspace{5 mm}
+
+\begin{enumerate}
+    \item \hyperref[Dynamical Systems]{Dynamical Systems}: 
+        
+        \begin{quote}
+            Meow
+        \end{quote}
+
+    \item \hyperref[Predictability]{Predictability}: 
+    
+        \begin{quote}
+            Meow
+        \end{quote}
+    
+    \item \hyperref[Estimation]{Estimation}:
+        
+        \begin{quote}
+            Meow
+        \end{quote}
+\end{enumerate}
+
+\chapter{The Equations of Motion}
+
+\section{Why There Is Motion in the First Place}
+
+It's important to consider why there is motion in the Atmospheres and the Oceans in the first place, and why we call the study \textbf{Geophysical Fluid Dynamics}, rather than simply Fluid Dynamics. 
+
+Regarding the first point, if you are familiar with the \hyperref[Navier Stokes]{Navier Stokes Equations} governing fluid flow, then you will know that $\vec{u}=\vec{\nabla}p=0$ is a solution, and is a solution a system will tend towards if there is friction, and planets certainly have plenty of friction. We therefore need a non-uniform energy source. In this case, it is the sun, and it drives motion because it provides energy to the Earth unevenly. On small scales, this may be because of variations in reflectivity (albedo), but on large scales this is also due to the spherical geometry of the Earth: more solar radiation is absorbed at the equator than at the poles (think: \textbf{zenith angle} from \hyperref[Radiative Transfer]{Radiative Transfer}, which goes as $\cos\zeta$).
+
+This differential heating causes horizontal temperature gradients, which in turn cause horizontal density and pressure gradients, which drive motion. Another way to think of it is as follows: in equilibrium, the Earth absorbs more solar radiation in the equator than in the poles (see Figure \ref{Diff Heating}). As such, there must be an energy transport mechanism from the equator to the poles, and this is what drives fluid motion.\footnote{
+    I'm personally somewhat ambivalent about this explanation, but I'm not very confident so be sceptical of what I'm about to say. Here's why I'm uncomfortable about this explanation: I cannot see why it must be the case that the variation in OLR cannot be identical to the variation in absorbed solar radiation. To put it another way, I cannot see why the dotted curve cannot be identical to the solid curve in Figure \ref{Diff Heating}. The absorbed energy per unit area scales as $\cos\phi$, where $\phi$ is the latitude. It feels like putting the cart before the horse: surely the fluid dynamics also itself affects the OLR into space.
+}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{Figures/GFD/Diff Heating.jpg}
+    \caption{Figure from Ray's book showing differential heating. More heat is }
+    \label{Diff Heating}
+\end{figure}
+
+\section{What is Special About `Geophysical' Fluid Mechanics?}
+
+Regarding the second point, there are two important properties that separate \textbf{Geophysical Fluid Dynamics} into its own field: that of \textbf{stratification} and \textbf{rotation}. The effects of these will pop up again and again throughout this part.
+
+\textbf{Stratification} is 
+
+\section{A Quick Primer in Fluid Mechanics}
+
+To aide understanding, we quickly introduce some concepts of fluid mechanics. Tim should have a more comprehensive primer on the canvas should you need it.
+
+First we introduce the concept of a fluid element. This is an infinitesimal volume of fluid, whose properties may change as it is advected around with the flow. For example, in deriving the \hyperref[Dry Adiabat]{Dry Adiabat}, we were considering an air parcel – a fluid element of air. 
+
+Second, we introduce the \hyperref[Material Derivative]{Material Derivative}:
+\begin{align}
+    \frac{D}{Dt}=\underbrace{\frac{\partial}{\partial t}}_{\text{Time Derivative at a Fixed Point}}+\underbrace{\vec{u}\cdot\vec{\nabla}}_{\text{Advection}}
+    \label{Material Derivative}
+\end{align}
+
+The \hyperref[Material Derivative]{Material Derivative} of a quantity is the time-derivative of a quantity \textit{following a fluid element}. In GFD, we will at most times be interested in how a quantity changes at a fixed point in space, not following a fluid element. The \hyperref[Material Derivative]{Material Derivative} takes into account that a quantity at some point can be modified by both local change $\left( \frac{\partial}{\partial t} \right)$, for example by heating, and fluid parcels with different properties being advected into that location $\vec{u}\cdot\vec{\nabla}$.
+
+Third, we introduce the idea of \hyperref[Material Conservation]{Material Conservation}. You might have heard about what it means for a quantity to be \textbf{conserved}. For example, if you've solved a mechanics problem, you might recall that the total energy was conserved, meaning that $\frac{dE}{dt}=0$ where $E=$ the total energy.
+
+This does occur in fluid mechanics, but but we will also have situations where certain quantities are \hyperref[Material Conservation]{Materially Conserved}. Mathematically, a quantity $A$ is materially conserved if and only if it obeys the following relation:
+
+\begin{align}\label{Material Conservation}
+    \frac{D A}{Dt }=0
+\end{align}
+
+In other words, if one follows a fluid parcel, that quantity does not change. However, as a whole, $A$, need not be globally conserved. 
+
+Now recall Equation \ref{Energy Equation}. Note even if we assume that $Q=0$, we will find that $\frac{DT}{Dt}\neq 0$. In other words, temperature is not materially conserved (so long as $\beta\neq0$). This is why we introduced the idea of \hyperref[Potential Temperature]{Potential Temperature}, as it is the case that $\frac{D\theta}{Dt}=0$ (excercise: take \ref{Energy Equation}, solve for $\beta$ using the ideal gas law, set $Q=0$, and show that $\frac{D\theta}{Dt}=0$).
+
+\section{The Primitive Equations of Motion}
+
+For simplicity we ignore state variables like salinity, humidity, etc., and restrict our attention to a system fully characterised by 6-state variables: the velocity $\vec{u}=(u,v,w)$, pressure $p$, density $\rho$, and temperature $T$. These are governed by six equations: 3 momentum budget equations (\ref{Navier Stokes}), one mass budget equation (\ref{Mass Conservation}), one energy budget equation (\ref{Energy Equation}), and an equation of state (\ref{EoS}). Each term is labelled below:
+
+\begin{gather}
+    \underbrace{\frac{D\vec{u}}{Dt}}_{\text{Acceleration and Advection}}
+    =\overbrace{-\frac{1}{\rho}\vec{\nabla}p}^\text{Pressure Gradients}\underbrace{-g\vec{k}}_\text{Gravity}+\overbrace{\nu\vec{\nabla}^2\vec{u}}^\text{Viscous Dissipation}\underbrace{+\frac{\nu}{3}\vec{\nabla}(\vec{\nabla}\cdot\vec{u})}_\text{}+\overbrace{\vec{F}}^\text{Other Forces}\label{Navier Stokes}
+    \\
+    \underbrace{\frac{D\rho}{Dt}}_\text{Change in Mass of Fluid Parcel}\overbrace{+\rho\vec{\nabla}\cdot\vec{u}}^\text{Convergence/Divergence of Mass}=0
+    \label{Mass Conservation}
+    \\
+    c_p\frac{DT}{Dt}-\frac{\beta T}{\rho}\frac{Dp}{Dt}=Q
+    \label{Energy Equation}
+    \\
+     \rho=\rho(T,p,\ldots)
+    \label{EoS}
+\end{gather}
+
+\noindent where $\frac{D}{Dt}=\frac{\partial}{\partial t}+\vec{u}\cdot\vec{\nabla}$ is the material derivative; $g=$ gravitaitonal acceleration; $\vec{k}=$ unit vector towards the centre of the Earth; $\nu=$ kinematic viscocity; $\vec{F}=$ other forces per unit mass (e.g., friction); $c_p=$ heat capacity per unit mass; $\beta=-\frac{1}{\rho}\frac{\partial \rho}{\partial T}$ thermal expansion coefficient; and $Q=$ heating per unit mass.
+
+However, the equations currently are not fit for purpose. First, these equations are written for a coordinate system that is \textit{inertial} (non-accelerating) and \textit{cartesian}. However, the surface of the Earth is curved and the Earth is rotating\footnote{or so NASA and the lizard overlords would have you think!}, and we wish to describe what is going on \textit{here} with us. Furthermore, it would be quite demanding (computationally and conceptually) to adopt an inertial non-curved coordinate system, as then you'd have to, for example, keep track of the fact that the mountains keep moving. 
+
+Second, these equations are currently too complicated to be analytically tractable. We will make various approximations later to simplify the equations of motion, however we should note that many of the terms we neglect cannot be neglected in an, e.g., weather forecast or climate model. 
+
+\section{Simplifications}
+
+\subsection{Rotating Coordinate Systems}
+
+As already mentioned, the momentum budget equation applies for an \textit{inertial coordinate system}, i.e., a coordinate system which is not accelerating. However we wish to describe the dynamics in a rotating coordinate system, which rotates with the Earth (or planet). It is generally the case that the time derivative of some arbitrary vector $\vec{A}$ in the inertial coordinate system $\left(\frac{d\vec{A}}{dt}\right)_I$ will be \textit{different} from the time derivative in the rotating coordinate system $\left(\frac{d\vec{A}}{dt}\right)$. 
+
+We consider two coordinate systems: an \textit{inertial} coordinate system, and a \textit{rotating} coordinate system. Both systems share an origin, but the \textit{inertial} coordinate system rotates with a constant angular velocity $\vec{\Omega}$ where $|\vec{\Omega}|$ is the angular speed and $\vec{\Omega}$ points along the axis of rotation.
+
+Now consider some arbitrary vector $\vec{A}(t)$ in or rotating coordinate system. It is the case that $\left(\frac{d\vec{A}}{dt}\right)_I$ and are related $\left(\frac{d\vec{A}}{dt}\right)$ as follows (see Figure \ref{Inertial to Rotating}): 
+
+\begin{figure}
+    \centering
+    \begin{subfigure}{0.4\linewidth}
+        \centering
+        \begin{tikzpicture}
+            \draw[->] (0,0) -- (3.5,0) node[anchor=west] {$x_R$};
+            \draw[->] (0,0) -- (0,3.5) node[anchor=south] {$y_R$};
+            \draw[thick,->] (0,0) -- (3,2) node[anchor= north] {$\vec{A}(t)$};
+            \draw[thick,->] (0,0) -- (2,3) node[anchor=south] {$\vec{A}(t+\delta t)$};
+            \draw[ultra thick,->] (3,2) -- (2,3) {};
+            \node[] at (3.5,2.75) {$\delta t \left( \frac{\partial \vec{A}}{\partial t} \right)_R$};
+        \end{tikzpicture}
+        \caption{Change in $\vec{A}$ in the Rotating Coordinate System}
+        \label{Rotating}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.4\linewidth}
+        \centering
+        \begin{tikzpicture}
+            \draw[->] (0,0) -- (3.5,0) node[anchor=west] {$x_I$};
+            \draw[->] (0,0) -- (0,3.5) node[anchor=east] {$y_I$};
+            \draw[thick,->] (0,0) -- (3,2) node[anchor=west] {$\vec{A}(t)$};
+            %\draw[dotted,->] (0,0) -- (2,3) node[anchor=south] {};
+            \draw[thick,->] (0,0) -- (0.853,3.503) node[anchor=south east] {$\vec{A}(t+\delta t)$};
+            \draw[ultra thick,->,dashed] (3,2) -- (2,3) {};
+            \node[] at (3.5,2.75) {$\delta t \, \left( \frac{\partial \vec{A}}{\partial t} \right)_R$};
+            \draw[ultra thick,->,dashed] (2,3) -- (0.853,3.503) {};
+            \node[] at (2,3.75) {$\delta t \vec{\Omega}\times\vec{A}$};
+            \draw[->,dashed] (0,0) -- (3.289,1.197) node[anchor=west] {$x_R$};
+            \draw[->,dashed] (0,0) -- (-1.197,3.289) node[anchor=east] {$y_R$};
+            \draw[ultra thick,->] (3,2) -- (0.853,3.503);
+            \node[] at (1.5,2) {$\delta t \left( \frac{\partial \vec{A}}{\partial t} \right)_I$};
+        \end{tikzpicture}
+        \caption{Change in $\vec{A}$ in the Inertial Coordinate System}
+        \label{Inertial}
+    \end{subfigure}
+    \caption{The change in $\vec{A}$ in a rotating (\ref{Rotating}) and inertial (\ref{Inertial}) coordinate system. As seen in \ref{Inertial}, the change in the inertial coordinate system $\delta t \left( \frac{\partial \vec{A}}{\partial t} \right)_I$ (thick arrow) is equal to sum of the change in the rotating coordinate system $\left( \delta t \left( \frac{\partial \vec{A}}{\partial t} \right)_R \right)$ \textit{and} the rotation of the rotating coordinate system $\left(\delta t\,\vec{\Omega}\times\vec{A} \right)$ (thick dashed arrows).}
+    \label{Inertial to Rotating}
+\end{figure}
+\begin{align}
+    \left(\frac{d\vec{A}}{dt}\right)_I=\left(\frac{d\vec{A}}{dt}\right)_R+\vec{\Omega}\times\vec{A}
+    \label{Rotating Relation}
+\end{align}
+
+If we let $\vec{A}=\vec{r}$, where $\vec{r}$ is the position of our fluid parcel, we can apply Equation \ref{Rotating Relation} twice to obtain an expression for the acceleration of a fluid parcel in a rotating coordinate system. We let subscripts $I$ and $R$ refer to inertial and rotating coordinate systems and $\vec{r}$, $\vec{u}$, and $\vec{a}$ refer to positions, velocities, and accelerations.
+
+\begin{align*}
+    \vec{u}_I &= \left( \frac{d\vec{r}}{dt} \right)_I\\
+    &= \left( \frac{d\vec{r}}{dt} \right)_R+\vec{\Omega}\times \vec{r}\\
+    \vec{u}_I & = \vec{u}_R+\vec{\Omega}\times \vec{r}\\
+    \therefore \vec{a}_I & =
+    \left( \frac{d\vec{u}_I}{dt} \right)_I\\
+    &= \left( \frac{d\vec{u}_I}{dt} \right)_R+\vec{\Omega}\times \vec{u}_I\\
+    &= \left( \frac{d\vec{u}_R}{dt} \right)_R
+    +\vec{\Omega}\times\left( \frac{d\vec{r}}{dt} \right)_R
+    +\vec{\Omega}\times\left( 
+        \vec{u}_R+\vec{\Omega}\times \vec{r}
+     \right)\\
+    &=\vec{a}_R+2\vec{\Omega}\times\vec{u}_R+\vec{\Omega}\times\vec{\Omega}\times\vec{r}
+\end{align*}
+
+Therefore the acceleration in the rotating frame of reference $\vec{a}$ is equal to the acceleration in a inertial coordinate system summed with two fictitious\href{https://xkcd.com/123/}{$^*$}  forces: the \textbf{centrifugal force} and the \textbf{coriolis force}.
+
+\begin{align}
+    \vec{a}_R=\vec{a}_I+\underbrace{2\vec{\Omega}\times\vec{u}_R}_\text{Coriolis}
+    +\underbrace{\vec{\Omega}\times\vec{\Omega}\times\vec{r}}_\text{Centrifugal}
+\end{align}
+
+The \textbf{centrifugal force} is the force that pushes objects away from the axis of rotation. This is the force that makes your arms fling out if you spin. The \textbf{coriolis force} is the force that diverts moving objects which move away or towards the axis of rotation. 
+
+We have thus transformed Equation \ref{Navier Stokes} into a rotating coordinate system:
+
+\begin{align}
+    \frac{D\vec{u}}{Dt}+2\vec{\Omega}\times\vec{u}+\frac{1}{\rho}\vec{\nabla}p+g\vec{k}=-\vec{\Omega}\times\vec{\Omega}\times\vec{r}+\nu\vec{\nabla}^2\vec{u}+\frac{\nu}{3}\vec{\nabla}(\vec{\nabla}\cdot\vec{u})+\vec{F}\label{Navier Stokes Rotating}
+\end{align}
+
+\subsection{Local Cartesian Coordinates}
+
+We have just learnt how to deal with coordinate systems that vary with time. We will now skim over (since the details aren't that interesting) how to deal with coordinate systems that vary with space.
+
+We wish to use a coordinate system that follows the surface of the Earth, with the basis vectors $\hat{x}$, $\hat{y}$, $\hat{z}$, pointing in the east, north, and upwards (away from the centre of the Earth) directions. In this coordinate system, we define the position and velocity coordiates $(x,y,z)$ and $(u,v,w)$ as indicating distance and velocity in the east, north, and upwards directions, respectively. We further define the latitude $\phi\in[-\frac{\pi}{2},\frac{\pi}{2}]$ ($\phi=0$ indicates the equator, $\phi=\pm\frac{\pi}{2}$ is the north/south pole), the radial distance $r$ where $r=a+z$ where $a=$ the radius of the Earth.
+
+Churning through the algebra, we get:
+
+\begin{align*}
+    \frac{Du}{Dt}-\left( 2\Omega+\frac{u}{r\cos\phi} \right)\left( v\sin\phi-w\cos\phi \right)+\frac{1}{\rho}\frac{\partial p}{\partial x}
+    =F_x\\
+    \frac{Dv}{Dt}+\frac{wv}{r}+\left( 2\Omega+\frac{u}{r\cos\phi} \right)u\sin\phi+\frac{1}{\rho}\frac{\partial p}{\partial y}=F_y\\
+    \frac{Dw}{Dt}-\frac{u^2+v^2}{r}-2\Omega u \cos\phi+\frac{1}{\rho}\frac{\partial p}{\partial z}+g=F_z
+\end{align*}
+
+\noindent where we have lumped together all the terms on the right-hand-side of \ref{Navier Stokes Rotating} into the $F_x, F_y, F_z$. Many of the extra terms $\left( \text{e.g., the } \frac{wv}{r} \text{ term}\right)$, are due to the fact that we have adopted a local cartesian system, in which the coordinate system changes as we move over the Earth. 
+
+\subsection{Incompressibility}
+
+This is in preparation for the next simplification we make: we assume that the fluid we are dealing with is \textbf{incompressible}\footnote{
+    This should seem, to you, a highly dubious assumption. First, we know that sound waves are possible (after all we can hear, both on land and in water), but sound waves are impossible in an incompressible fluid. Second, we know that the atmosphere is approximately an ideal gas, which can have its density changed if warmed or cooled.
+}. This implies that density is \textbf{Materially Conserved} following a fluid parcel. Therefore, for density $\rho$:
+
+\begin{align}
+    \frac{D\rho}{Dt}=0\nonumber\\
+    \therefore \boxed{\vec{\nabla}\cdot \vec{u}=0}\label{Incompressible}
+\end{align}
+
+\noindent  where we have obtained \ref{Incompressible} by substituting Mass Conservation (\ref{Mass Conservation}).
+
+\subsection{Scale Analysis}
+
+Finally, we make a few phenomenological simplifications. We do this here for simplicity, but our results are not general or particularily robust: these terms are essential in climate/weather models.
+We do this here by performing a \textbf{scale analysis}: we estimate the size of quantities by their typical values (found empirically), then ignore terms that are much smaller than the other terms. We never neglect the pressure gradient term. \newline
+
+\noindent
+\begin{tabular}{|p{5.8cm}|p{1.4cm}|p{4cm}|p{4cm}|}
+\hline
+    Scale & Symbol & Terms Approximated & Typical Magnitude \\
+\hline
+\hline
+Horizontal Scale & $L$ & $\frac{\partial}{\partial x}\sim\frac{1}{L}$, $\frac{\partial}{\partial y}\sim\frac{1}{L}$& \qty{e6}{\metre}\\
+\hline
+Vertical Scale & $H$ & $\frac{\partial}{\partial z}\sim\frac{1}{H}$& \qty{e4}{\metre}\\
+\hline
+Horizontal Velocity & $U$ & $u\sim U$, $v\sim U$& \qty{10}{\metre\per\second}\\
+\hline
+Vertical Velocity & $W$ & $w\sim W$& \qty{e-2}{\metre\per\second}\\
+\hline
+Time Scale & $T$ & $\frac{\partial}{\partial t}\sim\frac{1}{T}$& \qty{e5}{\second}\\
+\hline
+Density & $\rho$ & $\rho\sim\rho$& \qty{1}{\kilogram\per\second}\\
+\hline
+Earth's Radius & $a$ & $r\sim a$& \qty{6.4e6}{\metre}\\
+\hline
+Rotation Rate & $\Omega$ & $\Omega\sim\Omega$ & \qty{e-4}{\per\second}\\
+\hline
+Acceleration of Gravity & $g$ & $g\sim g$ & \qty{10}{\metre\per\second\squared}\\
+\hline
+\end{tabular}\newline
+
+I do not write out all the details here, as they would easily take multiple pages. If you are curious about the details, refer to the mini-scale analysis I do in deriving \ref{Hydrostatic GFD}. A more rigorous method would be non-dimensionalisation, but this is overkill for our purposes. Again, if you are curious about the details, refer to the mini-non-dimensionalisation I do in deriving the \hyperref[Rossby Number]{Rossby Number}. After eliminating small terms, we get our final simplified set of equations. 
+
+\subsection{The Simplified Equations of Motion}
+
+\begin{fact}{The Equations of Motion for GFD}{Eqns for GFD Box}\label{Eqns for GFD Box}
+    We define the horizontal gradient operator taken at constant $z$ as $\vec{\nabla}_h=\left( \frac{\partial}{\partial x},\frac{\partial}{\partial x},0 \right)^T$, the horizontal velocity as $\vec{u}_h=\left( u,v,0 \right)^T$, the horizontal forces as $\vec{F}_h$, and the \textbf{coriolis parameter} as $f=2\Omega\sin\phi$ where $\phi=$ the latitude.
+    \begin{multicols}{2}
+        \textbf{Horizontal Momentum Balance:}
+        \begin{gather}
+            \label{Horizontal Approximate}
+            \BOX{\frac{D\vec{u}_h}{Dt}+f\vec{k}\times\vec{u}_h+\frac{1}{\rho}\vec{\nabla}_hp=\vec{F}_h}
+        \end{gather}
+        \textbf{Vertical Momentum Balance:}
+        \begin{gather}
+            \label{Vertical Approximate}
+            \BOX{\frac{Dw}{Dt}+\frac{1}{\rho}\frac{\partial p }{\partial z}+g=F_z}
+        \end{gather}
+        \textbf{Mass Conservation:}
+        \begin{gather}
+            \label{Mass Material Conservation}
+            \BOX{\frac{D\rho}{Dt}=0}
+        \end{gather}
+        \textbf{Incompressibility:}
+        \begin{gather}
+            \label{Incompressibility}
+        \BOX{\vec{\nabla}\cdot\vec{u}=0}
+        \end{gather}
+    \end{multicols}
+\end{fact}
+
+We will mostly be dealing with the horizontal momentum equation \ref{Horizontal Approximate}, so it is worth detailing the meanings of each terms. The first term, $\frac{D\vec{u}_h}{Dt}$ is the material derivative of $\vec{u}_h$. It represents the acceleration of $\vec{u}_h$ and the advection of $\vec{u}_h$. The $f\vec{k}\times\vec{u}_h$ term is the acceleration due to coriolis. The $\frac{1}{\rho}\vec{\nabla}_h p$ is the force due to the horizontal pressure gradient. Finally, the $\vec{F}_h$ term is external forces, e.g., friction, wind-forcing, etc.
+
+\begin{align*}
+    \underbrace{\frac{D\vec{u}_h}{Dt}}_\text{acceleration and advection}+
+    \overbrace{f\vec{k}\times\vec{u}_h}^\text{coriolis}+
+    \underbrace{\frac{1}{\rho}\vec{\nabla}_hp}_\text{horizontal pressure gradients}=\overbrace{\vec{F}_h}^\text{external forces}
+\end{align*}
+
+\chapter{The Fundamental Diagnostic Relations}
+
+\section{Hydrostatic Balance (Approximate Vertical Momentum Balance)}
+
+We now make further approximations to extract physical intuition. Consider \ref{Vertical Approximate}, and again perform a scale analysis and assume that $F_z\approx 0$.
+\begin{align*}
+    &&\frac{Dw}{Dt} &+
+    & \frac{1}{\rho}\frac{\partial p}{\partial z}+
+    &g=0
+    \\
+    &\underbrace{\frac{\partial w}{\partial t}}_{\frac{W}{T}}+ 
+    &\underbrace{u\frac{\partial w}{\partial x} 
+    + v\frac{\partial w}{\partial y}}_{U\frac{W}{L}}+ 
+    &\underbrace{w\frac{\partial w}{\partial z}}_{W\frac{W}{H}}+ 
+    &\frac{1}{\rho}\frac{\partial p}{\partial z}+
+    &g=0
+    \\
+    &\sim\frac{W}{T}+
+    &\sim U\frac{W}{L}+
+    &\sim\frac{W^2}{H}+ 
+    &\frac{1}{\rho}\frac{\partial p}{\partial z}+
+    &g=0
+    \\
+    \therefore
+    &\frac{\text{\qty{e-2}{\metre\per\second}}}{\text{\qty{e5}{\second}}}+ 
+    &\text{\qty{10}{\metre\per\second}}\frac{\text{\qty{e-2}{\metre\per\second}}}{\text{\qty{e6}{\metre}}}+ 
+    &\frac{\left( \text{\qty{e-2}{\metre\per\second}} \right)^2}{\text{\qty{e4}{\metre}}}+ 
+    &\frac{1}{\rho}\frac{\partial p}{\partial z}+
+    &\text{\qty{10}{\metre\per\second\squared}}=0
+    \\
+    &\text{\qty{e-7}{\metre\per\second\squared}}+
+    &\text{\qty{e-7}{\metre\per\second\squared}}+
+    &\text{\qty{e-8}{\metre\per\second\squared}}+
+    &\frac{1}{\rho}\frac{\partial p}{\partial z}+
+    &\text{\qty{10}{\metre\per\second\squared}}=0
+    \\
+    &\bcancel{\text{\qty{e-7}{\metre\per\second\squared}}}+
+    &\bcancel{\text{\qty{e-7}{\metre\per\second\squared}}}+
+    &\bcancel{\text{\qty{e-8}{\metre\per\second\squared}}}+
+    &\frac{1}{\rho}\frac{\partial p}{\partial z}+
+    &\text{\qty{10}{\metre\per\second\squared}}=0
+\end{align*}
+
+As seen then, many of the acceleration terms (the terms in the $\frac{Dw}{Dt}$) are 8 orders of magnitutde smaller than gravity! As such, the only term that can balance the gravity term is the pressure gradient. We thus neglect all other terms and derive again:
+
+\begin{fact}{Hydrostatic Balance}{Hydrostatic GFD Box}\label{Hydrostatic GFD Box}
+Hydrostatic Balance governs the vertical pressure variation in a fluid if we assume that vertical acceleration (and advection) is small.
+    \begin{equation}\label{Hydrostatic GFD}
+    \BOX{
+        \frac{\partial p}{\partial z}=-\rho g
+    }
+    \end{equation}
+Pressure decreases with height in order to balance the force of gravity.
+\end{fact}
+
+Physically, hydrostatic balance is a force/momentum balance in the vertical direction, where the force of gravity is balanced by the vertical pressure gradient. Notice now the difference between the Hydrostatic Balance I have written here (\ref{Hydrostatic GFD}) and the Hydrostatic Balance I have written in the \hyperref[Thermodynamics]{Thermodynamics} Section (\ref{Hydrostatic Balance}): I have written it here with a partial derivative. Strictly, it should have been a partial derivative before too, but I write it here to note that we are now considering horizontal variations as well as vertical variations.
+
+For an ideal gas, one can substitute for $\rho$ using \ref{Ideal Gas}:
+\begin{align}\label{Hydrostatic Ideal Gas}
+    \boxed{\frac{\partial \ln p}{\partial z}=-\frac{g}{RT}}
+\end{align}
+
+\section{Geostrophic Balance (Approximate Horizontal Momentum Balance)}
+
+\subsection{Rossby Number and Non-Dimensionalisation}
+
+Let us now consider the horizontal momentum equation \ref{Horizontal Approximate} and let $\vec{F}_h\approx 0$ for now. We nondimensionalise the equations by defining dimensionless hatted variables and choosing characteristic scales such that the dimensionless hatted variables are of order 1:
+\begin{align*}
+    t=[t]\hat{t}\text{   ;   }
+    \vec{u}_h=[u_h]\vec{\hat{u}}_h\text{   ;   }
+    p=[p]\hat{p}
+\end{align*}
+
+\noindent So, for example, $[t]= $ the timescale with dimensions of time, while $\hat{t}$ is the dimensionless time. Note that we pick these scales $[t]$, $[u_h]$, $[p]$, but we have to be self-consistent: we can only make three choices.\footnote{
+    In fact we've already made an implicit choice that the $[v]=[u]=[u_h]$.  
+} We now substitute these variables into \ref{Horizontal Approximate}:
+\begin{align*}
+    \frac{[u_h]}{[t]}\frac{D\vec{\hat{u}}_h}{Dt}+[u_h]f\vec{k}\times\vec{\hat{u}}_h+[p]\frac{1}{\rho}\vec{\nabla}_h\hat{p}=0
+\end{align*}
+
+\noindent Dividing by $f[u_h]$, we get:
+
+\begin{align*}
+    \frac{1}{f[t]}\frac{D\vec{\hat{u}}_h}{Dt}+\vec{k}\times\vec{\hat{u}}_h+\frac{[p]}{\rho f [u_h]}\vec{\nabla}_h\hat{p}=0
+\end{align*}
+
+\noindent We now make a choice: we choose an advective timescale (making a choice for $[t]$)
+\begin{comment}
+    , and second choose a lengthscale $L$ such that $[p]/(\rho f [u_h])=1$\footnote{
+        We do this in anticipation that, in the steady state, the pressure gradient must be balanced by the coriolis force as the only two forces.
+    }:
+\end{comment}
+
+\begin{align*}
+    [t]=[u_h]L \text{   ;   }
+    L=[t]
+\end{align*}
+
+We therefore derive the \textbf{Rossby Number}, which compares the effect of advection/acceleration to rotation. If the \textbf{Rossby Number} is small, then rotation is important and dominates dynamics. If the \textbf{Rossby Number} is large, then the flow evolves in such a way where coriolis is negligible.
+
+\begin{align}
+    Ro = \frac{U}{fL}
+    \label{Rossby Number}
+\end{align}
+
+We can also write the Rossby Number in terms of a ratio between the planetary vorticity and relative vorticity. The planetary vorticity $\omega_{planetary}$ is the angular velocity of a fluid parcel due to the rotation of the Earth, and scales as $f$. The relative vorticity is the vorticity of our fluid parcel in our coordinate system which is rotating with the Earth, and scales as $\omega_{relative}\sim[\vec{\omega}]_z=[\vec{\nabla}\times\vec{u_h}]_z\sim U/L$. Therefore:
+
+\begin{align}
+    Ro &= \frac{\omega_{relative}}{\omega_{planetary}}\\
+    &\sim\frac{U/L}{f}
+\end{align}
+
+\begin{fact}{Rossby Number}{Rossby box}\label{Rossby Box}
+    We define the dimensionless \textbf{Rossby Number} $Ro$, which encodes the relative importance of (planetary) rotation and advection/acceleration terms, as follows:
+    \begin{gather}
+        \BOX{
+            Ro=\frac{U}{fL}
+        }
+    \end{gather}
+    where $U=$ the horizontal velocity scale, $f=$ the coriolis parameter, and $L=$ the horizontal length scale. 
+    
+    If $Ro\ll 1$, then the rotation of the planet is important, and the flow should be approximately \textbf{Geostrophic}. If $Ro\gg 1$, then acceleration/advection is important.
+\end{fact}
+
+\subsection{Geostrophic Balance}
+
+If $Ro\ll 1$, then rotation dominates dynamics, and we can neglect the acceleration/advection term. The horizontal momentum equation thus consists of a balance between the horizontal pressure gradients and the coriolis force. 
+
+\begin{align*}
+    f\vec{k}\times\vec{u}_h=-\frac{1}{\rho}\vec{\nabla}_hp
+\end{align*}
+
+\noindent This results in a velocity field determined by the pressure gradient as follows:
+
+\begin{align}\label{Geostrophic Balance}
+    \boxed{\vec{u}_h=\frac{1}{\rho f}\vec{k}\times\vec{\nabla}_hp}
+\end{align}
+
+For an ideal gas:
+
+\begin{align}
+    \vec{u}_h=\frac{RT}{ f}\vec{k}\times\vec{\nabla}_h\ln p
+\end{align}
+
+\subsection{Cyclones and Anti-Cyclones}
+
+\subsection{Thermal Wind Balance}
+
+\begin{align}\label{Thermal Wind}
+    \BOX{\frac{\partial\vec{u}_h}{\partial z}\approx\frac{1}{fT}\vec{k}\times\vec{\nabla}_hT}
+\end{align}
+
+\section{Gradient-Wind Balance}
+
+\section{Pressure Coordinates}
+
+\begin{align*}
+    \left(\frac{\partial a}{\partial b}\right)_{c,d}=\left(\frac{\partial b}{\partial a}\right)_{c,d}^{-1}
+\end{align*}
+
+\begin{align*}
+    \left(\frac{\partial a}{\partial b}\right)_c
+    \left(\frac{\partial b}{\partial c}\right)_a
+    \left(\frac{\partial c}{\partial a}\right)_b
+    =-1
+\end{align*}
+
+\noindent We apply this to $p$ and $z$:
+
+\begin{align}
+    \left(\frac{\partial p}{\partial z}\right)_{x,y}=\left(\frac{\partial z}{\partial p}\right)_{x,y}^{-1}
+\end{align}
+
+\begin{align*}
+    \left(\frac{\partial p}{\partial x}\right)_z
+    \left(\frac{\partial x}{\partial z}\right)_p
+    \left(\frac{\partial z}{\partial p}\right)_x
+    =-1
+\end{align*}
+
+\begin{align*}
+    \left(\frac{\partial p}{\partial y}\right)_z
+    \left(\frac{\partial y}{\partial z}\right)_p
+    \left(\frac{\partial z}{\partial p}\right)_y
+    =-1
+\end{align*}
+
+\noindent where the last two equations become:
+
+\begin{align}
+    \left(\vec{\nabla}p\right)_z=-\left(\vec{\nabla}z\right)_p\left(\frac{\partial p}{\partial z}\right)_{x,y}
+\end{align}
+
+We apply this to hydrostatic balance (\ref{Hydrostatic GFD}), geostrophic balance (\ref{Geostrophic Balance}), and thermal wind balance (\ref{Thermal Wind}) to derive their equivalent form in pressure coordinates.
+
+\begin{align}
+    -&\frac{g}{RT}=\left(\frac{\partial \ln p}{\partial z}\right)_{x,y}\nonumber\\
+    -&\frac{g}{RT}=\left(\frac{\partial z}{\partial \ln p}\right)_{x,y}^{-1}\nonumber\\
+    &\therefore\nonumber
+    \\
+    &\boxed{\frac{\partial \Phi}{\partial \ln p}=-RT}\label{Hydrostatic Pressure}
+\end{align}
+
+\begin{align}
+    \boxed{\Phi =g\,z}
+\end{align}
+
+\begin{align}
+    \left(\vec{\nabla}p\right)_z=
+\end{align}
+
+
+
+\chapter{The Shallow Water System: 2D System}\label{Shallow Water System}
+
+\section{The Equations of Motion}
+
+In the previous chapter, we considered diagnostic relations: hydrostatic balance and geostrophic balance. These are very important, and very useful, but notice that there are no time derivatives in \ref{Hydrostatic GFD} and \ref{Geostrophic Balance}. If there are no time-derivatives, the equations cannot reproduce non-steady state solutions and time-evolution. However, clearly, the atmosphere and ocean evolve and are not in a steady state, and we wish to understand this.
+
+Our first tool to consider time-dependent changes is the shallow water system. We consider a system as follows: FIGURE HERE
+
+We derive the equations that govern this system from the Equations \ref{Horizontal Approximate} and \ref{Vertical Approximate}. First, we neglect all vertical and horizontal forces $F_z$ and $\vec{F}_h$ (e.g. neglect friction).
+
+Second, we assume that the system is \textbf{shallow}: $H/L\ll 1$ where $H$ is the vertical lengthscale and $L$ is the horizontal lengthscale. If we non-dimensionalise \ref{Incompressibility}, we derive that the vertical velocity scale $W$ is much smaller than the horizontal velocity scale $U$: $W\ll U$:
+\begin{align*}
+    \vec{\nabla}\cdot\vec{u}=0\\
+    \underbrace{\vec{\nabla}_h\cdot\vec{u}_h}_{U/L}+\underbrace{\frac{\partial w}{\partial z}}_{W/H}=0\\
+    \therefore \frac{U}{L}\sim\frac{W}{H}\text{   }\therefore
+    \frac{W}{U}\sim\frac{H}{L}\\
+    \therefore \boxed{W \ll U}
+\end{align*}
+
+\noindent As such, we neglect the vertical advection term in the material derivative:
+\begin{align*}
+    \frac{D}{Dt}=\frac{\partial}{\partial t}+u\frac{\partial}{\partial x}
+    +v\frac{\partial}{\partial y}+\bcancel{w\frac{\partial}{\partial z}}
+\end{align*}
+
+Third, we assume that the system is approximately in \hyperref[Hydrostatic GFD]{Hydrostatic Balance}. However, we do not assume that the vertical velocities are $0$ everywhere. We simply assume that they are much smaller than vertical pressure gradients and gravity.
+
+Fourth, we 
+
+We neglect friction and the centripetal acceleration. The equations of motion, then, are 
+
+We derive the equations of motions
+\begin{fact}{The Shallow Water Equations}{shallow box}\label{shallow box}
+    \begin{gather}
+        \label{SW mom}
+        \BOX{\frac{D\vec{u}}{Dt}+f\vec{k}\times\vec{u}+g\vec{\nabla}\eta=0}\\
+        \label{SW mass}
+        \BOX{\frac{\partial h}{\partial t}+\vec{\nabla}\cdot(h\vec{u})=0}\\
+        \label{SW height}
+        \BOX{h=\eta-b}
+    \end{gather}
+\end{fact}
+
+
+\section{Energetics}
+
+
+
+\section{Potential Vorticity}
+
+\section{Waves}
+
+\subsection{A Quick Primer on Waves}
+
+In the previous section, we derived geostrophic balance and  hydrostatic balance. 
+
+However, the Earth is never in perfect balance, and small perturbations will occur, either because we have built a wind farm, or the sun is radiating differently, or because freshwater is being injected into certain areas in the oceans.
+
+We analyse how systems respond to these perturbations by looking for wavelike solutions: by plugging in 
+
+\subsection{Poincaré Waves}
+
+We first linearise the Shallow Water Equations about a state of rest $\vec{U}=0$ and layer thickness $H$. For simplicity we assume a flat bed $b=-H=const$. This is the first time we linearise in this course, so I will go through this a bit more carefully.
+
+First, we write our variables as a sum of the unvarying quantity and the small perturbation:
+
+\begin{align*}
+    \vec{u}=\vec{U}+\vec{u}'\\
+    h = H + h'\\
+    \eta = N + \eta'\\
+\end{align*}
+
+\noindent where $|\vec{U}|\gg \vec{u}'$, $H\gg h'$, and $N\gg \eta'$. 
+
+Second, we substitute these equations into the shallow water equations, then eliminate terms that are not zeroth or first order in the primed quantites. For example, for Equation \ref{SW height}:
+
+\begin{align*}
+    \frac{\partial}{\partial t}\left( H+h' \right)+\vec{\nabla}\cdot \left( (H+h')(\vec{U}+\vec{u}') \right)=0\\
+    \frac{\partial}{\partial t}\left( H+h' \right)+\vec{\nabla}\cdot \left( H\vec{U}+H\vec{u}'+h'\vec{U}+\bcancel{h'\vec{u}'} \right)=0\\
+\end{align*}
+
+T
+
+
+\subsection{Kelvin Waves}
+
+\subsection{Rossby Waves}
+
+\chapter{3D Systems}
+
+\section{Gravity Waves}
+
+\subsection{The Boussinesq Approximation}
+
+\section{Quasi-Geostrophic Theory}
+
+\section{Quasi-Geostrophic Rossby Waves}
+
+\section{Instabilities and Geostrophic Turbulence}
+
+\chapter{Ocean Circulation}
+
+As already touched upon, the oceans, while similar to the atmosphere in the sense that it is a fluid affected by gravity (and so stratification) and rotation (and so coriolis), differs dynamically due to a few facts.
+
+\begin{enumerate}
+    \item Equation of state: $g'$ is much smaller, so $L_d$ is much smaller
+    \item Rossby number
+    \item External forcing
+    \item Bathymetry
+\end{enumerate}
+
+We'll be exploring some effects of external forcing \ref{Ekman Transport} and the small rossby number \ref{Sverdrup Balance}.
+
+\section{Ekman Transport}\label{Ekman Transport}
+
+Assume $Ro\ll1$ so we can 
+
+\begin{align}
+    f\vec{k}\times\vec{u}=\frac{1}{\rho}
+\end{align}
+
+\section{Sverdrup Balance}\label{Sverdrup Balance}
+
+\section{Stommel Box Model}\label{MOC}

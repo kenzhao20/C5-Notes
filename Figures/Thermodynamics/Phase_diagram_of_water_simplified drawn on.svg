@@ -1,0 +1,2851 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   version="1.1"
+   width="100%"
+   height="100%"
+   viewBox="-70 -635 880 652"
+   id="svg130"
+   sodipodi:docname="Phase_diagram_of_water_simplified drawn on.svg"
+   inkscape:export-filename="Phase_diagram_of_water_simplified.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview130"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.77846102"
+     inkscape:cx="417.4904"
+     inkscape:cy="402.07537"
+     inkscape:window-width="1512"
+     inkscape:window-height="945"
+     inkscape:window-x="0"
+     inkscape:window-y="37"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <title
+     id="title1">Phase diagram of water (simplified)</title>
+  <desc
+     id="desc1">Phase diagram of water as a log-lin chart with pressure from 1 Pa to 1 TPa and temperature from 0 K to 650 K, compiled from data in http://www.lsbu.ac.uk/water/phase.html and http://ergodic.ugr.es/termo/lecciones/water1.html by CMG Lee. Note that the phases of Ice X and XI (hexagonal) differ from the diagram in https://chem331001fall09.pbworks.com/w/page/15647320/LECTURE-10 . This is a simplified version the diagram.</desc>
+  <defs
+     id="defs130">
+    <radialGradient
+       id="solid"
+       cx="50%"
+       cy="50%"
+       r="80%"
+       fx="0%"
+       fy="0%">
+      <stop
+         offset="0%"
+         stop-color="#0099ff"
+         stop-opacity="0"
+         id="stop1" />
+      <stop
+         offset="100%"
+         stop-color="#0099ff"
+         stop-opacity="0.5"
+         id="stop2" />
+    </radialGradient>
+    <radialGradient
+       id="liquid"
+       cx="100%"
+       cy="0%"
+       r="80%"
+       fx="100%"
+       fy="40%">
+      <stop
+         offset="0%"
+         stop-color="#00cc00"
+         stop-opacity="0"
+         id="stop3" />
+      <stop
+         offset="30%"
+         stop-color="#00cc00"
+         stop-opacity="0"
+         id="stop4" />
+      <stop
+         offset="100%"
+         stop-color="#00cc00"
+         stop-opacity="0.5"
+         id="stop5" />
+    </radialGradient>
+    <radialGradient
+       id="gas"
+       cx="50%"
+       cy="50%"
+       r="80%"
+       fx="100%"
+       fy="0%">
+      <stop
+         offset="0%"
+         stop-color="#ff9900"
+         stop-opacity="0"
+         id="stop6" />
+      <stop
+         offset="15%"
+         stop-color="#ff9900"
+         stop-opacity="0"
+         id="stop7" />
+      <stop
+         offset="100%"
+         stop-color="#ff9900"
+         stop-opacity="0.5"
+         id="stop8" />
+    </radialGradient>
+    <g
+       id="grid_x"
+       stroke-opacity="0.2">
+      <!--<line x1="0" y1="0" x2="0" y2="-605" stroke-opacity="0.4"/>
+   <line x1="10" y1="0" x2="10" y2="-600"/>
+   <line x1="20" y1="0" x2="20" y2="-600"/>
+   <line x1="30" y1="0" x2="30" y2="-600"/>
+   <line x1="40" y1="0" x2="40" y2="-600"/>-->
+    </g>
+    <g
+       id="grid_y"
+       stroke-opacity="0.15">
+      <!--<line x1="-5" y1="0" x2="655" y2="0" stroke-opacity="0.4"/>
+   <line x1="0" y1="-15.051" x2="650" y2="-15.051"/>
+   <line x1="0" y1="-23.856" x2="650" y2="-23.856"/>
+   <line x1="0" y1="-30.103" x2="650" y2="-30.103"/>
+   <line x1="0" y1="-34.949" x2="650" y2="-34.949" stroke-opacity="0.3"/>
+   <line x1="0" y1="-38.908" x2="650" y2="-38.908"/>
+   <line x1="0" y1="-42.255" x2="650" y2="-42.255"/>
+   <line x1="0" y1="-45.154" x2="650" y2="-45.154"/>
+   <line x1="0" y1="-47.712" x2="650" y2="-47.712"/>-->
+    </g>
+    <g
+       id="grid"
+       letter-spacing="-1">
+      <g
+         id="line_grid"
+         stroke="#000000">
+        <!--<use xlink:href="#grid_x"/>
+    <use xlink:href="#grid_x" transform="translate(50,0)"/>
+    <use xlink:href="#grid_x" transform="translate(100,0)"/>
+    <use xlink:href="#grid_x" transform="translate(150,0)"/>
+    <use xlink:href="#grid_x" transform="translate(200,0)"/>
+    <use xlink:href="#grid_x" transform="translate(250,0)"/>
+    <use xlink:href="#grid_x" transform="translate(300,0)"/>
+    <use xlink:href="#grid_x" transform="translate(350,0)"/>
+    <use xlink:href="#grid_x" transform="translate(400,0)"/>
+    <use xlink:href="#grid_x" transform="translate(450,0)"/>
+    <use xlink:href="#grid_x" transform="translate(500,0)"/>
+    <use xlink:href="#grid_x" transform="translate(550,0)"/>
+    <use xlink:href="#grid_x" transform="translate(600,0)"/>
+    <use xlink:href="#grid_y"/>
+    <use xlink:href="#grid_y" transform="translate(0,-50)"/>
+    <use xlink:href="#grid_y" transform="translate(0,-100)"/>
+    <use xlink:href="#grid_y" transform="translate(0,-150)"/>
+    <use xlink:href="#grid_y" transform="translate(0,-200)"/>
+    <use xlink:href="#grid_y" transform="translate(0,-250)"/>
+    <use xlink:href="#grid_y" transform="translate(0,-300)"/>
+    <use xlink:href="#grid_y" transform="translate(0,-350)"/>
+    <use xlink:href="#grid_y" transform="translate(0,-400)"/>
+    <use xlink:href="#grid_y" transform="translate(0,-450)"/>
+    <use xlink:href="#grid_y" transform="translate(0,-500)"/>
+    <use xlink:href="#grid_y" transform="translate(0,-550)"/>-->
+        <line
+           x1="-5"
+           y1="-700"
+           x2="755"
+           y2="-700"
+           stroke-opacity="0.4"
+           id="line8" />
+        <line
+           x1="750"
+           y1="-605"
+           x2="750"
+           y2="0"
+           stroke-opacity="0.4"
+           id="line9" />
+        <rect
+           x="0"
+           y="-600"
+           width="750"
+           height="600"
+           fill="none"
+           id="rect9" />
+      </g>
+      <g
+         id="text_grid_unit"
+         font-size="16"
+         font-weight="bold"
+         text-anchor="middle"
+         letter-spacing="0"
+         fill="#000000">
+        <switch
+           id="switch9">
+          <text
+             transform="rotate(-90)"
+             x="300"
+             y="-55"
+             systemLanguage="cs"
+             id="trsvg98"><tspan
+               id="trsvg1">Tlak</tspan></text>
+          <text
+             transform="rotate(-90)"
+             x="300"
+             y="-55"
+             systemLanguage="de"
+             id="trsvg99"><tspan
+               id="trsvg2">Druck</tspan></text>
+          <text
+             transform="rotate(-90)"
+             x="300"
+             y="-55"
+             systemLanguage="fr"
+             id="trsvg100"><tspan
+               id="trsvg3">Pression</tspan></text>
+          <text
+             transform="rotate(-90)"
+             x="300"
+             y="-55"
+             id="trsvg101-lij"
+             systemLanguage="lij"><tspan
+               id="trsvg4-lij">Presción</tspan></text>
+          <text
+             transform="rotate(-90)"
+             x="300"
+             y="-55"
+             id="trsvg101-he"
+             systemLanguage="he"><tspan
+               id="trsvg4-he">לחץ</tspan></text>
+          <text
+             transform="rotate(-90)"
+             x="300"
+             y="-55"
+             id="trsvg101-ca"
+             systemLanguage="ca"><tspan
+               id="trsvg4-ca">Temperatura</tspan></text>
+          <text
+             transform="rotate(-90)"
+             x="300"
+             y="-55"
+             id="trsvg101"><tspan
+               id="trsvg4">Pressure</tspan></text>
+        </switch>
+        <switch
+           id="switch10">
+          <text
+             x="373.15"
+             y="-620"
+             systemLanguage="cs"
+             id="trsvg102"><tspan
+               id="trsvg5">Teplota</tspan></text>
+          <text
+             x="373.15"
+             y="-620"
+             systemLanguage="de"
+             id="trsvg103"><tspan
+               id="trsvg6">Temperatur</tspan></text>
+          <text
+             x="373.15"
+             y="-620"
+             systemLanguage="fr"
+             id="trsvg104"><tspan
+               id="trsvg7">Température</tspan></text>
+          <text
+             x="373.15"
+             y="-620"
+             id="trsvg105-lij"
+             systemLanguage="lij"><tspan
+               id="trsvg8-lij">Tenperatûa</tspan></text>
+          <text
+             x="373.15"
+             y="-620"
+             id="trsvg105-he"
+             systemLanguage="he"><tspan
+               id="trsvg8-he">טמפרטורה</tspan></text>
+          <text
+             x="373.15"
+             y="-620"
+             id="trsvg105-ca"
+             systemLanguage="ca"><tspan
+               id="trsvg8-ca">de pressió</tspan></text>
+          <text
+             x="373.15"
+             y="-620"
+             id="trsvg105"><tspan
+               id="trsvg8">Temperature</tspan></text>
+        </switch>
+      </g>
+      <g
+         id="text_grid_pa"
+         font-size="12"
+         text-anchor="end"
+         fill="#000000">
+        <switch
+           id="switch11">
+          <text
+             x="-5"
+             y="0"
+             dy="0.5em"
+             id="trsvg106-lij"
+             systemLanguage="lij"><tspan
+               id="trsvg9-lij">1 Pa</tspan></text>
+          <text
+             x="-5"
+             y="0"
+             dy="0.5em"
+             id="trsvg106-he"
+             systemLanguage="he"><tspan
+               id="trsvg9-he">1 Pa</tspan></text>
+          <text
+             x="-5"
+             y="0"
+             dy="0.5em"
+             id="trsvg106"><tspan
+               id="trsvg9">1 Pa</tspan></text>
+        </switch>
+        <switch
+           id="switch12">
+          <text
+             x="-5"
+             y="-50"
+             dy="0.5em"
+             id="trsvg107-lij"
+             systemLanguage="lij"><tspan
+               id="trsvg10-lij">10 Pa</tspan></text>
+          <text
+             x="-5"
+             y="-50"
+             dy="0.5em"
+             id="trsvg107-he"
+             systemLanguage="he"><tspan
+               id="trsvg10-he">10 Pa</tspan></text>
+          <text
+             x="-5"
+             y="-50"
+             dy="0.5em"
+             id="trsvg107"><tspan
+               id="trsvg10">10 Pa</tspan></text>
+        </switch>
+        <switch
+           id="switch13">
+          <text
+             x="-5"
+             y="-100"
+             dy="0.5em"
+             id="trsvg108-lij"
+             systemLanguage="lij"><tspan
+               id="trsvg11-lij">100 Pa</tspan></text>
+          <text
+             x="-5"
+             y="-100"
+             dy="0.5em"
+             id="trsvg108-he"
+             systemLanguage="he"><tspan
+               id="trsvg11-he">100 Pa</tspan></text>
+          <text
+             x="-5"
+             y="-100"
+             dy="0.5em"
+             id="trsvg108"><tspan
+               id="trsvg11">100 Pa</tspan></text>
+        </switch>
+        <switch
+           id="switch14">
+          <text
+             x="-5"
+             y="-150"
+             dy="0.5em"
+             id="trsvg109-lij"
+             systemLanguage="lij"><tspan
+               id="trsvg12-lij">1 kPa</tspan></text>
+          <text
+             x="-5"
+             y="-150"
+             dy="0.5em"
+             id="trsvg109-he"
+             systemLanguage="he"><tspan
+               id="trsvg12-he">1 kPa</tspan></text>
+          <text
+             x="-5"
+             y="-150"
+             dy="0.5em"
+             id="trsvg109"><tspan
+               id="trsvg12">1 kPa</tspan></text>
+        </switch>
+        <switch
+           id="switch15">
+          <text
+             x="-5"
+             y="-200"
+             dy="0.5em"
+             id="trsvg110-lij"
+             systemLanguage="lij"><tspan
+               id="trsvg13-lij">10 kPa</tspan></text>
+          <text
+             x="-5"
+             y="-200"
+             dy="0.5em"
+             id="trsvg110-he"
+             systemLanguage="he"><tspan
+               id="trsvg13-he">10 kPa</tspan></text>
+          <text
+             x="-5"
+             y="-200"
+             dy="0.5em"
+             id="trsvg110"><tspan
+               id="trsvg13">10 kPa</tspan></text>
+        </switch>
+        <switch
+           id="switch16">
+          <text
+             x="-5"
+             y="-250"
+             dy="0.5em"
+             id="trsvg111-lij"
+             systemLanguage="lij"><tspan
+               id="trsvg14-lij">100 kPa</tspan></text>
+          <text
+             x="-5"
+             y="-250"
+             dy="0.5em"
+             id="trsvg111-he"
+             systemLanguage="he"><tspan
+               id="trsvg14-he">100 kPa</tspan></text>
+          <text
+             x="-5"
+             y="-250"
+             dy="0.5em"
+             id="trsvg111"><tspan
+               id="trsvg14">100 kPa</tspan></text>
+        </switch>
+        <switch
+           id="switch17">
+          <text
+             x="-5"
+             y="-300"
+             dy="0.5em"
+             id="trsvg112-lij"
+             systemLanguage="lij"><tspan
+               id="trsvg15-lij">1 MPa</tspan></text>
+          <text
+             x="-5"
+             y="-300"
+             dy="0.5em"
+             id="trsvg112-he"
+             systemLanguage="he"><tspan
+               id="trsvg15-he">1 MPa</tspan></text>
+          <text
+             x="-5"
+             y="-300"
+             dy="0.5em"
+             id="trsvg112"><tspan
+               id="trsvg15">1 MPa</tspan></text>
+        </switch>
+        <switch
+           id="switch18">
+          <text
+             x="-5"
+             y="-350"
+             dy="0.5em"
+             id="trsvg113-lij"
+             systemLanguage="lij"><tspan
+               id="trsvg16-lij">10 MPa</tspan></text>
+          <text
+             x="-5"
+             y="-350"
+             dy="0.5em"
+             id="trsvg113-he"
+             systemLanguage="he"><tspan
+               id="trsvg16-he">10 MPa</tspan></text>
+          <text
+             x="-5"
+             y="-350"
+             dy="0.5em"
+             id="trsvg113"><tspan
+               id="trsvg16">10 MPa</tspan></text>
+        </switch>
+        <switch
+           id="switch19">
+          <text
+             x="-5"
+             y="-400"
+             dy="0.5em"
+             id="trsvg114-lij"
+             systemLanguage="lij"><tspan
+               id="trsvg17-lij">100 MPa</tspan></text>
+          <text
+             x="-5"
+             y="-400"
+             dy="0.5em"
+             id="trsvg114-he"
+             systemLanguage="he"><tspan
+               id="trsvg17-he">100 MPa</tspan></text>
+          <text
+             x="-5"
+             y="-400"
+             dy="0.5em"
+             id="trsvg114"><tspan
+               id="trsvg17">100 MPa</tspan></text>
+        </switch>
+        <switch
+           id="switch20">
+          <text
+             x="-5"
+             y="-450"
+             dy="0.5em"
+             id="trsvg115-lij"
+             systemLanguage="lij"><tspan
+               id="trsvg18-lij">1 GPa</tspan></text>
+          <text
+             x="-5"
+             y="-450"
+             dy="0.5em"
+             id="trsvg115-he"
+             systemLanguage="he"><tspan
+               id="trsvg18-he">1 GPa</tspan></text>
+          <text
+             x="-5"
+             y="-450"
+             dy="0.5em"
+             id="trsvg115"><tspan
+               id="trsvg18">1 GPa</tspan></text>
+        </switch>
+        <switch
+           id="switch21">
+          <text
+             x="-5"
+             y="-500"
+             dy="0.5em"
+             id="trsvg116-lij"
+             systemLanguage="lij"><tspan
+               id="trsvg19-lij">10 GPa</tspan></text>
+          <text
+             x="-5"
+             y="-500"
+             dy="0.5em"
+             id="trsvg116-he"
+             systemLanguage="he"><tspan
+               id="trsvg19-he">10 GPa</tspan></text>
+          <text
+             x="-5"
+             y="-500"
+             dy="0.5em"
+             id="trsvg116"><tspan
+               id="trsvg19">10 GPa</tspan></text>
+        </switch>
+        <switch
+           id="switch22">
+          <text
+             x="-5"
+             y="-550"
+             dy="0.5em"
+             id="trsvg117-lij"
+             systemLanguage="lij"><tspan
+               id="trsvg20-lij">100 GPa</tspan></text>
+          <text
+             x="-5"
+             y="-550"
+             dy="0.5em"
+             id="trsvg117-he"
+             systemLanguage="he"><tspan
+               id="trsvg20-he">100 GPa</tspan></text>
+          <text
+             x="-5"
+             y="-550"
+             dy="0.5em"
+             id="trsvg117"><tspan
+               id="trsvg20">100 GPa</tspan></text>
+        </switch>
+        <switch
+           id="switch23">
+          <text
+             x="-5"
+             y="-600"
+             dy="0.5em"
+             id="trsvg118-lij"
+             systemLanguage="lij"><tspan
+               id="trsvg21-lij">1 TPa</tspan></text>
+          <text
+             x="-5"
+             y="-600"
+             dy="0.5em"
+             id="trsvg118-he"
+             systemLanguage="he"><tspan
+               id="trsvg21-he">1 TPa</tspan></text>
+          <text
+             x="-5"
+             y="-600"
+             dy="0.5em"
+             id="trsvg118"><tspan
+               id="trsvg21">1 TPa</tspan></text>
+        </switch>
+      </g>
+      <g
+         id="tick_pa"
+         stroke="#000000">
+        <line
+           x1="0"
+           y1="0"
+           x2="-5"
+           y2="0"
+           id="line23" />
+        <line
+           x1="0"
+           y1="-50"
+           x2="-5"
+           y2="-50"
+           id="line24" />
+        <line
+           x1="0"
+           y1="-100"
+           x2="-5"
+           y2="-100"
+           id="line25" />
+        <line
+           x1="0"
+           y1="-150"
+           x2="-5"
+           y2="-150"
+           id="line26" />
+        <line
+           x1="0"
+           y1="-200"
+           x2="-5"
+           y2="-200"
+           id="line27" />
+        <line
+           x1="0"
+           y1="-250"
+           x2="-5"
+           y2="-250"
+           id="line28" />
+        <line
+           x1="0"
+           y1="-300"
+           x2="-5"
+           y2="-300"
+           id="line29" />
+        <line
+           x1="0"
+           y1="-350"
+           x2="-5"
+           y2="-350"
+           id="line30" />
+        <line
+           x1="0"
+           y1="-400"
+           x2="-5"
+           y2="-400"
+           id="line31" />
+        <line
+           x1="0"
+           y1="-450"
+           x2="-5"
+           y2="-450"
+           id="line32" />
+        <line
+           x1="0"
+           y1="-500"
+           x2="-5"
+           y2="-500"
+           id="line33" />
+        <line
+           x1="0"
+           y1="-550"
+           x2="-5"
+           y2="-550"
+           id="line34" />
+        <line
+           x1="0"
+           y1="-600"
+           x2="-5"
+           y2="-600"
+           id="line35" />
+      </g>
+      <g
+         id="text_grid_bar"
+         font-size="12"
+         text-anchor="start"
+         fill="#ff0000">
+        <switch
+           id="switch35">
+          <text
+             x="755"
+             y="0"
+             dy="0.5em"
+             id="trsvg119-lij"
+             systemLanguage="lij"><tspan
+               id="trsvg22-lij">10 µbar</tspan></text>
+          <text
+             x="755"
+             y="0"
+             dy="0.5em"
+             id="trsvg119-he"
+             systemLanguage="he"><tspan
+               id="trsvg22-he">1 μbar</tspan></text>
+          <text
+             x="755"
+             y="0"
+             dy="0.5em"
+             id="trsvg119"><tspan
+               id="trsvg22">10 µbar</tspan></text>
+        </switch>
+        <switch
+           id="switch36">
+          <text
+             x="755"
+             y="-50"
+             dy="0.5em"
+             id="trsvg120-lij"
+             systemLanguage="lij"><tspan
+               id="trsvg23-lij">100 µbar</tspan></text>
+          <text
+             x="755"
+             y="-50"
+             dy="0.5em"
+             id="trsvg120-he"
+             systemLanguage="he"><tspan
+               id="trsvg23-he">100 μbar</tspan></text>
+          <text
+             x="755"
+             y="-50"
+             dy="0.5em"
+             id="trsvg120"><tspan
+               id="trsvg23">100 µbar</tspan></text>
+        </switch>
+        <switch
+           id="switch37">
+          <text
+             x="755"
+             y="-100"
+             dy="0.5em"
+             id="trsvg121-lij"
+             systemLanguage="lij"><tspan
+               id="trsvg24-lij">1 mbar</tspan></text>
+          <text
+             x="755"
+             y="-100"
+             dy="0.5em"
+             id="trsvg121-he"
+             systemLanguage="he"><tspan
+               id="trsvg24-he">1 mbar</tspan></text>
+          <text
+             x="755"
+             y="-100"
+             dy="0.5em"
+             id="trsvg121"><tspan
+               id="trsvg24">1 mbar</tspan></text>
+        </switch>
+        <switch
+           id="switch38">
+          <text
+             x="755"
+             y="-150"
+             dy="0.5em"
+             id="trsvg122-lij"
+             systemLanguage="lij"><tspan
+               id="trsvg25-lij">10 mbar</tspan></text>
+          <text
+             x="755"
+             y="-150"
+             dy="0.5em"
+             id="trsvg122-he"
+             systemLanguage="he"><tspan
+               id="trsvg25-he">10 mbar</tspan></text>
+          <text
+             x="755"
+             y="-150"
+             dy="0.5em"
+             id="trsvg122"><tspan
+               id="trsvg25">10 mbar</tspan></text>
+        </switch>
+        <switch
+           id="switch39">
+          <text
+             x="755"
+             y="-200"
+             dy="0.5em"
+             id="trsvg123-lij"
+             systemLanguage="lij"><tspan
+               id="trsvg26-lij">100 mbar</tspan></text>
+          <text
+             x="755"
+             y="-200"
+             dy="0.5em"
+             id="trsvg123-he"
+             systemLanguage="he"><tspan
+               id="trsvg26-he">100 mbar</tspan></text>
+          <text
+             x="755"
+             y="-200"
+             dy="0.5em"
+             id="trsvg123"><tspan
+               id="trsvg26">100 mbar</tspan></text>
+        </switch>
+        <switch
+           id="switch40">
+          <text
+             x="755"
+             y="-250"
+             dy="0.5em"
+             id="trsvg124-lij"
+             systemLanguage="lij"><tspan
+               id="trsvg27-lij">1 bar</tspan></text>
+          <text
+             x="755"
+             y="-250"
+             dy="0.5em"
+             id="trsvg124-he"
+             systemLanguage="he"><tspan
+               id="trsvg27-he">1 bar</tspan></text>
+          <text
+             x="755"
+             y="-250"
+             dy="0.5em"
+             id="trsvg124"><tspan
+               id="trsvg27">1 bar</tspan></text>
+        </switch>
+        <switch
+           id="switch41">
+          <text
+             x="755"
+             y="-300"
+             dy="0.5em"
+             id="trsvg125-lij"
+             systemLanguage="lij"><tspan
+               id="trsvg28-lij">10 bar</tspan></text>
+          <text
+             x="755"
+             y="-300"
+             dy="0.5em"
+             id="trsvg125-he"
+             systemLanguage="he"><tspan
+               id="trsvg28-he">10 bar</tspan></text>
+          <text
+             x="755"
+             y="-300"
+             dy="0.5em"
+             id="trsvg125"><tspan
+               id="trsvg28">10 bar</tspan></text>
+        </switch>
+        <switch
+           id="switch42">
+          <text
+             x="755"
+             y="-350"
+             dy="0.5em"
+             id="trsvg126-lij"
+             systemLanguage="lij"><tspan
+               id="trsvg29-lij">100 bar</tspan></text>
+          <text
+             x="755"
+             y="-350"
+             dy="0.5em"
+             id="trsvg126-he"
+             systemLanguage="he"><tspan
+               id="trsvg29-he">100 bar</tspan></text>
+          <text
+             x="755"
+             y="-350"
+             dy="0.5em"
+             id="trsvg126"><tspan
+               id="trsvg29">100 bar</tspan></text>
+        </switch>
+        <switch
+           id="switch43">
+          <text
+             x="755"
+             y="-400"
+             dy="0.5em"
+             id="trsvg127-lij"
+             systemLanguage="lij"><tspan
+               id="trsvg30-lij">1 kbar</tspan></text>
+          <text
+             x="755"
+             y="-400"
+             dy="0.5em"
+             id="trsvg127-he"
+             systemLanguage="he"><tspan
+               id="trsvg30-he">1 kbar</tspan></text>
+          <text
+             x="755"
+             y="-400"
+             dy="0.5em"
+             id="trsvg127"><tspan
+               id="trsvg30">1 kbar</tspan></text>
+        </switch>
+        <switch
+           id="switch44">
+          <text
+             x="755"
+             y="-450"
+             dy="0.5em"
+             id="trsvg128-lij"
+             systemLanguage="lij"><tspan
+               id="trsvg31-lij">10 kbar</tspan></text>
+          <text
+             x="755"
+             y="-450"
+             dy="0.5em"
+             id="trsvg128-he"
+             systemLanguage="he"><tspan
+               id="trsvg31-he">10 kbar</tspan></text>
+          <text
+             x="755"
+             y="-450"
+             dy="0.5em"
+             id="trsvg128"><tspan
+               id="trsvg31">10 kbar</tspan></text>
+        </switch>
+        <switch
+           id="switch45">
+          <text
+             x="755"
+             y="-500"
+             dy="0.5em"
+             id="trsvg129-lij"
+             systemLanguage="lij"><tspan
+               id="trsvg32-lij">100 kbar</tspan></text>
+          <text
+             x="755"
+             y="-500"
+             dy="0.5em"
+             id="trsvg129-he"
+             systemLanguage="he"><tspan
+               id="trsvg32-he">100 kbar</tspan></text>
+          <text
+             x="755"
+             y="-500"
+             dy="0.5em"
+             id="trsvg129"><tspan
+               id="trsvg32">100 kbar</tspan></text>
+        </switch>
+        <switch
+           id="switch46">
+          <text
+             x="755"
+             y="-550"
+             dy="0.5em"
+             id="trsvg130-lij"
+             systemLanguage="lij"><tspan
+               id="trsvg33-lij">1 Mbar</tspan></text>
+          <text
+             x="755"
+             y="-550"
+             dy="0.5em"
+             id="trsvg130-he"
+             systemLanguage="he"><tspan
+               id="trsvg33-he">1 Mbar</tspan></text>
+          <text
+             x="755"
+             y="-550"
+             dy="0.5em"
+             id="trsvg130"><tspan
+               id="trsvg33">1 Mbar</tspan></text>
+        </switch>
+        <switch
+           id="switch47">
+          <text
+             x="755"
+             y="-600"
+             dy="0.5em"
+             id="trsvg131-lij"
+             systemLanguage="lij"><tspan
+               id="trsvg34-lij">10 Mbar</tspan></text>
+          <text
+             x="755"
+             y="-600"
+             dy="0.5em"
+             id="trsvg131-he"
+             systemLanguage="he"><tspan
+               id="trsvg34-he">10 Mbar</tspan></text>
+          <text
+             x="755"
+             y="-600"
+             dy="0.5em"
+             id="trsvg131"><tspan
+               id="trsvg34">10 Mbar</tspan></text>
+        </switch>
+      </g>
+      <g
+         id="tick_bar"
+         stroke="#ff0000">
+        <line
+           x1="750"
+           y1="0"
+           x2="755"
+           y2="0"
+           id="line47" />
+        <line
+           x1="750"
+           y1="-50"
+           x2="755"
+           y2="-50"
+           id="line48" />
+        <line
+           x1="750"
+           y1="-100"
+           x2="755"
+           y2="-100"
+           id="line49" />
+        <line
+           x1="750"
+           y1="-150"
+           x2="755"
+           y2="-150"
+           id="line50" />
+        <line
+           x1="750"
+           y1="-200"
+           x2="755"
+           y2="-200"
+           id="line51" />
+        <line
+           x1="750"
+           y1="-250"
+           x2="755"
+           y2="-250"
+           id="line52" />
+        <line
+           x1="750"
+           y1="-300"
+           x2="755"
+           y2="-300"
+           id="line53" />
+        <line
+           x1="750"
+           y1="-350"
+           x2="755"
+           y2="-350"
+           id="line54" />
+        <line
+           x1="750"
+           y1="-400"
+           x2="755"
+           y2="-400"
+           id="line55" />
+        <line
+           x1="750"
+           y1="-450"
+           x2="755"
+           y2="-450"
+           id="line56" />
+        <line
+           x1="750"
+           y1="-500"
+           x2="755"
+           y2="-500"
+           id="line57" />
+        <line
+           x1="750"
+           y1="-550"
+           x2="755"
+           y2="-550"
+           id="line58" />
+        <line
+           x1="750"
+           y1="-600"
+           x2="755"
+           y2="-600"
+           id="line59" />
+      </g>
+      <g
+         id="text_grid_k"
+         font-size="12"
+         text-anchor="middle"
+         fill="#000000">
+        <switch
+           id="switch59">
+          <text
+             x="0"
+             y="-606"
+             id="trsvg132-lij"
+             systemLanguage="lij"><tspan
+               id="trsvg35-lij">0 K</tspan></text>
+          <text
+             x="0"
+             y="-606"
+             id="trsvg132-he"
+             systemLanguage="he"><tspan
+               id="trsvg35-he">0 K</tspan></text>
+          <text
+             x="0"
+             y="-606"
+             id="trsvg132"><tspan
+               id="trsvg35">0 K</tspan></text>
+        </switch>
+        <switch
+           id="switch60">
+          <text
+             x="50"
+             y="-606"
+             id="trsvg133-lij"
+             systemLanguage="lij"><tspan
+               id="trsvg36-lij">50 K</tspan></text>
+          <text
+             x="50"
+             y="-606"
+             id="trsvg133-he"
+             systemLanguage="he"><tspan
+               id="trsvg36-he">50 K</tspan></text>
+          <text
+             x="50"
+             y="-606"
+             id="trsvg133"><tspan
+               id="trsvg36">50 K</tspan></text>
+        </switch>
+        <switch
+           id="switch61">
+          <text
+             x="100"
+             y="-606"
+             id="trsvg134-lij"
+             systemLanguage="lij"><tspan
+               id="trsvg37-lij">100 K</tspan></text>
+          <text
+             x="100"
+             y="-606"
+             id="trsvg134-he"
+             systemLanguage="he"><tspan
+               id="trsvg37-he">100 K</tspan></text>
+          <text
+             x="100"
+             y="-606"
+             id="trsvg134"><tspan
+               id="trsvg37">100 K</tspan></text>
+        </switch>
+        <switch
+           id="switch62">
+          <text
+             x="150"
+             y="-606"
+             id="trsvg135-lij"
+             systemLanguage="lij"><tspan
+               id="trsvg38-lij">150 K</tspan></text>
+          <text
+             x="150"
+             y="-606"
+             id="trsvg135-he"
+             systemLanguage="he"><tspan
+               id="trsvg38-he">150 K</tspan></text>
+          <text
+             x="150"
+             y="-606"
+             id="trsvg135"><tspan
+               id="trsvg38">150 K</tspan></text>
+        </switch>
+        <switch
+           id="switch63">
+          <text
+             x="200"
+             y="-606"
+             id="trsvg136-lij"
+             systemLanguage="lij"><tspan
+               id="trsvg39-lij">200 K</tspan></text>
+          <text
+             x="200"
+             y="-606"
+             id="trsvg136-he"
+             systemLanguage="he"><tspan
+               id="trsvg39-he">200 K</tspan></text>
+          <text
+             x="200"
+             y="-606"
+             id="trsvg136"><tspan
+               id="trsvg39">200 K</tspan></text>
+        </switch>
+        <switch
+           id="switch64">
+          <text
+             x="250"
+             y="-606"
+             id="trsvg137-lij"
+             systemLanguage="lij"><tspan
+               id="trsvg40-lij">250 K</tspan></text>
+          <text
+             x="250"
+             y="-606"
+             id="trsvg137-he"
+             systemLanguage="he"><tspan
+               id="trsvg40-he">250 K</tspan></text>
+          <text
+             x="250"
+             y="-606"
+             id="trsvg137"><tspan
+               id="trsvg40">250 K</tspan></text>
+        </switch>
+        <switch
+           id="switch65">
+          <text
+             x="300"
+             y="-606"
+             id="trsvg138-lij"
+             systemLanguage="lij"><tspan
+               id="trsvg41-lij">300 K</tspan></text>
+          <text
+             x="300"
+             y="-606"
+             id="trsvg138-he"
+             systemLanguage="he"><tspan
+               id="trsvg41-he">300 K</tspan></text>
+          <text
+             x="300"
+             y="-606"
+             id="trsvg138"><tspan
+               id="trsvg41">300 K</tspan></text>
+        </switch>
+        <switch
+           id="switch66">
+          <text
+             x="350"
+             y="-606"
+             id="trsvg139-lij"
+             systemLanguage="lij"><tspan
+               id="trsvg42-lij">350 K</tspan></text>
+          <text
+             x="350"
+             y="-606"
+             id="trsvg139-he"
+             systemLanguage="he"><tspan
+               id="trsvg42-he">250 K</tspan></text>
+          <text
+             x="350"
+             y="-606"
+             id="trsvg139"><tspan
+               id="trsvg42">350 K</tspan></text>
+        </switch>
+        <switch
+           id="switch67">
+          <text
+             x="400"
+             y="-606"
+             id="trsvg140-lij"
+             systemLanguage="lij"><tspan
+               id="trsvg43-lij">400 K</tspan></text>
+          <text
+             x="400"
+             y="-606"
+             id="trsvg140-he"
+             systemLanguage="he"><tspan
+               id="trsvg43-he">400 K</tspan></text>
+          <text
+             x="400"
+             y="-606"
+             id="trsvg140"><tspan
+               id="trsvg43">400 K</tspan></text>
+        </switch>
+        <switch
+           id="switch68">
+          <text
+             x="450"
+             y="-606"
+             id="trsvg141-lij"
+             systemLanguage="lij"><tspan
+               id="trsvg44-lij">450 K</tspan></text>
+          <text
+             x="450"
+             y="-606"
+             id="trsvg141-he"
+             systemLanguage="he"><tspan
+               id="trsvg44-he">450 K</tspan></text>
+          <text
+             x="450"
+             y="-606"
+             id="trsvg141"><tspan
+               id="trsvg44">450 K</tspan></text>
+        </switch>
+        <switch
+           id="switch69">
+          <text
+             x="500"
+             y="-606"
+             id="trsvg142-lij"
+             systemLanguage="lij"><tspan
+               id="trsvg45-lij">500 K</tspan></text>
+          <text
+             x="500"
+             y="-606"
+             id="trsvg142-he"
+             systemLanguage="he"><tspan
+               id="trsvg45-he">500 K</tspan></text>
+          <text
+             x="500"
+             y="-606"
+             id="trsvg142"><tspan
+               id="trsvg45">500 K</tspan></text>
+        </switch>
+        <switch
+           id="switch70">
+          <text
+             x="550"
+             y="-606"
+             id="trsvg143-lij"
+             systemLanguage="lij"><tspan
+               id="trsvg46-lij">550 K</tspan></text>
+          <text
+             x="550"
+             y="-606"
+             id="trsvg143-he"
+             systemLanguage="he"><tspan
+               id="trsvg46-he">550 K</tspan></text>
+          <text
+             x="550"
+             y="-606"
+             id="trsvg143"><tspan
+               id="trsvg46">550 K</tspan></text>
+        </switch>
+        <switch
+           id="switch71">
+          <text
+             x="600"
+             y="-606"
+             id="trsvg144-lij"
+             systemLanguage="lij"><tspan
+               id="trsvg47-lij">600 K</tspan></text>
+          <text
+             x="600"
+             y="-606"
+             id="trsvg144-he"
+             systemLanguage="he"><tspan
+               id="trsvg47-he">600 K</tspan></text>
+          <text
+             x="600"
+             y="-606"
+             id="trsvg144"><tspan
+               id="trsvg47">600 K</tspan></text>
+        </switch>
+        <switch
+           id="switch72">
+          <text
+             x="650"
+             y="-606"
+             id="trsvg145-lij"
+             systemLanguage="lij"><tspan
+               id="trsvg48-lij">650 K</tspan></text>
+          <text
+             x="650"
+             y="-606"
+             id="trsvg145-he"
+             systemLanguage="he"><tspan
+               id="trsvg48-he">650 K</tspan></text>
+          <text
+             x="650"
+             y="-606"
+             id="trsvg145"><tspan
+               id="trsvg48">650 K</tspan></text>
+        </switch>
+        <switch
+           id="switch73">
+          <text
+             x="700"
+             y="-606"
+             id="trsvg146-lij"
+             systemLanguage="lij"><tspan
+               id="trsvg49-lij">700 K</tspan></text>
+          <text
+             x="700"
+             y="-606"
+             id="trsvg146-he"
+             systemLanguage="he"><tspan
+               id="trsvg49-he">700 K</tspan></text>
+          <text
+             x="700"
+             y="-606"
+             id="trsvg146"><tspan
+               id="trsvg49">700 K</tspan></text>
+        </switch>
+        <switch
+           id="switch74">
+          <text
+             x="750"
+             y="-606"
+             id="trsvg147-lij"
+             systemLanguage="lij"><tspan
+               id="trsvg50-lij">750 K</tspan></text>
+          <text
+             x="750"
+             y="-606"
+             id="trsvg147-he"
+             systemLanguage="he"><tspan
+               id="trsvg50-he">750 K</tspan></text>
+          <text
+             x="750"
+             y="-606"
+             id="trsvg147"><tspan
+               id="trsvg50">750 K</tspan></text>
+        </switch>
+      </g>
+      <g
+         id="tick_k"
+         stroke="#000000">
+        <line
+           x1="0"
+           y1="-600"
+           x2="0"
+           y2="-605"
+           id="line74" />
+        <line
+           x1="50"
+           y1="-600"
+           x2="50"
+           y2="-605"
+           id="line75" />
+        <line
+           x1="100"
+           y1="-600"
+           x2="100"
+           y2="-605"
+           id="line76" />
+        <line
+           x1="150"
+           y1="-600"
+           x2="150"
+           y2="-605"
+           id="line77" />
+        <line
+           x1="200"
+           y1="-600"
+           x2="200"
+           y2="-605"
+           id="line78" />
+        <line
+           x1="250"
+           y1="-600"
+           x2="250"
+           y2="-605"
+           id="line79" />
+        <line
+           x1="300"
+           y1="-600"
+           x2="300"
+           y2="-605"
+           id="line80" />
+        <line
+           x1="350"
+           y1="-600"
+           x2="350"
+           y2="-605"
+           id="line81" />
+        <line
+           x1="400"
+           y1="-600"
+           x2="400"
+           y2="-605"
+           id="line82" />
+        <line
+           x1="450"
+           y1="-600"
+           x2="450"
+           y2="-605"
+           id="line83" />
+        <line
+           x1="500"
+           y1="-600"
+           x2="500"
+           y2="-605"
+           id="line84" />
+        <line
+           x1="550"
+           y1="-600"
+           x2="550"
+           y2="-605"
+           id="line85" />
+        <line
+           x1="600"
+           y1="-600"
+           x2="600"
+           y2="-605"
+           id="line86" />
+        <line
+           x1="650"
+           y1="-600"
+           x2="650"
+           y2="-605"
+           id="line87" />
+        <line
+           x1="700"
+           y1="-600"
+           x2="700"
+           y2="-605"
+           id="line88" />
+        <line
+           x1="750"
+           y1="-600"
+           x2="750"
+           y2="-605"
+           id="line89" />
+      </g>
+      <g
+         id="text_grid_c"
+         font-size="12"
+         text-anchor="middle"
+         fill="#ff0000">
+        <switch
+           id="switch89">
+          <text
+             x="23.15"
+             y="16"
+             id="trsvg148-lij"
+             systemLanguage="lij"><tspan
+               id="trsvg51-lij">-250 °C</tspan></text>
+          <text
+             x="23.15"
+             y="16"
+             id="trsvg148-he"
+             systemLanguage="he"><tspan
+               id="trsvg51-he">-250 °C</tspan></text>
+          <text
+             x="23.15"
+             y="16"
+             id="trsvg148"><tspan
+               id="trsvg51">-250 °C</tspan></text>
+        </switch>
+        <switch
+           id="switch90">
+          <text
+             x="73.15"
+             y="16"
+             id="trsvg149-lij"
+             systemLanguage="lij"><tspan
+               id="trsvg52-lij">-200 °C</tspan></text>
+          <text
+             x="73.15"
+             y="16"
+             id="trsvg149-he"
+             systemLanguage="he"><tspan
+               id="trsvg52-he">-200 °C</tspan></text>
+          <text
+             x="73.15"
+             y="16"
+             id="trsvg149"><tspan
+               id="trsvg52">-200 °C</tspan></text>
+        </switch>
+        <switch
+           id="switch91">
+          <text
+             x="123.15"
+             y="16"
+             id="trsvg150-lij"
+             systemLanguage="lij"><tspan
+               id="trsvg53-lij">-150 °C</tspan></text>
+          <text
+             x="123.15"
+             y="16"
+             id="trsvg150-he"
+             systemLanguage="he"><tspan
+               id="trsvg53-he">-150 °C</tspan></text>
+          <text
+             x="123.15"
+             y="16"
+             id="trsvg150"><tspan
+               id="trsvg53">-150 °C</tspan></text>
+        </switch>
+        <switch
+           id="switch92">
+          <text
+             x="173.15"
+             y="16"
+             id="trsvg151-lij"
+             systemLanguage="lij"><tspan
+               id="trsvg54-lij">-100 °C</tspan></text>
+          <text
+             x="173.15"
+             y="16"
+             id="trsvg151-he"
+             systemLanguage="he"><tspan
+               id="trsvg54-he">-100 °C</tspan></text>
+          <text
+             x="173.15"
+             y="16"
+             id="trsvg151"><tspan
+               id="trsvg54">-100 °C</tspan></text>
+        </switch>
+        <switch
+           id="switch93">
+          <text
+             x="223.15"
+             y="16"
+             id="trsvg152-lij"
+             systemLanguage="lij"><tspan
+               id="trsvg55-lij">-50 °C</tspan></text>
+          <text
+             x="223.15"
+             y="16"
+             id="trsvg152-he"
+             systemLanguage="he"><tspan
+               id="trsvg55-he">-50 °C</tspan></text>
+          <text
+             x="223.15"
+             y="16"
+             id="trsvg152"><tspan
+               id="trsvg55">-50 °C</tspan></text>
+        </switch>
+        <switch
+           id="switch94">
+          <text
+             x="273.15"
+             y="16"
+             id="trsvg153-lij"
+             systemLanguage="lij"><tspan
+               id="trsvg56-lij">0 °C</tspan></text>
+          <text
+             x="273.15"
+             y="16"
+             id="trsvg153-he"
+             systemLanguage="he"><tspan
+               id="trsvg56-he">0 °C</tspan></text>
+          <text
+             x="273.15"
+             y="16"
+             id="trsvg153"><tspan
+               id="trsvg56">0 °C</tspan></text>
+        </switch>
+        <switch
+           id="switch95">
+          <text
+             x="323.15"
+             y="16"
+             id="trsvg154-lij"
+             systemLanguage="lij"><tspan
+               id="trsvg57-lij">50 °C</tspan></text>
+          <text
+             x="323.15"
+             y="16"
+             id="trsvg154-he"
+             systemLanguage="he"><tspan
+               id="trsvg57-he">50 °C</tspan></text>
+          <text
+             x="323.15"
+             y="16"
+             id="trsvg154"><tspan
+               id="trsvg57">50 °C</tspan></text>
+        </switch>
+        <switch
+           id="switch96">
+          <text
+             x="373.15"
+             y="16"
+             id="trsvg155-lij"
+             systemLanguage="lij"><tspan
+               id="trsvg58-lij">100 °C</tspan></text>
+          <text
+             x="373.15"
+             y="16"
+             id="trsvg155-he"
+             systemLanguage="he"><tspan
+               id="trsvg58-he">100 °C</tspan></text>
+          <text
+             x="373.15"
+             y="16"
+             id="trsvg155"><tspan
+               id="trsvg58">100 °C</tspan></text>
+        </switch>
+        <switch
+           id="switch97">
+          <text
+             x="423.15"
+             y="16"
+             id="trsvg156-lij"
+             systemLanguage="lij"><tspan
+               id="trsvg59-lij">150 °C</tspan></text>
+          <text
+             x="423.15"
+             y="16"
+             id="trsvg156-he"
+             systemLanguage="he"><tspan
+               id="trsvg59-he">150 °C</tspan></text>
+          <text
+             x="423.15"
+             y="16"
+             id="trsvg156"><tspan
+               id="trsvg59">150 °C</tspan></text>
+        </switch>
+        <switch
+           id="switch98">
+          <text
+             x="473.15"
+             y="16"
+             id="trsvg157-lij"
+             systemLanguage="lij"><tspan
+               id="trsvg60-lij">200 °C</tspan></text>
+          <text
+             x="473.15"
+             y="16"
+             id="trsvg157-he"
+             systemLanguage="he"><tspan
+               id="trsvg60-he">200 °C</tspan></text>
+          <text
+             x="473.15"
+             y="16"
+             id="trsvg157"><tspan
+               id="trsvg60">200 °C</tspan></text>
+        </switch>
+        <switch
+           id="switch99">
+          <text
+             x="523.15"
+             y="16"
+             id="trsvg158-lij"
+             systemLanguage="lij"><tspan
+               id="trsvg61-lij">250 °C</tspan></text>
+          <text
+             x="523.15"
+             y="16"
+             id="trsvg158-he"
+             systemLanguage="he"><tspan
+               id="trsvg61-he">250 °C</tspan></text>
+          <text
+             x="523.15"
+             y="16"
+             id="trsvg158"><tspan
+               id="trsvg61">250 °C</tspan></text>
+        </switch>
+        <switch
+           id="switch100">
+          <text
+             x="573.15"
+             y="16"
+             id="trsvg159-lij"
+             systemLanguage="lij"><tspan
+               id="trsvg62-lij">300 °C</tspan></text>
+          <text
+             x="573.15"
+             y="16"
+             id="trsvg159-he"
+             systemLanguage="he"><tspan
+               id="trsvg62-he">300 °C</tspan></text>
+          <text
+             x="573.15"
+             y="16"
+             id="trsvg159"><tspan
+               id="trsvg62">300 °C</tspan></text>
+        </switch>
+        <switch
+           id="switch101">
+          <text
+             x="623.15"
+             y="16"
+             id="trsvg160-lij"
+             systemLanguage="lij"><tspan
+               id="trsvg63-lij">350 °C</tspan></text>
+          <text
+             x="623.15"
+             y="16"
+             id="trsvg160-he"
+             systemLanguage="he"><tspan
+               id="trsvg63-he">350 °C</tspan></text>
+          <text
+             x="623.15"
+             y="16"
+             id="trsvg160"><tspan
+               id="trsvg63">350 °C</tspan></text>
+        </switch>
+        <switch
+           id="switch102">
+          <text
+             x="673.15"
+             y="16"
+             id="trsvg161-lij"
+             systemLanguage="lij"><tspan
+               id="trsvg64-lij">400 °C</tspan></text>
+          <text
+             x="673.15"
+             y="16"
+             id="trsvg161-he"
+             systemLanguage="he"><tspan
+               id="trsvg64-he">400 °C</tspan></text>
+          <text
+             x="673.15"
+             y="16"
+             id="trsvg161"><tspan
+               id="trsvg64">400 °C</tspan></text>
+        </switch>
+        <switch
+           id="switch103">
+          <text
+             x="723.15"
+             y="16"
+             id="trsvg162-lij"
+             systemLanguage="lij"><tspan
+               id="trsvg65-lij">450 °C</tspan></text>
+          <text
+             x="723.15"
+             y="16"
+             id="trsvg162-he"
+             systemLanguage="he"><tspan
+               id="trsvg65-he">450 °C</tspan></text>
+          <text
+             x="723.15"
+             y="16"
+             id="trsvg162"><tspan
+               id="trsvg65">450 °C</tspan></text>
+        </switch>
+      </g>
+      <g
+         id="tick_c"
+         stroke="#ff0000">
+        <line
+           x1="23.15"
+           y1="0"
+           x2="23.15"
+           y2="5"
+           id="line103" />
+        <line
+           x1="73.15"
+           y1="0"
+           x2="73.15"
+           y2="5"
+           id="line104" />
+        <line
+           x1="123.15"
+           y1="0"
+           x2="123.15"
+           y2="5"
+           id="line105" />
+        <line
+           x1="173.15"
+           y1="0"
+           x2="173.15"
+           y2="5"
+           id="line106" />
+        <line
+           x1="223.15"
+           y1="0"
+           x2="223.15"
+           y2="5"
+           id="line107" />
+        <line
+           x1="273.15"
+           y1="0"
+           x2="273.15"
+           y2="5"
+           id="line108" />
+        <line
+           x1="323.15"
+           y1="0"
+           x2="323.15"
+           y2="5"
+           id="line109" />
+        <line
+           x1="373.15"
+           y1="0"
+           x2="373.15"
+           y2="5"
+           id="line110" />
+        <line
+           x1="423.15"
+           y1="0"
+           x2="423.15"
+           y2="5"
+           id="line111" />
+        <line
+           x1="473.15"
+           y1="0"
+           x2="473.15"
+           y2="5"
+           id="line112" />
+        <line
+           x1="523.15"
+           y1="0"
+           x2="523.15"
+           y2="5"
+           id="line113" />
+        <line
+           x1="573.15"
+           y1="0"
+           x2="573.15"
+           y2="5"
+           id="line114" />
+        <line
+           x1="623.15"
+           y1="0"
+           x2="623.15"
+           y2="5"
+           id="line115" />
+        <line
+           x1="673.15"
+           y1="0"
+           x2="673.15"
+           y2="5"
+           id="line116" />
+        <line
+           x1="723.15"
+           y1="0"
+           x2="723.15"
+           y2="5"
+           id="line117" />
+      </g>
+    </g>
+    <g
+       id="main"
+       font-family="sans-serif">
+      <rect
+         x="-70"
+         y="-635"
+         width="880"
+         height="652"
+         fill="#ffffff"
+         id="rect117" />
+      <g
+         id="shade"
+         stroke="none">
+        <path
+           id="S"
+           d="M 750 -600 L 0 -600 L 0 0 L 212 0 Q 240 -85 273.16 -139.328 L 273.15 -250.286 C 273 -380 270 -400 251.17 -416.101 L 256.15 -427.210 L 272.99 -440.050 L 355.00 -467.278 C 400 -470 550 -490 650 -506 Q 660 -508 750 -520.724"
+           fill="url(#solid)" />
+        <path
+           id="L"
+           d="M 750 -368 L 647.00 -367.184 Q 480 -330 373.15 -250.286 Q 310 -200 273.16 -139.328 L 273.15 -250.286 C 273 -380 270 -400 251.17 -416.101 L 256.15 -427.210 L 272.99 -440.050 L 355.00 -467.278 C 400 -470 550 -490 650 -506 Q 660 -508 750 -520.724"
+           fill="url(#liquid)" />
+        <path
+           id="G"
+           d="M 750 -368 L 647.00 -367.184 Q 480 -330 373.15 -250.286 Q 310 -200 273.16 -139.328 Q 240 -85 212 0 L 750 0"
+           fill="url(#gas)" />
+      </g>
+      <use
+         xlink:href="#grid"
+         id="use117" />
+      <g
+         id="boundary_phase"
+         stroke="#000000"
+         stroke-width="2"
+         fill="none">
+        <path
+           id="GL"
+           d="M 647.00 -367.184 Q 480 -330 373.15 -250.286 Q 310 -200 273.16 -139.328" />
+        <path
+           id="GS"
+           d="M 273.16 -139.328 Q 240 -85 212 0" />
+        <path
+           id="SL"
+           d="M 273.16 -139.328 L 273.15 -250.286 C 273 -380 270 -400 251.17 -416.101 L 256.15 -427.210 L 272.99 -440.050 L 355.00 -467.278 C 400 -470 550 -490 650 -506 Q 660 -508 750 -520.724" />
+      </g>
+      <!--<g id="boundary_solid" stroke="#3366ff" stroke-width="2" fill="none">
+    <path id="IhIc" d="M 168 -343 L 170 -160" stroke-width="2" stroke-dasharray="7,4"/>
+    <path id="Ih2" d="M 251.17 -416.101 L 238.45 -416.409 L 0 -413"/>
+    <path id="IcI11" d="M 72 -414 L 72 0"/>
+    <path id="I2I9" d="M 162 -415 Q 200 -428 0 -428"/>
+    <path id="I2I3" d="M 238.45 -416.409 L 248.85 -426.847"/>
+    <path id="I3I5" d="M 256.15 -427.210 L 248.85 -426.847 L 218.15 -440.00"/>
+
+    <path id="I2I6" d="M 272.99 -440.050 L 218.15 -440.00 L130 -440.00 L 0 -440"/>
+    <path id="I6I15" d="M 130 -440.00 L 130 -458.80"/>
+    <path id="I6I8" d="M 355.00 -467.278 L 278.15 -466.111 Q 200 -460 130 -458.80 L 0 -459"/>
+    <path id="I7I8" d="M 278.15 -466.111 Q 278 -530 100.15 -539.620"/>
+    <path id="I10I7" d="M 650 -540 L 100.15 -539.620 L 0 -540"/>
+    <path id="I11I10" d="M 650 -575 L 0 -580"/>
+   </g>-->
+      <g
+         id="text_point_1atm"
+         stroke="#ff0000"
+         fill="#ff0000"
+         font-size="14"
+         font-weight="bold">
+        <line
+           x1="0"
+           y1="-250.286"
+           x2="750"
+           y2="-250.286"
+           id="line118" />
+        <line
+           x1="273.15"
+           y1="0"
+           x2="273.15"
+           y2="-600"
+           id="line119" />
+        <line
+           x1="373.15"
+           y1="0"
+           x2="373.15"
+           y2="-600"
+           id="line120" />
+        <g
+           transform="translate(273.15,-250.286)"
+           text-anchor="end"
+           id="g121">
+          <ellipse
+             cx="0"
+             cy="0"
+             rx="5"
+             ry="5"
+             fill="none"
+             id="ellipse120" />
+          <switch
+             id="switch120">
+            <text
+               x="-10"
+               y="0"
+               dy="1em"
+               font-size="20"
+               letter-spacing="-1"
+               stroke="none"
+               systemLanguage="cs"
+               id="trsvg163"><tspan
+                 id="trsvg66">Bod tání při 1 atm</tspan></text>
+            <text
+               x="-10"
+               y="0"
+               dy="1em"
+               font-size="20"
+               letter-spacing="-1"
+               stroke="none"
+               systemLanguage="de"
+               id="trsvg164"><tspan
+                 id="trsvg67">Schmelzpunkt bei 1 atm</tspan></text>
+            <text
+               x="-10"
+               y="0"
+               dy="1em"
+               font-size="20"
+               letter-spacing="-1"
+               stroke="none"
+               systemLanguage="fr"
+               id="trsvg165"><tspan
+                 id="trsvg68">Point de fusion à 1 atm</tspan></text>
+            <text
+               x="-10"
+               y="0"
+               dy="1em"
+               font-size="20"
+               letter-spacing="-1"
+               stroke="none"
+               id="trsvg166-lij"
+               systemLanguage="lij"><tspan
+                 id="trsvg69-lij">Solidificaçión a 1 atm</tspan></text>
+            <text
+               x="-10"
+               y="0"
+               dy="1em"
+               font-size="20"
+               letter-spacing="-1"
+               stroke="none"
+               id="trsvg166-he"
+               systemLanguage="he"><tspan
+                 id="trsvg69-he">נקודת התכה בלחץ אטמוספרי</tspan></text>
+            <text
+               x="-10"
+               y="0"
+               dy="1em"
+               font-size="20"
+               letter-spacing="-1"
+               stroke="none"
+               id="trsvg166-ca"
+               systemLanguage="ca"><tspan
+                 id="trsvg69-ca">Punt de congelació a 1 atm</tspan></text>
+            <text
+               x="-10"
+               y="0"
+               dy="1em"
+               font-size="20"
+               letter-spacing="-1"
+               stroke="none"
+               id="trsvg166"><tspan
+                 id="trsvg69">Freezing point at 1 atm</tspan></text>
+          </switch>
+          <switch
+             id="switch121">
+            <text
+               x="-10"
+               y="0"
+               dy="3em"
+               stroke="none"
+               id="trsvg167-lij"
+               systemLanguage="lij"><tspan
+                 id="trsvg70-lij">273.15 K, 101.325 kPa</tspan></text>
+            <text
+               x="-10"
+               y="0"
+               dy="3em"
+               stroke="none"
+               id="trsvg167-he"
+               systemLanguage="he"><tspan
+                 id="trsvg70-he">273.15 K, 101.325 kPa</tspan></text>
+            <text
+               x="-10"
+               y="0"
+               dy="3em"
+               stroke="none"
+               id="trsvg167-ca"
+               systemLanguage="ca"><tspan
+                 id="trsvg70-ca">273,15 K, 101,325 kPa</tspan></text>
+            <text
+               x="-10"
+               y="0"
+               dy="3em"
+               stroke="none"
+               id="trsvg167"><tspan
+                 id="trsvg70">273.15 K, 101.325 kPa</tspan></text>
+          </switch>
+        </g>
+        <g
+           transform="translate(373.15,-250.286)"
+           text-anchor="start"
+           id="g123">
+          <ellipse
+             cx="0"
+             cy="0"
+             rx="5"
+             ry="5"
+             fill="none"
+             id="ellipse121" />
+          <switch
+             id="switch122">
+            <text
+               x="5"
+               y="0"
+               dy="1em"
+               font-size="20"
+               stroke="none"
+               systemLanguage="cs"
+               id="trsvg168"><tspan
+                 id="trsvg71">Bod varu při 1 atm</tspan></text>
+            <text
+               x="5"
+               y="0"
+               dy="1em"
+               font-size="20"
+               stroke="none"
+               systemLanguage="de"
+               id="trsvg169"><tspan
+                 id="trsvg72">Siedepunkt bei 1 atm</tspan></text>
+            <text
+               x="5"
+               y="0"
+               dy="1em"
+               font-size="20"
+               stroke="none"
+               systemLanguage="fr"
+               id="trsvg170"><tspan
+                 id="trsvg73">Point d'ébullition à 1 atm</tspan></text>
+            <text
+               x="5"
+               y="0"
+               dy="1em"
+               font-size="20"
+               stroke="none"
+               id="trsvg171-lij"
+               systemLanguage="lij"><tspan
+                 id="trsvg74-lij">Vaporizaçión a 1 atm</tspan></text>
+            <text
+               x="5"
+               y="0"
+               dy="1em"
+               font-size="20"
+               stroke="none"
+               id="trsvg171-he"
+               systemLanguage="he"><tspan
+                 id="trsvg74-he">נקודת רתיחה בלחץ אטמוספרי</tspan></text>
+            <text
+               x="5"
+               y="0"
+               dy="1em"
+               font-size="20"
+               stroke="none"
+               id="trsvg171-ca"
+               systemLanguage="ca"><tspan
+                 id="trsvg74-ca">Punt d'ebullició a 1 atm</tspan></text>
+            <text
+               x="5"
+               y="0"
+               dy="1em"
+               font-size="20"
+               stroke="none"
+               id="trsvg171"><tspan
+                 id="trsvg74">Boiling point at 1 atm</tspan></text>
+          </switch>
+          <switch
+             id="switch123">
+            <text
+               x="5"
+               y="0"
+               dy="3em"
+               stroke="none"
+               id="trsvg172-lij"
+               systemLanguage="lij"><tspan
+                 id="trsvg75-lij">373.15 K, 101.325 kPa</tspan></text>
+            <text
+               x="5"
+               y="0"
+               dy="3em"
+               stroke="none"
+               id="trsvg172-he"
+               systemLanguage="he"><tspan
+                 id="trsvg75-he">373.15 K, 101.325 kPa</tspan></text>
+            <text
+               x="5"
+               y="0"
+               dy="3em"
+               stroke="none"
+               id="trsvg172-ca"
+               systemLanguage="ca"><tspan
+                 id="trsvg75-ca">373,15 K, 101,325 kPa</tspan></text>
+            <text
+               x="5"
+               y="0"
+               dy="3em"
+               stroke="none"
+               id="trsvg172"><tspan
+                 id="trsvg75">373.15 K, 101.325 kPa</tspan></text>
+          </switch>
+        </g>
+        <!--
+    <g transform="translate(273.15,-250)">
+     <ellipse cx="0" cy="0" rx="3" ry="3" fill="none"/>
+     <text transform="translate(-5,0)" y="-3em" text-anchor="end" stroke="none">
+      <tspan x="0" dy="1em" font-size="16">IUPAC STP</tspan>
+      <tspan x="0" dy="1em">273.15 K, 100 kPa</tspan>
+     </text>
+    </g>
+    <g transform="translate(293.15,-250.286)">
+     <ellipse cx="0" cy="0" rx="3" ry="3" fill="none"/>
+     <text transform="translate(0,0)" y="-3em" text-anchor="start" stroke="none">
+      <tspan x="0" dy="1em" font-size="16">NIST STP</tspan>
+      <tspan x="0" dy="1em">293.15 K, 101.325 kPa</tspan>
+     </text>
+    </g>
+    -->
+      </g>
+      <g
+         id="text_point"
+         stroke="#000000"
+         fill="#000000"
+         font-size="14">
+        <g
+           transform="translate(647.00,-367.184)"
+           text-anchor="end"
+           font-weight="bold"
+           id="g125">
+          <ellipse
+             cx="0"
+             cy="0"
+             rx="5"
+             ry="5"
+             fill="none"
+             id="ellipse123" />
+          <switch
+             id="switch124">
+            <text
+               x="-10"
+               y="0"
+               dy="-1.2em"
+               font-size="20"
+               stroke="none"
+               systemLanguage="cs"
+               id="trsvg173"><tspan
+                 id="trsvg76">Kritický bod</tspan></text>
+            <text
+               x="-10"
+               y="0"
+               dy="-1.2em"
+               font-size="20"
+               stroke="none"
+               systemLanguage="de"
+               id="trsvg174"><tspan
+                 id="trsvg77">Kritischer Punkt</tspan></text>
+            <text
+               x="-10"
+               y="0"
+               dy="-1.2em"
+               font-size="20"
+               stroke="none"
+               systemLanguage="fr"
+               id="trsvg175"><tspan
+                 id="trsvg78">Point critique</tspan></text>
+            <text
+               x="-10"
+               y="0"
+               dy="-1.2em"
+               font-size="20"
+               stroke="none"
+               id="trsvg176-lij"
+               systemLanguage="lij"><tspan
+                 id="trsvg79-lij">Pónto crìtico</tspan></text>
+            <text
+               x="-10"
+               y="0"
+               dy="-1.2em"
+               font-size="20"
+               stroke="none"
+               id="trsvg176-he"
+               systemLanguage="he"><tspan
+                 id="trsvg79-he">נקודה קריטית</tspan></text>
+            <text
+               x="-10"
+               y="0"
+               dy="-1.2em"
+               font-size="20"
+               stroke="none"
+               id="trsvg176-ca"
+               systemLanguage="ca"><tspan
+                 id="trsvg79-ca">Punt crític</tspan></text>
+            <text
+               x="-10"
+               y="0"
+               dy="-1.2em"
+               font-size="20"
+               stroke="none"
+               id="trsvg176"><tspan
+                 id="trsvg79">Critical point</tspan></text>
+          </switch>
+          <switch
+             id="switch125">
+            <text
+               x="-10"
+               y="0"
+               dy="-0.5em"
+               stroke="none"
+               id="trsvg177-lij"
+               systemLanguage="lij"><tspan
+                 id="trsvg80-lij">647 K, 22.064 MPa</tspan></text>
+            <text
+               x="-10"
+               y="0"
+               dy="-0.5em"
+               stroke="none"
+               id="trsvg177-he"
+               systemLanguage="he"><tspan
+                 id="trsvg80-he">647 K, 22.064 MPa</tspan></text>
+            <text
+               x="-10"
+               y="0"
+               dy="-0.5em"
+               stroke="none"
+               id="trsvg177-ca"
+               systemLanguage="ca"><tspan
+                 id="trsvg80-ca">647 K, 22,064 MPa</tspan></text>
+            <text
+               x="-10"
+               y="0"
+               dy="-0.5em"
+               stroke="none"
+               id="trsvg177"><tspan
+                 id="trsvg80">647 K, 22.064 MPa</tspan></text>
+          </switch>
+        </g>
+        <g
+           transform="translate(273.16,-139.325)"
+           text-anchor="start"
+           font-weight="bold"
+           id="g127">
+          <ellipse
+             cx="0"
+             cy="0"
+             rx="5"
+             ry="5"
+             fill="none"
+             id="ellipse125" />
+          <switch
+             id="switch126">
+            <text
+               x="5"
+               y="0"
+               dy="1em"
+               font-size="20"
+               stroke="none"
+               systemLanguage="cs"
+               id="trsvg178"><tspan
+                 id="trsvg81">Trojný bod</tspan></text>
+            <text
+               x="5"
+               y="0"
+               dy="1em"
+               font-size="20"
+               stroke="none"
+               systemLanguage="de"
+               id="trsvg179"><tspan
+                 id="trsvg82">Tripelpunkt</tspan></text>
+            <text
+               x="5"
+               y="0"
+               dy="1em"
+               font-size="20"
+               stroke="none"
+               systemLanguage="fr"
+               id="trsvg180"><tspan
+                 id="trsvg83">Point triple</tspan></text>
+            <text
+               x="5"
+               y="0"
+               dy="1em"
+               font-size="20"
+               stroke="none"
+               id="trsvg181-lij"
+               systemLanguage="lij"><tspan
+                 id="trsvg84-lij">Pónto sòlido/lìquido/gàzzo</tspan></text>
+            <text
+               x="5"
+               y="0"
+               dy="1em"
+               font-size="20"
+               stroke="none"
+               id="trsvg181-he"
+               systemLanguage="he"><tspan
+                 id="trsvg84-he">מוצק/נוזל/גז נקודה משולשת</tspan></text>
+            <text
+               x="5"
+               y="0"
+               dy="1em"
+               font-size="20"
+               stroke="none"
+               id="trsvg181-ca"
+               systemLanguage="ca"><tspan
+                 id="trsvg84-ca">Punt triple sòlid/líquid/gas</tspan></text>
+            <text
+               x="5"
+               y="0"
+               dy="1em"
+               font-size="20"
+               stroke="none"
+               id="trsvg181"><tspan
+                 id="trsvg84">Solid/Liquid/Gas triple point</tspan></text>
+          </switch>
+          <switch
+             id="switch127">
+            <text
+               x="5"
+               y="0"
+               dy="2.5em"
+               stroke="none"
+               id="trsvg182-lij"
+               systemLanguage="lij"><tspan
+                 id="trsvg85-lij">273.16 K, 611.657 Pa</tspan></text>
+            <text
+               x="5"
+               y="0"
+               dy="2.5em"
+               stroke="none"
+               id="trsvg182-he"
+               systemLanguage="he"><tspan
+                 id="trsvg85-he">273.16 K, 611.657 Pa</tspan></text>
+            <text
+               x="5"
+               y="0"
+               dy="2.5em"
+               stroke="none"
+               id="trsvg182-ca"
+               systemLanguage="ca"><tspan
+                 id="trsvg85-ca">273,16 K, 611,657 Pa</tspan></text>
+            <text
+               x="5"
+               y="0"
+               dy="2.5em"
+               stroke="none"
+               id="trsvg182"><tspan
+                 id="trsvg85">273.16 K, 611.657 Pa</tspan></text>
+          </switch>
+        </g>
+        <!-- <g transform="translate(251.17,-416.101)">
+     <ellipse cx="0" cy="0" rx="3" ry="3" fill="none"/>
+     <text x="10" y="0.7em" text-anchor="start" stroke="none">251.165 K, 209.9 MPa</text>
+    </g>
+    <g transform="translate(256.15,-427.210)">
+     <ellipse cx="0" cy="0" rx="3" ry="3" fill="none"/>
+     <text x="10" y="0.5em" text-anchor="start" stroke="none">256.164 K, 350.1 MPa</text>
+    </g>
+    <g transform="translate(272.99,-440.050)">
+     <ellipse cx="0" cy="0" rx="3" ry="3" fill="none"/>
+     <text x="10" y="0.5em" text-anchor="start" stroke="none">272.99 K, 632.4 MPa</text>
+    </g>
+    <g transform="translate(355.00,-467.278)">
+     <ellipse cx="0" cy="0" rx="3" ry="3" fill="none"/>
+     <text x="5" y="1em" text-anchor="start" stroke="none">355.00 K, 2.216 GPa</text>
+    </g>
+    <g transform="translate(238.45,-416.409)">
+     <ellipse cx="0" cy="0" rx="3" ry="3" fill="none"/>
+     <text x="0" y="1em" text-anchor="end" stroke="none">238.5 K, 212.9 MPa</text>
+    </g>
+    <g transform="translate(248.85,-426.847)">
+     <ellipse cx="0" cy="0" rx="3" ry="3" fill="none"/>
+     <text x="-10" y="0.3em" text-anchor="end" stroke="none">248.85 K, 344.3 MPa</text>
+    </g>
+    <g transform="translate(218.15,-440.00)">
+     <ellipse cx="0" cy="0" rx="3" ry="3" fill="none"/>
+     <text x="20" y="-5" text-anchor="end" stroke="none">218 K, 620 MPa</text>
+    </g>
+    <g transform="translate(278.15,-466.111)">
+     <ellipse cx="0" cy="0" rx="3" ry="3" fill="none"/>
+     <text x="5" y="-5" text-anchor="start" stroke="none">278 K, 2.1 GPa</text>
+    </g>
+    <g transform="translate(100.15,-539.620)">
+     <ellipse cx="0" cy="0" rx="3" ry="3" fill="none"/>
+     <text x="5" y="-5" text-anchor="start" stroke="none">100 K, 62 GPa</text>
+    </g>
+   -->
+      </g>
+      <g
+         id="text_phase"
+         font-size="32"
+         text-anchor="middle">
+        <g
+           fill="#0000ff"
+           id="g128">
+          <switch
+             id="switch128">
+            <text
+               x="100"
+               y="-360"
+               font-weight="bold"
+               systemLanguage="cs"
+               id="trsvg183"><tspan
+                 id="trsvg86">Led</tspan></text>
+            <text
+               x="100"
+               y="-360"
+               font-weight="bold"
+               systemLanguage="de"
+               id="trsvg184"><tspan
+                 id="trsvg87">Eis</tspan></text>
+            <text
+               x="100"
+               y="-360"
+               font-weight="bold"
+               systemLanguage="fr"
+               id="trsvg185"><tspan
+                 id="trsvg88">Solide</tspan></text>
+            <text
+               x="90"
+               y="-360"
+               font-weight="bold"
+               id="trsvg186-lij"
+               systemLanguage="lij"><tspan
+                 id="trsvg89-lij">Sòlido</tspan></text>
+            <text
+               x="90"
+               y="-360"
+               font-weight="bold"
+               id="trsvg186-he"
+               systemLanguage="he"><tspan
+                 id="trsvg89-he">מוצק</tspan></text>
+            <text
+               x="90"
+               y="-360"
+               font-weight="bold"
+               id="trsvg186-ca"
+               systemLanguage="ca"><tspan
+                 id="trsvg89-ca">Sòlid</tspan></text>
+            <text
+               x="90"
+               y="-360"
+               font-weight="bold"
+               id="trsvg186"><tspan
+                 id="trsvg89">Solid</tspan></text>
+          </switch>
+          <!-- 
+       <text x="125" y="-260"><tspan>I</tspan><tspan dy="0.2em">c</tspan></text>
+       <text x="225" y="-260"><tspan>I</tspan><tspan dy="0.2em">h</tspan></text>
+       <text x="365" y="-580"><tspan>XI</tspan><tspan dy="-0.1em" font-size="16"> (hexagonal)</tspan></text>
+       <text x="325" y="-550">X</text>
+       <text x="325" y="-510">VII</text>
+       <text x="295" y="-450">VI</text>
+       <text x="37" y="-510">VIII</text>
+       <text x="37" y="-441">XV</text>
+       <text x="37" y="-414">IX</text>
+       <switch>
+        <text>
+         <tspan x="37" y="-260">XI</tspan>
+         <tspan x="37" dy="1.5em" font-size="16">(ortho-</tspan>
+         <tspan x="37" dy="1em" font-size="16">rhombic)</tspan>
+        </text>
+        <text systemLanguage="de">
+         <tspan x="37" y="-260">XI</tspan>
+         <tspan x="37" dy="1.5em" font-size="16">(ortho-</tspan>
+         <tspan x="37" dy="1em" font-size="16">rhomb.)</tspan>
+        </text>
+        <text systemLanguage="fr">
+            <tspan x="37" y="-260">XI</tspan>
+            <tspan x="37" dy="1.5em" font-size="16">(ortho-</tspan>
+            <tspan x="37" dy="1em" font-size="16">rhomb.)</tspan>
+          </text>
+       </switch>
+       <line x1="140" y1="-435" x2="140" y2="-473" stroke="#0099ff" stroke-width="2"/>
+       <ellipse cx="140" cy="-488" rx="15" ry="15" stroke="#0099ff" fill="#66ccff"/>
+       <text x="140" y="-480">II</text>
+       <line x1="245" y1="-435" x2="245" y2="-473" stroke="#0099ff" stroke-width="2"/>
+       <ellipse cx="245" cy="-488" rx="15" ry="15" stroke="#0099ff" fill="#66ccff"/>
+       <text x="245" y="-480">V</text>
+       <line x1="245" y1="-420" x2="245" y2="-382" stroke="#0099ff" stroke-width="2"/>
+       <ellipse cx="245" cy="-367" rx="15" ry="15" stroke="#0099ff" fill="#66ccff"/>
+       <text x="245" y="-360">III</text>
+     -->
+        </g>
+        <switch
+           id="switch129">
+          <text
+             x="400"
+             y="-360"
+             font-weight="bold"
+             fill="#009900"
+             systemLanguage="cs"
+             id="trsvg187"><tspan
+               id="trsvg90">Kapalná voda</tspan></text>
+          <text
+             x="400"
+             y="-360"
+             font-weight="bold"
+             fill="#009900"
+             systemLanguage="de"
+             id="trsvg188"><tspan
+               id="trsvg91">Wasser</tspan></text>
+          <text
+             x="400"
+             y="-360"
+             font-weight="bold"
+             fill="#009900"
+             systemLanguage="fr"
+             id="trsvg189"><tspan
+               id="trsvg92">Liquide</tspan></text>
+          <text
+             x="400"
+             y="-360"
+             font-weight="bold"
+             fill="#009900"
+             id="trsvg190-lij"
+             systemLanguage="lij"><tspan
+               id="trsvg93-lij">Lìquido</tspan></text>
+          <text
+             x="400"
+             y="-360"
+             font-weight="bold"
+             fill="#009900"
+             id="trsvg190-he"
+             systemLanguage="he"><tspan
+               id="trsvg93-he">נוזל</tspan></text>
+          <text
+             x="400"
+             y="-360"
+             font-weight="bold"
+             fill="#009900"
+             id="trsvg190-ca"
+             systemLanguage="ca"><tspan
+               id="trsvg93-ca">Líquid</tspan></text>
+          <text
+             x="400"
+             y="-360"
+             font-weight="bold"
+             fill="#009900"
+             id="trsvg190"><tspan
+               id="trsvg93">Liquid</tspan></text>
+        </switch>
+        <switch
+           id="switch130">
+          <text
+             x="500"
+             y="-70"
+             font-weight="bold"
+             fill="#996600"
+             systemLanguage="cs"
+             id="trsvg191"><tspan
+               id="trsvg94">Pára</tspan></text>
+          <text
+             x="500"
+             y="-70"
+             font-weight="bold"
+             fill="#996600"
+             systemLanguage="de"
+             id="trsvg192"><tspan
+               id="trsvg95">Dampf</tspan></text>
+          <text
+             x="500"
+             y="-70"
+             font-weight="bold"
+             fill="#996600"
+             systemLanguage="fr"
+             id="trsvg193"><tspan
+               id="trsvg96">Gaz</tspan></text>
+          <text
+             x="500"
+             y="-70"
+             font-weight="bold"
+             fill="#996600"
+             id="trsvg194-lij"
+             systemLanguage="lij"><tspan
+               id="trsvg97-lij">Gàzzo</tspan></text>
+          <text
+             x="500"
+             y="-70"
+             font-weight="bold"
+             fill="#996600"
+             id="trsvg194-he"
+             systemLanguage="he"><tspan
+               id="trsvg97-he">גז</tspan></text>
+          <text
+             x="500"
+             y="-70"
+             font-weight="bold"
+             fill="#996600"
+             id="trsvg194-ca"
+             systemLanguage="ca"><tspan
+               id="trsvg97-ca">Gas</tspan></text>
+          <text
+             x="500"
+             y="-70"
+             font-weight="bold"
+             fill="#996600"
+             id="trsvg194"><tspan
+               id="trsvg97">Gas</tspan></text>
+        </switch>
+      </g>
+    </g>
+    <marker
+       style="overflow:visible"
+       id="ArrowWideRounded"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Wide, rounded arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         style="fill:none;stroke:context-stroke;stroke-width:1;stroke-linecap:round"
+         d="M 3,-3 0,0 3,3"
+         transform="rotate(180,0.125,0)"
+         sodipodi:nodetypes="ccc"
+         id="path10" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="ArrowWideRounded-0"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Wide, rounded arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         style="fill:none;stroke:context-stroke;stroke-width:1;stroke-linecap:round"
+         d="M 3,-3 0,0 3,3"
+         transform="rotate(180,0.125,0)"
+         sodipodi:nodetypes="ccc"
+         id="path10-4" />
+    </marker>
+  </defs>
+  <use
+     xlink:href="#main"
+     id="use130" />
+  <g
+     inkscape:groupmode="layer"
+     id="layer1"
+     inkscape:label="Layer 1">
+    <path
+       style="opacity:1;fill:#000000;stroke:#000000;stroke-width:5;stroke-dasharray:none;stroke-opacity:1"
+       d="m 747.112,-467.56288 -232.84557,24.20981"
+       id="path2"
+       sodipodi:nodetypes="cc" />
+    <text
+       xml:space="preserve"
+       style="font-size:26.6667px;line-height:0;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;opacity:1;fill:#000000;stroke:#000000;stroke-width:0;stroke-dasharray:none;stroke-opacity:1"
+       x="644.31317"
+       y="-467.32147"
+       id="text10"><tspan
+         sodipodi:role="line"
+         id="tspan10"
+         x="644.31317"
+         y="-467.32147"
+         style="font-weight:bold;font-size:26.6667px">Case 1</tspan></text>
+    <path
+       style="opacity:1;fill:#000000;stroke:#000000;stroke-width:5;stroke-dasharray:none;stroke-opacity:1"
+       d="m 691.11661,-358.25577 -238.59989,23.31148"
+       id="path2-7"
+       sodipodi:nodetypes="cc" />
+    <text
+       xml:space="preserve"
+       style="font-size:26.6667px;line-height:0;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;opacity:1;fill:#000000;stroke:#000000;stroke-width:0;stroke-dasharray:none;stroke-opacity:1"
+       x="698.5"
+       y="-367.59201"
+       id="text10-3"><tspan
+         sodipodi:role="line"
+         id="tspan10-7"
+         x="698.5"
+         y="-367.59201"
+         style="font-weight:bold;font-size:26.6667px">Case 2</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:26.6667px;line-height:0;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;fill:#000000;stroke:#000000;stroke-width:0;stroke-dasharray:none;stroke-opacity:1"
+       x="503.91586"
+       y="-530.62732"
+       id="text10-3-7"><tspan
+         sodipodi:role="line"
+         id="tspan10-7-3"
+         x="503.91586"
+         y="-530.62732"
+         style="font-weight:normal;font-size:26.6667px">Condensation!</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:26.6667px;line-height:0;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;fill:#000000;stroke:#000000;stroke-width:0;stroke-dasharray:none;stroke-opacity:1"
+       x="113.07803"
+       y="-320.61755"
+       id="text10-3-7-0"><tspan
+         sodipodi:role="line"
+         id="tspan10-7-3-0"
+         x="117.76554"
+         y="-320.61755"
+         style="font-weight:normal;font-size:26.6667px">Stratosphere: </tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:21.3333px;line-height:0;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;fill:#000000;stroke:#000000;stroke-width:0;stroke-dasharray:none;stroke-opacity:1"
+       x="119.14021"
+       y="-288.09155"
+       id="text10-3-7-0-0"><tspan
+         sodipodi:role="line"
+         id="tspan10-7-3-0-5"
+         x="119.14021"
+         y="-288.09155"
+         style="font-weight:normal;font-size:21.3333px">Temperature stops</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:21.3333px;line-height:0;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;fill:#000000;stroke:#000000;stroke-width:0;stroke-dasharray:none;stroke-opacity:1"
+       x="139.53081"
+       y="-267.59158"
+       id="text10-3-7-0-0-7"><tspan
+         sodipodi:role="line"
+         id="tspan10-7-3-0-5-1"
+         x="139.53081"
+         y="-267.59158"
+         style="font-weight:normal;font-size:21.3333px">decreasing with height</tspan></text>
+    <path
+       style="opacity:1;fill:#000000;stroke:#000000;stroke-width:5;stroke-dasharray:none;stroke-opacity:1"
+       d="m 685.74441,-301.54902 -233.22769,25.55729"
+       id="path2-5"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="opacity:1;fill:#000000;stroke:#000000;stroke-width:5;stroke-dasharray:none;stroke-opacity:1"
+       d="m 455,-172.53724 0.067,-105.57417"
+       id="path2-5-1"
+       sodipodi:nodetypes="cc" />
+    <text
+       xml:space="preserve"
+       style="font-size:26.6667px;line-height:0;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;opacity:1;fill:#000000;stroke:#000000;stroke-width:0;stroke-dasharray:none;stroke-opacity:1"
+       x="583.16962"
+       y="-302.6832"
+       id="text10-0"><tspan
+         sodipodi:role="line"
+         id="tspan10-2"
+         x="583.16962"
+         y="-302.6832"
+         style="font-weight:bold;font-size:26.6667px">Case 3</tspan></text>
+    <path
+       style="fill:#000000;stroke:#ff0000;stroke-width:2;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#ArrowWideRounded)"
+       d="m 436.01038,-522.34177 135.80629,175.74174"
+       id="path2-8"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:#000000;stroke:#ff0000;stroke-width:2;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#ArrowWideRounded-0)"
+       d="m 169.43285,-315.38824 285.62187,56.63326"
+       id="path2-8-2"
+       sodipodi:nodetypes="cc" />
+  </g>
+</svg>

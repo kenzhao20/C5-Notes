@@ -1,0 +1,201 @@
+\documentclass[a4paper,11pt]{report}
+%\immediate\write18{mkdir -p tikz}
+\usepackage{cancel} %cross things out in equations
+\usepackage{wrapfig} %wrap text around figures
+\usepackage[most]{tcolorbox} %coloured boxes!
+%define some colourblind friendly colours
+  \definecolor{mylightblue}{RGB}{109,142,247}
+  \definecolor{mydarkblue}{RGB}{116,95,232}
+  \definecolor{mymagenta}{RGB}{202,58,126}
+  \definecolor{myorange}{RGB}{236,108,44}
+  \definecolor{myyellow}{RGB}{243,179,62}
+\tcbsetforeverylayer{shield externalize} %externalise the colorbox!
+%boxes for ideas
+\newtcbtheorem[auto counter,number within=part]{fact}%
+  {Key Idea}{fonttitle=\bfseries\upshape, fontupper=\slshape,
+     arc=0mm, colback=mylightblue!1!white,colframe=mydarkblue!70!black,enhanced jigsaw,breakable,pad at break*=1mm,}{theorem}
+%boxes for ideas
+\newtcbtheorem[auto counter,number within=part]{idea}%
+  {Idea}{fonttitle=\bfseries\upshape, fontupper=\slshape,
+     arc=0mm, colback=myorange!5!white,colframe=myorange!75!black}{theorem}
+%boxes for equations
+\newtcbox{\TEXTBOX}[1][1]{
+  nobeforeafter,
+  tcbox raise base,
+  colframe=mymagenta,
+  colback=myyellow!50!white,
+  top=1pt,
+  bottom=1pt,
+}
+\newtcbox{\BOX}[1][]{% tcolorbox manual 375
+  notitle, 
+  nophantom,
+  nobeforeafter,
+  math upper,
+  colframe=mymagenta, 
+  colback=myyellow!50!white,
+  #1,
+}
+%deal with footnotes in tcolorbox:
+\makeatletter
+% restore footnote internals to those in normal page, not minipage
+\def\tcb@restore@footnote{%
+  \def\@mpfn{footnote}%
+  \def\thempfn{\arabic{footnote}}%
+  \let\@footnotetext\tcb@footnote@collect
+}
+% collect footnote text
+\long\def\tcb@footnote@collect#1{%
+  % expand \@thefnmark before appending before app to \tcb@footnote@acc
+  \expandafter\gappto\expandafter\tcb@footnote@acc\expandafter{%
+    \expandafter\footnotetext\expandafter[\@thefnmark]{#1}%
+  }%
+}
+\def\tcb@footnote@use{%
+  \tcb@footnote@acc
+  \global\let\tcb@footnote@acc\@empty
+}
+\global\let\tcb@footnote@acc\@empty
+\tcbset{
+  % restore for every box
+  every box/.style={
+    before title pre=\tcb@restore@footnote, % just in case
+    before upper pre=\tcb@restore@footnote,
+    before lower pre=\tcb@restore@footnote,
+  },
+  % use for layer 1 boxes only
+  every box on layer 1/.append style={
+    % use \footnotetext befere the default /tcb/after ends the current paragraph
+    after pre=\tcb@footnote@use
+  }
+}
+\makeatother
+\usepackage{xr} %Cross references
+\usepackage{comment} %comment out sections
+\def\dbar{{\mathchar'26\mkern-12mu d}} %for the dQ
+\usepackage{tikz} %Drawings
+\usetikzlibrary{shapes.geometric,perspective,external,angles,quotes,patterns}
+\tikzexternalize[prefix=tikz/]
+%\usepackage{pgfplots}%see below
+%\pgfplotsset{compat=1.18}
+%\usepgfplotslibrary{fillbetween}%to fill between
+\usepackage{multicol} %Allows for multiple columns
+\setlength{\columnsep}{0.6cm} %Controls space between columns
+\usepackage{braket} %for bra ket notation
+\usepackage{svg} %for svg images
+\usepackage{siunitx} %for units
+\DeclareSIUnit \bar{bar} %declares bar as a unit
+\usepackage{enumitem} %for spacing between lists and i) format
+\setlist{nosep} %set spacing to 0 on lists
+\usepackage{amssymb} % for not greater than symbol
+\usepackage[font={footnotesize}]{subcaption} %subfiguresx
+\usepackage{setspace} %reduce space between bibliography using \setstretch
+%\usepackage[nodisplayskipstretch]{setspace} %Set spacing between equations to 0
+\usepackage[font={small}]{caption}%set caption font size
+\usepackage{graphicx} % Required for inserting images
+\usepackage{float} %Specify location of figure with [H]
+\usepackage{mathrsfs}  %special symbols
+\usepackage{xcolor} %Allows for colours in figures
+\usepackage{amsmath} %Formatting of equations
+\usepackage[margin=2cm,a4paper]{geometry} % decreases margins, sets paper size
+\usepackage[final]{hyperref} % adds hyper links inside the generated pdf file
+\hypersetup{
+    colorlinks,breaklinks,
+    %colorlinks=true,
+    %linkcolor=[RGB]{109,142,247},
+    linkcolor=[RGB]{116,95,232},
+    filecolor=blue,      
+    urlcolor=mymagenta,
+    citecolor=mydarkblue,
+    }
+\usepackage[sorting=none,backend=biber]{biblatex}
+%\usepackage[sorting=none,doi=false,isbn=false,url=false]{biblatex}
+%\usepackage[style=authoryear,
+%    sorting=nty,
+%    giveninits=true,
+%    natbib=true,
+%    maxbibnames=99,
+%    uniquename=init]{biblatex} %Imports biblatex package
+\AtBeginBibliography{\small}%set fontsize for references
+\usepackage{multirow} %multiple columns
+\setlength\bibitemsep{0.5\itemsep} %Change space between each reference
+\addbibresource{bibliography.bib}
+
+\definecolor{mag}{RGB}{202,58,126}
+\definecolor{or}{RGB}{236,108,44}
+\definecolor{yel}{RGB}{243,179,62}
+\definecolor{blu}{RGB}{116,95,232}
+\definecolor{lightblu}{RGB}{109,142,247}
+\definecolor{gree}{RGB}{70,156,118}
+
+\usepackage{titling}
+%\renewcommand\maketitlehooka{\null\mbox{}\vfill}%idk what these do
+%\renewcommand\maketitlehookd{\vfill\null}
+
+\title{C5: Physics of Atmospheres and Oceans Lecture Notes}
+\author{Authors}
+\date{Date of Last Update}
+
+\begin{document}
+
+\begin{titlingpage}
+\maketitle
+\end{titlingpage}
+
+\tableofcontents
+
+\newpage
+
+\begin{sloppypar}
+
+\section*{Introduction}
+
+These set of lecture notes for the C5: Atmospheres and Oceans options are based on the lectures delivered during the academic year 2024-2025. The lectures that year were delivered by 
+\href{https://users.physics.ox.ac.uk/~pierrehumbert/}{Raymond T. Pierrehumbert} 
+(for \hyperref[Thermodynamics]{Thermodynamics} and \hyperref[Radiative Transfer]{Radiative Transfer}), 
+\href{https://www.physics.ox.ac.uk/our-people/stier}{Philip Stier} 
+(for \hyperref[Clouds]{Clouds}), 
+\href{https://www.physics.ox.ac.uk/our-people/bowles}{Neil Bowles} 
+(for \hyperref[Instrumentation]{Instrumentation}), 
+\href{https://www.physics.ox.ac.uk/our-people/allenm}{Myles Allen} 
+(for \hyperlink{Climate Dynamics}{Climate Dynamics}), and \href{https://www.physics.ox.ac.uk/our-people/woollings}{Tim Woollings} 
+(for \hyperref[Geophysical Fluid Dynamics]{Geophysical Fluid Dynamics}).
+
+C5 is a massive course, and because it's very `applications'-focused, it doesn't feel as unified as some other options are. This document is the result of an attempt to compile a self-consistent and thorough set of lecture notes on the course. As such, these notes will be long: I will at many points prioritise rigour and detail over brevity, and will link to where you can look if you want more information. However, I will try to emphasise (using coloured boxes!) key ideas to make these notes more skimmable. Furthermore, there is a limit to how thorough I can be: because C5 is very applied, it will build on the results of a great many sub-fields, many of which take a whole lecture series themselves to explain.
+
+
+\begin{comment}
+  Despite the vast diversity in C5, there are a few common themes (which are by no means unique to C5) that pop up throughout the course. I'll try to flag them clearly so that the reader can hopefully experience some kind of continuity when studying this course.  I have in mind three key themes:
+  \begin{enumerate}
+      \item The Role of \textbf{Scales}: The atmospheres and oceans are complex systems consisting of various phenomena on multiple spatio-temporal scales. At times we will exploit this by either a) noting empirical facts regarding the spatio-temporal scale of a phenomenon, or b) specifying a spatio-temporal scale to focus on a phenomenon.
+      \item The Role of \textbf{Assumptions}: We'll make many assumptions throughout this course to simplify and solve the equations governing the phenomena under consideration. It's worth always keeping in mind the validity of this assumption, and why we make it. Sometimes, we make an assumptions simply for teaching purposes: real climate models numerically integrate this. Other times, the assumption. Sometimes assumptions are valid not simply due to luck but due to dynamical reasons that force it to be the case.
+      \item A 3rd theme idk lol:
+  \end{enumerate}
+\end{comment}
+
+In reading these notes, you should be aware of two sources of biases: those of the lecturers and those of the author(s).
+
+In the first case, it is not uncommon for lecturers gloss over material in lectures. For example, the 2024-2025 lectures did not feature scattering in \hyperref[Radiative Transfer]{Radiative Transfer}, and so I will not cover scattering in these lecture notes. Furthermore, some of what is covered is on the very frontiers of modern research. As such, it's not surprising that the lecturers will have certain beliefs that have not (yet?) made it into the scientific consensus.  
+
+The second case is far more problematic. First, the author is just not passionate about Instrumentation. That chapter will be empty. Sorry. If you know someone (or you yourself) would be interested in filling that in, please let me know! Second, in some cases I present material differently to how the lecturers present them in attempt to present material in a way I personally find less confusing and more physically intuitive. 
+
+Third, and most importantly, I can't claim to be an expert in the topic, and so will get things wrong! Please get in touch if you spot any errors or believe any section is written confusingly. I would much rather you contact me about an `error' that's actually correct than I miss an error!
+
+\include{Thermodynamics}
+
+\include{Radiative Transfer}
+
+\include{Clouds}
+
+\include{Instrumentation}
+
+\include{Climate Dynamics}
+
+\include{GFD}
+
+\chapter*{References}
+
+\printbibliography[heading=none]
+
+\end{sloppypar}
+\end{document}

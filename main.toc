@@ -1,0 +1,148 @@
+\contentsline {part}{I\hspace {1em}Thermodynamics}{6}{part.1}%
+\contentsline {chapter}{\numberline {1}Basic Thermodynamic Concepts}{8}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Definitions}{8}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Basic Thermodynamic Definitions}{8}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}Multiple Constituents}{8}{subsection.1.1.2}%
+\contentsline {subsubsection}{Atmospheric Composition: Planetary Examples}{9}{section*.5}%
+\contentsline {section}{\numberline {1.2}Ideal Gases}{9}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Single Constituent Atmosphere}{9}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Multiple Constituents in an Atmosphere and Dalton's Law}{10}{subsection.1.2.2}%
+\contentsline {section}{\numberline {1.3}Heat Capacity and the Equipartition Theorem}{11}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}"Excited" and "Frozen-out" Degrees of Freedom}{12}{subsection.1.3.1}%
+\contentsline {section}{\numberline {1.4}Hydrostatic Balance}{13}{section.1.4}%
+\contentsline {subsection}{\numberline {1.4.1}Example 1: Constant Density}{15}{subsection.1.4.1}%
+\contentsline {subsection}{\numberline {1.4.2}Example 2: Ideal Gas}{15}{subsection.1.4.2}%
+\contentsline {subsection}{\numberline {1.4.3}Example 3: Solid Rock Planet}{16}{subsection.1.4.3}%
+\contentsline {chapter}{\numberline {2}Dry Thermodynamics}{17}{chapter.2}%
+\contentsline {section}{\numberline {2.1}The Vertical Structure of Atmospheres}{17}{section.2.1}%
+\contentsline {section}{\numberline {2.2}The Dry Adiabat: Rising and Falling Parcels of Air}{18}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Derivation}{18}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Physical Interpretation}{19}{subsection.2.2.2}%
+\contentsline {section}{\numberline {2.3}Potential Temperature}{21}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Convection}{22}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Buoyancy}{22}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Convective Instability Criterion}{23}{subsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.4.3}Convective Stability Criterion with Potential Temperature}{24}{subsection.2.4.3}%
+\contentsline {subsection}{\numberline {2.4.4}CAPE, LFC, LNB}{25}{subsection.2.4.4}%
+\contentsline {subsection}{\numberline {2.4.5}Conservation of Enthalpy during Convection}{27}{subsection.2.4.5}%
+\contentsline {chapter}{\numberline {3}Moist Thermodynamics}{29}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Phase Transitions}{29}{section.3.1}%
+\contentsline {section}{\numberline {3.2}The Clausius-Clapeyron Relation}{30}{section.3.2}%
+\contentsline {section}{\numberline {3.3}The Moist Pseudo-Adiabat: Lifting Moist Parcels of Air}{31}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Limit I: Single Component Condensible Atmosphere}{31}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Limit II: Dilute Condensible}{32}{subsection.3.3.2}%
+\contentsline {subsubsection}{Derivation}{32}{section*.16}%
+\contentsline {subsubsection}{Physical Interpretation}{33}{section*.17}%
+\contentsline {subsubsection}{What Happens if $q<q_{sat}$?}{34}{section*.18}%
+\contentsline {subsection}{\numberline {3.3.3}Moist Convection}{34}{subsection.3.3.3}%
+\contentsline {part}{II\hspace {1em}Radiative Transfer}{35}{part.2}%
+\contentsline {chapter}{\numberline {4}Basic Radiation Concepts}{37}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Direction of Radiation: Rays and Solid Angle}{37}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Magnitude of Radiation: (Spectral) Radiance and (Spectral) Irradiance}{38}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Frequency, Wavelength, and Wavenumber}{40}{subsection.4.2.1}%
+\contentsline {section}{\numberline {4.3}Emission: Black Body Radiation}{40}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Emissivity and Kirchoff's Law}{42}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Calulating the Stellar Constant}{42}{subsection.4.3.2}%
+\contentsline {section}{\numberline {4.4}Absorption: Optical Thickness and Transmission Function}{43}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Example: Grey Atmosphere and Well Mixed Absorber}{45}{subsection.4.4.1}%
+\contentsline {chapter}{\numberline {5}Molecular Spectroscopy}{47}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Spectral Lines}{47}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Line Centre $\nu _c$}{48}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Line Strength $S$}{48}{subsection.5.1.2}%
+\contentsline {section}{\numberline {5.2}Broadening Mechanisms: Line Shape $F$ and Width $\delta $}{49}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Uncertainty Broadening}{49}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Doppler Broadening}{49}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.3}Collisional/Pressure Broadening: the Lorenz Line Shape}{50}{subsection.5.2.3}%
+\contentsline {section}{\numberline {5.3}Continuum Absorption}{50}{section.5.3}%
+\contentsline {chapter}{\numberline {6}Schwarzschild Equation}{51}{chapter.6}%
+\contentsline {section}{\numberline {6.1}The Equations of Motion}{51}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Angle Averaging: The Two-Stream Approximation}{51}{section.6.2}%
+\contentsline {section}{\numberline {6.3}General Solutions}{53}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Frequency Bands}{54}{section.6.4}%
+\contentsline {subsection}{\numberline {6.4.1}The Weak Line Limit}{54}{subsection.6.4.1}%
+\contentsline {subsection}{\numberline {6.4.2}The Strong Line Limit}{55}{subsection.6.4.2}%
+\contentsline {section}{\numberline {6.5}Radiative Forcing}{55}{section.6.5}%
+\contentsline {subsection}{\numberline {6.5.1}The Weak Line Limit}{55}{subsection.6.5.1}%
+\contentsline {subsection}{\numberline {6.5.2}The Strong Line Limit}{55}{subsection.6.5.2}%
+\contentsline {section}{\numberline {6.6}Grey Gases}{55}{section.6.6}%
+\contentsline {chapter}{\numberline {7}Radiative Equilibrium}{56}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Grey Gases, but in Radiative Equilibrium}{56}{section.7.1}%
+\contentsline {section}{\numberline {7.2}General Solution}{57}{section.7.2}%
+\contentsline {subsection}{\numberline {7.2.1}Derivation}{57}{subsection.7.2.1}%
+\contentsline {subsection}{\numberline {7.2.2}Interpretation}{58}{subsection.7.2.2}%
+\contentsline {subsection}{\numberline {7.2.3}Internal Leakage}{59}{subsection.7.2.3}%
+\contentsline {subsection}{\numberline {7.2.4}Shortwave absorbers}{59}{subsection.7.2.4}%
+\contentsline {part}{III\hspace {1em}Clouds}{60}{part.3}%
+\contentsline {chapter}{\numberline {8}Convection and Thermodynamics}{62}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Definitions of Humidity}{62}{section.8.1}%
+\contentsline {subsection}{\numberline {8.1.1}hi}{62}{subsection.8.1.1}%
+\contentsline {subsection}{\numberline {8.1.2}Clausius-Clapeyron Relation}{62}{subsection.8.1.2}%
+\contentsline {section}{\numberline {8.2}Convection and Tephigrams}{62}{section.8.2}%
+\contentsline {section}{\numberline {8.3}Radiative-Convective Equilibrium}{62}{section.8.3}%
+\contentsline {chapter}{\numberline {9}Warm Cloud Microphysics}{63}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Growth in Thermodynamic Equilibrium}{63}{section.9.1}%
+\contentsline {subsection}{\numberline {9.1.1}Homogenous Nucleation: The Kelvin Equation}{63}{subsection.9.1.1}%
+\contentsline {subsection}{\numberline {9.1.2}Homogenous Nucleation: The Raoult Equation}{64}{subsection.9.1.2}%
+\contentsline {subsection}{\numberline {9.1.3}The Köhler Equation}{65}{subsection.9.1.3}%
+\contentsline {section}{\numberline {9.2}Growth by Condensation}{65}{section.9.2}%
+\contentsline {subsection}{\numberline {9.2.1}Diffusion of Water Molecules}{65}{subsection.9.2.1}%
+\contentsline {subsection}{\numberline {9.2.2}Diffusion of Heat}{66}{subsection.9.2.2}%
+\contentsline {section}{\numberline {9.3}Growth by Collision/Collection/Coallescence}{66}{section.9.3}%
+\contentsline {subsection}{\numberline {9.3.1}Collision Processes}{66}{subsection.9.3.1}%
+\contentsline {chapter}{\numberline {10}Cold Cloud Microphysics}{67}{chapter.10}%
+\contentsline {chapter}{\numberline {11}Cloud Morphology, Radiation, and Climate}{68}{chapter.11}%
+\contentsline {part}{IV\hspace {1em}Instrumentation}{69}{part.4}%
+\contentsline {part}{V\hspace {1em}Climate Dynamics}{70}{part.5}%
+\contentsline {chapter}{\numberline {12}Dynamical Systems}{72}{chapter.12}%
+\contentsline {section}{\numberline {12.1}The Equations of Motion}{72}{section.12.1}%
+\contentsline {section}{\numberline {12.2}The Short and Long Timescale Approximations}{73}{section.12.2}%
+\contentsline {section}{\numberline {12.3}Solutions}{74}{section.12.3}%
+\contentsline {section}{\numberline {12.4}Analogous Systems}{74}{section.12.4}%
+\contentsline {chapter}{\numberline {13}Predictability}{76}{chapter.13}%
+\contentsline {section}{\numberline {13.1}The Linear Error Propagator}{76}{section.13.1}%
+\contentsline {section}{\numberline {13.2}Local Perturbation Growth}{77}{section.13.2}%
+\contentsline {chapter}{\numberline {14}Estimation}{78}{chapter.14}%
+\contentsline {section}{\numberline {14.1}The Pseudo-Inverse $\hat {K}$}{78}{section.14.1}%
+\contentsline {section}{\numberline {14.2}Errors}{78}{section.14.2}%
+\contentsline {section}{\numberline {14.3}Interpretation}{79}{section.14.3}%
+\contentsline {section}{\numberline {14.4}Examples}{79}{section.14.4}%
+\contentsline {part}{VI\hspace {1em}Geophysical Fluid Dynamics}{80}{part.6}%
+\contentsline {chapter}{\numberline {15}The Equations of Motion}{82}{chapter.15}%
+\contentsline {section}{\numberline {15.1}Why There Is Motion in the First Place}{82}{section.15.1}%
+\contentsline {section}{\numberline {15.2}What is Special About `Geophysical' Fluid Mechanics?}{83}{section.15.2}%
+\contentsline {section}{\numberline {15.3}A Quick Primer in Fluid Mechanics}{83}{section.15.3}%
+\contentsline {section}{\numberline {15.4}The Primitive Equations of Motion}{83}{section.15.4}%
+\contentsline {section}{\numberline {15.5}Simplifications}{84}{section.15.5}%
+\contentsline {subsection}{\numberline {15.5.1}Rotating Coordinate Systems}{84}{subsection.15.5.1}%
+\contentsline {subsection}{\numberline {15.5.2}Local Cartesian Coordinates}{85}{subsection.15.5.2}%
+\contentsline {subsection}{\numberline {15.5.3}Incompressibility}{86}{subsection.15.5.3}%
+\contentsline {subsection}{\numberline {15.5.4}Scale Analysis}{86}{subsection.15.5.4}%
+\contentsline {subsection}{\numberline {15.5.5}The Simplified Equations of Motion}{87}{subsection.15.5.5}%
+\contentsline {chapter}{\numberline {16}The Fundamental Diagnostic Relations}{88}{chapter.16}%
+\contentsline {section}{\numberline {16.1}Hydrostatic Balance (Approximate Vertical Momentum Balance)}{88}{section.16.1}%
+\contentsline {section}{\numberline {16.2}Geostrophic Balance (Approximate Horizontal Momentum Balance)}{89}{section.16.2}%
+\contentsline {subsection}{\numberline {16.2.1}Rossby Number and Non-Dimensionalisation}{89}{subsection.16.2.1}%
+\contentsline {subsection}{\numberline {16.2.2}Geostrophic Balance}{90}{subsection.16.2.2}%
+\contentsline {subsection}{\numberline {16.2.3}Cyclones and Anti-Cyclones}{90}{subsection.16.2.3}%
+\contentsline {subsection}{\numberline {16.2.4}Thermal Wind Balance}{90}{subsection.16.2.4}%
+\contentsline {section}{\numberline {16.3}Gradient-Wind Balance}{90}{section.16.3}%
+\contentsline {section}{\numberline {16.4}Pressure Coordinates}{90}{section.16.4}%
+\contentsline {chapter}{\numberline {17}The Shallow Water System: 2D System}{92}{chapter.17}%
+\contentsline {section}{\numberline {17.1}The Equations of Motion}{92}{section.17.1}%
+\contentsline {section}{\numberline {17.2}Energetics}{93}{section.17.2}%
+\contentsline {section}{\numberline {17.3}Potential Vorticity}{93}{section.17.3}%
+\contentsline {section}{\numberline {17.4}Waves}{93}{section.17.4}%
+\contentsline {subsection}{\numberline {17.4.1}A Quick Primer on Waves}{93}{subsection.17.4.1}%
+\contentsline {subsection}{\numberline {17.4.2}Poincaré Waves}{93}{subsection.17.4.2}%
+\contentsline {subsection}{\numberline {17.4.3}Kelvin Waves}{94}{subsection.17.4.3}%
+\contentsline {subsection}{\numberline {17.4.4}Rossby Waves}{94}{subsection.17.4.4}%
+\contentsline {chapter}{\numberline {18}3D Systems}{95}{chapter.18}%
+\contentsline {section}{\numberline {18.1}Gravity Waves}{95}{section.18.1}%
+\contentsline {subsection}{\numberline {18.1.1}The Boussinesq Approximation}{95}{subsection.18.1.1}%
+\contentsline {section}{\numberline {18.2}Quasi-Geostrophic Theory}{95}{section.18.2}%
+\contentsline {section}{\numberline {18.3}Quasi-Geostrophic Rossby Waves}{95}{section.18.3}%
+\contentsline {section}{\numberline {18.4}Instabilities and Geostrophic Turbulence}{95}{section.18.4}%
+\contentsline {chapter}{\numberline {19}Ocean Circulation}{96}{chapter.19}%
+\contentsline {section}{\numberline {19.1}Ekman Transport}{96}{section.19.1}%
+\contentsline {section}{\numberline {19.2}Sverdrup Balance}{96}{section.19.2}%
+\contentsline {section}{\numberline {19.3}Stommel Box Model}{96}{section.19.3}%

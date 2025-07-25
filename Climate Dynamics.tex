@@ -1,0 +1,311 @@
+\part{Climate Dynamics}\label{Climate Dynamics}
+
+\section*{Introduction}
+
+This section of the course was lectured by \href{https://www.physics.ox.ac.uk/our-people/allenm}{Myles Allen} covering a sort of miscellaneous set of topics.\vspace{5 mm}
+
+\noindent This section consists of three chapters:\vspace{5 mm}
+
+\begin{enumerate}
+    \item \hyperref[Dynamical Systems]{Dynamical Systems}: 
+        
+        \begin{quote}
+            Meow
+        \end{quote}
+
+    \item \hyperref[Predictability]{Predictability}: 
+    
+        \begin{quote}
+            Meow
+        \end{quote}
+    
+    \item \hyperref[Estimation]{Estimation}:
+        
+        \begin{quote}
+            Meow
+        \end{quote}
+\end{enumerate}
+
+\chapter{Dynamical Systems}\label{Dynamical Systems}
+
+\section{The Equations of Motion}
+
+We first consider the climate as a simple dynamical system, the simplest of which is a linear dynamical deterministic system.
+
+In reality, the climate is highly non-linear and stochastic. As such, we should consider this model as representing only small perturbations about some reference state. If one considers small enough perturbations, any (well-behaved) state will be linear (think: Taylor expansions). The state will, in general, be given by:
+
+\begin{equation}\label{Dynamical System Eqn}
+    \dot{\vec{x}}=\hat{J}\vec{x}+\vec{f}
+\end{equation}
+
+\noindent where $\vec{x}\in\mathbb{R}^n$ is the state-vector of the system, $\hat{J}\in\mathbb{R}^n\times\mathbb{R}^n$ is the linear(ised) Jacobian, and $\vec{f}\in\mathbb{R}^n$ is the external forcing. 
+
+We apply this first to an energy-budget equation for the climate, characterised by the state-vector $(T_s,T_d)$ representing perturbations of the mean atmospheric/surface-ocean temperature and deep ocean temperature, respectively, governed by the equations:
+\begin{align}
+    C_s \dot{T_s} &= F_{ext}(t)-\lambda T_s -\gamma (T_s-T_d) - \lambda'(T_s-T_d) \label{T_s} \\ 
+    C_d \dot{T_d} &= -\gamma (T_d-T_s)  \label{T_d}
+\end{align}
+
+\noindent where $C_s$, $C_d$ are the effective heat capacities of the atmosphere/surface oceans and deep oceans per unit area, respectively. The left-hand side represents the change in the energy (per unit area) and the right-hand side represents various energy fluxes (per unit area). The various terms are explained below:\newline
+
+\noindent\begin{tabular}{|p{2.8cm}|p{13.4cm}|}
+\hline
+    Term & Interpretation \\
+\hline
+\hline
+$F_{ext}(t)$ & The perturbation in external forcing due to albedo, aerosol, greenhouse gas, solar, etc. forcing.\\
+\hline
+$\lambda T_s$ & The additional energy radiated to space (per unit area) due to warming. If $\lambda T_s>0$ then \textit{more} energy is being radiated into space, which typically results in cooling. $\lambda$ is the \textit{climate sensitivity parameter}. \\ 
+\hline
+$-\gamma (T_s-T_d)$ & The energy flux from the atmosphere/surface oceans \textit{into} the deep oceans. This is typically small, due to the fact that the oceans are very stably stratified. As such, mixing/convection is severely inhibited, and surface waters can only penetrate into the deep oceans at a select few areas (cf. Sec.\ref{MOC}).\\
+\hline
+$- \lambda'(T_s-T_d)$ & The additional energy radiated into space due to the system being out of equilibrium. We have reason to believe (empirically, due to climate models) that this occurs. We encode this crudely by letting $(T_s-T_d)$ represent the degree to which the climate is out of equilibrium.\\
+
+\hline
+
+\end{tabular}\newline
+
+Note that if we add Equations \ref{T_s} and \ref{T_d}, we do not get $0$ on the right hand side: the climate is not an isolated system. There is a net energy flux from $F_{ext}$, $-\lambda T_s$, and $-\lambda ' (T_s-T_d)$.
+
+\section{The Short and Long Timescale Approximations}
+
+Typically, $C_s\ll C_d$, representing the massive heat capacity of the deep oceans compared to the atmosphere and land. This leads to a separation of timescales: $T_s$ evolves much faster than $T_d$, allowing us to make two approximations.\footnote{A full rigorous treatment requires non-dimensionalising the equations, but we believe this is ultimately not needed for physical intuition in this case.}
+
+The first approximation we make is valid on \textit{short} time-scales. The terms on the right hand side of equation \ref{T_d} are of order one, and thus $C_d\dot T_d$ is also of order one. However, since $C_d$ is massive, $\dot T_d$ is very small, and so we let $\dot T_d\approx0$ and integrate to find that $T_d(t)=0$ for all times. Physically, this represents the fact that $T_d$ does not respond on very short timescales due to the massive heat capacity $C_d$. Equations \ref{T_s} and \ref{T_d} thus reduce to:
+
+\begin{align}
+    C_s\dot T_s & =F_{ext}(t)-(\lambda +\gamma+ \lambda')T_s \label{T_s short} \\ 
+    C_d \dot{T_d} &= 0  \label{T_d short}
+\end{align}
+
+\noindent on short timescales. We can integrate Equation \ref{T_s short} using an integrating factor, with the general solution in Section \ref{Dynamical Systems Solutions}. The timescale is set by comparing the $T_s$ term to the $\dot T_s$ term: $\tau_s\sim \frac{C_s}{\lambda+\lambda'+\gamma}$. Thus on an $O(\tau_s)$ timescale, $T_s$ equilibrates and $T_d$ remains constant (at $0$). 
+
+The second approximation we make is valid on \textit{long} time-scales. On this timescale, $T_s$ is \textit{quasi-steady}: $T_s$ evolves rapidly into equilibrium with $T_d$, and so we set $\dot T_s=0$ in Equation \ref{T_s}. Equations \ref{T_s} and \ref{T_d} thus reduce to:
+\begin{align}
+    0 & = F_{ext}(t)-\lambda T_s -\gamma (T_s-T_d) - \lambda'(T_s-T_d) \label{T_s long} \\ 
+    C_d \dot{T_d} &= -\gamma (T_d-T_s) \label{T_d long}
+\end{align}
+
+\noindent on long timescales. We now solve for $T_s(t)$ in terms of $T_d(t)$ and substitute $T_s(t)$ into Equation \ref{T_d}. Solving Equation \ref{T_s long} gives $T_s(t)=\frac{1}{\lambda+\gamma+\lambda'}\left(F_{ext}(t)+(\gamma+\lambda ')T_d(t)\right)$. Substituting this into \ref{T_d long} gives the following ODE governing $T_d$:
+
+\begin{align}
+    C_d \dot{T_d} &= \frac{\gamma}{\lambda+\gamma+\lambda'}F_{ext}(t) - \frac{\gamma\lambda}{\lambda+\gamma+\lambda'}T_d\label{T_d long T_s} 
+\end{align}
+
+\noindent on long timescales. The timescale is set again by comparing the $T_d$ term to the $\dot{T_d}$ term: $\tau_d\sim \frac{C_d(\lambda+\gamma+\lambda')}{\gamma\lambda}$.
+
+We can now say, in retrospect, that the short timescale approximation (Eqns. \ref{T_s short} and \ref{T_d short}) is valid on timescales much shorter than $\tau_d$, the long timescale approximation (Eqns. \ref{T_s long} and \ref{T_d long}) is valid on timescales much longer than $\tau_s$, and that we require $\tau_d\gg \tau_s$. This is satisfied if $\frac{C_d(\lambda+\gamma+\lambda')}{\gamma\lambda}\gg\frac{C_s}{\lambda+\lambda'+\gamma}$, which is indeed satisfied if $\gamma,\lambda,\lambda'$ are of similar size (which they are) and $C_d\gg C_s$, as originally assumed.
+
+Note the nuance in these two approximations, where we confusingly seem to set the time derivatives to $0$ in both cases. In the first case, we set $\dot T_d=0$ because the timescales are too \textit{short}, and $T_d$ essentially does not react on this timescale. In the second case, we set $\dot T_s=0$ because the timescales are too \textit{long}. The timescales are so long that we assume that $\dot T_s$ rapidly equilibrates such that at each time, it is always in equilibrium, and thus $\dot T_s=0$
+
+In the lectures and notebooks, Myles derives equivalent results by finding the eigenvalues and eigenvectors of the dynamical system, then letting $C_s\ll C_d$. That is a more general method, but the author believes that the way presented here brings more physical intuition (and has Prof. Ian Hewitt from the Maths department to thank for this way of thinking).
+
+\begin{fact}{Timescale Approximations}{timescale box}\label{timescale box}
+    Suppose we have a coupled set of ODEs 
+\end{fact}
+
+\section{Solutions}\label{Dynamical Systems Solutions}
+
+We thus get two different responses for an arbitrary external forcing (assuming $T_s(0)=T_d(0)=0$):\vspace{5 mm}
+
+\noindent On short timescales (we define $\tau_s\equiv\frac{C_s}{\lambda+\lambda'+\gamma}$): 
+
+\begin{align}
+    T_s(t) & \approx \frac{1}{C_s}\int_0^tF_{ext}(\hat{t}) e^{-\frac{t+\hat{t}}{\tau_s}}d\hat{t} \label{T_s short soln} \\ 
+    T_d(t)& \approx 0 \label{T_d short soln}
+\end{align}
+
+\noindent On long timescales (we define $\tau_d\equiv\frac{C_d(\lambda+\lambda'+\gamma)}{\gamma\lambda}$):
+
+\begin{align}
+    T_s(t) & \approx \frac{1}{\lambda+\gamma+\lambda'}\left(F_{ext}(t)+(\gamma+\lambda ')T_d(t)\right) \\ 
+    T_d(t) & \approx \frac{\gamma}{C_d(\lambda+\gamma+\lambda')}\int_0^tF_{ext}(\hat{t}) e^{-\frac{t+\hat{t}}{\tau_d}}d\hat{t}  \label{T_d long step soln}
+\end{align}
+
+Suppose $F_{ext}(t)$ is a step-function, representing, for example, an instantaneous emission of CO$_2$ which remains in the atmosphere indefinitely.
+
+The solutions are as follows: 
+
+\begin{align}
+    T_s(t) & \approx \frac{1}{C_s}\int_0^tF_{ext}(\hat{t}) e^{-\frac{t+\hat{t}}{\tau_s}}d\hat{t}  \\ 
+    T_d(t)& \approx 0 
+\end{align}
+
+\noindent On long timescales, we define $\tau_d\equiv\frac{C_d(\lambda+\lambda'+\gamma)}{\gamma\lambda}$:
+
+\begin{align}
+    T_s(t) & \approx \frac{1}{\lambda+\gamma+\lambda'}\left(F_{ext}(t)+(\gamma+\lambda ')T_d(t)\right) \\ 
+    T_d(t) & \approx \frac{\gamma}{C_d(\lambda+\gamma+\lambda')}\int_0^tF_{ext}(\hat{t}) e^{-\frac{t+\hat{t}}{\tau_d}}d\hat{t}  \label{T_d long soln}
+\end{align}
+
+\section{Analogous Systems}
+
+We can apply this to similar systems. Consider, for example, a carbon budget equation, given by:
+
+\begin{align}
+    R_a \dot{C_a} &= E(t)-r (C_a-C_b) \\ 
+    R_b \dot{C_b} &= r (C_a-C_b) - s (C_b-C_d)\\
+    R_d \dot{C_d} &=  s (C_b-C_d)
+\end{align}
+
+\noindent where $C_a,C_b,C_d$ are the effective CO$_2$ anomalies in the atmosphere, biosphere/surface-ocean, and deep ocean, respectively. The left hand side is the change in CO$_2$ concentrations, and the right hand side are carbon fluxes. It's typically the case that $R_d\gg R_b\gg R_a$ due to similar reasons as before, as well as a bit of ocean chemistry. We can use the exact same method as before to define three timescales:
+
+\begin{enumerate}
+    \item A short timescale ($t_a\sim\mathcal{O}\left(\frac{R_a}{r}\right)$):  We set $C_b\approx C_d\approx 0$, as $C_b,C_d$ respond very slowly. $C_a$ evolves according to $R_a \dot{C_a} = E(t)-r C_a$.
+    \item A medium timescale ($t_b\sim\mathcal{O}\left(\frac{R_b}{s}\right)$): We set $C_d \approx 0$ since $C_d$ responds very slowly, and we set $\dot{C_a} \approx 0$ as $C_a$ evolves rapidly into equilibrium with $C_b$. We then get that $C_a(t)$ evolves quasi-steadily ($C_a(t)\approx C_b(t)+\frac{E(t)}{r}$) and $C_b$ evolves according to $R_b \dot{C_b}=E(t)-sC_b$.
+    \item A long timescale ($t_d\gg\mathcal{O}\left(\frac{R_b}{s}\right)$): We set $\dot{C_a}\approx \dot{C_b} \approx 0$ since $C_a,C_b$ evolve rapidly into equilibrium with $C_d$. We then get that $C_a(t)$ and $C_b(t)$ evolve quasi-steadily ($C_a(t)\approx C_b(t)+\frac{E(t)}{r}$ and $C_b(t)\approx C_d(t) +\frac{E(t)}{s}$), and $C_d$ evolves according to $R_d \dot{C_d}=E(t)$. Note that it is difficult to define a timescale here as we cannot simply compare $C_d$ to $\dot{C_d}$. My best attempt is the following timescale: $t_d\sim\mathcal{O}\left(\frac{R_d [C_d]}{[E]}\right)$ where $[C_d],[E]$ are typical scales for $C_d(t)$ and $E(t)$.
+\end{enumerate}
+
+\noindent This system, again, may be solved by finding eigenvalues and eigenvectors. 
+
+\chapter{Predictability}\label{Predictability}
+
+\section{The Linear Error Propagator}
+
+We continue considering a linear dynamical system here, for example, a weather system. Consider a state characterised by some state-vector $\vec{x}\in\mathbb{R}^n$ (perhaps encoding the pressure, temperature, humidity, and velocity at each point in space\footnote{In reality, of course, such a state-vector would be infinite-dimensional, as the temperature (for example) is a function of position $T(\vec{r},t)$, which is continuous. However, all numerical models must discretise space (i.e., divide space into 'boxes'), reducing $\vec{x}$ to a very large but finite dimensional vector.}), whose time-evolution (or perhaps, linearised time-evolution) is given by:
+\begin{align}\label{Jac}
+    \dot{\vec{x}} = \hat{J}\vec{x}
+\end{align}
+
+\noindent where $\hat{J}\in\mathbb{R}^n\times\mathbb{R}^n$ is the Jacobian given by:
+
+$$ {\hat{J}}  =  \left( \begin{array}{ccc}
+  \frac{\partial \dot{x}_1}{\partial x_1} & \frac{\partial \dot{x}_1}{\partial x_2} & \cdots \\
+  \frac{\partial \dot{x}_2}{\partial x_1} & \frac{\partial \dot{x}_2}{\partial x_2} & \cdots \\
+  \vdots & \vdots & \vdots \\
+ \end{array} \right)
+\label{eq:Jdefmat}
+$$
+
+Given that $\vec{x}$ has $n$-dimensions, we require $n$ initial conditions given by $\vec{x}(t=t_0)$ to integrate this ODE. This will typically achieved via data assimilation, but all that needs to be known at this point is that we cannot know the initial conditions to a sufficient precision, because the system is chaotic.
+
+Therefore, we aim to find how errors in the initial conditions propagate and evolve. Suppose that the actual state of the system is given by $\vec{y}(t)$ and our prediction is given by $\vec{x}(t)$. We assume $\vec{y}$ time-evolves by Equation \ref{Jac}.\footnote{This amounts to the assumption that our model is perfect, i.e., there is no model error. This is, of course, false, so this method is only applicable to dealing with errors arising from errors in initial conditions.} We define some initial error or perturbation\footnote{We use error and perturbation interchangeably in this chapter} $\vec{\delta x}(t)$ such that, at all times, the following holds:
+\begin{align}
+    \vec{y}(t)=\vec{x}(t)+\vec{\delta x}(t)
+\end{align}
+
+At time $t=t_0$ then, our initial error is $\vec{\delta x}(t=t_0)$. We wish to find how this error evolves as we integrate the system forwards.
+
+We know that
+\begin{align*}
+    \vec{y}(t_0+\delta t) & = \vec{y}(t_0) + \int_{t_0}^{t_0+\delta t} \hat{J} \vec{y}(t') dt'\\
+    & = \vec{x}(t_0) + \vec{\delta x}(t_0)+ \int_{t_0}^{t_0+\delta t} \hat{J} (\vec{x}(t') + \vec{\delta x}(t')) dt'\\
+    & = \vec{x}(t_0) + \int_{t_0}^{t_0+\delta t} \hat{J} \vec{x}(t') dt'+ \vec{\delta x}(t_0)+ \int_{t_0}^{t_0+\delta t} \hat{J} \vec{\delta x}(t') dt'\\
+    & = \vec{x}(t_0+\delta t) + \vec{\delta x}(t_0+\delta t)
+\end{align*}
+where we have used the definition of $\vec{\delta x}(t)$ and the fact that $\hat{J}$ is a linear(ised) operator. Therefore, 
+\begin{align*}
+    \vec{\delta x}(t_0+\delta t) & = \vec{\delta x}(t_0)+ \int_{t_0}^{t_0+\delta t} \hat{J} \vec{\delta x}(t') dt'\\
+    & \approx \vec{\delta x}(t_0)+ \hat{J} \delta t\vec{\delta x}(t_0)\\
+    & = (\mathbb{I} + \hat{J}\delta t)\vec{\delta x}(t_0)\\
+\end{align*}
+Where we have used the fact that $\delta t$ is small. We define the linear error propagator $\hat{A}$ as:
+
+\begin{align}
+    & \boxed{\hat{A} = (\mathbb{I} + \hat{J}\delta t)}\\
+    & \boxed{\vec{\delta x}(t_0+\delta t)\approx\hat{A}\vec{\delta x}(t_0)} \label{dx}
+\end{align}
+
+\section{Local Perturbation Growth}
+
+Suppose we want to find which initial errors will grow the most.\footnote{This may because we want to run an ensemble weather forecast: instead of integrating from a single initial condition, we will integrate our weather model from multiple initial conditions compatible with the observations. Generally, the final states will be different from each other, and their clustering will indicate how predictable the current state is, or whether there are any low probability high impact weather events. However, we want to prudently choose which initial conditions we integrate from, given our limited computing resources, which is why we want to find which initial errors will grow the most.}
+This amounts to trying to trying to maximise $||\vec{\delta x}(t_0+\delta t)||$ with respect to $\vec{\delta x}(t_0)$. This can't be the whole story though, since $\vec{\delta x}(t_0+\delta t)$ is a linear function of $\vec{\delta x}(t_0)$ (Equation \ref{dx}), so we can maximise $\vec{\delta x}(t_0+\delta t)$ simply by letting $\vec{\delta x}(t_0)\to\infty$. More precisely, then, we want to find the \textit{direction} of $\vec{\delta x}(t_0)$ which maximises $||\vec{\delta x}(t_0+\delta t)||$. We can do this by introducing a constraint on the magnitude of the initial error (i.e., enforce $||\vec{\delta x}(t_0)||-C=0,C\in\mathbb{R}$)\footnote{Myles sets $C=1$, but $C$ can actually just be any number.} and maximising $||\vec{\delta x}(t_0+\delta t)||$ using Lagrange multipliers. So we introduce the Lagrange multiplier $\lambda$ and maximise our Lagrangian $\mathscr{L}$.
+
+\begin{align}
+    \mathscr{L}=||\vec{\delta x}(t_0+\delta t)||^2-\lambda(||\vec{\delta x}(t_0)||^2-C^2)
+\end{align}
+
+\noindent Substituting in Equation \ref{dx} and differentiating with respect to $\vec{\delta x}(t_0)$, we find that:
+
+\begin{align*}
+    \frac{\partial\mathscr{L}}{\partial\vec{\delta x
+    }(t_0)}&=2(\hat{A}^T\hat{A}\vec{\delta x}(t_0)-\lambda\vec{\delta x}(t_0))\\
+    &=0
+\end{align*}
+
+\noindent if and only if:
+
+\begin{align*}
+    \hat{A}^T\hat{A}\vec{\delta x}(t_0)=\lambda\vec{\delta x}(t_0)
+\end{align*}
+
+So the final error is maximised when the initial error is the largest eigenvector of $\hat{A}^T\hat{A}$\footnote{This is deduced by considering the Hessian - the matrix of second partial derivatives. It can be shown, analogous to the 1D case, that the stationary point is a maximiser only if the Hessian is negative semidefinite (i.e., each eigenvalue $\leq0$). In this case, the hessian is the matrix $\hat{A}^T\hat{A}-\lambda\mathbb{I}$, which is clearly only negative semidefinite if $\lambda\geq$ the largest eigenvalue of $\hat{A}^T\hat{A}$.}. Note that $\hat{A}^T\hat{A}$ is symmetric, so eigenvectors will be orthogonal and eigenvalues will be real. 
+
+\chapter{Estimation}\label{Estimation}
+
+\section{The Pseudo-Inverse \texorpdfstring{$\hat{K}$}{K-hat}}
+
+Suppose we take $n$ measurements, which we encode in some matrix $\vec{y}\in\mathbb{R}^m$, with some random error $\vec{\epsilon}\in\mathbb{R}^m$, in order to estimate some values $\vec{x}\in\mathbb{R}^n$ where $n<m$. The measurements $\vec{y}$ are some (known) function of $\vec{x}$ like so: $\vec{y}=f(\vec{x})+\vec{\epsilon}$ where $f:\mathbb{R}^n\to\mathbb{R}^m$.
+
+In some cases, $f$ is linear, and we can represent $f(\vec{x})=\hat{H}\vec{x}$ where $\hat{H}\in\mathbb{R}^m\times\mathbb{R}^n$ (i.e., $\hat{H}$ is an $m\times n$ matrix). We know $\vec{y}$, but we wish to estimate $\vec{x}$. Since $m<n$, the system is overdetermined: we cannot simply invert $\hat{H}$ and solve for $\vec{x}$, which is exacerbated by the error $\vec{\epsilon}$.
+
+Instead, we we apply linear regression, and minimise the squared difference between the actual (error-prone) measurements $\vec{y}$ and the predicted measurements $\vec{\hat{y}}=\hat{H}\vec{x}$, where $\vec{\hat{x}}\in\mathbb{R}^m$ is our estimate of $\vec{x}$. (We denote our prediction/estimates by hats and the real values without hats).
+
+One can differentiate $||\vec{y}-\vec{\hat{y}}||^2=||\vec{y}-\hat{H}\vec{\hat{x}}||^2$ with respect to $\vec{\hat{x}}$ (since everything is smooth) and churn through some algebra to obtain the least-squares estimator.
+\begin{align}
+    \vec{\hat{x}}& =\hat{K}\vec{y} \\
+    & = (\hat{H}^T\hat{H})^{-1}\hat{H}^T\vec{y}
+\end{align}
+
+\noindent where the pseudo-inverse $\hat{K}$ of $\hat{H}$ is:
+
+\begin{align}
+    \boxed{\hat{K}= (\hat{H}^T\hat{H})^{-1}\hat{H}^T}
+\end{align}
+
+We call $\hat{K}$ the pseudo-inverse of $\hat{H}$ because $\hat{K}\hat{H}=\mathbb{I}$ (but note that generally $\hat{H}\hat{K}\neq\mathbb{I}$). In practice in exams, you will probably have to do this quickly on your calculator. The strategy is as follows: 
+
+\begin{enumerate}
+    \item Rearrange the system into a linear system as follows:
+\begin{align*}
+    \vec{y}=\hat{H}\vec{x}
+\end{align*}
+    \item Enter the matrix $\hat{H}$ into your calculator, and calculate the pseudo-inverse $\hat{K}= (\hat{H}^T\hat{H})^{-1}\hat{H}^T$. 
+    \item Yeet the $\hat{H}$ onto the observations $\vec{y}$ (which you should be given), i.e., estimate $\vec{x}$ as $\vec{\hat{x}}=\hat{K}\vec{y}_0$.
+    \item Watch the examiners award you The Gibbs Prize for Performance in the MPhys examination (£500).
+    \item Donate those £500 (and maybe the prize as well) to the author(s) of these lecture notes.
+\end{enumerate}
+
+\section{Errors}
+
+We assume, for simplicity, that there are negligible errors on the parameters within the operator $\hat{H}$. We assume only that there are some errors $\vec{\epsilon}$ on the observations $\vec{y}_0$. We assume that the errors are given by some well defined $n\times n$ covariance matrix $\hat{S}$:
+
+\begin{align*}
+    \braket{\vec{\epsilon}\,\vec{\epsilon}\,^T}=\hat{S}\\
+    [\hat{S}]_{ij}=[\vec{\epsilon}]_i[\vec{\epsilon}]_j
+\end{align*}
+
+\noindent We also assume that the average of the noise is $0$:
+
+\begin{align*}
+    \braket{\vec{\epsilon}}=0
+\end{align*}
+
+\noindent This allows us to show that, on average:
+
+\begin{align*}
+    \braket{\vec{\hat{x}}}&=\braket{\hat{K}\,\vec{y}}
+    \\
+    &=\braket{\hat{K}\,(\hat{H}\,\vec{x}+\vec{\epsilon})}
+    \\
+    &=\braket{\vec{x}}
+    \\
+    \\
+    Var\left(\vec{\hat{x}}\right)&
+    =\braket{(\vec{x}-\vec{\hat{x}})(\vec{x}-\vec{\hat{x}})^T}
+    \\
+    &=\braket{(\vec{x}-\hat{K}\,\vec{y})(\vec{x}-\hat{K}\,\vec{y})^T}
+    \\
+    &
+    =\braket{(\vec{x}-\hat{K}\,(\hat{H}\,\vec{x}+\vec{\epsilon}))(\vec{x}-(\hat{H}\,\vec{x}+\vec{\epsilon}))^T}
+    \\
+    &=\braket{\hat{K}\,\vec{\epsilon}\,\vec{\epsilon}\,^T\hat{K}^T}
+    \\
+    &=\hat{K}\hat{S}\hat{K}^T
+\end{align*}
+
+In other words, the mean of our estimation is the real value, and the covariance of our estimation is the covariance of 
+
+\section{Interpretation}
+
+\section{Examples}
