@@ -1,8 +1,8 @@
-PWD /Users/kenzhao/Desktop/C5 Figures
+PWD /Users/kenzhao/Documents/GitHub/C5-Notes
 INPUT /usr/local/texlive/2025/texmf.cnf
 INPUT /usr/local/texlive/2025/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT /Users/kenzhao/Desktop/C5 Figures/main.tex
+INPUT /Users/kenzhao/Documents/GitHub/C5-Notes/main.tex
 OUTPUT main.log
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/base/report.cls
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/base/report.cls

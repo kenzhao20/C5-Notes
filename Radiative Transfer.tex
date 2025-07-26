@@ -574,9 +574,9 @@ One can show, but we won't show it here, that the following relation holds:
 \begin{align*}
     Var(\hat{E})\,\tau=h/2
 \end{align*}
-where $Var(\hat{E})$ is the variance of the energy of the system, $\tau$ is the expected lifetime of the system, and $h$ is Planck's constant. To be perfectly honest, I do not fully understand how this equation arises, and what relation this bears to the Heisenberg Uncertainty Relation other than a superficial resemblance.\footnote{The Heisenberg Uncertainty Relation relates the variance in momentum and position of any quantum system. Despite what I see as a superficial resemblance, I will be using the name `Uncertainty Broadening' because that's what it's called in C5 and I don't want to confuse you. If I could choose though, I'd probably call it `Meta-Stable Broadening' (my dodgy coining) or `Natural Broadening' (an actual name sometimes used).}
+where $Var(\hat{E})$ is the variance of the energy of the system, $\tau$ is the expected lifetime of the system, and $h$ is Planck's constant. To be perfectly honest, I do not fully understand how this equation arises, and what relation this bears to the Heisenberg Uncertainty Relation other than a superficial resemblance.\footnote{The Heisenberg Uncertainty Relation relates the variance in momentum and position of any quantum system. Despite what I see as a superficial resemblance, I will be using the name `Uncertainty Broadening' because that's what it's called in C5 and I don't want to confuse you. If I could choose though, I'd probably refer to it as the sometimes used `Lifetime Broadening' or `Natural Broadening'.}
 
-Let's now interpret the consequences of the equation on the molecules we're considering. The lifetime of a system $\tau$ encodes how stable the system is. Recall that a molecule is in an `excited' state before emitting a photon or after absorbing a photon. This state is, generally, meta-stable\footnote{Hence `Meta-Stable Broadening'}, and thus has a finite lifetime ($\tau\neq\infty$) after which it has a high probability of emitting a photon and transitioning to a lower energy state.
+Let's now interpret the consequences of the equation on the molecules we're considering. The lifetime of a system $\tau$ encodes how stable the system is. Recall that a molecule is in an `excited' state before emitting a photon or after absorbing a photon. This state is, generally, meta-stable, and thus has a finite lifetime ($\tau\neq\infty$) after which it has a high probability of emitting a photon and transitioning to a lower energy state.
 
 The variance of the energy $Var(\hat{E})$ represents the fact that, because of this, these molecules aren't actually in a state of exact/definite energy (called an energy eigenstate). This means that when a system transitions from one energy state to another energy state, the energy difference can actually be approximately equal to $\Delta E$, with some spread determined by the lifetime of the system $\tau$.
 
@@ -605,23 +605,36 @@ The actual line-width is thus fixed by the velocity distribution of the molecule
 \end{gather}
 So the line-width is scales as $\sqrt{T}$ – the line gets thicker as the gas gets hotter. Conversely, if the temperature falls to $0$ this equation predicts that the line width would fall to $0$, and so $\kappa(\nu=\nu_c)\to\infty$. However, this never happens, as Uncertainty Broadening maintains a non-zero line width.
 
-This is mechanism of broadening is much more substantial than Uncertainty Broadening, but it is still very thin for two reasons. First, as seen from \ref{Doppler Broadening F}, the line shape is exponential in $x$. As such, $F$ falls off extremley rapidly as $\nu$ moves away from $\nu_c$. Second, as seen from \ref{Doppler Broadening delt}, generally $\delta\ll\nu_c$ since $\left( \frac{2k_BT}{m} \right)^{\frac{1}{2}}\ll c$\footnote{physically, $\left( \frac{2k_BT}{m} \right)^{\frac{1}{2}}$ is proportional to the mean speed of the molecules.}.
+This is mechanism of broadening is much more substantial than Uncertainty Broadening, but it is still very thin for two reasons. First, as seen from \ref{Doppler Broadening F}, the line shape is exponential in $x$. As such, $F$ falls off extremley rapidly as $\nu$ moves away from $\nu_c$. Second, as seen from \ref{Doppler Broadening delt}, generally $\delta\ll\nu_c$ since $\left( \frac{2k_BT}{m} \right)^{\frac{1}{2}}\ll c$\footnote{Physically, $\left( \frac{2k_BT}{m} \right)^{\frac{1}{2}}$ is proportional to the mean speed of the molecules.}.
 
-\subsection{Collisional/Pressure Broadening: the Lorenz Line Shape}
+\subsection{Collisional/Pressure Broadening}
 
 This is by far the most important type of broadening in our context.
 
-This gives us the Lorenz Profile:
-\begin{gather}
-    \label{Lorenz F}
-    \BOX{F(x)=\frac{1}{\pi}\frac{1}{x^2+1}}
-    \\
-    \label{Lorenz width}
-    \BOX{
-        \delta \approx \delta_0\,\frac{p}{p_0}\left( \frac{T_0}{T} \right)^{n}
-    }
-\end{gather}
-where $\delta_0,p_0,T_0$ are all reference widths, pressures, and temperatures and $n$ is a dimensionless constant. Oftentimes, $n\approx 1/2$. As we can see then, pressure broadening results in pressure \textit{increasing} the line width and temperature \textit{decreasing} the line width. If, for example, the pressure were to fall to $0$ this equation predicts that the line width would fall to $0$, and so $\kappa(\nu=\nu_c)\to\infty$. However, again, this never happens, as Uncertainty Broadening (and Doppler Broadening if $T\neq 0$) would maintain a non-zero line width.
+This gives us the Lorentz Profile:
+\begin{fact}{Lorentz Line Shape}{Lorentz Box}\label{Lorentz Box}
+    The shape $F$ and width $\delta$ of a spectral line is, in planetary climate contexts, mainly set by the Lorentz Line shape: 
+
+    \begin{multicols}{2}
+    \begin{align}
+        \label{Lorenz F}
+        \BOX{F(x)=\frac{1}{\pi}\frac{1}{x^2+1}}
+    \end{align}
+
+    \vspace{18 mm}
+    \begin{align}
+        \label{Lorenz width}
+        \BOX{
+            \delta \approx \delta_0\,\frac{p}{p_0}\left( \frac{T_0}{T} \right)^{n}
+        }
+    \end{align}
+    \end{multicols}
+
+    where $\delta_0$, $p_0$, $T_0$ are all reference widths, pressures, and temperatures and $n$ is a dimensionless constant. All constants are, in practice, found empirically. Oftentimes, $n\approx 1/2$.
+\end{fact}
+As we can see then, pressure broadening results in pressure \textit{increasing} the line width and temperature \textit{decreasing} the line width. If, for example, the pressure were to fall to $0$ this equation predicts that the line width would fall to $0$, and so $\kappa(\nu=\nu_c)\to\infty$. However, again, this never happens, as Uncertainty Broadening (and Doppler Broadening if $T\neq 0$) would maintain a non-zero line width.
+
+You should memorise this for the exam.
 
 \section{Continuum Absorption}\label{Continuum}
 

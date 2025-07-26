@@ -52,7 +52,7 @@
 \contentsline {section}{\numberline {5.2}Broadening Mechanisms: Line Shape $F$ and Width $\delta $}{49}{section.5.2}%
 \contentsline {subsection}{\numberline {5.2.1}Uncertainty Broadening}{49}{subsection.5.2.1}%
 \contentsline {subsection}{\numberline {5.2.2}Doppler Broadening}{49}{subsection.5.2.2}%
-\contentsline {subsection}{\numberline {5.2.3}Collisional/Pressure Broadening: the Lorenz Line Shape}{50}{subsection.5.2.3}%
+\contentsline {subsection}{\numberline {5.2.3}Collisional/Pressure Broadening}{50}{subsection.5.2.3}%
 \contentsline {section}{\numberline {5.3}Continuum Absorption}{50}{section.5.3}%
 \contentsline {chapter}{\numberline {6}Schwarzschild Equation}{51}{chapter.6}%
 \contentsline {section}{\numberline {6.1}The Equations of Motion}{51}{section.6.1}%
