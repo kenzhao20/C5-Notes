@@ -385,6 +385,7 @@ Notice the absolute value in the second line. If we did not have this, we could 
 \end{align*}
 then we can define the transmission function $\mathcal{T}_\nu$ which encodes the absorption of the spectral irradiance between those two points:
 \begin{align}
+    \label{Absorption}
     \mathcal{T}_\nu(p_1,p_2)=e^{-|\tau_\nu(p_1)-\tau_\nu(p_2)|}
     \\
     L_2=L_1\,\mathcal{T}_\nu(p_1,p_2)\nonumber
@@ -631,7 +632,7 @@ You should memorise this for the exam Key Idea \ref{Lorentz Box} for the exam.
 
 [Under Construction]
 
-\chapter{Schwarzschild Equation}
+\chapter{The Schwarzschild Equation}
 
 \section{The Equations of Motion}
 
@@ -711,34 +712,43 @@ We can go through a similar reasoning with $F_-$, which allows us to derive the 
     {-\frac{1}{2}\frac{dF_-}{d\tau_\nu^*}=-F_-+\pi B}
 \end{align}
 
-Note the extra $-$ sign on Equation \ref{Downwards Schwarszchild Initial}. Comparing \ref{Upwards Schwarszchild Initial} with \ref{Schwarzschild}, we can conclude that this approximation is equivalent to setting $\cos(\theta)=\frac{1}{2}$ on average! With this in mind, we define the effective propagation angle $\tilde{\theta}$ as $\tilde{\theta}=\cos^{-1}(1/2)$. We now abuse notation and define $\tau_\nu\equiv \tau_\nu^*/\cos(\tilde{\theta})=2\tau_\nu^*$ to get rid of that pesky $\frac{1}{2}$ factor to obtain the: 
+Note the extra `$-$' sign on Equation \ref{Downwards Schwarszchild Initial}. Comparing \ref{Upwards Schwarszchild Initial} with \ref{Schwarzschild}, we can conclude that this approximation is equivalent to setting $\cos(\theta)=\frac{1}{2}$ on average! With this in mind, we define the effective propagation angle $\tilde{\theta}$ as $\tilde{\theta}=\cos^{-1}(1/2)$. We now abuse notation and define $\tau_\nu\equiv \tau_\nu^*/\cos(\tilde{\theta})=2\tau_\nu^*$ to get rid of that pesky $\frac{1}{2}$ factor to obtain the: 
 \begin{fact}{Angle-Averaged Schwarzschild Equations}{Schwarz box}\label{Scharz box}
-    \begin{gather}
+    The following equations govern the net upward ($F_+$) and downwards ($F_-$) spectral irradiance, derived from the \hyperref[Schwarzschild]{Schwarszchild Equation} using the \textit{Two-Stream Approximation}.
+
+    \begin{minipage}{.5\linewidth}
+        \begin{gather}
         \label{Upwards Schwarzschild}
         \BOX{\frac{dF_+}{d\tau_\nu}(\tau_\nu)=-F_+(\tau_\nu)+\pi B}
-        \\
+        \end{gather}
+    \end{minipage}
+    \begin{minipage}{.5\linewidth}
+        \begin{gather}
         \label{Downwards Schwarzschild}
         \BOX{-\frac{dF_-}{d\tau_\nu}(\tau_\nu)=-F_-(\tau_\nu)+\pi B}
-    \end{gather}
-    We can relate $\tau_\nu$ back to pressure coordinates by using \ref{Optical Pressure}:
+        \end{gather}
+    \end{minipage}
+
+    We can relate optical depth coordinates $\tau_\nu$ to pressure coordinates $p$ using \ref{Optical Pressure}:
     \begin{align}
         d\tau_\nu&=-\kappa(\nu,T(p),p)\,q(p)\frac{dp}{g\frac{1}{2}}\\
         &=-\kappa(\nu,T(p),p)\,q(p)\frac{dp}{g\cos\tilde{\theta}}
     \end{align}
+    where $\tilde{\theta}=$ the effective propagation angle.
 \end{fact}
 
 
-\section{General Solutions}
+\section{General Solutions and Radiating Level}
 
 We can integrate \ref{Upwards Schwarzschild} and \ref{Downwards Schwarzschild} using an integrating factor and a single boundary condition to find:
 \begin{align}
-    F_+(\nu,\tau_\nu)=F_+(\nu,0)e^{-\tau_\nu}+\int_0^{\tau_\nu}\pi B(\nu,T(\tau_\nu'))e^{-(\tau_\nu-\tau_\nu')}\,d\tau_\nu' \label{Upwards Soln}\\ 
-    F_-(\nu,\tau_\nu)=F_-(\nu,\tau_{\nu,\infty})e^{-(\tau_{\nu,\infty}-\tau_\nu)}+\int_{\tau_\nu}^{\tau_{\nu,\infty}}\pi B(\nu,T(\tau_\nu'))e^{-(\tau_\nu'-\tau_\nu)}\,d\tau_\nu' \label{Downwards Soln}
+    \BOX{F_+(\nu,\tau_\nu)=F_+(\nu,0)e^{-\tau_\nu}+\int_0^{\tau_\nu}\pi B(\nu,T(\tau_\nu'))e^{-(\tau_\nu-\tau_\nu')}\,d\tau_\nu'} \label{Upwards Soln}\\ 
+    \BOX{F_-(\nu,\tau_\nu)=F_-(\nu,\tau_{\nu,\infty})e^{-(\tau_{\nu,\infty}-\tau_\nu)}+\int_{\tau_\nu}^{\tau_{\nu,\infty}}\pi B(\nu,T(\tau_\nu'))e^{-(\tau_\nu'-\tau_\nu)}\,d\tau_\nu'} \label{Downwards Soln}
 \end{align}
 where we have used the boundary conditions:
 \begin{align*}
-    \text{at }\tau_\nu=0\text{ , } F_+(\nu,\tau_\nu)=F_+(\nu,0)\\
-    \text{at }\tau_\nu=\tau_{\nu_\infty}\text{ , } F_-(\nu,\tau_\nu)=F_-(\nu,\tau_{\infty})
+    \text{at the ground }\boxed{\tau_\nu=0\text{ , } F_+(\nu,\tau_\nu)=F_+(\nu,0)}\\
+    \text{at the top fo the atmosphere }\boxed{\tau_\nu=\tau_{\nu_\infty}\text{ , } F_-(\nu,\tau_\nu)=F_-(\nu,\tau_{\infty})}
 \end{align*}
 
 There are three subtleties we should note. First, note the sign flips between \ref{Upwards Soln} and \ref{Downwards Soln}, arising due to the sign flip on the derivative in \ref{Upwards Schwarzschild} and \ref{Downwards Schwarzschild}. Second, note that the limits of integration are swapped between \ref{Upwards Soln} and \ref{Downwards Soln}, arising due to the difference in boundary conditions.
@@ -752,14 +762,35 @@ Physically, the solution is intuitive: the total upwards radiance at some optica
 \end{enumerate}
 The \textbf{Outgoing Longwave Radiation} $OLR$ (in spectral irradiances) is then defined as $F_+(\nu,p=0)=F_+(\nu,\tau=\tau_{\nu,\infty})$ and given by:
 \begin{align}
-    OLR=F_+(\nu,0)e^{-\tau_{\nu,\infty}}+\int_0^{\tau_{\nu,\infty}}\pi B(\nu,T(\tau_\nu'))e^{-(\tau_{\nu,\infty}-\tau_\nu')}\,d\tau_\nu' \label{OLR Soln}
+    \BOX{OLR=F_+(\nu,0)e^{-\tau_{\nu,\infty}}+\int_0^{\tau_{\nu,\infty}}\pi B(\nu,T(\tau_\nu'))e^{-(\tau_{\nu,\infty}-\tau_\nu')}\,d\tau_\nu'} \label{OLR Soln}
 \end{align}
-The physical interpretation is identical. The total upwards spectral radiance escaping is the spectral radiance from each level attenuated by the amount of absorption in between those levels. 
+The physical interpretation is identical. The total upwards spectral irradiance escaping is the spectral irradiance from each level attenuated by the amount of absorption in between those levels.
 
-Since the attenuation is exponential, this gives us an optical depth `lengthscale' set by when $(\tau_{\nu,\infty}-\tau_\nu')\sim 1$. We thus define $\tau_{rad}$ as satisfying $(\tau_{\nu,\infty}-\tau_{\nu,rad})= 1$. Anything with radiation coming from an optical depth $\tau_\nu<\tau_{\nu,rad}$ will 
+Since the attenuation is exponential, this gives us an optical depth `lengthscale' set by when $(\tau_{\nu,\infty}-\tau_\nu')\sim 1$. This allows us to define:
+\begin{fact}{The Radiating Level $p_{rad}$}{rad level box}\label{rad level box}
+    We define the \textbf{radiating level} at $\tau_\nu=\tau_{\nu,rad}$ and $p=p_{rad}$ which satisfy the following relations:
 
+    \begin{minipage}{.5\linewidth}
+    \begin{align}
+        \BOX{\tau_{\nu,\infty}-\tau_{\nu,rad} = 1}\\
+        \BOX{\tau_\nu(p_{rad})=\tau_{\nu,rad}}
+    \end{align}
+    \end{minipage}
+    \begin{minipage}{.5\linewidth}
+        Figure here!
+    \end{minipage}
 
-We can rewrite this in terms of the transmission function $\mathcal{T}_\nu(p_1,p_2)$ if we find the differential of the transmission function with respect to $p_2$ and assume that $\tau_\nu(p_1)>\tau_\nu(p_2)$:
+    Physically, the interpretation is as follows: any radiation coming from an optical depth $\tau_\nu<\tau_{\nu,rad}$ ($p>p_{rad}$) will be attenuated \textbf{much} more than radiation coming from an optical depth $\tau_\nu>\tau_{\nu,rad}$ ($p<p_{rad}$).
+
+    As such, the $OLR$ radiation actually escaping into space will disproportionately look like the radiation emitted by `stuff' at $p_{rad}$. In other words, if you were to look down at the atmosphere, you would not `see' anything from an optical depth coming from $p>p_{rad}$. 
+\end{fact}
+Note that this definition only really works if $\tau_{\nu,\infty}>1$. If $\nu$ is in the visible light region, for example, $\tau_{\nu,\infty}<0$, which is why you can see all the way to the ground (since $p_{rad}=p_s$, since $\tau_\nu\to-\infty$ at the ground due to the discontinuity of switching between something optically thin (the atmosphere) and something optically thick (the ground)).
+
+We can also express everything in terms of the transmission function. Defining the radiating level in terms of the transmission function is straightforward: $p_{rad}$ satisfies the following relation\footnote{And, of course, $p_{rad}>0$.}:
+\begin{align}
+    \mathcal{T}_\nu(0,p_{rad})=e^{-1}
+\end{align}
+We can also rewrite \ref{Upwards Schwarszchild Initial} and \ref{Downwards Schwarszchild Initial} in terms of the transmission function $\mathcal{T}_\nu(p_1,p_2)$ if we find the differential of the transmission function with respect to $p_2$ and assume that $\tau_\nu(p_1)>\tau_\nu(p_2)$:
 \begin{align*}
     d\left( \mathcal{T}_\nu(p_1,p_2) \right)&=d\left( e^{-|\tau_\nu(p_1)-\tau_\nu(p_2)|} \right)\\
     &=e^{-\tau_\nu(p_1)} d\left(e^{\tau_\nu(p_2)} \right)\\
@@ -814,19 +845,19 @@ where we have assumed that $\mathcal{T}_{\nu}\approx 0$ at $\nu=\nu_c\pm\frac{\D
     \bar{\mathcal{T}_{\nu_c}}(p_1,p_2)&=\int_{-\infty}^{\infty}{\mathcal{T}_{\nu}}\,d\nu\\
     &\approx\int_{\nu_c-\frac{\Delta}{2}}^{\nu_c+\frac{\Delta}{2}}{\mathcal{T}_{\nu}}\,d\nu
     \\
-    &=\int_{\nu_c-\frac{\Delta}{2}}^{\nu_c+\frac{\Delta}{2}} e^{|\tau_\nu(p_1)-\tau_\nu(p_2)|}\,d\nu
+    &=\int_{\nu_c-\frac{\Delta}{2}}^{\nu_c+\frac{\Delta}{2}} e^{-|\tau_\nu(p_1)-\tau_\nu(p_2)|}\,d\nu
 \end{align}
 
-\noindent Note that $OLR_{\nu_c}$ has dimenions of an irradiance (power per area),since $\bar{\mathcal{T}_{\nu_c}}$ has dimensions of frequency and $F_+$ and $\pi B$ have dimensions of spectral irradiance (power per area per frequency). We now abuse notation and write the total $OLR$ as the total power leaving the Earth per unit area. If we assume that the spectral lines don't overlap then we can find $OLR$ by summing up $OLR_{\nu_c}$ for each spectral line centred about each $\nu_c$:
+\noindent Note that $OLR_{\nu_c}$ has dimenions of an irradiance (power per area),since $\bar{\mathcal{T}_{\nu_c}}$ has dimensions of frequency and $F_+$ and $\pi B$ have dimensions of spectral irradiance (power per area per frequency). We now abuse notation and write the total $OLR$ as the total power leaving the Earth per unit area. We've already assumed that each line is thin, which implies that the spectral lines don't overlap, so we can find $OLR$ by summing up $OLR_{\nu_c}$ for each spectral line centred about each $\nu_c$:
 \begin{align*}
     OLR = \sum_{\nu_c} OLR_{\nu_c}
 \end{align*}
 
-Now that our $OLR$ is in terms of known quantities and $\bar{\mathcal{T}_{\nu_c}}$, our next goal is to calculate the $\bar{\mathcal{T}_{\nu_c}}$. Typically, this can be done numerically, but to make analytical progress we will look at three cases: the no-line limit, weak line limit, and strong line limit.
+Now that our $OLR$ is in terms of known quantities and $\bar{\mathcal{T}_{\nu_c}}$, our next goal is to calculate $\bar{\mathcal{T}_{\nu_c}}$. Typically, this can be done numerically, but to make analytical progress we will look at three cases: the no-line limit, weak line limit, and strong line limit.
 
 \subsection{The No-Line Limit}
 I should make you aware that this is my own personal addition and not talked about in the lecture notes. This limit is a bit non-sensical\footnote{
-    I think it's non-sensical because optical depth coordinates mkae no sense if $\kappa=0$. Recall that $d\tau\sim \kappa$, so if $\kappa=0$ then $\tau(p)=0$ for all $p$. That being said, our solution still makes sense.
+    I think it's non-sensical because optical depth coordinates make no sense if $\kappa=0$. Recall that $d\tau\sim \kappa$, so if $\kappa=0$ then $\tau(p)=0$ for all $p$. Furthermore, if $\kappa=0$, then this is hardly a spectral line! That being said, our solution is still valid.
 }, but I think it builds some intuition.
 
 The no-line limit is if $\kappa=0$ at that frequency band, and so $|\tau_\nu(p_1)-\tau_\nu(p_2)|=0$. As such, the transmission function $\mathcal{T}_{\nu}(p_1,p_2)=e^{-|\tau_\nu(p_1)-\tau_\nu(p_2)|}=1$ and so:
@@ -834,11 +865,16 @@ The no-line limit is if $\kappa=0$ at that frequency band, and so $|\tau_\nu(p_1
     \bar{\mathcal{T}_{\nu_c}}(p_1,p_2)&=\int_{\nu_c-\frac{\Delta}{2}}^{\nu_c+\frac{\Delta}{2}} 1 \,d\nu\\
     &=\Delta
 \end{align*}
-We can therefore substitute $\Delta$ for $\bar{\mathcal{T}_{\nu_c}}$ everywhere. Physically, this means that \textit{nothing} is absorbed out of this absorption band: everything in the band from $\nu=\nu-\frac{\Delta}{2}$ to $\nu=\nu+\frac{\Delta}{2}$ is let through. Substituting explicitly that $\bar{\mathcal{T}_{\nu_c}}(p_1,p_2)=\Delta$ and $d\bar{\mathcal{T}_{\nu_c}}(p_1,p_2)=0$ for all , our solution is:
+We can therefore substitute $\Delta$ for $\bar{\mathcal{T}_{\nu_c}}$ everywhere. Physically, this means that \textit{nothing} is absorbed out of this absorption band: everything in the band from $\nu=\nu-\frac{\Delta}{2}$ to $\nu=\nu+\frac{\Delta}{2}$ is let through. Substituting explicitly that $\bar{\mathcal{T}_{\nu_c}}(p_1,p_2)=\Delta$ and $d\bar{\mathcal{T}_{\nu_c}}(p_1,p_2)=0$ for all $p_1$ and $p_2$, our solution is:
 \begin{align*}
     OLR_{\nu_c}=F_+(\nu_c,0)\Delta
 \end{align*}
-In other words, the $OLR_{\nu_c}$ at this frequency $\nu_c$ is simply set by the upward radiative flux at frequency $\nu_c$ from the ground, Physically, this corresponds to the fact that the atmosphere is completely transparent at this frequency, and so the $OLR_{\nu_c}$ is set only by the ground's properties, and completely ignorant of atmospheric properties such as the concentration of the molecules (which are transparent at this frequency $\nu_c$).
+In other words, the $OLR_{\nu_c}$ at this frequency $\nu_c$ is simply set by the upward radiative flux at frequency $\nu_c$ from the ground, Physically, the solution looks like this because of two reasons.
+\begin{enumerate}
+    \item $\alpha=0$: Since $\kappa=0$, $\alpha=0$, which means the atmosphere is completely transparent at this frequency. As such, all the spectral radiance from the ground is let through, and the $OLR_{\nu_c}$ is completely ignorant of the concentration.
+    \item $\epsilon=0$: Due to Kirchoff's law, $\epsilon=0$ as well, which means the atmosphere emits no radiation at this frequency either. As such, none of the $OLR_{\nu_c}$ comes from the atmosphere.
+\end{enumerate}
+Because of these two reasons, the $OLR_{\nu_c}$ is completely ignorant of any atmospheric properties.
 
 We'll find that in the weak and strong line limits (and indeed in all cases where $\kappa\neq0$) that $\bar{\mathcal{T}_{\nu_c}}<\Delta$, and so the effective `width' will be smaller than $\Delta$, representing the chunk of radiation that is absorbed by the fact that $\kappa\neq0$.
 
@@ -854,7 +890,7 @@ We can now integrate over frequencies to find that:
     &\approx\int_{\nu_c-\frac{\Delta}{2}}^{\nu_c+\frac{\Delta}{2}} 1-|\tau_\nu(p_1)-\tau_\nu(p_2)|\,d\nu\\
     &=\Delta-\int_{\nu_c-\frac{\Delta}{2}}^{\nu_c+\frac{\Delta}{2}}
     \left|
-        \int_{p_2}^{p_1}-\kappa(\nu,T(p),T)\,q(p)\frac{dp}{g\cos\tilde{\theta}}
+        \int_{p_2}^{p_1}-\kappa(\nu,T(p),p)\,q(p)\frac{dp}{g\cos\tilde{\theta}}
     \right|
     \,d\nu
     \\
@@ -874,7 +910,7 @@ We can now integrate over frequencies to find that:
 \end{align*}
 The keen reader will note that this result \textbf{differs} from the result obtains in Ray's lecture slides. I am confident, however, that this expression is correct, as this is the expression that shows up in Ray's book \cite{Ray} and the algebra is more rigourous.
 
-We now define (what seems to me as a dodgy definition!) $S(T_0)$ such that:
+We now define (what seems to me as a dodgy definition!) the effective strength $S=S(T_0)$ such that:
 \begin{align}
     \int_{p_1}^{p_2}\frac{S(T(p))}{S(T_0)}q(p)\,dp\equiv
     \int_{p_1}^{p_2}q(p)\,dp
@@ -889,11 +925,70 @@ where
 \begin{align*}
     \mu=\frac{1}{g\cos\tilde{\theta}}\left|\int_{p_1}^{p_2}q(p)\,dp\right|
 \end{align*}
+\begin{align*}
+    \bar{\mathcal{T}_{\nu_c}}(p',p_s)&=\Delta - S \frac{1}{g\cos\tilde{\theta}}\int_{p'}^{p_s}q(p)\,dp\\
+    &=\Delta - S \frac{1}{g\cos\tilde{\theta}} q (p_s-p')
+\end{align*}
 is the  mass path.
+
+Intuitively, $\Delta-S\mu$ is the effective width of this line, and the $S\mu$ term represents the `chunk' of outwards irradiance taken out by this line (the chunk absorbed). As you can see, the absorption is \textbf{linear} in mass-path, not exponential as we might expect from the exponential attenuation of spectral radiance in (Equation \ref{Absorption}). This is possible becuase the attenuation of \textbf{spectral} irradiance is not the same as the attenuation of \textbf{non-spectral} radiance: we found the former by integrating the latter over the spectral line, which has its own dependence on $\nu$. 
+
+Let us now calculate the $OLR_{\nu_c}$ in the weak line limit. We also assume that the concentration of the gas is well-mixed: that $q(p)=q=const$. We again need to find the differential $d\bar{\mathcal{T}_{\nu_c}}(p',p_s)$ with respect to $p'$:
+\begin{align*}
+    d\bar{\mathcal{T}_{\nu_c}}(p',p_s)&=d\left( 
+        \Delta - S\frac{1}{g\cos\tilde{\theta}}\left|
+            \int_{p_s}^{p'}q(p)\,dp
+        \right|
+     \right)\\
+     &= - d \left( 
+        S\frac{q}{g\cos\tilde{\theta}}(p_s-p')
+     \right)\\
+     &=\frac{Sq}{g\cos\tilde{\theta}}\,dp'
+\end{align*}
+We substitute this into \ref{OLR Transmission Band Soln} to find that: 
+\begin{align*}
+    OLR_{\nu_c}&
+    =
+    F_+(\nu_c,0)\bar{\mathcal{T}_{\nu_c}}(0,p_s)
+    +
+    \int_{p_s}^{0}\pi B(\nu_c,T(p'))\,d\bar{\mathcal{T}_{\nu_c}}(p',p_s)\\
+    &=F_+(\nu_c,0)(\Delta-S\mu)+\int_{p_s}^{0}\pi B(\nu_c,T(p'))\frac{Sq}{g\cos\tilde{\theta}}\,dp'
+\end{align*}
 
 \subsection{The Strong Line Limit}
 
-For the strong line limit, we require that $|\tau_\nu(p_1)-\tau_\nu(p_2)|$ at the \textit{centre} of the line (i.e. at $\nu=\nu_c$). This is weaker than the opposite of the weak-line-limit assumption, because any line far enough from the centre is weak. We also assume a Lorentz line shape  (so our treatment here will not be completely general).
+For the strong line limit, we require that $|\tau_\nu(p_1)-\tau_\nu(p_2)|\gg 1$ at the \textit{centre} of the line (i.e. at $\nu=\nu_c$). This is weaker than the opposite of the weak-line-limit assumption, because any line far enough from the centre is weak. We also assume a Lorentz line shape and width from Key Idea \ref{Lorentz Box} so our treatment here will not be completely general.
+
+If $|\tau_\nu(p_1)-\tau_\nu(p_2)|\gg 1$ at the centre of the line, then we can approximate it as effectively infinite. We thus approximate the Lorentz line-shape as:
+\begin{align*}
+    F(x)&=\frac{1}{\pi}\frac{1}{x^2+1}\\
+    &\approx \frac{1}{\pi}\frac{1}{x^2}
+\end{align*}
+We then integrate the transmission function over frequencies again:
+\begin{align*}
+    \bar{\mathcal{T}_{\nu_c}}(p_1,p_2)&\approx\int_{\nu_c-\frac{\Delta}{2}}^{\nu_c+\frac{\Delta}{2}} \exp(-|\tau_\nu(p_1)-\tau_\nu(p_2)|)\,d\nu\\
+    &=\int_{\nu_c-\frac{\Delta}{2}}^{\nu_c+\frac{\Delta}{2}} \exp(
+        -\left|
+            \int_{p_2}^{p_1}-\kappa(\nu,T(p),p)q(p)\frac{dp}{g\cos\tilde{\theta}}
+        \right|
+    )\,d\nu\\
+    &\approx\int_{\nu_c-\frac{\Delta}{2}}^{\nu_c+\frac{\Delta}{2}} \exp\left(
+        -\left|
+            \int_{p_2}^{p_1}-\frac{1}{\pi}\frac{S(T)}{\delta(T,p)}\left( \frac{\nu-\nu_c}{\delta(T,p)} \right)^{-2}\frac{dp}{g\cos\tilde{\theta}}
+        \right|
+    \right)\,d\nu\\
+    &=\int_{\nu_c-\frac{\Delta}{2}}^{\nu_c+\frac{\Delta}{2}} \exp\left(
+        -\left|
+            \int_{p_2}^{p_1}-\frac{1}{\pi}S(t)\delta(T,p) \frac{1}{(\nu-\nu_c)^2}\frac{dp}{g\cos\tilde{\theta}}
+        \right|
+    \right)\,d\nu\\
+\end{align*}
+
+\subsection{Non-Isolated Lines}
+
+I note here that, sadly, none of what we learnt will be applicable to calculating the radiative forcing of CO$_2$. That is becuase CO$_2$ has strongly \textbf{overlapping} lines, and so we cannot simply integrate over a single spectral line and sum up each contribution, as that would result in double counting.
+
+We also won't cover how to deal with this here. Dissapointing I know, but it is what it is\ldots
 
 \section{Radiative Forcing}
 
