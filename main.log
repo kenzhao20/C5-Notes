@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.6.26)  27 JUL 2025 16:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.6.26)  28 JUL 2025 16:29
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1234,7 +1234,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 289--290
 ===== Image 'tikz/main-figure5' is up-to-date. ======
 Package svg Info: Last page of `./svg-inkscape/Hydrostatic_svg-tex.pdf' is 1 on input line 346.
 (./svg-inkscape/Hydrostatic_svg-tex.pdf_tex
-<./svg-inkscape/Hydrostatic_svg-tex.pdf, id=954, page=1, 2418.03375pt x 1206.5075pt>
+<./svg-inkscape/Hydrostatic_svg-tex.pdf, id=974, page=1, 2418.03375pt x 1206.5075pt>
 File: ./svg-inkscape/Hydrostatic_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/Hydrostatic_svg-tex.pdf, page 1>
 Package pdftex.def Info: ./svg-inkscape/Hydrostatic_svg-tex.pdf , page1 used on input line 56.
@@ -1244,12 +1244,12 @@ Package pdftex.def Info: ./svg-inkscape/Hydrostatic_svg-tex.pdf , page1 used on 
 [13 <./tikz/main-figure3.pdf> <./tikz/main-figure4.pdf> <./tikz/main-figure5.pdf> <./svg-inkscape/Hydrostatic_svg-tex.pdf>]
 
 [14]
-<Figures/Thermodynamics/Radiosonde 2.jpg, id=1081, 868.24374pt x 1284.8pt>
+<Figures/Thermodynamics/Radiosonde 2.jpg, id=1101, 868.24374pt x 1284.8pt>
 File: Figures/Thermodynamics/Radiosonde 2.jpg Graphic file (type jpg)
 <use Figures/Thermodynamics/Radiosonde 2.jpg>
 Package pdftex.def Info: Figures/Thermodynamics/Radiosonde 2.jpg  used on input line 435.
 (pdftex.def)             Requested size: 145.11053pt x 214.72748pt.
-<Figures/Thermodynamics/Earth Radiosonde Pressure.png, id=1084, 612.2875pt x 760.8425pt>
+<Figures/Thermodynamics/Earth Radiosonde Pressure.png, id=1104, 612.2875pt x 760.8425pt>
 File: Figures/Thermodynamics/Earth Radiosonde Pressure.png Graphic file (type png)
 <use Figures/Thermodynamics/Earth Radiosonde Pressure.png>
 Package pdftex.def Info: Figures/Thermodynamics/Earth Radiosonde Pressure.png  used on input line 441.
@@ -1260,27 +1260,27 @@ Package pdftex.def Info: Figures/Thermodynamics/Earth Radiosonde Pressure.png  u
 
 [16]
 Chapter 2.
-<Figures/Thermodynamics/Earth Temperature Profile Radiosonde.png, id=1105, 619.31375pt x 760.8425pt>
+<Figures/Thermodynamics/Earth Temperature Profile Radiosonde.png, id=1125, 619.31375pt x 760.8425pt>
 File: Figures/Thermodynamics/Earth Temperature Profile Radiosonde.png Graphic file (type png)
 <use Figures/Thermodynamics/Earth Temperature Profile Radiosonde.png>
 Package pdftex.def Info: Figures/Thermodynamics/Earth Temperature Profile Radiosonde.png  used on input line 468.
 (pdftex.def)             Requested size: 116.0899pt x 142.61118pt.
-<Figures/Thermodynamics/Jupiter Radiosonde.png, id=1106, 793.96625pt x 612.2875pt>
+<Figures/Thermodynamics/Jupiter Radiosonde.png, id=1126, 793.96625pt x 612.2875pt>
 File: Figures/Thermodynamics/Jupiter Radiosonde.png Graphic file (type png)
 <use Figures/Thermodynamics/Jupiter Radiosonde.png>
 Package pdftex.def Info: Figures/Thermodynamics/Jupiter Radiosonde.png  used on input line 472.
 (pdftex.def)             Requested size: 145.11053pt x 111.89803pt.
-<Figures/Thermodynamics/Venus Radiosonde.png, id=1107, 772.8875pt x 611.28375pt>
+<Figures/Thermodynamics/Venus Radiosonde.png, id=1127, 772.8875pt x 611.28375pt>
 File: Figures/Thermodynamics/Venus Radiosonde.png Graphic file (type png)
 <use Figures/Thermodynamics/Venus Radiosonde.png>
 Package pdftex.def Info: Figures/Thermodynamics/Venus Radiosonde.png  used on input line 475.
 (pdftex.def)             Requested size: 145.11053pt x 114.76465pt.
-<Figures/Thermodynamics/Mars Radiosonde.png, id=1108, 768.8725pt x 616.3025pt>
+<Figures/Thermodynamics/Mars Radiosonde.png, id=1128, 768.8725pt x 616.3025pt>
 File: Figures/Thermodynamics/Mars Radiosonde.png Graphic file (type png)
 <use Figures/Thermodynamics/Mars Radiosonde.png>
 Package pdftex.def Info: Figures/Thermodynamics/Mars Radiosonde.png  used on input line 479.
 (pdftex.def)             Requested size: 145.11053pt x 116.30875pt.
-<Figures/Thermodynamics/Titan Radiosonde.png, id=1109, 768.8725pt x 626.34pt>
+<Figures/Thermodynamics/Titan Radiosonde.png, id=1129, 768.8725pt x 626.34pt>
 File: Figures/Thermodynamics/Titan Radiosonde.png Graphic file (type png)
 <use Figures/Thermodynamics/Titan Radiosonde.png>
 Package pdftex.def Info: Figures/Thermodynamics/Titan Radiosonde.png  used on input line 482.
@@ -1340,12 +1340,12 @@ $[]$   $[]$
 
 [28]
 Chapter 3.
-<Figures/Thermodynamics/Phase_diagram_of_water_simplified.svg.png, id=1417, 2569.6pt x 1904.11375pt>
+<Figures/Thermodynamics/Phase_diagram_of_water_simplified.svg.png, id=1437, 2569.6pt x 1904.11375pt>
 File: Figures/Thermodynamics/Phase_diagram_of_water_simplified.svg.png Graphic file (type png)
 <use Figures/Thermodynamics/Phase_diagram_of_water_simplified.svg.png>
 Package pdftex.def Info: Figures/Thermodynamics/Phase_diagram_of_water_simplified.svg.png  used on input line 1093.
 (pdftex.def)             Requested size: 217.66211pt x 161.28096pt.
-<Figures/Thermodynamics/Phase_diagram_of_water_simplified.png, id=1419, 662.475pt x 490.83376pt>
+<Figures/Thermodynamics/Phase_diagram_of_water_simplified.png, id=1439, 662.475pt x 490.83376pt>
 File: Figures/Thermodynamics/Phase_diagram_of_water_simplified.png Graphic file (type png)
 <use Figures/Thermodynamics/Phase_diagram_of_water_simplified.png>
 Package pdftex.def Info: Figures/Thermodynamics/Phase_diagram_of_water_simplified.png  used on input line 1097.
@@ -1417,17 +1417,17 @@ Overfull \hbox (4.47578pt too wide) in paragraph at lines 214--226
 
 
 [40 <./tikz/main-figure12.pdf>]
-<Figures/Radiative Transfer/BB Spectral Radiance.png, id=1615, 938.50626pt x 632.3625pt>
+<Figures/Radiative Transfer/BB Spectral Radiance.png, id=1635, 938.50626pt x 632.3625pt>
 File: Figures/Radiative Transfer/BB Spectral Radiance.png Graphic file (type png)
 <use Figures/Radiative Transfer/BB Spectral Radiance.png>
 Package pdftex.def Info: Figures/Radiative Transfer/BB Spectral Radiance.png  used on input line 262.
 (pdftex.def)             Requested size: 169.29684pt x 114.07121pt.
-<Figures/Radiative Transfer/BB Cumulative.png, id=1616, 938.50626pt x 639.38875pt>
+<Figures/Radiative Transfer/BB Cumulative.png, id=1636, 938.50626pt x 639.38875pt>
 File: Figures/Radiative Transfer/BB Cumulative.png Graphic file (type png)
 <use Figures/Radiative Transfer/BB Cumulative.png>
 Package pdftex.def Info: Figures/Radiative Transfer/BB Cumulative.png  used on input line 267.
 (pdftex.def)             Requested size: 169.29684pt x 115.33867pt.
-<Figures/Radiative Transfer/Spectral Gap.jpg, id=1617, 152.2488pt x 153.9351pt>
+<Figures/Radiative Transfer/Spectral Gap.jpg, id=1637, 152.2488pt x 153.9351pt>
 File: Figures/Radiative Transfer/Spectral Gap.jpg Graphic file (type jpg)
 <use Figures/Radiative Transfer/Spectral Gap.jpg>
 Package pdftex.def Info: Figures/Radiative Transfer/Spectral Gap.jpg  used on input line 272.
@@ -1441,12 +1441,12 @@ Package pdftex.def Info: Figures/Radiative Transfer/Spectral Gap.jpg  used on in
 [43]
 
 [44]
-Overfull \hbox (2.43333pt too wide) in paragraph at lines 412--426
+Overfull \hbox (2.43333pt too wide) in paragraph at lines 413--427
 []$[]$ $[]$
  []
 
 
-Overfull \hbox (2.43333pt too wide) in paragraph at lines 427--441
+Overfull \hbox (2.43333pt too wide) in paragraph at lines 428--442
 []$[]$ $[]$ 
  []
 
@@ -1456,15 +1456,15 @@ Overfull \hbox (2.43333pt too wide) in paragraph at lines 427--441
 
 [46]
 Chapter 5.
-<Figures/Radiative Transfer/CO2 kappa.jpg, id=1681, 1339.0025pt x 898.35625pt>
+<Figures/Radiative Transfer/CO2 kappa.jpg, id=1701, 1339.0025pt x 898.35625pt>
 File: Figures/Radiative Transfer/CO2 kappa.jpg Graphic file (type jpg)
 <use Figures/Radiative Transfer/CO2 kappa.jpg>
-Package pdftex.def Info: Figures/Radiative Transfer/CO2 kappa.jpg  used on input line 470.
+Package pdftex.def Info: Figures/Radiative Transfer/CO2 kappa.jpg  used on input line 471.
 (pdftex.def)             Requested size: 193.47578pt x 129.7991pt.
-<Figures/Radiative Transfer/CO2 zoomed.png, id=1682, 1349.54187pt x 946.53625pt>
+<Figures/Radiative Transfer/CO2 zoomed.png, id=1702, 1349.54187pt x 946.53625pt>
 File: Figures/Radiative Transfer/CO2 zoomed.png Graphic file (type png)
 <use Figures/Radiative Transfer/CO2 zoomed.png>
-Package pdftex.def Info: Figures/Radiative Transfer/CO2 zoomed.png  used on input line 475.
+Package pdftex.def Info: Figures/Radiative Transfer/CO2 zoomed.png  used on input line 476.
 (pdftex.def)             Requested size: 193.47578pt x 135.69162pt.
 
 
@@ -1486,10 +1486,20 @@ Chapter 6.
 [52
 
  <./tikz/main-figure13.pdf>]
+Overfull \hbox (2.43333pt too wide) in paragraph at lines 719--731
+[]$[]$ $[]$ 
+ []
+
+
 
 [53]
 
 [54]
+Overfull \hbox (2.43333pt too wide) in paragraph at lines 773--782
+[]$[]$ $[]$ 
+ []
+
+
 
 [55]
 
@@ -1498,65 +1508,69 @@ Chapter 6.
 [57]
 
 [58]
+
+[59]
+
+[60]
 Chapter 7.
 
 
-[59
+[61
 
 ]
 
-[60]
-
-[61])
-
 [62]
+
+[63])
+
+[64]
 \openout2 = `Clouds.aux'.
 
  (./Clouds.tex
 
-[63
+[65
 
 
 
 
 ]
 
-[64]
+[66]
 Chapter 8.
 
 
-[65
+[67
 
 ]
 Chapter 9.
 
 
-[66
+[68
 
 ]
 
-[67]
-
-[68]
-
 [69]
+
+[70]
+
+[71]
 Chapter 10.
 
 
-[70
+[72
 
 ]
 Chapter 11.
 )
 
-[71
+[73
 
 ]
 \openout2 = `Instrumentation.aux'.
 
  (./Instrumentation.tex
 
-[72
+[74
 
 
 
@@ -1566,89 +1580,95 @@ Chapter 11.
 
  (./Climate Dynamics.tex
 
-[73
-
-
-
-
-]
-
-[74]
-Chapter 12.
-
-Underfull \hbox (badness 10000) in paragraph at lines 49--50
-
- []
-
-
-Overfull \hbox (2.43767pt too wide) in paragraph at lines 51--67
-[] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 51--67
-
- []
-
-
-
 [75
+
+
+
 
 ]
 
 [76]
+Chapter 12.
 
-[77]
+Overfull \hbox (2.43767pt too wide) in paragraph at lines 51--65
+[][] 
+ []
 
-[78]
-Chapter 13.
 
 
-[79
+[77
 
 ]
 
+[78]
+
+[79]
+
 [80]
+Underfull \hbox (badness 2269) in paragraph at lines 341--342
+[]\OT1/cmr/m/sl/10.95 The \OT1/cmr/bx/sl/10.95 Quasi-Steady Re-sponse\OT1/cmr/m/sl/10.95 : On
+ []
+
+
+Overfull \hbox (2.43333pt too wide) in paragraph at lines 324--354
+[]$[]$ $[]$ 
+ []
+
+
+
+[81]
+
+[82]
+
+[83]
+Chapter 13.
+
+
+[84
+
+]
+
+[85]
 Chapter 14.
 
 
-[81
+[86
 
 ])
 
-[82]
+[87]
 \openout2 = `GFD.aux'.
 
  (./GFD.tex
 
-[83
+[88
 
 
 
 
 ]
 
-[84]
+[89]
 Chapter 15.
-<Figures/GFD/Diff Heating.jpg, id=2100, 185.9748pt x 161.1621pt>
+<Figures/GFD/Diff Heating.jpg, id=2185, 185.9748pt x 161.1621pt>
 File: Figures/GFD/Diff Heating.jpg Graphic file (type jpg)
 <use Figures/GFD/Diff Heating.jpg>
 Package pdftex.def Info: Figures/GFD/Diff Heating.jpg  used on input line 43.
 (pdftex.def)             Requested size: 241.84843pt x 209.58693pt.
 
 
-[85
+[90
 
  <./Figures/GFD/Diff Heating.jpg>]
 
-[86]
+[91]
 ===== Image 'tikz/main-figure14' is up-to-date. ======
 ===== Image 'tikz/main-figure15' is up-to-date. ======
 
 
-[87]
+[92]
 
-[88 <./tikz/main-figure14.pdf> <./tikz/main-figure15.pdf>]
+[93 <./tikz/main-figure14.pdf> <./tikz/main-figure15.pdf>]
 Underfull \hbox (badness 10000) in paragraph at lines 222--224
 
  []
@@ -1660,41 +1680,41 @@ Underfull \hbox (badness 10000) in paragraph at lines 225--250
 
 
 
-[89]
+[94]
 
-[90]
+[95]
 Chapter 16.
 
 
-[91
+[96
 
 ] Excluding 'comment' comment.
 
-[92]
+[97]
 
-[93]
+[98]
 
-[94]
+[99]
 Chapter 17.
 
 
-[95
+[100
 
 ]
 
-[96]
+[101]
 
-[97]
+[102]
 Chapter 18.
 
 
-[98
+[103
 
 ]
 Chapter 19.
 )
 
-[99
+[104
 
 ]
 Underfull \hbox (badness 2027) in paragraph at lines 198--198
@@ -1703,7 +1723,7 @@ Underfull \hbox (badness 2027) in paragraph at lines 198--198
 
 
 
-[100
+[105
 
 
 
@@ -1713,30 +1733,30 @@ LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 7083ACFF0024A6102924394516690D82;27670.
+(rerunfilecheck)             Checksum: 9D86EA7C52AD0742C9B4AE0B674DD791;28886.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 44296 strings out of 473190
- 944079 string characters out of 5715800
- 1794675 words of memory out of 5000000
- 66270 multiletter control sequences out of 15000+600000
- 578333 words of font info for 111 fonts, out of 8000000 for 9000
+ 44363 strings out of 473190
+ 945018 string characters out of 5715800
+ 1795697 words of memory out of 5000000
+ 66303 multiletter control sequences out of 15000+600000
+ 578712 words of font info for 112 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 116i,25n,121p,1009b,1859s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 116i,25n,121p,1080b,1859s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
 
 pdfTeX warning (dest): name{Climate\040Dynamics} has been referenced but does not exist, replaced by a fixed one
 
-</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxsl10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb>
-Output written on main.pdf (101 pages, 2962640 bytes).
+</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxsl10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsl1095.pfb>
+Output written on main.pdf (106 pages, 2999995 bytes).
 PDF statistics:
- 2582 PDF objects out of 2984 (max. 8388607)
- 2180 compressed objects within 22 object streams
- 569 named destinations out of 1000 (max. 500000)
- 1482 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2679 PDF objects out of 2984 (max. 8388607)
+ 2269 compressed objects within 23 object streams
+ 602 named destinations out of 1000 (max. 500000)
+ 1514 words of extra memory for PDF output out of 10000 (max. 10000000)
 
