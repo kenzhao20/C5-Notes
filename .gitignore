@@ -1,0 +1,41 @@
+#OS junk files
+.DS_Store
+
+#aux files
+Climate Dynamics.aux
+Clouds.aux
+GFD.aux
+Instrumentation.aux
+main.aux
+Radiative Transfer.aux
+Thermodynamics.aux
+
+main 2.fls
+main 2.synctex.gz
+main 2.synctex(busy)
+main 3.fls
+main 3.synctex.gz
+main 3.synctex(busy)
+main 4.fls
+main 4.synctex(busy)
+main 5.fls
+main 5.synctex(busy
+main 6.fls
+main 6.synctex(busy)
+main 7.fls
+main 8.fls
+main 9.fls
+main 10.fls
+main 11.fls
+main.auxlock
+main.bbl
+main.bbl-SAVE-ERROR
+main.bcf
+main.fdb_latexmk
+main.fls
+main.log
+main.out
+main.run.xml
+main.synctex.gz
+main.toc
+README.md
