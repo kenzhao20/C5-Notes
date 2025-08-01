@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.6.26)  1 AUG 2025 18:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.6.26)  1 AUG 2025 20:49
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1441,12 +1441,12 @@ Package pdftex.def Info: Figures/Radiative Transfer/Spectral Gap.jpg  used on in
 [43]
 
 [44]
-Overfull \hbox (2.43333pt too wide) in paragraph at lines 413--427
+Overfull \hbox (2.43333pt too wide) in paragraph at lines 421--435
 []$[]$ $[]$
  []
 
 
-Overfull \hbox (2.43333pt too wide) in paragraph at lines 428--442
+Overfull \hbox (2.43333pt too wide) in paragraph at lines 436--450
 []$[]$ $[]$ 
  []
 
@@ -1459,12 +1459,12 @@ Chapter 5.
 <Figures/Radiative Transfer/CO2 kappa.jpg, id=1701, 1339.0025pt x 898.35625pt>
 File: Figures/Radiative Transfer/CO2 kappa.jpg Graphic file (type jpg)
 <use Figures/Radiative Transfer/CO2 kappa.jpg>
-Package pdftex.def Info: Figures/Radiative Transfer/CO2 kappa.jpg  used on input line 471.
+Package pdftex.def Info: Figures/Radiative Transfer/CO2 kappa.jpg  used on input line 479.
 (pdftex.def)             Requested size: 193.47578pt x 129.7991pt.
 <Figures/Radiative Transfer/CO2 zoomed.png, id=1702, 1349.54187pt x 946.53625pt>
 File: Figures/Radiative Transfer/CO2 zoomed.png Graphic file (type png)
 <use Figures/Radiative Transfer/CO2 zoomed.png>
-Package pdftex.def Info: Figures/Radiative Transfer/CO2 zoomed.png  used on input line 476.
+Package pdftex.def Info: Figures/Radiative Transfer/CO2 zoomed.png  used on input line 484.
 (pdftex.def)             Requested size: 193.47578pt x 135.69162pt.
 
 
@@ -1486,7 +1486,7 @@ Chapter 6.
 [52
 
  <./tikz/main-figure13.pdf>]
-Overfull \hbox (2.43333pt too wide) in paragraph at lines 719--731
+Overfull \hbox (2.43333pt too wide) in paragraph at lines 727--739
 []$[]$ $[]$ 
  []
 
@@ -1495,7 +1495,7 @@ Overfull \hbox (2.43333pt too wide) in paragraph at lines 719--731
 [53]
 
 [54]
-Overfull \hbox (2.43333pt too wide) in paragraph at lines 773--782
+Overfull \hbox (2.43333pt too wide) in paragraph at lines 781--790
 []$[]$ $[]$ 
  []
 
@@ -1755,7 +1755,7 @@ pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist,
 pdfTeX warning (dest): name{Climate\040Dynamics} has been referenced but does not exist, replaced by a fixed one
 
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxsl10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsl1095.pfb>
-Output written on main.pdf (107 pages, 3010112 bytes).
+Output written on main.pdf (107 pages, 3010439 bytes).
 PDF statistics:
  2690 PDF objects out of 2984 (max. 8388607)
  2279 compressed objects within 23 object streams

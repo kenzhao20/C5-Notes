@@ -310,6 +310,15 @@ We will use this to derive the \hyperref[Schwarzschild]{Schwarzschild Equation},
 
 To a good approximation, stellar bodies are black bodies. We can estimate the incident (not absorbed) radiative energy flux on the Earth (or any planet) from the Sun (or any star) by approximating that star as black body. The spectral radiance of the sun is approximately $B(\nu,T_{sun})$. We define the \textbf{Stellar Constant} $L_{\star}$ as the incident stellar irradiance. Note that this is different from the \textit{absorbed} stellar power – to obtain that we have to account for albedo (some incident stellar irradiance is reflected) and integrate over area. Let us now calculate $L_{\star}$. We do this by integrating the spectral radiance of the Sun over all frequencies (to obtain the radiance) and over the solid angle of the Sun from Earth (to obtain the irradiance):
 \begin{align*}
+    L_{\star}=\int_{\Omega_{Sun}}\int _0^\infty B_{sun}(T,\nu)\,d\nu\,d\Omega_\perp
+\end{align*}
+Calculating htis explicitly, we get:
+\begin{align*}
+    L_{\star}=\int_{\Omega_{Sun}} \frac{1}{\pi}\sigma T^4 \, d\Omega_\perp
+\end{align*}
+
+We do this by integrating the spectral radiance of the Sun over all frequencies (to obtain the radiance) and over the solid angle of the Sun from Earth (to obtain the irradiance):
+\begin{align*}
     L_{\star}=\int _0^\infty \int_{\Omega_{Sun}}B_{sun}(T,\nu)\,d\Omega\,d\nu
 \end{align*}
 
@@ -337,7 +346,6 @@ The power actually absorbed by the Earth is given by integrating over area and a
 \end{align*}
 
 Where we have reintroduced the zenith angle factor $\cos \zeta$ (since we only integrated over $d\Omega$ before rather than $d\Omega_\perp$). This is to represent the fact that the sun is only hitting the Earth from one side, and only the component perpendicular to the ground is absorbed. As such, $\int\cos\zeta\, dA$ is the \textit{projected} area of the Earth due to the $\cos \zeta$ term, and therefore is $\pi R^2$, not $4\pi R^2$. Therefore:
-
 \begin{align}
     P_{in} = (1-\alpha)\pi R^2 \frac{R_{sun}^2}{R_{Au}^2}\,\sigma T_{sun}^4
 \end{align}
@@ -1101,7 +1109,10 @@ Suppose we wish to know how varying some parameter $\lambda$ (for example, CO$_2
 \begin{align}
     G=\frac{1}{4}(1-\alpha)S_0-OLR(T_s,\lambda)
 \end{align}
-We know that in equilibrium, $G=0$. Now consider 
+We know that in equilibrium, $G=0$. Now consider the differential of G with respect to some parameter:
+\begin{align*}
+    dG = 
+\end{align*}
 
 \subsection{The Weak Line Limit}
 
