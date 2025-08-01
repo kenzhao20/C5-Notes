@@ -114,7 +114,15 @@ Often we will have to integrate over solid angles/directions (as radiation will 
         \caption{Rays, Angles, and Differential Solid Angle}
     \end{figure}
 \end{fact}
-One can integrate this differential over the entire sphere ($\theta\in[0,\pi],\phi\in[0,2\pi]$) to readily verify that the solid angle over an entire sphere is $4\pi$ \qty{}{\steradian}, and over half a sphere ($\theta\in[0,\pi/2],\phi\in[0,2\pi]$) is $2\pi$ \qty{}{\steradian}. Intuitively, the differential solid angle is the dimensionless area element in spherical coordinates. Think of the small rectangle with side lengths $r\,d\theta$ and $r\sin\theta \,d\phi$, but you divide by $r^2$ to make it dimensionless. This is analogous to the case in 2D, where the differential angle is a dimensionless line element in radial coordinates. Think, analogously, of a small line of side length $r\,d\theta$, but again you divide by $r$ to make it dimensionless.
+One can integrate this differential over the entire sphere ($\theta\in[0,\pi],\phi\in[0,2\pi]$) to readily verify that the solid angle over an entire sphere is $4\pi$ \qty{}{\steradian}, and over half a sphere ($\theta\in[0,\pi/2],\phi\in[0,2\pi]$) is $2\pi$ \qty{}{\steradian}. More specifically, consider integrating over a cone of half-angle $\theta_0$. Then the solid angle is:
+\begin{align}
+    \Omega &= \iint\displaylimits_\text{half cone} d\Omega \nonumber\\
+    &=\int_{0}^{2\pi}\int_{0}^{\theta_0}d\theta \sin\theta \,d\phi
+    \nonumber\\
+    \Omega&=2\pi(1-\cos\theta_0) \label{Half cone}
+\end{align}
+
+Intuitively, the differential solid angle is the dimensionless area element in spherical coordinates. Think of the small rectangle with side lengths $r\,d\theta$ and $r\sin\theta \,d\phi$, but you divide by $r^2$ to make it dimensionless. This is analogous to the case in 2D, where the differential angle is a dimensionless line element in radial coordinates. Think, analogously, of a small line of side length $r\,d\theta$, but again you divide by $r$ to make it dimensionless.
 
 We also define the \textbf{projected} differential solid angle. This accounts for the fact that if we have some surface which is absorbing radiation, radiation parallel to the surface will not be absorbed.
 \begin{align}
@@ -273,7 +281,7 @@ Since oftentimes the star will always be hotter than its planet, this results in
     \end{subfigure}
 \end{figure}
 
-Third and finally, $B$ is not a function if $\vec{\omega}$: $B$ is isotropic! This final fact allows us to calculate the spectral irradiance of a blackbody:
+Third and finally, $B$ is not a function if $\vec{\omega}$: $B$ is isotropic! This final fact allows us to calculate the spectral irradiance of a blackbody (where we have integrated over $d\Omega_\perp$ not  $d\Omega$, since only the radiation perpendicular to the surface of the blackbody is emitted):
 \begin{align*}
     F(\nu,T)&=\int_{\Omega_-} B(\nu,T)\,d\Omega_\perp\\
     &= \left( \int_{\Omega_-}d\Omega_{\perp} \right)\,B(\nu,T)\\
@@ -308,63 +316,86 @@ We will use this to derive the \hyperref[Schwarzschild]{Schwarzschild Equation},
 
 \subsection{Calulating the Stellar Constant}
 
-To a good approximation, stellar bodies are black bodies. We can estimate the incident (not absorbed) radiative energy flux on the Earth (or any planet) from the Sun (or any star) by approximating that star as black body. The spectral radiance of the sun is approximately $B(\nu,T_{sun})$. We define the \textbf{Stellar Constant} $L_{\star}$ as the incident stellar irradiance. Note that this is different from the \textit{absorbed} stellar power – to obtain that we have to account for albedo (some incident stellar irradiance is reflected) and integrate over area. Let us now calculate $L_{\star}$. We do this by integrating the spectral radiance of the Sun over all frequencies (to obtain the radiance) and over the solid angle of the Sun from Earth (to obtain the irradiance):
+To a good approximation, stellar bodies are black bodies ($\epsilon=1$). Using this, we can estimate the incident (not absorbed) radiative energy flux on the Earth (or any planet) from the Sun (or any star) by approximating that star as black body. We thus define the \textbf{Stellar Constant} $L_{\star}$ as the incident stellar irradiance on a \textit{flat} surface \textit{facing} the sun. 
+
+There are two important nuances here. First, note that the \textbf{Stellar Constant} is \textit{not} necessarily equal to the incident stellar irradiance on the surface of the planet because the planet is \textit{curved}. The stellar constant is only equal to the incident stellar irradiance on the surface of the planet at the equator at 12:00 if the planet has no axial tilt. Second, note that this is also different from the \textit{absorbed} stellar power – to obtain that we have to account for albedo (some incident stellar irradiance is reflected) and integrate over area. 
+
+Let us now calculate $L_{\star}$. We do this by integrating the spectral radiance of the star (which is approximately $B(\nu,T_{\star})$, where $T_{\star}$ is the temperature of the star) over all frequencies (to obtain the radiance) and over the solid angle $\Omega_\star$ subtended by the star at the planet (to obtain the irradiance):
 \begin{align*}
-    L_{\star}=\int_{\Omega_{Sun}}\int _0^\infty B_{sun}(T,\nu)\,d\nu\,d\Omega_\perp
+    L_{\star}=\int_{\Omega_{\star}}\int _0^\infty B_{\star}(T,\nu)\,d\nu\,d\Omega_\perp
 \end{align*}
-Calculating htis explicitly, we get:
+Calculating this explicitly using \ref{Blackbody Frequency}, we get:
 \begin{align*}
     L_{\star}=\int_{\Omega_{Sun}} \frac{1}{\pi}\sigma T^4 \, d\Omega_\perp
 \end{align*}
+We now make the assumption that the star is very far away from the planet: that $d \gg R_{\star}, R$, where $d=$ the distance between the star, and the planet and $R_\star, R=$ the radius of the star and planet, respectively. This means we can make two approximations.
 
-We do this by integrating the spectral radiance of the Sun over all frequencies (to obtain the radiance) and over the solid angle of the Sun from Earth (to obtain the irradiance):
+Our first approximation is that $\cos\zeta=1$ or $d\Omega\approx d\Omega_\perp$. This if the radiation raches the planet, they all must be approximately parallel to each other and perpendicular to the surface considered. Otherwise, even if the radiation were only slightly tilted, it would miss the planet. So:
 \begin{align*}
-    L_{\star}=\int _0^\infty \int_{\Omega_{Sun}}B_{sun}(T,\nu)\,d\Omega\,d\nu
+    L_\star &=\int_{\Omega_{\star}} \frac{1}{\pi}\sigma T^4 \, d\Omega_\perp\\
+    &\approx\int_{\Omega_{\star}} \frac{1}{\pi}\sigma T^4 \, d\Omega\\
+    &=\Omega_{\star}\,\frac{1}{\pi}\sigma T_{\star}^4
+\end{align*}
+where we have assumed in the last line that the radiance is independent of solid angle. Our goal now is to calculate $\Omega_{\star}$, the solid angle subtended by the star at the planet, which we can calculate by using \ref{Half cone}.
+
+Our second approximation is that $\theta_0\ll 1$, and so $\cos\theta_0\approx 1-\theta_0^2/2$ and $\theta_0\approx R_\star/d$. As such:
+\begin{align*}
+    \Omega_\star&=2\pi (1-\cos(\theta_0))\\
+    &\approx 2\pi \left( 1-\left( 1-\frac{1}{2}\theta_0^2 \right) \right)\\
+    &\approx\pi \frac{1}{2}\frac{R_\star^2}{d^2}
 \end{align*}
 
-Where $\Omega_{sun}$ denotes the solid angle the sun makes from the Earth. Note that we're integrating over $d\Omega$ here, not $d\Omega_\perp$. The sun is a blackbody, and so emits isotropically, so we can simply integrate out solid angles and use the Stefan-Boltzmann Law:
+Another (in my opinion more intuitive) way to think of this calculation is to consider a sphere centred on the planet with a radius $d$ so that the star lies on the surface of this imaginary sphere. The total solid angle of the entire sphere is $4\pi$, but the star is only occupying a small area on the surface of that sphere. The solid angle is thus approximately the total solid angle $4\pi$ multiplied by the fraction of area the star covers. This fraction is $\pi R_{\star}^2/4\pi d^2$. This is only approximate, because if it weren't the case that $R_\star\ll d$ then the area covered by the sun would not be $\pi R_{\star}^2$. Anyways, plugging it in gives the same results:
 \begin{align*}
-    L_{\star}&=\int _0^\infty \Omega_{Sun}B_{sun}(T,\nu)\,d\nu\\
-    &=\Omega_{sun}\,\sigma T_{sun}^4\frac{1}{\pi}
+    \Omega_{\star}&=4\pi\frac{\pi R_{\star}^2}{4\pi d^2}\\
+    &=\pi \frac{R_{\star}^2}{d^2}
 \end{align*}
 
-What is the solid angle of the sun $\Omega_{sun}$ then? We can figure this out by considering a sphere centred on the Earth with a radius equal to the distance between the Earth and the Sun. The total solid angle of the entire sphere is $4\pi$, but the Sun is only occupying a small area on the surface of that sphere. The ratio of the area covered by the sun to the area of the entire sphere is $\pi R_{sun}^2:4\pi R_{Au}$, where $R_{sun}$ is the radius of the sun and $R_{Au}$ is the distance between the sun and the Earth.
-\begin{align*}
-    \Omega_{sun}&=4\pi\frac{\pi R_{sun}^2}{4\pi R_{Au}^2}\\
-    &=\pi \frac{R_{sun}^2}{R_{Au}^2}
-\end{align*}
-
-\noindent Therefore:
+Therefore the stellar constant is;
 \begin{align}
-    L_{\star}=\frac{R_{sun}^2}{R_{Au}^2}\,\sigma T_{sun}^4
+    \BOX{
+    L_{\star}=\frac{R_{\star}^2}{d^2}\,\sigma T_{\star}^4}
 \end{align}
 
-The power actually absorbed by the Earth is given by integrating over area and accounting for reflection. Suppose some fraction $\alpha\in[0,1]$ of the instellation is reflected. Therefore:
-\begin{align*}
-    P_{in}&=\int (1-\alpha)L_\star \,\cos \zeta\,dA\\
-    &=(1-\alpha)L_\star\int \cos \zeta\,dA
-\end{align*}
+However, as already noted, the power actually absorbed by the planet is different. We must factor in albedo of the planet, as some radiation is reflected, and we must also factor in the curvature of the planet (which we assume is spherical), as the radiation is not perpendicular to the surface of the planet.
 
-Where we have reintroduced the zenith angle factor $\cos \zeta$ (since we only integrated over $d\Omega$ before rather than $d\Omega_\perp$). This is to represent the fact that the sun is only hitting the Earth from one side, and only the component perpendicular to the ground is absorbed. As such, $\int\cos\zeta\, dA$ is the \textit{projected} area of the Earth due to the $\cos \zeta$ term, and therefore is $\pi R^2$, not $4\pi R^2$. Therefore:
+To do this, we must integrate over area and accounting for reflection and curvatoure. Suppose some fraction $a\in[0,1]$ of the instellation is reflected. Therefore:
+\begin{align*}
+    P_{in}&=\int (1-a)L_\star \,\cos \zeta\,dA\\
+    &=(1-a)L_\star\int \cos \zeta\,dA
+\end{align*}
+where the zenith angle term $\cos \zeta$ represent the fact that the sun is only hitting the Earth from one side, and only the component perpendicular to the ground is absorbed. As such, $\int\cos\zeta\, dA$ is the \textit{projected} area of the Earth due to the $\cos \zeta$ term, and therefore is $\pi R^2$, not $4\pi R^2$ (exercise). Therefore:
 \begin{align}
-    P_{in} = (1-\alpha)\pi R^2 \frac{R_{sun}^2}{R_{Au}^2}\,\sigma T_{sun}^4
+    P_{in} = (1-a)\pi R^2 \underbrace{\frac{R_{\star}^2}{d^2}\,\sigma T_{\star}^4}_{L_\star}
 \end{align}
 
-If we also approximate the Earth as a blackbody, and its radiation as isotropic, we can estimate the outgoing power:
-\begin{align*}
-    P_{out}&=\int\int_{\Omega_+}\int _0^\infty B(\nu,T_{Earth})\,d\nu\,d\Omega_\perp\,dA\\
-    &=\left(\int dA\right)\int_{\Omega_+}\,d\Omega_\perp\int _0^\infty B(\nu,T_{Earth})\,d\nu\\
-    &=(4\pi R^2)\,\sigma T_{Earth}^4
-\end{align*}
+If we define the total \textbf{Outgoing Longwave Radiation} $OLR$ as the total irradiance leaving the planet, then we get a radiation budget for the planet:
+\begin{align}
+   & G  = (1-a)\pi R^2 L_\star - 4\pi R^2 OLR \nonumber\\
+   & \boxed{G \sim (1-a) \frac{L_\star}{4} - OLR}
+\end{align}
 
-From energy conservation, $P_{in}-P_{out}=0$, which we can solve for the equilibrium temperature of the Earth:
+Almost all of \hyperref[Radiative Transfer]{Radiative Transfer} will be dedicated to calculating this $OLR$, and we'll have to introduce a lot of machinery to calculate it.
+
+If we wish to make progress now, though, we can also (crudely) approximate the planet as having an emissivity independent of $T$ or $\nu$ and its radiation as isotropic to estimate the outgoing power:
 \begin{align*}
-    0&=(1-\alpha)\pi R^2 \frac{R_{sun}^2}{R_{Au}^2}\,\sigma T_{sun}^4-(4\pi R^2)\,\sigma T_{Earth}^4 \\
-    \therefore 0&=(1-\alpha) \frac{R_{sun}^2}{R_{Au}^2}\, T_{sun}^4-4 T_{Earth}^4 \\ 
-    \therefore T_{Earth}&=T_{sun}\left(
-    \frac{1-\alpha}{4}\frac{R_{sun}^2}{R_{Au}^2}
+    P_{out}&=\int\int_{\Omega_+}\int _0^\infty \epsilon B(\nu,T)\,d\nu\,d\Omega_\perp\,dA\\
+    &=\epsilon\left(\int dA\right)\int_{\Omega_+}\,d\Omega_\perp\int _0^\infty B(\nu,T)\,d\nu\\
+    &=(4\pi R^2)\,\epsilon\sigma T^4\\
+    \therefore OLR &= \epsilon\sigma T^4
+\end{align*}
+In equilibrium, $G=0$, which means we can solve for the equilibrium temperature of the Earth:
+\begin{align*}
+    0&=(1-a) \frac{L_\star}{4} - OLR\\
+    &=(1-a) \frac{L_\star}{4} - \epsilon\sigma T^4\\
+    \therefore T &= \left( 
+        (1-a) \frac{L_\star}{4\epsilon\sigma}
+     \right)^{\frac{1}{4}}\\
+    &=T_{\star}\left(
+    \frac{1-a}{4\epsilon}\frac{R_{\star}^2}{d^2}
     \right)^\frac{1}{4}
 \end{align*}
+
 
 \section{Absorption: Optical Thickness and Transmission Function}
 

@@ -40,116 +40,116 @@
 \contentsline {section}{\numberline {4.1}Direction of Radiation: Rays and Solid Angle}{37}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Magnitude of Radiation: (Spectral) Radiance and (Spectral) Irradiance}{38}{section.4.2}%
 \contentsline {subsection}{\numberline {4.2.1}Frequency, Wavelength, and Wavenumber}{40}{subsection.4.2.1}%
-\contentsline {section}{\numberline {4.3}Emission: Black Body Radiation}{40}{section.4.3}%
+\contentsline {section}{\numberline {4.3}Emission: Black Body Radiation}{41}{section.4.3}%
 \contentsline {subsection}{\numberline {4.3.1}Emissivity and Kirchoff's Law}{42}{subsection.4.3.1}%
 \contentsline {subsection}{\numberline {4.3.2}Calulating the Stellar Constant}{42}{subsection.4.3.2}%
-\contentsline {section}{\numberline {4.4}Absorption: Optical Thickness and Transmission Function}{43}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Example: Grey Atmosphere and Well Mixed Absorber}{45}{subsection.4.4.1}%
-\contentsline {chapter}{\numberline {5}Molecular Spectroscopy}{47}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Spectral Lines}{47}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Line Centre $\nu _c$}{48}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}Line Strength $S$}{48}{subsection.5.1.2}%
-\contentsline {section}{\numberline {5.2}Broadening Mechanisms: Line Shape $F$ and Width $\delta $}{49}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Uncertainty Broadening}{49}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}Doppler Broadening}{50}{subsection.5.2.2}%
-\contentsline {subsection}{\numberline {5.2.3}Collisional/Pressure Broadening}{50}{subsection.5.2.3}%
-\contentsline {section}{\numberline {5.3}Continuum Absorption}{51}{section.5.3}%
-\contentsline {chapter}{\numberline {6}The Schwarzschild Equation}{52}{chapter.6}%
-\contentsline {section}{\numberline {6.1}The Equations of Motion}{52}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Angle Averaging: The Two-Stream Approximation}{53}{section.6.2}%
-\contentsline {section}{\numberline {6.3}General Solutions and Radiating Level}{54}{section.6.3}%
-\contentsline {section}{\numberline {6.4}Frequency Bands}{56}{section.6.4}%
-\contentsline {subsection}{\numberline {6.4.1}The No-Line Limit}{57}{subsection.6.4.1}%
-\contentsline {subsection}{\numberline {6.4.2}The Weak Line Limit}{57}{subsection.6.4.2}%
-\contentsline {subsection}{\numberline {6.4.3}The Strong Line Limit}{59}{subsection.6.4.3}%
-\contentsline {subsection}{\numberline {6.4.4}Non-Isolated Lines}{61}{subsection.6.4.4}%
-\contentsline {section}{\numberline {6.5}Radiative Forcing}{61}{section.6.5}%
-\contentsline {subsection}{\numberline {6.5.1}The Weak Line Limit}{61}{subsection.6.5.1}%
-\contentsline {subsection}{\numberline {6.5.2}The Strong Line Limit}{61}{subsection.6.5.2}%
-\contentsline {section}{\numberline {6.6}Grey Gases}{61}{section.6.6}%
-\contentsline {chapter}{\numberline {7}Radiative Equilibrium}{62}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Grey Gases, but in Radiative Equilibrium}{62}{section.7.1}%
-\contentsline {section}{\numberline {7.2}General Solution}{63}{section.7.2}%
-\contentsline {subsection}{\numberline {7.2.1}Derivation}{63}{subsection.7.2.1}%
-\contentsline {subsection}{\numberline {7.2.2}Interpretation}{64}{subsection.7.2.2}%
-\contentsline {subsection}{\numberline {7.2.3}Internal Leakage}{65}{subsection.7.2.3}%
-\contentsline {subsection}{\numberline {7.2.4}Shortwave absorbers}{65}{subsection.7.2.4}%
-\contentsline {part}{III\hspace {1em}Clouds}{66}{part.3}%
-\contentsline {chapter}{\numberline {8}Convection and Thermodynamics}{68}{chapter.8}%
-\contentsline {section}{\numberline {8.1}Definitions of Humidity}{68}{section.8.1}%
-\contentsline {subsection}{\numberline {8.1.1}hi}{68}{subsection.8.1.1}%
-\contentsline {subsection}{\numberline {8.1.2}Clausius-Clapeyron Relation}{68}{subsection.8.1.2}%
-\contentsline {section}{\numberline {8.2}Convection and Tephigrams}{68}{section.8.2}%
-\contentsline {section}{\numberline {8.3}Radiative-Convective Equilibrium}{68}{section.8.3}%
-\contentsline {chapter}{\numberline {9}Warm Cloud Microphysics}{69}{chapter.9}%
-\contentsline {section}{\numberline {9.1}Growth in Thermodynamic Equilibrium}{69}{section.9.1}%
-\contentsline {subsection}{\numberline {9.1.1}Homogenous Nucleation: The Kelvin Equation}{69}{subsection.9.1.1}%
-\contentsline {subsection}{\numberline {9.1.2}Homogenous Nucleation: The Raoult Equation}{70}{subsection.9.1.2}%
-\contentsline {subsection}{\numberline {9.1.3}The Köhler Equation}{71}{subsection.9.1.3}%
-\contentsline {section}{\numberline {9.2}Growth by Condensation}{71}{section.9.2}%
-\contentsline {subsection}{\numberline {9.2.1}Diffusion of Water Molecules}{71}{subsection.9.2.1}%
-\contentsline {subsection}{\numberline {9.2.2}Diffusion of Heat}{72}{subsection.9.2.2}%
-\contentsline {section}{\numberline {9.3}Growth by Collision/Collection/Coallescence}{72}{section.9.3}%
-\contentsline {subsection}{\numberline {9.3.1}Collision Processes}{72}{subsection.9.3.1}%
-\contentsline {chapter}{\numberline {10}Cold Cloud Microphysics}{73}{chapter.10}%
-\contentsline {chapter}{\numberline {11}Cloud Morphology, Radiation, and Climate}{74}{chapter.11}%
-\contentsline {part}{IV\hspace {1em}Instrumentation}{75}{part.4}%
-\contentsline {part}{V\hspace {1em}Climate Dynamics}{76}{part.5}%
-\contentsline {chapter}{\numberline {12}Dynamical Systems}{78}{chapter.12}%
-\contentsline {section}{\numberline {12.1}The Equations of Motion}{78}{section.12.1}%
-\contentsline {section}{\numberline {12.2}Solving the System by Diagonalising the Matrix}{79}{section.12.2}%
-\contentsline {subsection}{\numberline {12.2.1}Deriving the Method (Review of ODEs and Linear Algebra)}{79}{subsection.12.2.1}%
-\contentsline {subsubsection}{Reframing the ODE Problem into a Linear Algebra Problem}{79}{section*.28}%
-\contentsline {subsubsection}{Solving the Linear Algebra Problem}{80}{section*.29}%
-\contentsline {subsection}{\numberline {12.2.2}Application to Our Dynamical System}{80}{subsection.12.2.2}%
-\contentsline {section}{\numberline {12.3}Solving the System by Separating Timescales}{81}{section.12.3}%
-\contentsline {section}{\numberline {12.4}Solutions}{83}{section.12.4}%
-\contentsline {section}{\numberline {12.5}Analogous Systems}{84}{section.12.5}%
-\contentsline {chapter}{\numberline {13}Predictability}{85}{chapter.13}%
-\contentsline {section}{\numberline {13.1}The Linear Error Propagator}{85}{section.13.1}%
-\contentsline {section}{\numberline {13.2}Local Perturbation Growth}{86}{section.13.2}%
-\contentsline {chapter}{\numberline {14}Estimation}{87}{chapter.14}%
-\contentsline {section}{\numberline {14.1}The Pseudo-Inverse $\hat {K}$}{87}{section.14.1}%
-\contentsline {section}{\numberline {14.2}Errors}{88}{section.14.2}%
-\contentsline {section}{\numberline {14.3}Interpretation}{88}{section.14.3}%
-\contentsline {section}{\numberline {14.4}Examples}{88}{section.14.4}%
-\contentsline {part}{VI\hspace {1em}Geophysical Fluid Dynamics}{89}{part.6}%
-\contentsline {chapter}{\numberline {15}The Equations of Motion}{91}{chapter.15}%
-\contentsline {section}{\numberline {15.1}Why There Is Motion in the First Place}{91}{section.15.1}%
-\contentsline {section}{\numberline {15.2}What is Special About `Geophysical' Fluid Mechanics?}{92}{section.15.2}%
-\contentsline {section}{\numberline {15.3}A Quick Primer in Fluid Mechanics}{92}{section.15.3}%
-\contentsline {section}{\numberline {15.4}The Primitive Equations of Motion}{92}{section.15.4}%
-\contentsline {section}{\numberline {15.5}Simplifications}{93}{section.15.5}%
-\contentsline {subsection}{\numberline {15.5.1}Rotating Coordinate Systems}{93}{subsection.15.5.1}%
-\contentsline {subsection}{\numberline {15.5.2}Local Cartesian Coordinates}{94}{subsection.15.5.2}%
-\contentsline {subsection}{\numberline {15.5.3}Incompressibility}{95}{subsection.15.5.3}%
-\contentsline {subsection}{\numberline {15.5.4}Scale Analysis}{95}{subsection.15.5.4}%
-\contentsline {subsection}{\numberline {15.5.5}The Simplified Equations of Motion}{96}{subsection.15.5.5}%
-\contentsline {chapter}{\numberline {16}The Fundamental Diagnostic Relations}{97}{chapter.16}%
-\contentsline {section}{\numberline {16.1}Hydrostatic Balance (Approximate Vertical Momentum Balance)}{97}{section.16.1}%
-\contentsline {section}{\numberline {16.2}Geostrophic Balance (Approximate Horizontal Momentum Balance)}{98}{section.16.2}%
-\contentsline {subsection}{\numberline {16.2.1}Rossby Number and Non-Dimensionalisation}{98}{subsection.16.2.1}%
-\contentsline {subsection}{\numberline {16.2.2}Geostrophic Balance}{99}{subsection.16.2.2}%
-\contentsline {subsection}{\numberline {16.2.3}Cyclones and Anti-Cyclones}{99}{subsection.16.2.3}%
-\contentsline {subsection}{\numberline {16.2.4}Thermal Wind Balance}{99}{subsection.16.2.4}%
-\contentsline {section}{\numberline {16.3}Gradient-Wind Balance}{99}{section.16.3}%
-\contentsline {section}{\numberline {16.4}Pressure Coordinates}{99}{section.16.4}%
-\contentsline {chapter}{\numberline {17}The Shallow Water System: 2D System}{101}{chapter.17}%
-\contentsline {section}{\numberline {17.1}The Equations of Motion}{101}{section.17.1}%
-\contentsline {section}{\numberline {17.2}Energetics}{102}{section.17.2}%
-\contentsline {section}{\numberline {17.3}Potential Vorticity}{102}{section.17.3}%
-\contentsline {section}{\numberline {17.4}Waves}{102}{section.17.4}%
-\contentsline {subsection}{\numberline {17.4.1}A Quick Primer on Waves}{102}{subsection.17.4.1}%
-\contentsline {subsection}{\numberline {17.4.2}Poincaré Waves}{102}{subsection.17.4.2}%
-\contentsline {subsection}{\numberline {17.4.3}Kelvin Waves}{103}{subsection.17.4.3}%
-\contentsline {subsection}{\numberline {17.4.4}Rossby Waves}{103}{subsection.17.4.4}%
-\contentsline {chapter}{\numberline {18}3D Systems}{104}{chapter.18}%
-\contentsline {section}{\numberline {18.1}Gravity Waves}{104}{section.18.1}%
-\contentsline {subsection}{\numberline {18.1.1}The Boussinesq Approximation}{104}{subsection.18.1.1}%
-\contentsline {section}{\numberline {18.2}Quasi-Geostrophic Theory}{104}{section.18.2}%
-\contentsline {section}{\numberline {18.3}Quasi-Geostrophic Rossby Waves}{104}{section.18.3}%
-\contentsline {section}{\numberline {18.4}Instabilities and Geostrophic Turbulence}{104}{section.18.4}%
-\contentsline {chapter}{\numberline {19}Ocean Circulation}{105}{chapter.19}%
-\contentsline {section}{\numberline {19.1}Ekman Transport}{105}{section.19.1}%
-\contentsline {section}{\numberline {19.2}Sverdrup Balance}{105}{section.19.2}%
-\contentsline {section}{\numberline {19.3}Stommel Box Model}{105}{section.19.3}%
+\contentsline {section}{\numberline {4.4}Absorption: Optical Thickness and Transmission Function}{45}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Example: Grey Atmosphere and Well Mixed Absorber}{46}{subsection.4.4.1}%
+\contentsline {chapter}{\numberline {5}Molecular Spectroscopy}{48}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Spectral Lines}{48}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Line Centre $\nu _c$}{49}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Line Strength $S$}{49}{subsection.5.1.2}%
+\contentsline {section}{\numberline {5.2}Broadening Mechanisms: Line Shape $F$ and Width $\delta $}{50}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Uncertainty Broadening}{50}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Doppler Broadening}{51}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.3}Collisional/Pressure Broadening}{51}{subsection.5.2.3}%
+\contentsline {section}{\numberline {5.3}Continuum Absorption}{52}{section.5.3}%
+\contentsline {chapter}{\numberline {6}The Schwarzschild Equation}{53}{chapter.6}%
+\contentsline {section}{\numberline {6.1}The Equations of Motion}{53}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Angle Averaging: The Two-Stream Approximation}{54}{section.6.2}%
+\contentsline {section}{\numberline {6.3}General Solutions and Radiating Level}{55}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Frequency Bands}{57}{section.6.4}%
+\contentsline {subsection}{\numberline {6.4.1}The No-Line Limit}{58}{subsection.6.4.1}%
+\contentsline {subsection}{\numberline {6.4.2}The Weak Line Limit}{58}{subsection.6.4.2}%
+\contentsline {subsection}{\numberline {6.4.3}The Strong Line Limit}{60}{subsection.6.4.3}%
+\contentsline {subsection}{\numberline {6.4.4}Non-Isolated Lines}{62}{subsection.6.4.4}%
+\contentsline {section}{\numberline {6.5}Radiative Forcing}{62}{section.6.5}%
+\contentsline {subsection}{\numberline {6.5.1}The Weak Line Limit}{62}{subsection.6.5.1}%
+\contentsline {subsection}{\numberline {6.5.2}The Strong Line Limit}{62}{subsection.6.5.2}%
+\contentsline {section}{\numberline {6.6}Grey Gases}{62}{section.6.6}%
+\contentsline {chapter}{\numberline {7}Radiative Equilibrium}{63}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Grey Gases, but in Radiative Equilibrium}{63}{section.7.1}%
+\contentsline {section}{\numberline {7.2}General Solution}{64}{section.7.2}%
+\contentsline {subsection}{\numberline {7.2.1}Derivation}{64}{subsection.7.2.1}%
+\contentsline {subsection}{\numberline {7.2.2}Interpretation}{65}{subsection.7.2.2}%
+\contentsline {subsection}{\numberline {7.2.3}Internal Leakage}{66}{subsection.7.2.3}%
+\contentsline {subsection}{\numberline {7.2.4}Shortwave absorbers}{66}{subsection.7.2.4}%
+\contentsline {part}{III\hspace {1em}Clouds}{67}{part.3}%
+\contentsline {chapter}{\numberline {8}Convection and Thermodynamics}{69}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Definitions of Humidity}{69}{section.8.1}%
+\contentsline {subsection}{\numberline {8.1.1}hi}{69}{subsection.8.1.1}%
+\contentsline {subsection}{\numberline {8.1.2}Clausius-Clapeyron Relation}{69}{subsection.8.1.2}%
+\contentsline {section}{\numberline {8.2}Convection and Tephigrams}{69}{section.8.2}%
+\contentsline {section}{\numberline {8.3}Radiative-Convective Equilibrium}{69}{section.8.3}%
+\contentsline {chapter}{\numberline {9}Warm Cloud Microphysics}{70}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Growth in Thermodynamic Equilibrium}{70}{section.9.1}%
+\contentsline {subsection}{\numberline {9.1.1}Homogenous Nucleation: The Kelvin Equation}{70}{subsection.9.1.1}%
+\contentsline {subsection}{\numberline {9.1.2}Homogenous Nucleation: The Raoult Equation}{71}{subsection.9.1.2}%
+\contentsline {subsection}{\numberline {9.1.3}The Köhler Equation}{72}{subsection.9.1.3}%
+\contentsline {section}{\numberline {9.2}Growth by Condensation}{72}{section.9.2}%
+\contentsline {subsection}{\numberline {9.2.1}Diffusion of Water Molecules}{72}{subsection.9.2.1}%
+\contentsline {subsection}{\numberline {9.2.2}Diffusion of Heat}{73}{subsection.9.2.2}%
+\contentsline {section}{\numberline {9.3}Growth by Collision/Collection/Coallescence}{73}{section.9.3}%
+\contentsline {subsection}{\numberline {9.3.1}Collision Processes}{73}{subsection.9.3.1}%
+\contentsline {chapter}{\numberline {10}Cold Cloud Microphysics}{74}{chapter.10}%
+\contentsline {chapter}{\numberline {11}Cloud Morphology, Radiation, and Climate}{75}{chapter.11}%
+\contentsline {part}{IV\hspace {1em}Instrumentation}{76}{part.4}%
+\contentsline {part}{V\hspace {1em}Climate Dynamics}{77}{part.5}%
+\contentsline {chapter}{\numberline {12}Dynamical Systems}{79}{chapter.12}%
+\contentsline {section}{\numberline {12.1}The Equations of Motion}{79}{section.12.1}%
+\contentsline {section}{\numberline {12.2}Solving the System by Diagonalising the Matrix}{80}{section.12.2}%
+\contentsline {subsection}{\numberline {12.2.1}Deriving the Method (Review of ODEs and Linear Algebra)}{80}{subsection.12.2.1}%
+\contentsline {subsubsection}{Reframing the ODE Problem into a Linear Algebra Problem}{80}{section*.28}%
+\contentsline {subsubsection}{Solving the Linear Algebra Problem}{81}{section*.29}%
+\contentsline {subsection}{\numberline {12.2.2}Application to Our Dynamical System}{81}{subsection.12.2.2}%
+\contentsline {section}{\numberline {12.3}Solving the System by Separating Timescales}{82}{section.12.3}%
+\contentsline {section}{\numberline {12.4}Solutions}{84}{section.12.4}%
+\contentsline {section}{\numberline {12.5}Analogous Systems}{85}{section.12.5}%
+\contentsline {chapter}{\numberline {13}Predictability}{86}{chapter.13}%
+\contentsline {section}{\numberline {13.1}The Linear Error Propagator}{86}{section.13.1}%
+\contentsline {section}{\numberline {13.2}Local Perturbation Growth}{87}{section.13.2}%
+\contentsline {chapter}{\numberline {14}Estimation}{88}{chapter.14}%
+\contentsline {section}{\numberline {14.1}The Pseudo-Inverse $\hat {K}$}{88}{section.14.1}%
+\contentsline {section}{\numberline {14.2}Errors}{89}{section.14.2}%
+\contentsline {section}{\numberline {14.3}Interpretation}{89}{section.14.3}%
+\contentsline {section}{\numberline {14.4}Examples}{89}{section.14.4}%
+\contentsline {part}{VI\hspace {1em}Geophysical Fluid Dynamics}{90}{part.6}%
+\contentsline {chapter}{\numberline {15}The Equations of Motion}{92}{chapter.15}%
+\contentsline {section}{\numberline {15.1}Why There Is Motion in the First Place}{92}{section.15.1}%
+\contentsline {section}{\numberline {15.2}What is Special About `Geophysical' Fluid Mechanics?}{93}{section.15.2}%
+\contentsline {section}{\numberline {15.3}A Quick Primer in Fluid Mechanics}{93}{section.15.3}%
+\contentsline {section}{\numberline {15.4}The Primitive Equations of Motion}{93}{section.15.4}%
+\contentsline {section}{\numberline {15.5}Simplifications}{94}{section.15.5}%
+\contentsline {subsection}{\numberline {15.5.1}Rotating Coordinate Systems}{94}{subsection.15.5.1}%
+\contentsline {subsection}{\numberline {15.5.2}Local Cartesian Coordinates}{95}{subsection.15.5.2}%
+\contentsline {subsection}{\numberline {15.5.3}Incompressibility}{96}{subsection.15.5.3}%
+\contentsline {subsection}{\numberline {15.5.4}Scale Analysis}{96}{subsection.15.5.4}%
+\contentsline {subsection}{\numberline {15.5.5}The Simplified Equations of Motion}{97}{subsection.15.5.5}%
+\contentsline {chapter}{\numberline {16}The Fundamental Diagnostic Relations}{98}{chapter.16}%
+\contentsline {section}{\numberline {16.1}Hydrostatic Balance (Approximate Vertical Momentum Balance)}{98}{section.16.1}%
+\contentsline {section}{\numberline {16.2}Geostrophic Balance (Approximate Horizontal Momentum Balance)}{99}{section.16.2}%
+\contentsline {subsection}{\numberline {16.2.1}Rossby Number and Non-Dimensionalisation}{99}{subsection.16.2.1}%
+\contentsline {subsection}{\numberline {16.2.2}Geostrophic Balance}{100}{subsection.16.2.2}%
+\contentsline {subsection}{\numberline {16.2.3}Cyclones and Anti-Cyclones}{100}{subsection.16.2.3}%
+\contentsline {subsection}{\numberline {16.2.4}Thermal Wind Balance}{100}{subsection.16.2.4}%
+\contentsline {section}{\numberline {16.3}Gradient-Wind Balance}{100}{section.16.3}%
+\contentsline {section}{\numberline {16.4}Pressure Coordinates}{100}{section.16.4}%
+\contentsline {chapter}{\numberline {17}The Shallow Water System: 2D System}{102}{chapter.17}%
+\contentsline {section}{\numberline {17.1}The Equations of Motion}{102}{section.17.1}%
+\contentsline {section}{\numberline {17.2}Energetics}{103}{section.17.2}%
+\contentsline {section}{\numberline {17.3}Potential Vorticity}{103}{section.17.3}%
+\contentsline {section}{\numberline {17.4}Waves}{103}{section.17.4}%
+\contentsline {subsection}{\numberline {17.4.1}A Quick Primer on Waves}{103}{subsection.17.4.1}%
+\contentsline {subsection}{\numberline {17.4.2}Poincaré Waves}{103}{subsection.17.4.2}%
+\contentsline {subsection}{\numberline {17.4.3}Kelvin Waves}{104}{subsection.17.4.3}%
+\contentsline {subsection}{\numberline {17.4.4}Rossby Waves}{104}{subsection.17.4.4}%
+\contentsline {chapter}{\numberline {18}3D Systems}{105}{chapter.18}%
+\contentsline {section}{\numberline {18.1}Gravity Waves}{105}{section.18.1}%
+\contentsline {subsection}{\numberline {18.1.1}The Boussinesq Approximation}{105}{subsection.18.1.1}%
+\contentsline {section}{\numberline {18.2}Quasi-Geostrophic Theory}{105}{section.18.2}%
+\contentsline {section}{\numberline {18.3}Quasi-Geostrophic Rossby Waves}{105}{section.18.3}%
+\contentsline {section}{\numberline {18.4}Instabilities and Geostrophic Turbulence}{105}{section.18.4}%
+\contentsline {chapter}{\numberline {19}Ocean Circulation}{106}{chapter.19}%
+\contentsline {section}{\numberline {19.1}Ekman Transport}{106}{section.19.1}%
+\contentsline {section}{\numberline {19.2}Sverdrup Balance}{106}{section.19.2}%
+\contentsline {section}{\numberline {19.3}Stommel Box Model}{106}{section.19.3}%
