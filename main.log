@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.6.26)  28 JUL 2025 16:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.6.26)  1 AUG 2025 18:42
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1505,72 +1505,74 @@ Overfull \hbox (2.43333pt too wide) in paragraph at lines 773--782
 
 [56]
 
-[57]
+[57] Excluding 'comment' comment.
 
 [58]
 
 [59]
 
 [60]
+
+[61]
 Chapter 7.
 
 
-[61
+[62
 
 ]
 
-[62]
+[63]
 
-[63])
+[64])
 
-[64]
+[65]
 \openout2 = `Clouds.aux'.
 
  (./Clouds.tex
 
-[65
+[66
 
 
 
 
 ]
 
-[66]
+[67]
 Chapter 8.
-
-
-[67
-
-]
-Chapter 9.
 
 
 [68
 
 ]
+Chapter 9.
 
-[69]
+
+[69
+
+]
 
 [70]
 
 [71]
+
+[72]
 Chapter 10.
 
 
-[72
+[73
 
 ]
 Chapter 11.
 )
 
-[73
+[74
 
 ]
 \openout2 = `Instrumentation.aux'.
 
  (./Instrumentation.tex
 
-[74
+[75
 
 
 
@@ -1580,14 +1582,14 @@ Chapter 11.
 
  (./Climate Dynamics.tex
 
-[75
+[76
 
 
 
 
 ]
 
-[76]
+[77]
 Chapter 12.
 
 Overfull \hbox (2.43767pt too wide) in paragraph at lines 51--65
@@ -1596,15 +1598,15 @@ Overfull \hbox (2.43767pt too wide) in paragraph at lines 51--65
 
 
 
-[77
+[78
 
 ]
-
-[78]
 
 [79]
 
 [80]
+
+[81]
 Underfull \hbox (badness 2269) in paragraph at lines 341--342
 []\OT1/cmr/m/sl/10.95 The \OT1/cmr/bx/sl/10.95 Quasi-Steady Re-sponse\OT1/cmr/m/sl/10.95 : On
  []
@@ -1616,59 +1618,59 @@ Overfull \hbox (2.43333pt too wide) in paragraph at lines 324--354
 
 
 
-[81]
-
 [82]
 
 [83]
+
+[84]
 Chapter 13.
 
 
-[84
+[85
 
 ]
 
-[85]
+[86]
 Chapter 14.
 
 
-[86
+[87
 
 ])
 
-[87]
+[88]
 \openout2 = `GFD.aux'.
 
  (./GFD.tex
 
-[88
+[89
 
 
 
 
 ]
 
-[89]
+[90]
 Chapter 15.
-<Figures/GFD/Diff Heating.jpg, id=2185, 185.9748pt x 161.1621pt>
+<Figures/GFD/Diff Heating.jpg, id=2197, 185.9748pt x 161.1621pt>
 File: Figures/GFD/Diff Heating.jpg Graphic file (type jpg)
 <use Figures/GFD/Diff Heating.jpg>
 Package pdftex.def Info: Figures/GFD/Diff Heating.jpg  used on input line 43.
 (pdftex.def)             Requested size: 241.84843pt x 209.58693pt.
 
 
-[90
+[91
 
  <./Figures/GFD/Diff Heating.jpg>]
 
-[91]
+[92]
 ===== Image 'tikz/main-figure14' is up-to-date. ======
 ===== Image 'tikz/main-figure15' is up-to-date. ======
 
 
-[92]
+[93]
 
-[93 <./tikz/main-figure14.pdf> <./tikz/main-figure15.pdf>]
+[94 <./tikz/main-figure14.pdf> <./tikz/main-figure15.pdf>]
 Underfull \hbox (badness 10000) in paragraph at lines 222--224
 
  []
@@ -1680,41 +1682,41 @@ Underfull \hbox (badness 10000) in paragraph at lines 225--250
 
 
 
-[94]
-
 [95]
+
+[96]
 Chapter 16.
 
 
-[96
+[97
 
 ] Excluding 'comment' comment.
-
-[97]
 
 [98]
 
 [99]
+
+[100]
 Chapter 17.
 
 
-[100
+[101
 
 ]
 
-[101]
-
 [102]
+
+[103]
 Chapter 18.
 
 
-[103
+[104
 
 ]
 Chapter 19.
 )
 
-[104
+[105
 
 ]
 Underfull \hbox (badness 2027) in paragraph at lines 198--198
@@ -1723,7 +1725,7 @@ Underfull \hbox (badness 2027) in paragraph at lines 198--198
 
 
 
-[105
+[106
 
 
 
@@ -1739,10 +1741,10 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 44363 strings out of 473190
- 945018 string characters out of 5715800
- 1795697 words of memory out of 5000000
- 66303 multiletter control sequences out of 15000+600000
+ 44369 strings out of 473190
+ 945097 string characters out of 5715800
+ 1795698 words of memory out of 5000000
+ 66305 multiletter control sequences out of 15000+600000
  578712 words of font info for 112 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  116i,25n,121p,1080b,1859s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1753,10 +1755,10 @@ pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist,
 pdfTeX warning (dest): name{Climate\040Dynamics} has been referenced but does not exist, replaced by a fixed one
 
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxsl10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsl1095.pfb>
-Output written on main.pdf (106 pages, 2999995 bytes).
+Output written on main.pdf (107 pages, 3010112 bytes).
 PDF statistics:
- 2679 PDF objects out of 2984 (max. 8388607)
- 2269 compressed objects within 23 object streams
- 602 named destinations out of 1000 (max. 500000)
+ 2690 PDF objects out of 2984 (max. 8388607)
+ 2279 compressed objects within 23 object streams
+ 606 named destinations out of 1000 (max. 500000)
  1514 words of extra memory for PDF output out of 10000 (max. 10000000)
 
