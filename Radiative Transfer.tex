@@ -990,6 +990,7 @@ Let us now calculate the $OLR_{\nu_c}$ in the weak line limit. We again need to 
 \end{align*}
 where we have used integral properties to go from the second line to the third line. We substitute this into \ref{OLR Transmission Band Soln} to find that: 
 \begin{align}
+    \label{Weak OLR}
     \BOX{OLR_{\nu_c}
     =F_+(\nu_c,0)(\Delta-S\mu)+\int_{0}^{p_s}\pi B(\nu_c,T(p'))\frac{Sq(p')}{g\cos\tilde{\theta}}\,dp'}
 \end{align}
@@ -999,7 +1000,9 @@ We interpret the terms physically as follows:
     =\underbrace{F_+(\nu_c,0)(\Delta\overbrace{-S\mu}^{\text{Width taken out}})}_{\text{Emission from Ground}}
     +\underbrace{\int_{0}^{p_s}\pi B(\nu_c,T(p'))\frac{Sq(p')}{g\cos\tilde{\theta}}\,dp'}_{\text{Emission from Atmosphere}}
 \end{align*}
-So if $\kappa=0$, we see that $OLR_{\nu_c}$ \textit{decreases} due to the atmosphere absorbing some emission from the ground, but it also \textit{increases} due to the atmosphere itself emitting some radiation. Whether this ultimately increases or decreases $OLR_{\nu_c}$ will depend crucially on $T(p)$, the vertical temperature profile of the atmosphere.
+So if $\kappa=0$, we see that $OLR_{\nu_c}$ \textit{decreases} due to the atmosphere absorbing some emission from the ground, but it also \textit{increases} due to the atmosphere itself emitting some radiation. Whether this ultimately increases or decreases $OLR_{\nu_c}$ will depend crucially on both $T(p)$, the vertical temperature profile of the atmosphere, and $q(p)$, the distribution of the absorber in the atmosphere.
+
+In fact, in general, we \textit{cannot} say whether introducing a greenhouse gas will increase or decrease $OLR_{\nu_c}$ without any knowledge of the vertical temperature profile of the atmosphere.
 
 \subsection{The Strong Line Limit}
 
@@ -1122,6 +1125,7 @@ We continue by calculating $OLR_{\nu_c}$ in the strong line limit. We again need
 \end{align*}
 We substitute this into \ref{OLR Transmission Band Soln} to find that:
 \begin{align}
+    \label{Strong OLR}
     \BOX{OLR_{\nu_c}
     =F_+(\nu_c,0)(\Delta-2\sqrt{S\delta_0 \mu_p})+\int_{0}^{p_s}\pi B(\nu_c,T(p'))\sqrt{\frac{S\delta_0}{\mu_pg\cos\tilde{\theta}}}\frac{p'}{p_0}q(p')\,dp'}
 \end{align}
@@ -1135,7 +1139,7 @@ We also won't cover how to deal with this here. Dissapointing I know, but it is 
 
 \section{Radiative Forcing}
 
-Suppose we wish to know how varying some parameter $\lambda$ (for example, CO$_2$ concentrations) varies the temperature of the Earth. Consider again the radiation budget of the Earth (\ref{Rad budget}), now per unit area:
+Suppose we wish to know how varying some parameter $\lambda$ (for example, CO$_2$ concentrations) varies the temperature of the Earth. Consider again the radiation budget of the Earth (\ref{Rad budget}), now per unit area, which is a function of $\lambda$ and the mean surface temperature $T_s$:
 \begin{align}
     G=\frac{1}{4}(1-a)L_\star-OLR(T_s,\lambda)
 \end{align}
@@ -1170,11 +1174,84 @@ This allows us to solve for $\frac{\partial T_s}{\partial \lambda}$, which is wh
 \end{align}
 Note the negative sign on the \textbf{DRF}.
 
-We now assume that $a$ do not depend on $\lambda$ or $T_s$ for simplicity, which allows us to substitute $OLR$ for every $G$ in \ref{DRF and ECS}. Let us now calculate these in the strong and weak line limits.
+Physically, \textbf{DRF} is the extra power per unit area staying in (or leaving if $DRF<0$) the Earth per unit change in $\lambda$. This is closely connected to but distinct from the \textit{Radiative Forcing}, which is simply the the extra power or the extra power per unit area staying in (or leaving if $DRF<0$) the Earth. Now generally, this will encode how this parameter \textit{immediately} changes the radiative forcing. For example, if $\lambda=$ aerosol concentrations, this will immediately affect clouds and how they affect. Or, if $\lambda$ encodes some ice dynamics resulting in less ice-cover, this might affect the albedo.
+
+The \textbf{ECS} encodes how sensitive the climate (or more specifically, $T_s$) is to a change in radiative forcing. If there is some radiative forcing $G\neq 0$, the temperature will change, and this will affect other parts of the climate system to bring $G$ back to 0. Intuitively, you can think of this parameter as encoding all the \textit{feedbacks}. For example, when the temperature increases, some ice will melt, which will decrease the albedo and increase $G$, thus causing $T_s$ to increase even more! The most straightforward feedback is the \textbf{Planck Feedback}, which essentially encodes the fact that a hotter planet will radiate more blackbody radiation.
+
+As a summary:
+\begin{fact}{Radiative Forcing: DRF and ECS}{RF Box}\label{RF Box}
+    Let $G=G(\lambda,T_s)$ be the radiation energy budget for the Earth per unit area, where $\lambda$ is some parameter (e.g., the concentration of CO$_2$) and $T_s$ is the mean surface temperature. The following relations hold (explained elsewhere):
+
+    \begin{minipage}{0.5\linewidth}
+        \begin{gather*}
+            G = \frac{1}{4}(1-a)L_\star-OLR(T_s,\lambda)
+        \end{gather*}
+    \end{minipage}
+    \begin{minipage}{0.5\linewidth}
+        \begin{gather*}
+            G = \frac{dG}{d\lambda} = 0
+        \end{gather*}
+    \end{minipage}
+    We define the \textbf{Differential Radiative Forcing} (\textbf{DRF}) and the \textbf{Equilibrium Climate Sensitivity Parameter} (\textbf{ECS}) as follows:
+
+    \begin{minipage}{0.5\linewidth}
+        \begin{gather}
+            \BOX{DRF = -\frac{\partial G}{\partial \lambda}}
+        \end{gather}
+    \end{minipage}
+    \begin{minipage}{0.5\linewidth}
+        \begin{gather}
+            \BOX{ECS = \frac{\partial G}{\partial T_s}}
+        \end{gather}
+    \end{minipage}
+
+    \textbf{DRF} encodes the extra power per unit area staying in the Earth caused by a perturbation $\lambda$. \textbf{ECS} encodes how much $T_s$ would have to change to affect $G$ and encodes all the feedbacks.
+\end{fact}
+
+Now we'll calculate the \textbf{DRF} and let $\lambda=q$, the concentration of an absorber (a greenhouse gas) in the weak and strong line limits. We won't calculate the \textbf{ECS}, as it doesn't bring much insight at this point.
+
+We will make four assumptions here just for simplicity and to derive some physical intuition. We assume first that $a$ do not depend on $\lambda$ or $T_s$ for simplicity, which allows us to substitute $OLR$ for every $G$ in \ref{DRF and ECS}. Second, we consider just one spectral line such that $OLR=OLR_{\nu_c}$, also for simplicity. Third, we assume that the absorber is well-mixed, so that $q(p)=const$. Fourth, we assume that $F_+(\nu_c,0)$, the spectral irradiance at the ground, is equal to $\pi B(\nu_c,T_s)$.
 
 \subsection{The Weak Line Limit}
 
+Using our expression for the weak line $OLR$ from \ref{Weak OLR} we now calculate the \textbf{DRF} and let $\lambda=q$, the concentration of our weak line absorber. I also remind you that the temperature profile of the atmosphere is a function of $T_s$.
+\begin{align}
+    DRF &= -\frac{\partial}{\partial q}OLR_{\nu_c}\nonumber\\
+    &=-\frac{\partial}{\partial q} \left( 
+        -F_+(\nu_c,0)S\frac{qp_s}{g\cos\tilde{\theta}}+\frac{Sq}{g\cos\tilde{\theta}}\int_{0}^{p_s}\pi B(\nu_c,T(T_s,p'))\,dp'
+     \right)\nonumber\\
+    \label{DRF Weak Explicit}
+    &=
+    \frac{S\pi}{g\cos\tilde{\theta}}\left( 
+        B(\nu_c,T_s)p_s - \int_{0}^{p_s} B(\nu_c,T(T_s,p'))\,dp'
+     \right)
+\end{align}
+
+There are two key takeaways. First, note that $OLR_{\nu_c}$ is proportional to $q$ in the weak line limit, so the $DRF$ is constant (with respect to $q$). The second takeaway is more important, and more general, note that the $DRF$ could be positive or negative depending on $T(T_s,p')$. Recall that $B(\nu_c,T)$ is monotonically increasing with $T$. 
+
+If the temperature decreases with height (so that $T(T_s,p')<T_s$), then $B(\nu_c,T(T_s,p'))<B(\nu_c,T_s)$ such that the first term is larger than the second term. Therefore, $DRF>0$, and an increase in $q$ will result in a \textit{positive} radiative forcing.
+
+If the temperature increases with height (so that $T(T_s,p')>T_s$), then $B(\nu_c,T(T_s,p'))>B(\nu_c,T_s)$ such that the first term is smaller than the second term. Therefore, $DRF<0$, and an increase in $q$ will result in a \textit{negative} radiative forcing.
+
+The first case is generally the case for most of Earth's atmosphere, but the second case actually obtains in the stratosphere (recall Figure \ref{Earth T Observation}). As such, if we increase the concentration there, we actually increase the $OLR_{\nu_c}$ escaping the Earth. This is actually what we see on Earth currently, but the increase from the $OLR_{\nu_c}$ is actually very small, because the stratosphere makes up such a small proportion of the atmosphere's mass (again, look at Figure \ref{Earth T Observation} and note the logarithmic pressure axis, and recall that $dp$ is proportional to the mass in a layer).
+
 \subsection{The Strong Line Limit}
+
+We now use our expression for the strong line $OLR$ from \ref{Weak OLR} to calculate the \textbf{DRF}. We again assume that $q$ is constant.
+\begin{align}
+    DRF &= -\frac{\partial}{\partial q}OLR_{\nu_c}\nonumber\\
+    &=-\frac{\partial}{\partial q} \left( 
+        -F_+(\nu_c,0)\sqrt{S\delta_0 \frac{qp_s^2}{p_0g\cos\tilde{\theta}}}+\int_{0}^{p_s}\pi B(\nu_c,T(p'))\sqrt{\frac{S\delta_0}{\mu_pg\cos\tilde{\theta}}}\frac{p'}{p_0}q(p')\,dp'
+     \right)\nonumber\\
+    \label{DRF Strong Explicit}
+    &= \pi\sqrt{\frac{S\delta_0}{2p_0g\cos\tilde{\theta}}}\frac{1}{\sqrt{q}}\left( 
+        B(\nu_c,T_s)p_s-\int_{0}^{p_s}B(\nu_c,T(p'))\,dp'
+     \right)
+\end{align}
+
+There are again, two key takeaways. First, that this time $OLR_{\nu_c}$ is proportional to $\sqrt{q}$ in the strong line limit, so the $DRF\sim 1/\sqrt{q}$, there are diminishing returns! This makes sense, as the centre of the line is already completely absorbing all radiation. 
+
+The second takeaway is exactly the same second takeaway in the previous section: the $DRF$ could be positive or negative depending on $T(T_s,p')$. This is clear since the right hand term in brackets is exactly the same in both \ref{DRF Strong Explicit} and \ref{DRF Weak Explicit}.
 
 \section{Grey Gases}
 
