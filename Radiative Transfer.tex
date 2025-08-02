@@ -372,7 +372,7 @@ where the zenith angle term $\cos \zeta$ represent the fact that the sun is only
 If we define the total \textbf{Outgoing Longwave Radiation} $OLR$ as the total irradiance leaving the planet, then we get a radiation budget for the planet:
 \begin{align}
    & G  = (1-a)\pi R^2 L_\star - 4\pi R^2 OLR \nonumber\\
-   & \boxed{G \sim (1-a) \frac{L_\star}{4} - OLR}
+   & \boxed{G \sim (1-a) \frac{L_\star}{4} - OLR}\label{Rad budget}
 \end{align}
 
 Almost all of \hyperref[Radiative Transfer]{Radiative Transfer} will be dedicated to calculating this $OLR$, and we'll have to introduce a lot of machinery to calculate it.
@@ -395,7 +395,6 @@ In equilibrium, $G=0$, which means we can solve for the equilibrium temperature 
     \frac{1-a}{4\epsilon}\frac{R_{\star}^2}{d^2}
     \right)^\frac{1}{4}
 \end{align*}
-
 
 \section{Absorption: Optical Thickness and Transmission Function}
 
@@ -1136,14 +1135,42 @@ We also won't cover how to deal with this here. Dissapointing I know, but it is 
 
 \section{Radiative Forcing}
 
-Suppose we wish to know how varying some parameter $\lambda$ (for example, CO$_2$ concentrations) varies. Consider the radiation budget of the Earth:
+Suppose we wish to know how varying some parameter $\lambda$ (for example, CO$_2$ concentrations) varies the temperature of the Earth. Consider again the radiation budget of the Earth (\ref{Rad budget}), now per unit area:
 \begin{align}
-    G=\frac{1}{4}(1-\alpha)S_0-OLR(T_s,\lambda)
+    G=\frac{1}{4}(1-a)L_\star-OLR(T_s,\lambda)
 \end{align}
-We know that in equilibrium, $G=0$. Now consider the differential of G with respect to some parameter:
+We know that in equilibrium, $G=0$. In this section, we will only be considering equilibrium solutions, and will \textit{not} consider transient response. This us allows to use some tricks. Suppose that initially, $\lambda_{in}=\lambda$, and we perturb $\lambda$ such that $\lambda_{fin}=\lambda+\Delta \lambda$. Before:
 \begin{align*}
-    dG = 
+    G(T_s,\lambda)=0
 \end{align*}
+and after:
+\begin{align*}
+    G(T_s,\lambda+\Delta \lambda)=0
+\end{align*}
+so
+\begin{align*}
+    \frac{\Delta G}{\Delta \lambda}=0
+\end{align*}
+But $\lambda_{in}$ and $\lambda_{fin}$ are completely arbitrary, so we can take the limit as $\Delta\lambda\to 0$ and find that the derivative of $G$ with respect to $\lambda$ is 0:
+\begin{align*}
+    \frac{dG}{d\lambda}=0
+\end{align*}
+Using chain rule, we find that:
+\begin{align*}
+    \frac{dG}{d\lambda}=\frac{\partial G}{\partial \lambda}+\frac{\partial G}{\partial T_s}\frac{\partial T_s}{\partial \lambda}=0
+\end{align*}
+
+This allows us to solve for $\frac{\partial T_s}{\partial \lambda}$, which is what, at least to a first order, we actually care about. There are some terms that pop up that we define as the \textbf{Differential Radiative Forcing} (\textbf{DRF}) and the \textbf{Equilibrium Climate Sensitivity Parameter} (\textbf{ECS}):
+\begin{align}
+    \label{DRF and ECS}
+    \BOX{
+        \frac{\partial T_s}{\partial \lambda}=
+        \frac{\overbrace{-\partial G/\partial \lambda}^{DRF}}{\underbrace{\partial G/\partial T_s}_{ECS}}
+    }
+\end{align}
+Note the negative sign on the \textbf{DRF}.
+
+We now assume that $a$ do not depend on $\lambda$ or $T_s$ for simplicity, which allows us to substitute $OLR$ for every $G$ in \ref{DRF and ECS}. Let us now calculate these in the strong and weak line limits.
 
 \subsection{The Weak Line Limit}
 
