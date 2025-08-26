@@ -10,18 +10,18 @@ This section of the course was lectured by \href{https://users.physics.ox.ac.uk/
     \item \hyperref[Basic Thermodynamics]{Basic Thermodynamic Concepts}: 
         
         \begin{quote}
-            We recap some basic thermodynamic concepts you should be familiar with, like pressure, \hyperref[Ideal Gas Box]{ideal gases}, and \hyperref[Equipartition]{heat capacity}. We then explain importantly how we extend such concepts to deal with gases consisting of \hyperref[Multiple]{multiple constituents}, and introduce the important approximation of \hyperref[Hydrostatic Box]{Hydrostatic Balance}. 
+            We recap some basic thermodynamic concepts you should be familiar with, like pressure, \hyperref[Ideal Gas Box]{ideal gases}, and \hyperref[Equipartition]{heat capacity}. We then explain how to extend such concepts to deal with gases consisting of \hyperref[Definition Multiple]{multiple constituents}. Finally, we introduce the important approximation of \hyperref[Hydrostatic Box]{Hydrostatic Balance}.
         \end{quote}
 
     \item \hyperref[Dry Thermodynamics]{Dry Thermodynamics}: 
     
         \begin{quote}
-            We focus primarily on the vertical temperature structure of the atmosphere. We explain some of this by deriving the \hyperref[Dry Adiabat Box]{Dry Adiabat}, which governs the temperature of a convecting parcel of air. Next, we consider convection, and derive a \hyperref[Dry Stability Box]{criterion} of whether an atmosphere will be unstable to convection and define a \hyperref[Convection Box]{few terms} relating to convection. 
+            We focus primarily on the vertical temperature structure of the atmosphere. We predict and explain some observations by deriving the \hyperref[Dry Adiabat Box]{Dry Adiabat}, which governs the temperature of a convecting parcel of air. Next, we consider convection, and derive a \hyperref[Dry Stability Box]{criterion} of whether an atmosphere will be unstable to convection and define a \hyperref[Convection Box]{few terms} relating to convection.
         \end{quote}
     
     \item \hyperref[Moist Thermodynamics]{Moist Thermodynamics}:
         \begin{quote}
-            We extend the previous section to apply to atmospheres which have constituents which condense. We derive the \hyperref[Moist Pseudo Adiabat]{Moist Pseudo-Adiabat}, the moist counterpart to the \hyperref[Dry Adiabat Box]{Dry Adiabat}. We do not discuss moist convection here, and instead discuss it in Part \ref{Clouds}.
+            We extend the previous section to apply to atmospheres which have constituents which condense. We derive the \hyperref[Moist Pseudo Adiabat]{Moist Pseudo-Adiabat}, the moist counterpart to the \hyperref[Dry Adiabat Box]{Dry Adiabat}. We do not discuss moist convection here, and instead discuss this in Part \ref{Clouds}.
         \end{quote}
 \end{enumerate}
 
@@ -31,8 +31,11 @@ This section of the course was lectured by \href{https://users.physics.ox.ac.uk/
 
 \subsection{Basic Thermodynamic Definitions}
 
-We should review (or learn) the basic state variables of thermodynamics. For Atmospheric and Oceanic Physics, we will almost always work with \textit{Intensive} variables: variables that are independent of the size of a system. For example, `number of particles' is not an intensive variable, because the number of particles changes (doubles) if you double the size of the system. However, `number of particles \textit{per unit volume}' is an intensive variable. In this case, we'll need to know:
+We should review (or learn) the basic state variables of thermodynamics. 
 
+For Atmospheric and Oceanic Physics, we will almost always work with `\textit{Intensive}' variables. These are variables that are independent of the size of a system. For example, `number of particles' is not an intensive variable, because the number of particles changes (it doubles) if you double the size of the system. However, `number of particles \textit{per unit volume}' is an intensive variable, because this remains unchanged when you double the size of a system.
+
+As a brief review, we'll need to know the following \textit{intensive} variables:
 \begin{table}[h!]
     \begin{tabular}{|p{1.4cm}|p{2.8cm}|p{4cm}|p{7.4cm}|}
     \hline
@@ -52,16 +55,17 @@ We should review (or learn) the basic state variables of thermodynamics. For Atm
     \end{tabular}
     \caption{Basic Intensive Thermodynamic Variables}
 \end{table}
-\subsection{Multiple Constituents}
+\subsection{Multiple Constituents}\label{Multiple}
 
-In general, the atmosphere is composed of multiple constituents. We (or the examiner) must make two ultimately arbitrary decisions when referring to a constituent's abundance. First, we can either refer to a constituent's abundance by its \textit{mass}, or by it's \textit{number} (in \textit{moles}). Second, we can either refer to it as a \textit{concentration} or a \textit{ratio}. These choices are ultimately arbitrary because one may freely convert between if one knows the molar mass of all constituents.
+In general, a planet's atmosphere is composed of multiple constituents. Our goal is to expand our vocabulary to describe the abundance of a certain constituent in the atmosphere.
+
+It turns out that we (or the examiner) must make two ultimately arbitrary decisions if we wish to refer to a certain constituent's abundance. First, we can either refer to a constituent's abundance by its \textit{mass}, or by it's \textit{number} (in \textit{moles}). Second, we can either refer to it as a \textit{concentration} or a \textit{ratio}. These choices are ultimately arbitrary because one may freely convert between them with the molar mass using Equation \ref{density to number}.
 
 Suppose our atmosphere is composed of constituents  $\mathbb{S}=\{a,b,c,\ldots\}$. Each species $i\in\mathbb{S}$ has a molar mass of $M_i$ and a number density of $n_i$. Then we can refer to it's abundance as follows. All quantities are dimensionless.
 
-\begin{fact}{Ways of Referring to Constituent Quantities}{Definition Multiple}\label{Definition Multiple}
-    We can refer to the amount of a constituent in an atmosphere as follows: 
-
-    \noindent\begin{tabular}{|p{0.8cm}|p{6.5cm}|p{7.5cm}|}
+\begin{fact}{Definitions Regarding Constituent Quantities}{Definition Multiple}\label{Definition Multiple}
+    We can refer to the amount of a certain constituent $a$ in an atmosphere as follows:\newline\newline
+    \begin{tabular}{|p{0.8cm}|p{6.5cm}|p{7.5cm}|}
         \hline
         & Fraction/Concentration & Mixing Ratio \\
         \hline
@@ -82,8 +86,10 @@ Suppose our atmosphere is composed of constituents  $\mathbb{S}=\{a,b,c,\ldots\}
             \frac{M_an_a}{\sum\limits_{i\in\mathbb{S},i\neq a} M_in_i}
         \end{align*}\\
         \hline
-    \end{tabular}
-    
+    \end{tabular}\newline
+
+    where $n_i=$ the number density of $i$; $M_i=$ the molar mass of $i$; and $\rho_i=$ the density of $i$.
+
     All formulations are equivalent, as one can freely convert between all four expressions using algebra or by using the following formula:
     \begin{align}\label{density to number}
         \rho_A=\frac{n_AM_A}{N_A}
@@ -93,15 +99,17 @@ Suppose our atmosphere is composed of constituents  $\mathbb{S}=\{a,b,c,\ldots\}
     } 
 \end{fact}
 
-We also introduce the concept of '\textit{dilute}': some constituent $a$ is in the dilute limit if and only if:
-\begin{align*}
-    n_a&\ll\sum\limits_{i\in\mathbb{S},i\neq a} n_i\text{   and/or   }
-    \rho_a\ll\sum\limits_{i\in\mathbb{S},i\neq a} \rho_i
-\end{align*}
+We also introduce the concept of '\textbf{dilute}': some constituent $a$ is in the \textbf{dilute} limit if and only if:
+\begin{align}\label{Dilute}
+    \boxed{n_a\ll\sum\limits_{i\in\mathbb{S},i\neq a} n_i\hspace{10mm}\text{and/or}\hspace{10mm}
+    \rho_a\ll\sum\limits_{i\in\mathbb{S},i\neq a} \rho_i}
+\end{align}
 
-In the dilute limit, molar and/or mass fractions/concentrations are equivalent to mixing ratios. However, note that you're not always allowed to make this assumption (especially in exams!). There is also the ambiguity in the 'and/or', however oftentimes we are in both the molar and mass dilute limit since the molar masses $M_i$ are all of similar size.
+An important upshot of this is that, in the dilute limit, fractions/concentrations and mixing ratios are equivalent. In many problems, this simplifies the algebra massively, but you're not always allowed to assume that constituents are dilute (especially in exams!).
 
-Oftentimes, one refers to dilute constituents in terms of \textit{ppm} (parts per million) or \textit{ppmv} (parts per million volume). \textit{ppm} is is the \textit{Mass Fraction} or \textit{Mass Concentration} multiplied by $10^{6}$ while \textit{ppmv} is is the \textit{Mole Fraction} or \textit{Molar Concentration} multiplied by $10^{6}$. 
+Note however that there is some ambiguity in the 'and/or' in Equation \ref{Dilute}. For example, we might have a situation where $n_a\ll\sum n_i$ but \textbf{not} $\rho_a\ll\sum \rho_i$ (or vice versa). This occurs only if the molar masses $M_a$ and $M_i$ are not all of similar size (convince yourself that this is the case using Eqn. \ref{density to number}). This is almost never the case in scenarios we consider, so you can just treat the `and/or' as just an `and' in Equation \ref{Dilute}.
+
+Sometimes, we'll see people refer to dilute constituents in terms of \textit{ppm} (parts per million) or \textit{ppmv} (parts per million volume). \textit{ppm} is defined as the \textit{Mass Fraction} or \textit{Mass Concentration} multiplied by $10^{6}$ while \textit{ppmv} is defined the \textit{Mole Fraction} or \textit{Molar Concentration} multiplied by $10^{6}$. 
 
 \subsubsection{Atmospheric Composition: Planetary Examples}
 
@@ -116,6 +124,10 @@ In \textit{Mole-Fraction:}
         \item Carbon Dioxide CO$_2$: 0.000430 (430 \textit{ppmv})\footnote{At time of writing!}
         \item Water Vapour H$_2$O: A few percent.\footnote{This strongly depends on time and location due to dynamics discussed in \hyperref[Moist Thermodynamics]{Moist Thermodynamics}.}
     \end{itemize}
+\end{itemize}
+\end{multicols}
+\begin{multicols}{2}
+\begin{itemize}
     \item  Venus' Atmosphere:
     \begin{itemize}
         \item Carbon Dioxide CO$_2$: 0.965
@@ -134,9 +146,9 @@ In \textit{Mole-Fraction:}
 
 \subsection{Single Constituent Atmosphere}
 
-An \textbf{Ideal Gas} is a theoretical (imaginary) gas consisting of molecules which interact only via perfectly elastic collisions. No real gas is ideal, but many gases, including 99\% of Earth's atmosphere (Nitrogen, Oxygen, and Argon), behave approximately like ideal gases under atmospheric conditions like ours. We start from the version of ideal gas law you have probably seen before, now focusing on a gas made up of a single constituent $a$:
+An \textbf{Ideal Gas} is a theoretical (imaginary) gas consisting of molecules which interact only via perfectly elastic collisions. No real gas is ideal, but many gases, including 99\% of Earth's atmosphere (Nitrogen, Oxygen, and Argon), behave approximately like ideal gases under atmospheric conditions like ours. We start from the version of the ideal gas law that you've probably seen before, and assume that the gas is made up of a single constituent $a$ for simplicity:
 \begin{align}\label{Ideal Gas Primitive}
-    pV=N_ak_BT
+    \boxed{pV=N_ak_BT}
 \end{align}
 where $p=$ pressure, $V=$ volume, $N_a=$ number of molecules of $a$, $k_B=$ Boltzmann's constant, and $T=$ temperature. We can divide by the volume, then multiply and divide by $\frac{M_a}{N_A}$ to get: 
 \begin{align*}
@@ -148,9 +160,10 @@ where $p=$ pressure, $V=$ volume, $N_a=$ number of molecules of $a$, $k_B=$ Bolt
     &=\rho_aR_aT
     &\text{; }&R_a\equiv\frac{R^*}{M_a}=\text{specific gas constant}
 \end{align*}
+
 The \textbf{Gas Constant} $R^*$ is defined as: $R^*\equiv k_BN_A\approx$ \qty{8.314}{\joule\per\mole\per\kelvin}. We further define the \textbf{Specific Gas Constant} $R_a\equiv \frac{R^*}{M_a}$ which has units of \qty{}{\joule\per\kilogram\per\kelvin}. \textbf{From now on I will refer to the specific gas constant $R_a$ by just writing just $R$.} The final line gives us the version of the ideal gas law we will use most often as it features only \textit{intensive} variables:
 \begin{fact}{Ideal Gas Law in Intensive Variables}{Ideal Gas Box}\label{Ideal Gas Box}
-The ideal gas law featuring only intensive variables of $p$, $\rho$, $R$, and $T$.
+The ideal gas law featuring only intensive variables of $p$, $\rho$, and $T$.
     \begin{equation}\label{Ideal Gas}
     \BOX{
         p=\rho RT
@@ -164,34 +177,38 @@ The ideal gas law featuring only intensive variables of $p$, $\rho$, $R$, and $T
     \end{equation}
 \end{fact}
 
-\subsection{Multiple Constituents in an Atmosphere and Dalton's Law}\label{Multiple}
+\subsection{Multiple Constituents in an Atmosphere and Dalton's Law}\label{Multiple Dalt}
 
-What if we now have multiple constituents in an atmosphere, all with different molar masses $M_i$? We define the \textit{partial pressure} $p_a$ of some constituent \textit{a} as the pressure the gas \textit{would} have if you removed all other constituents and left $a$ on its own. The total pressure is the sum of all the partial pressures. Dalton's Law (\ref{Dalton's Law}) allows us to relate the partial pressure of an individual constituent $p_a$ to the total pressure if all constituents are ideal gases:
+What if we now have multiple constituents in an atmosphere, all with different molar masses $M_i$? We define the \textit{partial pressure} $p_a$ of some constituent \textit{a} as the pressure the gas \textit{would} have if you removed all other constituents and left $a$ on its own. For an ideal gas, the total pressure is the sum of all the partial pressures. Dalton's Law (\ref{Dalton's Law}) allows us to relate the partial pressure of an individual constituent $p_a$ to the total pressure $p$ if all constituents are ideal gases:
 \begin{align}\label{Dalton's Law}
-    \frac{p_a}{\sum\limits_{i\in\mathbb{S}} p_i}=\frac{n_a}{\sum\limits_{i\in\mathbb{S}} n_i}
+    \boxed{\frac{p_a}{p}=\frac{n_a}{\sum\limits_{i\in\mathbb{S}} n_i}}
 \end{align}
-So \ref{Dalton's Law} says that the partial pressure (in an ideal gas) is set by the \textit{mole fraction}/\textit{molar concentration}.\footnote{In the dilute limit, it is equivalently set by the \textit{molar mixing ratio}.} It is not affected in any way by the \textit{mass fraction} or \textit{mass mixing ratio}. Now we can apply ideal gas law individually to each constituent:
+So Equation \ref{Dalton's Law} says that the partial pressure (in an ideal gas) is set by the \textit{mole fraction}/\textit{molar concentration}\footnote{
+    In the dilute limit, it is equivalently set by the \textit{molar mixing ratio}.
+}: it is not affected in any way by the \textit{mass fraction} or \textit{mass mixing ratio}. We can further verify that, according to Dalton's Law, $p=\sum\limits_{i\in\mathbb{S}} p_i$. 
+
+Now we apply the ideal gas law (Eqn. \ref{Ideal Gas Primitive}) individually to each constituent:
 \begin{align*}
     p_a&=n_ak_BT\\
     p_b&=n_bk_BT\\
     \vdots
 \end{align*}
-Summing up then creatively multiplying by $1$ we get:
+We then sum up the equation above for each constituent and recall that $p=\sum\limits_{i\in\mathbb{S}} p_i$ (from \ref{Dalton's Law}) to get:
 \begin{align*}
     p&=\left(\sum\limits_{i\in\mathbb{S}} n_i\right)k_BT
-    &\text{; }&\text{Summing \ref{Ideal Gas Primitive} for each constituent}
+    &&
     \\
     &= \left(\frac{\sum\limits_{i\in\mathbb{S}} n_iM_i}{\sum\limits_{i\in\mathbb{S}} n_iM_i}\right)\left(\frac{N_A}{N_A}\right)\left(\sum\limits_{i\in\mathbb{S}} n_i\right)k_BT
-    &\text{; }&\text{Divide \& Multiply}
+    &\text{; }&\text{Creatively multiply by }1
     \\
     &= \left(\frac{\sum\limits_{i\in\mathbb{S}} n_iM_i}{N_A}\right)\left(\frac{\sum\limits_{i\in\mathbb{S}} n_iM_i}{\sum\limits_{i\in\mathbb{S}} n_i}\right)^{-1}(N_Ak_B)T
     &\text{; }&\text{Regroup terms}
     \\
     &=\left(\sum\limits_{i\in\mathbb{S}}\frac{n_iM_i}{N_A}\right)\left(\bar{M}^{-1}R^*\right)T 
-    &\text{; }&\text{Define the effective molar mass }\bar{M}
+    &\text{; }&\text{Define the \textbf{effective molar mass} }\bar{M}
     \\
     p&=\rho\, R \,T
-    &\text{; }&\text{Define the specific gas constant $R$}
+    &\text{; }&\text{Define the \textbf{specific gas constant} $R$}
 \end{align*}
 We should focus on the last three lines of algebra to remember two key facts:
 \begin{enumerate}
@@ -201,7 +218,7 @@ We should focus on the last three lines of algebra to remember two key facts:
     \end{align}
     \item The effective molar mass is the average of the individual molar masses $M_i$ \textbf{weighted by particle number} $n_i$:
     \begin{align}
-        \BOX{\bar{M} =\frac{\sum\limits_{i\in\mathbb{S}} n_iM_i}{\sum\limits_{i\in\mathbb{S}} n_i}}
+        \boxed{\bar{M} =\frac{\sum\limits_{i\in\mathbb{S}} n_iM_i}{\sum\limits_{i\in\mathbb{S}} n_i}}
     \end{align}
     In the single component case, $\bar{M}=M_a$.
 \end{enumerate}
@@ -211,15 +228,18 @@ For the Earth (excercise), $\bar{M}\approx$ \qty{29e-3}{\kilogram\per\mole} so t
 
 \section{Heat Capacity and the Equipartition Theorem}\label{Equipartition}
 
-The heat capacity of an object is a measure of how much heat (which has dimensions of energy) is required to change an object's temperature. The heat capacity itself often depends on the temperature. Let $\dbar Q=$ the heat transferred to an object and $dT=$ the change in temperature of the object. Then the heat capacities of the object are:
+The heat capacity of an object is a measure of how much heat (which has dimensions of energy) is required to change an object's temperature. Let  $\dbar Q=$ the heat transferred to an object and $dT=$ the change in temperature of the object. Then the heat capacities of the object are:
 \begin{align}
     c_v=\left(\frac{\dbar Q}{dT}\right)_V\\
     c_p=\left(\frac{\dbar Q}{dT}\right)_p
 \end{align}
 where the subscripts of $V$ and $p$ mean that the volume and pressure, respectively, are held constant as heat is added/removed from the system. Notationally, when we write $c_v$ or $c_p$, we usually mean the specific heat capacities: the heat capacities per mole or, more commonly, per mass. Similar to $R$, if not specified, assume that $c_p, c_v$ are heat capacities \textit{per unit mass}. (Remember, \textit{intensive} variables!)
 
+It's useful to remember that the heat capacity itself often depends on the temperature. However, sometimes we'll assume that it does not for analytical progress (and not realism).
+
 It turns out, and one can derive this via statistical mechanics, that at high enough temperatures systems obey the Equipartition Theorem:
 \begin{align}
+    \label{Equipartition Eqn}
     \BOX{c_v\approx\frac{f}{2}R}
 \end{align}
 where $f=$ the number of \textit{fully excited} degrees of freedom an individual constituent has. So for a hot enough monatomic gas, $f=3$, since monatomic gases have $3$ translational degrees of freedom (forwards/backwards, up/down, right/left). For a hot enough linear diatomic gas (as seen in Fig. \ref{7DoF}), $f=7$, since diatomic gases have $3$ translational degrees of freedom, $3$ rotational degrees of freedom (spinning about the $x,y,z$ axes), and $2$ vibrational degrees of freedom\footnote{
@@ -274,19 +294,22 @@ where $f=$ the number of \textit{fully excited} degrees of freedom an individual
         \end{tikzpicture}}
         \caption{2 Vibrational Degrees of Freedom}
     \end{subfigure}
-    \caption{The 7 Degrees of Freedom for a Diatomic Molecules}
+    \captionsetup{justification=centering}
+    \caption{The 7 Degrees of Freedom for a Diatomic Molecules. Degrees of Freedom are shown in \textcolor{mymagenta}{magenta arrows \rule{0.25cm}{0.25cm}}.}
     \label{7DoF}
 \end{figure}
 
 \subsection{"Excited" and "Frozen-out" Degrees of Freedom}
 
-But what does \textit{fully excited} degrees of freedom mean? The constituents of gases obey the laws of quantum mechanics (as do all things, we think). One way in which quantum mechanics differs from classical mechanics is that oftentimes (but not always) the energy a system can have is discretised rather than continuous, i.e., a system can only have energies specifically equal to $E$ or $2E$ or $1.8E$. This means that the system can only receive or give energy in discrete amounts called 'quanta' – if you can't give them that exact amount of energy (or integer multiples of that), then you can't give it to them at all. 
+But what does it mean for a degree of freedom to be `\textit{fully excited}' or for the temperature to be `\textit{high enough}'? The constituents of gases obey the laws of quantum mechanics (as do all things, we think). One way in which quantum mechanics differs from classical mechanics is that oftentimes (but not always) the energy that a system can have is \textbf{discretised} rather than \textbf{continuous}. For example, a system can only have energies specifically equal to $0$, $E$, $1.8E$,\ldots This means that the system can only receive or give energy in discrete amounts called 'quanta' (equal to the difference in energy between two discretely spaced energy levels) – if you can't give them these exact amounts of energy, then you can't give them energy at all.
 
-This leads to a uniquely quantum mechanical effect (that also explains the ultraviolet catastrophe): if the temperature is too low, the molecule might only get $0.001E$ energy, and is highly unlikely to get energy even close to $E$. As such, the molecule will never get enough energy to excite that degree of freedom: we say that that degree of freedom is `frozen' out. More rigourously, if $k_BT\ll E$, where $E$ is the size of the energy quanta of some degree of freedom, then that degree of freedom is frozen out. 
+This leads to a uniquely quantum mechanical effect\footnote{
+    This also explains the \href{https://en.wikipedia.org/wiki/Ultraviolet_catastrophe}{ultraviolet catastrophe}!
+}: if the temperature is too low, the molecule might only get $0.001E$ energy, and is highly unlikely to get energy even close to $E$. As such, the molecule will never get enough energy to jump to a higher energy level. We say that there is not enough energy to `excite' that degree of freedom and that that degree of freedom is `frozen' out. More rigourously, if $k_BT\ll E$, where $E$ is the size of the energy quanta of some degree of freedom, then that degree of freedom is frozen out. If $k_BT\gg E$, then that degree of freedom is `\textit{fully excited}', and this is what it means for the temperature to be `\textit{high enough}'.
 
 The size of this quanta of energy $E$ depends on the system, but for the constituents in atmospheres, the quanta for vibrational degrees of freedom tend to be very large. For example, the energy of the first vibrational mode of Nitrogen is $E\sim$ \qty{4.7e-20}{\joule}. This seems small until you remember that this is \textit{per molecule}. The temperature required for $k_BT\sim E$ is $T\sim E/k_B\sim$ \qty{3400}{\kelvin}.
 
-Earth's mainly consists of a diatomic gas, so we might expect $f=7$. However, $f\approx5$, because the translational degrees of freedom are all fully excited, but only $2$ rotational degrees of freedom are excited and none of the vibrational degrees of freedom are. Here I have drawn the excited degrees of freedom as thick magenta lines, and the frozen degrees of freedom as dashed thin magenta lines:\newline
+Earth's atmosphere mainly consists of a diatomic gas, so we might expect $f=7$. However, $f\approx5$ because the translational degrees of freedom are all fully excited, but only $2$ rotational degrees of freedom are excited and none of the vibrational degrees of freedom are. Here I have drawn the excited degrees of freedom as thick magenta lines, and the frozen degrees of freedom as dashed thin magenta lines:
 
 \begin{figure}[H]
     \centering
@@ -333,12 +356,15 @@ Earth's mainly consists of a diatomic gas, so we might expect $f=7$. However, $f
         \end{tikzpicture}}
             \caption{2 Vibrational Degrees of Freedom\newline\centerline{None Excited}}
     \end{subfigure}
-    \caption{The 5 Excited Degrees of Freedom for a Diatomic Molecules in Earth-Like Conditions}
+    \captionsetup{justification=centering}
+    \caption{The 5 Excited Degrees of Freedom for a Diatomic Molecules in Earth-Like Conditions. Excited Degrees of Freedom are shown in \textcolor{mymagenta}{filled magenta arrows \rule{0.25cm}{0.25cm}}, while frozen out Degrees of Freedom are shown in \textcolor{mymagenta}{dashed magenta arrows \rule{0.25cm}{0.25cm}}.}
 \end{figure}
+
+Of course, the \hyperref[Equipartition Eqn]{Equipartition Theorem} says nothing regarding situations in which a degree of freedom is not fully excited nor frozen out. We are (perhaps only by coincidence) lucky that the situation is relatively simple on Earth; since the temperature lies within a range such that certain degrees of freedom are very excited and others are very frozen, we can very easily explain and predict that the atmospheric heat capacity is $f\approx 5$ using the \hyperref[Equipartition Eqn]{Equipartition Theorem}. However, you should be aware that the situation is not so simple on many other planetary atmospheres. 
 
 \section{Hydrostatic Balance}
 
-We now consider the force balance of a slab of atmosphere atmosphere: 
+We now consider the forces on a slab of atmosphere: 
 
 \begin{figure}[H]
     \centering
@@ -348,7 +374,9 @@ We now consider the force balance of a slab of atmosphere atmosphere:
     \label{Hydrostatic_fig}
 \end{figure}
 
-The \textit{hydrostatic approximation} assumes that these are the dominant forces on the slab, and that the acceleration of the slab of air is negligible (which is a pretty good assumption). Therefore:
+The \textit{hydrostatic approximation} assumes that these are the dominant forces on the slab, and that the acceleration of the slab of air is negligible. These turn out to be good assumptions, but a full justification would be out of the scope of these notes.\footnote{
+    A full justification would have to start from \textit{dynamics}. One would have to show that, if an arbitrary system were \textit{not} in hydrostatic balance, then it would rapidly (relative to the timescales under consideration, which in this case might be days, months, or years) evolve to put itself approximately in hydrostatic balance.
+} Therefore:
 \begin{align*}
     0=p(z+\delta z)-\rho g\delta z+p(z)
 \end{align*}
@@ -364,21 +392,21 @@ Pressure decreases with height in order to balance the force of gravity.
 \end{fact}
 \noindent There are two very useful facts that should be noted at this time. 
 
-First note that $\rho,g>0$, so $\frac{dp}{dz}>0$ always. This means that $p$ is monotonic in $z$, implying that there is always a one-to-one relation between $p$ and $z$. This allows us to convert between \textbf{height coordinates} and \textbf{pressure coordinates}. For example, in \textit{height coordinates}, we might let $\vec{u}=\vec{u}(x,y,z)$, $p=p(x,y,z)$. In this case, we would have pressure $p$ at some height $z$ (and horizontal position) as  a variable. In \textit{pressure coordinates}, on the other hand, we let $\vec{u}=\vec{u}(x,y,p)$, $z=z(x,y,p)$. In this case, we would have the height $z$ of some given pressure surface $p$ (and horizontal position) as a variable.
+First note that $\rho,g>0$, so $\frac{dp}{dz}<0$ always. This means that $p$ is monotonic in $z$, implying that there is always a one-to-one relation between $p$ and $z$. This allows us to convert between \textbf{height coordinates} and \textbf{pressure coordinates}. For example, in \textit{height coordinates}, we might let $\vec{u}=\vec{u}(x,y,z)$, $p=p(x,y,z)$. In this case, we would have pressure $p$ at some height $z$ (and horizontal position) as  a variable. In \textit{pressure coordinates}, on the other hand, we let $\vec{u}=\vec{u}(x,y,p)$, $z=z(x,y,p)$. In this case, we would have the height $z$ of some given pressure surface $p$ (and horizontal position) as a variable.
 
-We will consistently be plotting plotting atmospheric properties (e.g., humidity) in pressure coordinates, rather than height coordinates, throughout this course. This is for three reasons. First, it is much easier for instruments to measure the pressure than the height. In fact, this is how airplanes measure `barometric' height using a pressure altimeter \cite{Altimeter}. Second, most problems we encounter will require only knowledge of a variable's dependence on pressure. Third, pressure is a fundamental thermodynamic variable, and as such also gives us information about properties of the system, as well as the (rough) height.
+We will consistently be plotting atmospheric properties (e.g., humidity) in pressure coordinates (as opposed to height coordinates) throughout this course. This is for three reasons. First, it is much easier for instruments to measure the pressure than the height. In fact, this is how airplanes measure `barometric' height using a pressure altimeter \cite{Altimeter}. Second, most problems we encounter will require only knowledge of a variable's dependence on pressure. Third, pressure is a fundamental thermodynamic variable, and as such also gives us information regarding the thermodynamic properties of the system, as well as the (rough) height.
 
-Second note that if we rewrite Eqn. \ref{Hydrostatic Balance} in differential form, we get a very useful relation between the difference in pressure between two vertically separated points, and the mass per unit area within that layer.
+Second, note that if we rewrite Eqn. \ref{Hydrostatic Balance} in differential form, we get a very useful relation between the difference in pressure between two vertically separated points, and the mass per unit area within that layer.
 \begin{align}\label{Hydrostatic Differential}
     dp& =-g(\rho\, dz) \\
     & = -g \,dm\nonumber
 \end{align}
-where $dm=\rho\,dz$ is the mass per unit area within that layer. Therefore (integrating), we get that pressure difference $\Delta p$ between the bottom and top of a layer of atmosphere is directly proportional to the mass per unit area within that layer. Take a moment to appreciate this: we can measure the mass of a layer of atmosphere by only measuring the pressure difference between the top and the bottom! Integrating Equation \ref{Hydrostatic Differential} from the bottom of the atmosphere ($p=p_s,m=0$) to the top of the atmosphere ($p=0,m=m_{tot}$) (and assuming that variation in $g$ is negligible) gives us:
+where $dm=\rho\,dz$ is the mass per unit area within that layer. Therefore (integrating), we get that the pressure difference $\Delta p$ between the bottom and top of a layer of atmosphere is directly proportional to the mass per unit area within that layer. Take a moment to appreciate this: we can measure the mass of a layer of atmosphere by only measuring the pressure difference between the top and the bottom! Integrating Equation \ref{Hydrostatic Differential} from the bottom of the atmosphere ($p=p_s,m=0$) to the top of the atmosphere ($p=0,m=m_{tot}$) (and assuming that variation in $g$ is negligible) gives us:
 \begin{align}\label{Total Mass Hydrostatic}
     m_{tot}=\frac{p_s}{g}
 \end{align}
 
-The surface pressure thus gives an immediate estimate of the amount of \textit{stuff} in a planet's atmosphere. Again considering Earth and Venus' atmospheres:
+The surface pressure on a rocky planet thus gives an immediate estimate of the amount of \textit{stuff} in that planet's atmosphere. Again considering Earth and Venus' atmospheres:
 
 \begin{multicols}{2}
 \begin{itemize}
@@ -401,7 +429,7 @@ The surface pressure thus gives an immediate estimate of the amount of \textit{s
     m_{CO_2}&= \underbrace{\frac{p_s}{g}}_\text{Mass of Atmosphere} \underbrace{\frac{\overbrace{12\times10^{-3}}^{\text{molar mass of CO}_2}}{\underbrace{29\times10^{-3}}_{\hat{M} \text{of air}}} \underbrace{430 \times 10^{-6}}_{\text{mole-fraction of CO}_2}}_{\text{mass-fraction of CO}_2}\\
     &\approx\text{\qty{1.5}{\kilogram\per\meter\squared}}
 \end{align*}
-So not much actually (but a lot radiatively)!
+So not much actually (but a lot radiatively, as you'll see in Part \ref{Radiative Transfer})!
 \subsection{Example 1: Constant Density}
 
 In the ocean, for example, we can make the (sometimes) good approximation that $\rho=\text{const}$. We can then integrate \ref{Hydrostatic Balance} with the boundary condition that $p(z=\eta)=p_s$ where $p_s$ is, for example, the pressure at the surface of the ocean and $\eta$ is the height of the surface. Note that this derivation is completely general, and that both $p_s$ and $\eta$ may in general be functions of $x$,$y$, and $t$, and $\eta$ could be, for example, below the ocean surface at some interface.
@@ -417,7 +445,7 @@ We use this to derive the Shallow Water/Reduced Gravity System in Chapter \ref{S
 
 \subsection{Example 2: Ideal Gas}\label{Example 2: Ideal Gas}
 
-The atmosphere can be roughly regarded as an ideal gas, we can substitute in Equation \ref{Ideal Gas} to find that Equation \ref{Hydrostatic Balance} transforms into:
+The atmosphere can be roughly regarded as an ideal gas, so we can substitute in Equation \ref{Ideal Gas} to find that Equation \ref{Hydrostatic Balance} transforms into:
 \begin{align}
     \label{Hydrostatic Balance Ideal}
     \boxed{\frac{d\ln p}{dz}=-\frac{g}{RT}}
@@ -445,17 +473,17 @@ where $H=\frac{RT}{g}$ is the scale height. As you can see below, this is actual
 
 \subsection{Example 3: Solid Rock Planet}
 
-If we want to include curvature (since planets are spheres), we can derive an analogous \hyperref[Hydrostatic Balance]{Hydrostatic Relation} where:
+If we want to include curvature (since planets are more like spheres than infinite planes), we can derive an analogous \hyperref[Hydrostatic Balance]{Hydrostatic Relation} where:
 \begin{align*}
     \frac{d p}{d r}&=-\rho g\\
     &=-\rho \frac{G M(r)}{r^{2}}
 \end{align*}
-We can pair this with a coupled differential equation for the mass $M(r)$:
+We can couple this with a differential equation governing the mass below some radius $r$ called $M(r)$:
 \begin{align*}
     \frac{d M}{d r} = 4\pi r^2\rho
 \end{align*}
 
-To solve these equations, as before, we need an expression for $\rho(r)$ and boundary conditions. The former is typically given by the equation of state governing the material in question. For the Earth, for example, we might approximate $\rho\approx \text{const}$ below the ground and $\rho$ as ideal as in \hyperref[Example 2: Ideal Gas]{Example 2}. For the latter, we know that $M(r=0)=0$ and we can specify $p(r=0)=p_0$ where $p_0$ is unknown. We can then integrate the equations, then solve for $p_0$ (e.g., if we know $p(r=r_s)=p_s$ we can write $p_0$ in terms of $p_s$).
+To solve these equations, as before, we need an expression for $\rho(r)$ and boundary conditions. $\rho(r)$ is typically given by the equation of state governing the material in question. For the Earth, for example, we might approximate $\rho\approx \text{const}$ below the ground ($r<R$) and $\rho$ as ideal as in \hyperref[Example 2: Ideal Gas]{Example 2} above the ground ($r>R$). For boundary conditions, we know that $M(r=0)=0$ and we can let $p(r=0)=p_0$ where $p_0$ is unknown. We can then integrate the equations, then solve for $p_0$ in terms of some other known reference pressure (e.g., if we know $p(r=r_s)=p_s$ we can write $p_0$ in terms of $p_s$).
 
 \chapter{Dry Thermodynamics}\label{Dry Thermodynamics}
 
