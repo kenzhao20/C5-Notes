@@ -483,7 +483,7 @@ We can couple this with a differential equation governing the mass below some ra
     \frac{d M}{d r} = 4\pi r^2\rho
 \end{align*}
 
-To solve these equations, as before, we need an expression for $\rho(r)$ and boundary conditions. $\rho(r)$ is typically given by the equation of state governing the material in question. For the Earth, for example, we might approximate $\rho\approx \text{const}$ below the ground ($r<R$) and $\rho$ as ideal as in \hyperref[Example 2: Ideal Gas]{Example 2} above the ground ($r>R$). For boundary conditions, we know that $M(r=0)=0$ and we can let $p(r=0)=p_0$ where $p_0$ is unknown. We can then integrate the equations, then solve for $p_0$ in terms of some other known reference pressure (e.g., if we know $p(r=r_s)=p_s$ we can write $p_0$ in terms of $p_s$).
+To solve these equations, as before, we need an expression for $\rho(r)$ and boundary conditions. $\rho(r)$ is typically given by the equation of state governing the material in question. For the Earth, for example, we might approximate $\rho\approx \text{const}$ below the ground ($r<r_s$) and $\rho$ as ideal as in \hyperref[Example 2: Ideal Gas]{Example 2} above the ground ($r>r_s$). For boundary conditions, we know that $M(r=0)=0$ and we can let $p(r=0)=p_0$ where $p_0$ is unknown. We can then integrate the equations, then solve for $p_0$ in terms of some other known reference pressure (e.g., if we know $p(r=r_s)=p_s$ we can write $p_0$ in terms of $p_s$).
 
 \chapter{Dry Thermodynamics}\label{Dry Thermodynamics}
 
@@ -516,7 +516,7 @@ In all five plots, we see observe a sharp decrease of temperature with pressure 
     I should note that I'm adhering to Ray's preferred terminology here. Ray uses \textbf{stratosphere} to refer to places in the atmosphere where radiative transfer is more dominant, which (we will see) causes a shallower decrease of temperature with height. This contrasts the more typical usage of the term \textbf{stratosphere}, which requires an increase of temperature with height. This only occurs if there is some heat source from above. In the case of the Earth, this heat source is due to the location of ozone, which is a very effective absorber of UV radiation. However, I prefer Ray's definition, due to reasons elaborated after I derive the \hyperref[Dry Adiabat Box]{Dry Adiabat} and the \hyperref[Dry Stability Box]{Dry Stability Criterion}. 
 }.
 
-In this chapter, we will attempt to explain this. We want to explain this because the vertical structure has profound consequences on many other phenomena of interest: the vertical structure affects, among other phenomena, where (or if) constituents condense (\hyperref[Moist Thermodynamics]{Moist Thermodynamics}), the outgoing radiation to space (\hyperref[Radiative Transfer]{Radiative Transfer}), and much of fluid dynamics (\hyperref[Geophysical Fluid Dynamics]{Geophysical Fluid Dynamics}). 
+In this chapter, we will attempt to explain some of this. We want to explain this because the vertical structure has profound consequences on many other phenomena of interest: the vertical structure affects, among other phenomena, where (or if) constituents condense (\hyperref[Moist Thermodynamics]{Moist Thermodynamics}), the outgoing radiation to space (\hyperref[Radiative Transfer]{Radiative Transfer}), and much of fluid dynamics (\hyperref[Geophysical Fluid Dynamics]{Geophysical Fluid Dynamics}). 
 
 \noindent As a spoiler:
 \begin{itemize}
@@ -583,14 +583,14 @@ Dividing by $T$ and rearranging, we find that:
      &\text{; }&\ln(x)-a\ln(y)=\ln\left(x(y)^{-a}\right)
 \end{align*}
 If we make the crucial assumption that the parcel exchanges a negligible amount of heat with its surroundings, then we can approximate $ds=0$\footnote{
-    Why can we only approximate $ds=0$ and not set $ds=0$? It is because the relation $\dbar Q=T\,ds$ (where $\dbar Q$ is the heat transfer) holds only if the process is reversible, but we have made no such assumptions here. If the process is irreversible, as it probably is, then $\dbar Q\leq T\,ds$ and so it is possible for $\dbar Q=0$ and $ds\neq 0$.
+    Why can we only approximate $ds=0$ and not set $ds=0$? It is because the relation  $\dbar Q=T\,ds$ (where  $\dbar Q$ is the heat transfer) holds only if the process is reversible, but we have made no such assumptions here. If the process is irreversible, as it probably is, then  $\dbar Q\leq T\,ds$ and so it is possible for  $\dbar Q=0$ and $ds\neq 0$.
 }. In reality, there is some level of heat transfer ($ds\neq0)$, but these processes are typically much slower (timescale $\sim$ days/weeks) than the changes in pressure caused by upwards/downwards parcel motion (timescale $\sim$ hours). We can thus conclude that:
 \begin{align*}
     0 & = c_p\,d\left(\ln \left(T(p)^\frac{-R}{c_p}\right)\right)\\
 \end{align*}
 and so we derive:
 \begin{fact}{The Dry Adiabat}{Dry Adiabat Box}\label{Dry Adiabat Box}
-The dry adiabat governs the temperature of an air parcel that is adiabatically lifted or dropped (due to, e.g., convection or dynamics). The temperature increases as pressure increases. This is because, as the parcel moves to a location where the ambient atmospheric pressure is higher, the atmosphere does work on the air parcel to compress it and increase its energy and therefore temperature.
+The dry adiabat governs the temperature of an air parcel that is adiabatically lifted or dropped (due to, e.g., convection or dynamics). The temperature increases as pressure increases. This is because, as the parcel moves to a location where the ambient atmospheric pressure is higher, the atmosphere does work on the air parcel to compress it and increase its energy and therefore increase its temperature.
     \begin{gather}
     \label{Dry Adiabat Slope}
     \BOX{
@@ -607,13 +607,13 @@ If we crucially assume that \textbf{convection} is the \textbf{dominant vertical
 
 Equation \ref{Dry Adiabat} is the \textbf{Dry Adiabat}. `\textbf{Dry}' because we have no condensation, and `\textbf{Adiabat}' because we assume $dS=0$ (and the word `adiabatic' refers to processes where $dS=0$). Constants $(p_0,T_0)$ refer to the initial temperature and pressure of the air parcel. 
 
-Physically \ref{Dry Adiabat} corresponds to are parcel starting at some temperature and pressure ($T_0,p_0$) and being displaced upwards/downwards. When it is displaced upwards/downwards, it undergoes negligible diabatic heating and entrainment, so it's temperature does not change that way. However, when the ambient pressure changes, it expands/contracts, and the air parcel does positive/negative work on its surroundings. This \textit{decreases}/\textit{increases} the internal energy of the parcel, thus decreasing/increasing the temperature. That's why $T$ decreases as $p$ decreases in \ref{Dry Adiabat}. 
+Physically \ref{Dry Adiabat} corresponds to a parcel starting at some temperature and pressure ($T_0,p_0$) and being displaced upwards/downwards. When it is displaced upwards/downwards, it undergoes negligible diabatic heating and entrainment, so it's temperature does not change that way. However, when the ambient pressure changes, it expands/contracts, and the air parcel does positive/negative work on its surroundings. This \textit{decreases}/\textit{increases} the internal energy of the parcel, thus decreasing/increasing the temperature. That's why $T$ decreases as $p$ decreases in \ref{Dry Adiabat}. 
 
-However, we should we wary of the limits of our conclusions here. Recall that we started this section considering an air parcel, not the entire atmosphere! We must make a final, crucial assumption that rising and falling air parcels (convection) is the dominant mechanism for heat transport within some domain in the atmosphere (e.g., from the ground to a certain height – for example the tropopause). \textit{This} implies that the temperature profile of the atmosphere within this domain follows the \textbf{Dry Adiabat}. If this domain extends to the ground, we may take the initial conditions initial conditions $(p_0,T_0)$ to be the temperature and pressure of the surface $(p_s,T_s)$.
+However, we should we wary of the limits of our conclusions here. Recall that we started this section considering an air parcel, not the entire atmosphere! We must make a final, crucial assumption that rising and falling air parcels (convection) are the dominant mechanisms for heat transport within some domain in the atmosphere (e.g., from the ground to a certain height – for example the tropopause). \textit{This} implies that the temperature profile of the atmosphere within this domain follows the \textbf{Dry Adiabat}. If this domain extends to the ground, we may take the initial conditions initial conditions $(p_0,T_0)$ to be the temperature and pressure of the surface $(p_s,T_s)$.
 
-However, not all planetary atmospheres and not even all of Earth's atmosphere obey this assumption. This assumption is not bad in the Earth's troposphere partly because here the atmosphere is heated from below: the atmosphere is transparent to the radiation from the sun, which penetrates through the atmosphere and heats the ground. The ground then heats the air above it, which becomes buoyant and convects. Similarly, Jupiter's internal energy leakage maintains a convective troposphere.
+This assumption is not bad in the Earth's troposphere partly because here the atmosphere is heated from below: the atmosphere is transparent to the radiation from the sun, which penetrates through the atmosphere and heats the ground. The ground then heats the air above it, which becomes buoyant and convects. Similarly, Jupiter's internal energy leakage maintains a convective troposphere. However, not all planetary atmospheres and not even all of Earth's atmosphere obey this assumption.
 
-Finally, now, we can see now why many atmospheres have temperatures decreasing as pressure decreases or height increases. The first fact is readily noted from Eqn. \ref{Dry Adiabat}. We can show the second fact by combining the Dry Adiabat \ref{Dry Adiabat}, \hyperref[Hydrostatic Balance]{Hydrostatic Balance}, and \hyperref[Ideal Gas]{Ideal Gas} Ideal Gas to obtain an equation linking temperature with height:
+Finally, now, we can see now why many atmospheres have temperatures decreasing as pressure decreases or height increases. The first fact is readily noted from Eqn. \ref{Dry Adiabat}. We can show the second fact by combining the Dry Adiabat \ref{Dry Adiabat}, \hyperref[Hydrostatic Balance]{Hydrostatic Balance}, and \hyperref[Ideal Gas]{Ideal Gas} to obtain an equation linking temperature with height:
 \begin{align*}
     \frac{R}{c_p}&=\frac{d\ln T}{d\ln p}
     \\
@@ -649,7 +649,7 @@ Finally, now, we can see now why many atmospheres have temperatures decreasing a
     \caption{Radiosonde measurement of Earth's Temperature Profile.}
     \label{Earth T Observation}
     \end{subfigure}
-    \caption{The Dry Adiabat: Theory v. Observation}
+    \caption{The Dry Adiabat: Theory and Observation}
 \end{figure}
 
 Note that $R$ and $c_p$ have the same units/dimensions, so $\frac{R}{c_p}$ is dimensionless. We can use the \hyperref[Equipartition]{Equipartition Theorem} to estimate how quickly $T$ falls off with decreasing $p$. We know that $c_v\approx \frac{f}{2}R\approx\frac{5}{2}R$ for the Earth, and we know that $c_p\approx c_v+R$ for an ideal gas. Therefore, $c_p\approx \frac{7}{2}R$, so for the Earth:
@@ -659,15 +659,15 @@ Note that $R$ and $c_p$ have the same units/dimensions, so $\frac{R}{c_p}$ is di
 
 Of course, the atmosphere does not actually follow a \textbf{Dry Adiabat}, as clearly shown by Figure \ref{Earth T Observation}. It is somewhat accurate in the troposphere, but not so much elsewhere. That is because some of our assumptions were not as accurate as we would like. In reality, $dN\neq0$, and entrainment occurs, and $dS\neq0$, and diabatic heating occurs. Some of this diabatic heating is due to condensation, which we will learn how to deal with in the next chapter on \hyperref[Moist Thermodynamics]{Moist Thermodynamics}. Some of this is radiative heating, which we will discuss in the next part on \hyperref[Radiative Transfer]{Radiative Transfer}.
 
-However, convection as a mechanism always perturbs an existing atmospheric profile to an \textbf{Adiabat}, and it is other processes (radiation, fluid dynamics) that pull the atmosphere away from an adiabat. In some cases, like in the \textbf{stratosphere}, radiation pulls the atmospheric profile to be super-stable, in which case convection is prohibited due to the stability of the atmosphere. In other cases, these other processes pull the atmospheric profile to be unstable, in which case convection takes over to push the atmosphere back to the \textbf{Adiabat}. What we have just touched upon is \hyperref[Radiative-Convective Equilibrium]{Radiative-Convective Equilibrium}, which we will discuss more in Part \ref{Clouds}.
+However, convection as a mechanism always perturbs an existing atmospheric profile towards an \textbf{Adiabat}, and it is other processes (radiation, fluid dynamics) that pull the atmosphere away from an adiabat. In some cases, like in the \textbf{stratosphere}, radiation pulls the atmospheric profile to be super-stable, in which case convection is prohibited due to the stability of the atmosphere. In other cases, these other processes pull the atmospheric profile to be unstable, in which case convection takes over to push the atmosphere back to the \textbf{Adiabat}. What we have just touched upon is \hyperref[Radiative-Convective Equilibrium]{Radiative-Convective Equilibrium}, which we will discuss more in Part \ref{Clouds}.
 
 \section{Potential Temperature}
 
-In basic thermodynamics, we often introduce the concept of temperature operationally in the following way: suppose we have two objects $A$ and $B$, with temperatures $T_A$ and $T_B$, respectively, and we place them in contact with each other. Temperature encodes whether heat will flow, and in which way. If $T_A=T_B$, no heat will flow. If $T_B>T_A$, heat will flow from $B$ to $A$, and vice versa.
+In basic thermodynamics, we often introduce the concept of temperature operationally in the following way: suppose we have two objects $A$ and $B$, with temperatures $T_A$ and $T_B$, respectively, and we place them in contact with each other. `Temperature' encodes whether heat will flow, and in which way. If $T_A=T_B$, no heat will flow. If $T_B>T_A$, heat will flow from $B$ to $A$, and vice versa if $T_B<T_A$.
 
-However, this will not work in atmospheric thermodynamics. Suppose we have two parcels of air called $A$ and $B$ at pressures $p_A$ and $p_B$\footnote{We are getting used to using pressure as a coordinate rather than height, remember!} with temperatures $T_A$ and $T_B$, respectively. Suppose we displace parcel $A$ in order to place it in contact with parcel $B$ (with no entrainment ($dN=0$) or diabatic heating ($dS=0$)).\newline
+However, this will not work in atmospheric thermodynamics. Suppose we have two parcels of air called $A$ and $B$ at pressures $p_A$ and $p_B$\footnote{We are getting used to using pressure as a coordinate rather than height, remember!} with temperatures $T_A$ and $T_B$, respectively. Suppose we displace parcel $A$ in order to place it in contact with parcel $B$ (with no entrainment ($dN=0$) or diabatic heating ($dS=0$)).\vspace{5mm}
 
-Which way will heat flow?\newline
+Which way will heat flow?\vspace{5mm}
 
 We cannot naively use temperature as we did before, because parcel $A$'s temperature will change following the \hyperref[Dry Adiabat]{Dry Adiabat} as we move it to a different pressure. In other words, temperature is not a variable which is \hyperref[Material Conservation]{Materially Conserved} in Atmospheric/Oceanic Thermodynamics. A variable is \hyperref[Material Conservation]{Materially Conserved} if and only if it remains constant following a air/water parcel. This is a concept which will become very important in Part \ref{Geophysical Fluid Dynamics}.
 
@@ -679,11 +679,15 @@ We define the \textbf{Potential Temperature} $\theta$ as the temperature a parce
 \end{align}
 Recall that a few pages ago in our derivation of the \hyperref[Dry Adiabat]{Dry Adiabat} we found that:
 \begin{align}
+    \label{2.5}
     ds=c_p\,d\left(\ln \left(T(p)^\frac{-R}{c_p}\right)\right)
 \end{align}
 
-Since the $\ln T(p)^\frac{-R}{c_p}$ term is within the differential, we can freely add and subtract constants within the differential, which corresponds to multiplying within the logarithm. We get then that:
+Since the $\ln T(p)^\frac{-R}{c_p}$ term is within the differential, we can freely add and subtract constants within the differential, which corresponds to multiplying within the logarithm.\footnote{
+    Another way of looking at this is noting that $d \ln \left(\frac{1}{p_{ref}}\right)^\frac{-R}{c_p}=0$, and so we add $d \ln \left(\frac{1}{p_{ref}}\right)^\frac{-R}{c_p}=0$ to both sides to go from \ref{2.5} to \ref{2.6}.
+} We get then that:
 \begin{align}
+    \label{2.6}
     ds&=c_p\,d\ln T\left(\frac{p}{p_{ref}}\right)^\frac{-R}{c_p}
     \\
     &=c_p\,d\ln\theta
@@ -701,7 +705,7 @@ The atmosphere (and ocean) is a fluid, so even in the absence of most forces lik
 
 We already accounted for the effects of pressure in deriving \hyperref[Hydrostatic Balance]{Hydrostatic Balance} and the \hyperref[Dry Adiabat]{Dry Adiabat}. In the former case, the pressure gradient force acts to push fluid parcels upwards away from lower altitude regions of high pressure to higher altitude regions of low pressure in order to counteract the force of gravity on the ambient air. In the latter case, we only consider large-scale pressure gradients in the ambient atmosphere and we ignored pressure gradients across a fluid parcel.
 
-Now we wish to take into account pressure gradients across a fluid parcel, and consider a fluid parcel which does \textit{not} have the same density as the air around it. Suppose we have a fluid parcel of density $m$ occupying some volume $V$. For simplicity assume the fluid parcel is rectangular, with a horizontal area of $A$ and a height of $h$ such that $V=Ah$.
+Now we wish to take into account pressure gradients across a fluid parcel, and consider a fluid parcel which does \textit{not} have the same density as the air around it. Suppose we have a fluid parcel of mass $m$ occupying some volume $V$. For simplicity assume the fluid parcel is rectangular, with a horizontal area of $A$ and a height of $h$ such that $V=Ah$.
 
 Let us consider the forces per unit mass on the fluid parcel in the vertical direction. There are three forces of interest: the gravitational force $F_g=-g$, the pressure force on the \textit{bottom} pushing the parcel \textit{upwards} $F_{bot}=p(z)A/m$, and the pressure force on the \textit{top} pushing the parcel \textit{downards} $F_{top}=p(z+h)A/m$. $p(z)$ is the pressure at height $z$. The net force is then:
 \begin{align*}
@@ -724,11 +728,11 @@ where $F_b=$ the buoyancy force. Physically, the buoyant force is intuitive: if 
 \end{align}
 So a parcel will convect if it is warmer or has a higher potential temperature than its ambient surroundings.
 
-Finally, another way of thinking of the buoyant force is as a kind of `\textit{reduced gravity}'. The fluid acts like its on a planet of gravitational acceleration $g'=g\left( \frac{\rho_a-\rho_p}{\rho_p} \right)$ not $g$, and $g'<g$ always since $\rho_a>0$. This will be how we think of things in Chapter \ref{Shallow Water System}. 
+Finally, another way of thinking of the buoyant force is as a kind of `\textit{reduced gravity}'. The fluid acts like its on a planet of gravitational acceleration $g'=g\left( \frac{\rho_a-\rho_p}{\rho_p} \right)$ not $g$. This will be how we think of things in Chapter \ref{Shallow Water System}. 
 
 \subsection{Convective Instability Criterion}
 
-Now suppose we wish to find whether our atmosphere is convectively stable, i.e., whether the atmosphere will spontaneously undergo convection. If pressure and density did not appreciably change by height, then this would be easy: if $T(z)>T(z+c)$ where $c>0$ (and assuming that $\frac{\partial \rho}{\partial T}<0$), then we will have denser air overlying lighter air, and the parcels will convect.\footnote{
+Now we wish to find whether our atmosphere is convectively stable, i.e., whether the atmosphere will spontaneously undergo convection. If pressure and density did not appreciably change by height, then this would be easy: if $T(z)>T(z+c)$ where $c>0$ (and assuming that $\frac{\partial \rho}{\partial T}<0$), then we will have denser air overlying lighter air, and the parcels will convect.\footnote{
     This is the case if we're considering two layers of different temperature and composition that are in contact. This is because, at the point of contact, pressure changes only infinitessimaly, so the \hyperref[Dry Adiabat]{Dry Adiabat} is inapplicable (since $dp\approx0$). To determine whether these two layers are convectively stable, you must compare the densities directly, which depend on both the temperature of each layer and the molecular composition.
 }
 
@@ -763,9 +767,9 @@ Note that \ref{Dry Stability} and \ref{Dry Stability Stable} are not automatical
 
 Physically, the idea is as follows: an atmosphere is stable if the temperature decreases slow enough with height (\ref{Dry Stability Stable}). If it decreases too quickly (\ref{Dry Stability}), a lifted parcel of air will have cooled \textit{less} than its surroundings, and thus be warmer and lighter than its surroundings, and continue to rise due to buoyancy (\ref{Buoyancy Force Temp}).
 
-If \ref{Dry Stability Stable} obtains then an atmosphere will be \textit{super-stable} and will inhibit convection. A quick sanity check to remember which way the inequality is in \ref{Dry Stability} is the following: an isothermal\footnote{
+If \ref{Dry Stability Stable} obtains then an atmosphere will be \textit{super-stable} and will inhibit convection. A quick sanity check to remember which way the inequality is in \ref{Dry Stability Stable} is the following: an isothermal\footnote{
     `Iso' meaning same and `thermal' meaning temperature, so `Isothermal' means constant temperature.
-} atmosphere is always super-stable. An isothermal atmosphere will have $\frac{d \ln T}{d \ln p} = 0$, so $\left( \frac{d \ln T}{d \ln p} < \frac{R}{c_p} \right)$ corresponds to instability. If one has a \textit{super-stable} atmosphere then that indicates that there has been some other dominant energy transport mechanism that has kept the atmosphere in this state. This is characteristic of a \textbf{stratosphere}.\footnote{
+} atmosphere is always super-stable. An isothermal atmosphere will have $\frac{d \ln T}{d \ln p} = 0$, so $\left( \frac{d \ln T}{d \ln p} < \frac{R}{c_p} \right)$ corresponds to stability. If one has a \textit{super-stable} atmosphere then that indicates that there has been some other dominant energy transport mechanism that has kept the atmosphere in this state. This is characteristic of a \textbf{stratosphere}.\footnote{
     Recall the footnote on \hyperref[Vertical Structure]{this} page. This is why Ray prefers that definition of \textbf{stratosphere}: a stratsophere should be characterised by what energy transport mechanism is dominant, not whether it happens to have shortwave absorbers.
 } 
 
@@ -778,11 +782,11 @@ If \ref{Dry Stability Stable} obtains then an atmosphere will be \textit{super-s
             \draw[ultra thick] (3,0) node[anchor=north] {$(\ln T_s,\ln p_s)$} -- (0,3);
             %\draw[ultra thick] (3,0) node[anchor=north] {$(\ln T_s,\ln p_s)$} -- (0,4);
             \node[circle,draw,fill=black,inner sep=0pt,minimum size =0.1cm] at (3,0){};
-            \node[circle,draw,fill=red,inner sep=0pt,minimum size =0.2cm] (A) at (1.5,1.5){};
+            \node[circle,draw,fill=mymagenta,inner sep=0pt,minimum size =0.2cm] (A) at (1.5,1.5){};
             \node at (2.5,2.5){Unstable};
             \node[] (B) at (2.4,0.3){};
             \node[] (C) at (0.6,2.7){};
-            \draw[thick,red] (B) -- (C);
+            \draw[thick,mymagenta] (B) -- (C);
         \end{scope}
         \begin{scope}[xshift=5.5cm]
             \draw[thick,->] (0,0) -- (4,0) node[anchor=south] {$\ln T$};
@@ -790,11 +794,11 @@ If \ref{Dry Stability Stable} obtains then an atmosphere will be \textit{super-s
             \draw[ultra thick] (2.625,0) node[anchor=north] {$(\ln T_s,\ln p_s)$} -- (0,3.5);
             %\draw[ultra thick] (3,0) node[anchor=north] {$(\ln T_s,\ln p_s)$} -- (0,4);
             \node[circle,draw,fill=black,inner sep=0pt,minimum size =0.1cm] at (2.625,0){};
-            \node[circle,draw,fill=red,inner sep=0pt,minimum size =0.2cm] (A) at (1.5,1.5){};
+            \node[circle,draw,fill=mymagenta,inner sep=0pt,minimum size =0.2cm] (A) at (1.5,1.5){};
             \node at (2.5,2.5){Neutrally Stable};
             \node[] (B) at (2.4,0.3){};
             \node[] (C) at (0.6,2.7){};
-            \draw[thick,red] (B) -- (C);
+            \draw[thick,mymagenta] (B) -- (C);
         \end{scope}
         \begin{scope}[xshift=11cm]
             \draw[thick,->] (0,0) -- (4,0) node[anchor=south] {$\ln T$};
@@ -802,14 +806,14 @@ If \ref{Dry Stability Stable} obtains then an atmosphere will be \textit{super-s
             \draw[ultra thick] (1.5,0) node[anchor=north] {$(\ln T_s,\ln p_s)$} -- (1.5,3);
             %\draw[ultra thick] (3,0) node[anchor=north] {$(\ln T_s,\ln p_s)$} -- (0,4);
             \node[circle,draw,fill=black,inner sep=0pt,minimum size =0.1cm] at (1.5,0){};
-            \node[circle,draw,fill=red,inner sep=0pt,minimum size =0.2cm] (A) at (1.5,1.5){};
+            \node[circle,draw,fill=mymagenta,inner sep=0pt,minimum size =0.2cm] (A) at (1.5,1.5){};
             \node at (2.5,2.5){Stable};
             \node[] (B) at (2.4,0.3){};
             \node[] (C) at (0.6,2.7){};
-            \draw[thick,red] (B) -- (C);
+            \draw[thick,mymagenta] (B) -- (C);
         \end{scope}
     \end{tikzpicture}
-    \caption{Dry Stability: From left to right: unstable, neutrally stable, and super stable atmospheric temperature profiles. Thick black is the atmospheric profile, thin red is the dry adiabatic slope.}
+    \caption{Dry Stability: From left to right: unstable, neutrally stable, and super stable atmospheric temperature profiles. Thick black is the atmospheric profile, thin magenta is the dry adiabatic slope.}
 \end{figure}
 
 
@@ -895,7 +899,7 @@ Using the hydrostatic relation and the fact that $g>0,\rho>0$, we get our criter
     \BOX{\frac{d\theta}{dz}<0}
 \end{align}
 
-Therefore, if potential temperature decreases with height, then our atmosphere is unstable. This makes physical sense. Recall that potential temperature takes the place of temperature in atmospheric thermodynamics, in the sense that it is potential temperature that stays the same when you lift/drop and air parcel. If you lift an air parcel, its potential temperature stays the same. However, if the ambient potential temperature decreases with height, then it will be colder than the air parcel, and the air parcel will keep rising. 
+Therefore, if potential temperature decreases with height, then our atmosphere is unstable. This makes physical sense. Recall that potential temperature takes the place of temperature in atmospheric thermodynamics in the sense that it is \textit{potential temperature} that stays the same when you lift/drop and air parcel. If you lift an air parcel, its potential temperature stays the same. However, if the ambient potential temperature decreases with height, then it will be colder than the air parcel, and the air parcel will keep rising.
 
 \begin{figure}[H]
     \centering
@@ -906,11 +910,11 @@ Therefore, if potential temperature decreases with height, then our atmosphere i
             \draw[ultra thick] (3,0) node[anchor=north] {$(\theta_s,0)$} -- (0,3);
             %\draw[ultra thick] (3,0) node[anchor=north] {$(\ln T_s,\ln p_s)$} -- (0,4);
             \node[circle,draw,fill=black,inner sep=0pt,minimum size =0.1cm] at (3,0){};
-            \node[circle,draw,fill=red,inner sep=0pt,minimum size =0.2cm] (A) at (1.5,1.5){};
+            \node[circle,draw,fill=mymagenta,inner sep=0pt,minimum size =0.2cm] (A) at (1.5,1.5){};
             \node at (2.5,3.5){Unstable};
             \node[] (B) at (1.5,0.3){};
             \node[] (C) at (1.5,2.7){};
-            \draw[thick,red] (B) -- (C);
+            \draw[thick,mymagenta] (B) -- (C);
         \end{scope}
         \begin{scope}[xshift=5.5cm]
             \draw[thick,->] (0,0) -- (4,0) node[anchor=south] {$\theta$};
@@ -918,11 +922,11 @@ Therefore, if potential temperature decreases with height, then our atmosphere i
             \draw[ultra thick] (1.5,0) node[anchor=north] {$(\theta_s,0)$} -- (1.5,3);
             %\draw[ultra thick] (3,0) node[anchor=north] {$(\ln T_s,\ln p_s)$} -- (0,4);
             \node[circle,draw,fill=black,inner sep=0pt,minimum size =0.1cm] at (1.5,0){};
-            \node[circle,draw,fill=red,inner sep=0pt,minimum size =0.2cm] (A) at (1.5,1.5){};
+            \node[circle,draw,fill=mymagenta,inner sep=0pt,minimum size =0.2cm] (A) at (1.5,1.5){};
             \node at (2.5,3.5){Neutrally Stable};
             \node[] (B) at (1.5,0.3){};
             \node[] (C) at (1.5,2.7){};
-            \draw[thick,red] (B) -- (C);
+            \draw[thick,mymagenta] (B) -- (C);
         \end{scope}
         \begin{scope}[xshift=11cm]
             \draw[thick,->] (0,0) -- (4,0) node[anchor=south] {$\theta$};
@@ -930,21 +934,23 @@ Therefore, if potential temperature decreases with height, then our atmosphere i
             \draw[ultra thick] (0,0) node[anchor=north west] {$(\theta_s,0)$} -- (3,3);
             %\draw[ultra thick] (3,0) node[anchor=north] {$(\ln T_s,\ln p_s)$} -- (0,4);
             \node[circle,draw,fill=black,inner sep=0pt,minimum size =0.1cm] at (0,0){};
-            \node[circle,draw,fill=red,inner sep=0pt,minimum size =0.2cm] (A) at (1.5,1.5){};
+            \node[circle,draw,fill=mymagenta,inner sep=0pt,minimum size =0.2cm] (A) at (1.5,1.5){};
             \node at (2.5,3.5){Stable};
             \node[] (B) at (1.5,0.3){};
             \node[] (C) at (1.5,2.7){};
-            \draw[thick,red] (B) -- (C);
+            \draw[thick,mymagenta] (B) -- (C);
         \end{scope}
     \end{tikzpicture}
-    \caption{Dry Stability: From left to right: unstable, neutrally stable, and super stable atmospheric temperature profiles. Thick black is the atmospheric profile, thin red is the dry adiabatic slope.}
+    \caption{Dry Stability: From left to right: unstable, neutrally stable, and super stable atmospheric temperature profiles. Thick black is the atmospheric profile, thin magenta is the dry adiabatic slope.}
 \end{figure}
 
 \subsection{CAPE, LFC, LNB}
 
 We have so far characterised \textit{whether} convection will occur in our dry atmosphere, but now we wish to know what will happen \textit{during} convection. We start again by considering a parcel of air at an initial pressure $p_0$ with a temperature of $T_p(p_0)$. Let $T_a(p)$ be the temperature profile of the ambient atmosphere, and assume that initially the parcel is in equilibrium with its surroundings (i.e., assume $T_p(p_0)=T_a(p_0)$).
 
-We define the \textbf{L}evel of \textbf{F}ree \textbf{C}onvection (\textbf{LFC}) $p_{LFC}$ as the \textit{first} location where $T_p(p)=T_a(p)$. We define the \textbf{L}evel of \textbf{N}eutral \textbf{B}uoyancy (\textbf{LNB}) as the \textit{second} location where $T_p(p)=T_a(p)$.
+We define the \textbf{L}evel of \textbf{F}ree \textbf{C}onvection (\textbf{LFC}) $p_{LFC}$ as the \textit{closest} location to $p_0$ where $T_p(p)=T_a(p)$, $dT_p/dp<dT_a/dp$ (the parcel is convectively unstable), and $p<p_0$ (it's higher). 
+
+We define the \textbf{L}evel of \textbf{N}eutral \textbf{B}uoyancy (\textbf{LNB}) $p_{LNB}$ as the location where $T_p(p)=T_a(p)$, $dT_p/dp>dT_a/dp$ (the parcel is convectively stable), and $p<p_{LFC}$ (it's higher than the \textbf{LFC}).
 
 We define the \textbf{C}onvective \textbf{A}vailable \textbf{P}otential \textbf{E}nergy (\textbf{CAPE}) as the total available potential energy (per unit mass) for a parcel of air from the Level of Free Convection to the Level of Neutral Buoyancy. In other words, $CAPE$ is equal to the total kinetic energy per unit mass a parcel would gain if it was allowed to convect from the Level of Free Convection to the Level of Neutral Buoyancy:
 \begin{align}
@@ -975,7 +981,7 @@ We expect $CIN<0$ and $CAPE>0$. Above \textbf{LNB}, we expect there to be more `
     \begin{quote}
         \textbf{Level of Free Convection} (\textbf{LFC}): $p=p_{LFC}$ if $T_p(p)=T_a(p)$, $dT_p/dp<dT_a/dp$, and this is the first pressure $p<p_0$ where this occurs.
 
-        \textbf{Level of Neutral Buoyancy} (\textbf{LNB}): $p=p_{LNB}$ if $T_p(p)=T_a(p)$, $dT_p/dp>dT_a/dp$, and this is the first pressure $p<p_0$ where this occurs.
+        \textbf{Level of Neutral Buoyancy} (\textbf{LNB}): $p=p_{LNB}$ if $T_p(p)=T_a(p)$, $dT_p/dp>dT_a/dp$, and this is the first pressure $p<p_{LFC}$ where this occurs.
 
         \textbf{Level of Maximum Ascent} (\textbf{LMA}): $p=p_{LMA}$ where $p_{LMA}$ is determined by Equation \ref{LMA} (I.e., where the blue area \textcolor{mydarkblue}{\rule{0.25cm}{0.25cm}} equals the orange area \textcolor{myorange}{\rule{0.25cm}{0.25cm}}).
     \end{quote}
