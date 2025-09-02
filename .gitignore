@@ -9,10 +9,16 @@ Instrumentation.aux
 main.aux
 Radiative Transfer.aux
 Thermodynamics.aux
+main 2.aux
+main 3.aux
+main 4.aux
 
+main 2.bcf
+main 2.log
 main 2.fls
 main 2.synctex.gz
 main 2.synctex(busy)
+main 3.bcf
 main 3.fls
 main 3.synctex.gz
 main 3.synctex(busy)
