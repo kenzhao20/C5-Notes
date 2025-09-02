@@ -55,6 +55,12 @@ As a brief review, we'll need to know the following \textit{intensive} variables
     \end{tabular}
     \caption{Basic Intensive Thermodynamic Variables}
 \end{table}
+
+Note that many resources present the molar mass $M_a$ in units of \qty{}{\gram\per\mole} (grams per mole). This is in order to produce more pretty numbers: for example, the molar mass of N$_2$ is \qty{28.01e-3}{\kilogram\per\mole} $=$ \qty{28.01}{\gram\per\mole}. However, be wary of units, and always remember to convert everything to SI units when doing calculations. For this you can simply divide the molar mass in units of \qty{}{\gram\per\mole} to units of \qty{}{\kilogram\per\mole} by dividing by $1000$:
+\begin{align*}
+    \underbrace{M_a}_{M_a\text{ in SI units of \qty{}{\kilogram\per\mole}}} = \underbrace{M_a}_{M_a\text{ in non-SI units of \qty{}{\gram\per\mole}}}\cdot\frac{\qty{1}{\kilogram}}{\qty{1000}{\gram}}
+\end{align*}
+
 \subsection{Multiple Constituents}\label{Multiple}
 
 In general, a planet's atmosphere is composed of multiple constituents. Our goal is to expand our vocabulary to describe the abundance of a certain constituent in the atmosphere.
@@ -70,14 +76,14 @@ Suppose our atmosphere is composed of constituents  $\mathbb{S}=\{a,b,c,\ldots\}
         & Fraction/Concentration & Mixing Ratio \\
         \hline
         Mole & \textit{Mole Fraction} or \textit{Molar Concentration} \begin{align*}
-            \frac{n_a}{\sum\limits_{i\in\mathbb{S}} n_i}
+            x_a=\frac{n_a}{\sum\limits_{i\in\mathbb{S}} n_i}
         \end{align*} & \textit{Molar Mixing Ratio} or \textit{Volume Mixing Ratio} \begin{align*}
             \frac{n_a}{\sum\limits_{i\in\mathbb{S},i\neq a} n_i}
         \end{align*}
         \\
         \hline
         Mass & \textit{Mass Fraction} or \textit{Mass Concentration} \begin{align*}
-            \frac{\rho_a}{\sum\limits_{i\in\mathbb{S}} \rho_i}
+            q_a=\frac{\rho_a}{\sum\limits_{i\in\mathbb{S}} \rho_i}
             =
             \frac{M_an_a}{\sum\limits_{i\in\mathbb{S}} M_in_i}
         \end{align*} & \textit{Mass Mixing Ratio} \begin{align*}
@@ -88,7 +94,7 @@ Suppose our atmosphere is composed of constituents  $\mathbb{S}=\{a,b,c,\ldots\}
         \hline
     \end{tabular}\newline
 
-    where $n_i=$ the number density of $i$; $M_i=$ the molar mass of $i$; and $\rho_i=$ the density of $i$.
+    where $n_i=$ the number density of $i$; $M_i=$ the molar mass of $i$; and $\rho_i=$ the density of $i$. We let $x_a$ and $q_a$ refer to the mole fraction and mass fraction of $a$, respectively.
 
     All formulations are equivalent, as one can freely convert between all four expressions using algebra or by using the following formula:
     \begin{align}\label{density to number}
@@ -109,11 +115,11 @@ An important upshot of this is that, in the dilute limit, fractions/concentratio
 
 Note however that there is some ambiguity in the 'and/or' in Equation \ref{Dilute}. For example, we might have a situation where $n_a\ll\sum n_i$ but \textbf{not} $\rho_a\ll\sum \rho_i$ (or vice versa). This occurs only if the molar masses $M_a$ and $M_i$ are not all of similar size (convince yourself that this is the case using Eqn. \ref{density to number}). This is almost never the case in scenarios we consider, so you can just treat the `and/or' as just an `and' in Equation \ref{Dilute}.
 
-Sometimes, we'll see people refer to dilute constituents in terms of \textit{ppm} (parts per million) or \textit{ppmv} (parts per million volume). \textit{ppm} is defined as the \textit{Mass Fraction} or \textit{Mass Concentration} multiplied by $10^{6}$ while \textit{ppmv} is defined the \textit{Mole Fraction} or \textit{Molar Concentration} multiplied by $10^{6}$. 
+Sometimes, we'll see people refer to dilute constituents in terms of \textit{ppm} (parts per million) or \textit{ppmv} (parts per million volume). \textit{ppm} is defined as the \textit{Mass Fraction} or \textit{Mass Concentration} multiplied by $10^{6}$ ($q_a\times10^6$) while \textit{ppmv} is defined the \textit{Mole Fraction} or \textit{Molar Concentration} multiplied by $10^{6}$ ($x_a\times10^6$).
 
 \subsubsection{Atmospheric Composition: Planetary Examples}
 
-In \textit{Mole-Fraction:}
+In \textit{Mole Fraction} $x_a$:
 \begin{multicols}{2}
 \begin{itemize}
     \item Earth's Atmosphere: 
@@ -124,10 +130,6 @@ In \textit{Mole-Fraction:}
         \item Carbon Dioxide CO$_2$: 0.000430 (430 \textit{ppmv})\footnote{At time of writing!}
         \item Water Vapour H$_2$O: A few percent.\footnote{This strongly depends on time and location due to dynamics discussed in \hyperref[Moist Thermodynamics]{Moist Thermodynamics}.}
     \end{itemize}
-\end{itemize}
-\end{multicols}
-\begin{multicols}{2}
-\begin{itemize}
     \item  Venus' Atmosphere:
     \begin{itemize}
         \item Carbon Dioxide CO$_2$: 0.965
@@ -181,11 +183,11 @@ The ideal gas law featuring only intensive variables of $p$, $\rho$, and $T$.
 
 What if we now have multiple constituents in an atmosphere, all with different molar masses $M_i$? We define the \textit{partial pressure} $p_a$ of some constituent \textit{a} as the pressure the gas \textit{would} have if you removed all other constituents and left $a$ on its own. For an ideal gas, the total pressure is the sum of all the partial pressures. Dalton's Law (\ref{Dalton's Law}) allows us to relate the partial pressure of an individual constituent $p_a$ to the total pressure $p$ if all constituents are ideal gases:
 \begin{align}\label{Dalton's Law}
-    \boxed{\frac{p_a}{p}=\frac{n_a}{\sum\limits_{i\in\mathbb{S}} n_i}}
+    \boxed{\frac{p_a}{p}=\frac{n_a}{\sum\limits_{i\in\mathbb{S}} n_i}=x_a}
 \end{align}
-So Equation \ref{Dalton's Law} says that the partial pressure (in an ideal gas) is set by the \textit{mole fraction}/\textit{molar concentration}\footnote{
+So Equation \ref{Dalton's Law} says that the partial pressure (in an ideal gas) is set by the \textit{mole fraction}/\textit{molar concentration} $x_a$\footnote{
     In the dilute limit, it is equivalently set by the \textit{molar mixing ratio}.
-}: it is not affected in any way by the \textit{mass fraction} or \textit{mass mixing ratio}. We can further verify that, according to Dalton's Law, $p=\sum\limits_{i\in\mathbb{S}} p_i$. 
+}: it is not affected in any way by the \textit{mass fraction} $q_a$ or \textit{mass mixing ratio}. We can further verify that, according to Dalton's Law, $p=\sum\limits_{i\in\mathbb{S}} p_i$ (since $\sum\limits_{i\in\mathbb{S}} x_i=1$).
 
 Now we apply the ideal gas law (Eqn. \ref{Ideal Gas Primitive}) individually to each constituent:
 \begin{align*}
@@ -216,14 +218,14 @@ We should focus on the last three lines of algebra to remember two key facts:
     \begin{align}
         R=\frac{R^*}{\bar{M}}
     \end{align}
-    \item The effective molar mass is the average of the individual molar masses $M_i$ \textbf{weighted by particle number} $n_i$:
+    \item The effective molar mass is the average of the individual molar masses $M_i$ \textbf{weighted by particle number} $n_i$/\textbf{mole fraction} $x_i$:
     \begin{align}
-        \boxed{\bar{M} =\frac{\sum\limits_{i\in\mathbb{S}} n_iM_i}{\sum\limits_{i\in\mathbb{S}} n_i}}
+        \boxed{\bar{M} =\frac{\sum\limits_{i\in\mathbb{S}} n_iM_i}{\sum\limits_{i\in\mathbb{S}} n_i}=\sum\limits_{i\in\mathbb{S}} x_iM_i}
     \end{align}
     In the single component case, $\bar{M}=M_a$.
 \end{enumerate}
 
-For the Earth (excercise), $\bar{M}\approx$ \qty{29e-3}{\kilogram\per\mole} so the \textbf{Specific Gas Constant} $R\approx$ \qty{0.287}{\joule\per\kilogram\per\kelvin} (it will be on your formula sheet).
+For the Earth (excercise), $\bar{M}\approx$ \qty{29e-3}{\kilogram\per\mole} so the \textbf{Specific Gas Constant} $R\approx$ \qty{287}{\joule\per\kilogram\per\kelvin} (it will be on your formula sheet).
 
 
 \section{Heat Capacity and the Equipartition Theorem}\label{Equipartition}
@@ -233,7 +235,7 @@ The heat capacity of an object is a measure of how much heat (which has dimensio
     c_v=\left(\frac{\dbar Q}{dT}\right)_V\\
     c_p=\left(\frac{\dbar Q}{dT}\right)_p
 \end{align}
-where the subscripts of $V$ and $p$ mean that the volume and pressure, respectively, are held constant as heat is added/removed from the system. Notationally, when we write $c_v$ or $c_p$, we usually mean the specific heat capacities: the heat capacities per mole or, more commonly, per mass. Similar to $R$, if not specified, assume that $c_p, c_v$ are heat capacities \textit{per unit mass}. (Remember, \textit{intensive} variables!)
+where the subscripts of $V$ and $p$ mean that the volume and pressure, respectively, are held constant as heat is added/removed from the system. Notationally, when we write $c_v$ or $c_p$, we usually mean the specific heat capacities: the heat capacities per mole or, more commonly, per mass. In exactly the same way as the specfici gas constant $R$, if not specified, assume that $c_p, c_v$ are heat capacities \textit{per unit mass} (remember, \textit{intensive} variables!), and for multiple constituents, we can calculate specific heat capacities from molar heat capacities using the effective molar mass $\bar{M}$.
 
 It's useful to remember that the heat capacity itself often depends on the temperature. However, sometimes we'll assume that it does not for analytical progress (and not realism).
 
@@ -426,7 +428,7 @@ The surface pressure on a rocky planet thus gives an immediate estimate of the a
 \end{multicols}
 \noindent Let us now apply all this to find the mass of CO$_2$ in the atmosphere:
 \begin{align*}
-    m_{CO_2}&= \underbrace{\frac{p_s}{g}}_\text{Mass of Atmosphere} \underbrace{\frac{\overbrace{12\times10^{-3}}^{\text{molar mass of CO}_2}}{\underbrace{29\times10^{-3}}_{\hat{M} \text{of air}}} \underbrace{430 \times 10^{-6}}_{\text{mole-fraction of CO}_2}}_{\text{mass-fraction of CO}_2}\\
+    m_{CO_2}&= \underbrace{\frac{p_s}{g}}_\text{Mass of Atmosphere} \underbrace{\frac{\overbrace{12\times10^{-3}}^{\text{molar mass of CO}_2}}{\underbrace{29\times10^{-3}}_{\hat{M} \text{of air}}} \underbrace{430 \times 10^{-6}}_{\text{mole fraction of CO}_2}}_{\text{mass fraction of CO}_2}\\
     &\approx\text{\qty{1.5}{\kilogram\per\meter\squared}}
 \end{align*}
 So not much actually (but a lot radiatively, as you'll see in Part \ref{Radiative Transfer})!
@@ -455,7 +457,9 @@ If we make the approximation that $T(z)\sim\text{const}$ (which is not a bad app
 \begin{align*}
     p(z)=p(z=0)e^{-z/H}
 \end{align*}
-where $H=\frac{RT}{g}$ is the scale height. As you can see below, this is actually pretty accurate!
+where $H=\frac{RT}{g}$ is the scale height. Plugging in Earth-like numbers\footnote{
+    $R\approx$ \qty{300}{\joule\per\kilogram\per\kelvin}, $T\approx$ \qty{200}{\kelvin}, $g\approx$ \qty{10}{\meter\per\square\second}. Only keeping one significant figure because we're only interested in rough estimates here!
+} gives $H\approx\qty{6}{\kilo\meter}$. This means that, roughly, the pressure falls off by a factor of $e$ every $6$ kilometers. As you can see below, this is actually pretty accurate!
 
 \begin{figure}[H]
     \begin{subfigure}{0.5\linewidth}
@@ -654,12 +658,14 @@ Finally, now, we can see now why many atmospheres have temperatures decreasing a
 
 Note that $R$ and $c_p$ have the same units/dimensions, so $\frac{R}{c_p}$ is dimensionless. We can use the \hyperref[Equipartition]{Equipartition Theorem} to estimate how quickly $T$ falls off with decreasing $p$. We know that $c_v\approx \frac{f}{2}R\approx\frac{5}{2}R$ for the Earth, and we know that $c_p\approx c_v+R$ for an ideal gas. Therefore, $c_p\approx \frac{7}{2}R$, so for the Earth:
 \begin{align*}
-    \frac{R}{c_p}\approx\frac{R}{\frac{7}{2}R}=\frac{2}{7}\approx\frac{d \ln T}{d \ln p}
+    \frac{R}{c_p}\approx\frac{R}{\frac{7}{2}R}=\frac{2}{7}\approx\frac{d \ln T}{d \ln p}\approx0.286
 \end{align*}
 
-Of course, the atmosphere does not actually follow a \textbf{Dry Adiabat}, as clearly shown by Figure \ref{Earth T Observation}. It is somewhat accurate in the troposphere, but not so much elsewhere. That is because some of our assumptions were not as accurate as we would like. In reality, $dN\neq0$, and entrainment occurs, and $dS\neq0$, and diabatic heating occurs. Some of this diabatic heating is due to condensation, which we will learn how to deal with in the next chapter on \hyperref[Moist Thermodynamics]{Moist Thermodynamics}. Some of this is radiative heating, which we will discuss in the next part on \hyperref[Radiative Transfer]{Radiative Transfer}.
+Of course, the atmosphere does not actually follow a \textbf{Dry Adiabat}, as clearly shown by Figure \ref{Earth T Observation}. If we look at only the troposphere (i.e., the lower portion of Figure \ref{Earth T Observation} where $p>\qty{100}{\milli\bar}$), we can estimate from the figure that $d\ln T/d\ln p\approx \frac{\ln(300/180)}{\ln(1000/100)}\approx 0.222$. This is pretty close to the predicted $0.286$, but decidedly much lower! Of course outside of the troposphere our prediction is completely off.
 
-However, convection as a mechanism always perturbs an existing atmospheric profile towards an \textbf{Adiabat}, and it is other processes (radiation, fluid dynamics) that pull the atmosphere away from an adiabat. In some cases, like in the \textbf{stratosphere}, radiation pulls the atmospheric profile to be super-stable, in which case convection is prohibited due to the stability of the atmosphere. In other cases, these other processes pull the atmospheric profile to be unstable, in which case convection takes over to push the atmosphere back to the \textbf{Adiabat}. What we have just touched upon is \hyperref[Radiative-Convective Equilibrium]{Radiative-Convective Equilibrium}, which we will discuss more in Part \ref{Clouds}.
+This is because some of our assumptions were not as accurate as we would like. In reality, $dN\neq0$, and entrainment occurs, and $dS\neq0$, and diabatic heating occurs. Some of this diabatic heating is due to condensation, which we will learn how to deal with in the next chapter on \hyperref[Moist Thermodynamics]{Moist Thermodynamics}. We'll find that this will act to shallow the temperature profile (i.e., decrease $d\ln T/d\ln p$). Some of this is radiative heating, which we will discuss in the next part on \hyperref[Radiative Transfer]{Radiative Transfer}.
+
+However, (dry) convection as a mechanism always perturbs an existing atmospheric profile towards an \textbf{Adiabat} and a temperature slope of $2/7$, and it is other processes (radiation, fluid dynamics, moisture) that pull the atmosphere away from an adiabat. In some cases, like in the \textbf{stratosphere}, radiation pulls the atmospheric profile to be super-stable, in which case convection is prohibited due to the stability of the atmosphere. In other cases, these other processes pull the atmospheric profile to be unstable, in which case convection takes over to push the atmosphere back to the \textbf{Adiabat}. What we have just touched upon is \hyperref[Radiative-Convective Equilibrium]{Radiative-Convective Equilibrium}, which we will discuss more in Part \ref{Clouds}.
 
 \section{Potential Temperature}
 
@@ -816,62 +822,12 @@ If \ref{Dry Stability Stable} obtains then an atmosphere will be \textit{super-s
     \caption{Dry Stability: From left to right: unstable, neutrally stable, and super stable atmospheric temperature profiles. Thick black is the atmospheric profile, thin magenta is the dry adiabatic slope.}
 \end{figure}
 
-
-\begin{comment}
-    \subsection{Enthalpy and Conservation of Enthalpy}
-    
-    Consider a box of air that undergoes convection. The total energy $U$ contained within that box of air which is the sum of the kinetic energy ($\frac{1}{2}v^2$), the internal energy ($c_v T$), and potential energy ($gz$):
-    
-    \begin{align*}
-        U = \int\int\int \left(\frac{1}{2}v^2+c_v T+gz\right)\rho\,dz\,dx\,dy
-    \end{align*}
-    
-    Let us assume that that system is closed: there is no (net) radiative heating and cooling and no flow in and out of that box. This is good assumption, given how fast convection is. We further assume that there kinetic energy is negligible both before and after convection occurs. Therefore, $U$ is conserved over the entire box, and $\Delta U=0$. We finally assume that the initial and final states are hydrostatic. Therefore:
-    
-    \begin{align*}
-        \int\int\int gz \rho\,dz\,dx\,dy
-    \end{align*}
-    
-    \begin{align*}
-        U &= \int\int\int \left(c_v T+gz\right)\rho\,dz\,dx\,dy\\
-        &=\int\int\int \left(c_v T+gz\right)\rho\,dz\,dx\,dy
-    \end{align*}
-    
-    We define (specific) enthalpy as follows:
-    
-    \begin{align}
-        h=u+p\left( \frac{1}{\rho} \right)
-    \end{align}
-    
-    \noindent Taking the differential of enthalpy, then applying the hydrostatic relation:
-    
-    \begin{align*}
-        dh & = du + dp \left( \frac{1}{\rho} \right) - p\, d \left( \frac{1}{\rho} \right)\\
-        & = T\,ds + p\, d \left( \frac{1}{\rho} \right) + dp \left( \frac{1}{\rho} \right) - p\, d \left( \frac{1}{\rho} \right)\\
-        & = T\,ds + dp \frac{1}{\rho}\\
-        & = T\,ds - g \, dz
-    \end{align*}
-\end{comment}
-
 \subsection{Convective Stability Criterion with Potential Temperature}
 
 We can formulate an equivalent criterion for potential temperature. Recall that if two parcels of air have potential temperatures $\theta_A$ and $\theta_B$ such that $\theta_A>\theta_B$, then parcel $A$ will have a higher temperature than parcel $B$ if they're at the same pressure.
 
 We can very straightforwardly derive an equivalent criterion for convective instability, this time in terms of potential tempreature $\theta$, by rearranging \ref{Potential Temperature} for $T(\theta)$ and substituting that into \ref{Dry Stability}.
-\begin{comment}
-    We can therefore naturally extend the derivation for \ref{Dry Stability}, using instead properties of potential temperature, noting that $T_{parcel}=T(\theta_{parcel}(p),p)$ and $T_{ambient}=T(\theta_{ambient}(p))$.
-    
-    \begin{align*}
-        T_{parcel}(p-\delta p)&>T_{ambient}(p-\delta p)\\
-        {T_{parcel}(p)}-\frac{\partial T_{parcel}}{\partial p}\delta p - \frac{d T_{parcel}}{d \theta_{parcel}}\frac{d\theta_{parcel}}{dp}\delta p
-        & >T_{ambient}(p)-\frac{d T_{ambient}}{d \theta_{ambient}}\frac{d\theta_{ambient}}{dp}\delta p\\
-        -\frac{d T_{parcel}}{d p}\delta p
-        & >-\frac{d T_{ambient}}{d \theta_{ambient}}\frac{d\theta_{ambient}}{dp}\delta p\\
-        \frac{d \ln T_{parcel}}{d \ln p} & <\frac{d \ln T_{ambient}}{d \ln p}
-    \end{align*}
-    
-    A slightly more straightforward but maybe less physically intuitive derivation starts directly by rearranging \ref{Potential Temperature} for $T(\theta)$ and substituting that into \ref{Dry Stability}.
-\end{comment}
+
 \begin{align*}
     1&<\frac{c_p}{R}\frac{d\ln T(\theta)}{d\ln p}
     &\text{ ; }&\text{\ref{Dry Stability}}
@@ -1016,11 +972,9 @@ We expect $CIN<0$ and $CAPE>0$. Above \textbf{LNB}, we expect there to be more `
             \coordinate (LMA) at (0.8,4.5);
             \node[] at (1.6,4.5) {\textbf{LMA}};
             \node[] at (2.7,2.8) {$CAPE$ \textcolor{mydarkblue}{\rule{0.25cm}{0.25cm}}};
-            %\filldraw[fill=green!50] (p0) .. controls +(0,1) and +(1,0) .. (LFC);
             \filldraw[thick,fill=myyellow] (p0) .. controls +(0,1) and +(1,0) .. (LFC);
             \filldraw[thick,fill=mydarkblue] (LFC) .. controls +(-1,0) and +(0,-1) .. (LNB);
             \path[fill=myorange] (LNB) .. controls +(0,0.5) and +(0.5,-0.5) .. (LMA) -- (end);
-            %\filldraw[fill=myorange] 
             \draw[dashed,mymagenta,thick] (p0) -- (end);
             \node[circle,draw,fill=black,inner sep=0pt,minimum size =0.15cm] at (ps){};
             \node[circle,draw,fill=black,inner sep=0pt,minimum size =0.15cm] at (p0){};
@@ -1102,15 +1056,6 @@ Therefore we find that the enthalpy is proportional to $\int T\,dp$, and so:
     }
 \end{align}
 during convection.
-
-\begin{comment}
-    We can take the differential of this to find the following relation:
-    \begin{align*}
-        dh&=du+dp\frac{1}{\rho}+p\,d\left( \frac{1}{\rho} \right)\\
-        &=\underbrace{Tds-\bcancel{p\,d\left( \frac{1}{\rho} \right)}}_{du}+dp\frac{1}{\rho}+\bcancel{p\,d\left( \frac{1}{\rho} \right)}\\
-        &=Tds+\frac{1}{\rho}dp
-    \end{align*}
-\end{comment}
 
 \chapter{Moist Thermodynamics}\label{Moist Thermodynamics}
 
@@ -1310,4 +1255,6 @@ Initially, as it is lifted, its mass mixing ratio $q$ will remain constant, and 
 
 \subsection{Moist Convection}
 
-Ideas from Section \ref{Convection} carry over to here, but are changed subtly. However, to avoid repetition, please refer to Chapter \ref{Convection Clouds}.
+Ideas from Section \ref{Convection} carry over to here, but are changed subtly. To avoid repetition the bulk of this discussion will be in Chapter \ref{Convection Clouds}.
+
+However, for completion, it's useful to note that, similar to dry convection, moist convection as a mechanism always perturbs an existing atmospheric profile towards a \textbf{Moist Pseudo-Adiabat}. It is other processes (now just radiation and fluid dynamics) that pull the atmosphere away from this pseudo-adiabat.
