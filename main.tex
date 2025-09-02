@@ -12,8 +12,8 @@
 \tcbsetforeverylayer{shield externalize} %externalise the colorbox!
 %boxes for ideas
 \newtcbtheorem[auto counter,number within=part]{fact}%
-  {Key Idea}{fonttitle=\bfseries\upshape, fontupper=\slshape,
-     arc=0mm, colback=mylightblue!1!white,colframe=mydarkblue!70!black,enhanced jigsaw,breakable,pad at break*=1mm,}{theorem}
+  {Key Idea}{fonttitle=\bfseries\upshape, fontupper=\upshape,
+     arc=0mm, colback=mylightblue!1!white,colframe=mydarkblue!70!black,enhanced jigsaw,}{theorem}
 %boxes for ideas
 \newtcbtheorem[auto counter,number within=part]{idea}%
   {Idea}{fonttitle=\bfseries\upshape, fontupper=\slshape,
@@ -74,7 +74,7 @@
 \usepackage{comment} %comment out sections
 \def\dbar{{\mathchar'26\mkern-12mu d}} %for the dQ
 \usepackage{tikz} %Drawings
-\usetikzlibrary{shapes.geometric,perspective,external,angles,quotes,patterns}
+\usetikzlibrary{shapes.geometric,perspective,external,angles,quotes,patterns,decorations.pathmorphing}
 \tikzexternalize[prefix=tikz/]
 %\usepackage{pgfplots}%see below
 %\pgfplotsset{compat=1.18}
@@ -161,8 +161,7 @@ These set of lecture notes for the C5: Atmospheres and Oceans options are based 
 (for \hyperlink{Climate Dynamics}{Climate Dynamics}), and \href{https://www.physics.ox.ac.uk/our-people/woollings}{Tim Woollings} 
 (for \hyperref[Geophysical Fluid Dynamics]{Geophysical Fluid Dynamics}).
 
-C5 is a massive course, and because it's very `applications'-focused, it doesn't feel as unified as some other options are. This document is the result of an attempt to compile a self-consistent and thorough set of lecture notes on the course. As such, these notes will be long: I will at many points prioritise rigour and detail over brevity, and will link to where you can look if you want more information. However, I will try to emphasise (using coloured boxes!) key ideas to make these notes more skimmable. Furthermore, there is a limit to how thorough I can be: because C5 is very applied, it will build on the results of a great many sub-fields, many of which take a whole lecture series themselves to explain.
-
+C5 is a massive course, and because it's very `applications'-focused, it doesn't feel as unified as some of the other C options. These notes are the result of an attempt to compile a self-consistent and thorough set of lecture notes on the course. As such, these notes will be long: we will at many points prioritise rigour and detail over brevity, and we'll link to where you can look if you want more information. However, I will try to emphasise (using coloured boxes!) key ideas to make these notes more skimmable. Furthermore, there is a limit to how thorough I can be: because C5 is very applied, it will build on the results of a great many sub-fields, many of which take a whole lecture series themselves to explain.
 
 \begin{comment}
   Despite the vast diversity in C5, there are a few common themes (which are by no means unique to C5) that pop up throughout the course. I'll try to flag them clearly so that the reader can hopefully experience some kind of continuity when studying this course.  I have in mind three key themes:
@@ -175,7 +174,7 @@ C5 is a massive course, and because it's very `applications'-focused, it doesn't
 
 In reading these notes, you should be aware of two sources of biases: those of the lecturers and those of the author(s).
 
-In the first case, it is not uncommon for lecturers gloss over material in lectures. For example, the 2024-2025 lectures did not feature scattering in \hyperref[Radiative Transfer]{Radiative Transfer}, and so I will not cover scattering in these lecture notes. Furthermore, some of what is covered is on the very frontiers of modern research. As such, it's not surprising that the lecturers will have certain beliefs that have not (yet?) made it into the scientific consensus.  
+In the first case, it is not uncommon for lecturers gloss over material in lectures. For example, the 2024-2025 lectures did not feature scattering in \hyperref[Radiative Transfer]{Radiative Transfer}, and so I will not cover scattering in these lecture notes. Furthermore, some of what is covered is on the very frontiers of modern research. As such, it's not surprising that the lecturers will have certain beliefs that have not (yet?) made it into the scientific consensus. There will be points where we represent some material very authoritatively, when in reality it is very disputed. Please let us know if you believe this happens at any point.
 
 The second case is far more problematic. First, the author is just not passionate about Instrumentation. That chapter will be empty. Sorry. If you know someone (or you yourself) would be interested in filling that in, please let me know! Second, in some cases I present material differently to how the lecturers present them in attempt to present material in a way I personally find less confusing and more physically intuitive. 
 
