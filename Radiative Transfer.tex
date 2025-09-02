@@ -10,24 +10,38 @@ This section of the course was lectured by \href{https://users.physics.ox.ac.uk/
     \item \hyperref[Basic Thermodynamics]{Basic Radiation Concepts}: 
         
         \begin{quote}
-            We introduce the basic vocabulary needed to describe radiative transfer. We first characterise the radiation field, including how to encode the \hyperref[Solid Angle Box]{direction} and \hyperref[Radiance Box]{magnitude} of radiation. Next, we describe how objects emit and absorb radiation.
+            We introduce the basic vocabulary needed to describe radiative transfer. We first characterise the radiation field, including how to encode the \hyperref[Solid Angle Box]{direction} and \hyperref[Radiance Box]{magnitude} of radiation. Next, we introduce the terminology to describe how objects \hyperref[Optical Depth Box]{absorb} (especially in the case of something like the atmosphere) and \hyperref[Emission Box]{emit} radiation.
         \end{quote}
 
-    \item Molecular Spectroscopy: 
+    \item \hyperref[Molecular Spectroscopy]{Molecular Spectroscopy}: 
     
         \begin{quote}
-            We detail how we characterise \hyperref[Line Box]{spectral lines} in terms of certain parameters. We then discuss how those parameters are determined physically, and introduce some explicit functional forms such as the \hyperref[Lorentz Box]{Lorentz Line Shape}.
+            We characterise \hyperref[Line Box]{spectral lines} in terms of certain parameters and discuss what physically sets those parameters, and, in some cases, introduce some explicit functional forms such as the \hyperref[Lorentz Box]{Lorentz Line Shape}. Finally, we discuss continuum absorption.
         \end{quote}
     
-    \item Schwarzschild Equation:
+    \item \hyperref[Schwarzschild Section]{The Schwarzschild Equation}:
         
         \begin{quote}
-            We formulate an equation for radiative transfer throughout the atmosphere and solve it. We  
+            This is pretty beefy section.
+
+            We derive the \hyperref[Schwarzschild]{Schwarzschild Equation}, which governs the spectral radiance throughout the atmosphere. We approximate the angular distribution using the Two-Stream Approximation and thus derive the \hyperref[Scharz box]{Angle-Averaged Upwards and Downwards Schwarzschild Equations}, which governs the spectral irradiance. 
+            
+            We \hyperref[Soln Schwarszchild Box]{solve} these equations explicitly to find an expression for the $OLR$, the \hyperref[OLR Soln]{Outgoing Longwave Radiation} and intrepret the solution physically by defining the \hyperref[rad level box]{Radiating Level}.
+
+            Next, we aim to find the $OLR$ in terms of irradiances, and so integrate the $OLR$ over a spectral line. We find analytic forms in the weak and strong-line limits. 
+            
+            We next define a few terms to do with \hyperref[RF Box]{Radiative Forcing}, including the $ECS$ (\textbf{Equilibrium Climate Sensitivity}) and $DRF$ (\textbf{Differential Radiative Forcing}). We calculate these explicitly in the weak and strong-line limits.
+
+            Finally, to build some more intuition, we calculate the $OLR$ explicitly for a grey gas (a gas whose optical properties exhibit no frequency dependence).
         \end{quote}
     \item Radiative Equilibrium:
         
         \begin{quote}
-            We make the grey gas approximation in order to analyse how an atmosphere would behave in pure radiative equilibrium: i.e., if radiation were the dominant energy transport mechanism.
+            We consider a grey gase in order to analyse how an atmosphere would behave in pure radiative equilibrium: i.e., if radiation were the dominant energy transport mechanism.
+
+            We solve the system to find the temperature profile of the grey gas in radiative equilbrium, and intepret the solution.
+
+            Finally, we consider some cases where the planet has an internal leakage energy source (from, for example, the formation of the planet) or an atmosphere with shortwave absorbers.
         \end{quote}
 \end{enumerate}
 
@@ -35,7 +49,7 @@ This section of the course was lectured by \href{https://users.physics.ox.ac.uk/
 
 \section{Direction of Radiation: Rays and Solid Angle}
 
-In general, radiation will not only be a function of position $\vec{r}$ but will also be a function of direction\footnote{This is why your eyes will hurt if you look directly at the sun but they won't if you look at these lecture notes.}. We can encode the direction in which radiation is propagating with a \textbf{ray}, a vector $\vec{\omega}$ of (dimensionless) length $1$ on a unit sphere. $\vec{\omega}$ encodes information regarding the direction of propagation, but not regarding the magnitude (e.g., energy) of the radiation. In Cartesian coordinates, this is:
+In general, radiation will not only be a function of position $\vec{r}$ but will also be a function of direction\footnote{This is why your eyes will hurt if you look directly at the sun but they won't if you look at these lecture notes.}. We can encode the direction that some radiation is propagates with a \textbf{ray}, a vector $\vec{\omega}$ of (dimensionless) length $1$ on a unit sphere (see Figure \ref{3D Ray}). $\vec{\omega}$ encodes information regarding the direction of propagation, but not regarding the magnitude (e.g., energy) of the radiation. In Cartesian coordinates, this is:
 \begin{align}
     \vec{\omega}=\left(\begin{array}{ccc}
          \sin(\theta)\cos(\phi)\\
@@ -44,18 +58,29 @@ In general, radiation will not only be a function of position $\vec{r}$ but will
     \end{array}\right)
 \end{align}
 
-We also define the \textbf{Solid Angle}, which is a measure of a set of rays, with units of \textbf{Steradians} (\qty{}{\steradian}). In other words, \textbf{solid angle} encodes from \textit{how many} directions some radiation is coming from. For example, if radiation is propagating towards you from every direction, the \textbf{solid angle} of that will be larger than if radiation were only propagating towards you from a single direction.
+We also wish to define a term which can measure \textit{how many} directions some radiation is coming from. More intuitively, we want the term to encode how much of your field of vision is taken up by some radiation; for example, if radiation is propagating towards you from every direction, we want this term to be larger than if radiation were only propagating towards you from a single direction.
 
-We can make this more intuitive by drawing an analogy between the solid angle in 3D (measured in \textbf{steradians} (\qty{}{\steradian})) and the angle in 2D angle (measured in radians (\qty{}{\radian})). In 2D, radians measure an angle by relating the circumference of a circle to the arc length subtended by that angle (see Fig. \ref{2D Ray}). For example, $1\pi$ \qty{}{\radian} corresponds to an angle that subtends half a unit circle ($180$ degrees) and thus an arc length of $1\pi$. Analogously, steradians measure a solid angle by relating the surface area of a sphere to the patch subtended by a solid angle (see Fig. \ref{3D Ray}). For example, a set of rays pointing in all directions has a solid angle of $4\pi$ \qty{}{\steradian}, while a set of rays with some positive $x$ component (i.e., $\sin(\theta)\cos(\phi)>0$) has a solid angle of $2\pi$ \qty{}{\steradian}.
+We thus define the \textbf{Solid Angle} $\Omega$, which is a measure of a set of rays, with units of \textbf{Steradians} (\qty{}{\steradian}). The \textbf{Solid Angle} $\Omega$ is defined as the area on a unit sphere taken up by some radiation.
+
+It is easier to understand the \textbf{solid angle} (measured in \textbf{steradians} (\qty{}{\steradian})) in 3D  if we draw an analogy to the more familiar \textbf{angle} (measured in \textbf{radians} (\qty{}{\radian})) in 2D.
+
+In 2D, radians measure an angle by relating the circumference of a circle to the arc length subtended by that angle (see Fig. \ref{2D Ray}). For example, $1\pi$ \qty{}{\radian} corresponds to an angle that subtends half a unit circle ($180$ degrees) and thus an arc length of $1\pi$. Another example is $2\pi$ \qty{}{\radian}, which corresponds to an angle that subtends a unit circle ($360$ degrees) and thus an arc length of $2\pi$. 
+
+Analogously, steradians measure a solid angle by relating the surface area of a sphere to the patch subtended by a solid angle (see Fig. \ref{3D Ray}). For example, $2\pi$ \qty{}{\steradian} corresponds to an solid angle that subtends half a unit sphere and thus an area of $2\pi$. This might correspond with a set of rays with some positive $x$ component (i.e., $\sin(\theta)\cos(\phi)>0$). Another example is $4\pi$ \qty{}{\steradian}, which corresponds to an angle that subtends a unit sphere and thus an area of $4\pi$. This example corresponds to a set of rays pointing in all directions.\footnote{
+    If we wish to take the analogy further, we can consider radiation propogating in 2D space. In 2D, a ray takes the form of $\vec{\omega}=(\cos(\theta),\sin(\theta))$. If we focus on a single point, we can encode from how many directions radiation is coming from by considering the field of view.
+
+    In 2D space, a field of view is 1D (in the same way that in 3D space, a field of view is 2D). As such, we can encode this by the \textbf{angle}, which is defined as the length on a unit circle taken up by some radiation. 
+}
 
 Often we will have to integrate over solid angles/directions (as radiation will be a continuous function of $\vec{\omega}$) in the same way that we might integrate over angles. We therefore introduce the differential solid angle:
 
 \begin{fact}{Solid Angle}{Solid Angle Box}\label{Solid Angle Box}
-    The solid angle $\Omega$ is a dimensionless area encoding how many directions we are considering, and is measured in steradians \qty{}{\steradian}. We define the differential solid angle $d\Omega$:
+    The solid angle $\Omega$ is a dimensionless area encoding how many directions we are considering, and is measured in steradians \qty{}{\steradian}. We define the differential solid angle $d\Omega$ and the solid angle $\Omega$:
     \begin{gather}
         \BOX{d\Omega=d\theta \sin\theta \,d\phi}\\
         \BOX{\Omega = \iint\displaylimits_\text{directions considered} d\Omega}
     \end{gather}
+    Intuitively, the solid angle is the area taken up on the surface of a unit sphere by the directions considered. It encodes the amount of field of view we are considering. The analogy to a 2D angle $\theta$ is shown below:
     \begin{figure}[H]
         \centering
         \begin{subfigure}{0.4\linewidth}
@@ -124,7 +149,7 @@ One can integrate this differential over the entire sphere ($\theta\in[0,\pi],\p
 
 Intuitively, the differential solid angle is the dimensionless area element in spherical coordinates. Think of the small rectangle with side lengths $r\,d\theta$ and $r\sin\theta \,d\phi$, but you divide by $r^2$ to make it dimensionless. This is analogous to the case in 2D, where the differential angle is a dimensionless line element in radial coordinates. Think, analogously, of a small line of side length $r\,d\theta$, but again you divide by $r$ to make it dimensionless.
 
-We also define the \textbf{projected} differential solid angle. This accounts for the fact that if we have some surface which is absorbing radiation, radiation parallel to the surface will not be absorbed.
+We also define the \textbf{projected} differential solid angle $d\Omega_\perp$. This accounts for the fact that if we have some surface which is absorbing radiation, radiation parallel to the surface will not be absorbed.
 \begin{align}
     \BOX{d\Omega_\perp=\cos\zeta\,d\Omega}
 \end{align}
@@ -134,7 +159,7 @@ where $\zeta$ is the \textbf{zenith angle}, the angle between the ray ($\vec{\om
 
 Now that we have learnt how to characterise the \textit{direction} in which radiation if propogating, we wish to characterise the \textit{magnitude} of the radiation. 
 
-Let us consider some surface \textit{perpendicular} to some radiation propogating through it. The \textbf{Radiance} $I$ is the energy flux of the radiation flowing through that surface per unit \textit{time} per unit \textit{area} per unit \textit{solid angle}. $I$ has units of \qty{}{\joule\per\second\per\metre\squared\per\steradian}. Now consider an \textit{arbitrarily} oriented surface, which is oriented with at some \textbf{zenith angle} $\zeta$ to some radiation. Then the energy flux $\phi$ (in units of \qty{}{\joule\per\second}) is calculated by integrating the \textbf{radiance} over solid angles and the area of the patch as follows:
+Let us consider some surface \textit{perpendicular} to some radiation propogating through it. The \textbf{Radiance} $I$ is the energy flux of the radiation flowing through that surface per unit \textit{time} per unit \textit{area} per unit \textit{solid angle}. $I$ has units of \qty{}{\joule\per\second\per\metre\squared\per\steradian}. Now consider an \textit{arbitrarily} oriented surface, which is oriented with at some \textbf{zenith angle} $\zeta$ to some radiation. Then the energy flux per unit time $\phi$ (in units of \qty{}{\joule\per\second}) is calculated by integrating the \textbf{radiance} over solid angles and the area of the patch as follows:
 \begin{align}
 \phi=\iint\,I\,d\Omega_\perp\,dA
 \end{align}
@@ -145,16 +170,20 @@ The \textbf{Irradiance} $E$ is the energy flux flowing perpendicular through tha
     \phi=\int E\,dA
 \end{gather*}
 
-Often times radiation is only propagating from one hemisphere (i.e., from one direction) so we integrate over the upwards or downwards propagating hemisphere, which we denote as $\Omega_+$ and $\Omega_-$, respectively. I also remind you that $E$ cannot be a function of $\vec{\omega}$ but $I$ generally is.
+Usually we'll consider radiation propagating only from one hemisphere (i.e., from one direction) so we'll integrate over the upwards or downwards propagating hemisphere, which we denote as $\Omega_+$ and $\Omega_-$, respectively. I also remind you that $E$ cannot be a function of $\vec{\omega}$ but $I$ generally is.
 
-So far our discussion has been completely general, but now we focus on light/electromagnetic radiation, which is a wave and thus has a frequency/wavelength. The \textbf{Spectral Radiance} $L$ and \textbf{Spectral Irradiance} $F$ is the radiance and irradiance (respectively) at a given frequency per unit frequency. $L$ and $F$ have units of \qty{}{\joule\per\second\per\metre\squared\per\steradian\per\hertz} and \qty{}{\joule\per\second\per\metre\squared\per\hertz}, respectively. Equivalently, $L(\nu)\,d\nu$ is the radiance carried by waves with some frequency $\nu'\in[\nu,\nu+d\nu]$ and $F(\nu)\,d\nu$ is the irradiance carried by waves with some frequency $\nu'\in[\nu,\nu+d\nu]$. Due to the laws of electromagnetism, the total energy of a superposition of electromagnetic waves is given by the sum of the energy of the waves at each frequency. As such:
+So far our discussion has been completely general, but now we focus on light/electromagnetic radiation, which is a wave and thus has a frequency/wavelength. The \textbf{Spectral Radiance} $L$ and \textbf{Spectral Irradiance} $F$ is the radiance and irradiance (respectively) at a given frequency per unit frequency. $L$ and $F$ have units of \qty{}{\joule\per\second\per\metre\squared\per\steradian\per\hertz} and \qty{}{\joule\per\second\per\metre\squared\per\hertz}, respectively. Equivalently, $L(\nu)\,d\nu$ is the radiance carried by waves with some frequency $\nu'\in[\nu,\nu+d\nu]$ and $F(\nu)\,d\nu$ is the irradiance carried by waves with some frequency $\nu'\in[\nu,\nu+d\nu]$. 
+
+Due to the laws of electromagnetism, the total energy of a superposition of electromagnetic waves is given by the sum of the energy of the waves at each frequency. As such:
 \begin{align}
     I&=\int L\,d\nu\\
     E&=\int F\, d\nu\\
     \phi&=\iint\,L\,d\nu\,d\Omega_\perp\,dA
 \end{align}
 
-Since the spectral radiance at any point is typically a function of both $\nu$ and $\vec{\omega}$, we must integrate over both $\nu$ and $\vec{\omega}$ to obtain the radiative energy fluxes per unit area. Practically, this integration cannot be solved analytically and so is done numerically. In these notes, we will make a few approximations in order to make analytical progress/extract physical intuition. We will approximate the distribution over $\vec{\omega}$ (the \textit{Two-Stream Approximation} in \ref{Two Stream Approximation}), integrate over frequency bands (\ref{Frequency Bands}), and make the (bad) grey gas approximation ($\frac{\partial L}{\partial \nu}=0$) in Section \ref{Radiative Equilibrium}.
+Since the spectral radiance at any point is typically a function of both $\nu$ and $\vec{\omega}$, we must integrate over both $\nu$ and $\vec{\omega}$ to obtain the radiative energy fluxes per unit area. 
+
+Practically, this integration cannot be solved analytically and so is done numerically. In these notes, we will make a few approximations in order to make analytical progress/extract physical intuition. We will approximate the distribution over $\vec{\omega}$ (the \textit{Two-Stream Approximation} in \ref{Two Stream Approximation}), integrate over frequency bands (\ref{Frequency Bands}), and make the (bad) grey gas approximation ($\frac{\partial L}{\partial \nu}=0$) in Section \ref{Radiative Equilibrium}.
 
 As a summary:
 \begin{fact}{Characterising the Magnitude of Radiation}{Radiance Box}\label{Radiance Box}
@@ -244,166 +273,24 @@ The second nuance is more important. It is the $L(\nu)\,d\nu$ term which is phys
 
 \noindent where we have defined $\hat{L}(\lambda)\equiv\frac{c}{\lambda^2}L\left(\frac{c}{\lambda}\right)$. Notice how the functional form fundamentally changes when we undergo an ultimately arbitrary coordinate transformation from $\nu$ to $\lambda$: the `\textit{frequency} spectral radiance' $L(\nu)$ and `\textit{wavelength} spectral radiance' $L(\lambda)$ are not the identical! But nothing physically \textit{out there} should depend on how we choose to write it down, so we conclude that $L(\nu)$ by itself is an artefact arising from our choice to represent it in terms of $\nu$.
 
-\section{Emission: Black Body Radiation}
-
-Now that can characterise radiation in terms of direction and magnitude, we now aim to lay the foundations of characterising how matter interacts with radiation. We first consider emission here.
-
-A \textbf{black body} is a theoretical object which absorbs all incident electromagnetic radiation. To a good approximation, many stellar bodies are black bodies, including the Sun. One can show that such a body must emit spectral radiance at all times given by $L_{BB}$:
-\begin{align}
-    \boxed{L_{BB}\,d\nu=B(\nu,T)\,d\nu=\frac{2h\nu^3}{c^2}\frac{1}{\exp\left( \frac{h\nu}{k_BT} \right)-1}\,d\nu}
-\end{align}
-
-\noindent You do not have to memorise this, but you should be aware of a few properties. 
-
-First, at all fixed frequencies $\nu$, $B(\nu,T)\,d\nu$ is monotonically increasing with $T$. As $T$ increases, so too does $B$ and every frequency, so if a blackbody warms up it releases more energy (See Figure \ref{Spec Rad BB}).
-
-Second, while blackbodies emits radiation at all frequencies, its 'characteristic frequency' increases as temperature increases.\footnote{
-    We define the 'characteristic frequency' as follows. First, define the cumulative blackbody radiance as $I_{BB}(\nu)=\int_0^\nu B(\nu',T)\,d\nu'$. $I_{BB}$ monotonically increases as $\nu$ increases (since $B(\nu')>0$), so $I_{BB}$ reaches its maximum value at $\nu=\infty$. We define the characteristic frequency $\nu_{char}$ as the median emission frequency: the frequency where $I_{BB}$ is half its maximum value. More rigourously, $\nu_{BB}$ satisfies the following relation: $\int_0^{\nu_{char}} B(\nu',T)\,d\nu'=\frac{1}{2}\int_0^\infty B(\nu',T)\,d\nu'$.\footnotemark
-}\footnotetext{
-    Why all the hassle? Why not find where $B(\nu)$ is maximum and define that as the characteristic frequency? We do not do this becuase this definition is not physically meaningful. Recall the discussion we had just last section: it is $B(\nu)\,d\nu$ that is meaningful, not $B(\nu)$. (Excercise: differentiate $B(\nu)$ to find where $B$ is maximum with respect to $\nu$. Then, transform into wavelength coordinates, making sure to transform $d\nu$ as well, then differentiate with respect to wavelength. You should find that the maximum wavelength is not the maximum frequency).
-} 
-Since oftentimes the star will always be hotter than its planet, this results in what's called a \textit{spectral gap}: the planet emits radiation at a much longer wavelength than its star, which is what enables the greenhouse effect (See Figure \ref{Cum BB}).
-
-\begin{figure}[H]
-    \centering
-    \begin{subfigure}{0.35\linewidth}
-        \includegraphics[width=\linewidth]{Figures/Radiative Transfer/BB Spectral Radiance.png}
-        \caption{Spectral Radiance $L=B(\nu,T)$ of a Black Body}
-        \label{Spec Rad BB}
-    \end{subfigure}
-    \begin{subfigure}{0.35\linewidth}
-        \includegraphics[width=\linewidth]{Figures/Radiative Transfer/BB Cumulative.png}
-        \caption{Cumulative Radiance $\int B d\nu$ of a Black Body}
-        \label{Cum BB}
-    \end{subfigure}
-    \begin{subfigure}{0.25\linewidth}
-        \includegraphics[width=\linewidth]{Figures/Radiative Transfer/Spectral Gap.jpg}
-    \end{subfigure}
-\end{figure}
-
-Third and finally, $B$ is not a function if $\vec{\omega}$: $B$ is isotropic! This final fact allows us to calculate the spectral irradiance of a blackbody (where we have integrated over $d\Omega_\perp$ not  $d\Omega$, since only the radiation perpendicular to the surface of the blackbody is emitted):
-\begin{align*}
-    F(\nu,T)&=\int_{\Omega_-} B(\nu,T)\,d\Omega_\perp\\
-    &= \left( \int_{\Omega_-}d\Omega_{\perp} \right)\,B(\nu,T)\\
-    &=\pi B(\nu,T)
-\end{align*}
-
-\noindent where we have set the zenith angle $\zeta$ equal to $\theta$ and integrated the projected differential solid angle:
-\begin{align*}
-    \int_{\Omega_-}d\Omega_\perp&=\int_{\Omega_-} \cos \zeta \,d\Omega\\
-    &=\int_{0}^{2\pi}\int_{0}^{\frac{\pi}{2}} \cos \zeta \,d\theta \,\sin\theta \,d\phi\\
-    &=2\pi \int_{0}^{\frac{\pi}{2}}\sin\theta\cos\theta\,d\theta\\
-    &=2\pi\left[ \frac{1}{2}\sin\theta^2 \right]_0^{\frac{\pi}{2}}\\
-    &=\pi
-\end{align*}
-
-To find the (non-spectral) irradiance of a black body, we integrate over all frequencies to recover the Stefan-Boltzmann Law governing the power output per unit area $P$ of a black body:
-\begin{align}\label{Blackbody Frequency}
-    \boxed{P=\sigma T^4=\int_0^\infty \pi B(\nu,T)\,d\nu}
-\end{align}
-\subsection{Emissivity and Kirchoff's Law}
-
-Many bodies are not like blackbodies at all, even approximately. We thus define the \textbf{emissivity} $\epsilon\in[0,1]$ of an object as follows:
-\begin{align}
-    \BOX{\epsilon(\nu,T,p)=\frac{L(\nu,T,p)}{B(\nu,T)}}
-\end{align}
-where $T=$ the temperature and $p=$ the pressure of the object in question. Physically, the emissivity encodes how much the object is like a blackbody at each frequency, temperature, and pressure. For a perfect blackbody, $\epsilon=1$ for all frequencies, temperatures, and pressures. One can show that, in local thermodynamic equilibrium, the emissivity of an object is exactly equal to its absorptivity $\alpha$, where $\alpha$ is (dimensionless) the fraction of spectral radiance absorbed by the material.
-\begin{align}
-    \boxed{\epsilon(\nu,T,p)=\alpha(\nu,T,p)}
-\end{align}
-
-We will use this to derive the \hyperref[Schwarzschild]{Schwarzschild Equation}, which governs radiative transfer in the atmosphere. However, we should note that the derivation assumes local thermodynamic equilibrium. This is a good approximation in most parts of the atmosphere, but fails near the top of the atmosphere.
-
-\subsection{Calulating the Stellar Constant}
-
-To a good approximation, stellar bodies are black bodies ($\epsilon=1$). Using this, we can estimate the incident (not absorbed) radiative energy flux on the Earth (or any planet) from the Sun (or any star) by approximating that star as black body. We thus define the \textbf{Stellar Constant} $L_{\star}$ as the incident stellar irradiance on a \textit{flat} surface \textit{facing} the sun. 
-
-There are two important nuances here. First, note that the \textbf{Stellar Constant} is \textit{not} necessarily equal to the incident stellar irradiance on the surface of the planet because the planet is \textit{curved}. The stellar constant is only equal to the incident stellar irradiance on the surface of the planet at the equator at 12:00 if the planet has no axial tilt. Second, note that this is also different from the \textit{absorbed} stellar power – to obtain that we have to account for albedo (some incident stellar irradiance is reflected) and integrate over area. 
-
-Let us now calculate $L_{\star}$. We do this by integrating the spectral radiance of the star (which is approximately $B(\nu,T_{\star})$, where $T_{\star}$ is the temperature of the star) over all frequencies (to obtain the radiance) and over the solid angle $\Omega_\star$ subtended by the star at the planet (to obtain the irradiance):
-\begin{align*}
-    L_{\star}=\int_{\Omega_{\star}}\int _0^\infty B_{\star}(T,\nu)\,d\nu\,d\Omega_\perp
-\end{align*}
-Calculating this explicitly using \ref{Blackbody Frequency}, we get:
-\begin{align*}
-    L_{\star}=\int_{\Omega_{Sun}} \frac{1}{\pi}\sigma T^4 \, d\Omega_\perp
-\end{align*}
-We now make the assumption that the star is very far away from the planet: that $d \gg R_{\star}, R$, where $d=$ the distance between the star, and the planet and $R_\star, R=$ the radius of the star and planet, respectively. This means we can make two approximations.
-
-Our first approximation is that $\cos\zeta=1$ or $d\Omega\approx d\Omega_\perp$. This if the radiation raches the planet, they all must be approximately parallel to each other and perpendicular to the surface considered. Otherwise, even if the radiation were only slightly tilted, it would miss the planet. So:
-\begin{align*}
-    L_\star &=\int_{\Omega_{\star}} \frac{1}{\pi}\sigma T^4 \, d\Omega_\perp\\
-    &\approx\int_{\Omega_{\star}} \frac{1}{\pi}\sigma T^4 \, d\Omega\\
-    &=\Omega_{\star}\,\frac{1}{\pi}\sigma T_{\star}^4
-\end{align*}
-where we have assumed in the last line that the radiance is independent of solid angle. Our goal now is to calculate $\Omega_{\star}$, the solid angle subtended by the star at the planet, which we can calculate by using \ref{Half cone}.
-
-Our second approximation is that $\theta_0\ll 1$, and so $\cos\theta_0\approx 1-\theta_0^2/2$ and $\theta_0\approx R_\star/d$. As such:
-\begin{align*}
-    \Omega_\star&=2\pi (1-\cos(\theta_0))\\
-    &\approx 2\pi \left( 1-\left( 1-\frac{1}{2}\theta_0^2 \right) \right)\\
-    &\approx\pi \frac{1}{2}\frac{R_\star^2}{d^2}
-\end{align*}
-
-Another (in my opinion more intuitive) way to think of this calculation is to consider a sphere centred on the planet with a radius $d$ so that the star lies on the surface of this imaginary sphere. The total solid angle of the entire sphere is $4\pi$, but the star is only occupying a small area on the surface of that sphere. The solid angle is thus approximately the total solid angle $4\pi$ multiplied by the fraction of area the star covers. This fraction is $\pi R_{\star}^2/4\pi d^2$. This is only approximate, because if it weren't the case that $R_\star\ll d$ then the area covered by the sun would not be $\pi R_{\star}^2$. Anyways, plugging it in gives the same results:
-\begin{align*}
-    \Omega_{\star}&=4\pi\frac{\pi R_{\star}^2}{4\pi d^2}\\
-    &=\pi \frac{R_{\star}^2}{d^2}
-\end{align*}
-
-Therefore the stellar constant is;
-\begin{align}
-    \BOX{
-    L_{\star}=\frac{R_{\star}^2}{d^2}\,\sigma T_{\star}^4}
-\end{align}
-
-However, as already noted, the power actually absorbed by the planet is different. We must factor in albedo of the planet, as some radiation is reflected, and we must also factor in the curvature of the planet (which we assume is spherical), as the radiation is not perpendicular to the surface of the planet.
-
-To do this, we must integrate over area and accounting for reflection and curvatoure. Suppose some fraction $a\in[0,1]$ of the instellation is reflected. Therefore:
-\begin{align*}
-    P_{in}&=\int (1-a)L_\star \,\cos \zeta\,dA\\
-    &=(1-a)L_\star\int \cos \zeta\,dA
-\end{align*}
-where the zenith angle term $\cos \zeta$ represent the fact that the sun is only hitting the Earth from one side, and only the component perpendicular to the ground is absorbed. As such, $\int\cos\zeta\, dA$ is the \textit{projected} area of the Earth due to the $\cos \zeta$ term, and therefore is $\pi R^2$, not $4\pi R^2$ (exercise). Therefore:
-\begin{align}
-    P_{in} = (1-a)\pi R^2 \underbrace{\frac{R_{\star}^2}{d^2}\,\sigma T_{\star}^4}_{L_\star}
-\end{align}
-
-If we define the total \textbf{Outgoing Longwave Radiation} $OLR$ as the total irradiance leaving the planet, then we get a radiation budget for the planet:
-\begin{align}
-   & G  = (1-a)\pi R^2 L_\star - 4\pi R^2 OLR \nonumber\\
-   & \boxed{G \sim (1-a) \frac{L_\star}{4} - OLR}\label{Rad budget}
-\end{align}
-
-Almost all of \hyperref[Radiative Transfer]{Radiative Transfer} will be dedicated to calculating this $OLR$, and we'll have to introduce a lot of machinery to calculate it.
-
-If we wish to make progress now, though, we can also (crudely) approximate the planet as having an emissivity independent of $T$ or $\nu$ and its radiation as isotropic to estimate the outgoing power:
-\begin{align*}
-    P_{out}&=\int\int_{\Omega_+}\int _0^\infty \epsilon B(\nu,T)\,d\nu\,d\Omega_\perp\,dA\\
-    &=\epsilon\left(\int dA\right)\int_{\Omega_+}\,d\Omega_\perp\int _0^\infty B(\nu,T)\,d\nu\\
-    &=(4\pi R^2)\,\epsilon\sigma T^4\\
-    \therefore OLR &= \epsilon\sigma T^4
-\end{align*}
-In equilibrium, $G=0$, which means we can solve for the equilibrium temperature of the Earth:
-\begin{align*}
-    0&=(1-a) \frac{L_\star}{4} - OLR\\
-    &=(1-a) \frac{L_\star}{4} - \epsilon\sigma T^4\\
-    \therefore T &= \left( 
-        (1-a) \frac{L_\star}{4\epsilon\sigma}
-     \right)^{\frac{1}{4}}\\
-    &=T_{\star}\left(
-    \frac{1-a}{4\epsilon}\frac{R_{\star}^2}{d^2}
-    \right)^\frac{1}{4}
-\end{align*}
-
 \section{Absorption: Optical Thickness and Transmission Function}
 
-Suppose some spectral radiance is traveling through a slab of radiation-absorbing \textit{stuff} (e.g., air) with an infinitessimal mass-path of $d\mu$, where $d\mu$ is the mass per area (perpendicular to the propogation of radiation). We define the infinitesimal \textbf{Optical Thickness} $d\tau_\nu$ of the slab as the absorptivity $\alpha$ of the slab. In other words, suppose some spectral radiance $L$ is traveling through the radiation-absorbing \textbf{stuff}. Then the infinitesimal change of spectral radiation by the slab $dL$ is given by:
+Now that we can characterise radiation in terms of direction and magnitude, we move to lay the foundations of characterising how matter interacts with radiation. We first consider absorption.
+
+Suppose some spectral radiance is traveling through a slab of radiation-absorbing \textit{stuff} (e.g., air). We define the \textbf{absorptivity} $\alpha(\nu,T,p)$ of the slab as the (dimensionless) fraction of spectral radiance absorbed by the material:
 \begin{align*}
-    dL &= -\alpha(\nu,T)L\\
-    &= d\tau_\nu\,L
+    &L_{fin}(\nu)=L_{in}(\nu)(1-\alpha(\nu,T,p))\text{    or}\\
+    &\Delta L(\nu) = -\alpha(\nu,T,p)L(\nu)
 \end{align*}
-where I have written $\tau_\nu$ with a subscript $\nu$ to remind us that $\tau_\nu$ is a strong function of $\nu$. We further define the absorption cross section $\kappa(\nu,T,p)$ as the effective area of spectral radiance absorbed per unit mass of absorber encountered. $\kappa$ has units of \qty{}{\metre\squared\per\kilogram}, and will generally depend on frequency, temperature, and pressure. Therefore: 
+
+We now focus only on a slab of radiation-absorbing stuff (e.g., a slab of atmosphere) that is only infinitessimaly thick. We define the \textbf{mass path} $d\mu$ as the mass per area (perpendicular to the propogation of radiation) and define the infinitesimal \textbf{Optical Thickness} $d\tau_\nu$ of the slab as the absorptivity $\alpha$ of that slab. In other words, suppose some spectral radiance $L(\nu)$ is traveling through the radiation-absorbing \textbf{stuff}. Then the infinitesimal change of spectral radiation by the slab $dL(\nu)$ is given by:
+\begin{align*}
+    dL &= -\alpha(\nu,T,p)L(\nu)\\
+    &= d\tau_\nu(T,p)\,L(\nu)
+\end{align*}
+where I have written $d\tau_\nu$ with a subscript $\nu$ to remind us that $d\tau_\nu$ is a strong function of $\nu$. 
+
+Finally, we define the absorption cross section $\kappa(\nu,T,p)$ as the effective area of spectral radiance absorbed per unit mass of absorber encountered. $\kappa$ has units of \qty{}{\metre\squared\per\kilogram}, and will generally depend on frequency, temperature, and pressure. Therefore: 
 \begin{align}
     \boxed{d\tau_\nu=\kappa(\nu,T,p)\,d\mu}
     \label{Optical Thickness}
@@ -431,9 +318,10 @@ then we can define the transmission function $\mathcal{T}_\nu$ which encodes the
 
 Note that it is only the transmission function which is physically and dynamically significant here, as \textit{that} is what determines absorption. We could work directly with the transmission function, but for convenience, we'd much rather work in terms of optical depth.
 
-However, the optical depth itself is not directly physically meaningful. This is because the transmission function only cares about absolute value differences in optical depth.\footnote{
+Meanwhile, the optical depth itself is not directly physically meaningful. This is because the transmission function only cares about absolute value differences in optical depth.\footnote{
     The situation is analogous to Classical Electromagnetism or Newtonian Mechanics. In Electromagnetism and Mechanics, the only objects of physical consequence are the \textit{forces}, which depend only on the electric/magnetic fields ($\vec{E},\vec{B}$)\footnotemark and accelerations ($\ddot{\vec{r}}$) respectively. However, for convenience, we'd rather work with the electromagnetic scalar/vector potentials ($\phi,\vec{A}$) or  positions ($\vec{r}$), so we have some freedom to choose some properties of ($\phi,\vec{A}$) or ($\vec{r}$). In the former case, we must fix the gauge (e.g., pick the Lorenz or Coulomb gauge) and in the latter case, we must pick the origin and veloctiy of our coordinate system (e.g., pick the origin as the centre of the Earth). In fancy speak, we say that electromagnetism has a gauge symmetry and Newtonian mechanics has galillean symmetry. We must do a similar thing here for optical depth.
-}\footnotetext{Actually the situation in electromagnetism is a bit more complicated than I've made it. In fact, only the motion of charged objects is directly observable. Since $\vec{B}$ interacts with matter through equations involve its cross product (the Biot-Savart Law and $\vec{F}=q\vec{v}\times\vec{B}$), we've used a convention of the right-handed cross product ($\vec{x}\times\vec{y}=\vec{z}$). We could have equally used the left handed cross product and had equivalent empirical predictions. I'm also not going to go into bivectors and pseudovectors here, because this footnote is already too long.} As such, we must make two choices when calculating our optical depth (analogous to choosing, e.g., the origin of our coordinate system in Newtonian mechanics):
+}\footnotetext{Actually the situation in electromagnetism is a bit more complicated than I've made it. In fact, only the motion of charged objects is directly observable. Since $\vec{B}$ interacts with matter through equations involve its cross product (the Biot-Savart Law and $\vec{F}=q\vec{v}\times\vec{B}$), we've used a convention of the right-handed cross product ($\vec{x}\times\vec{y}=\vec{z}$). We could have equally used the left handed cross product and had equivalent empirical predictions. I'm also not going to go into bivectors and pseudovectors here, because this footnote is already too long.}
+As such, we must make two arbitrary choices when calculating our optical depth (analogous to choosing, e.g., the origin of our coordinate system in Newtonian mechanics):
 \begin{enumerate}
     \item It's ordering: we can let $\tau_\nu$ \textit{increase} with height (decrease with pressure) or \textit{decrease} with height (increase with pressure). This is because the transmission function only cares about the absolute values.
     \item The reference value: we can pick $\tau_\nu=\tau_{\nu,ref}$ at any reference level. This is because the transmission function only cares about differences in optical depth.
@@ -458,7 +346,7 @@ We now specify that the spectral radiance is travelling through a slab of air wi
     \begin{minipage}{.5\linewidth}
         \begin{gather}
             \BOX{\tau_\nu(p)=\int_{p_s}^p-\kappa(\nu,T(p'),p')\,q(p')\frac{dp'}{g\,\cos\theta}}\\
-            \BOX{\tau_{\nu,\infty}=\tau_\nu(0)}
+            \BOX{\tau_\nu(p=0)=\tau_{\nu,\infty}}
         \end{gather}
     \end{minipage}
     The transmission function $\mathcal{T}_\nu$ between two points $p_1$ and $p_2$ encodes how much the spectral radiance is attenuated between the two points and is:
@@ -472,16 +360,21 @@ We now specify that the spectral radiance is travelling through a slab of air wi
     \end{minipage}
     \begin{minipage}{.5\linewidth}
         \begin{align}
+            \label{Transmission Attenuation}
             \BOX{
                 L(\nu,p_2)=L(\nu,p_1)\,\mathcal{T}_\nu(p_1,p_2)
             }
         \end{align}
     \end{minipage}
+
+    A taylor expansion of Equation \ref{Transmission Attenuation} shows that the fraction of spectral radiance absorbed in an infinitesimmaly thin layer is the optical thickness of that layer $|d\tau_\nu|$.
 \end{fact}
 
-Notice that I write $T=T(p)$ here. Until \ref{Radiative Equilibrium}, we assume that the vertical temperature profile of the atmosphere is given by some known relation (perhaps the \hyperref[Dry Adiabat]{Dry Adiabat} if we are in the troposphere).
+Notice that I write $T=T(p)$ here. Until \ref{Radiative Equilibrium}, we assume that the vertical temperature profile of the atmosphere is given by some known relation (perhaps the \hyperref[Dry Adiabat]{Dry Adiabat} if we are in the troposphere). 
 
-\subsection{Example: Grey Atmosphere and Well Mixed Absorber}
+Similar to the hydrostatic relation allowing us to use both pressure and height coordinates interchangably, Equation \ref{Optical Pressure} and the fact that $\kappa, q,g>0$ and $\theta=const$ ensures that $d\tau_\nu\sim -dp$\footnote{Or that $d\tau_\nu\sim dp$ if $\theta>\frac{\pi}{2}$!} for all $p$ which in turn ensures that there is a one-to-one relation betweeen $p$ and $\tau_\nu$, allowing us to use both pressure and optical depth coordinates interchangably.
+
+\subsection{Example: Grey Atmosphere and Well Mixed Absorber}\label{Ex Simple Optical Depth}
 
 Let us make three assumptions. First, assume that the atmosphere is \textit{grey}. This amounts to the assumption that the atmosphere interacts with light in the same way regardless of frequency, so $\frac{\partial\kappa}{\partial\nu}=0$. Second, assume that $\kappa$ has no $T$ or $p$ dependence. Third, assume that the absorber is \textit{well-mixed}. This means that the concentration $q$ is independent of height $\frac{\partial q}{\partial p}=0$. We can now integrate the optical depth to find:
 \begin{align*}
@@ -498,7 +391,192 @@ We define $\tau_\infty=\int_{p_s}^0d\tau_\nu$ as the optical depth of the \texti
 \end{align*}
 However, typically, $\kappa$ is a strong function of $\nu$. We will discuss how exactly $\kappa$ depends on $\nu$ in the next chapter.
 
-\chapter{Molecular Spectroscopy}
+\section{Emission: BlackBody Radiation}
+
+We now turn to emission.
+
+We first define a \textbf{blackbody} as a theoretical object which absorbs all incident electromagnetic radiation. To a good approximation, many stellar bodies are blackbodies, including the Sun. One can show that such a body must emit spectral radiance at all times given by $L_{BB}(\nu,T)$, where $T$ is the temperature of the blackbody:
+\begin{align}
+    \boxed{L_{BB}\,d\nu=B(\nu,T)\,d\nu=\frac{2h\nu^3}{c^2}\frac{1}{\exp\left( \frac{h\nu}{k_BT} \right)-1}\,d\nu}
+\end{align}
+You do not have to memorise this, but you should be aware of a few properties. 
+
+First, at all fixed frequencies $\nu$, $B(\nu,T)\,d\nu$ is monotonically increasing with $T$. As $T$ increases, so too does $B$ and every frequency, so if a blackbody warms up it releases more energy (See Figure \ref{Spec Rad BB}).
+
+Second, while blackbodies emit radiation at all frequencies, its 'characteristic frequency' increases as temperature increases.\footnote{
+    We define the 'characteristic frequency' as follows. First, define the cumulative blackbody radiance as $I_{BB}(\nu)=\int_0^\nu B(\nu',T)\,d\nu'$. $I_{BB}$ monotonically increases as $\nu$ increases (since $B(\nu')>0$), so $I_{BB}$ reaches its maximum value at $\nu=\infty$. We define the characteristic frequency $\nu_{char}(T)$ as the median emission frequency: the frequency where $I_{BB}$ is half its maximum value. 
+    
+    More rigourously, $\nu_{BB}$ satisfies the following relation: $\int_0^{\nu_{char}(T)} B(\nu',T)\,d\nu'=\frac{1}{2}\int_0^\infty B(\nu',T)\,d\nu'$.\footnotemark  It is the case that $\frac{d\nu_{char}}{dT}>0$ for all $T$.
+}\footnotetext{
+    Why all the hassle? Why not find where $B(\nu,T)$ is maximum and define that as the characteristic frequency? We do not do this becuase this definition is not physically meaningful. Recall the discussion we had just last section: it is $B(\nu)\,d\nu$ that is meaningful, not $B(\nu)$. (Excercise: differentiate $B(\nu)$ to find where $B$ is maximum with respect to $\nu$. Then, transform into wavelength coordinates, making sure to transform $d\nu$ as well, then differentiate with respect to wavelength. You should find that the maximum wavelength is not the maximum frequency).
+} 
+Since the star will almost always be hotter than its planet, this results in what's called a \textit{spectral gap}: the planet tends to emit radiation at a much longer wavelength than its star, which is what enables the greenhouse effect (See Figure \ref{Cum BB}).
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{0.35\linewidth}
+        \includegraphics[width=\linewidth]{Figures/Radiative Transfer/BB Spectral Radiance.png}
+        \caption{Spectral Radiance $L=B(\nu,T)$ of a BlackBody}
+        \label{Spec Rad BB}
+    \end{subfigure}
+    \begin{subfigure}{0.35\linewidth}
+        \includegraphics[width=\linewidth]{Figures/Radiative Transfer/BB Cumulative.png}
+        \caption{Cumulative Radiance $\int B d\nu$ of a BlackBody}
+        \label{Cum BB}
+    \end{subfigure}
+    \begin{subfigure}{0.25\linewidth}
+        \includegraphics[width=\linewidth]{Figures/Radiative Transfer/Spectral Gap.jpg}
+    \end{subfigure}
+\end{figure}
+
+Third and finally, $B$ is not a function if $\vec{\omega}$: $B$ is isotropic! This final fact allows us to calculate the spectral irradiance of a blackbody by integrating over the projected differential solid angle $d\Omega_\perp$. We integrate over $d\Omega_\perp$ and not  $d\Omega$ because only the radiation perpendicular to the surface of the blackbody is emitted:
+\begin{align*}
+    F(\nu,T)&=\int_{\Omega_-} B(\nu,T)\,d\Omega_\perp\\
+    &= \left( \int_{\Omega_-}d\Omega_{\perp} \right)\,B(\nu,T)\\
+    &=\pi B(\nu,T)
+\end{align*}
+The final line is found by setting the zenith angle $\zeta$ equal to $\theta$ and integrating the projected differential solid angle explicitly:
+\begin{align*}
+    \int_{\Omega_-}d\Omega_\perp&=\int_{\Omega_-} \cos \zeta \,d\Omega\\
+    &=\int_{0}^{2\pi}\int_{0}^{\frac{\pi}{2}} \cos \zeta \,d\theta \,\sin\theta \,d\phi\\
+    &=2\pi \int_{0}^{\frac{\pi}{2}}\sin\theta\cos\theta\,d\theta\\
+    &=2\pi\left[ \frac{1}{2}\sin\theta^2 \right]_0^{\frac{\pi}{2}}\\
+    &=\pi
+\end{align*}
+
+To find the (non-spectral) irradiance of a blackbody, we integrate over all frequencies to recover the Stefan-Boltzmann Law governing the power output per unit area $P$ of a blackbody:
+\begin{align}\label{Blackbody Frequency}
+    \boxed{P=\sigma T^4=\int_0^\infty \pi B(\nu,T)\,d\nu}
+\end{align}
+\subsection{Emissivity and Kirchoff's Law}
+
+Many bodies are not like blackbodies at all, even approximately. We thus define the \textbf{emissivity} $\epsilon\in[0,1]$ of an object as follows:
+\begin{align}
+    \BOX{\epsilon(\nu,T,p)=\frac{L(\nu,T,p)}{B(\nu,T)}}
+\end{align}
+where $T=$ the temperature; $p=$ the pressure; and $L$ is the spectral radiance emission of the object in question. Physically, the emissivity encodes how much the object is like a blackbody at each frequency, temperature, and pressure. For a perfect blackbody, $\epsilon=1$ for all frequencies, temperatures, and pressures. One can show that, in local thermodynamic equilibrium, the emissivity of an object is exactly equal to its absorptivity $\alpha$:
+\begin{align}
+    \boxed{\epsilon(\nu,T,p)=\alpha(\nu,T,p)}
+\end{align}
+
+We will use this to derive the \hyperref[Schwarzschild]{Schwarzschild Equation}, which governs radiative transfer in the atmosphere. However, we should note that the derivation assumes local thermodynamic equilibrium. This is a good approximation in most parts of the atmosphere, but fails near the top of the atmosphere.
+
+As a summary:
+\begin{fact}{Blackbody Radiation, Emissivity, and Kirchoff's Law}{Emission Box}\label{Emission Box}
+    A blackbody emits radiation at all times with a well known spectral radiance function $B(\nu,T)$ (given by Equation \ref{Blackbody Frequency}). This spectral radiance:
+    \begin{enumerate}
+        \item Monotonically increases at every freuqency with temperature.
+        \item Increases its characteristic frequency with temperature.
+        \item Is isotropic in direction.
+    \end{enumerate}
+
+    The (dimensionless) \textbf{emissivity} $\epsilon$ of an object encodes the spectral radiance $L$ an object emits such that:
+    \begin{gather}
+        L(\nu,T,p)=\epsilon(\nu,T,p)B(\nu,T)
+    \end{gather}
+    In local thermodynamic equilibrium, the \textbf{emissivity} is equal to the \textbf{absorptivity} $\alpha$ according to Kirchoff's Law:
+    \begin{align}
+    \boxed{\epsilon(\nu,T,p)=\alpha(\nu,T,p)}
+    \end{align}
+\end{fact}
+
+\subsection{Example: Calulating the Stellar Constant}\label{Example Stellar Const}
+
+We've covered a lot of what are probably unfamiliar concepts to you at this point, so it would be useful to apply such concepts in the explicit calculation of something. This will hopefully build some intuition.
+
+To a good approximation, stellar bodies are black bodies ($\epsilon=1$). We can use this to estimate the incident (not absorbed) radiative energy flux on the Earth (or any planet) from the Sun (or any star) by approximating that star as blackbody. 
+
+Our goal now is to calculate the \textbf{Stellar Constant} $L_{\star}$, defined as the incident stellar irradiance on a \textit{flat} surface \textit{facing} the sun. 
+
+There are two important nuances here. First, note that the \textbf{Stellar Constant} is \textit{not} necessarily equal to the incident stellar irradiance on the surface of the planet because the planet is \textit{curved}. The stellar constant is only equal to the incident stellar irradiance on the surface of the planet at the equator at 12:00 if the planet has no axial tilt. Second, note that this is also different from the \textit{absorbed} stellar power – to obtain that we have to do three things: first, account for the aforementioned nuance (i.e., that only the radiation perpendicular to the curved surface is absorbed); second, account for the albedo of the planet (some incident stellar irradiance is reflected); and third, integrate over the area of the planet.
+
+Let us now calculate $L_{\star}$. Our strategy is to integrate the spectral radiance of the star (which is approximately $B(\nu,T_{\star})$, where $T_{\star}$ is the temperature of the star) over all frequencies (to obtain the radiance) and over the solid angle $\Omega_\star$ subtended by the star at the planet (to obtain the irradiance):
+\begin{align*}
+    L_{\star}=\int_{\Omega_{\star}}\int _0^\infty B(T_{\star},\nu)\,d\nu\,d\Omega_\perp
+\end{align*}
+Calculating this explicitly using \ref{Blackbody Frequency}, we get:
+\begin{align*}
+    L_{\star}=\int_{\Omega_{Sun}} \frac{1}{\pi}\sigma T_{\star}^4 \, d\Omega_\perp
+\end{align*}
+We now make the assumption that the star is very far away from the planet: that $d \gg R_{\star}, R$, where $d=$ the distance between the star and the planet, and $R_\star, R=$ the radius of the star and planet, respectively. This allows us to make two approximations.
+
+Our first approximation is that $\cos\zeta\approx1$ or that $d\Omega\approx d\Omega_\perp$. This is because the radiation reaching the planet must all be approximately parallel to each other and perpendicular to the surface considered. If this weren't the case, and the radiation was only slightly tilted, the radiation would completely miss the planet. So:
+\begin{align*}
+    L_\star &=\int_{\Omega_{\star}} \frac{1}{\pi}\sigma T_{\star}^4 \, d\Omega_\perp\\
+    &\approx\int_{\Omega_{\star}} \frac{1}{\pi}\sigma T_{\star}^4 \, d\Omega\\
+    &=\Omega_{\star}\,\frac{1}{\pi}\sigma T_{\star}^4
+\end{align*}
+where we have assumed in the last line that the radiance is independent of solid angle. Our goal now is to calculate $\Omega_{\star}$, the solid angle subtended by the star at the planet, which we can calculate by using \ref{Half cone}.
+
+Our second approximation is that $\theta_0\ll 1$, and so $\cos\theta_0\approx 1-\theta_0^2/2$ and $\theta_0\approx R_\star/d$. As such:
+\begin{align*}
+    \Omega_\star&=2\pi (1-\cos(\theta_0))\\
+    &\approx 2\pi \left( 1-\left( 1-\frac{1}{2}\theta_0^2 \right) \right)\\
+    &\approx\pi \frac{1}{2}\frac{R_\star^2}{d^2}
+\end{align*}
+
+Another (in my opinion more intuitive) way to think of this calculation is to consider a sphere centred on the planet of radius $d$ so that the star lies on the surface of this imaginary sphere. The total solid angle of the entire sphere is $4\pi$, but the star is only occupying a small area on the surface of that sphere. The solid angle is equal to the total solid angle $4\pi$ multiplied by the fraction of field of view the star covers.
+
+We approximate the fraction of the field of view covered by the star as equal to the fraction of the \textit{surface area} of the imaginary sphere the star covers. This fraction is itself approximately equal to $\pi R_{\star}^2/4\pi d^2$. This is only approximate, because if it weren't the case that $R_\star\ll d$, then the area covered by the sun would not be $\pi R_{\star}^2$ (and furthermore, this wouldn't be the fraction of the field of view covered by the sun).
+
+Anyways, it is the case that $R_{\star},R\gg d$, so plugging it in gives the same results:
+\begin{align*}
+    \Omega_{\star}&=4\pi\frac{\pi R_{\star}^2}{4\pi d^2}\\
+    &=\pi \frac{R_{\star}^2}{d^2}
+\end{align*}
+Therefore the stellar constant is;
+\begin{align}
+    \BOX{
+    L_{\star}=\frac{R_{\star}^2}{d^2}\,\sigma T_{\star}^4}
+\end{align}
+
+Let's calculate this for our sun! Plugging in the radius of the Sun $R_\star\approx\qty{696.3e3}{\kilo\metre}$, the distance between the Earth and the Sun $d\approx\qty{149.6e6}{\kilo\metre}$, and the Sun's surface temperature $T_\star\approx\qty{5772}{\kelvin}$, we get that $L_\star=\approx\qty{1364}{\watt\per\square\meter}$. The literature value is approximately \qty{1361}{\watt\per\square\meter}, so we have gotten remarkably close!
+
+However, as already noted, the power actually absorbed by the planet is different. Again, we must factor in three things. We must factor in the curvature of the planet (which we assume is spherical), as the radiation is not perpendicular to the surface of the planet, and it is only radiation perpendicular to the surface. We must factor in albedo of the planet, as some radiation is reflected. And finally, we must integrate over area to find the power (rather than the power per unit area).
+
+We now integrate over the area of the planet and account for for reflection and curvature. Suppose some fraction $a\in[0,1]$ of the instellation is reflected. Therefore:
+\begin{align*}
+    P_{in}&=\int (1-a)L_\star \,\cos \zeta\,dA\\
+    &=(1-a)L_\star\int \cos \zeta\,dA
+\end{align*}
+where the zenith angle term $\cos \zeta$ represent the fact that the sun is only hitting the Earth from one side, and only the component perpendicular to the ground is absorbed. As such, $\int\cos\zeta\, dA$ is the \textit{projected} area of the Earth due to the $\cos \zeta$ term, and therefore is $\pi R^2$, not $4\pi R^2$ (exercise). Therefore:
+\begin{align}
+    P_{in} = (1-a)\pi R^2 \underbrace{\frac{R_{\star}^2}{d^2}\,\sigma T_{\star}^4}_{L_\star}
+\end{align}
+
+If we define the total \textbf{Outgoing Longwave Radiation} $OLR$ as the total irradiance leaving the planet, then we get a radiation budget for the planet:
+\begin{align}
+   & G  = (1-a)\pi R^2 L_\star - 4\pi R^2 OLR \nonumber\\
+   & \boxed{G \sim (1-a) \frac{L_\star}{4} - OLR}\label{Rad budget}
+\end{align}
+
+Almost all of \hyperref[Radiative Transfer]{Radiative Transfer} will be dedicated to calculating this $OLR$, and we'll have to introduce a lot of machinery to calculate it.
+
+If we wish to make progress now, though, we simply define the effective emissivity $\epsilon_{eff}$ such that:
+\begin{align*}
+    \epsilon_{eff}\int\int_{\Omega_+}\int _0^\infty B(\nu,T)\,d\nu\,d\Omega_\perp\,dA\equiv\int\int_{\Omega_+}\int _0^\infty \epsilon(\nu,T) B(\nu,T)\,d\nu\,d\Omega_\perp\,dA
+\end{align*}
+While we are perfectly within our rights to theoretically define such an effective emissivity, this does not help us at all in practically calculating $OLR$. Regardless, it will be useful for some intuition. Now that we've defined this, we can estimate the outgoing power:
+\begin{align*}
+    P_{out}&=\int\int_{\Omega_+}\int _0^\infty \epsilon(\nu,T) B(\nu,T)\,d\nu\,d\Omega_\perp\,dA\\
+    &=\epsilon_{eff}\left(\int dA\right)\int_{\Omega_+}\,d\Omega_\perp\int _0^\infty B(\nu,T)\,d\nu\\
+    &=(4\pi R^2)\,\epsilon_{eff}\sigma T^4\\
+    \therefore OLR &= \epsilon_{eff}\sigma T^4
+\end{align*}
+In equilibrium, $G=0$, which means we can solve for the equilibrium temperature of the Earth:
+\begin{align*}
+    0&=(1-a) \frac{L_\star}{4} - OLR\\
+    &=(1-a) \frac{L_\star}{4} - \epsilon_{eff}\sigma T^4\\
+    \therefore T &= \left( 
+        (1-a) \frac{L_\star}{4\epsilon_{eff}\sigma}
+     \right)^{\frac{1}{4}}\\
+    &=T_{\star}\left(
+    \frac{1-a}{4\epsilon_{eff}}\frac{R_{\star}^2}{d^2}
+    \right)^\frac{1}{4}
+\end{align*}
+Clearly then, the temperature of the planet should be proportional to the temperature of the star, and the constant of proportionality $\left(\frac{1-a}{4\epsilon_{eff}}\frac{R_{\star}^2}{d^2}\right)^\frac{1}{4}$ increases as the albedo decreases or as the emissivity decreases. The former might be due to reduced ice cover, and the latter might be due to an increase in greenhouse gas concentration, for example.
+
+\chapter{Molecular Spectroscopy}\label{Molecular Spectroscopy}
 
 \section{Spectral Lines}
 
@@ -582,7 +660,7 @@ CO$_2$ has no intrinsic dipole moment, but it has two vibrational modes (INSERT 
 
 Meanwhile, N$_2$ and O$_2$ are both diatomic molecules made up of identical atoms, and so don't couple strongly to the electromagnetic field, since none of the rotational or vibrational modes change the molecules' dipole moment. This is why N$_2$ and O$_2$ are both optically inactive.
 
-The second factor depends on the average occupation of the energy states. The intuition is as follows. Suppose a spectral line has a line centre at $\nu_c$, and thus relies on a transition from energy levels from $E_i$ to $E_j$ (such that $E_j-E_i=h\nu_c$). A gas that has, say, half of its molecules in energy state $E_j$ will have half of its molecules able to absorb a molecule of frequency $\nu_c$, but a gas that has a higher proportion (say, three-quarters) will have a higher proportion of its molecules (say, three-quarters) able to absorb a molecule of frequency $\nu_c$.
+The second factor depends on the average occupation of the energy states. The intuition is as follows. Suppose a spectral line has a line centre at $\nu_c$, and thus relies on a transition from energy levels from $E_i$ to $E_j$ (such that $E_j-E_i=h\nu_c$). A gas that has, say, half of its molecules in energy state $E_i$ will have half of its molecules able to absorb a molecule of frequency $\nu_c$, but a gas that has a higher proportion (say, three-quarters) will have a higher proportion of its molecules (three-quarters) able to absorb a molecule of frequency $\nu_c$. Therefore the more occupied the energy states are, the higher the line strength.
 
 The occupation of energy states depends on the temperature of a system, and one can derive this using statistical mechanics. We won't derive it here, but the result for the functional form of $S$ for IR (Infra-red) radiation is as follows:
 \begin{align*}
@@ -670,9 +748,9 @@ You should memorise this for the exam Key Idea \ref{Lorentz Box} for the exam.
 
 [Under Construction]
 
-\chapter{The Schwarzschild Equation}
+\chapter{The Schwarzschild Equation}\label{Schwarzschild Section}
 
-\section{The Equations of Motion}
+\section{Derivation of the Schwarzschild Equation}
 
 Consider some radiation traveling through a slab of atmosphere at some zenith angle $\theta$ with some spectral radiance $L$ with some frequency $\nu$. We wish to derive how $L(\nu)$ varies as it propogates through the atmosphere. Suppose the slab of atmosphere has vertical infintesimal optical thickness of $d\tau_\nu^*$. Since the path of the radiation is slanted, the spectral radiance travels through an infinitesimal optical depth of $d\tau_\nu=d\tau_\nu^*/\cos\theta$. The slab absorbs some spectral radiance, but it also emits some spectral radiance:
 
@@ -757,15 +835,17 @@ Note the extra `$-$' sign on Equation \ref{Downwards Schwarszchild Initial}. Com
     \begin{minipage}{.5\linewidth}
         \begin{gather}
         \label{Upwards Schwarzschild}
-        \BOX{\frac{dF_+}{d\tau_\nu}(\tau_\nu)=-F_+(\tau_\nu)+\pi B}
+        \BOX{\frac{dF_+}{d\tau_\nu}(\tau_\nu)=-F_+(\tau_\nu)+\pi B(\tau_\nu)}
         \end{gather}
     \end{minipage}
     \begin{minipage}{.5\linewidth}
         \begin{gather}
         \label{Downwards Schwarzschild}
-        \BOX{-\frac{dF_-}{d\tau_\nu}(\tau_\nu)=-F_-(\tau_\nu)+\pi B}
+        \BOX{-\frac{dF_-}{d\tau_\nu}(\tau_\nu)=-F_-(\tau_\nu)+\pi B(\tau_\nu)}
         \end{gather}
     \end{minipage}
+
+    $B(\tau_\nu)$ is the blackbody radiation at some optical depth $\tau_\nu$. To solve these equations we require some functional form of $B(\tau_\nu)$.
 
     We can relate optical depth coordinates $\tau_\nu$ to pressure coordinates $p$ using \ref{Optical Pressure}:
     \begin{align}
@@ -798,36 +878,7 @@ Physically, the solution is intuitive: the total upwards radiance at some optica
     \item $F_+(\nu,0)e^{-\tau_\nu}$: The irradiance ($F_+(\nu,0)$) from the bottom ($\tau_\nu=0$) of the atmosphere, attenuated by the optical depth $e^{-(\tau_\nu-0)}$.\footnote{Generally, this is the upwards irradiance emitted by the ground on a rocky planet, but one could also choose $\tau_\nu=0$ in the middle of the atmosphere (as you must on a gaseous planet), in which case $F_+(\nu,0)$ will be the total upwards irradiance at that level (originating from all the atmosphere (and ground) underneath it).}
     \item $\pi B(\nu,T(\tau_\nu'))\,d\tau_\nu'\,e^{-(\tau_\nu-\tau_\nu')}$: The irradiance ($B(\nu,T(\tau_\nu'))\,d\tau_\nu'$) from each layer ($\tau_\nu=\tau_\nu'$), also attenuated by the optical depth $e^{-(\tau_\nu-\tau_\nu')}$
 \end{enumerate}
-The \textbf{Outgoing Longwave Radiation} $OLR$ (in spectral irradiances) is then defined as $F_+(\nu,p=0)=F_+(\nu,\tau=\tau_{\nu,\infty})$ and given by:
-\begin{align}
-    \BOX{OLR=F_+(\nu,0)e^{-\tau_{\nu,\infty}}+\int_0^{\tau_{\nu,\infty}}\pi B(\nu,T(\tau_\nu'))e^{-(\tau_{\nu,\infty}-\tau_\nu')}\,d\tau_\nu'} \label{OLR Soln}
-\end{align}
-The physical interpretation is identical. The total upwards spectral irradiance escaping is the spectral irradiance from each level attenuated by the amount of absorption in between those levels.
 
-Since the attenuation is exponential, this gives us an optical depth `lengthscale' set by when $(\tau_{\nu,\infty}-\tau_\nu')\sim 1$. This allows us to define:
-\begin{fact}{The Radiating Level $p_{rad}$}{rad level box}\label{rad level box}
-    We define the \textbf{radiating level} at $\tau_\nu=\tau_{\nu,rad}$ and $p=p_{rad}$ which satisfy the following relations:
-
-    \begin{minipage}{.5\linewidth}
-    \begin{align}
-        \BOX{\tau_{\nu,\infty}-\tau_{\nu,rad} = 1}\\
-        \BOX{\tau_\nu(p_{rad})=\tau_{\nu,rad}}
-    \end{align}
-    \end{minipage}
-    \begin{minipage}{.5\linewidth}
-        Figure here!
-    \end{minipage}
-
-    Physically, the interpretation is as follows: any radiation coming from an optical depth $\tau_\nu<\tau_{\nu,rad}$ ($p>p_{rad}$) will be attenuated \textbf{much} more than radiation coming from an optical depth $\tau_\nu>\tau_{\nu,rad}$ ($p<p_{rad}$).
-
-    As such, the $OLR$ radiation actually escaping into space will disproportionately look like the radiation emitted by `stuff' at $p_{rad}$. In other words, if you were to look down at the atmosphere, you would not `see' anything from an optical depth coming from $p>p_{rad}$. 
-\end{fact}
-Note that this definition only really works if $\tau_{\nu,\infty}>1$. If $\nu$ is in the visible light region, for example, $\tau_{\nu,\infty}<0$, which is why you can see all the way to the ground (since $p_{rad}=p_s$, since $\tau_\nu\to-\infty$ at the ground due to the discontinuity of switching between something optically thin (the atmosphere) and something optically thick (the ground)).
-
-We can also express everything in terms of the transmission function. Defining the radiating level in terms of the transmission function is straightforward: $p_{rad}$ satisfies the following relation\footnote{And, of course, $p_{rad}>0$.}:
-\begin{align}
-    \mathcal{T}_\nu(0,p_{rad})=e^{-1}
-\end{align}
 We can also rewrite \ref{Upwards Schwarszchild Initial} and \ref{Downwards Schwarszchild Initial} in terms of the transmission function $\mathcal{T}_\nu(p_1,p_2)$ if we find the differential of the transmission function with respect to $p_2$ and assume that $\tau_\nu(p_1)\geq\tau_\nu(p_2)$ (i.e., if $p_1\leq p_2$):
 \begin{align*}
     d\left( \mathcal{T}_\nu(p_1,p_2) \right)&=d\left( e^{-|\tau_\nu(p_1)-\tau_\nu(p_2)|} \right)\\
@@ -868,6 +919,95 @@ If, conversely, $\tau_\nu(p_1)\leq\tau_\nu(p_2)$ (i.e., if $p_1\geq p_2$), then 
 
 Note that even though the integral in \ref{Upwards Transmission Soln} is taken from $p$ to $p<p_s$, the integral is positive because $d\mathcal{T}_\nu(p,p')<0$, because $d\mathcal{T}_\nu(p,p')\sim d\tau(p')\sim - dp'$.
 
+\section{The \texorpdfstring{OLR}{OLR} and the Radiating Level}
+
+The \textbf{Outgoing Longwave Radiation} $OLR$ (in spectral irradiances) is then defined as the total spectral irradiance escaping to space, and given by $F_+(\nu,p=0)=F_+(\nu,\tau=\tau_{\nu,\infty})$:
+\begin{align}
+    \BOX{OLR=F_+(\nu,0)e^{-\tau_{\nu,\infty}}+\int_0^{\tau_{\nu,\infty}}\pi B(\nu,T(\tau_\nu'))e^{-(\tau_{\nu,\infty}-\tau_\nu')}\,d\tau_\nu'} \label{OLR Soln}
+\end{align}
+The physical interpretation is identical to $F_+$ at any optical depth: the total upwards spectral irradiance escaping is the spectral irradiance from each level attenuated by the amount of absorption in between that level and space.
+
+Since the attenuation is exponential, this gives us a privileged scale of optical depth set by when $(\tau_{\nu,\infty}-\tau_\nu')\sim 1$. This allows us to define:
+\begin{fact}{The Radiating Level $p_{rad}$}{rad level box}\label{rad level box}
+
+    \begin{minipage}{.5\linewidth}
+    We define the \textbf{radiating level} at $\tau_\nu=\tau_{\nu,rad}$ and $p=p_{rad}$ which satisfy the following relations:
+    \begin{align}
+        \BOX{\tau_{\nu,\infty}-\tau_{\nu,rad} = 1}\\
+        \BOX{\tau_\nu(p_{rad})=\tau_{\nu,rad}}
+    \end{align}
+    Physically, the interpretation is as follows: any radiation coming from an optical depth $\tau_\nu<\tau_{\nu,rad}$ ($p>p_{rad}$) will be attenuated \textbf{much} more than radiation coming from an optical depth $\tau_\nu>\tau_{\nu,rad}$ ($p<p_{rad}$) (see Figure \ref{radlevel figure}).
+
+    As such, the $OLR$ radiation actually escaping into space will disproportionately look like the radiation emitted by `stuff' at or above $p_{rad}$. In other words, if you were to look down at the atmosphere, you would not `see' anything from an optical depth coming from $p>p_{rad}$.
+    \end{minipage}
+    \hfill\begin{minipage}{.45\linewidth}
+        \begin{figure}[H]
+        \centering
+        \begin{tikzpicture}
+            \draw[->] (0,0) -- (4.5,0) node[anchor=west]{$T$};
+            \draw[->] (0,0) -- (0,4.5) node[anchor=south]{$-\ln p$};
+            \coordinate (ps) at (4.2,0);
+            \coordinate (ptop) at (0.5,4.2);
+            \node[] at (4.2,-0.4) {$p_s$};
+            \node[circle,draw,fill=black,inner sep=0pt,minimum size =0.15cm] at (ps){};
+            \draw[thick] (ps) to[out=135,in=-80] (ptop);
+            \node[] at (3,0.4) {$T(p)$};
+            \draw[<->] (2.1,2.4)--(2.1,4.2);
+            \node[] at (3.1,3.3) {$\Delta \tau_\nu=1$};
+            \node[] at (2.6,4.2) {$\tau_{\nu,\infty}$};
+            \node[] at (2.7,2.4) {$\tau_{\nu,rad}$};
+            %\path[black,thick] (ps) .. controls +(0,0.5) and +(0.5,-0.5) .. (ptop);
+            \draw [->,thick,mymagenta,
+            line join=round,
+            decorate, decoration={
+                zigzag,
+                segment length=6,
+                amplitude=.9,post=lineto,
+                post length=2pt
+            }]  (1,3) -- (1,4.2);
+            \draw [->,thick,mymagenta,
+            line join=round,
+            decorate, decoration={
+                zigzag,
+                segment length=6,
+                amplitude=.9,post=lineto,
+                post length=2pt
+            }]  (1.5,2.4) -- (1.5,4.2);
+            \draw [->,thick,myorange,
+            line join=round,
+            decorate, decoration={
+                zigzag,
+                segment length=6,
+                amplitude=.9,post=lineto,
+                post length=2pt
+            }]  (3.5,0.7) -- (3.5,1.5);
+            \draw [->,thick,myorange,
+            line join=round,
+            decorate, decoration={
+                zigzag,
+                segment length=6,
+                amplitude=.9,post=lineto,
+                post length=2pt
+            }]  (3.2,1.5) -- (3.2,1);
+        \end{tikzpicture}
+        \caption{Schematic showing where radiation escapes looking at the vertical temperature profile $T(p)$ of the Earth. \textcolor{mymagenta}{Squiggly magenta arrows \rule{0.25cm}{0.25cm}} indicate radiation emitted from an optical depth of $\tau_\nu>\tau_{\nu,rad}$ which escapes to space. \textcolor{myorange}{Squiggly orange arrows \rule{0.25cm}{0.25cm}} indicate radiation emitted from an optical depth of $\tau_\nu<\tau_{\nu,rad}$, which is quickly absorbed by the atmosphere above and cannot escape to space.}
+        \label{radlevel figure}
+    \end{figure}
+    \end{minipage}
+\end{fact}
+Most of the time, the $OLR$ looks disproportionately like the stuff remitted \textit{at} $p_{rad}$ (rather than simply at or above $p_{rad}$). This is for the following reason, which I emphasise may fail to obtain. Temperature typically decreases with height for most of the mass in an atmosphere. Recall that $B(\nu,T)$ is monotonic in $T$. Therefore, $OLR$ will look like emission high enough to escape ($p\leq p_{rad}$) but low enough such that emission is large.
+
+Note that I've only defined the radiating level for an atmosphere that is optically thick, i.e., in an atmosphere where $\tau_{\nu,\infty}>1$ obtains. This is the case on the Eart where $\nu$ is in the IR light region, for example.
+
+In an atmosphere that is optically thin ($\tau_{\nu,\infty}<1$) this definition breaks down, and pretty much all radiation from throughout the atmosphere can escape into space. What the $OLR$ at this frequency looks like, then, is mainly set by the precise emission profile of the atmosphere.
+
+This is further complicated on rocky planets where there is a distinct surface. If we consider the Earth for the case where $\nu$ is in the visible light region, for example, we will find that (ignoring clouds for now) the atmosphere is optically thin but the ground is optically thick (you can see through air but you cannot see through the ground). As such, the $OLR$ at this frequency is essentially set by the emission at the ground: $p_{rad}=p_s$, since $\tau_\nu\to-\infty$ at the ground due to the discontinuity of switching between something optically thin (the atmosphere) and something optically thick (the ground).
+
+We can also express everything in terms of the transmission function. Defining the radiating level in terms of the transmission function is straightforward: $p_{rad}$ satisfies the following relation\footnote{And, of course, $p_{rad}>0$.}:
+\begin{align}
+    \mathcal{T}_\nu(0,p_{rad})=e^{-1}
+\end{align}
+
 \section{Frequency Bands}\label{Frequency Bands}
 
 We're not finished yet! Recall that we have expressed $OLR$ in terms of \textit{spectral} irradiances, but we require the (non-spectral) irradiances if we wish to compute the total outgoing radiative energy flux. What we may do now is integrate the $OLR$ over the centre of a single absorption band centred about $\nu_c$. Typically, both $F_+(\nu,0)$ and $B(\nu,T)$ are roughly constant as a function of $\nu$ compared to $\tau_\nu$, so we can treat $F_+(\nu,0)\approx F_+(\nu_c,0)$ and $B(\nu)\approx B(\nu_c)$ for $\nu\in[\nu_c-\frac{\Delta}{2},\nu_c+\frac{\Delta}{2}]$.
@@ -897,7 +1037,7 @@ Now that our $OLR$ is in terms of known quantities and $\bar{\mathcal{T}_{\nu_c}
 
 \subsection{The No-Line Limit}
 I should make you aware that this is my own personal addition and not talked about in the lecture notes. This limit is a bit non-sensical\footnote{
-    I think it's non-sensical because optical depth coordinates make no sense if $\kappa=0$. Recall that $d\tau\sim \kappa$, so if $\kappa=0$ then $\tau(p)=0$ for all $p$. Furthermore, if $\kappa=0$, then this is hardly a spectral line! That being said, our solution is still valid.
+    I think it's non-sensical because optical depth coordinates make little physical sense if $\kappa=0$. Recall that $d\tau\sim \kappa$, so if $\kappa=0$ then $\tau(p)=0$ for all $p$: there is no longer a one-to-one mapping between $p$ and $\tau$. Furthermore, if $\kappa=0$, then this is hardly a spectral line! That being said, our solution is still mathematically and physically valid.
 }, but I think it builds some intuition.
 
 The no-line limit is if $\kappa=0$ at that frequency band, and so $|\tau_\nu(p_1)-\tau_\nu(p_2)|=0$. As such, the transmission function $\mathcal{T}_{\nu}(p_1,p_2)=e^{-|\tau_\nu(p_1)-\tau_\nu(p_2)|}=1$ and so:
@@ -914,7 +1054,9 @@ In other words, the $OLR_{\nu_c}$ at this frequency $\nu_c$ is simply set by the
     \item $\alpha=0$: Since $\kappa=0$, $\alpha=0$, which means the atmosphere is completely transparent at this frequency. As such, all the spectral radiance from the ground is let through, and the $OLR_{\nu_c}$ is completely ignorant of the concentration.
     \item $\epsilon=0$: Due to Kirchoff's law, $\epsilon=0$ as well, which means the atmosphere emits no radiation at this frequency either. As such, none of the $OLR_{\nu_c}$ comes from the atmosphere.
 \end{enumerate}
-Because of these two reasons, the $OLR_{\nu_c}$ is completely ignorant of any atmospheric properties.
+Because of these two reasons, the $OLR_{\nu_c}$ is completely ignorant of any atmospheric properties\footnote{
+    Other than, of course, the property that the atmosphere is completely transparent at this frequency!
+}.
 
 We'll find that in the weak and strong line limits (and indeed in all cases where $\kappa\neq0$) that things change dramatically. First, $\bar{\mathcal{T}_{\nu_c}}<\Delta$, and so the effective `width' will be smaller than $\Delta$, representing the chunk of radiation from the ground that is absorbed by the fact that $\kappa\neq0$. Second, the integral term will not be negative, reflecting the fact that the atmosphere contributes to the $OLR$. Importantly, this will depend on the vertical temperature profile of the atmosphere, as the temperature sets the Blackbody radiation.
 
@@ -950,7 +1092,9 @@ We can now integrate over frequencies to find that:
 \end{align*}
 The keen reader will note that this result \textbf{differs} from the result obtains in Ray's lecture slides. I am confident, however, that this expression is correct, as this is the expression that shows up in Ray's book \cite{Ray} and the algebra is more rigourous.
 
-We now define (what seems to me as a dodgy definition!) the effective strength $S=S(T_0)$ such that:
+We now define\footnote{
+    Again, we are perfectly well within our rights to theoretically define this `effective strength', but it does not help us much in actually practically calculating the band-integrated transmission function.
+} the effective strength $S=S(T_0)$ such that:
 \begin{align}
     \int_{p_1}^{p_2}S(T(p))q(p)\,dp\equiv
     S(T_0)\int_{p_1}^{p_2}q(p)\,dp
@@ -961,19 +1105,9 @@ This means that the band-integrated transmission function in the weak line limit
         \bar{\mathcal{T}_{\nu_c}}(p_1,p_2)\approx\Delta-S\mu
     }
 \end{align}
-where $\mu$ is the mass path between those pressures such that $\mu_p=\frac{1}{g\cos\tilde{\theta}}\left|\int_{p_2}^{p_1} q(p)\,dp\right|$. I have also abused notation and written just $S$ for the ffective strength.
+where $\mu$ is the mass path between those pressures such that $\mu_p=\frac{1}{g\cos\tilde{\theta}}\left|\int_{p_2}^{p_1} q(p)\,dp\right|$. I have also abused notation and written just $S$ for the effective strength.
 
-\begin{comment}
-    \begin{align*}
-        \mu=\frac{1}{g\cos\tilde{\theta}}\left|\int_{p_1}^{p_2}q(p)\,dp\right|
-    \end{align*}
-    \begin{align*}
-        \bar{\mathcal{T}_{\nu_c}}(p',p_s)&=\Delta - S \frac{1}{g\cos\tilde{\theta}}\int_{p'}^{p_s}q(p)\,dp\\
-        &=\Delta - S \frac{1}{g\cos\tilde{\theta}} q (p_s-p')
-    \end{align*}
-\end{comment}
-
-Intuitively, $\Delta-S\mu$ is the effective width of this line, and the $S\mu$ term represents the `chunk' of outwards irradiance taken out by this line (the chunk absorbed). As you can see, the absorption is \textbf{linear} in mass-path, not exponential as we might expect from the exponential attenuation of spectral radiance in (Equation \ref{Absorption}). This is possible becuase the attenuation of \textbf{spectral} irradiance is not the same as the attenuation of \textbf{non-spectral} radiance: we found the former by integrating the latter over the spectral line, which has its own dependence on $\nu$. 
+Intuitively, $\Delta-S\mu$ is the effective width of this line, and the $S\mu$ term represents the `chunk' of outwards irradiance taken out by this line (the chunk absorbed). As you can see, the absorption is \textbf{linear} in mass-path, not exponential as we might expect from the exponential attenuation of spectral radiance in (Equation \ref{Absorption}). This is possible becuase the attenuation of \textbf{spectral} irradiance is not the same as the attenuation of \textbf{non-spectral} radiance: we found the former by integrating the latter over the spectral line, which has its own dependence on $\nu$.
 
 Let us now calculate the $OLR_{\nu_c}$ in the weak line limit. We again need to find the differential $d\bar{\mathcal{T}_{\nu_c}}(0,p')$ with respect to $p'$:
 \begin{align*}
@@ -1043,7 +1177,7 @@ We then integrate the transmission function over frequencies again:
         \right|
     \right)\,d\nu
 \end{align*}
-Again, to get rid of the pesky $T$ dpendence within the integral with respect to $p$, we define the effective strength $S=S(T_0)$ such that:
+Again, to get rid of the pesky $T$ dpendence within the integral with respect to $p$, we define\footnote{Read the footnote on the previous page.} the effective strength $S=S(T_0)$ such that:
 \begin{align*}
     \int_{p_1}^{p_2}S(T(p))\frac{p}{p_0} \left( \frac{T_0}{T(p)} \right)^nq(p)\,dp\equiv
     S(T_0)\int_{p_1}^{p_2}\frac{p}{p_0} q(p)\,dp
@@ -1091,7 +1225,7 @@ One can use the result that the following integral holds if $X\gg 1$.
 \begin{align*}
     \int_{0}^{X}\exp\left( -\frac{1}{\pi x^2} \right)\approx X-1
 \end{align*}
-Note that this assumption is satisfied if we assume that the lines are thin, and that the integrand decays to $0$ at the linewidth, which implies that $X\gg 1$. This finally gives us that the tranmission function is as follows in the strong-line limit:
+Note that this assumption is satisfied if we assume that the lines are thin. If the line is thin, then the integrand decays to $0$ at the linewidth, which implies that $X\gg 1$ as required. This finally gives us that the tranmission function is as follows in the strong-line limit:
 \begin{align}
     \BOX{
         \bar{\mathcal{T}_{\nu_c}}(p_1,p_2)
@@ -1192,6 +1326,8 @@ As a summary:
             G = \frac{dG}{d\lambda} = 0
         \end{gather*}
     \end{minipage}
+    \vspace{2mm}
+    
     We define the \textbf{Differential Radiative Forcing} (\textbf{DRF}) and the \textbf{Equilibrium Climate Sensitivity Parameter} (\textbf{ECS}) as follows:
 
     \begin{minipage}{0.5\linewidth}
@@ -1253,16 +1389,47 @@ There are again, two key takeaways. First, that this time $OLR_{\nu_c}$ is propo
 
 The second takeaway is exactly the same second takeaway in the previous section: the $DRF$ could be positive or negative depending on $T(T_s,p')$. This is clear since the right hand term in brackets is exactly the same in both \ref{DRF Strong Explicit} and \ref{DRF Weak Explicit}.
 
-\section{Grey Gases}
+\begin{fact}{Radiative Forcing Key Takeaways}{RF Box Takeaway}\label{RF Box Takeaway}
+    The two key takeaways for isolated line radiative forcing are:
 
-We consider a simple (highly unrealistic) analytical case where $\tau$ is not a function of $\nu$. This allows us to integrate \ref{Upwards Schwarzschild} and \ref{Downwards Schwarzschild} over all frequencies. Recalling \ref{Blackbody Frequency}, we derive the frequency integrated upwards and downwards Schwarzschild equations:
+    \begin{minipage}{0.5\linewidth}
+    \begin{tcolorbox}[colback=myyellow!50!white,colframe=mymagenta]
+        \textbf{Takeaway 1:}
+
+        How efficient radiative forcing is per molecule of absorber added depends on how much absorber is in the atmosphere already.
+
+        \begin{itemize}
+            \item If the concentration of absorbers is low (weak line limit), the $OLR\sim q$.
+            \item If the concentration of absorbers is high (strong line limit), the $OLR\sim \sqrt{q}$.
+        \end{itemize}
+    \end{tcolorbox}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.45\linewidth}
+    \begin{tcolorbox}[colback=myyellow!50!white,colframe=mymagenta]
+        \textbf{Takeaway 2:}
+
+        Whether $DRF>0$ or $DRF<0$ depends on the vertical temperature profile of the atmosphere $T(p)$. 
+
+        \begin{itemize}
+            \item If $\frac{dT}{dp}>0$, then $DRF>0$. More $q$ results in less $OLR$ escaping.
+            \item If $\frac{dT}{dp}<0$, then $DRF<0$. More $q$ results in more $OLR$ escaping.
+        \end{itemize}
+        
+    \end{tcolorbox}
+    \end{minipage}
+\end{fact}
+
+\section{Grey Gas OLR}
+
+To build more intuition and to consider, in detail, how $T(p)$ affects $OLR$, we make the (highly unrealistic) \textbf{Grey Gas Approximation}. The \textbf{Grey Gas Approximation} assumes that $\kappa$ is not a function of $\nu$, so that $\tau$ is not a function of $\nu$. This allows us to integrate \ref{Upwards Schwarzschild} and \ref{Downwards Schwarzschild} over all frequencies. Recalling \ref{Blackbody Frequency}, we derive the frequency integrated upwards and downwards Schwarzschild equations:
 \begin{align}
     \frac{dE_+}{d\tau}=-E_++\sigma T^4 \label{Upwards Grey}\\
     -\frac{dE_-}{d\tau}=-E_-+\sigma T^4\label{Downwards Grey}
 \end{align}
 where now the Schwarzschild equations are in terms of \textbf{irradiances} ($E_+$ and $E_-$). We can integrate this (as before) to find the general solutions for a grey gas:
 \begin{align}
-    E_+(\tau)=E_+(0)e^{-\tau}+
+    E_+(\tau)=\sigma T_s^4e^{-\tau}+
     \int_0^{\tau}
     \sigma T(\tau')^4
     e^{-(\tau-\tau')}
@@ -1277,15 +1444,82 @@ where now the Schwarzschild equations are in terms of \textbf{irradiances} ($E_+
     \,d\tau' 
     \label{Downwards Soln Grey General}
 \end{align}
-We can now see that the total 
+where we have assumed that $E_+(0)=\sigma T_s^4$. The total $OLR$ (in watts per square metre) is therefore:
+\begin{align}
+    \label{Grey OLR}
+    OLR = \sigma T_s^4e^{-\tau_\infty}+
+    \int_0^{\tau_\infty}
+    \sigma T(\tau')^4
+    e^{-(\tau_\infty-\tau')}
+    \,d\tau'
+\end{align}
 
- 
+Again, we need $T(\tau(p))$ to calculate the $OLR$, which in turn requires us relating $T(p)$ and $p(\tau)$. Let us assume first that $T(p)$ follows the dry adiabat so that $T(p)=T_s\left( \frac{p}{p_s} \right)^{R/c_p}$, and second that $\kappa$ has no $T,p$ dependence and that $q$ is well mixed (as in Section \ref{Ex Simple Optical Depth}) so that $\tau(p)=\tau_\infty\left(1-\frac{p}{p_s}\right)$. Therefore, $T(\tau)$ is given by:
+\begin{align*}
+    T(\tau)=T_s\left( 1 - \frac{\tau}{\tau_\infty} \right)^{\frac{R}{c_p}}
+\end{align*}
+Substituting this into Equation \ref{Grey OLR}, then making a change of coordinates within the integral:
+\begin{align*}
+    OLR &= \sigma T_s^4e^{-\tau_\infty}+
+    \int_0^{\tau_\infty}
+    \sigma T_s^4 \left( 1-\frac{\tau'}{\tau_\infty} \right)^{\frac{4R}{c_p}}
+    e^{-(\tau_\infty-\tau')}
+    \,d\tau'
+    \\
+    &= \sigma T_s^4 \left( e^{-\tau_\infty}+
+    \int_0^{\tau_\infty}
+    \left( 1-\frac{\tau'}{\tau_\infty} \right)^{\frac{4R}{c_p}}
+    e^{-(\tau_\infty-\tau')}
+    \,d\tau'
+    \right)
+    \\
+    &= \sigma T_s^4 \underbrace{\left( e^{-\tau_\infty}+
+    \left( \frac{1}{\tau_\infty} \right)^{\frac{4R}{c_p}}
+    \int_0^{\tau_\infty}
+    x^{\frac{4R}{c_p}}
+    e^{-x}
+    \,dx
+    \right)}_{\epsilon}
+\end{align*}
+where $x=\tau_\infty-\tau'$.\footnote{
+    The keen reader would have noticed that we could have completely avoided this change of coordinates if we simply defined our optical depth coordinate differently such that $\tau=0$ where $p=0$ (rather than where $p=p_s$) than and instead $\tau$ decreased with height (rather than increased with height)!
+
+    However, recalling our discussion in Section \ref{Absorption}, we're fine, since these were all conventions anyways.
+} Recalling the discussion in \ref{Example Stellar Const}, where we defined the $OLR$ such that $OLR=\epsilon\,\sigma T^4$, we have defined everything in the brackets as our effective emissivity $\epsilon$ of the planet.
+
+Calculating the $ECS$ and $DRF$ explicitly (and recalling that $\tau_\infty=\kappa q p_s/g$):
+\begin{align*}
+    ECS &=\frac{\partial OLR}{\partial T_s}\\
+    &=\epsilon\, 3\sigma\, T_s^3
+    \\
+    DRF &= -\frac{\partial OLR}{\partial q}=-\sigma T_s^4 \,\frac{\partial \epsilon}{\partial q} 
+    =-\sigma T_s^4 \,\frac{\partial \epsilon}{\partial \tau_\infty} \frac{\partial \tau_\infty}{\partial q}
+    \\
+    &= -\sigma T_s^4 \left( -e^{-\tau_\infty} - 
+    \frac{4R}{c_p}
+    \left( \tau_\infty \right)^{-\frac{4R}{c_p}-1}
+    \int_0^{\tau_\infty}
+    x^{\frac{4R}{c_p}}
+    e^{-x}
+    \,dx
+    +
+    e^{-\tau_\infty}
+    \right)
+    \frac{\kappa p_s}{g}
+    \\
+    &=\sigma T_s^4 \frac{4R}{c_p}\frac{\kappa p_s}{g} \left( \frac{1}{\tau_\infty} \right)^{\frac{4R}{c_p}+1}
+    \int_0^{\tau_\infty}
+    x^{\frac{4R}{c_p}}
+    e^{-x}
+    \,dx
+\end{align*}
+We thus find that $DRF>0$ in an atmosphere with a vertical temperature profile set by the dry adiabat: more greenhouse gas concentration results in a decrease in the outgoing longwave radiation. Recalling \hyperref[RF Box Takeaway]{our previous discussion} regarding radiative forcing, it's not a surprise that $DRF>0$, since the dry adiabat is one of the many mechanisms that results in an atmosphere where temperature decreases with height.
+
 \chapter{Radiative Equilibrium}
 
 \section{Grey Gases, but in Radiative Equilibrium}
 
-Recall the 
-
+Recall the frequency and angle integrated downwards and upwards Schwarszchild Equations for a grey gas:
 \begin{align*}
     \frac{dE_+}{d\tau}=-E_++\sigma T^4 \\
     -\frac{dE_-}{d\tau}=-E_-+\sigma T^4
@@ -1297,7 +1531,7 @@ You'll note that we cannot actually solve this system, because we have three var
 We now make the crucial assumption of radiative equilibrium: there is no net warming or heating from radiation at each optical depth. We now consider conservation of energy on some infinitesimal slab of atmosphere with optical thickness $\delta \tau$ and area $A$ by considering the upwards and downwards irradiances entering and leaving the slab. 
 \begin{align*}
     P_{in}=(E_+(\tau)+E_+(\tau+\delta\tau))A\\
-    P_{out}=(E_+(\tau+\delta\tau)+E_+(\tau))A\\
+    P_{out}=(E_+(\tau+\delta\tau)+E_+(\tau))A
 \end{align*}
 Radiative equilibrium, therefore:
 \begin{align*}
@@ -1320,17 +1554,17 @@ We can now solve the coupled ODEs \ref{Upwards Grey}, \ref{Downwards Grey}, and 
 
 There are two final nuances to note. First, we are effectively making the \textit{opposite} assumption to the one we made in deriving the adiabat (\ref{Dry Adiabat}): we are now assuming that radiation is the dominant energy transfer mechanism, rather than convection. It's worth noting that neither limit is entirely correct, whether radiation or convection wins out as the dominant mechanism depends on the situation. Having said this, which one turns out to be the dominant mechanism is not a coincidence, but is, of course, a consequence of the dynamics governing the system.
 
-The second nuance is why why we are making this approximation now, \textit{after} we have made the grey gas approximation and not before. While non-grey gases in radiative equilibrium can occur, it does not result in a simple equation as in Equation \ref{Radiative Equilibrium}. This is because \textit{it need not be the case that the gas is in radiative equilibrium at every wavenumber}. 
+The second nuance is related to why we make the radiative equilibrium approximation now, \textit{after} we have made the grey gas approximation, and not before. While non-grey gases in radiative equilibrium can and do occur, it does not result in a simple equation as in Equation \ref{Radiative Equilibrium}. This is because \textit{it need not be the case that the gas is in radiative equilibrium at every wavenumber}. 
 
-In other words, let $E^\nu$ denote the spectral irradiance and $E=\int E^\nu\,d\nu$ denote the irradiance. For a non-grey gas in radiative equilibrium, it \textit{is} the case that:
+In other words, let $F(\nu)$ denote the spectral irradiance such that $E=\int F(\nu)\,d\nu$, where $E$ the irradiance. For a non-grey gas in radiative equilibrium, it \textit{is} the case that:
 \begin{align*}
     \frac{d}{d\tau}(E_+-E_-)=0
 \end{align*}
-However, it is pretty much never the case that:
+However, it is almost never the case that:
 \begin{align}\label{Bad Radiative Equilibrium}
     \frac{d}{d\tau}(E^\nu_{+}-E^\nu_-)=0
 \end{align}
-\ref{Bad Radiative Equilibrium} is a \textit{horrible} assumption, but it is the assumption we would need if we wish to solve the Upwards and Downwards \textit{non-frequency integrated} Schwarszchild Equations (\ref{Upwards Schwarzschild}, \ref{Downwards Schwarzschild}) governing the spectral irradiances.
+Radiative equilibrium only requires that a layer of atmosphere recieves as much energy from radiation as it radiates away, it does \textit{not} require that this much happen at each frequency (i.e., that \ref{Bad Radiative Equilibrium} obtains)! \ref{Bad Radiative Equilibrium} is a \textit{horrible} assumption, but it is the assumption we would need if we wish to solve the Upwards and Downwards \textit{non-frequency integrated} Schwarszchild Equations (\ref{Upwards Schwarzschild}, \ref{Downwards Schwarzschild}) governing the spectral irradiances.
 
 
 
@@ -1366,6 +1600,7 @@ Integrating again using the boundary conditions gives:
 \end{align}
 We are now in a position to find expressions for all three variables. We can find $T$ by substituting \ref{Up+Down} into \ref{Up+Down tau}. We can find $E_+$ and $E_+$ by adding or subtracting (respectively) \ref{Up-Down} and \ref{Up+Down tau}. The solutions are:
 \begin{fact}{Radiative Equilibrium Solutions}{Rad Eq Box}\label{Rad Eq Box}
+    A grey gas in pure radiative equilibrium will have a temperature profile $(T(\tau))$, the upwards irradiance $(E_+(\tau))$, and downwards irradiance $(E_-(\tau))$ obey the following relations:
     \begin{gather}
         \label{Radiative Eq Temperature}
         \BOX{T^4=\frac{OLR}{2\sigma}(1+\tau_\infty-\tau)}\\
@@ -1385,12 +1620,16 @@ We can rewrite these equations using global energy conservation: $OLR=L_\star$ w
 
 Having analytic expressions for a grey gas in radiative equilibrium, we can now extract some physical intuition. 
 
+\subsubsection{The upwards irradiance $E_+$ and the $OLR$}
+
 Let's first consider the upwards irradiance $E_+$. At the \textit{top} of the atmosphere $E_+=OLR$ (obviously). We can equate this to an effective emitting temperature of the planet $T_{eff}$ such that $\sigma T_{eff}^4=OLR=E_+(\tau_\infty)$. At the \textit{bottom} of the atmosphere, $\tau=0$, so $E_+(0)=\frac{OLR}{2}(2+\tau_\infty)=\frac{\sigma T_{eff}^4}{2}(2+\tau_\infty)$. We can match this with our boundary condition, that all the upwards radiation at $\tau=0$ is from the ground, and so $E_+(0)=\sigma T_g^4$ where $T_g=$the temperature of the ground (note that I am being careful not to say the temperature of the air at the ground!). We can relate $T_g$ and $T_{eff}$: $E_+(0)=\sigma T_{g}^4=\frac{\sigma T_{eff}^4}{2}(2+\tau_\infty)$. Therefore:
 \begin{align*}
     T_{eff}=T_{g}\left(\frac{1}{1+\frac{\tau_\infty}{2}}\right)^\frac{1}{4} \,\,\text{, or,}\,\,
     OLR=\sigma T_g^4\frac{1}{1+\frac{\tau_\infty}{2}}
 \end{align*}
 $OLR$ and therefore $T_{eff}$ are effectively fixed by $L_\star$, the properties of the star (and albedo), so it's clear that as $\tau_\infty$ gets arbitrarily large, so too must $T_g$, whereas if $\tau\to0$, $\ T_g\to T_{eff}$, intuitively.
+
+\subsubsection{The temperature profile $T$}x
 
 Next let's consider the temperature profile. As we can clearly see, as $\tau$ increases, $T$ decreases, so radiative equilibrium also results in a temperature profile that decreases with height. Let's consider two limiting cases: air high up in the atmosphere, and air low in the atmosphere. Air right near the ground is located at $\tau=0$, so $\sigma T(0)^4=\frac{OLR}{2}(1+\tau_\infty)$. But we just derived that $\sigma T_g^4=\frac{OLR}{2}(2+\tau_\infty)$. So in fact, $T_g>T(0)$: there is a temperature discontinuity at the ground, and the ground is warmer than the air immediately above it! 
 
