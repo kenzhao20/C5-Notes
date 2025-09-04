@@ -311,7 +311,9 @@ This leads to a uniquely quantum mechanical effect\footnote{
 
 The size of this quanta of energy $E$ depends on the system, but for the constituents in atmospheres, the quanta for vibrational degrees of freedom tend to be very large. For example, the energy of the first vibrational mode of Nitrogen is $E\sim$ \qty{4.7e-20}{\joule}. This seems small until you remember that this is \textit{per molecule}. The temperature required for $k_BT\sim E$ is $T\sim E/k_B\sim$ \qty{3400}{\kelvin}.
 
-Earth's atmosphere mainly consists of a diatomic gas, so we might expect $f=7$. However, $f\approx5$ because the translational degrees of freedom are all fully excited, but only $2$ rotational degrees of freedom are excited and none of the vibrational degrees of freedom are. Here I have drawn the excited degrees of freedom as thick magenta lines, and the frozen degrees of freedom as dashed thin magenta lines:
+Earth's atmosphere mainly consists of a diatomic gas, so we might expect $f=7$. However, $f\approx5$ because the translational degrees of freedom are all fully excited, but only $2$ rotational degrees of freedom are excited and none of the vibrational degrees of freedom are (See Figure \ref{f=5}. I have drawn the excited degrees of freedom as thick magenta lines, and the frozen degrees of freedom as dashed thin magenta lines). 
+
+In reality, the heat capacity \textit{per mole} (and \textit{not} per mass) at constant volume is $c_v^*\approx$ \qty{20.83}{\joule\per\kelvin\per\mole}. $R^*\approx$ \qty{8.314}{\joule\per\kelvin\per\mole}, so our prediction would be $c_v^*\approx$ \qty{20.79}{\joule\per\kelvin\per\mole}, which is actually very close to the measured value!
 
 \begin{figure}[H]
     \centering
@@ -360,6 +362,7 @@ Earth's atmosphere mainly consists of a diatomic gas, so we might expect $f=7$. 
     \end{subfigure}
     \captionsetup{justification=centering}
     \caption{The 5 Excited Degrees of Freedom for a Diatomic Molecules in Earth-Like Conditions. Excited Degrees of Freedom are shown in \textcolor{mymagenta}{filled magenta arrows \rule{0.25cm}{0.25cm}}, while frozen out Degrees of Freedom are shown in \textcolor{mymagenta}{dashed magenta arrows \rule{0.25cm}{0.25cm}}.}
+    \label{f=5}
 \end{figure}
 
 Of course, the \hyperref[Equipartition Eqn]{Equipartition Theorem} says nothing regarding situations in which a degree of freedom is not fully excited nor frozen out. We are (perhaps only by coincidence) lucky that the situation is relatively simple on Earth; since the temperature lies within a range such that certain degrees of freedom are very excited and others are very frozen, we can very easily explain and predict that the atmospheric heat capacity is $f\approx 5$ using the \hyperref[Equipartition Eqn]{Equipartition Theorem}. However, you should be aware that the situation is not so simple on many other planetary atmospheres. 
@@ -458,8 +461,10 @@ If we make the approximation that $T(z)\sim\text{const}$ (which is not a bad app
     p(z)=p(z=0)e^{-z/H}
 \end{align*}
 where $H=\frac{RT}{g}$ is the scale height. Plugging in Earth-like numbers\footnote{
-    $R\approx$ \qty{300}{\joule\per\kilogram\per\kelvin}, $T\approx$ \qty{200}{\kelvin}, $g\approx$ \qty{10}{\meter\per\square\second}. Only keeping one significant figure because we're only interested in rough estimates here!
-} gives $H\approx\qty{6}{\kilo\meter}$. This means that, roughly, the pressure falls off by a factor of $e$ every $6$ kilometers. As you can see below, this is actually pretty accurate!
+    $R\approx$ \qty{290}{\joule\per\kilogram\per\kelvin}, $T\approx$ \qty{240}{\kelvin}, $g\approx$ \qty{9.8}{\meter\per\square\second}. Only keeping two significant figures because we're interested in rough estimates here!
+} gives $H\approx\qty{6}{\kilo\meter}$. This means that, roughly, the pressure falls off by a factor of $e$ every $7.1$ kilometers. Equivalently, the pressure falls off by a factor of $10$ every $H\ln 10\approx\qty{16}{\kilo\meter}$.
+
+Referring to the figure below, you can see that the pressure falls by a factor of $10$ approximately every \qty{17}{\kilo\meter}, which is pretty close!
 
 \begin{figure}[H]
     \begin{subfigure}{0.5\linewidth}
