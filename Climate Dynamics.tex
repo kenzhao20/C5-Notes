@@ -2,7 +2,7 @@
 
 \section*{Introduction}
 
-This section of the course was lectured by \href{https://www.physics.ox.ac.uk/our-people/allenm}{Myles Allen} covering a sort of miscellaneous set of topics.\vspace{5 mm}
+This section of the course was lectured by \href{https://www.physics.ox.ac.uk/our-people/allenm}{Myles Allen} covering a sort of miscellaneous set of topics. His stated goal (at time of writing) is to introduce to you certain methods using climate as an example. \vspace{5 mm}
 
 \noindent This section consists of three chapters:\vspace{5 mm}
 
@@ -12,7 +12,7 @@ This section of the course was lectured by \href{https://www.physics.ox.ac.uk/ou
         \begin{quote}
             We consider the Earth as a simple, low-dimensional, linear, deterministic dynamical system. We solve the system using normal modes and a further method (not discussed by Myles) using the quasi-steady approximation.
 
-            In many cases we find this to reveal multiple timescales of response.
+            In many cases we find this to reveal multiple timescales of response: a shorter timescale response (where the slower component stays constant) and longer timescale response (where the faster component is always in time-varying equilibrium).
         \end{quote}
 
     \item \hyperref[Predictability]{Predictability}: 
@@ -73,7 +73,7 @@ Note that if we add Equations \ref{T_s} and \ref{T_d}, we do not get $0$ on the 
 
 \section{Solving the System by Diagonalising the Matrix}
 
-Before you read this section, while this method is completely general to linear systems, I should note that this is quite time-consuming to do in the exam. Furthermore, I think more physical intuition comes from another method of solving the system which I explain in Section \ref{Hewitt Method}. If you're low on time, and the question asks you to sketch it, it might be easier to think in terms of the method in Section \ref{Hewitt Method}.
+Before you read this section, I should note that, while this method is completely general to linear systems, it is a very time-consuming method to do in the exam. Furthermore, I think more physical intuition comes from another method of solving the system which I explain in Section \ref{Hewitt Method}. If you're low on time, and the question asks you to sketch it, it might be easier to think in terms of the method in Section \ref{Hewitt Method}.
 
 This method relies on some prior knowledge of linear algebra, specifically diagonalisation, eigenvectors, and eigenvalues. I'll review them quickly here, but if you're familiar with the content you can skip to Section \ref{App to Dym}. 
 
@@ -107,7 +107,7 @@ We now attempt to \textbf{diagonalise} $\hat{J}$. We find \textbf{eigenvectors} 
     \label{Eigenequation}
     \hat{J}\vec{v}_i=\lambda_i\vec{v}_i
 \end{align}
-where $\lambda_i\in\mathbb{R}$ is an \textbf{eigenvalue}. I'll confine our attention to 2D systems here for brevity, but everything I say is readily extendable to $N$ dimensions. In 2D, we write $\vec{v}_i=([\vec{v}_i]_1,[\vec{v}_i]_2)^T$. 
+where $\lambda_i\in\mathbb{R}$ is an \textbf{eigenvalue}. I'll confine our attention to 2D systems here for brevity, but everything I say is readily extendable to $N$ dimensions. In 2D, we write $\vec{v}_i=([\vec{v}_i]_1,[\vec{v}_i]_2)^T$.\footnote{Note further that each eigenvector is non-unique – it is specified only up to a constant of proportionality. I.e., if $\vec{v}_i$ is an eigenvector, then $\alpha\vec{v}_i$ is also an eigenvector for all $\alpha \in \mathbb{R}$.}
 
 We now slap our eigenvectors $\vec{v_i}$ together into a matrix $\hat{E}$ defined as follows:x
 \begin{align*}
@@ -175,12 +175,16 @@ Therefore, using an integrating factor, our solution is:
     \label{Dym System Gen Sol}
     S_i(t)=S_i(0)e^{\lambda_i t}+e^{\lambda_i t}\int_{0}^{t}g_i(t')e^{-\lambda_i t'}\,dt'
 \end{align*}
+Physically, $S_i(t)$ is the $i$th normal mode, a mode that is decoupled completely from the other modes: this mode will evolve completely ignorant to the behaviour of the other modes. The eigenvectors $\lambda_i$, which have dimensions of inverse-time, represent the timescales of the $i$th normal mode $\tau_i\sim 1/\lambda_i$.
+
 Our final step is to relate $S_i$ back to $T_i$, which is easy if we note that $\vec{S}\equiv\hat{E}^{-1}\vec{T}$, therefore $\vec{T}=\hat{E}\vec{S}$. Therefore, $T_i=[v_i]_1S_1+[v_i]_2S_2$ so our general solution is:
 \begin{align}
     \BOX{
         T_j=\sum_{i} \left( [v_j]_i \left( S_i(0)e^{\lambda_i t}+e^{\lambda_i t}\int_{0}^{t}g_i(t')e^{-\lambda_i t'}\,dt' \right) \right)
     }
 \end{align}
+where $g_i(t)=\sum_{j}[\hat{E}^{-1}]_{ij}[\vec{f}]_j$. You'll have to calculate this explicitly for the problem at hand.
+
 So we can solve our ODE if we find the \textbf{eigenvectors} and \textbf{eigenvalues} of $\hat{J}$! We've transformed our problem into a linear algebra problem! So how do we solve this now?
 
 \subsubsection{Solving the Linear Algebra Problem}
@@ -203,7 +207,7 @@ where $\vec{0}=(0,0)^T$.
 
 Now clearly, an easy solution is if we set $\vec{v}_i=\vec{0}$ and $\lambda_i=0$, but this is only one solution, and we wish to find the non-trivial solutions. One can show in linear algebra that a non-zero matrix times a non-zero vector can be equal to $\vec{0}$ only if the determinant of the matrix is zero. We thus solve for:
 \begin{align*}
-    det\left( 
+    \det\left( 
         \vec{J} - \lambda_i \left( \begin{array}{cc}
         1 & 0 \\
         0 & 1
@@ -231,7 +235,7 @@ and assume further that $\lambda$, $\gamma$, and $\lambda'$ are of similar size,
 
 Let us now continue with our method. We want to find the eigenvalues of $\hat{J}$. Let us refer to the eigenvalues as $r_i$ to avoid confusion. We want to solve:
 \begin{align*}
-    det\left( \begin{array}{cc}
+    \det\left( \begin{array}{cc}
         -a-r_i & b \\\\
         c & -c-r_i
     \end{array}
@@ -239,33 +243,45 @@ Let us now continue with our method. We want to find the eigenvalues of $\hat{J}
 \end{align*}
 This is a straightforward quadratic in $r_i$, which has the solution:
 \begin{align*}
-    r_i=\frac{1}{2}\left( -a-c \pm \sqrt{(a-c)^2-4(ac-bc)} \right)
+    r_i=\frac{1}{2}\left( -a-c \pm \sqrt{a^2-2ac+4bc+c^2} \right)
 \end{align*}
 We now keep only first order in $\frac{c}{a}$, and write:
 \begin{align*}
-    r_i&=\frac{1}{2}\left( -a-c \pm \sqrt{a^2-2ac-4c(a-b)+c^2} \right)\\
+    r_i&=\frac{1}{2}\left( -a-c \pm \sqrt{a^2-2ac+4bc+c^2} \right)\\
     &= \frac{1}{2}\left( 
-        -a-c \mp a\sqrt{1-\frac{2c}{a}-\frac{4c}{a}\frac{a-b}{a}+\left( \frac{c}{a} \right)^2}
+        -a-c \pm a\sqrt{1-\frac{2c}{a}+\frac{4bc}{a^2}+\left( \frac{c}{a} \right)^2}
      \right) \\ 
     &\approx \frac{1}{2}\left( 
-        -a-c \mp a\left(1-\frac{c}{a}-\frac{2c}{a}\frac{a-b}{a}\right)
+        -a-c \pm a\left(1-\frac{c}{a}+\frac{2bc}{a^2}\right)
      \right) \\ 
-    &=
+    r_2&\approx c\left( -1+\frac{b}{a} \right)\hspace{2mm},\hspace{2mm}r_1\approx -a-\frac{bc}{a}
 \end{align*}
-Our eigenvectors $r_i$ are therefore:
+Recall again that $c\ll a,b$. The eigenvalue on the left $r_2$ is of order $c$, so it is small, but note both terms are of order $c$. As such, we cannot neglect any terms in $r_2$. The eigenvector on the right $r_1$ has the second $-bc/a$ term much smaller than the first $-a$ term, so we can neglect the second term. Our eigenvectors $r_i$ are therefore:
 \begin{align*}
-    r_i=
+    r_1\approx-a\hspace{2mm},\hspace{2mm} r_2\approx c\left(-1 +\frac{b}{a}\right)
 \end{align*}
-
-
+Plugging in values for $a,b,c$, we get:
 \begin{align*}
-    det\left( \begin{array}{cc}
-        -\frac{\lambda+\gamma+\lambda'}{C_s}-r_i & \frac{\gamma+\lambda'}{C_s} \\\\
-        \frac{\gamma}{C_d} & -\frac{\gamma}{C_d}-r_i
-    \end{array}
-    \right)=0
+    r_1\approx-\frac{\lambda+\gamma+\lambda'}{C_s}\hspace{2mm},\hspace{2mm}
+    r_2\approx-\frac{\lambda\gamma}{\left( \lambda+\gamma+\lambda' \right)C_s}
 \end{align*}
 
+Having found the (approximate) eigenvalues, our goal now is to find the (approximate) eigenvectors. We can estimate this directly by substituting in the eigenvalues directly into Equation \ref{Eigenequation} and solving for $\vec{v}_i$. Following some algebra, we find that the corresponding eigenvectors are:
+\begin{align*}
+    \vec{v}_1= \left( \begin{array}{c}
+        1  \\
+        0
+    \end{array} \right)
+    \hspace{2mm},\hspace{2mm}
+    \vec{v}_2= \left( \begin{array}{c}
+        1  \\
+        a/b
+    \end{array} \right)
+    = \left( \begin{array}{c}
+        1  \\
+        \left( \lambda+\gamma+\lambda' \right)/\left(\gamma+\lambda' \right)
+    \end{array} \right)
+\end{align*}
 
 \begin{fact}{Dynamical Systems Recipe}{eigenvectors box}\label{eigenvectors box}
     Suppose we have a coupled set of ODEs governing the time-evolution of $x(t)$ and $y(t)$ given by:
@@ -281,6 +297,11 @@ Our eigenvectors $r_i$ are therefore:
                     C/A & D/A \\
                     E/B & F/B
                 \end{array} \right)
+                \hspace{2 mm}\text{and} \hspace{2 mm}
+                \vec{f}(t)=\left( \begin{array}{c}
+                    G(t)/A \\
+                    H(t)/B
+                \end{array} \right)
             \end{align*}
         \item Find the eigenvectors and eigenvalues of $\hat{J}$.
         \item See if you can exploit any separation of scales to neglect terms. For example, if $A\ll B$, then we can keep only first order in $E/B$ and $F/B$. 
@@ -288,10 +309,15 @@ Our eigenvectors $r_i$ are therefore:
     \end{enumerate}
 \end{fact}
 
+Note though that it's not as simple as just plugging the eigenvalues and eigenvectors into \ref{Dym System Gen Sol}. We also need to find $g_i(t)$, which means we need to invert the matrix of eigenvalues $\hat{E}$ to find $\hat{E}^{-1}$. This is incredibly time consuming, especially for an exam (but it is possible!), so I'd recommend reading up on this next unofficial method.
 
 \section{Solving the System by Separating Timescales}\label{Hewitt Method}
 
-Here we present an alternative method. This method requires the assumption that $C_s\ll C_d$, but is more general than the former system in that it does \textit{not} require the ODE to be linear. We present this method because we believe this way provides more physical intuition. We have \href{https://people.maths.ox.ac.uk/hewitt/}{Ian Hewitt} from the Maths department to thank for this way of thinking. Furthermore, most equations presented in this course will be simple enough for this method to save a lot of time, especially in the exam if you have to sketch the general behaviour.
+Here we present an alternative method, and have \href{https://people.maths.ox.ac.uk/hewitt/}{Ian Hewitt} from the Maths department to thank for this way of thinking. 
+
+This method is both less general than the former method, as it requires the assumption that $C_s\ll C_d$, and more general than the former method, as it does \textit{not} require the ODEs to be linear. We present this method because we believe first that this method provides more physical intuition than the previous method, and second that this method is far more time-efficient than the former method, and that most equations presented in this course will be simple enough for this method to save a lot of time, especially in the exam if you have to sketch the general behaviour.
+
+However I should emphasise that this is an `\textbf{unofficial}' method. I cannot guarantee that the marker will understand what you are doing if you do this in the exam.
 
 As already mentioned, we must exploit the separation of timescales here. Here, $T_s$ evolves much faster than $T_d$, which allows us to make two approximations.\footnote{A full rigorous treatment requires non-dimensionalising the equations, but we believe this is ultimately not needed for physical intuition in this case.}
 
@@ -302,7 +328,7 @@ The first approximation we make is valid on \textit{short} time-scales. The term
     \label{T_d short}
     C_d \dot{T_d} &= 0
 \end{align}
-on short timescales. We can integrate Equation \ref{T_s short} using an integrating factor, with the general solution in Section \ref{Dynamical Systems Solutions}. The timescale is set by comparing the $T_s$ term to the $\dot T_s$ term: $\tau_s\sim \frac{C_s}{\lambda+\lambda'+\gamma}$. Thus on an $O(\tau_s)$ timescale, $T_s$ equilibrates and $T_d$ remains constant (at $0$). We have derived our first eigenvector and eigenvalue here, but without diagonalising anything!
+on short timescales. We can integrate Equation \ref{T_s short} using an integrating factor, with the general solution in Section \ref{Dynamical Systems Solutions}. The timescale is set by comparing the $T_s$ term to the $\dot T_s$ term: $\tau_s\sim \frac{C_s}{\lambda+\lambda'+\gamma}=1/r_1$. Thus on an $O(\tau_s)$ timescale, $T_s$ equilibrates and $T_d$ remains constant (at $0$). We have derived our first eigenvalue ($1/\tau_s$) and eigenvector ($(1,0)^T$) here without diagonalising anything!
 
 The second approximation we make is valid on \textit{long} time-scales. On this timescale, $T_s$ is \textbf{quasi-steady}: $T_s$ evolves rapidly into equilibrium with $T_d$, and so we set $\dot T_s=0$ in Equation \ref{T_s}. Equations \ref{T_s} and \ref{T_d} thus reduce to:
 \begin{align}
@@ -313,9 +339,9 @@ on long timescales. We now solve for $T_s(t)$ in terms of $T_d(t)$ and substitut
 \begin{align}
     C_d \dot{T_d} &= \frac{\gamma}{\lambda+\gamma+\lambda'}F_{ext}(t) - \frac{\gamma\lambda}{\lambda+\gamma+\lambda'}T_d\label{T_d long T_s} 
 \end{align}
-on long timescales. The timescale is set again by comparing the $T_d$ term to the $\dot{T_d}$ term: $\tau_d\sim \frac{C_d(\lambda+\gamma+\lambda')}{\gamma\lambda}$. Again, we have derived our second eigenvector and eigenvalue here without diagonalising anything!
+on long timescales. The timescale is set again by comparing the $T_d$ term to the $\dot{T_d}$ term: $\tau_d\sim \frac{C_d(\lambda+\gamma+\lambda')}{\gamma\lambda}=1/r_2$. Again, we have derived our second eigenvalue ($1/\tau_d$) and eigenvector () here without diagonalising anything!
 
-We can now say, in retrospect, that the short timescale approximation (Eqns. \ref{T_s short} and \ref{T_d short}) is valid on timescales much shorter than $\tau_d$, the long timescale approximation (Eqns. \ref{T_s long} and \ref{T_d long}) is valid on timescales much longer than $\tau_s$, and that we require $\tau_d\gg \tau_s$. This is satisfied if and only if $\frac{C_d(\lambda+\gamma+\lambda')}{\gamma\lambda}\gg\frac{C_s}{\lambda+\lambda'+\gamma}$, which is indeed satisfied if $\gamma,\lambda,\lambda'$ are of similar size (which they are) and $C_d\gg C_s$, as originally assumed.
+We can now say, in retrospect, that the short timescale approximation (Eqns. \ref{T_s short} and \ref{T_d short}) is valid on timescales much shorter than $\tau_d$, that the long timescale approximation (Eqns. \ref{T_s long} and \ref{T_d long}) is valid on timescales much longer than $\tau_s$, and that we require $\tau_d\gg \tau_s$. This is satisfied if and only if $\frac{C_d(\lambda+\gamma+\lambda')}{\gamma\lambda}\gg\frac{C_s}{\lambda+\lambda'+\gamma}$, which is indeed satisfied if $\gamma,\lambda,\lambda'$ are of similar size (which they are) and $C_d\gg C_s$, as originally assumed.
 
 Note the nuance in these two approximations, where we confusingly seem to set the time derivatives to $0$ in both cases. In the first case, we set $\dot T_d=0$ because the timescales are too \textit{short}, and $T_d$ essentially does not react on this timescale. In the second case, we set $\dot T_s=0$ because the timescales are too \textit{long}. The timescales are so long that we assume that $\dot T_s$ rapidly equilibrates such that at each time, it is always in equilibrium, and thus $\dot T_s=0$
 
@@ -360,31 +386,44 @@ Note the nuance in these two approximations, where we confusingly seem to set th
 \end{fact}
 
 \section{Solutions}\label{Dynamical Systems Solutions}
+We can use either of the methods above to solve the ODEs. Let us now specify that $\vec{f}(t)=(F_{ext}(t),0)^T$ and assume that $T_s(0)=T_d(0)=0$. In the solution, we get two different responses for an arbitrary $F_{ext}(t)$:\vspace{5 mm}
 
-We thus get two different responses for an arbitrary external forcing (assuming $T_s(0)=T_d(0)=0$):\vspace{5 mm}
-
-\noindent On short timescales (we define $\tau_s\equiv\frac{C_s}{\lambda+\lambda'+\gamma}$): 
+\noindent On short timescales, i.e., the normal mode with the larger eigenvalue and thus shorter timescale (we define $\tau_s\equiv\frac{C_s}{\lambda+\lambda'+\gamma}$): 
 \begin{align}
     T_s(t) & \approx \frac{1}{C_s}\int_0^tF_{ext}(\hat{t}) e^{-\frac{t+\hat{t}}{\tau_s}}d\hat{t} \label{T_s short soln} \\ 
     T_d(t)& \approx 0 \label{T_d short soln}
 \end{align}
-On long timescales (we define $\tau_d\equiv\frac{C_d(\lambda+\lambda'+\gamma)}{\gamma\lambda}$):
+On long timescales, i.e., the normal mode with the smaller eigenvalue and thus longer timescale (we define $\tau_d\equiv\frac{C_d(\lambda+\lambda'+\gamma)}{\gamma\lambda}$):
 \begin{align}
     T_s(t) & \approx \frac{1}{\lambda+\gamma+\lambda'}\left(F_{ext}(t)+(\gamma+\lambda ')T_d(t)\right) \\ 
     T_d(t) & \approx \frac{\gamma}{C_d(\lambda+\gamma+\lambda')}\int_0^tF_{ext}(\hat{t}) e^{-\frac{t+\hat{t}}{\tau_d}}d\hat{t}  \label{T_d long step soln}
 \end{align}
 
-Suppose $F_{ext}(t)$ is a step-function, representing, for example, an instantaneous emission of CO$_2$ which remains in the atmosphere indefinitely.
+Let us solve this system explicitly for some given $F_{ext}(t)$. Suppose $F_{ext}(t)$ is a step-function, representing, for example, an instantaneous emission of CO$_2$ which remains in the atmosphere indefinitely:
+\begin{align*}
+    F_{ext}=
+    \begin{cases}
+        0 & \text{if } t<0 \\
+        F & \text{if } t>0
+    \end{cases}
+\end{align*}
 
-The solutions are as follows: 
-\begin{align}
-    T_s(t) & \approx \frac{1}{C_s}\int_0^tF_{ext}(\hat{t}) e^{-\frac{t+\hat{t}}{\tau_s}}d\hat{t}  \\ 
+Now clearly, if $t<0$, $T_s(t)=T_d(t)=0$. For the values of $t>0$, we integrate explicitly to find the solutions in each case. On a short timescale:
+\begin{align*}
+    T_s(t) & \approx \frac{1}{C_s}e^{-\frac{t}{\tau_s}}\int_0^t F e^{\frac{\hat{t}}{\tau_s}}d\hat{t}\\
+    &=\frac{1}{C_s}e^{-\frac{t}{\tau_s}} \left( F\tau_s
+    \left( e^{\frac{t}{\tau_s}} - 1 \right) \right)\\
+    &=\frac{F\tau_s}{C_s}\left( 1-e^{-\frac{t}{\tau_s}} \right)
+    \\ 
     T_d(t)& \approx 0 
-\end{align}
-On long timescales, we define $\tau_d\equiv\frac{C_d(\lambda+\lambda'+\gamma)}{\gamma\lambda}$:
+\end{align*}
+We find then that on an $O(\tau_s)$ timescale, $T_s$ equilibrates with a timescale of $\tau_s$ to its new equilibrium value, and $T_d$ remains constant. Note how, despite the fact that $T_d=0=const$, the deep oceans are not `invisible'. The impact of the deep oceans is encoded in the timescale $\tau_s$, which I remind you depends on the $\gamma$ parameter, representing the heat flux from the atmosphere/surface-ocean to the deep oceans. The atmosphere/surface-ocean thus equilibrates to a level where the heat flux in (from the increase in $F_{ext}(t)$) equals the heat flux out (from more heat flux into space, and, crucially, more heat flux into the deep oceans).
+
+On long timescales:
 \begin{align}
-    T_s(t) & \approx \frac{1}{\lambda+\gamma+\lambda'}\left(F_{ext}(t)+(\gamma+\lambda ')T_d(t)\right) \\ 
-    T_d(t) & \approx \frac{\gamma}{C_d(\lambda+\gamma+\lambda')}\int_0^tF_{ext}(\hat{t}) e^{-\frac{t+\hat{t}}{\tau_d}}d\hat{t}  \label{T_d long soln}
+    T_s(t) & \approx \frac{1}{\lambda+\gamma+\lambda'}\left(F+(\gamma+\lambda ')T_d(t)\right) \\ 
+    T_d(t) & \approx \frac{\gamma}{C_d(\lambda+\gamma+\lambda')}\int_0^t F e^{-\frac{t+\hat{t}}{\tau_d}}d\hat{t}\\
+    &=
 \end{align}
 
 \section{Analogous Systems}
@@ -413,12 +452,11 @@ We continue considering a linear dynamical system here, for example, a weather s
 \end{align}
 where $\hat{J}\in\mathbb{R}^n\times\mathbb{R}^n$ is the Jacobian given by:
 \begin{align}
-{\hat{J}}  =  \left( \begin{array}{ccc}
-  \frac{\partial \dot{x}_1}{\partial x_1} & \frac{\partial \dot{x}_1}{\partial x_2} & \cdots \\
-  \frac{\partial \dot{x}_2}{\partial x_1} & \frac{\partial \dot{x}_2}{\partial x_2} & \cdots \\
-  \vdots & \vdots & \vdots \\
- \end{array} \right)
-\label{eq:Jdefmat}
+    {\hat{J}}  =  \left( \begin{array}{ccc}
+    \frac{\partial \dot{x}_1}{\partial x_1} & \frac{\partial \dot{x}_1}{\partial x_2} & \cdots \\
+    \frac{\partial \dot{x}_2}{\partial x_1} & \frac{\partial \dot{x}_2}{\partial x_2} & \cdots \\
+    \vdots & \vdots & \vdots \\
+    \end{array} \right)
 \end{align} 
 Given that $\vec{x}$ has $n$-dimensions, we require $n$ initial conditions given by $\vec{x}(t=t_0)$ to integrate this ODE. This will typically achieved via data assimilation, but all that needs to be known at this point is that we cannot know the initial conditions to a sufficient precision, because the system is chaotic.
 
@@ -450,10 +488,11 @@ Where we have used the fact that $\delta t$ is small. We define the linear error
 
 \section{Local Perturbation Growth}
 
-Suppose we want to find which initial errors will grow the most.\footnote{This may because we want to run an ensemble weather forecast: instead of integrating from a single initial condition, we will integrate our weather model from multiple initial conditions compatible with the observations. Generally, the final states will be different from each other, and their clustering will indicate how predictable the current state is, or whether there are any low probability high impact weather events. However, we want to prudently choose which initial conditions we integrate from, given our limited computing resources, which is why we want to find which initial errors will grow the most.}
-This amounts to trying to trying to maximise $||\vec{\delta x}(t_0+\delta t)||$ with respect to $\vec{\delta x}(t_0)$. This can't be the whole story though, since $\vec{\delta x}(t_0+\delta t)$ is a linear function of $\vec{\delta x}(t_0)$ (Equation \ref{dx}), so we can maximise $\vec{\delta x}(t_0+\delta t)$ simply by letting $\vec{\delta x}(t_0)\to\infty$. More precisely, then, we want to find the \textit{direction} of $\vec{\delta x}(t_0)$ which maximises $||\vec{\delta x}(t_0+\delta t)||$. We can do this by introducing a constraint on the magnitude of the initial error (i.e., enforce $||\vec{\delta x}(t_0)||-C=0,C\in\mathbb{R}$)\footnote{Myles sets $C=1$, but $C$ can actually just be any number.} and maximising $||\vec{\delta x}(t_0+\delta t)||$ using Lagrange multipliers. So we introduce the Lagrange multiplier $\lambda$ and maximise our Lagrangian $\mathscr{L}$.
+Suppose we want to find which initial errors will grow the most. This may because we want to run an ensemble weather forecast: instead of integrating from a single initial condition, we will integrate our weather model from multiple initial conditions compatible with the observations. Generally, the final states will be different from each other as they depend on the initial conditions, and the final spread will indicate how predictable the current state is or whether there are any low probability high impact weather events. However, we want to prudently choose which initial conditions we integrate from, given our limited computing resources, which is why we want to find which initial errors will grow the most.
+
+Finding which errors will grow the most amounts to trying to trying to maximise $||\vec{\delta x}(t_0+\delta t)||$ with respect to $\vec{\delta x}(t_0)$. This can't be the whole story though, since $\vec{\delta x}(t_0+\delta t)$ is a linear function of $\vec{\delta x}(t_0)$ (Equation \ref{dx}), so we can maximise $\vec{\delta x}(t_0+\delta t)$ simply by letting $\vec{\delta x}(t_0)\to\infty$. More precisely, then, we want to find the \textit{direction} of $\vec{\delta x}(t_0)$ which maximises $||\vec{\delta x}(t_0+\delta t)||$. We can do this by introducing a constraint on the magnitude of the initial error (i.e., enforce $||\vec{\delta x}(t_0)||-C=0,C\in\mathbb{R}$)\footnote{Myles sets $C=1$, but $C$ can actually just be any number.} and maximising $||\vec{\delta x}(t_0+\delta t)||$ using Lagrange multipliers. So we introduce the Lagrange multiplier $\lambda$ and maximise our Lagrangian $\mathscr{L}$.
 \begin{align}
-    \mathscr{L}=||\vec{\delta x}(t_0+\delta t)||^2-\lambda(||\vec{\delta x}(t_0)||^2-C^2)
+    \mathscr{L}=\underbrace{||\vec{\delta x}(t_0+\delta t)||^2}_{\text{function to be maximised}}-\lambda\underbrace{(||\vec{\delta x}(t_0)||^2-C^2)}_\text{constraint}
 \end{align}
 Substituting in Equation \ref{dx} and differentiating with respect to $\vec{\delta x}(t_0)$, we find that:
 \begin{align*}
@@ -465,7 +504,9 @@ if and only if:
 \begin{align*}
     \hat{A}^T\hat{A}\vec{\delta x}(t_0)=\lambda\vec{\delta x}(t_0)
 \end{align*}
-So the final error is maximised when the initial error is the largest eigenvector of $\hat{A}^T\hat{A}$\footnote{This is deduced by considering the Hessian - the matrix of second partial derivatives. It can be shown, analogous to the 1D case, that the stationary point is a maximiser only if the Hessian is negative semidefinite (i.e., each eigenvalue $\leq0$). In this case, the hessian is the matrix $\hat{A}^T\hat{A}-\lambda\mathbb{I}$, which is clearly only negative semidefinite if $\lambda\geq$ the largest eigenvalue of $\hat{A}^T\hat{A}$.}. Note that $\hat{A}^T\hat{A}$ is symmetric, so eigenvectors will be orthogonal and eigenvalues will be real. 
+This is a stationary point only if the initial error $\vec{\delta x}(t_0)$ is an eigenvector of $\hat{A}^T\hat{A}$. However, not all stationary points are maximisers (e.g., it could be a minimiser or a saddle point). It turns out that the final error is maximised only if the initial error is the \textit{largest} eigenvector of $\hat{A}^T\hat{A}$\footnote{
+    This is deduced by considering the Hessian: the matrix of second partial derivatives. It can be shown, analogous to the 1D case, that the stationary point is a maximiser only if the Hessian is negative semidefinite (i.e., each eigenvalue $\leq0$). In this case, the hessian is the matrix $\hat{A}^T\hat{A}-\lambda\mathbb{I}$, which is clearly only negative semidefinite if $\lambda\geq$ the largest eigenvalue of $\hat{A}^T\hat{A}$.}
+. Note that $\hat{A}^T\hat{A}$ is symmetric, so (by a theorem in linear algebra) eigenvectors will be orthogonal and eigenvalues will be real.
 
 \chapter{Estimation}\label{Estimation}
 
@@ -511,7 +552,7 @@ We assume, for simplicity, that there are negligible errors on the parameters wi
     \braket{\vec{\epsilon}\,\vec{\epsilon}\,^T}=\hat{S}\\
     [\hat{S}]_{ij}=[\vec{\epsilon}]_i[\vec{\epsilon}]_j
 \end{align*}
-We also assume that the average of the noise is $0$:
+We also assume that the average, indicated by brakets $\braket{}$, of the noise is $0$:
 \begin{align*}
     \braket{\vec{\epsilon}}=0
 \end{align*}
