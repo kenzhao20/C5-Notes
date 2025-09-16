@@ -26,7 +26,67 @@ This section of the course was lectured by \href{https://www.physics.ox.ac.uk/ou
         \end{quote}
 \end{enumerate}
 
-\chapter{The Equations of Motion}
+\chapter{Preliminaries}
+
+\section{A Quick Reminder of Vector Calculus}
+
+Before we jump into \textbf{Geophysical Fluid Dynamics} (\textbf{GFD}) proper, we start with a quick reminder of some concepts in vector calculus. This will be important for the interpretation of certain results.
+
+We work in a 3-dimensional cartesian coordinate system and write the spatial coordinates as $(x,y,z)$ and the spatial unit vectors as $(\hat{i},\hat{j},\hat{k})$. We can write any position vector $\vec{r}$ as $\vec{r}=x\hat{i}+y\hat{j}+z\hat{k}$. For brevity later on, I will often refer to the $i$th coordinate as $x_i$ (i.e., $x=x_1$, $y=x_2$, $z=x_3$).
+
+We will encounter many \textbf{fields} throughout GFD. A \textbf{field} is just anything that has a value at each point in space and time. There are two kinds you will need to know: a \textbf{scalar field} and a \textbf{vector field}. A \textbf{scalar field} is a field that takes a scalar value at each point. For example, the pressure field $p=p(\vec{r},t)$ is a scalar field, which denotes the pressure at each point in space/time. Meanwhile, a \textbf{vector field} is a field that takes a vector value at each point. For example, the velocity field $\vec{u}=\vec{u}(\vec{r},t)$ is a vector field, which denotes the velocity at each point in space/time. While it isn't strictly correct, you can just think of a vector field as three scalar fields stacked on top of each other (one for each component).
+
+All of this section will be devoted to how we calculate derivatives of such fields. Fields are special in the sense that they depend on more than one dimension, so we cannot simply use the good ol' derivative/integral that we know from single variable calculus.
+
+We introduce the partial derivative $\partial/\partial x_i$ with respect to coordinate $x_i$. This is completely analogous to the more familiar derivative, so you can calculate this by simply differentiating with respect to $x_i$ and treating all other coordinates ($x_j$ for $j\neq i$ and $t$) as constant. You can denote the partial derivative 
+
+We also introduce the nabla operator $\vec{\nabla}=\left( \frac{\partial}{\partial x}, \frac{\partial}{\partial y}, \frac{\partial}{\partial z} \right)^T$. This allows as to calculate different things from scalar and vector fields. We define the \textbf{gradient}, \textbf{divergence}, and \textbf{curl}.
+
+The gradient is defined as a vector field calculated by using the nabla operator on a scalar field. We will d
+
+The divergence is defined as a scalar field calculated b
+
+\begin{fact}{Vector Calculus Reminder}{VC box}\label{VC box}
+    We define the 
+    \begin{align*}
+        \frac{\partial}{\partial x_i}
+    \end{align*}
+    \begin{align*}
+        \vec{\nabla}=\left( \frac{\partial}{\partial x}, \frac{\partial}{\partial y}, \frac{\partial}{\partial z} \right)^T
+    \end{align*}
+\end{fact}
+
+
+
+\section{A Quick Reminder of Fluid Mechanics}
+
+To aid understanding, we quickly introduce some concepts of fluid mechanics. Tim should have a more comprehensive review on canvas should you need it.
+
+First we introduce the concept of a fluid element. This is an infinitesimal volume of fluid, whose properties may change as it is advected around with the flow. For example, in deriving the \hyperref[Dry Adiabat]{Dry Adiabat}, we were considering a fluid element of air – except we called it an `air parcel' then.
+
+Second, we introduce the \hyperref[Material Derivative]{Material Derivative}:
+\begin{align}
+    \frac{D}{Dt}=\underbrace{\frac{\partial}{\partial t}}_{\text{Time Derivative at a Fixed Point}}+\underbrace{\vec{u}\cdot\vec{\nabla}}_{\text{Advection}}
+    \label{Material Derivative}
+\end{align}
+The \hyperref[Material Derivative]{Material Derivative} of a quantity is the time-derivative of a quantity \textit{following a fluid element}. This is useful because it is much easier to consider what effects might change a quantity of a fluid element. For example, the forces per unit mass $\vec{F}$ affect a fluid parcel as follows: $\frac{D\vec{u}}{Dt}=\vec{F}$ (this is just Newton's second law).
+
+However, in GFD, we will mostly be interested in how a quantity changes at a \textbf{fixed point in space} $\left(\text{indicated by the } \frac{\partial}{\partial t} \text{ term}\right)$, \textit{not following a fluid element}. If we rearrange the Equation \ref{Material Derivative} for $\left( \frac{\partial}{\partial t} \right)$, we find that the quantity at some point is modified by both whatever affects the fluid element $\left( \frac{D}{D t} \right)$, for example the force $\vec{F}$, and the properties of fluid elements which are advected into that location $-\vec{u}\cdot\vec{\nabla}$:
+\begin{align}\label{MatDerivTerms}
+    \underbrace{\frac{\partial A}{\partial t}}_{\text{Local change in }A}=
+    \underbrace{\frac{DA}{Dt}}_{{\text{Change in }A \text{ following a fluid element}}}-
+    \underbrace{\vec{u}\cdot\vec{\nabla}A}_{\text{Advection of fluid elements with different }A}
+\end{align}
+
+Third, we introduce the idea of \hyperref[Material Conservation]{Material Conservation}. You might have heard about what it means for a quantity to be \textbf{conserved}. For example, if you've solved a mechanics problem, you might recall that the total energy was conserved, meaning that $\frac{dE}{dt}=0$ where $E=$ the total energy.
+
+\hyperref[Material Conservation]{Material Conservation} is a closely related idea, where certain quantities are conserved following a fluid parcel. Mathematically, a quantity $A$ is materially conserved if and only if it obeys the following relation:
+\begin{align}\label{Material Conservation}
+    \frac{D A}{Dt }=0
+\end{align}
+In other words, if one follows a fluid parcel, that quantity does not change. However, as a whole, $A$, need not be globally conserved. If one considers Equation \ref{MatDerivTerms} and sets $\frac{D A}{Dt }=0$, then you can see that the only local change in $A$ is from fluid parcels with different $A$ being advected into that location.
+
+Exercise: refer forwards to Equation \ref{Energy Equation}. Note even if we assume that $Q=0$, we will find that $\frac{DT}{Dt}\neq 0$. In other words, temperature is not materially conserved (so long as $\beta\neq0$). This is why we introduced the idea of \hyperref[Potential Temperature]{Potential Temperature}, as it is the case that $\frac{D\theta}{Dt}=0$ (excercise: take \ref{Energy Equation}, solve for $\beta$ using the ideal gas law, set $Q=0$, and show that $\frac{D\theta}{Dt}=0$ using the product rule).
 
 \section{Why There Is Motion in the First Place}
 
@@ -51,35 +111,7 @@ Regarding the second point, there are two important properties that separate \te
 
 \textbf{Stratification} is 
 
-\section{A Quick Primer in Fluid Mechanics}
-
-To aide understanding, we quickly introduce some concepts of fluid mechanics. Tim should have a more comprehensive primer on the canvas should you need it.
-
-First we introduce the concept of a fluid element. This is an infinitesimal volume of fluid, whose properties may change as it is advected around with the flow. For example, in deriving the \hyperref[Dry Adiabat]{Dry Adiabat}, we were considering an air parcel – a fluid element of air. 
-
-Second, we introduce the \hyperref[Material Derivative]{Material Derivative}:
-\begin{align}
-    \frac{D}{Dt}=\underbrace{\frac{\partial}{\partial t}}_{\text{Time Derivative at a Fixed Point}}+\underbrace{\vec{u}\cdot\vec{\nabla}}_{\text{Advection}}
-    \label{Material Derivative}
-\end{align}
-The \hyperref[Material Derivative]{Material Derivative} of a quantity is the time-derivative of a quantity \textit{following a fluid element}. This is useful because it is much easier to consider what effects might change a quantity of a fluid element. For example, the forces per unit mass $\vec{F}$ affect a fluid parcel as follows: $\frac{D\vec{u}}{Dt}=\vec{F}$ (this is just Newton's second law).
-
-However, in GFD, we will mostly be interested in how a quantity changes at a \textbf{fixed point in space}, not following a fluid element $\left( \frac{\partial}{\partial t} \right)$. If we rearrange the \hyperref[Material Derivative]{Material Derivative} for $\left( \frac{\partial}{\partial t} \right)$, we find that the quantity at some point is modified by both whatever affects the fluid element $\left( \frac{D}{D t} \right)$, for example the force $\vec{F}$, and the properties of fluid elemtns which are advected into that location $-\vec{u}\cdot\vec{\nabla}$:
-\begin{align}\label{MatDerivTerms}
-    \underbrace{\frac{\partial A}{\partial t}}_{\text{Local change in }A}=
-    \underbrace{\frac{DA}{Dt}}_{{\text{Change in }A \text{ following a fluid element}}}-
-    \underbrace{\vec{u}\cdot\vec{\nabla}A}_{\text{Advection of fluid elements with different }A}
-\end{align}
-
-Third, we introduce the idea of \hyperref[Material Conservation]{Material Conservation}. You might have heard about what it means for a quantity to be \textbf{conserved}. For example, if you've solved a mechanics problem, you might recall that the total energy was conserved, meaning that $\frac{dE}{dt}=0$ where $E=$ the total energy.
-
-\hyperref[Material Conservation]{Material Conservation} is a closely related idea, where certain quantities are conserved following a fluid parcel. Mathematically, a quantity $A$ is materially conserved if and only if it obeys the following relation:
-\begin{align}\label{Material Conservation}
-    \frac{D A}{Dt }=0
-\end{align}
-In other words, if one follows a fluid parcel, that quantity does not change. However, as a whole, $A$, need not be globally conserved. If one considers Equation \ref{MatDerivTerms} and sets $\frac{D A}{Dt }=0$, then you can see that the only local change in $A$ is from fluid parcels with different $A$ being advected into that location.
-
-Now recall Equation \ref{Energy Equation}. Note even if we assume that $Q=0$, we will find that $\frac{DT}{Dt}\neq 0$. In other words, temperature is not materially conserved (so long as $\beta\neq0$). This is why we introduced the idea of \hyperref[Potential Temperature]{Potential Temperature}, as it is the case that $\frac{D\theta}{Dt}=0$ (excercise: take \ref{Energy Equation}, solve for $\beta$ using the ideal gas law, set $Q=0$, and show that $\frac{D\theta}{Dt}=0$).
+\chapter{The Equations of Motion}
 
 \section{The Primitive Equations of Motion}
 
@@ -443,25 +475,30 @@ We can also write the Rossby Number in terms of a ratio between the planetary vo
 
 \subsection{Geostrophic Balance}
 
-If $Ro\ll 1$, then rotation dominates dynamics, and we can neglect the acceleration/advection term. The horizontal momentum equation thus consists of a balance between the horizontal pressure gradients and the coriolis force. 
+If $Ro\ll 1$ and all other forces are negligible, then rotation dominates dynamics. We can therefore neglect external forces (set $\vec{F}_h\approx0$) and acceleration and advection (set $D\vec{u}_h/Dt\approx0$) in Equation \ref{Horizontal Approximate} (the horizontal momentum equation). Equation \ref{Horizontal Approximate} thus becomes a balance between the horizontal pressure gradients and the coriolis force. 
 
-\begin{align*}
-    f\vec{k}\times\vec{u}_h=-\frac{1}{\rho}\vec{\nabla}_hp
-\end{align*}
+\begin{fact}{Geostrophic Balance}{Geostrophic Box}\label{Geostrophic Box}
+    A flow is geostrophic if the dominant terms in the horizontal momentum balance equation (Equation \ref{Horizontal Approximate}) are the coriolis force and the pressure gradient force. As such, these terms must balance as follows:
+    \begin{align}
+        \label{Geo Bal}
+        \BOX{f\vec{k}\times\vec{u}_h=-\frac{1}{\rho}\vec{\nabla}_hp}
+    \end{align}
+    This results in a velocity field determined by the pressure gradient as follows (Exercise: Show that Equation \ref{Geostrophic Balance} satisfies Equation \ref{Geo Bal} for any arbitrary pressure field $p$):
+    \begin{align}\label{Geostrophic Balance}
+        \boxed{\vec{u}_h=\frac{1}{\rho f}\vec{k}\times\vec{\nabla}_hp}
+    \end{align}
+\end{fact}
 
-\noindent This results in a velocity field determined by the pressure gradient as follows:
+Recall that the horizontal gradient of pressure $\vec{\nabla}_h p$ points in the direction of increasing $p$. Equation \ref{Geo Bal} shows that the coriolis force, which pushes a fluid at right angles to its velocity, balances the pressure gradient force, which pushes a fluid from areas of high pressure to areas of low pressure.
 
-\begin{align}\label{Geostrophic Balance}
-    \boxed{\vec{u}_h=\frac{1}{\rho f}\vec{k}\times\vec{\nabla}_hp}
-\end{align}
-
-For an ideal gas:
-
+We can use Equation \ref{Ideal Gas} to show that, for an ideal gas, geostrophic balance may be written as follows:
 \begin{align}
     \vec{u}_h=\frac{RT}{ f}\vec{k}\times\vec{\nabla}_h\ln p
 \end{align}
 
 \subsection{Cyclones and Anti-Cyclones}
+
+R
 
 \subsection{Thermal Wind Balance}
 
@@ -534,13 +571,51 @@ We apply this to hydrostatic balance (\ref{Hydrostatic GFD}), geostrophic balanc
 
 \section{The Equations of Motion}
 
-In the previous chapter, we considered diagnostic relations: hydrostatic balance and geostrophic balance. These are very important, and very useful, but notice that there are no time derivatives in \ref{Hydrostatic GFD} and \ref{Geostrophic Balance}. If there are no time-derivatives, the equations cannot reproduce non-steady state solutions and time-evolution. However, clearly, the atmosphere and ocean evolve and are not in a steady state, and we wish to understand this.
+In the previous chapter, we considered diagnostic relations: \hyperref[Hydrostatic GFD Box]{Hydrostatic Balance} and \hyperref[Geostrophic Box]{Geostrophic Balance}. These are very useful and important relations, but notice that there are no time derivatives in \ref{Hydrostatic GFD} and \ref{Geostrophic Balance}. If there are no time-derivatives, the equations cannot reproduce non-steady state solutions and time-evolution. However, clearly, the atmosphere and ocean evolve and are not in a steady state, and we wish to understand this.
 
-Our first tool to consider time-dependent changes is the shallow water system. We consider a system as follows: FIGURE HERE
+Our first tool to consider time-dependent changes is the shallow water system. We consider a system governed the following equations and looks like this:
 
-We derive the equations that govern this system from the Equations \ref{Horizontal Approximate} and \ref{Vertical Approximate}. First, we neglect all vertical and horizontal forces $F_z$ and $\vec{F}_h$ (e.g. neglect friction).
+\begin{fact}{The Shallow Water System}{shallow box}\label{shallow box}
 
-Second, we assume that the system is \textbf{shallow}: $H/L\ll 1$ where $H$ is the vertical lengthscale and $L$ is the horizontal lengthscale. If we non-dimensionalise \ref{Incompressibility}, we derive that the vertical velocity scale $W$ is much smaller than the horizontal velocity scale $U$: $W\ll U$:
+    The Shallow Water System is a simple two-dimensional time-varying system governing the evolution of a thin layer of incompressible fluid subject only to the pressure gradient and coriolis force.
+
+    The three state variables are the horizontal velocity $\vec{u}_h(x,y,t)=(u,v)^T$ and the layer thickness $h(x,y,t)$. Equivalently, we can express the state variables as the horizontal velocity $\vec{u}_h(x,y,t)=(u,v)^T$ and the layer height $\eta(x,y,t)$.
+
+    \begin{minipage}{.5\linewidth}
+    \begin{gather}
+        \label{SW mom}
+        \BOX{\frac{D_h\vec{u}_h}{Dt}+f\vec{k}\times\vec{u}_h+g\vec{\nabla}_h\eta=0}\\
+        \label{SW mass}
+        \BOX{\frac{\partial h}{\partial t}+\vec{\nabla}_h\cdot(h\vec{u}_h)=0}\\
+        \label{SW height}
+        \BOX{h=\eta-b}
+    \end{gather}
+    where $\frac{D_h}{Dt}=\frac{\partial}{\partial t}+u\frac{\partial}{\partial x}+v\frac{\partial}{\partial y}=$ the horizontal material derivative, $\eta(x,y,t)=$ the height of the surface interface, and $b(x,y)=$ the bottom interface (which is given).
+    \end{minipage}
+    \hfill
+    \begin{minipage}{.48\linewidth}
+    \begin{figure}[H]
+        \centering
+        \begin{tikzpicture}
+            \draw[thick] (0,0) .. controls +(0.1,0.5) and +(-0.5,-0.5) .. (2,0) .. controls +(1,1) and +(-0.8,-1.6) .. (3.5,0) .. controls +(0.5,1) and +(-1,0) .. (5,0);
+            \node[] at (6,0) {$z=b(x,y)$};
+            \draw[thick] (0,4) .. controls +(0,0.1) and +(-1,-1) .. (1.8,4) .. controls +(1,1) and +(-0.5,-0.2) .. (4,4) .. controls +(0.5,0.2) and +(-0.5,0) .. (5,4);
+            \node[] at (6.2,4) {$z=\eta(x,y,t)$};
+            \draw[thick,<->] (4,3.92) -- (4,0.5);
+            \node[] at (5,2) {$h(x,y,t)$};
+            \node[] at (1.3,1.5) {$\rho=\rho_0=const$};
+            \node[] at (1,2.6) {$\vec{u}_h=\left( \begin{array}{c}u\\v\end{array} \right)$};
+        \end{tikzpicture}
+        \caption{The Shallow Water System}
+    \end{figure}
+    \end{minipage}
+\end{fact}
+
+We now aim to derive these equations from three primitive (approximate) equations: the horizontal momentum equation (\ref{Horizontal Approximate}), the vertical momentum equation (\ref{Vertical Approximate}), and mass conservation (\ref{Mass Conservation}). First, we neglect all vertical and horizontal forces $F_z$ and $\vec{F}_h$ (e.g. neglect friction) other than gravity and pressure gradient forces.
+
+Second, we assume that the density is constant $\rho=\rho_0$ for all time and at all points. This immediately implies (from Equation \ref{Mass Conservation}) that the system must be incompressible, so we know that Equation \ref{Incompressibility} holds.
+
+Third, we assume that the system is \textbf{shallow}: $H/L\ll 1$ where $H$ is the vertical lengthscale and $L$ is the horizontal lengthscale. If we non-dimensionalise \ref{Incompressibility}, we derive that the vertical velocity scale $W$ is much smaller than the horizontal velocity scale $U$: $W\ll U$:
 \begin{align*}
     \vec{\nabla}\cdot\vec{u}=0\\
     \underbrace{\vec{\nabla}_h\cdot\vec{u}_h}_{U/L}+\underbrace{\frac{\partial w}{\partial z}}_{W/H}=0\\
@@ -549,34 +624,98 @@ Second, we assume that the system is \textbf{shallow}: $H/L\ll 1$ where $H$ is t
     \therefore \boxed{W \ll U}
 \end{align*}
 
-\noindent As such, we neglect the vertical advection term in the material derivative:
+We take this as justification for our fourth assumption: that vertical acceleration and advection is small compared to gravity and pressure gradient forces. As such, the system is in approximately in \hyperref[Hydrostatic GFD]{Hydrostatic Balance} (we have simplified Equation \ref{Vertical Approximate} here). Importantly, though, we do \textit{not} assume that the vertical acceleration/advection is $0$ everywhere. We simply assume that they are much smaller than vertical pressure gradients and gravity.
+
+This allows us to integrate the hydrostatic relation from some reference height $\eta$ (the height of the surface) and pressure $p_s$ (the pressure at the surface) to find that the following holds (refer to Equation \ref{Const Density Hydrostatic} to see the derivation).
+\begin{align*}
+    p(x,y,z,t)=\rho g(\eta(x,y,t)-z)+p_s(x,y,t)
+\end{align*}
+
+Fifth, we assume that the fluid above the layer of fluid under consideration has a much lower viscocity than the current layer or that it is much less dense than the other positions. This allows us to assume that $\vec{\nabla}_hp_s\ll \vec{\nabla}_h\eta$, and that therefore $\vec{\nabla}_h p \approx \rho_0 g \vec{\nabla}_h \eta$. As such, Equation \ref{Horizontal Approximate} becomes the following:
+\begin{align*}
+    \frac{D\vec{u}_h}{Dt}+f\vec{k}\times\vec{u}_h=g\vec{\nabla}_h\eta
+\end{align*}
+
+Notice that everything on the right hand side has no dependence on $z$. However, it must hold for each all $z$ within the layer, therefore, we can conclude that $\vec{u}_h$ cannot depend on $z$ either.\footnote{
+    If it did, then the $f\vec{k}\times\vec{u}_h$ term would depend on $z$ and so left hand side would depend on $z$. Depending on $z$ implies that its value would change depending on $z$, but the right hand side cannot change its value depending on $z$, and so the equation would not hold for some $z$.
+} Therefore, we can neglect the vertical advection term in the material derivative:
 \begin{align*}
     \frac{D}{Dt}=\frac{\partial}{\partial t}+u\frac{\partial}{\partial x}
     +v\frac{\partial}{\partial y}+\bcancel{w\frac{\partial}{\partial z}}
 \end{align*}
 
-Third, we assume that the system is approximately in \hyperref[Hydrostatic GFD]{Hydrostatic Balance}. However, we do not assume that the vertical velocities are $0$ everywhere. We simply assume that they are much smaller than vertical pressure gradients and gravity.
+This allows us to derive Equation \ref{SW mom}, which is an approximation of the horizontal momentum equation (\ref{Horizontal Approximate}):
+\begin{align*}
+    \boxed{\frac{D_h\vec{u}_h}{Dt}+f\vec{k}\times\vec{u}_h=g\vec{\nabla}_h\eta}
+\end{align*}
+where $\frac{D_h}{Dt}=\frac{\partial}{\partial t}+u\frac{\partial}{\partial x}+v\frac{\partial}{\partial y}$ is the horizontal material derivative.
 
-Fourth, we 
+The interpretation is as follows: this is just horizontal momentum balance, where the horizontal acceleration is set by the coriolis force and the pressure gradient force, and no other forces. The pressure gradient force only depends on the height of the surface of the fluid, and the height affects the pressure through the hydrostatic relation.
 
-We neglect friction and the centripetal acceleration. The equations of motion, then, are 
+Let us now turn to Mass Conservation Equation \ref{Mass Conservation}. We already derived from the $\rho=\rho_0=const$ assumption that the system must be incompressible, so the following holds:
+\begin{align*}
+    \vec{\nabla}\cdot\vec{u}=\vec{\nabla}_h\cdot\vec{u}_h+\frac{\partial w}{\partial z}=0
+\end{align*}
 
-We derive the equations of motions
-\begin{fact}{The Shallow Water Equations}{shallow box}\label{shallow box}
-    \begin{gather}
-        \label{SW mom}
-        \BOX{\frac{D\vec{u}}{Dt}+f\vec{k}\times\vec{u}+g\vec{\nabla}\eta=0}\\
-        \label{SW mass}
-        \BOX{\frac{\partial h}{\partial t}+\vec{\nabla}\cdot(h\vec{u})=0}\\
-        \label{SW height}
-        \BOX{h=\eta-b}
-    \end{gather}
-\end{fact}
+Let us integrate this equation with respect to $z$ from $z=b(x,y)$ to $z=\eta(x,y,t)$ and recall first that $\vec{u}_h$ is not a function of $z$ and second that we assumed that $w$ was much smaller than $u,v$, not that $w=0$. This allows us to derive the following:
+\begin{align*}
+    \int_{b}^{\eta} 0 \,dz &= \int_{b}^{\eta} \vec{\nabla}_h\cdot\vec{u}_h+\frac{\partial w}{\partial z}\, dz\\
+    0&=h(x,y,t)\vec{\nabla}_h\cdot\vec{u}_h+\left[ w \right]_b^\eta\\
+    &=h\,\vec{\nabla}_h\cdot\vec{u}_h + w(z=\eta)-w(z=b)
+\end{align*}
+\begin{align*}
+    \therefore \boxed{0 = h\,\vec{\nabla}_h\cdot\vec{u}_h + w(z=\eta)-w(z=b)}
+\end{align*}
 
+Now it turns out (and this is justified by some fluid mechanical boundary conditions) that $w(z=\eta)=\frac{D_h \eta}{Dt}$ and $w(z=b)=\frac{D_h b}{Dt}$. The interpretation is as follows: the vertical velocity at an interface must be exactly equal to the change in interface height/depth following a fluid parcel, because if this weren't the case, we would get a fluid parcel phasing through the ground (as is the case at the bottom where $z=b$) or the fluid parcel is exactly what sets the change in the interface depth (as is the case at the top where $z=\eta$).
+
+As such:
+\begin{align*}
+    w(z=\eta)-w(z=b)&=\frac{D_h \eta}{Dt}-\frac{D_h b}{Dt}\\
+    &=\frac{D_h h}{Dt}\\
+    &=\frac{\partial h}{\partial t}+ \vec{u}_h\cdot\vec{\nabla}_hh
+\end{align*}
+
+Therefore, we get that:
+\begin{align*}
+    0&=h\,\vec{\nabla}_h\cdot\vec{u}_h + w(z=\eta)-w(z=b)\\
+    &=h\,\vec{\nabla}_h\cdot\vec{u}_h+\frac{\partial h}{\partial t}+ \vec{u}_h\cdot\vec{\nabla}_hh\\
+    0&=\frac{\partial h}{\partial t}+\vec{\nabla}_h\cdot(h\vec{u}_h)
+\end{align*}
+
+We have derived Equation \ref{SW mass}. The interpretation for this equation is as follows: the height of a fluid can change, but it is constrained by the velocity of the fluid becauce the fluid is incompressible. If the height increases at some point, there must be more fluid flowing into that point than out of it, but since the fluid cannot compress, the height of the layer must increase.
+
+We have derived all the equations of motion for the Shallow Water System, but the crux of the issue is whether or not this is a faithful representation of time-dependent geophysical fluid dynamics. Sadly, the details are quite complicated, and I'm not sure if I'll even get to them. If I do, they are at the end of this chapter in Section \ref{SW Justification}.
+
+For now, just take this as granted, and let us start analysing this system.
 
 \section{Energetics}
 
+Let us first consider the energy in the shallow water system, which the sum of the kinetic energy and the (gravitational) potential energy. Again, we would prefer to work in intensive variables, so we find these per unit area.
 
+The kinetic energy per unit area is as follows:
+\begin{align*}
+    KE = \frac{1}{2}\underbrace{\rho_0\,V}_{m}\,u^2/A\\
+    =\frac{1}{2}\rho_0\,A\,h/A\,u^2\\
+    \therefore\BOX{KE = \frac{1}{2}\rho_0\,h\,u^2}
+\end{align*}
+The idea is simple: it's just the kinetic energy divided by the unit area.
+
+The potential energy per unit area is a little bit more complicated. To find this, we need to consider all the fluid parcels from $z=b$ to $z=\eta$ and sum the potential energy of all the fluid parcels.
+
+Let us first consider a fluid parcel at height $z$ with some height $dz$ and width $A$ (therefore, it has a volume equal to $A\,dz$ and mass equal to $\rho_0\,A\,dz$). The potential energy of \textit{this} parcel ($dPE$) is as follows:
+\begin{align*}
+    dPE=\underbrace{\rho_0\,a\,dz}_{m}g\,z
+\end{align*}
+We have to sum this over all the fluid parcels from $z=b$ to $z=\eta$ so our total potential energy per unit area $PE$ is as follows:
+\begin{align*}
+    PE &= \int_{z=b}^{z=\eta}dPE/A\\
+    &= \int_{z=b}^{z=\eta}\underbrace{\rho_0\,A\,dz}_{m}g\,z/A\\
+    &= \rho_0\,g\left[ \frac{1}{2}z^2 \right]_b^\eta\\
+    &= \frac{1}{2}\rho_0\,g\left( \eta^2-b^2 \right)
+\end{align*}
+
+Now the final fiddly thing we have to do is to say that we don't actually care about the 
 
 \section{Potential Vorticity}
 
@@ -588,7 +727,37 @@ In the previous section, we derived geostrophic balance and  hydrostatic balance
 
 However, the Earth is never in perfect balance, and small perturbations will occur, either because we have built a wind farm, or the sun is radiating differently, or because freshwater is being injected into certain areas in the oceans.
 
-We analyse how systems respond to these perturbations by looking for wavelike solutions: by plugging in 
+We analyse how systems respond to these perturbations by looking for wave-like solutions: we plug in a solution that is proportional to $\exp(i(\vec{k}\cdot\vec{x}-\omega t))$, where $\vec{k}=(k_x,k_y,k_z)^T\in\mathbb{R}^3$ is the angular wavevector (the vector analogue of the wavenumber – refer to Section \ref{F, W, W} if you've forgotton what a wavenumber is) and $\omega$ is the angular frequency.
+
+The justification for plugging in this somewhat convoluted function is as follows. We want a function that is simple enough such that the solution is easy to interpret. However, we also want a function complicated enough such that it can encode certain spatial and time dependencies. This is why we pick the exponential function, which is simple, which depends on a linear sum of space and time, which.
+
+In practice, after plugging in these equations, we will find that $\vec{k}$ and $\omega$ are constrained by the equations of motion such that:
+\begin{align*}
+    \omega=\omega(\vec{k})
+\end{align*}
+
+In other words, the frequency with which the perturbation oscillates is set by the spatial scale (or vice versa). This will give us valuable information regarding how these waves propogate.
+
+We will find that the peaks and troughs in the wave will propogate with a \textbf{phase velocity} denoted by $\vec{c}_p$, where the $i$th component $[\vec{c}_p]_i$ is found as follows:
+\begin{align}
+    \label{Phase Velocity}
+    \BOX{[\vec{c}_p]_i=\frac{\omega}{[\vec{k}]_i}}
+\end{align}
+
+We will also find that a wave-packet will propogate with a \textbf{group velocity} denoted by $\vec{c}_g$, where the $i$th component $[\vec{c}_g]_i$ is found as follows:
+\begin{align}
+    \label{Group Velocity}
+    \BOX{[\vec{c}_g]_i=\frac{\partial\omega}{\partial [\vec{k}]_i}}
+\end{align}
+For example, in the $x$ direction, the \textbf{group} and \textbf{phase velocities} are found as follows:
+\begin{align*}
+    [\vec{c}_p]_x=\frac{\omega}{k_x}\\
+    [\vec{c}_g]_x=\frac{\partial\omega}{\partial k_x}
+\end{align*}
+
+This is a slightly confusing distinction, as you've most likely only encountered non-dispersive waves in the past, and non-dispersive waves are waves such that the phase velocity is equal to the group velocity ($\vec{c}_g=\vec{c}_p$). Since I can't insert any animations into these pdf notes, I'd highly recommend clicking on \href{https://resource.isvr.soton.ac.uk/spcg/tutorial/tutorial/Tutorial_files/Web-further-dispersive.htm}{this} website on dispersive waves. I'd especially pay attention to the little animations.
+
+Now that you've thoroughly read that resource, we can interpret what this means in our context. Suppose that the pressure perturbation is proportional to $\exp(i(\vec{k}\cdot\vec{x}-\omega t))$ where $\omega=\omega(\vec{k})$ such that $\vec{c}_p=\vec{c}_p(\vec{k})$ and $\vec{c}_g=\vec{c}_g(\vec{k})$. Peaks and troughs propagate with a velocity set by the \textbf{phase velocity} $\vec{c}_p=\vec{c}_p(\vec{k})$, so areas of low or high pressure (i.e., cyclones and anti-cyclones in mid-/high-latitudes) propogate at the velocity $\vec{c}_p$. Meanwhile, the amplitude of this low or high pressure perturbation propagates with a velocity set by the \textbf{group velocity} $\vec{c}_g=\vec{c}_g(\vec{k})$. You saw that, in general, this means that the energy propagates with the \textbf{group velocity}, \textit{not} the \textbf{phase velocity}.
 
 \subsection{Poincaré Waves}
 
@@ -617,6 +786,8 @@ T
 \subsection{Kelvin Waves}
 
 \subsection{Rossby Waves}
+
+\section{Justifying the Shallow Water System}\label{SW Justification}
 
 \chapter{3D Systems}
 
