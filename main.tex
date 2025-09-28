@@ -32,6 +32,8 @@
   nophantom,
   nobeforeafter,
   math upper,
+  on line,
+  box align=base,
   colframe=mymagenta, 
   colback=myyellow!50!white,
   #1,
@@ -150,7 +152,7 @@
 
 \section*{Introduction}
 
-These set of lecture notes for the C5: Atmospheres and Oceans options are based on the lectures delivered during the academic year 2024-2025. The lectures that year were delivered by 
+These set of lecture notes for the C5: Atmospheres and Oceans Option are based on the lectures delivered during the academic year 2024 - 2025. The lectures that year were delivered by 
 \href{https://users.physics.ox.ac.uk/~pierrehumbert/}{Raymond T. Pierrehumbert} 
 (for \hyperref[Thermodynamics]{Thermodynamics} and \hyperref[Radiative Transfer]{Radiative Transfer}), 
 \href{https://www.physics.ox.ac.uk/our-people/stier}{Philip Stier} 
@@ -161,7 +163,7 @@ These set of lecture notes for the C5: Atmospheres and Oceans options are based 
 (for \hyperlink{Climate Dynamics}{Climate Dynamics}), and \href{https://www.physics.ox.ac.uk/our-people/woollings}{Tim Woollings} 
 (for \hyperref[Geophysical Fluid Dynamics]{Geophysical Fluid Dynamics}).
 
-C5 is a massive course, and because it's very `applications'-focused, it doesn't feel as unified as some of the other C options. These notes are the result of an attempt to compile a self-consistent and thorough set of lecture notes on the course. As such, these notes will be long: we will at many points prioritise rigour and detail over brevity, and we'll link to where you can look if you want more information. However, I will try to emphasise (using coloured boxes!) key ideas to make these notes more skimmable. Furthermore, there is a limit to how thorough I can be: because C5 is very applied, it will build on the results of a great many sub-fields, many of which take a whole lecture series themselves to explain.
+C5 is a massive course, and because it's very `applications'-focused, it doesn't feel as unified as some of the other C options. Because of this, it can feel difficult to distinguish between what you need to know and what you don't. These notes are the result of an attempt to rectify this by compiling a self-consistent and thorough set of notes on the course. As such, these notes will be long: we will at many points prioritise rigour and detail over brevity, and we'll link to where you can look if you want more information. However, we will try to emphasise (using coloured boxes!) key ideas to make these notes more skimmable. Furthermore, there is a limit to how thorough we can be. We've already mentioned that C5 is very applied, so we will build on and take for granted the results of a great many sub-fields (many of which take a whole lecture series themselves to explain).
 
 \begin{comment}
   Despite the vast diversity in C5, there are a few common themes (which are by no means unique to C5) that pop up throughout the course. I'll try to flag them clearly so that the reader can hopefully experience some kind of continuity when studying this course.  I have in mind three key themes:
@@ -172,11 +174,11 @@ C5 is a massive course, and because it's very `applications'-focused, it doesn't
   \end{enumerate}
 \end{comment}
 
-In reading these notes, you should be aware of two sources of biases: those of the lecturers and those of the author(s).
+In reading these notes, you should be aware of two sources of biases: the lecturers and the author(s).
 
-In the first case, it is not uncommon for lecturers gloss over material in lectures. For example, the 2024-2025 lectures did not feature scattering in \hyperref[Radiative Transfer]{Radiative Transfer}, and so I will not cover scattering in these lecture notes. Furthermore, some of what is covered is on the very frontiers of modern research. As such, it's not surprising that the lecturers will have certain beliefs that have not (yet?) made it into the scientific consensus. There will be points where we represent some material very authoritatively, when in reality it is very disputed. Please let us know if you believe this happens at any point.
+In the first case, it is not uncommon for lecturers to gloss over certain material in lectures. For example, the 2024-2025 lectures did not feature scattering in \hyperref[Radiative Transfer]{Radiative Transfer}, and so I will not cover scattering in these lecture notes. Furthermore, some of what is covered is on the very frontiers of modern research. As such, it's not surprising that the lecturers will have certain beliefs that have not (yet?) made it into the scientific consensus. We will try to flag when this happens, but there will be points where we represent some material very authoritatively, when in reality it is very disputed. Please let us know if you believe this happens at any point.
 
-The second case is far more problematic. First, the author is just not passionate about Instrumentation. That chapter will be empty. Sorry. If you know someone (or you yourself) would be interested in filling that in, please let me know! Second, in some cases I present material differently to how the lecturers present them in attempt to present material in a way I personally find less confusing and more physically intuitive. 
+The second case is far more problematic. First, the author is just not passionate about Instrumentation. That chapter will be empty. Sorry. If you know someone (or you yourself) would be interested in filling that in, please let us know! Second, in some cases we present material differently to how the lecturers present them in attempt to present material in a way we personally find less confusing and more physically intuitive.
 
 Third, and most importantly, I can't claim to be an expert in the topic, and so will get things wrong! Please get in touch if you spot any errors or believe any section is written confusingly. I would much rather you contact me about an `error' that's actually correct than I miss an error!
 
@@ -191,6 +193,8 @@ Third, and most importantly, I can't claim to be an expert in the topic, and so 
 \include{Climate Dynamics}
 
 \include{GFD}
+
+\chapter*{Definitions and Symbols}
 
 \chapter*{References}
 
