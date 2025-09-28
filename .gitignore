@@ -12,12 +12,16 @@ Thermodynamics.aux
 main 2.aux
 main 3.aux
 main 4.aux
+main 5.aux
+main 6.aux
 
 main 2.bcf
 main 2.log
 main 2.fls
 main 2.synctex.gz
 main 2.synctex(busy)
+main 2.fdb_latexmk
+main 3.log
 main 3.bcf
 main 3.fls
 main 3.synctex.gz
@@ -25,7 +29,7 @@ main 3.synctex(busy)
 main 4.fls
 main 4.synctex(busy)
 main 5.fls
-main 5.synctex(busy
+main 5.synctex(busy)
 main 6.fls
 main 6.synctex(busy)
 main 7.fls
