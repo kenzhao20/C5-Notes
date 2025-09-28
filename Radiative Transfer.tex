@@ -78,9 +78,9 @@ Often we will have to integrate over solid angles/directions (as radiation will 
     The solid angle $\Omega$ is a dimensionless area encoding how many directions we are considering, and is measured in steradians \qty{}{\steradian}. We define the differential solid angle $d\Omega$ and the solid angle $\Omega$:
     \begin{gather}
         \BOX{d\Omega=d\theta \sin\theta \,d\phi}\\
-        \BOX{\Omega = \iint\displaylimits_\text{directions considered} d\Omega}
+        \BOX{\Omega = \iint\displaylimits_\text{directions considered} d\Omega=\frac{A}{r^2}}
     \end{gather}
-    Intuitively, the solid angle is the area taken up on the surface of a unit sphere by the directions considered. It encodes the amount of field of view we are considering. The analogy to a 2D angle $\theta$ is shown below:
+    Intuitively, the solid angle is the area $A/r^2$ taken up on the surface of a unit sphere by the directions considered. It encodes the amount of field of view we are considering. The analogy to a 2D angle $\theta$ is shown below:
     \begin{figure}[H]
         \centering
         \begin{subfigure}{0.4\linewidth}
@@ -1517,7 +1517,7 @@ We thus find that $DRF>0$ in an atmosphere with a vertical temperature profile s
 
 \chapter{Radiative Equilibrium}
 
-\section{Grey Gases, but in Radiative Equilibrium}
+\section{The Radiative Equilibrium Assumption}
 
 Recall the frequency and angle integrated downwards and upwards Schwarszchild Equations for a grey gas:
 \begin{align*}
@@ -1526,7 +1526,7 @@ Recall the frequency and angle integrated downwards and upwards Schwarszchild Eq
 \end{align*}
 where $E_+$, $E_+$ are now irradiances (rather than spectral irradiances).
 
-You'll note that we cannot actually solve this system, because we have three variables $(E_+,E_+,T)$ but only two equations. However, this should be the case: recall the general solutions to the non-frequency averaged upwards and downwards Schwarszschild Equations (\ref{Downwards Soln}, \ref{Upwards Soln}) featured $B(\tau')$ within the integral, which depends on the atmospheric temperature profile and composition as a function of optical depth. 
+You'll note that we cannot actually solve this system, because we have three variables $(E_+,E_+,T)$ but only two equations. However, this should be the case: recall the general solutions to the non-frequency averaged upwards and downwards Schwarszschild Equations (\ref{Downwards Soln}, \ref{Upwards Soln}) featured $B(\tau')$ within the integral, which depends on the atmospheric temperature profile as a function of optical depth. In the previous chapters, we just took this as something given. For example, we might assume that $T$ follows the dry adiabat.
 
 We now make the crucial assumption of radiative equilibrium: there is no net warming or heating from radiation at each optical depth. We now consider conservation of energy on some infinitesimal slab of atmosphere with optical thickness $\delta \tau$ and area $A$ by considering the upwards and downwards irradiances entering and leaving the slab. 
 \begin{align*}
@@ -1545,9 +1545,9 @@ Radiative equilibrium, therefore:
     \right)
 \end{align*}
 
-We can freely divide by $A\neq0$ and take $\delta\tau\to0$ to find our third and final equation for radiative equilibrium:
+We can freely divide by $A\neq0$ and take $\delta\tau\to0$ to find our third and final equation that expresses radiative equilibrium:
 \begin{align}\label{Radiative Equilibrium}
-    \frac{d}{d\tau}(E_+-E_-)=0
+    \BOX{\frac{d}{d\tau}(E_+-E_-)=0}
 \end{align}
 
 We can now solve the coupled ODEs \ref{Upwards Grey}, \ref{Downwards Grey}, and \ref{Radiative Equilibrium} to give us expressions for $E_+$, $E_+$, and $T$ in terms of $\tau$. Finally, we can find $\tau$ as a function of $p$ (or $z$) in order to give us the temperature profile of an atmosphere in \textbf{radiative equilibrium}. 
@@ -1556,16 +1556,15 @@ There are two final nuances to note. First, we are effectively making the \texti
 
 The second nuance is related to why we make the radiative equilibrium approximation now, \textit{after} we have made the grey gas approximation, and not before. While non-grey gases in radiative equilibrium can and do occur, it does not result in a simple equation as in Equation \ref{Radiative Equilibrium}. This is because \textit{it need not be the case that the gas is in radiative equilibrium at every wavenumber}. 
 
-In other words, let $F(\nu)$ denote the spectral irradiance such that $E=\int F(\nu)\,d\nu$, where $E$ the irradiance. For a non-grey gas in radiative equilibrium, it \textit{is} the case that:
+In other words, let $F_\pm(\nu)$ denote the total upwards/downwards spectral irradiance such that $E_\pm=\int F_\pm(\nu)\,d\nu$, where $E_\pm$ is the total upwards/downwards irradiance. For a non-grey gas in radiative equilibrium, it \textit{is} the case that:
 \begin{align*}
     \frac{d}{d\tau}(E_+-E_-)=0
 \end{align*}
-However, it is almost never the case that:
+However, it is almost never the case that for some $\nu$:
 \begin{align}\label{Bad Radiative Equilibrium}
-    \frac{d}{d\tau}(E^\nu_{+}-E^\nu_-)=0
+    \frac{d}{d\tau}(F_{+}(\nu)-F_-(\nu))=0
 \end{align}
 Radiative equilibrium only requires that a layer of atmosphere recieves as much energy from radiation as it radiates away, it does \textit{not} require that this much happen at each frequency (i.e., that \ref{Bad Radiative Equilibrium} obtains)! \ref{Bad Radiative Equilibrium} is a \textit{horrible} assumption, but it is the assumption we would need if we wish to solve the Upwards and Downwards \textit{non-frequency integrated} Schwarszchild Equations (\ref{Upwards Schwarzschild}, \ref{Downwards Schwarzschild}) governing the spectral irradiances.
-
 
 \section{General Solution}
 
@@ -1599,7 +1598,7 @@ Integrating again using the boundary conditions gives:
 \end{align}
 We are now in a position to find expressions for all three variables. We can find $T$ by substituting \ref{Up+Down} into \ref{Up+Down tau}. We can find $E_+$ and $E_+$ by adding or subtracting (respectively) \ref{Up-Down} and \ref{Up+Down tau}. The solutions are:
 \begin{fact}{Radiative Equilibrium Solutions}{Rad Eq Box}\label{Rad Eq Box}
-    A grey gas in pure radiative equilibrium will have a temperature profile $(T(\tau))$, the upwards irradiance $(E_+(\tau))$, and downwards irradiance $(E_-(\tau))$ obey the following relations:
+    A grey gas in pure radiative equilibrium will have a temperature profile $(T(\tau))$, upwards irradiance $(E_+(\tau))$, and downwards irradiance $(E_-(\tau))$ that obey the following relations:
     \begin{gather}
         \label{Radiative Eq Temperature}
         \BOX{T^4=\frac{OLR}{2\sigma}(1+\tau_\infty-\tau)}\\
@@ -1608,11 +1607,11 @@ We are now in a position to find expressions for all three variables. We can fin
     \end{gather}
 \end{fact}
 
-We can rewrite these equations using global energy conservation: $OLR=L_\star$ where $L_\star$ is the absorbed stellar flux per unit area at the surface of the planet.
+We can rewrite these equations using global energy conservation: $OLR=S_\star$ where $S_\star=(1-\alpha)\cos\zeta\,L_\star$ is the absorbed stellar flux per unit area at the surface of the planet.
 \begin{align}
-    {T^4=\frac{L_\star}{2\sigma}(1+\tau_\infty-\tau)}\\
-    {E_+=\frac{L_\star}{2}(2+\tau_\infty-\tau)}\\
-    {E_-=\frac{L_\star}{2}(\tau_\infty-\tau)}
+    {T^4=\frac{S_\star}{2\sigma}(1+\tau_\infty-\tau)}\\
+    {E_+=\frac{S_\star}{2}(2+\tau_\infty-\tau)}\\
+    {E_-=\frac{S_\star}{2}(\tau_\infty-\tau)}
 \end{align}
 
 \subsection{Interpretation}
@@ -1628,11 +1627,11 @@ Let's first consider the upwards irradiance $E_+$. At the \textit{top} of the at
 \end{align*}
 $OLR$ and therefore $T_{eff}$ are effectively fixed by $L_\star$, the properties of the star (and albedo), so it's clear that as $\tau_\infty$ gets arbitrarily large, so too must $T_g$, whereas if $\tau\to0$, $\ T_g\to T_{eff}$, intuitively.
 
-\subsubsection{The temperature profile $T$}x
+\subsubsection{The temperature profile $T$}
 
 Next let's consider the temperature profile. As we can clearly see, as $\tau$ increases, $T$ decreases, so radiative equilibrium also results in a temperature profile that decreases with height. Let's consider two limiting cases: air high up in the atmosphere, and air low in the atmosphere. Air right near the ground is located at $\tau=0$, so $\sigma T(0)^4=\frac{OLR}{2}(1+\tau_\infty)$. But we just derived that $\sigma T_g^4=\frac{OLR}{2}(2+\tau_\infty)$. So in fact, $T_g>T(0)$: there is a temperature discontinuity at the ground, and the ground is warmer than the air immediately above it! 
 
-Is it stable to convection? Recall that an atmosphere is stable if it satisfies \ref{Dry Stability}. We know it will be unstable at the ground, because at the ground the temperature gradient will be very large: the air immediately above the ground will be warmed by the ground, and will convect. More generally though, we can directly differentiate \ref{Radiative Eq Temperature} to see if it satisfies \ref{Dry Stability}:
+Is it stable to convection? Recall that an atmosphere is stable if it satisfies \ref{Dry Stability}. We know it will be unstable at the ground, because at the ground the temperature gradient is infinite due to the discontinuity. Therefore, the air immediately above the ground will be warmed by the ground, and will convect. More generally though, we can directly differentiate \ref{Radiative Eq Temperature} to see if it satisfies \ref{Dry Stability} to find where (if any) the temperature profile is unstable:
 \begin{align*}
     \frac{d}{dp}T^4&=-\frac{OLR}{2\sigma}\frac{d}{dp}(1+\tau_\infty-\tau)\\
     4T^3\frac{dT}{dp}&=-\frac{OLR}{2\sigma}\frac{d\tau}{dp}\\
@@ -1647,7 +1646,6 @@ Therefore, using :
 \end{align}
 
 Note that we have not considered the diurnal cycle: we have assumed that the 
-
 
 \subsection{Internal Leakage}
 
