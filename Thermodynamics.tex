@@ -56,21 +56,21 @@ As a brief review, we'll need to know the following \textit{intensive} variables
     \caption{Basic Intensive Thermodynamic Variables}
 \end{table}
 
-Note that many resources present the molar mass $M_a$ in units of \qty{}{\gram\per\mole} (grams per mole). This is in order to produce more pretty numbers: for example, the molar mass of N$_2$ is \qty{28.01e-3}{\kilogram\per\mole} $=$ \qty{28.01}{\gram\per\mole}. However, be wary of units, and always remember to convert everything to SI units when doing calculations. For this you can simply divide the molar mass in units of \qty{}{\gram\per\mole} to units of \qty{}{\kilogram\per\mole} by dividing by $1000$:
+Note that many resources present the molar mass $M_a$ in units of \qty{}{\gram\per\mole} (grams per mole). This is in order to produce more pretty numbers: for example, the molar mass of N$_2$ is \qty{28.01e-3}{\kilogram\per\mole} $=$ \qty{28.01}{\gram\per\mole}. Be wary of units, and always remember to convert everything to SI units when performing calculations. In this case you can convert the molar mass from units of \qty{}{\gram\per\mole} to units of \qty{}{\kilogram\per\mole} by dividing by $1000$:
 \begin{align*}
     \underbrace{M_a}_{M_a\text{ in SI units of \qty{}{\kilogram\per\mole}}} = \underbrace{M_a}_{M_a\text{ in non-SI units of \qty{}{\gram\per\mole}}}\cdot\frac{\qty{1}{\kilogram}}{\qty{1000}{\gram}}
 \end{align*}
 
 \subsection{Multiple Constituents}\label{Multiple}
 
-In general, a planet's atmosphere is composed of multiple constituents. Our goal is to expand our vocabulary to describe the abundance of a certain constituent in the atmosphere.
+In general, a planet's atmosphere is composed of multiple constituents. Our goal now is to introduce some vocabulary so we can specify the abundance of a certain constituent in the atmosphere.
 
-It turns out that we (or the examiner) must make two ultimately arbitrary decisions if we wish to refer to a certain constituent's abundance. First, we can either refer to a constituent's abundance by its \textit{mass}, or by it's \textit{number} (in \textit{moles}). Second, we can either refer to it as a \textit{concentration} or a \textit{ratio}. These choices are ultimately arbitrary because one may freely convert between them with the molar mass using Equation \ref{density to number}.
+It turns out that we (or the examiner) must make two ultimately arbitrary decisions if we wish to refer to a certain constituent's abundance. First, we can either refer to a constituent's abundance by its \textit{mass}, or by its \textit{number} (in \textit{moles}). Second, we can either refer to a \textit{concentration} or a \textit{ratio}. These choices are ultimately arbitrary because one may freely convert between them with the molar mass using Equation \ref{density to number}.
 
-Suppose our atmosphere is composed of constituents  $\mathbb{S}=\{a,b,c,\ldots\}$. Each species $i\in\mathbb{S}$ has a molar mass of $M_i$ and a number density of $n_i$. Then we can refer to it's abundance as follows. All quantities are dimensionless.
+Suppose our atmosphere is composed of constituents  $\mathbb{S}=\{a,b,c,\ldots\}$. Each species $i\in\mathbb{S}$ has a molar mass of $M_i$ and a number density of $n_i$. Then we can refer to its abundance as follows. All quantities are dimensionless.
 
-\begin{fact}{Definitions Regarding Constituent Quantities}{Definition Multiple}\label{Definition Multiple}
-    We can refer to the amount of a certain constituent $a$ in an atmosphere as follows:\newline\newline
+\begin{fact}{Definitions Regarding Constituent Abundance}{Definition Multiple}\label{Definition Multiple}
+    We can refer to the abundance of a certain constituent $a$ in an atmosphere/ocean as follows:\newline\newline
     \begin{tabular}{|p{0.8cm}|p{6.5cm}|p{7.5cm}|}
         \hline
         & Fraction/Concentration & Mixing Ratio \\
@@ -94,14 +94,14 @@ Suppose our atmosphere is composed of constituents  $\mathbb{S}=\{a,b,c,\ldots\}
         \hline
     \end{tabular}\newline
 
-    where $n_i=$ the number density of $i$; $M_i=$ the molar mass of $i$; and $\rho_i=$ the density of $i$. We let $x_a$ and $q_a$ refer to the mole fraction and mass fraction of $a$, respectively.
+    where $n_i=$ the number density of $i$; $M_i=$ the molar mass of $i$; and $\rho_i=$ the density of $i$. We let $x_a$ and $q_a$ denote the mole fraction and mass fraction of $a$, respectively.
 
-    All formulations are equivalent, as one can freely convert between all four expressions using algebra or by using the following formula:
+    Which term you use is arbitrary, as you can freely convert between all four expressions using algebra or by using the following formula:
     \begin{align}\label{density to number}
         \rho_A=\frac{n_AM_A}{N_A}
     \end{align}
     where $N_A=\text{Avogadro's Number}\sim$ \qty{6.02e23}{\per\mole} (it's on your formula sheet).\footnote{
-        To avoid a small confusion, note how only number density $n_i$ is used in the definition for the \textit{molar} concentrations/mixing ratios. This is because the number of moles per volume of a substance is directly proportional to the number density: $n_i^{mol}=n_iN_A$. As such the $N_A$'s simply cancel top and bottom in the fraction.
+        To avoid a small confusion, note how only number densities $n_i$, not molar densities, are used in the definition for the \textit{molar} concentrations/mixing ratios. Using molar densities or number densities give the same result. This is because the number of moles per volume of a substance is directly proportional to the number density: $n_i^{mol}=n_iN_A$. As such, the $N_A$'s simply cancel top and bottom in the fraction.
     } 
 \end{fact}
 
@@ -113,7 +113,7 @@ We also introduce the concept of '\textbf{dilute}': some constituent $a$ is in t
 
 An important upshot of this is that, in the dilute limit, fractions/concentrations and mixing ratios are equivalent. In many problems, this simplifies the algebra massively, but you're not always allowed to assume that constituents are dilute (especially in exams!).
 
-Note however that there is some ambiguity in the 'and/or' in Equation \ref{Dilute}. For example, we might have a situation where $n_a\ll\sum n_i$ but \textbf{not} $\rho_a\ll\sum \rho_i$ (or vice versa). This occurs only if the molar masses $M_a$ and $M_i$ are not all of similar size (convince yourself that this is the case using Eqn. \ref{density to number}). This is almost never the case in scenarios we consider, so you can just treat the `and/or' as just an `and' in Equation \ref{Dilute}.
+Note also that there is some ambiguity in the `and/or' in Equation \ref{Dilute}. For example, we might have a situation where $n_a\ll\sum n_i$ but \textbf{not} $\rho_a\ll\sum \rho_i$ (or vice versa). This occurs only if the molar masses $M_a$ and $M_i$ are not all of similar size (convince yourself that this is the case using Eqn. \ref{density to number}). This is almost never the case in scenarios we consider, so you can just treat the `and/or' as just an `and' in Equation \ref{Dilute}.
 
 Sometimes, we'll see people refer to dilute constituents in terms of \textit{ppm} (parts per million) or \textit{ppmv} (parts per million volume). \textit{ppm} is defined as the \textit{Mass Fraction} or \textit{Mass Concentration} multiplied by $10^{6}$ ($q_a\times10^6$) while \textit{ppmv} is defined the \textit{Mole Fraction} or \textit{Molar Concentration} multiplied by $10^{6}$ ($x_a\times10^6$).
 
@@ -143,12 +143,13 @@ In \textit{Mole Fraction} $x_a$:
     \end{itemize}
 \end{itemize}
 \end{multicols}
+In Earth's ocean, the absolute salinity in units of \qty{}{\gram\per\kilogram} is defined as the mass fraction of salt. You can think of this as a $ppt$ (parts per thousand). The ocean hovers around \qty{30}{\gram\per\kilogram}.
 
 \section{Ideal Gases}
 
 \subsection{Single Constituent Atmosphere}
 
-An \textbf{Ideal Gas} is a theoretical (imaginary) gas consisting of molecules which interact only via perfectly elastic collisions. No real gas is ideal, but many gases, including 99\% of Earth's atmosphere (Nitrogen, Oxygen, and Argon), behave approximately like ideal gases under atmospheric conditions like ours. We start from the version of the ideal gas law that you've probably seen before, and assume that the gas is made up of a single constituent $a$ for simplicity:
+An \textbf{Ideal Gas} is a theoretical gas consisting of molecules which interact only via perfectly elastic collisions. No real gas is ideal, but many gases, including 99\% of Earth's atmosphere (Nitrogen, Oxygen, and Argon), behave approximately like ideal gases under atmospheric conditions like ours. Ideal gases obey the ideal gas law, and we'll start from the version of the ideal gas law that you've probably seen before (and assume that the gas is made up of a single constituent $a$ for simplicity):
 \begin{align}\label{Ideal Gas Primitive}
     \boxed{pV=N_ak_BT}
 \end{align}
@@ -181,13 +182,13 @@ The ideal gas law featuring only intensive variables of $p$, $\rho$, and $T$.
 
 \subsection{Multiple Constituents in an Atmosphere and Dalton's Law}\label{Multiple Dalt}
 
-What if we now have multiple constituents in an atmosphere, all with different molar masses $M_i$? We define the \textit{partial pressure} $p_a$ of some constituent \textit{a} as the pressure the gas \textit{would} have if you removed all other constituents and left $a$ on its own. For an ideal gas, the total pressure is the sum of all the partial pressures. Dalton's Law (\ref{Dalton's Law}) allows us to relate the partial pressure of an individual constituent $p_a$ to the total pressure $p$ if all constituents are ideal gases:
+What if we now have multiple constituents in an atmosphere, all with different molar masses $M_i$? We first must define the \textit{partial pressure} $p_a$ of some constituent \textit{a} as the pressure the gas \textit{would} have if you removed all other constituents and left $a$ on its own. Dalton's Law (\ref{Dalton's Law}) allows us to relate the partial pressure of an individual constituent $p_a$ to the total pressure $p$ if all constituents are ideal gases:
 \begin{align}\label{Dalton's Law}
     \boxed{\frac{p_a}{p}=\frac{n_a}{\sum\limits_{i\in\mathbb{S}} n_i}=x_a}
 \end{align}
-So Equation \ref{Dalton's Law} says that the partial pressure (in an ideal gas) is set by the \textit{mole fraction}/\textit{molar concentration} $x_a$\footnote{
+So Equation \ref{Dalton's Law} says that the partial pressure (of an ideal gas) is set by the \textit{mole fraction}/\textit{molar concentration} $x_a$\footnote{
     In the dilute limit, it is equivalently set by the \textit{molar mixing ratio}.
-}: it is not affected in any way by the \textit{mass fraction} $q_a$ or \textit{mass mixing ratio}. We can further verify that, according to Dalton's Law, $p=\sum\limits_{i\in\mathbb{S}} p_i$ (since $\sum\limits_{i\in\mathbb{S}} x_i=1$).
+}: it is not affected in any way by the \textit{mass fraction} $q_a$ or \textit{mass mixing ratio}. We can further verify that, according to Dalton's Law, $p=\sum\limits_{i\in\mathbb{S}} p_i$ (since $\sum\limits_{i\in\mathbb{S}} x_i=1$): the total pressure is the sum of all the partial pressures.
 
 Now we apply the ideal gas law (Eqn. \ref{Ideal Gas Primitive}) individually to each constituent:
 \begin{align*}
@@ -214,7 +215,7 @@ We then sum up the equation above for each constituent and recall that $p=\sum\l
 \end{align*}
 We should focus on the last three lines of algebra to remember two key facts:
 \begin{enumerate}
-    \item The specific gas constant $R$ for a multiple constituent gas is the gas constant $R^*$ divided by the total effective molar mass $\bar{M}$ (analogous to the single component case):
+    \item The specific gas constant $R$ for a gas consisting of multiple constituents is the gas constant $R^*$ divided by the \textbf{total effective molar mass} $\bar{M}$ (analogous to the single component case):
     \begin{align}
         R=\frac{R^*}{\bar{M}}
     \end{align}
@@ -225,17 +226,17 @@ We should focus on the last three lines of algebra to remember two key facts:
     In the single component case, $\bar{M}=M_a$.
 \end{enumerate}
 
-For the Earth (excercise), $\bar{M}\approx$ \qty{29e-3}{\kilogram\per\mole} so the \textbf{Specific Gas Constant} $R\approx$ \qty{287}{\joule\per\kilogram\per\kelvin} (it will be on your formula sheet).
+For the Earth (excercise: consider only Nitrogen, Oxygen, and Argon), $\bar{M}\approx$ \qty{29e-3}{\kilogram\per\mole} so the \textbf{Specific Gas Constant} $R\approx$ \qty{287}{\joule\per\kilogram\per\kelvin} (it will be on your formula sheet).
 
 
 \section{Heat Capacity and the Equipartition Theorem}\label{Equipartition}
 
-The heat capacity of an object is a measure of how much heat (which has dimensions of energy) is required to change an object's temperature. Let  $\dbar Q=$ the heat transferred to an object and $dT=$ the change in temperature of the object. Then the heat capacities of the object are:
+The heat capacity of an object is a measure of how much heat (which has dimensions of energy) is required to change an object's temperature. Let   $\dbar Q=$ the heat transferred to an object and $dT=$ the change in temperature of the object. Then the heat capacities of the object are:
 \begin{align}
     c_v=\left(\frac{\dbar Q}{dT}\right)_V\\
     c_p=\left(\frac{\dbar Q}{dT}\right)_p
 \end{align}
-where the subscripts of $V$ and $p$ mean that the volume and pressure, respectively, are held constant as heat is added/removed from the system. Notationally, when we write $c_v$ or $c_p$, we usually mean the specific heat capacities: the heat capacities per mole or, more commonly, per mass. In exactly the same way as the specfici gas constant $R$, if not specified, assume that $c_p, c_v$ are heat capacities \textit{per unit mass} (remember, \textit{intensive} variables!), and for multiple constituents, we can calculate specific heat capacities from molar heat capacities using the effective molar mass $\bar{M}$.
+where the subscripts of $V$ and $p$ mean that the volume and pressure, respectively, are held constant as heat is added/removed from the system. Notationally, when we write $c_v$ or $c_p$, we usually mean the specific heat capacities: the heat capacities per mole or, more commonly, per mass. In exactly the same way as the specfic gas constant $R$, if not specified, assume that $c_p$ and $c_v$ denote the heat capacities \textit{per unit mass} (remember, \textit{intensive} variables!). For multiple constituents, we can calculate the specific heat capacities from molar heat capacities using the effective molar mass $\bar{M}$.
 
 It's useful to remember that the heat capacity itself often depends on the temperature. However, sometimes we'll assume that it does not for analytical progress (and not realism).
 
@@ -303,17 +304,19 @@ where $f=$ the number of \textit{fully excited} degrees of freedom an individual
 
 \subsection{"Excited" and "Frozen-out" Degrees of Freedom}
 
-But what does it mean for a degree of freedom to be `\textit{fully excited}' or for the temperature to be `\textit{high enough}'? The constituents of gases obey the laws of quantum mechanics (as do all things, we think). One way in which quantum mechanics differs from classical mechanics is that oftentimes (but not always) the energy that a system can have is \textbf{discretised} rather than \textbf{continuous}. For example, a system can only have energies specifically equal to $0$, $E$, $1.8E$,\ldots This means that the system can only receive or give energy in discrete amounts called 'quanta' (equal to the difference in energy between two discretely spaced energy levels) – if you can't give them these exact amounts of energy, then you can't give them energy at all.
+But what does it mean for a degree of freedom to be `\textit{fully excited}' or for the temperature to be `\textit{high enough}'? 
+
+To answer these questions, we must briefly discuss quantum mechanics, because the constituents of gases obey the laws of quantum mechanics (as do all things, we think). One way in which quantum mechanics differs from classical mechanics is that often (but not always) the energy that a system can have is \textbf{discretised} rather than \textbf{continuous}. For example, a system may only have energies specifically equal to $0$, $E$, $1.8E$,\ldots This means that the system can only receive or give energy in discrete amounts called 'quanta' (equal to the difference in energy between two discretely spaced energy levels) – if the molecule cannot receive these exact amounts of energy, then the molecule cannot receive energy at all.
 
 This leads to a uniquely quantum mechanical effect\footnote{
     This also explains the \href{https://en.wikipedia.org/wiki/Ultraviolet_catastrophe}{ultraviolet catastrophe}!
-}: if the temperature is too low, the molecule might only get $0.001E$ energy, and is highly unlikely to get energy even close to $E$. As such, the molecule will never get enough energy to jump to a higher energy level. We say that there is not enough energy to `excite' that degree of freedom and that that degree of freedom is `frozen' out. More rigourously, if $k_BT\ll E$, where $E$ is the size of the energy quanta of some degree of freedom, then that degree of freedom is frozen out. If $k_BT\gg E$, then that degree of freedom is `\textit{fully excited}', and this is what it means for the temperature to be `\textit{high enough}'.
+}. Consider a molecule currently with energy equal to $0$, with the lowest energy level above this with energy $E$. If the temperature is too low, the molecule might only get $0.001E$ energy on average, and is highly unlikely to get energy even close to $E$. As such, the molecule will never get enough energy to jump to the higher energy level (or any energy level higher than that). We say that there is not enough energy to `excite' that degree of freedom and that that degree of freedom is `frozen' out. More rigourously, if $k_BT\ll E$, where $E$ is the size of the energy quanta of some degree of freedom, then that degree of freedom is frozen out. If $k_BT\gg E$, then that degree of freedom is `\textit{fully excited}', and this is what it means for the temperature to be `\textit{high enough}'.
 
 The size of this quanta of energy $E$ depends on the system, but for the constituents in atmospheres, the quanta for vibrational degrees of freedom tend to be very large. For example, the energy of the first vibrational mode of Nitrogen is $E\sim$ \qty{4.7e-20}{\joule}. This seems small until you remember that this is \textit{per molecule}. The temperature required for $k_BT\sim E$ is $T\sim E/k_B\sim$ \qty{3400}{\kelvin}.
 
 Earth's atmosphere mainly consists of a diatomic gas, so we might expect $f=7$. However, $f\approx5$ because the translational degrees of freedom are all fully excited, but only $2$ rotational degrees of freedom are excited and none of the vibrational degrees of freedom are (See Figure \ref{f=5}. I have drawn the excited degrees of freedom as thick magenta lines, and the frozen degrees of freedom as dashed thin magenta lines). 
 
-In reality, the heat capacity \textit{per mole} (and \textit{not} per mass) at constant volume is $c_v^*\approx$ \qty{20.83}{\joule\per\kelvin\per\mole}. $R^*\approx$ \qty{8.314}{\joule\per\kelvin\per\mole}, so our prediction would be $c_v^*\approx$ \qty{20.79}{\joule\per\kelvin\per\mole}, which is actually very close to the measured value!
+In reality, the heat capacity \textit{per mole} (and \textit{not} per mass) at constant volume is $c_v^*\approx$ \qty{20.83}{\joule\per\kelvin\per\mole}. $R^*\approx$ \qty{8.314}{\joule\per\kelvin\per\mole}, so our prediction would be $c_v^*\approx 5R^*/2\approx$ \qty{20.79}{\joule\per\kelvin\per\mole}, which is actually very close to the measured value!
 
 \begin{figure}[H]
     \centering
@@ -365,7 +368,7 @@ In reality, the heat capacity \textit{per mole} (and \textit{not} per mass) at c
     \label{f=5}
 \end{figure}
 
-Of course, the \hyperref[Equipartition Eqn]{Equipartition Theorem} says nothing regarding situations in which a degree of freedom is not fully excited nor frozen out. We are (perhaps only by coincidence) lucky that the situation is relatively simple on Earth; since the temperature lies within a range such that certain degrees of freedom are very excited and others are very frozen, we can very easily explain and predict that the atmospheric heat capacity is $f\approx 5$ using the \hyperref[Equipartition Eqn]{Equipartition Theorem}. However, you should be aware that the situation is not so simple on many other planetary atmospheres. 
+Of course, the \hyperref[Equipartition Eqn]{Equipartition Theorem} says nothing regarding situations in which a degree of freedom is not fully excited nor frozen out. We are (perhaps only by coincidence) lucky that the situation is relatively simple on Earth; since the temperature lies within a range such that certain degrees of freedom are very excited and others are very frozen, we can very easily explain and predict that the atmospheric heat capacity is approximately $5R^*/2$ using the \hyperref[Equipartition Eqn]{Equipartition Theorem}. However, you should be aware that the situation is not so simple on many other planetary atmospheres.
 
 \section{Hydrostatic Balance}
 
@@ -393,13 +396,13 @@ Hydrostatic Balance governs the vertical pressure variation in a fluid if we ass
         \frac{dp}{dz}=-\rho g
     }
     \end{equation}
-Pressure decreases with height in order to balance the force of gravity.
+Pressure decreases with altitude in order to balance the force of gravity.
 \end{fact}
 \noindent There are two very useful facts that should be noted at this time. 
 
 First note that $\rho,g>0$, so $\frac{dp}{dz}<0$ always. This means that $p$ is monotonic in $z$, implying that there is always a one-to-one relation between $p$ and $z$. This allows us to convert between \textbf{height coordinates} and \textbf{pressure coordinates}. For example, in \textit{height coordinates}, we might let $\vec{u}=\vec{u}(x,y,z)$, $p=p(x,y,z)$. In this case, we would have pressure $p$ at some height $z$ (and horizontal position) as  a variable. In \textit{pressure coordinates}, on the other hand, we let $\vec{u}=\vec{u}(x,y,p)$, $z=z(x,y,p)$. In this case, we would have the height $z$ of some given pressure surface $p$ (and horizontal position) as a variable.
 
-We will consistently be plotting atmospheric properties (e.g., humidity) in pressure coordinates (as opposed to height coordinates) throughout this course. This is for three reasons. First, it is much easier for instruments to measure the pressure than the height. In fact, this is how airplanes measure `barometric' height using a pressure altimeter \cite{Altimeter}. Second, most problems we encounter will require only knowledge of a variable's dependence on pressure. Third, pressure is a fundamental thermodynamic variable, and as such also gives us information regarding the thermodynamic properties of the system, as well as the (rough) height.
+We will consistently be plotting atmospheric properties (e.g., humidity) in pressure coordinates (as opposed to height coordinates) throughout this course. This is for three reasons. First, it is much easier for instruments to measure the pressure than the height. In fact, this is how airplanes measure `barometric' height using a pressure altimeter \cite{Altimeter}. Second, most problems we encounter will require only knowledge of a variable's dependence on pressure. Third, pressure is a fundamental thermodynamic variable, and as such also gives us information regarding the thermodynamic properties of the system, as well as the (rough) height. We convert to pressure coordinates explicitly in Section \ref{Pressure Coords}.
 
 Second, note that if we rewrite Eqn. \ref{Hydrostatic Balance} in differential form, we get a very useful relation between the difference in pressure between two vertically separated points, and the mass per unit area within that layer.
 \begin{align}\label{Hydrostatic Differential}
@@ -463,7 +466,7 @@ If we make the approximation that $T(z)\sim\text{const}$ (which is not a bad app
 \end{align*}
 where $H=\frac{RT}{g}$ is the scale height. Plugging in Earth-like numbers\footnote{
     $R\approx$ \qty{290}{\joule\per\kilogram\per\kelvin}, $T\approx$ \qty{240}{\kelvin}, $g\approx$ \qty{9.8}{\meter\per\square\second}. Only keeping two significant figures because we're interested in rough estimates here!
-} gives $H\approx\qty{6}{\kilo\meter}$. This means that, roughly, the pressure falls off by a factor of $e$ every $7.1$ kilometers. Equivalently, the pressure falls off by a factor of $10$ every $H\ln 10\approx\qty{16}{\kilo\meter}$.
+} gives $H\approx\qty{7.1}{\kilo\meter}$. This means that, roughly, the pressure falls off by a factor of $e$ every $7.1$ kilometers. Equivalently, the pressure falls off by a factor of $10$ every $H\ln 10\approx\qty{16}{\kilo\meter}$.
 
 Referring to the figure below, you can see that the pressure falls by a factor of $10$ approximately every \qty{17}{\kilo\meter}, which is pretty close!
 
@@ -480,6 +483,8 @@ Referring to the figure below, you can see that the pressure falls by a factor o
     \caption{Radiosonde measurement of the Earth. Note the log scale on the pressure axis, so if $p\sim e^{-z}$ we should expect a straight line, which we remarkably see. Notice how smooth the measurement is, despite the fact that it's a single radiosonde at a single  (horizontal) point in space. Figure from Ray's book \cite{Ray}.}
     \end{subfigure}
 \end{figure}
+
+Recall that $R=R^*/\bar{M}$. This means that if we know the temperature, gravitational acceleration, and scale height of another planet's atmosphere, we can deduce the effective molar mass of the constituents of the atmosphere, and thus gain information on the planet's atmospheric composition! 
 
 \subsection{Example 3: Solid Rock Planet}
 
@@ -522,7 +527,7 @@ We begin with some empirical observations of planetary atmospheres:
     \caption{Vertical Temperature Profiles of Planets from Ray's book \cite{Ray}.}
 \end{figure}
 
-In all five plots, we see observe a sharp decrease of temperature with pressure in the lower portion of the atmosphere (which we call the \textbf{troposphere}), until a critical point (\textbf{tropoause}) in which the temperature decreases more slowly with height or even increases (\textbf{stratosphere})\footnote{
+In all five plots, we see a sharp decrease of temperature with pressure in the lower portion of the atmosphere (which we call the \textbf{troposphere}), until a critical point (\textbf{tropoause}) in which the temperature decreases more slowly with height or even increases (\textbf{stratosphere})\footnote{
     I should note that I'm adhering to Ray's preferred terminology here. Ray uses \textbf{stratosphere} to refer to places in the atmosphere where radiative transfer is more dominant, which (we will see) causes a shallower decrease of temperature with height. This contrasts the more typical usage of the term \textbf{stratosphere}, which requires an increase of temperature with height. This only occurs if there is some heat source from above. In the case of the Earth, this heat source is due to the location of ozone, which is a very effective absorber of UV radiation. However, I prefer Ray's definition, due to reasons elaborated after I derive the \hyperref[Dry Adiabat Box]{Dry Adiabat} and the \hyperref[Dry Stability Box]{Dry Stability Criterion}. 
 }.
 
@@ -596,22 +601,22 @@ If we make the crucial assumption that the parcel exchanges a negligible amount 
     Why can we only approximate $ds=0$ and not set $ds=0$? It is because the relation  $\dbar Q=T\,ds$ (where  $\dbar Q$ is the heat transfer) holds only if the process is reversible, but we have made no such assumptions here. If the process is irreversible, as it probably is, then  $\dbar Q\leq T\,ds$ and so it is possible for  $\dbar Q=0$ and $ds\neq 0$.
 }. In reality, there is some level of heat transfer ($ds\neq0)$, but these processes are typically much slower (timescale $\sim$ days/weeks) than the changes in pressure caused by upwards/downwards parcel motion (timescale $\sim$ hours). We can thus conclude that:
 \begin{align*}
-    0 & = c_p\,d\left(\ln \left(T(p)^\frac{-R}{c_p}\right)\right)\\
+    0 & = c_p\,d\left(\ln \left(T(p)^\frac{-R}{c_p}\right)\right)
 \end{align*}
 and so we derive:
 \begin{fact}{The Dry Adiabat}{Dry Adiabat Box}\label{Dry Adiabat Box}
-The dry adiabat governs the temperature of an air parcel that is adiabatically lifted or dropped (due to, e.g., convection or dynamics). The temperature increases as pressure increases. This is because, as the parcel moves to a location where the ambient atmospheric pressure is higher, the atmosphere does work on the air parcel to compress it and increase its energy and therefore increase its temperature.
-    \begin{gather}
-    \label{Dry Adiabat Slope}
-    \BOX{
-        \frac{d\ln T}{d\ln p}=\frac{R}{c_p}
-    }\\
-    \label{Dry Adiabat}
-    \BOX{
-        T(p)=T_0\left(\frac{p}{p_0}\right)^\frac{R}{c_p}
-    }
-    \end{gather}
-If we crucially assume that \textbf{convection} is the \textbf{dominant vertical energy transport mechanism} in the atmosphere then the \textbf{atmosphere follows a dry adiabat}. This is somewhat accurate for Earth's troposphere.
+    The dry adiabat governs the temperature of an air parcel that is adiabatically lifted or dropped (due to, e.g., convection or dynamics). The temperature increases as pressure increases. This is because, as the parcel moves to a location where the ambient atmospheric pressure is higher, the atmosphere does work on the air parcel to compress it and increase its energy and therefore increase its temperature.
+        \begin{gather}
+        \label{Dry Adiabat Slope}
+        \BOX{
+            \frac{d\ln T}{d\ln p}=\frac{R}{c_p}
+        }\\
+        \label{Dry Adiabat}
+        \BOX{
+            T(p)=T_0\left(\frac{p}{p_0}\right)^\frac{R}{c_p}
+        }
+        \end{gather}
+    If we crucially assume that \textbf{convection} is the \textbf{dominant vertical energy transport mechanism} in the atmosphere then the \textbf{atmosphere follows a dry adiabat}. This is somewhat accurate for Earth's troposphere.
 \end{fact}
 \subsection{Physical Interpretation}
 
@@ -619,25 +624,27 @@ Equation \ref{Dry Adiabat} is the \textbf{Dry Adiabat}. `\textbf{Dry}' because w
 
 Physically \ref{Dry Adiabat} corresponds to a parcel starting at some temperature and pressure ($T_0,p_0$) and being displaced upwards/downwards. When it is displaced upwards/downwards, it undergoes negligible diabatic heating and entrainment, so it's temperature does not change that way. However, when the ambient pressure changes, it expands/contracts, and the air parcel does positive/negative work on its surroundings. This \textit{decreases}/\textit{increases} the internal energy of the parcel, thus decreasing/increasing the temperature. That's why $T$ decreases as $p$ decreases in \ref{Dry Adiabat}. 
 
-However, we should we wary of the limits of our conclusions here. Recall that we started this section considering an air parcel, not the entire atmosphere! We must make a final, crucial assumption that rising and falling air parcels (convection) are the dominant mechanisms for heat transport within some domain in the atmosphere (e.g., from the ground to a certain height – for example the tropopause). \textit{This} implies that the temperature profile of the atmosphere within this domain follows the \textbf{Dry Adiabat}. If this domain extends to the ground, we may take the initial conditions initial conditions $(p_0,T_0)$ to be the temperature and pressure of the surface $(p_s,T_s)$.
+However, we should be wary of the limits of our conclusions here. Recall that we started this section considering an air parcel, not the entire atmosphere! We must make a final, crucial assumption that rising and falling air parcels (convection) are the dominant mechanisms for heat transport within some domain in the atmosphere (e.g., from the ground to a certain height – for example the tropopause). \textit{This} implies that the temperature profile of the atmosphere within this domain follows the \textbf{Dry Adiabat}. If this domain extends to the ground, we may take the initial conditions initial conditions $(p_0,T_0)$ to be the temperature and pressure of the surface $(p_s,T_s)$.
 
-This assumption is not bad in the Earth's troposphere partly because here the atmosphere is heated from below: the atmosphere is transparent to the radiation from the sun, which penetrates through the atmosphere and heats the ground. The ground then heats the air above it, which becomes buoyant and convects. Similarly, Jupiter's internal energy leakage maintains a convective troposphere. However, not all planetary atmospheres and not even all of Earth's atmosphere obey this assumption.
+This assumption is not bad in the Earth's troposphere, partly because here the atmosphere is heated from below: the atmosphere is transparent to the radiation from the sun, which penetrates through the atmosphere and heats the ground. The ground then heats the air above it, which becomes buoyant and convects. Similarly, Jupiter's internal energy leakage maintains a convective troposphere. However, not all planetary atmospheres and not even all of Earth's atmosphere obey this assumption.
 
 Finally, now, we can see now why many atmospheres have temperatures decreasing as pressure decreases or height increases. The first fact is readily noted from Eqn. \ref{Dry Adiabat}. We can show the second fact by combining the Dry Adiabat \ref{Dry Adiabat}, \hyperref[Hydrostatic Balance]{Hydrostatic Balance}, and \hyperref[Ideal Gas]{Ideal Gas} to obtain an equation linking temperature with height:
-\begin{align*}
-    \frac{R}{c_p}&=\frac{d\ln T}{d\ln p}
+\begin{align}
+    \frac{R}{c_p}&=\frac{d\ln T}{d\ln p}\nonumber
     \\
     &=\frac{d T}{d z}\frac{p}{T}\frac{dz}{d p}
-    &\text{; }& \text{chain rule}\\
+    &\text{; }& \text{chain rule}\nonumber
+    \\
     &=\frac{d T}{d z}\frac{p}{T}(-\rho g)^{-1} 
-    &\text{; }& \text{\ref{Hydrostatic Balance}}
+    &\text{; }& \text{\ref{Hydrostatic Balance}}\nonumber
     \\
     &=\frac{d T}{d z}\frac{p}{T}\frac{RT}{p}(- g)^{-1}
-    &\text{; }& \text{\ref{Ideal Gas}}
+    &\text{; }& \text{\ref{Ideal Gas}}\nonumber
     \\
+    \label{Dry Adiabatic Lapse Rate}
     &\therefore\,
     \boxed{\frac{dT}{dz}=-\frac{g}{c_p} = -\Gamma_d} &\text{; }& \Gamma_d=\text{ Dry Adiabatic Lapse Rate}\approx\text{\qty{10}{\kelvin\per\kilo\metre}}
-\end{align*}
+\end{align}
 
 \begin{figure}[H]
     \centering
@@ -675,7 +682,7 @@ However, (dry) convection as a mechanism always perturbs an existing atmospheric
 
 \section{Potential Temperature}
 
-In basic thermodynamics, we often introduce the concept of temperature operationally in the following way: suppose we have two objects $A$ and $B$, with temperatures $T_A$ and $T_B$, respectively, and we place them in contact with each other. `Temperature' encodes whether heat will flow, and in which way. If $T_A=T_B$, no heat will flow. If $T_B>T_A$, heat will flow from $B$ to $A$, and vice versa if $T_B<T_A$.
+In basic thermodynamics, we often introduce the concept of temperature operationally in the following way: suppose we have two objects $A$ and $B$, with temperatures $T_A$ and $T_B$, respectively, and we place them in contact with each other. `Temperature' encodes whether heat will flow, and which way the heat will flow. If $T_A=T_B$, no heat will flow. If $T_B>T_A$, heat will flow from $B$ to $A$, and vice versa if $T_B<T_A$.
 
 However, this will not work in atmospheric thermodynamics. Suppose we have two parcels of air called $A$ and $B$ at pressures $p_A$ and $p_B$\footnote{We are getting used to using pressure as a coordinate rather than height, remember!} with temperatures $T_A$ and $T_B$, respectively. Suppose we displace parcel $A$ in order to place it in contact with parcel $B$ (with no entrainment ($dN=0$) or diabatic heating ($dS=0$)).\vspace{5mm}
 
@@ -707,7 +714,7 @@ Since the $\ln T(p)^\frac{-R}{c_p}$ term is within the differential, we can free
 
 As you can see, if $ds=0$, as we assumed during convection, then $d\theta=0$. Therefore, as we lift or drop a parcel, $\theta$ is \hyperref[Material Conservation]{materially conserved}.\footnote{In the Ocean, even without radiative heating processes, $\theta$ is not conserved. This is because there is a third thermodynamic state variable, salinity, which will change the temperature of sea water without adding any heat. Oceanographers have come up with another kind of materially conserved temperature in the ocean: \textit{Conservative Temperature}.}
 
-Recalling that $TdS=dQ=$ heat, we find that the potential temperature is a measure of the extent to which diabatic/heat transfer processes have heated or cooled our parcel of air. It's essentially a measure of how wrong we were to assume that $dS=0$ in our derivation of \hyperref[Dry Adiabat]{Dry Adiabat}.
+Recalling that $TdS=dQ=$ heat, we find that the potential temperature is a measure of the extent to which diabatic/heat transfer processes have heated or cooled our parcel of air. It can be a proxy for how wrong we were to assume that $dS=0$ in our derivation of \hyperref[Dry Adiabat]{Dry Adiabat}.
 
 \section{Convection}\label{Convection}
 
@@ -738,7 +745,7 @@ where $F_b=$ the buoyancy force. Physically, the buoyant force is intuitive: if 
     \boxed{F_b=g\left( \frac{T_p-T_a}{T_a} \right)}\\
     \boxed{F_b=g\left( \frac{\theta_p-\theta_a}{\theta_a} \right)}
 \end{align}
-So a parcel will convect if it is warmer or has a higher potential temperature than its ambient surroundings.
+So a parcel will convect and rise if it is warmer or has a higher potential temperature than its ambient surroundings.
 
 Finally, another way of thinking of the buoyant force is as a kind of `\textit{reduced gravity}'. The fluid acts like its on a planet of gravitational acceleration $g'=g\left( \frac{\rho_a-\rho_p}{\rho_p} \right)$ not $g$. This will be how we think of things in Chapter \ref{Shallow Water System}. 
 
@@ -861,7 +868,7 @@ Using the hydrostatic relation and the fact that $g>0,\rho>0$, we get our criter
     \BOX{\frac{d\theta}{dz}<0}
 \end{align}
 
-Therefore, if potential temperature decreases with height, then our atmosphere is unstable. This makes physical sense. Recall that potential temperature takes the place of temperature in atmospheric thermodynamics in the sense that it is \textit{potential temperature} that stays the same when you lift/drop and air parcel. If you lift an air parcel, its potential temperature stays the same. However, if the ambient potential temperature decreases with height, then it will be colder than the air parcel, and the air parcel will keep rising.
+Therefore, if potential temperature decreases with height, then our atmosphere is unstable. This makes physical sense. Recall that potential temperature takes the place of temperature in atmospheric thermodynamics in the sense that it is \textit{potential temperature} that stays the same when you lift/drop and air parcel. If you lift an air parcel, its potential temperature stays the same. However, if the ambient potential temperature decreases with height, then the ambient air will be colder than the air parcel, and the air parcel will keep rising.
 
 \begin{figure}[H]
     \centering
