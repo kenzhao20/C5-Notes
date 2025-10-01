@@ -210,7 +210,7 @@ This differential heating causes horizontal temperature gradients, which in turn
 
     I prefer the following explanation. Assume that differential heating did not obtain, and that the poles and equator were in perfect equilibrium, such that the absorbed solar at each point exaclty equalled the OLR. Because the absorbed solar is more at the equator than the poles, that means the OLR must be more at the equator than the poles. Loosely following the properties of emission (recall  \hyperref[Emission Box]{this information on emission}) suggests that the poles must be colder than the poles. 
 
-    This implies that there must be temperature gradients, and where there are temperature gradients there are density gradients. These density gradients imply that 
+    This implies that there must be horizontal temperature gradients, and where there are temperature gradients there are density gradients. These horizontal density gradients generate instability, because a system with the minimum amount of gravitational potential energy will only have \textit{vertical} density gradients: hence motion.
 }
 
 \begin{figure}[H]
@@ -222,9 +222,11 @@ This differential heating causes horizontal temperature gradients, which in turn
 
 
 
-\section{What is Special About `Geophysical' Fluid Mechanics?}
+\section{What is Special About `Geophysical' Fluid Mechanics?}\label{GFD Special}
 
 It is also important to consider what sets \textbf{Geophysical Fluid Dynamics} apart from most other Fluid Dynamics. There are two important properties that \textbf{Geophysical Fluid Dynamics} aim to investigate: \textbf{stratification} and \textbf{rotation}. The effects of these will pop up again and again throughout \hyperref[Geophysical Fluid Dynamics]{GFD}.
+
+\subsection{Stratification}
 
 \textbf{Stratification} is important because the fluids in the atmospheres and oceans are affected by gravity and vary in density. 
 
@@ -235,10 +237,49 @@ You have already seen the effect of stratification when we derived the \hyperref
     RT \frac{d \rho}{dz} + \frac{}{}
 \end{align*}
 
+REFER TO THE BUOYANCY FREQUENCY SECTION IN THE CLOUDS SECTION
 
-\textbf{Rotation} is important because, generally, planets rotate. 
+\subsection{Rotation}
 
+\textbf{Rotation} is important because, generally, planets rotate, and the equations of motion ensure that fluid parcels must obey conservation of angular momentum. The idea is as follows: if a fluid parcel is at rest relative to the surface of the Earth, its total angular momentum will actually differ depending on where it is. If it is at the poles, it will have no angular momentum, whereas if it is at the equator, it will have a large amount of angular momentum.
 
+In the previous section, we discussed how differential heating implies that there must be some motion. This motion is required to close the energy budget. Becuase there both is net radiative heating at the equator and net radiative cooling at the poles, and the equator and poles are not heating and cooling over time, there must be some mechanism transfering energy from the equator to the poles. This is achieved by the atmospheres and oceans.
+
+Let us then consider a extremely simple model of this: \textbf{Hadley's Model} of convection as a zonally (zonally means east-west) symmetric equator-to-pole convection cell:
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        \draw (0,0) -- (5,0) arc[start angle=0, end angle=90, radius=5cm] -- cycle;
+        %\draw (5,0) -- (0,0) -- (0,5);
+        \draw (0,0) -- (3,0) arc[start angle=0, end angle=90, radius=3cm] -- cycle;
+        %\draw (3,0) -- (0,0) -- (0,3);
+    \end{tikzpicture}
+    \caption{Convection Cell}
+\end{figure}
+
+Let us not consider a fluid parcel in this convection cell. We assume that this fluid parcel starts out at the equator at rest (relative to the surface of the Earth) and moves north. We also assume that there are no zonal forces (i.e., no east-west forces) acting on the fluid parcel. This is a highly unrealistic assumption. We further assume that the radius of the Earth $a$ is much larger than the height of the fluid parcel above the Earth.
+
+We know that the total angular momentum of the parcel is approximately equal to the following:
+\begin{align*}
+    L(\phi,u) = \underbrace{a\cos\phi}_{\vec{r}} \underbrace{\left( \Omega a \cos \phi + u \right)}_{\vec{u}}
+\end{align*}
+where $a=$ the radius of the Earth, $\phi=$ the latitude, $\Omega=$ the angular velocity of the Earth, and $u=$ the zonal velocity of the fluid parcel relative to the surface of the Earth. The angular momentum is equal to $\vec{r}\times\vec{u}$, the radius $\vec{r}$ times the velocity $\vec{u}$. The radius is equal to $a\cos\phi$ (as it is the radius from the axis of rotation), and the velocity is equal to $\Omega a \cos \phi + u$, the sum of the velocity from the rotation of the Earth and the velocity relative to the Earth.\footnote{
+    This is, strictly speaking, incorrect. The angular momentum is a vector (actually a pseudo-vector), so it’s strange to say that the angular momentum is equal to a scalar value. To be more precise, $L(\phi,u)$ is the component of the angular momentum in the direction aligned with the angular velocity of the Earth. In other words parallel the vector pointing directly upwards from the ground at the north pole.
+}
+
+Since there are no zonal forces on the air parcel, this implies that the angular momentum is conserved. Setting $L(\phi,u)=const$ imposes the constraint $u=u(\phi)$. We use our assumption that, at $\phi=0$ (the equator), the $u=0$ (fluid parcel is at rest). Therefore, some simple algebra gives us the following relation:
+\begin{align*}
+    \boxed{u=a\Omega \left( \frac{1}{\cos\phi}-\cos\phi
+    \right)}
+\end{align*}
+
+Essentially, what this says is that, as the air parcel moves north (as $\phi$ increases), the zonal velocity $u$ also increases! Conservation of angular velocity imposes that the air parcel is deflected as it moves northwards, so fluid parcel motion cannot always be as straightforward on a rotating planet as on a non-rotating planet.
+
+Of course, this model is highly unrealistic. Firstly, it predicts that $u\to\infty$ at $\cos\phi\to\pi/2$, which is clearly unphysical. Secondly, from observations, we pretty much never observe $u\geq\qty{150}{\metre\per\second}$, so the model fails much earlier than $u\to\infty$. In reality, our assumption that there were no zonal forces was a very inaccurate assumption: as horizontal velocities become arbitrarily large, these induce large shears (a shear is when a layer of stuff (e.g., air) is sliding over another layer of stuff (e.g., air)), which in turn induce large forces either from viscous or turbulent eddy stresses.\footnote{For a cursory look at the effect of vertical stresses, refer to this section on \hyperref[Ekman Transport]{Ekman Transport}!}
+
+However, the general moral of the story does apply: there are conservation laws that constrain motion more on rotating planets than non-rotating planets. We find that this will actually be the Material Conservation of Potential Vorticity, but this is jumping ahead a bit.
+
+Looking back, this should be seen as as cursory, highly unrealistic taste of the effect that stratification and rotation might have on dynamics. It won't be much of an exaggeration ot say that we'll spend most of GFD discussing the effects of rotation.
 
 \chapter{The Equations of Motion}\label{EoM GFD}
 
@@ -470,12 +511,14 @@ After eliminating small terms, we get our final simplified set of equations.
     \end{multicols}
 \end{fact}
 
+Physically, the \textbf{coriolis parameter} $f=2\Omega \sin \phi$ is the planetary vorticity: it is the vorticity that a fluid parcel at rest (relative to the surface of the Earth) has in the $z$-direction.
+
 We will mostly be dealing with the horizontal momentum equation \ref{Horizontal Approximate}, so it is worth detailing the meanings of each terms. The first term, $\frac{D\vec{u}_h}{Dt}$ is the material derivative of $\vec{u}_h$. It represents the acceleration of $\vec{u}_h$ and the advection of $\vec{u}_h$. The $f\vec{k}\times\vec{u}_h$ term is the acceleration due to coriolis. The $\frac{1}{\rho}\vec{\nabla}_h p$ is the force due to the horizontal pressure gradient. Finally, the $\vec{F}_h$ term is external forces, e.g., friction, wind-forcing, etc.
 
 \begin{align*}
     \underbrace{\frac{D\vec{u}_h}{Dt}}_\text{acceleration and advection}+
     \overbrace{f\vec{k}\times\vec{u}_h}^\text{coriolis}+
-    \underbrace{\frac{1}{\rho}\vec{\nabla}_hp}_\text{horizontal pressure gradients}=\overbrace{\vec{F}_h}^\text{external forces}
+    \underbrace{\frac{1}{\rho}\vec{\nabla}_hp}_\text{horizontal pressure gradients}=\overbrace{\vec{F}_h}^\text{other forces}
 \end{align*}
 
 \chapter{The Fundamental Diagnostic Relations}\label{Dia Relations}
@@ -614,7 +657,17 @@ Much of the theory of GFD that we will discuss will require the system to be geo
 
 \subsection{Geostrophic Balance}
 
-If $Ro\ll 1$ and all other forces are negligible, then rotation dominates dynamics. We can therefore neglect external forces (set $\vec{F}_h\approx0$) and acceleration and advection (set $D\vec{u}_h/Dt\approx0$) in Equation \ref{Horizontal Approximate nondim} (the horizontal momentum equation). Because the equation must equal $0$, we are forced to conclude that $P$ is of order one, so Equation \ref{Horizontal Approximate nondim} and therefore Equation \ref{Horizontal Approximate} must be a balance between the horizontal pressure gradient force and the coriolis force. 
+If $Ro\ll 1$ and all other forces are negligible, then rotation dominates dynamics. We can therefore neglect external forces (set $\vec{F}_h\approx0$) and acceleration and advection (set $D\vec{u}_h/Dt\approx0$) in Equation \ref{Horizontal Approximate nondim} (the horizontal momentum equation). Because the equation must equal $0$, we are forced to conclude that $P$ is of order one, so Equation \ref{Horizontal Approximate nondim} and therefore Equation \ref{Horizontal Approximate} must be a balance between the horizontal pressure gradient force and the coriolis force.\footnote{
+    You might be suspicious from what I've said. After all, $Ro$ depends on velocity-scale $U$ and length-scale $L$, which we expect should be set by the dynamics and governed by the underlying equations of motion!
+
+    In other words, \textit{if} $Ro\ll 1$, then we expect the system to be in geostrophic balance, but why is $Ro\ll 1$ in the first place, and why would our atmosphere/ocean system tend towards a state such that $Ro\ll 1$ holds?
+
+    The answer lies in the phenomenon of \textbf{geostrophic adjustment}, which you can read about in Vallis' textbook on GFD \cite{Vallis}. The gist is this: anomalies and instabilities on a rotating planet cannot simply propagate away (e.g., via gravity flattening the surface of a fluid, for example) from the source to make the fluid more homogenous. It cannot because the fluid is on a rotating planet, and so must preserve some form of angular momentum.
+
+    As such, after anomalies begin propagating away, there will come a point (where it reaches the anomaly reaches the \hyperref[SW Def Radius Box]{Rossby Deformation Scale}) where it is deflected by the coriolis force, and the system evolves \textit{towards} geostrophic balance.
+
+    More details, again, can be found in Vallis' book.
+} 
 
 \begin{fact}{Geostrophic Balance}{Geostrophic Box}\label{Geostrophic Box}
     A flow is geostrophic if the dominant terms in the horizontal momentum balance equation (Equation \ref{Horizontal Approximate}) are the coriolis force and the pressure gradient force. As such, these terms must balance as follows:
@@ -650,7 +703,7 @@ We can use Equation \ref{Ideal Gas} to show that, for an ideal gas, geostrophic 
     \vec{u}_h=\frac{RT}{ f}\vec{k}\times\vec{\nabla}_h\ln p
 \end{align}
 
-\subsection{Cyclones and Anti-Cyclones}
+\subsection{Cyclones and Anti-Cyclones}\label{Cyclones}
 
 The horizontal velocity field is thus set by the horizontal pressure field in Equation \ref{Geostrophic Balance}. 
 
@@ -675,7 +728,7 @@ If you consider blobs of higher or lower pressure (which I will draw with circle
             \draw[fill=none](0,0) circle (3);
             \draw[->,thick,mydarkblue] (2.121,2.121) arc[start angle=45, end angle=225, radius=3cm];
             \draw[->,ultra thick,mymagenta,dotted] (2.121,2.121)--(1.131,1.131);
-            \node[] at (0.831,1.831) {$-\vec{\nabla}_h p$};
+            \node[] at (0.831,1.831) {$-\frac{1}{\rho}\vec{\nabla}_h p$};
             \draw[->,ultra thick,myorange,densely dashed] (2.121,2.121)--(3.111,3.111);
             \node[] at (3.111,3.411) {$f\vec{k}\times\vec{u}_h$};
             \draw[->,ultra thick,mydarkblue] (2.121,2.121)--(1.131,3.111);
@@ -696,7 +749,7 @@ If you consider blobs of higher or lower pressure (which I will draw with circle
             \draw[->,ultra thick,myorange,densely dashed] (2.121,2.121)--(1.131,1.131);
             \node[] at (0.831,1.831) {$f\vec{k}\times\vec{u}_h$};
             \draw[->,ultra thick,mymagenta,dotted] (2.121,2.121)--(3.111,3.111);
-            \node[] at (3.111,3.411) {$-\vec{\nabla}_h p$};
+            \node[] at (3.111,3.411) {$-\frac{1}{\rho}\vec{\nabla}_h p$};
             \draw[->,ultra thick,mydarkblue] (2.121,2.121)--(3.111,1.131);
             \node[] at (3.111,1.631) {$\vec{u}_h$};
             \node[] at (0,0) {High Pressure};
@@ -722,7 +775,55 @@ I should be clear \textit{which} centrifugal force we are considering in this su
 
 We are \textit{not} considering the centrifugal force on the air parcel arising from the fact that air parcel is moving in a circle \textit{around the centre of the Earth} (due to the fact that the Earth is spinning), and is therefore accelerating inwards towards the centre of the Earth. This gives rise to a centrifugal force that pushes the air parcel away from the centre of the Earth (in the frame of reference rotating with the Earth but not the cyclone/anti-cyclone). 
 
-Now that we've gotten this potential confusion out the way, consider s 
+Now that we've gotten this potential confusion out the way, consider an air parcel moving in circular motion around a centre of high or low pressure. We adopt a local polar coordinate system, with the coordinates $(r,\theta)$ where $x=r\cos\theta$ and $y=r\sin\theta$. We assume there are no forces in the $\theta$-direction and only consider forces in the $r$-direction.
+
+In this direction, there are three forces on the air parcel. We already considered the first two: the pressure gradient force $\left( -\frac{1}{\rho}\vec{\nabla}_h p = -\frac{1}{\rho}\frac{\partial p}{\partial r} \hat{r} \right)$ and the coriolis force $\left( f\vec{k}\times \vec{u}_h = fu_h\hat{r}  \right)$ where $u_h=|\vec{u}_h|$ and $\hat{r}$ is the unit vector pointing in the $r$-direction. Since the air parcel is moving in circular motion, we know that it is subject to a centrifugal force away from the vortex with magnitude $\frac{u_h^2}{r}\hat{r}$.\footnote{Equivalently, we can say that the parcel must be accelerating inwards with an acceleration of $-\frac{u_h^2}{r}\hat{r}$}. For an cyclone and an anti-cyclone in the northern hemisphere, it will look as follows:
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{0.45\linewidth}
+        \centering
+        \begin{tikzpicture}
+            \draw[fill=none](0,0) circle (1.5);
+            \draw[fill=none](0,0) circle (3);
+            \draw[->,thick,mydarkblue] (2.121,2.121) arc[start angle=45, end angle=225, radius=3cm];
+            \draw[->,ultra thick,mymagenta,dotted] (2.121,2.121)--(1.131,1.131);
+            \node[] at (0.831,1.831) {$-\vec{\nabla}_h p$};
+            \draw[->,ultra thick,myorange,densely dashed] (2.121,2.121)--(3.111,3.111);
+            \node[] at (3.111,3.411) {$f\vec{k}\times\vec{u}_h+\frac{u_h^2}{r}$};
+            \draw[->,ultra thick,mydarkblue] (2.121,2.121)--(1.131,3.111);
+            \node[] at (1.131,3.411) {$\vec{u}_h$};
+            \node[] at (0,0) {Low Pressure};
+            \node[] at (0,-2.1) {Medium Pressure};
+            \node[] at (0,-3.5) {High Pressure};
+        \end{tikzpicture}
+        \caption{Cyclone: a \textbf{Low} Pressure System. The fluid flows anti-clockwise around a cyclone in the northern hemisphere.}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.45\linewidth}
+        \centering
+        \begin{tikzpicture}
+            \draw[fill=none](0,0) circle (1.5);
+            \draw[fill=none](0,0) circle (3);
+            \draw[->,thick,mydarkblue] (2.121,2.121) arc[start angle=45, end angle=-135, radius=3cm];
+            \draw[->,ultra thick,myorange,densely dashed] (2.121,2.121)--(1.131,1.131);
+            \node[] at (0.831,1.831) {$f\vec{k}\times\vec{u}_h$};
+            \draw[->,ultra thick,mymagenta,dotted] (2.121,2.121)--(3.111,3.111);
+            \node[] at (3.111,3.411) {$-\vec{\nabla}_h p+\frac{u_h^2}{r}$};
+            \draw[->,ultra thick,mydarkblue] (2.121,2.121)--(3.111,1.131);
+            \node[] at (3.111,1.631) {$\vec{u}_h$};
+            \node[] at (0,0) {High Pressure};
+            \node[] at (0,-2.1) {Medium Pressure};
+            \node[] at (0,-3.5) {Low Pressure};
+        \end{tikzpicture}
+        \caption{Anti-Cyclone: a \textbf{High} Pressure System. The fluid flows clockwise around an anti-cyclone in the northern hemisphere.}
+    \end{subfigure}
+    \caption{Gradient Wind Balance with cyclones and anticyclones in the northern hemisphere ($f>0$). Isobars are drawn as solid black lines \textcolor{black}{\rule{0.25cm}{0.25cm}}., the pressure gradient force $\left( -\frac{1}{\rho}\vec{\nabla}_h p \right)$ as \textcolor{mymagenta}{thick dotted magenta arrows \rule{0.25cm}{0.25cm}}, the coriolis force $\left( f\vec{k}\times\vec{u}_h \right)$ as \textcolor{myorange}{thick dashed orange arrows \rule{0.25cm}{0.25cm}}, and the velocity $\left( \vec{u}_h \right)$ as \textcolor{mydarkblue}{thick filled dark blue arrows \rule{0.25cm}{0.25cm}}.}
+\end{figure}
+
+Notice how, for a cyclone, the centrifugal force points in the same direction as the coriolis force. For an anti-cyclone, the centrifugal force points in the opposite driection as the coriolis force (i.e., in the direction of the pressure gradient force).
+
+Therefore, if the pressure gradient force is of a similar size for both a cyclone and anti-cyclone, we should expect the coriolis force to be \textit{smaller} in a cyclone than in an anticyclone. Since the corilis force scales as the wind speed $u_h$, we expect a cyclone to produce \textit{weaker} winds than an anti-cyclone for the same pressure gradients. Turning this on its head, if a cyclone and an anti-cyclone have similar wind-speeds, we expect the cyclone to have \textit{stronger} pressure gradients.
 
 \section{Thermal Wind Balance}
 
@@ -850,62 +951,219 @@ If you wan't to think of this in terms of curvature, since the temperature decre
 Using Equation \ref{Thermal Wind Vorticity} $\vec{\nabla}_h^2 T>0$ therefore implies that $\frac{\partial \xi}{\partial z}>0$ (in the northern hemisphere), therefore the vertical vorticity increases with height in this cold blob! Vice versa for a hot blob in the northern hemisphere: in a hot blob will have vorticity decreasing with height. 
 
 \section{Pressure Coordinates}\label{Pressure Coords}
+\subsection{Partial Derivative Identities}
 
-To convert to pressure coordinates we must first introduce some concepts from vector calculus.
+To convert to pressure coordinates we must first introduce some identities from vector calculus involving partial derivatives. We will skip the proof, so you'll just have to take the following identities on trust:
 \begin{align*}
     \left(\frac{\partial a}{\partial b}\right)_{c,d}=\left(\frac{\partial b}{\partial a}\right)_{c,d}^{-1}
 \end{align*}
-
 \begin{align*}
     \left(\frac{\partial a}{\partial b}\right)_c
     \left(\frac{\partial b}{\partial c}\right)_a
     \left(\frac{\partial c}{\partial a}\right)_b
     =-1
 \end{align*}
-
-\noindent We apply this to $p$ and $z$:
-
+where we have explicitly written which variables are held constant in the subscripts. We apply this to $p$ and $z$:
 \begin{align}
+    \label{P inverse}
     \left(\frac{\partial p}{\partial z}\right)_{x,y}=\left(\frac{\partial z}{\partial p}\right)_{x,y}^{-1}
 \end{align}
-
 \begin{align*}
     \left(\frac{\partial p}{\partial x}\right)_z
     \left(\frac{\partial x}{\partial z}\right)_p
     \left(\frac{\partial z}{\partial p}\right)_x
     =-1
 \end{align*}
-
 \begin{align*}
     \left(\frac{\partial p}{\partial y}\right)_z
     \left(\frac{\partial y}{\partial z}\right)_p
     \left(\frac{\partial z}{\partial p}\right)_y
     =-1
 \end{align*}
-
-\noindent where the last two equations become:
-
+where the last two equations become:
 \begin{align}
-    \left(\vec{\nabla}p\right)_z=-\left(\vec{\nabla}z\right)_p\left(\frac{\partial p}{\partial z}\right)_{x,y}
+    \label{P -1}
+    \left(\vec{\nabla}_h p\right)_z=-\left(\vec{\nabla}_h z\right)_p\left(\frac{\partial p}{\partial z}\right)_{x,y}
 \end{align}
 
-We apply this to hydrostatic balance (\ref{Hydrostatic GFD}), geostrophic balance (\ref{Geostrophic Balance}), and thermal wind balance (\ref{Thermal Wind}) to derive their equivalent form in pressure coordinates.
+We must be careful with which variables we are actually holding constant when transforming from height coordinates to pressure coordinates. Before this section, we have implicitly held $z$ constant when calculating horizontal derivatives like $\frac{\partial}{\partial x}$ or $\frac{\partial}{\partial x}$. In practice, you should memorise Equations \ref{P inverse} and \ref{P -1} if you wish to reproduce this in an exam.
 
-\begin{align}
-    -&\frac{g}{RT}=\left(\frac{\partial \ln p}{\partial z}\right)_{x,y}\nonumber\\
-    -&\frac{g}{RT}=\left(\frac{\partial z}{\partial \ln p}\right)_{x,y}^{-1}\nonumber\\
-    &\therefore\nonumber
+We will now apply this to four equations: \hyperref[Hydrostatic GFD Box]{hydrostatic balance} (\ref{Hydrostatic GFD}), \hyperref[Geostrophic Box]{geostrophic balance} (\ref{Geostrophic Balance}), thermal wind balance (\ref{Thermal Wind}), and mass conservation (\ref{Mass Material Conservation}) to derive their equivalent form in pressure coordinates. 
+
+\subsection{Hydrostatic Balance}
+
+Starting first from the hydrostatic relation (Equation \ref{Hydrostatic GFD}), we derive the equivalent relation expressing hydrostatic balance but in pressure coordinates using Equation \ref{P inverse}:
+\begin{align*}
+    -\rho g &= \left( \frac{\partial p}{\partial z} \right)_{x,y}
     \\
-    &\boxed{\frac{\partial \Phi}{\partial \ln p}=-RT}\label{Hydrostatic Pressure}
+    &=\left( \left( \frac{\partial z}{\partial p} \right)_{x,y} \right)^{-1}
+\end{align*}
+\begin{align}
+    \label{Hydrostatic Pressure}
+    \therefore \BOX{
+        \left( \frac{\partial \Phi}{\partial p} \right)_{x,y}
+        =-\frac{1}{\rho}
+    }
+\end{align}
+where we have defined the \textbf{geopotential height} $\Phi$ as follows:
+\begin{align}
+    \BOX{\Phi =g\,z}
+\end{align}
+There is nothing special about \textbf{geopotential height}. You can literally just think of \textbf{geopotential height} $\Phi$ as the height variable $z$ multiplied by $g$.
+
+If we assume that the atmosphere consists of an ideal gas, then the following relation is the analogue for Equation \ref{Hydrostatic Balance Ideal}:
+\begin{align}
+    \boxed{\frac{\partial \Phi}{\partial \ln p}=-RT}
+    \label{Hydrostatic Pressure Ideal}
 \end{align}
 
-\begin{align}
-    \boxed{\Phi =g\,z}
-\end{align}
+\subsection{Geostrophic Balance}
 
+We now turn to geostrophic balance. Again, starting from Equation \ref{Geostrophic Balance} but this time applying Equaiton \ref{P -1}:
+\begin{align*}
+    \vec{u}_h &= \frac{1}{\rho f}\vec{k}\times\left(\vec{\nabla}p\right)_z
+    \\
+    &=\frac{1}{\rho f}\vec{k}\times\left( 
+        -\left( \vec{\nabla}_h z \right)_p \left( \frac{\partial p}{\partial z} \right)_{x,y}
+     \right)
+    \\
+    &=\frac{1}{\rho f}\vec{k}\times\left( 
+        -\left( \vec{\nabla}_h z \right)_p (-\rho g)
+    \right)
+\end{align*}
 \begin{align}
-    \left(\vec{\nabla}p\right)_z=
+    \label{Geostrophic Pressure}
+    \therefore \BOX{
+        \vec{u}_h = \frac{1}{f}\vec{k}\times\left( \vec{\nabla}_h \Phi \right)_p
+    }
 \end{align}
+where we have used \hyperref[Hydrostatic GFD Box]{hydrostatic balance} to substitute for $\frac{\partial p}{\partial z}$. Each component of $\vec{u}_h$ is as follows:
+
+\begin{minipage}{.48\linewidth}
+    \begin{align*}
+        \BOX{
+            u = -\frac{1}{f}\left( \frac{\partial \Phi}{\partial y} \right)_p
+        }
+    \end{align*}
+\end{minipage}
+\hfill
+\begin{minipage}{.48\linewidth}
+    \begin{align*}
+        \BOX{
+            v = \frac{1}{f}\left( \frac{\partial \Phi}{\partial x} \right)_p
+        }
+    \end{align*}
+\end{minipage}
+
+\subsection{Thermal Wind Balance}
+
+Thermal Wind Balance is particularly elegant in pressure coordinates, as we do not need to make the awkward scale analysis approximation we did in deriving Equation \ref{Thermal Wind} in height coordinates. We still need to assume that the system is in hydrostatic and geostrophic balance, and that the system is an ideal gas. To derive thermal wind balance in pressure coordinates, we simply take the derivative of Equation \ref{Geostrophic Pressure} with respect to $\ln p$ (and make use of Equation \ref{Hydrostatic Pressure Ideal}):
+\begin{align*}
+    \left( \frac{\partial}{\partial \ln p} \right)_{x,y}\left( \vec{u}_h \right)
+    &= \left( \frac{\partial}{\partial \ln p} \right)_{x,y}
+    \left( \frac{1}{f}\vec{k}\times\left( \vec{\nabla}_h \Phi \right)_p \right)
+    \\
+    &= \frac{1}{f}\vec{k}\times\left( \vec{\nabla}_h \left( \frac{\partial \Phi}{\partial \ln p} \right)_{x,y} \right)_{p}
+    \\
+    &= \frac{1}{f}\vec{k}\times\left( \vec{\nabla}_h (-RT) \right)_{p}
+\end{align*}
+\begin{align}
+    \therefore
+    \BOX{
+        \left( \frac{\partial \vec{u}_h}{\ln p} \right)_{x,y}
+        =
+        -\frac{R}{f}\vec{k}\times \left( \vec{\nabla}_h T \right)_p
+    }
+\end{align}
+Again, each component of $\vec{u}_h$ is as follows:
+
+\begin{minipage}{.48\linewidth}
+    \begin{align*}
+        \BOX{
+            \left( \frac{\partial u}{\partial \ln p} \right)_{x,y}
+            =\frac{R}{f}
+            \left( \frac{\partial T}{\partial y} \right)_{p}
+        }
+    \end{align*}
+\end{minipage}
+\hfill
+\begin{minipage}{.48\linewidth}
+    \begin{align*}
+        \BOX{
+            \left( \frac{\partial v}{\partial \ln p} \right)_{x,y}
+            =-\frac{R}{f}
+            \left( \frac{\partial T}{\partial x} \right)_{p}
+        }
+    \end{align*}
+\end{minipage}
+
+\subsection{Mass Conservation}
+
+A final implication of converting to pressure coordinates is that we now have a new `vertical velocity'. The old vertical velocity was defined as follows:
+\begin{align*}
+    w_z = \frac{D z}{Dt}
+\end{align*}
+However, in pressure coordinates, we now define `vertical velocity' as follows:
+\begin{align*}
+    w_p = \frac{D p}{Dt}
+\end{align*}
+
+Again, assuming that the system is hydrostatic allows us to approximate $w_p$ the following way\footnote{
+    Recall that the hydrostatic relation assumes that vertical variations in $p$ are dominant, therefore we can approximate the material derivative of $p$ as just the vertical advection component.
+}:
+\begin{align*}
+    w_p &= \biggl( \underbrace{\frac{\partial }{\partial t} + u\left( \frac{\partial}{\partial x} \right)_{z}+v\left( \frac{\partial}{\partial y} \right)_{z}}_{\text{small }\therefore \text{ neglect}}+\underbrace{w_z \frac{\partial}{\partial z}}_{\text{big}} \biggr)\, p
+    \\
+    &\approx w_z \left( \frac{\partial p}{\partial z} \right)_{x,y}
+    \\
+    & = -w_z\rho g
+\end{align*}
+
+Recall Equation \ref{Mass Conservation} \ref{Mass Material Conservation} which states the following (this applies for both incompressible and compressible fluids):
+\begin{align*}
+    \frac{D\rho}{Dt}+\rho\vec{\nabla}\cdot\vec{u}=0
+\end{align*}
+
+Writing this in pressure coordinates gives us:
+\begin{align*}
+    0&=\left( 
+        \frac{\partial}{\partial t} 
+        + \vec{u}_h \cdot \left( \vec{\nabla}_h \right)_z
+        + w_z \frac{\partial}{\partial z}
+    \right)\rho
+    + \rho \left( 
+        \left( \vec{\nabla}_h  \right)_z \cdot \vec{u}_h
+        + \frac{\partial}{\partial z}w_z
+    \right)
+    \\
+    &=\left( 
+        \frac{\partial}{\partial t} 
+        + \vec{u}_h \cdot \left( \vec{\nabla}_h \right)_z
+        - \frac{w_p}{\rho g} \frac{\partial p}{\partial z}\frac{\partial}{\partial p}
+    \right)\rho
+    + \rho \left( 
+        \left( \vec{\nabla}_h  \right)_z \cdot \vec{u}_h
+        - \frac{\partial p}{\partial z} \frac{\partial}{\partial p} \frac{w_p}{\rho g}
+    \right)
+    \\
+    &=\left( 
+        \frac{\partial}{\partial t} 
+        + \vec{u}_h \cdot \left( \vec{\nabla}_h \right)_z
+        + w_p \frac{\partial}{\partial p}
+    \right)\rho
+    + \rho \left( 
+        \left( \vec{\nabla}_h  \right)_z \cdot \vec{u}_h
+        +\rho g \frac{\partial}{\partial p} \frac{w_p}{\rho g}
+    \right)
+\end{align*}
+
+
+Recall Equation \ref{Mass Conservation} which states the following (for an incompressible fluid):
+\begin{align*}
+    \frac{D\rho}{Dt}=\left( \frac{\partial }{\partial t} + u\left( \frac{\partial}{\partial x} \right)_{z}+v\left( \frac{\partial}{\partial y} \right)_{z}+w_z \frac{\partial}{\partial z}\right)\rho = 0
+\end{align*}
+
+
 
 
 
@@ -1127,12 +1385,45 @@ If we integrate equation \ref{SW Energy Short} around some closed area $A$ with 
 
 Physically, $E$ and $\vec{S}$ are straightforward to interpret. $E$, is the total energy, which is the sum of the kinetic and available potential energies. $\vec{S}$ is the energy flux vector.
 
-\section{Potential Vorticity}
+\section{Potential Vorticity}\label{PV}
 
-We define the potential vorticity $Q$ in this context as follows:
+We define the \textbf{potential vorticity} (\textbf{PV}) $Q$ in this context as follows:
 \begin{align*}
-    \boxed{Q = \frac{f+\zeta}{h}}
+    \boxed{Q = \frac{f+\xi}{h}}
 \end{align*}
+We can interpret this as the absolute vorticity in the $z$-direction $[\vec{\omega}_a]_z$, which is the sum of the planetary vorticity in the $z$-direction $f$ (the coriolis parameter!) and the relative vorticity in the $z$ direction $\xi$, divided by the thickness of the layer $h$.
+
+We first take the $z$ component of the curl Equation \ref{SW mom} (and recalling that $f\neq const$):
+\begin{align*}
+    \frac{D_h}{Dt}\left( \frac{\partial v}{\partial x}- \frac{\partial u}{\partial y}\right) + \left( \frac{\partial (fv)}{\partial y} + \frac{\partial (fu)}{\partial x}\right) = 0
+    \\
+    \therefore \frac{D_h \xi}{Dt} + \vec{\nabla}_h \cdot \left( f\vec{u}_h \right)= \frac{D_h \xi}{Dt} + f\vec{\nabla}_h \cdot\vec{u}_h + \vec{u}_h \cdot \vec{\nabla}_h f = 0
+\end{align*}
+Next, we rearrange Equation \ref{SW mass} as follows:
+\begin{align*}
+    \frac{D_h h}{Dt}+h\vec{\nabla}_h \cdot \vec{u}_h=0
+\end{align*}
+We now cancel out the $\vec{\nabla}_h\cdot \vec{u}_h$ in both equations to obtain:
+\begin{align*}
+    \frac{D_h \xi}{Dt} - \frac{f}{h}\frac{D_h h}{Dt} + \vec{u_h}\cdot\vec{\nabla}f = 0
+\end{align*}
+Recalling that $\frac{\partial f}{\partial t}=0$, therefore that $\vec{u_h}\cdot\vec{\nabla}f=\frac{D_h f}{Dt}$, we rewrite the equation just in terms of material derivatives then divide the whole equation by $h$:
+\begin{align*}
+    \frac{1}{h}\frac{D_h \xi}{Dt} +\frac{1}{h}\frac{D_h f}{Dt} - \frac{f}{h^2}\frac{D_h h}{Dt}=0
+\end{align*}
+Using product rule, this implies the following:
+
+\begin{fact}{Material Conservation of Potential Vorticity}{Cons PV Box}\label{Cons PV Box}
+    For a shallow water system, the \textbf{Potential Vorticity} (\textbf{PV}) $Q$ is materially conserved: 
+    \begin{align}
+        \BOX{
+            \frac{D_h Q}{Dt}=0
+        }
+    \end{align}
+    In other words, following a fluid parcel, the potential vorticity remains constant.
+\end{fact}
+
+
 
 \section{A Quick Primer on Waves}
 
@@ -1409,9 +1700,6 @@ To explain this, let us consider the mechanism for how this wave sustains itself
 
 Since $c_g=0$, \textbf{long-wave} Poincare waves cannot transport energy, so in general this will not be the mechanism for propagation of long length-scale anomalies. We must turn to other mechanisms to explain this.
 
-\section{Kelvin Waves}
-
-
 \section{Rossby Waves}
 
 \subsection{The \texorpdfstring{$\beta$}{Beta}-Plane Approximation}
@@ -1506,19 +1794,151 @@ Again, we seek wave-like solutions, so we substitute in $h'=h_0 \exp\left( ikx+i
     \BOX{\omega = \frac{-\beta k}{k^2 + l^2 + \frac{1}{L_d^2}}}
 \end{gather}
 
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[domain=-4:4]
+        \draw[very thin,color=gray] (-3.9,-1.9) grid (3.9,1.9);
+        \draw[->] (-4.2,0) -- (4.2,0) node[right] {$k$};
+        \draw[->] (0,-2.2) -- (0,2.2) node[above] {$\omega(k)$};
+        \draw[dashed,thick,myorange] plot (\x,{0}) node[above] {$\omega(k)=0$};
+        \draw[domain=-2:2,dotted,thick,mymagenta] plot (\x,{-\x}) node[right] {$\omega(k) = -L_d^2\beta k$};
+        \draw[samples=50,color=mydarkblue,ultra thick] plot (\x,{-\x/((\x)^2+1)}) node[below] {$\omega(k) = \frac{-\beta k}{k^2+\frac{1}{L_d^2}}$};
+    \end{tikzpicture}
+    \caption{The dispersion relation for Rossby Waves, drawn in \textcolor{mydarkblue}{filled blue \rule{0.25cm}{0.25cm}}. The long- and short-wave limits, respectively, are drawn in \textcolor{mymagenta}{dotted magenta \rule{0.25cm}{0.25cm}} and \textcolor{myorange}{dashed orange \rule{0.25cm}{0.25cm}}. For simplicity we have set $l=0$.}
+    \label{Rossby Graph}
+\end{figure}
+
 \subsection{Interpretation}
 
 Note that we can no longer set $l=0$ without loss of generality, as the system is no longer isotropic. There is a difference between the $y-$direction and the $x-$direction: $f$ increases in the $y-$direction, but $f$ does not depend on the $x-$direction.
 
-Again, let us calculate the phase and group velocites. 
+\subsubsection{The Phase and Group Velocities}
+
+Again, let us calculate the phase and group velocites in the $x$-direction.
+\begin{align*}
+    [\vec{c}_p]_x = -\frac{\beta}{k^2+l^2+\frac{1}{L_d^2}}
+    \\
+    [\vec{c}_g]_x = \beta\left( \frac{k^2-l^2-\frac{1}{L_d^2}}{k^2+l^2+\frac{1}{L_d^2}} \right)
+\end{align*}
+
+Notice that the $x-$component (i.e., the zonal/east-west component) of the phase velocity $\vec{c}_p$ is always negative (since $\beta>0$ always). This implies that the phase velocity is always westwards, and so peaks and troughs \textit{always} travel westward. We will explain this later when we explain the mechanism for Rossby Wave propagation.
+
+Let us now turn to the $x-$component of the group velcoity $\vec{c}_g$. The group velocity can be positive or negative depending on both the zonal and meridional wavelengths and their size relative to the Rossby Deformation Radius $L_d$. If $k$ is large relative to both $l$ and $1/L_d$ (i.e., the zonal wavelength is small relative to both the meridional wavelength and the Rossby Deformation Radius) then energy can propagate eastward. Conversely, if either $l$ or $1/L_d$ is large relative to $k$, then energy also propagates westward.
+
+\subsubsection{Rossby Wave Propagation Mechanism}
+
+Recall that \hyperref[PV]{Potential Vorticity} is \hyperref[Cons PV Box]{Materially Conserved} in the shallow water system. As such, any fluid parcel that is displaced by this anomaly/wave must have its potential vorticity remain constant.
+
+Suppose that some phenomena generates an anomaly in $\vec{u}_h'$ such that a fluid parcel is pushed northwards (i.e., in the positive $y$-direction). If the fluid parcel is advected northwards, then the planetary vorticity $f$ increases. However, $(f+\xi)/h$ must be constant, and assuming that the change in $h$ is small, we require $\xi$ to decrease, which generates negative vorticity. The fluid parcels around this parcel are therefore forced accordingly: the parcels to the west are forced northward, and the parcels to the east are forced southward.
+
+Note that this explanation only works if the $Ro$ is not extremely small. However, in the ocean, $Ro$ is extremely small, and this implies that the relative vorticity is always much smaller than the planetary vorticity. Here is an alternative explanation for the ocean (courtesy of \href{https://www.physics.ox.ac.uk/our-people/marshalld}{David Marshall}). In the ocean, since $Ro\ll 1$, the perturbations must be geostrophic. Therefore, $u$ is always geostrophic and the following obtains:
+\begin{align*}
+    u = - \frac{g}{f(y)}\frac{\partial \eta}{\partial y}
+\end{align*}
+
+Suppose we have a bump in the ocean (i.e., a positive height anomaly). Since there is a height anomaly, there is also a pressure anomaly, the pressure is larger in the bump. Since the flow must be geostrophic, this implies that the fluid must be anti-cylonic and must be flowing clockwise in the northern hemisphere (recall our discussion on cyclones and anti-cyclones in Section \ref{Cyclones}).
+
+However, recall that $u\sim 1/f$ because it is geostrophic, therefore at the north edge of the height anomaly, the $f$ is larger, therefore $u$ is smaller, and at the south edge of the height anomaly $f$ is smaller, therefore $u$ is larger. This implies that there is more fluid flowing westward than there is fluid flowing eastward, therefore there is a convergence of fluid westward and a divergence of fluid eastwards. This means that the hump travels westwards, thus explaining the westward propagation of Rossby Waves in the ocean.
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        \draw[fill=none](0,0) circle (1.5);
+        \draw[fill=none](0,0) circle (3);
+        \draw[fill=none,dotted](-3,0) circle (1.5);
+        \draw[fill=none,dotted](-3,0) circle (3);
+        \draw[->,thick,mydarkblue] (0,3) arc[start angle=90, end angle=-90, radius=3cm];
+        \draw[->,ultra thick,mydarkblue] (0,3)--(1,3);
+        \node[] at (2.5,3.5) {$u_{\text{north}}=-\frac{g}{f(y+\delta y)}\frac{\partial \eta}{\partial y}<u_\text{south}$};
+        \draw[->,line width=3pt,mydarkblue] (0,-3)--(-1.5,-3);
+        \node[] at (0.5,-3.5) {$u_{\text{south}}=-\frac{g}{f(y)}\frac{\partial \eta}{\partial y}>u_\text{north}$};
+        \node[] at (0,0) {High $\eta$};
+        \node[] at (0,-2.1) {Medium $\eta$};
+        \node[] at (0,-4.5) {Low $\eta$};
+        \node[] at (-5,0.25) {Convergence of fluid};
+        \node[] at (-5,-0.25) {$\therefore \frac{\partial h}{\partial t}>0$};
+        \node[] at (5,0.25) {Divergence of fluid};
+        \node[] at (5,-0.25) {$\therefore \frac{\partial h}{\partial t}<0$};
+        \node[] at (-2,4) {\textbf{Westward Phase Propagation}};
+        \draw[->,ultra thick,myorange] (-0.5,3.5) -- (-3.5,3.5); 
+    \end{tikzpicture}
+    \caption{Alternative Explanation of the Westward Phase Propagation of Rossby Waves. Since $\beta=\frac{df}{dy}>0$ and $u\sim 1/f$, $u_{\text{north}}<u_\text{south}$, therefore there is a convergence of fluid on the east and a divergence of fluid on the west. Solid black lines indicate $\eta$ at time $t=t$, while dotted black lines indicate $\eta$ at time $t=t+\delta t$.}
+\end{figure}
+
+\section{Kelvin Waves}
+
+For Rossby Waves, we assumed that the anomalies were to leading order geostrophic, which recall is a blance between the the corilis force and the pressure gradient force. There are at least two cases in which this assumption cannot hold.
+
+The first case is along a boundary or a coastline.
+
+The second case is along the equator, where $f\approx 0$, therefore $Ro \gg 1$. 
+
+\subsection{Coastal Kelvin Waves}
+
+\subsection{Equatorial Kelvin Waves}
 
 \section{The Effects of Stratification: the Reduced Gravity System}
 
-As mentioned in Section BLAH, the two important properties of GFD are rotation and stratification. We already consider the effects of rotation in the Shallow Water System by introducing the coriolis force (the $f\vec{k}\times\vec{u}_h$ term) into Equation \ref{SW mom}. However, we have not yet considered stratification.
+As mentioned in Section \ref{GFD Special}, the two important properties of GFD are rotation and stratification. We already consider the effects of rotation in the Shallow Water System by introducing the coriolis force (the $f\vec{k}\times\vec{u}_h$ term) into Equation \ref{SW mom}. However, we have not yet considered stratification.
 
-Now we consider a twist on the shallow water system. Consider, again, 
+Now we consider a twist on the shallow water system. Instead of considering one single layer of fluid, consider two layers of fluid. We will be modelling the motion of the fluid in the top layer with density $\rho=\rho_0$. We assume that this top layer is bounded from above by a fluid of negligible density, such that it is almost always flat. We assume further that this top layer is bounded from below by a fluid of density $\rho_1=\rho_0+\Delta \rho_0$ with no horizontal fluid motion (See Figure \ref{RG Fig}).
 
-Now we derive the 
+Analogous to how we derived the shallow water equations, we now derive the reduced gravity equations. We make the identical assumptions as before, but our treatment of the horizontal pressure gradients $\vec{\nabla}_h p$ must differ due to the different configuration.
+
+As before, we assume that the system is approximately in hydrostatic balance. The pressure between $z=0$ and $z=-h$ must be given by the following:
+\begin{align*}
+    p(x,y,z,t)= -\rho_0 g z + p_s(x,y,t)
+\end{align*}
+Taking the horizontal gradient of this gives us the following:
+\begin{align*}
+    \vec{\nabla}_h p = \vec{\nabla}_h p_s
+\end{align*}
+
+Note importantly that, as opposed to our derivation of the shallow water equations, we can no longer neglect the $\vec{\nabla}_h p_s$ term, as this term is the leading order contribution to $\vec{\nabla}_h p$ – if we neglected this term, $\vec{\nabla}_h p=0$!
+
+We now consider the pressure below $z=-h$, again found hydrostatically:
+\begin{align*}
+    p(x,y,z,t) = -\rho_1 g ( h(x,y,t) + z) + \rho_0 g h(x,y,t) + p_s(x,y,t)
+\end{align*}
+However, we have assumed that the horizontal velocity in this layer is $0$, which implies that horizontal pressure gradients within this layer must vanish, i.e., $\vec{\nabla}_h p(x,y,z<-h,t)=0$. This condition gives un an expression for $\vec{\nabla}_h p_s$, which in turn gives us an expression for$ \vec{\nabla}_h p$:
+\begin{align*}
+    0 = -\rho_1 g \vec{\nabla}_h h + \rho_0 g \vec{\nabla}_h h + \vec{\nabla}_h p_s
+    \\
+    \therefore - \vec{\nabla}_h p_s = - (\rho_1 - \rho_0)\vec{\nabla}_h h
+\end{align*}
+
+The mass conservation equation is derived identically to before. We thus derive the \textbf{Reduced Gravity Equations}:
+
+\begin{minipage}{0.48\linewidth}
+    \begin{gather}
+        \label{RG mom}
+        \BOX{\frac{D_h\vec{u}_h}{Dt}+f\vec{k}\times\vec{u}_h+g'\vec{\nabla}_h h=0}\\
+        \label{RG mass}
+        \BOX{\frac{\partial h}{\partial t}+\vec{\nabla}_h\cdot(h\vec{u}_h)=0}
+    \end{gather}
+\end{minipage}
+\hfill
+\begin{minipage}{0.48\linewidth}
+    \begin{figure}[H]
+        \centering
+        \begin{tikzpicture}
+            \draw[thick] (0,0) .. controls +(0.1,0.5) and +(-0.5,-0.5) .. (2,0) .. controls +(1,1) and +(-0.8,-1.6) .. (3.5,0) .. controls +(0.5,1) and +(-1,0) .. (5,0);
+            \node[] at (6.4,0) {$z=-h(x,y,t)$};
+            \draw[thick] (0,4) -- (5,4);
+            \node[] at (6,4) {$z=0$};
+            \draw[thick,<->] (4,3.92) -- (4,0.5);
+            \node[] at (5,2) {$h(x,y,t)$};
+            \node[] at (1.3,1.5) {$\rho=\rho_0=const$};
+            \node[] at (0.8,4.5) {$\rho \ll \rho_0$};
+            \node[] at (1,2.6) {$\vec{u}_h=\left( \begin{array}{c}u\\v\end{array} \right)$};
+            \node[] at (1.3,-1) {$\rho=\rho_1=const$};
+        \end{tikzpicture}
+        \caption{The Reduced Gravity System}
+        \label{RG Fig}
+    \end{figure}
+\end{minipage}
+
+Where $g'$ is the reduced gravity and is defined as follows:
 
 \begin{fact}{The Reduced Gravity}{RG Box}\label{RG Box}
     We define the reduced gravity $g'$ as:
@@ -1531,6 +1951,12 @@ Now we derive the
 
     It is generally the case that $g'\ll g$. 
 \end{fact}
+
+Importantly, the reduced gravity system affects the \hyperref[SW Def Radius Box]{Rossby Deformation Radius}, now given by the following expression:
+\begin{align*}
+    L_d = \frac{\sqrt{g' H}}{f}
+\end{align*}
+Therefore, since generally $g'\ll g$, and $L_d\sim\sqrt{g'}$, then $L_d$ is much smaller than we anticipated before.
 
 \section{Justifying the Shallow Water System}\label{SW Justification}
 
