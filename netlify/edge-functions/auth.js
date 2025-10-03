@@ -3,7 +3,7 @@ const COOKIE_NAME = "site_pass";
 const COOKIE_VALUE = "ok";
 const MAX_AGE = 60 * 60 * 24 ; // Access revoked after 1 days
 const LOGIN_PATH = "/__auth";
-const ENV_KEY = "sea_five"; //the password
+const ENV_KEY = "SITE_PASSWORD"; //the password
 
 function getEnv(name) {
   if (typeof Netlify !== "undefined" && Netlify.env?.get) return Netlify.env.get(name);
