@@ -50,7 +50,7 @@ This section of the course was lectured by \href{https://www.physics.ox.ac.uk/ou
 
 \section{A Quick Reminder on Vector Calculus}
 
-Before we jump into \textbf{Geophysical Fluid Dynamics} (\textbf{GFD}) proper, we start with a quick reminder of some concepts in vector calculus. I'll mainly focus on the interpretation of certain concepts, as this will be important for the interpretation of physical results later on.
+Before we jump into \textbf{Geophysical Fluid Dynamics} (\textbf{GFD}) proper, we start with a quick reminder of some vector calculus concepts. I'll mainly focus on the interpretation of these concepts, as this will be important for the interpretation of physical results later on.
 
 You should be familiar with all the information in the box below:
 
@@ -58,7 +58,7 @@ You should be familiar with all the information in the box below:
     Let $\vec{r}=(x,y,z)^T$ denote the position vector and $t$ denote the time.\vspace{3mm}
 
     \begin{minipage}{0.49\linewidth}
-        We write the \textbf{partial derivative} of coordinate $x_1$ as follows (the subscripts indicate which variables are held constant while differentiating; in this case, coordinates $x_2, \, x_3,\, t$ are held constant while differentiating $x_1$):
+        We write the \textbf{partial derivative} of coordinate $x_1$ as follows (the subscripts indicate which variables are held constant while differentiating; in this case, coordinates $x_2, \, x_3,\, t$ are held constant while differentiating with respect to $x_1$):
         \begin{align}\label{partial}
             \partial_{x_1}=\frac{\partial}{\partial x_1}=\left( \frac{\partial}{\partial x_1} \right)_{x_2,\,x_3,\,t}
         \end{align}
@@ -109,7 +109,7 @@ You should be familiar with all the information in the box below:
 
 \end{fact}
 
-In this box we mentioned a \textbf{scalar field} and \textbf{vector field}. A field is just anything that has a value at each point in space and time. There are two kinds you will need to know: a \textbf{scalar field} and a \textbf{vector field}. A \textbf{scalar field} is a field that takes a scalar value at each point. For example, the pressure field $p=p(\vec{r},t)$ is a scalar field, which denotes the pressure at each point in space/time. Meanwhile, a \textbf{vector field} is a field that takes a vector value at each point. For example, the velocity field $\vec{u}=\vec{u}(\vec{r},t)$ is a vector field, which denotes the velocity at each point in space/time. While what I'm about to say isn't strictly correct, you can just think of a vector field as three scalar fields stacked on top of each other (one for each component).
+In this box we mentioned a \textbf{scalar field} and \textbf{vector field}. A field is just anything that has a value at each point in space and time. A \textbf{scalar field} is a field that takes a scalar value at each point. For example, the pressure field $p=p(\vec{r},t)$ is a scalar field, which denotes the pressure at each point in space/time. Meanwhile, a \textbf{vector field} is a field that takes a vector value at each point. The velocity field $\vec{u}=\vec{u}(\vec{r},t)$ is a vector field, which denotes the velocity at each point in space/time. While this isn't strictly correct, you can just think of a vector field as three scalar fields stacked on top of each other (one for each component).
 
 Now we will interpret in turn the \textbf{Gradient}, the \textbf{Curl}, and the \textbf{Divergence}.
 
@@ -119,7 +119,7 @@ We can only take the gradient of a \textbf{scalar field} and the the gradient of
 
 The gradient encodes the local change properties of the \textbf{scalar field}. More specifically, at each point in space and time, the value of the gradient is a vector with the following properties: the direction (in 3D space) of the vector is in the direction of steepest ascent, and the magnitude of the vector denotes how much the scalar field ascends at that point.
 
-You should be familiar with the one-dimensional Taylor Expansions. Consider some function $f: \mathbb{R} \to \mathbb{R}$\footnote{This is fancy speak for the function $f(x)$ takes real numbers as an input and outputs real numbers.}. The following holds expresses the Taylor expansion, which holds for small $\delta x$:
+You should be familiar with the one-dimensional Taylor Expansions. Consider some function $f: \mathbb{R} \to \mathbb{R}$\footnote{This is fancy speak for the function $f(x)$ takes real numbers as an input and outputs real numbers.}. The following holds expresses the Taylor expansion of $f$, which holds for small $\delta x$:
 \begin{align*}
     f(x+\delta x)=f(x)+\frac{df}{dx}\delta x
 \end{align*}
@@ -137,7 +137,58 @@ We can only take the curl of a \textbf{vector field}, a field that take a vector
 
 Broadly, the curl measures the local rotation of the \textbf{vector field}. More specifically, at each point in space and time, the value of the curl is a vector with the following properties: the direction (in 3D space) of the vector is in the direction perpendicular to the plain of rotation (following the right-hand rule)\footnote{This is simply a convention. The right hand rule means that if you form a thumbs up with your right hand, your thumb is parallel with the vector if and only if the rotation is in the direction from your knuckles to the end of your fingers (following your fingers).}, and the magnitude of the vector denotes how much local rotation there is at this point.
 
-Note crucially that this only measures the \textbf{local} rotation, not the global rotation. The example often given to explain this distinction is a paddleboard: consider a 
+Note crucially that this only measures the \textbf{local} rotation, not the global rotation. The example often given to explain this distinction is a paddleboard: consider a very small paddleboard suspended in a fluid with a velocity field $\vec{u}(\vec{r})$. The paddleboard is pushed around by the flow. The curl of $\vec{u}$ encodes whether the paddleboard itself will turn, not whether it will follow a circular path.
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{0.45\linewidth}
+        \centering
+        \begin{tikzpicture}
+            \begin{scope}
+                \fill[mymagenta] (0,0) -- (0.5,0) -- (0.25,1);
+                \draw[->,mydarkblue,thick,dotted] (0,1) arc[start angle=140, end angle=40, radius=3cm];
+            \end{scope}
+            \begin{scope}[xshift=1cm, yshift = 0.6cm, rotate=-22.5]
+                \fill[mymagenta] (0,0) -- (0.5,0) -- (0.25,1) -- (0,0);
+            \end{scope}
+            \begin{scope}[xshift=2cm, yshift = 1.2cm, rotate=-45]
+                \fill[mymagenta] (0,0) -- (0.5,0) -- (0.25,1) -- (0,0);
+                \draw[->,myorange,ultra thick] (0.15,0.1) arc[start angle=250, end angle=-70, radius=0.25cm];
+            \end{scope}
+            \begin{scope}[xshift=3cm, yshift = 0.7cm, rotate=-67.5]
+                \fill[mymagenta] (0,0) -- (0.5,0) -- (0.25,1) -- (0,0);
+            \end{scope}
+            \begin{scope}[xshift=4cm, yshift=0.4cm, rotate=-90]
+                \fill[mymagenta] (0,0) -- (0.5,0) -- (0.25,1) -- (0,0);
+            \end{scope}
+        \end{tikzpicture}
+        \caption{Paddleboard rotates (\textcolor{myorange}{orange arrow \rule{0.2cm}{0.2cm}}) $\longleftrightarrow$ Curl is non-zero, i.e., $\vec{\nabla}\times\vec{u}\neq 0$}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.45\linewidth}
+        \centering
+        \begin{tikzpicture}
+            \begin{scope}
+                \fill[mymagenta] (0,0) -- (0.5,0) -- (0.25,1);
+                \draw[->,mydarkblue,thick,dotted] (-0.1,1) arc[start angle=140, end angle=40, radius=3cm];
+            \end{scope}
+            \begin{scope}[xshift=1cm, yshift = 0.7cm]
+                \fill[mymagenta] (0,0) -- (0.5,0) -- (0.25,1) -- (0,0);
+            \end{scope}
+            \begin{scope}[xshift=2cm, yshift = 1cm]
+                \fill[mymagenta] (0,0) -- (0.5,0) -- (0.25,1) -- (0,0);
+            \end{scope}
+            \begin{scope}[xshift=3cm, yshift = 0.7cm]
+                \fill[mymagenta] (0,0) -- (0.5,0) -- (0.25,1) -- (0,0);
+            \end{scope}
+            \begin{scope}[xshift=4cm]
+                \fill[mymagenta] (0,0) -- (0.5,0) -- (0.25,1) -- (0,0);
+            \end{scope}
+        \end{tikzpicture}
+        \caption{Despite following a circular path, the paddleboard does \textit{not} rotate $\longleftrightarrow$ Curl is zero, i.e., $\vec{\nabla}\times\vec{u}= 0$}
+    \end{subfigure}
+    \caption{Paddleboard (\textcolor{mymagenta}{magenta triangle \rule{0.2cm}{0.2cm}}) demonstration of curl. The \textcolor{mydarkblue}{Dotted Blue Arrow \rule{0.2cm}{0.2cm}} indicates the direction of time evolution (the paddleboard is being advected by the velocity field $\vec{u}$).}
+\end{figure}
 
 \subsection{The Divergence}
 
