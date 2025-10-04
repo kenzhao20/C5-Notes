@@ -21,6 +21,7 @@ main 9.aux
 main 2.bcf
 main 2.log
 main 2.fls
+main 2.out
 main 2.synctex.gz
 main 2.synctex(busy)
 main 2.fdb_latexmk
@@ -36,7 +37,9 @@ main 5.synctex(busy)
 main 6.fls
 main 6.synctex(busy)
 main 7.fls
+main 7.synctex(busy)
 main 8.fls
+main 8.synctex(busy)
 main 9.fls
 main 10.fls
 main 11.fls
