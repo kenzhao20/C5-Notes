@@ -291,13 +291,15 @@ For simplicity we ignore state variables like salinity, humidity, etc., and rest
     =\overbrace{-\frac{1}{\rho}\vec{\nabla}p}^\text{Pressure Gradients}\underbrace{-g\vec{k}}_\text{Gravity}+\overbrace{\nu\vec{\nabla}^2\vec{u}}^\text{Viscous Dissipation}\underbrace{+\frac{\nu}{3}\vec{\nabla}(\vec{\nabla}\cdot\vec{u})}_\text{}+\overbrace{\vec{F}}^\text{Other Forces}}
     \label{Navier Stokes}
     \\
-    \boxed{\underbrace{\frac{D\rho}{Dt}}_\text{Change in Mass of Fluid Parcel}\overbrace{+\rho\vec{\nabla}\cdot\vec{u}}^\text{Convergence/Divergence of Mass}=0}
+    \boxed{\underbrace{\frac{D\rho}{Dt}}_\text{Change in Mass of Fluid Parcel}
+    +
+    \overbrace{\rho\vec{\nabla}\cdot\vec{u}}^\text{Convergence/Divergence of Mass}=0}
     \label{Mass Conservation}
     \\
-    \boxed{c_p\frac{DT}{Dt}-\frac{\beta T}{\rho}\frac{Dp}{Dt}=Q}
+    \boxed{\underbrace{c_p\frac{DT}{Dt}}_\text{Energy of Air Parcel}-\overbrace{\frac{\beta T}{\rho}\frac{Dp}{Dt}}^\text{Heating by Compression}=\underbrace{Q}_\text{Diabatic Heating (e.g., by radiation)}}
     \label{Energy Equation}
     \\
-    \boxed{\rho=\rho(T,p,\ldots)}
+    \boxed{\rho=\underbrace{\rho(T,p,\ldots)}_{\text{Equation of State}}}
     \label{EoS}
 \end{gather}
 
@@ -435,19 +437,20 @@ where we have lumped together all the terms on the right-hand-side of \ref{Navie
 
 \subsection{Incompressibility}
 
-This is in preparation for the next simplification we make: we assume that the fluid we are dealing with is \textbf{incompressible}\footnote{
-    This should seem, to you, a highly dubious assumption. First, we know that sound waves are possible (after all we can hear, both on land and in water), but sound waves are impossible in an incompressible fluid. Second, we know that the atmosphere is approximately an ideal gas, which can have its density changed if warmed or cooled.
-}. This implies that density is \textbf{Materially Conserved} following a fluid parcel. Therefore, for density $\rho$:
+Our final assumption is regarding the compressibility of fluids. If a fluid has constant density ($\rho=\rho_0=const$), then by Equation \ref{Mass Conservation} $\vec{\nabla}\cdot\vec{u}=0$ applies. We say that this fluid is \textbf{incompressible}: every bit of fluid that enters some volume must also leave.
+
+We will end up assuming that $\vec{\nabla}\cdot\vec{u}=0$. Note that this should seem, to you, a \textbf{highly} dubious assumption. First, we know that sound waves are possible (after all we can hear, both on land and in water), but sound waves are impossible in an incompressible fluid. Second, and more importantly, we know that the atmosphere is approximately an ideal gas, which can have its density changed if warmed or cooled. For the ocean, we know that temperature, salinity, and pressure all change the density of seawater.
+
+However, we are justified to use this equation if we assume that density variations $\delta p = \delta p (x,y,z,t)$ are much smaller than the background density $\rho_0$.
 \begin{align}
-    \frac{D\rho}{Dt}=0\nonumber\\
     \therefore \boxed{\vec{\nabla}\cdot \vec{u}=0}\label{Incompressible}
 \end{align}
-where we have obtained \ref{Incompressible} by substituting Mass Conservation (\ref{Mass Conservation}).
 
-\subsection{Scale Analysis}
+However, I should emphasise that this does \textit{not} allow us to assume that $\frac{D\rho}{Dt} = \frac{D\delta \rho}{Dt} = 0$ applies.
 
-Finally, we make a few phenomenological simplifications. We do this here for simplicity, but our results are not general or particularily robust: these terms are essential in climate/weather models.
-We do this here by performing a \textbf{scale analysis}: we estimate the size of quantities by their typical values (found empirically), then ignore terms that are much smaller than the other terms. We never neglect the pressure gradient term. \newline
+\subsection{Scale Analysis}\label{Scale Analysis}
+
+Finally, we make a few phenomenological simplifications. We do this here for simplicity, but our results are not general or particularily robust: these terms are essential in climate/weather models. We do this here by performing a \textbf{scale analysis}: we estimate the size of quantities by their typical values (found empirically), then ignore terms that are much smaller than the other terms. We never neglect the pressure gradient term. \vspace{5mm}
 
 \noindent
 \begin{tabular}{|p{5.8cm}|p{1.4cm}|p{4cm}|p{4cm}|}
@@ -486,40 +489,40 @@ After eliminating small terms, we get our final simplified set of equations.
 \begin{fact}{The Simplified Equations of Motion for GFD}{Eqns for GFD Box}\label{Eqns for GFD Box}
     We define the horizontal gradient operator taken at constant $z$ as $\vec{\nabla}_h=\left( \frac{\partial}{\partial x},\frac{\partial}{\partial x},0 \right)^T$, the horizontal velocity as $\vec{u}_h=\left( u,v,0 \right)^T$, the horizontal forces as $\vec{F}_h$, and the \textbf{coriolis parameter} as $f=2\Omega\sin\phi$ where $\phi=$ the latitude.
 
-    The simplified equations of motion we will be using are as follows: 
-    \begin{multicols}{2}
-        \textbf{Horizontal Momentum Balance:}
-        \begin{gather}
-            \label{Horizontal Approximate}
-            \BOX{\frac{D\vec{u}_h}{Dt}+f\vec{k}\times\vec{u}_h+\frac{1}{\rho}\vec{\nabla}_hp=\vec{F}_h}
-        \end{gather}
+    The simplified equations of motion we will be using are as follows: \vspace{2mm}
+
+    \begin{minipage}{0.48\linewidth}
+        \centering
         \textbf{Vertical Momentum Balance:}
         \begin{gather}
             \label{Vertical Approximate}
             \BOX{\frac{Dw}{Dt}+\frac{1}{\rho}\frac{\partial p }{\partial z}+g=F_z}
         \end{gather}
-        \textbf{Mass Conservation:}
-        \begin{gather}
-            \label{Mass Material Conservation}
-            \BOX{\frac{D\rho}{Dt}=0}
-        \end{gather}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.48\linewidth}
+        \centering
         \textbf{Incompressibility:}
         \begin{gather}
             \label{Incompressibility}
         \BOX{\vec{\nabla}\cdot\vec{u}=0}
         \end{gather}
-    \end{multicols}
+    \end{minipage}
+
+    \vspace{2mm}
+    \centering
+    \textbf{Horizontal Momentum Balance:}
+    \begin{gather}
+        \label{Horizontal Approximate}
+        \BOX{\underbrace{\frac{D\vec{u}_h}{Dt}}_\text{acceleration and advection}+
+        \overbrace{f\vec{k}\times\vec{u}_h}^\text{coriolis}+
+        \underbrace{\frac{1}{\rho}\vec{\nabla}_hp}_\text{horizontal pressure gradients}=\overbrace{\vec{F}_h}^\text{other forces}}
+    \end{gather}
 \end{fact}
 
-Physically, the \textbf{coriolis parameter} $f=2\Omega \sin \phi$ is the planetary vorticity: it is the vorticity that a fluid parcel at rest (relative to the surface of the Earth) has in the $z$-direction.
+Physically, the \textbf{coriolis parameter} $f=2\Omega \sin \phi$ is the planetary vorticity: it is the vorticity that a fluid parcel at rest (relative to the surface of the Earth) has in the $z$-direction. Note that we've ignored the Energy Equation (\ref{Energy Equation}). This equation is important, but we don't really discuss it in C5.
 
 We will mostly be dealing with the horizontal momentum equation \ref{Horizontal Approximate}, so it is worth detailing the meanings of each terms. The first term, $\frac{D\vec{u}_h}{Dt}$ is the material derivative of $\vec{u}_h$. It represents the acceleration of $\vec{u}_h$ and the advection of $\vec{u}_h$. The $f\vec{k}\times\vec{u}_h$ term is the acceleration due to coriolis. The $\frac{1}{\rho}\vec{\nabla}_h p$ is the force due to the horizontal pressure gradient. Finally, the $\vec{F}_h$ term is external forces, e.g., friction, wind-forcing, etc.
-
-\begin{align*}
-    \underbrace{\frac{D\vec{u}_h}{Dt}}_\text{acceleration and advection}+
-    \overbrace{f\vec{k}\times\vec{u}_h}^\text{coriolis}+
-    \underbrace{\frac{1}{\rho}\vec{\nabla}_hp}_\text{horizontal pressure gradients}=\overbrace{\vec{F}_h}^\text{other forces}
-\end{align*}
 
 \chapter{The Fundamental Diagnostic Relations}\label{Dia Relations}
 
@@ -695,7 +698,7 @@ Written out, each component of $\vec{u}_h=(u,v)^T$ is as follows:
     \end{align*}
 \end{minipage}
 
-Recall that the horizontal gradient of pressure $\vec{\nabla}_h p$ points in the direction of increasing $p$. Equation \ref{Geo Bal} shows that the coriolis force, which pushes a fluid at right angles to its velocity, balances the pressure gradient force, which pushes a fluid from areas of high pressure to areas of low pressure.
+\vspace{2 mm} Recall that the horizontal gradient of pressure $\vec{\nabla}_h p$ points in the direction of increasing $p$. Equation \ref{Geo Bal} shows that the coriolis force, which pushes a fluid at right angles to its velocity, balances the pressure gradient force, which pushes a fluid from areas of high pressure to areas of low pressure.
 
 We can use Equation \ref{Ideal Gas} to show that, for an ideal gas, geostrophic balance may be written as follows:
 \begin{align}
@@ -790,9 +793,9 @@ In this direction, there are three forces on the air parcel. We already consider
             \draw[->,ultra thick,mymagenta,dotted] (2.121,2.121)--(1.131,1.131);
             \node[] at (0.831,1.831) {$-\vec{\nabla}_h p$};
             \draw[->,ultra thick,myorange,densely dashed] (2.121,2.121)--(3.111,3.111);
-            \node[] at (3.111,3.411) {$f\vec{k}\times\vec{u}_h+\frac{u_h^2}{r}$};
-            \draw[->,ultra thick,mydarkblue] (2.121,2.121)--(1.131,3.111);
-            \node[] at (1.131,3.411) {$\vec{u}_h$};
+            \node[] at (3.111,3.511) {$f\vec{k}\times\vec{u}_h+\frac{u_h^2}{r}\hat{r}$};
+            \draw[->,ultra thick,mydarkblue] (2.121,2.121)--(1.555,2.687);
+            \node[] at (1.555,2.987) {$\vec{u}_h$};
             \node[] at (0,0) {Low Pressure};
             \node[] at (0,-2.1) {Medium Pressure};
             \node[] at (0,-3.5) {High Pressure};
@@ -809,7 +812,7 @@ In this direction, there are three forces on the air parcel. We already consider
             \draw[->,ultra thick,myorange,densely dashed] (2.121,2.121)--(1.131,1.131);
             \node[] at (0.831,1.831) {$f\vec{k}\times\vec{u}_h$};
             \draw[->,ultra thick,mymagenta,dotted] (2.121,2.121)--(3.111,3.111);
-            \node[] at (3.111,3.411) {$-\vec{\nabla}_h p+\frac{u_h^2}{r}$};
+            \node[] at (3.111,3.511) {$-\vec{\nabla}_h p+\frac{u_h^2}{r}\hat{r}$};
             \draw[->,ultra thick,mydarkblue] (2.121,2.121)--(3.111,1.131);
             \node[] at (3.111,1.631) {$\vec{u}_h$};
             \node[] at (0,0) {High Pressure};
@@ -824,6 +827,40 @@ In this direction, there are three forces on the air parcel. We already consider
 Notice how, for a cyclone, the centrifugal force points in the same direction as the coriolis force. For an anti-cyclone, the centrifugal force points in the opposite driection as the coriolis force (i.e., in the direction of the pressure gradient force).
 
 Therefore, if the pressure gradient force is of a similar size for both a cyclone and anti-cyclone, we should expect the coriolis force to be \textit{smaller} in a cyclone than in an anticyclone. Since the corilis force scales as the wind speed $u_h$, we expect a cyclone to produce \textit{weaker} winds than an anti-cyclone for the same pressure gradients. Turning this on its head, if a cyclone and an anti-cyclone have similar wind-speeds, we expect the cyclone to have \textit{stronger} pressure gradients.
+
+We can understand this algebraically as well. The force balance in the $r$-direction is as follows:
+\begin{align}
+    \label{GW Quadratic}
+    \boxed{
+        \frac{u_h^2}{r}+fu_h-\frac{1}{\rho}\frac{\partial p}{\partial r}=0
+    }
+\end{align}
+which is a quadratic equation for the velocity $u_h$, where $u_h>0$ if $u_h$ is spiraling in the anti-clockwise direction (in the northern hemisphere). \vspace{2mm}
+
+\begin{minipage}{.48\linewidth}
+    \centering
+    For a cyclone, $u_h>0$
+    \begin{align*}
+        \frac{u_h^2}{r}+fu_h = \frac{1}{\rho}\frac{\partial p}{\partial r}
+    \end{align*}
+\end{minipage}
+\hfill
+\begin{minipage}{.48\linewidth}
+    \centering
+    For an anti-cyclone, $u_h<0$
+    \begin{align*}
+        \frac{u_h^2}{r} - \frac{1}{\rho}\frac{\partial p}{\partial r} = -fu_h
+    \end{align*}
+\end{minipage}
+
+\vspace{2mm}
+If we solve Equation \ref{GW Quadratic} directly, we find that $u_h$ is given by the following:
+\begin{align*}
+    u_h = \frac{r}{2} \left( 
+        -f \pm \sqrt{f^2 + \frac{4}{\rho r}\frac{\partial p}{\partial r}}
+     \right)
+\end{align*}
+So it turns out anticyclones (where $\frac{\partial p}{\partial r}<0$) really can't form in this simple model if $\left|\frac{1}{\rho}\frac{\partial p}{\partial r}\right|>\frac{rf^2}{4}$, i.e., if the pressure gradient is too large.
 
 \section{Thermal Wind Balance}
 
@@ -988,7 +1025,7 @@ where the last two equations become:
 
 We must be careful with which variables we are actually holding constant when transforming from height coordinates to pressure coordinates. Before this section, we have implicitly held $z$ constant when calculating horizontal derivatives like $\frac{\partial}{\partial x}$ or $\frac{\partial}{\partial x}$. In practice, you should memorise Equations \ref{P inverse} and \ref{P -1} if you wish to reproduce this in an exam.
 
-We will now apply this to four equations: \hyperref[Hydrostatic GFD Box]{hydrostatic balance} (\ref{Hydrostatic GFD}), \hyperref[Geostrophic Box]{geostrophic balance} (\ref{Geostrophic Balance}), thermal wind balance (\ref{Thermal Wind}), and mass conservation (\ref{Mass Material Conservation}) to derive their equivalent form in pressure coordinates. 
+We will now apply this to four equations: \hyperref[Hydrostatic GFD Box]{hydrostatic balance} (\ref{Hydrostatic GFD}), \hyperref[Geostrophic Box]{geostrophic balance} (\ref{Geostrophic Balance}), thermal wind balance (\ref{Thermal Wind}), and mass conservation (\ref{Mass Conservation}) to derive their equivalent form in pressure coordinates. 
 
 \subsection{Hydrostatic Balance}
 
@@ -1119,7 +1156,7 @@ Again, assuming that the system is hydrostatic allows us to approximate $w_p$ th
     & = -w_z\rho g
 \end{align*}
 
-Recall Equation \ref{Mass Conservation} \ref{Mass Material Conservation} which states the following (this applies for both incompressible and compressible fluids):
+Recall Equation \ref{Mass Conservation} which states the following (this applies for both incompressible and compressible fluids):
 \begin{align*}
     \frac{D\rho}{Dt}+\rho\vec{\nabla}\cdot\vec{u}=0
 \end{align*}
@@ -1423,9 +1460,7 @@ Using product rule, this implies the following:
     In other words, following a fluid parcel, the potential vorticity remains constant.
 \end{fact}
 
-
-
-\section{A Quick Primer on Waves}
+\section{A Brief Primer on Waves}
 
 In the previous section, we derived geostrophic balance and  hydrostatic balance.
 
@@ -1442,15 +1477,52 @@ In practice, though, you don't have to really think about this, and you can just
 
 In other words, the frequency with which the perturbation oscillates is set by the spatial scale (or vice versa). This will give us valuable information regarding how these waves propogate.
 
+\subsection{The wave-vector and the angular frequency}
+
+Physically, the wave-vector encodes the direction the wavefronts face. To see this, consider some field $p$ which is proportional to $\exp(i(\vec{k}\cdot\vec{x}-\omega t))$, i.e., let $p = p_0 \exp(i(\vec{k}\cdot\vec{x}-\omega t))$. Let us draw contours of constant $p$ at some time $t$. To draw these contours, we solve for the values of $\vec{x}$ that solve the following equation:
+\begin{align*}
+    p(\vec{x},t)=const
+\end{align*}
+where $const$ is just any value (picking a different $const$ will give you a different contour).
+
+Since $p\sim\exp(i(\vec{k}\cdot\vec{x}-\omega t))$, this implies that $p$ is constant only for the values where $\vec{k}\cdot\vec{x}$ is constant. These are picked out by the spatial points $\vec{x}$ that can be written as follows:
+\begin{align*}
+    &\vec{x} = \vec{x}_0+\delta\vec{x}
+    \\
+    &\text{where }\delta\vec{x}\perp \vec{k}\text{ and }\vec{x}_0=another\,\, const
+\end{align*}
+Therefore the contours of constant $p$, or the wavefronts, are perpendicular to $\vec{k}$:
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        \draw[very thin,color=gray, dashed] (-0.1,-0.1) grid (3.9,3.9);
+        \draw[->] (-0.2,0) -- (4.2,0) node[right] {$x$};
+        \draw[->] (0,-0.2) -- (0,4.2) node[above] {$y$};
+        \draw[-,myorange] (0,1) -- (1,0); 
+        \draw[-,myorange] (0,2) -- (2,0); 
+        \draw[-,myorange] (0,3) -- (3,0); 
+        \draw[-,myorange] (0,4) -- (4,0); 
+        \draw[-,myorange] (1,4) -- (4,1);
+        \draw[-,myorange] (2,4) -- (4,2);
+        \draw[-,myorange] (3,4) -- (4,3);
+        \draw[->,ultra thick, mydarkblue] (0.5,0.5) -- (2.5,2.5) node[above] {$\vec{k}= \left( \begin{array}{c} k_x \\ k_y \end{array} \right) $};
+    \end{tikzpicture}
+    \caption{A wave vector $\vec{k}$ in the $(x,y)$ plane drawn with a \textcolor{mydarkblue}{thick blue arrow \rule{0.25cm}{0.25cm}}. Wavefronts lie perpendicular to the wavevector, drawn with \textcolor{myorange}{thin solid lines \rule{0.25cm}{0.25cm}}. Note, crucially, that it need not be the case that the energy or the wavefronts propagate in the direction of $\vec{k}$.}
+    \label{Wavefronts Fig}
+\end{figure}
+
+However, $\vec{k}$ only really tells you about the wavelengths in each dimension and the orientation of the wavefronts. It \textbf{does not} tell you which direction the energy or the wavefronts propagate in. These propagate at the \textbf{phase} and \textbf{group} velocities, which we will talk about now.
+
 \subsection{The Phase and Group Velocities}
 
-We will find that the peaks and troughs in the wave will propogate with a \textbf{phase velocity} denoted by $\vec{c}_p$, where the $i$th component $[\vec{c}_p]_i$ is found as follows:
+The peaks and troughs in the wave (i.e., the wavefronts) will propogate with a \textbf{phase velocity} denoted by $\vec{c}_p$, where the $i$th component $[\vec{c}_p]_i$ is found as follows:
 \begin{align}
     \label{Phase Velocity}
     \BOX{[\vec{c}_p]_i=\frac{\omega}{[\vec{k}]_i}}
 \end{align}
 
-We will also find that a wave-packet will propogate with a \textbf{group velocity} denoted by $\vec{c}_g$, where the $i$th component $[\vec{c}_g]_i$ is found as follows:
+Meanwhile, the wave-packet and the energy will propogate with a \textbf{group velocity} denoted by $\vec{c}_g$, where the $i$th component $[\vec{c}_g]_i$ is found as follows:
 \begin{align}
     \label{Group Velocity}
     \BOX{[\vec{c}_g]_i=\frac{\partial\omega}{\partial [\vec{k}]_i}}
@@ -1465,7 +1537,7 @@ This is a slightly confusing distinction, as you've most likely only encountered
 
 Now that you've thoroughly read that resource, we can interpret what this means in our context. Suppose that the pressure perturbation is proportional to $\exp(i(\vec{k}\cdot\vec{x}-\omega t))$ where $\omega=\omega(\vec{k})$ such that $\vec{c}_p=\vec{c}_p(\vec{k})$ and $\vec{c}_g=\vec{c}_g(\vec{k})$. Peaks and troughs propagate with a velocity set by the \textbf{phase velocity} $\vec{c}_p=\vec{c}_p(\vec{k})$, so areas of low or high pressure (i.e., cyclones and anti-cyclones in mid-/high-latitudes) propogate at the velocity $\vec{c}_p$. Meanwhile, the amplitude of this low or high pressure perturbation propagates with a velocity set by the \textbf{group velocity} $\vec{c}_g=\vec{c}_g(\vec{k})$. You saw that, in general, this means that the energy propagates with the \textbf{group velocity}, \textit{not} the \textbf{phase velocity}.
 
-\section{Inertia-Gravity/Poincaré Waves}
+\section{Inertia-Gravity/Poincaré Waves}\label{2D Poincare}
 
 \subsection{Derivation}
 
@@ -1496,6 +1568,7 @@ Third, we use the fact that $H$, $N$, and $\vec{U}$ are constant (and that $\vec
 Doing the same for equation \ref{SW mom} allows us to derive the \textbf{Linearised Shallow Water Equations}.
 
 \begin{fact}{The Linearised Shallow Water Equations}{L SW Eqn}\label{L SW Eqn}
+    Linearising the \hyperref[Shallow Water System]{Shallow Water System} with a flat bottom ($b=-H$) about a state of rest where $u=v=\eta=0$ and $h=H$ by keeping only terms first order in small primed variables gives rise to the following equations: 
     \begin{gather}
         \label{SW Lin mass}
         \BOX{\frac{\partial \eta'}{\partial t}+H\vec{\nabla}_h\cdot \vec{u}'=0}\\
@@ -1506,6 +1579,9 @@ Doing the same for equation \ref{SW mom} allows us to derive the \textbf{Lineari
             g\vec{\nabla}_h \eta'=0
         }
     \end{gather}
+    Note that it is also possible to linearise the shallow water system about other background states. E.g., we could have lineraised about a state of $v=\eta=0$, $h=H$, and $u=U$. This would analyse perturbations about a mean zonal flow.
+
+    While we use these equations to analyse the time-dependent response of anomalies, note that actual phenomena are not always sufficiently represented by a linearised system – sometimes the anomalies are not small relative to the background state!
 \end{fact}
 
 I will now derive it slightly different to how Tim does it in his lecture series. In his lecture series, he does some cross differentiating and adding to eliminate $\vec{u}'$ for an equation only in $\eta'$. While this is more general than what I'm about to do, it is also (in my humble opinion) a bit less straightforward and hard to remember than what i'm about to do. Plus, both methods generate the same answer anyways.
@@ -1579,7 +1655,7 @@ We can go about this two ways. First, we can just eliminate $\eta_0$, $u_0$, $v_
     0&=\omega\left( \omega^2 - f^2 - gH \left( k^2+l^2 \right) \right)
 \end{align*}
 
-We therefore obtain the following dispersion relation for \textbf{Poincare/Inertia-Gravity Waves}:
+We therefore obtain the following dispersion relation for \textbf{Poincaré/Inertia-Gravity Waves}:
 \begin{align}
     \BOX{\omega=0}\,\text{ or }\,\BOX{\omega^2 = f^2 + gH \left( k^2 + l^2 \right)}
 \end{align}
@@ -1605,11 +1681,13 @@ Having made this simplification, we can make two further simplifications. First,
 \subsection{Interpretation}
 
 With our simplifications, our dispersion relation looks like this:
+
+\begin{fact}{Inertial-Gravity/Poincaré Dispersion Relation}{IG SW box}\label{IG SW Box}
+    The dispersion relation for Poincaré/Inertia-Gravity Waves in a Shallow Water System is as follows:
 \begin{align*}
-    \omega(k)=(f^2+\underbrace{gH}_{gH\equiv c^2}\, k^2)^{\frac{1}{2}}
+    \BOX{\omega(k)=(f^2+\underbrace{gH}_{gH\equiv c^2}\, k^2)^{\frac{1}{2}}}
 \end{align*}
 where we have defined $c\equiv \sqrt{gH}=$ the speed\footnote{The phase or the group velocity? Wait and see\dots} at which gravitational waves propagate. If we plot $\omega(k)$, it looks like this:
-
 \begin{figure}[H]
     \centering
     \begin{tikzpicture}[domain=-4:4]
@@ -1620,9 +1698,10 @@ where we have defined $c\equiv \sqrt{gH}=$ the speed\footnote{The phase or the g
         \draw[dotted,thick,mymagenta] plot (\x,{1}) node[right] {$\omega(k) = f$};
         \draw[color=mydarkblue,ultra thick] plot (\x,{{sqrt(1+(\x)^2)}}) node[above] {$\omega(k) = \sqrt{f^2+c^2\,k^2}$};
     \end{tikzpicture}
-    \caption{The dispersion relation for Poincare Waves, drawn in \textcolor{mydarkblue}{filled blue \rule{0.25cm}{0.25cm}}. The long- and short-wave limits, respectively, are drawn in \textcolor{mymagenta}{dotted magenta \rule{0.25cm}{0.25cm}} and \textcolor{myorange}{dashed orange \rule{0.25cm}{0.25cm}}.}
-    \label{Poincare Graph}
+    \caption{The dispersion relation for Poincaré Waves, drawn in \textcolor{mydarkblue}{filled blue \rule{0.25cm}{0.25cm}}. The long- and short-wave limits, respectively, are drawn in \textcolor{mymagenta}{dotted magenta \rule{0.25cm}{0.25cm}} and \textcolor{myorange}{dashed orange \rule{0.25cm}{0.25cm}}.}
+    \label{Poincaré Graph}
 \end{figure}
+\end{fact}
 
 \subsubsection{The Phase and Group Velocities}
 
@@ -1637,7 +1716,7 @@ Doing some algebraic malipulation allows us to derive the following relation:
 \end{align*}
 which implies that it is always the case that $c_p>c_g$. Therefore, peaks and troughs travel faster than a wavepacket or energy does.
 
-Let us now interpret directly the mechanisms that control the propagation of this wave (i.e., how Poincare waves may propagate of anomalies). To do this, let us look at what $\omega(k)$ in the limit of very large and very small $k$. Of course, when we say $k$ is large or small, we must specify large or small \textit{relative to what}. To this end, we define the \textbf{Rossby Deformation Radius} $L_d$ as follows:
+Let us now interpret directly the mechanisms that control the propagation of this wave (i.e., how Poincaré waves may propagate of anomalies). To do this, let us look at what $\omega(k)$ in the limit of very large and very small $k$. Of course, when we say $k$ is large or small, we must specify large or small \textit{relative to what}. To this end, we define the \textbf{Rossby Deformation Radius} $L_d$ as follows:
 \begin{fact}{The Rossby Deformation Radius for a Shallow Water System}{SW Def Radius Box}\label{SW Def Radius Box}
     We define the \textbf{Rossby Deformation Radius} $L_d$ for a Shallow Water System as follows:
     \begin{gather}
@@ -1698,7 +1777,7 @@ Again, recalling that energy propagates at the group velocity, we can conclude t
 
 To explain this, let us consider the mechanism for how this wave sustains itself. In this limit, rotation is dominant. Suppose, again, that there is some surface height $\eta'$ anomaly. This, again, would imply that $\vec{\nabla}_h\eta'\neq 0$, which by Equation \ref{SW Lin mom} would implies that $f\vec{k}\times\vec{u}'\neq0$.
 
-Since $c_g=0$, \textbf{long-wave} Poincare waves cannot transport energy, so in general this will not be the mechanism for propagation of long length-scale anomalies. We must turn to other mechanisms to explain this.
+Since $c_g=0$, \textbf{long-wave} Poincaré waves cannot transport energy, so in general this will not be the mechanism for propagation of long length-scale anomalies. We must turn to other mechanisms to explain this.
 
 \section{Rossby Waves}
 
@@ -1790,6 +1869,8 @@ Now we plug in our expressions for $u'$ and $v'$ into Equation \ref{SW Lin mass}
 where $L_d=$ the \hyperref[SW Def Radius Box]{Rossby Deformation Scale}.
 
 Again, we seek wave-like solutions, so we substitute in $h'=h_0 \exp\left( ikx+ily-i\omega t \right)$ to derive the \textbf{dispersion relation} governing the propagation of Rossby Waves:
+
+\begin{fact}{Rossby Wave Dispersion Relation}{R SW Dispersion}\label{R SW Dispersion}
 \begin{gather}
     \BOX{\omega = \frac{-\beta k}{k^2 + l^2 + \frac{1}{L_d^2}}}
 \end{gather}
@@ -1807,6 +1888,7 @@ Again, we seek wave-like solutions, so we substitute in $h'=h_0 \exp\left( ikx+i
     \caption{The dispersion relation for Rossby Waves, drawn in \textcolor{mydarkblue}{filled blue \rule{0.25cm}{0.25cm}}. The long- and short-wave limits, respectively, are drawn in \textcolor{mymagenta}{dotted magenta \rule{0.25cm}{0.25cm}} and \textcolor{myorange}{dashed orange \rule{0.25cm}{0.25cm}}. For simplicity we have set $l=0$.}
     \label{Rossby Graph}
 \end{figure}
+\end{fact}
 
 \subsection{Interpretation}
 
@@ -1960,15 +2042,226 @@ Therefore, since generally $g'\ll g$, and $L_d\sim\sqrt{g'}$, then $L_d$ is much
 
 \section{Justifying the Shallow Water System}\label{SW Justification}
 
-\chapter{3D Systems}\label{3D Systems}
+\chapter{Time-Dependent 3D Systems}\label{3D Systems}
 
-\section{Gravity Waves}
+In the previous chapter, we considered a time-dependent model of the atmosphere and oceans and analysed time-dependent responses. The key limitation of that system was that that system was $2$-dimensional: we only considered a shallow layer at a time. We accounted for this somewhat when we introduced the \hyperref[RG Box]{Reduced Gravity System}, which represented the effects of stratification insofar as $g$ was replaced by $g'$. 
 
-\subsection{The Boussinesq Approximation}
+Now we aim to represent time-dependent 3D responses of the atmospheres and oceans. We start with gravity waves, although I would prefer to call these 3D Poincaré waves, as I will argue that these are the 3D analogue to the \hyperref[2D Poincare]{2D Inertia Gravity/Poincaré Waves} we considered last chapter. After this, we move onto what will take up the bulk of the chapter: \hyperref[QG]{Quasi-Geostrophic Theory}
 
-\section{Quasi-Geostrophic Theory}
+\section{Gravity Waves (3D Poincaré Waves)}
+
+\subsection{The Boussinesq Approximation and Linearisation}
+
+Before linearising the system, we first invoke the \textbf{Boussinesq Approximation}. The \textbf{Boussinesq Approximation} is an approximation on the density field $\rho$. We first split the density field into three components that obey the following relations:
+\begin{align*}
+    &\rho(\vec{r},t)=\rho_0 + \hat{\rho}(z) + \rho'(\vec{r},t)
+    \\
+    &\bar{\rho}(z)=\rho_0 + \hat{\rho}(z)
+    \\
+    &\rho_0,\bar{\rho} \gg \hat{\rho}(z),\rho'(\vec{r},t)
+\end{align*}
+
+If we multiply Equations \ref{Horizontal Approximate} (Horizontal Momentum) and \ref{Vertical Approximate} (Vertical Momentum) by $\rho$ and expand every instance of $\rho$ as above, we obtain the following equations:
+\begin{align*}
+    (\rho_0+\hat{\rho}+\rho'(\vec{r},t))\frac{D\vec{u}_h}{Dt}+(\rho_0+\hat{\rho}+\rho'(\vec{r},t))f\vec{k}\times\vec{u}_h + \vec{\nabla}_h p = 0
+    \\
+    (\rho_0+\hat{\rho}+\rho'(\vec{r},t))\frac{Dw}{Dt}
+    +
+    (\rho_0+\hat{\rho}+\rho'(\vec{r},t))g + \frac{\partial p}{\partial z}= 0
+\end{align*}
+
+Recalling that $\rho_0 \gg \hat{\rho}, \rho'$, but also recalling from our scale analysis in Section \ref{Scale Analysis} that $g$ is large, we neglect \textit{all} variations in $\rho$ in these equations other than when $\rho$ is multiplied by $g$. This gives us the Approximate Momentum Equations under the Boussinesq Approximation:
+\begin{align}
+    \label{H bous}
+    \boxed{
+        \rho_0\frac{D\vec{u}_h}{Dt}+\rho_0f\vec{k}\times\vec{u}_h + \vec{\nabla}_h p = 0
+    }
+    \\
+    \label{V bous}
+    \boxed{\frac{Dw}{Dt}
+    +
+    \frac{\rho(\vec{r},t)}{\rho_0}g + \frac{\partial p}{\partial z}= 0}
+\end{align}
+Take note that we can define a spatially/temporally varying analogue of the \hyperref[RG Box]{reduced gravity} (in the shallow water system) $g'=\frac{\rho(\vec{r},t)}{\rho_0}g$, which, by stipulation, is much smaller than $g$. Furthermore, note that we did \textit{not} need to assume that $\rho'\ll \hat{\rho}$ in deriving Equations \ref{H bous} and \ref{V bous}. However, we will now assume that $\rho'\ll \hat{\rho}$ when we linearise the equations.
+
+We now, in analogy to how we derived the dispersion relation before, linearise the equations of motion. We linearise about a state of rest $\vec{u}=0$\footnote{Note now that $\vec{U}$ is the 3-dimensional velocity, not just the horizontal velocity.} and a continuous (given) stratification $\rho=\bar{\rho}(z)$ and pressure field $p=\bar{p}(z)$.
+
+\begin{minipage}{0.48\linewidth}
+    \begin{align*}
+        \vec{u}_h = \vec{0}+\vec{u}_h'\\
+        w = 0 + w'
+    \end{align*}
+\end{minipage}
+\hfill
+\begin{minipage}{0.48\linewidth}
+    \begin{align*}
+        p = \bar{p}(z)+p'\\
+        \rho = \bar{\rho}(z) + \rho'
+    \end{align*}
+\end{minipage}
+
+We further assume that the system is approximately hydrostatic, therefore, the following applies:
+\begin{align*}
+    \frac{d\bar{p}}{dz}=-\bar{\rho}g
+\end{align*}
+
+Which equations are we linearising? We linearise Equations \ref{H bous} (Horizontal Momentum), \ref{V bous} (Vertical Momentum), and \ref{Energy Equation} (Energy Equation). We will also use Equation \ref{Incompressibility} (Incompressibility), but this equation does not need to be linearised. This will give us, in total, 5 equations.
+
+Skipping over the details of linearisation, we derive the following linearised equations (Equation \ref{H bous} becomes \ref{H lin}, \ref{V bous} becomes \ref{V lin}, \ref{Incompressibility} is \ref{Incompressible GW}, and \ref{Energy Equation} becomes \ref{MC lin}\footnote{
+    The details for this are a bit complicated. I'd honestly recommend ignoring this, but if you're interested I'd refer to Vallis' textbook \cite{Vallis}. You'll need to first refer to page 41 where he rewrites the energy equation (he calls it the `thermodynamic equation') in another form. Then skip to page 72 where he simplifies this equation using the Boussinesq approximation. Then finally he derives that $\frac{D\rho}{Dt}=0$ if there is no heating.
+ }):
+
+\begin{minipage}{0.48\linewidth}
+    \begin{align}
+        \label{H lin}
+        \boxed{\rho_0\frac{\partial \vec{u}_h'}{\partial t}+\rho_0 f\vec{k}\times\vec{u}_h' +\vec{\nabla}_h p' =0}
+        \\
+        \label{V lin}
+        \boxed{\rho_0 \frac{\partial w'}{\partial t} + \rho' g +\frac{\partial p'}{\partial z}=0}
+    \end{align}
+\end{minipage}
+\hfill
+\begin{minipage}{0.48\linewidth}
+    \begin{align}
+        \label{Incompressible GW}
+        \boxed{\vec{\nabla}\cdot\vec{u}=0}
+        \\
+        \label{MC lin}
+        \boxed{\frac{\partial \rho'}{\partial t} + w \frac{\partial \bar{\rho}}{\partial z}=0}
+    \end{align}
+\end{minipage}
+
+\vspace{2mm} We thus have five linear equations governing five variables: $u$, $v$, $w$, $\rho$, and $p$ (I'm being lazy and have dropped the primes (the $'$'s) for brevity). Note that $\bar{\rho}$ is a given background density field: you do not have to solve for this.
+
+\subsection{Aside: Buoyancy Oscillations}
+
+Let us first consider a state such that: $u=v=p=\frac{\partial w}{\partial z}=0$, in which case all equations other than Equations \ref{V lin} and \ref{Incompressible GW} are trivially satisfied. If we differentiate Equation \ref{V lin} with respect to $t$, we can substitute for $\frac{\partial \rho}{\partial t}$ using equation \ref{MC lin} to obtain the following equation:
+\begin{align}
+    \BOX{\frac{\partial^2 w}{\partial t^2}+N^2 w = 0}
+\end{align}
+where $N = \sqrt{-\frac{g}{\rho_0}\frac{\partial \bar{\rho}}{\partial z}}=$ the Brunt-Väisälä frequency. If you recall the discussion in section INSERT REFERENCE TO CLOUDS HERE in clouds, we have rederived the buoyancy oscillations as well as the buoyancy frequency!
+
+This solutions describes columns of air (since $\frac{\partial w}{\partial z}=0$) oscillating upwards and downwards with a frequency given by $N$. The restoring force is not simply the gravitational force, but the buoyancy force, which is weaker than gravity due to the buoyancy of the air in the background state.
+
+\subsection{Derivation}
+
+We now derive the dispersion relation for internal gravity waves. Tim derives the dispersion relation slightly different to how I personally prefer to derive it. As before, Tim's method is more general, but my method (in my humble opinion) is a bit easier to remember and churn out in an exam. I won't go through the details because they are straightforward. I encourage the reader to derive the equations themselves. The method is analogous to our derivation of the dispersion relation for \hyperref[2D Poincare]{Poincaré Waves}: we set each variable proportional to an exponential function as follows:
+
+\begin{minipage}{0.48\linewidth}
+    \begin{align*}
+        \vec{u}_h = \vec{u}_0 \exp \left( ikx + ily + imz - i\omega t \right)
+        \\
+        w = w_0 \exp \left( ikx + ily + imz - i\omega t \right)
+    \end{align*}
+\end{minipage}
+\hfill
+\begin{minipage}{0.48\linewidth}
+    \begin{align*}
+        p = p_0 \exp \left( ikx + ily + imz - i\omega t \right)
+        \\
+        \rho = \rho_c \exp \left( ikx + ily + imz - i\omega t \right)
+    \end{align*}
+\end{minipage}
+
+\vspace{2mm} Next, we eliminate four out of the five coefficients (e.g., we eliminate the coefficients $\vec{u}_0$, $w_0$, and $p_0$, leaving everything written in terms of $\rho_c$, $k$, $m$, and $\omega$). Next, we claim that $\rho_c\neq 0$ since we wish to find non-trivial solutions, and thus derive a relation between $\omega$ to $k$ and $m$. It should be the following:
+\begin{gather}
+    \BOX{\omega^2 = \frac{N^2 \left( k^2 + l^2 \right) + f^2 m^2}{k^2 + l^2 + m^2}}
+\end{gather}
+
+\subsection{Interpretation}
+
+We again assume the \hyperref[f plane box]{$f$-plane approximation} so that we can take the meridional wavelength $l$ to be infinite (i.e., set $l=0$) without loss of generality. This gives us the following dispersion relation:
+\begin{align}
+    \BOX{\omega^2 = \frac{N^2  k^2   + f^2 m^2}{k^2 + m^2}}
+\end{align}
+
+First take a look at a few limits. If $N=0$ (i.e., the density does not decrease or increase with height) or $k=0$ (i.e., the meridional wavelength is infinite), then the following equation reduces to inertial oscillations. This is for two different reasons. If $N=0$, there is no effect of gravity, because the buoyancy exactly cancels out the effect of gravity. Convsersely, if $k=0$, the wavefronts are 
+
+Conversely, if $f=0$ or $m=0$, 
+
+To interpret this dispersion relation, let us first take the hydrostatic limit. Note that this is a \textit{further} assumption we must make. While we have already assumed that the background state is hydrostatic, we have not assumed that the perturbations are hydrostatic yet. 
+
+If we assume that the perturbations are hydrostatic, this implies that $k\ll m$. WHY??
+
+\section{Quasi-Geostrophic Theory}\label{QG}
+
+\subsection{Derivation}
+
+\begin{fact}{The Quasi-Geostrophic Equations}{QG Box}\label{QG Box}
+    The Quasi-Geostrophic Equations, which govern a Boussinesq, hydrostatic fluid on the $\beta$-plane, evolves according to the Quasi-Geostrophic Potential Vorticity Equation if $Ro^2\ll Ro \ll 1$.
+    \begin{gather}
+        \label{QGPV}
+        \BOX{
+            \frac{D_g q}{Dt} = 0
+        }
+    \end{gather}
+    where $\frac{D_g}{Dt}=$ the geostrophic material derivative, $q=$ the quasi-geostrophic potential vorticity, $\vec{u}_g=$ the horizontal geostrophic velocity, $p_g=$ the geostrophic pressure field, $\rho_g=$ the geostrophic density field, and $w_{ag}=$ the ageostrophic vertical velocity. These obey the following relations:
+
+    \begin{minipage}{0.42\linewidth}
+        \begin{gather}
+            \BOX{
+                \frac{D_g}{Dt}=\frac{\partial }{\partial t}+ \vec{u}_g\cdot\vec{\nabla}
+            }
+            \\
+            \boxed{\vec{u}_g = \vec{k}\times\vec{\nabla}_h\psi}
+            \\
+            \boxed{w_{ag}=-\frac{D_g}{Dt}\left( \frac{f_0}{N^2} \frac{\partial \psi}{\partial z}\right)}
+        \end{gather}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.56\linewidth}
+        \begin{gather}
+            \BOX{
+                q=f_0+\beta y + \vec{\nabla}_h^2 \psi + \frac{\partial }{\partial z}\left( \frac{f_0^2}{N^2} \frac{\partial \psi}{\partial z} \right)
+            }
+            \\
+            \boxed{p_g = \rho_0 f \psi}
+            \\
+            \boxed{\rho_g = \frac{\rho_0 f_0}{g}\frac{\partial \psi}{\partial z}}
+        \end{gather}
+    \end{minipage}
+
+\end{fact}
+
+\subsection{Interpretation}
 
 \section{Quasi-Geostrophic Rossby Waves}
+
+\subsection{Derivation}
+
+As before with the \hyperref[Shallow Water System]{Shallow Water System} we linearise the \hyperref[QGPV]{Quasi-Geostrophic Potential Vorticity Equation}. However, we now assume that the background state is a constant zonal flow, i.e., we linearise about the state $\vec{u}_g=(0,U,0)$ with a constant background stratificaiton ($N=const$). This implies that we're linearising about a streamfunction $\Psi$ such that:
+\begin{align*}
+    \psi = \Psi + \psi'
+    \\
+    \psi' \ll \Psi
+    \\
+    \Psi = -Uy
+\end{align*}
+
+We also use the \hyperref[beta plane box]{$\beta$-plane approximation}.
+
+linearisation\dots
+
+\begin{align*}
+    \left( \frac{\partial }{\partial t}+U\frac{\partial }{\partial x} \right)
+    \left( 
+        \vec{\nabla}_h^2 \psi' 
+        +\frac{f_0^2}{N^2}\frac{\partial \psi'}{\partial z}
+     \right)
+    +
+    \beta \frac{\partial \psi' }{\partial x}
+    =
+    0
+\end{align*}
+
+\begin{fact}{Quasi-Geostrophic Rossby Waves}{QG Rossby box}\label{QG Rossby box}
+
+    \begin{gather}
+        \BOX{
+            \omega = Uk - \frac{\beta k}{k^2 + l^2 +\frac{f_0^2 m^2}{N^2}}
+        }
+    \end{gather}
+\end{fact}
 
 \section{Instabilities and Geostrophic Turbulence}
 
