@@ -605,18 +605,27 @@ If we make the crucial assumption that the parcel exchanges a negligible amount 
 \end{align*}
 and so we derive:
 \begin{fact}{The Dry Adiabat}{Dry Adiabat Box}\label{Dry Adiabat Box}
-    The dry adiabat governs the temperature of an air parcel that is adiabatically lifted or dropped (due to, e.g., convection or dynamics). The temperature increases as pressure increases. This is because, as the parcel moves to a location where the ambient atmospheric pressure is higher, the atmosphere does work on the air parcel to compress it and increase its energy and therefore increase its temperature.
+    The dry adiabat governs the temperature of an air parcel that is adiabatically lifted or dropped (due to, e.g., convection or dynamics). The temperature increases as pressure increases. This is because, as the parcel moves to a location where the ambient atmospheric pressure is higher, the atmosphere does work on the air parcel to compress it and increase its energy and therefore increase its temperature. \vspace{2mm}
+
+    \begin{minipage}{.48\linewidth}
         \begin{gather}
         \label{Dry Adiabat Slope}
         \BOX{
             \frac{d\ln T}{d\ln p}=\frac{R}{c_p}
-        }\\
+        }
+        \end{gather}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{.48\linewidth}
+        \begin{gather}
         \label{Dry Adiabat}
         \BOX{
             T(p)=T_0\left(\frac{p}{p_0}\right)^\frac{R}{c_p}
         }
         \end{gather}
-    If we crucially assume that \textbf{convection} is the \textbf{dominant vertical energy transport mechanism} in the atmosphere then the \textbf{atmosphere follows a dry adiabat}. This is somewhat accurate for Earth's troposphere.
+    \end{minipage}
+        
+    \vspace{2mm} If we crucially assume that \textbf{convection} is the \textbf{dominant vertical energy transport mechanism} in the atmosphere then the \textbf{atmosphere follows a dry adiabat}. This is somewhat accurate for Earth's troposphere.
 \end{fact}
 \subsection{Physical Interpretation}
 
@@ -1243,7 +1252,7 @@ Solving for $\frac{d\ln T}{d\ln p}$ and rearranging, we find the \textbf{Moist P
     \end{align}
     This is in general a \textit{shallower} slope than the \hyperref[Dry Adiabat Box]{Dry Adiabat} due to the latent heat of condensation keeping the parcel warm.
 \end{fact}
-where I have written $q=q_{sat}$ and $c_p=c_p^a$ to remind us that, first, we have made the crucial assumption that the air parcel remains saturated, and second, that $c_p$ is the heat capacity of the non-condensible $a$.
+I have written $q=q_{sat}$ and $c_p=c_p^a$ to remind us that, first, we have made the crucial assumption that the air parcel remains saturated, and second, that $c_p$ is the heat capacity of the non-condensible $a$.
 
 \subsubsection{Physical Interpretation}
 
