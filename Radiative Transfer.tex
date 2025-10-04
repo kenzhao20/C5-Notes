@@ -410,23 +410,26 @@ Second, while blackbodies emit radiation at all frequencies, its 'characteristic
 }\footnotetext{
     Why all the hassle? Why not find where $B(\nu,T)$ is maximum and define that as the characteristic frequency? We do not do this becuase this definition is not physically meaningful. Recall the discussion we had just last section: it is $B(\nu)\,d\nu$ that is meaningful, not $B(\nu)$. (Excercise: differentiate $B(\nu)$ to find where $B$ is maximum with respect to $\nu$. Then, transform into wavelength coordinates, making sure to transform $d\nu$ as well, then differentiate with respect to wavelength. You should find that the maximum wavelength is not the maximum frequency).
 } 
-Since the star will almost always be hotter than its planet, this results in what's called a \textit{spectral gap}: the planet tends to emit radiation at a much longer wavelength than its star, which is what enables the greenhouse effect (See Figure \ref{Cum BB}).
+Since the star will almost always be hotter than its planet, this results in what's called a \textit{spectral gap}: the planet tends to emit radiation at a much longer wavelength than its star, which is what enables the greenhouse effect (See Figure \ref{Spec Gap BB}).
 
 \begin{figure}[H]
     \centering
     \begin{subfigure}{0.35\linewidth}
         \includegraphics[width=\linewidth]{Figures/Radiative Transfer/BB Spectral Radiance.png}
-        \caption{Spectral Radiance $L=B(\nu,T)$ of a BlackBody}
+        \caption{Spectral Radiance $L=B(\nu,T)$ of a BlackBody.}
         \label{Spec Rad BB}
     \end{subfigure}
     \begin{subfigure}{0.35\linewidth}
         \includegraphics[width=\linewidth]{Figures/Radiative Transfer/BB Cumulative.png}
-        \caption{Cumulative Radiance $\int B d\nu$ of a BlackBody}
+        \caption{Cumulative Radiance $\int B d\nu$ of a BlackBody.}
         \label{Cum BB}
     \end{subfigure}
     \begin{subfigure}{0.25\linewidth}
         \includegraphics[width=\linewidth]{Figures/Radiative Transfer/Spectral Gap.jpg}
+        \caption{Normalised spectral radience of bodies in the solar system.}
+        \label{Spec Gap BB}
     \end{subfigure}
+    \caption{Properties of the \textbf{blackbody} spectral emission $B(\nu,T)$.}
 \end{figure}
 
 Third and finally, $B$ is not a function if $\vec{\omega}$: $B$ is isotropic! This final fact allows us to calculate the spectral irradiance of a blackbody by integrating over the projected differential solid angle $d\Omega_\perp$. We integrate over $d\Omega_\perp$ and not  $d\Omega$ because only the radiation perpendicular to the surface of the blackbody is emitted:
@@ -602,7 +605,7 @@ We will discuss how to characterise the \textbf{line shape} of each individual s
     \begin{align}
         \BOX{\kappa_{\nu_c}(\nu)=\frac{S}{\delta}F\left( \frac{\nu-\nu_c}{\delta} \right)}
     \end{align}
-    \begin{minipage}{.45\linewidth}
+    \begin{minipage}{.48\linewidth}
         \textbf{Line Centre} $\nu_c$:
         encodes the centre of the spectral line.
 
@@ -614,7 +617,7 @@ We will discuss how to characterise the \textbf{line shape} of each individual s
         Generally a function of $T$
     \end{minipage}
     \hfill
-    \begin{minipage}{.45\linewidth}
+    \begin{minipage}{.48\linewidth}
         \textbf{Line Width} $\delta$:
         encodes how wide the spectral line is. Generally a function of $p$ and $T$.
         
@@ -656,7 +659,90 @@ For \textbf{vibrational} and \textbf{rotational} transitions, the distortions of
 
 H$_2$O has an intrinsic dipole moment, since the electrons in the bonds are more closely bound to the oxygen, and so the oxygen is a little bit negatively charged and the hydrogens are a little bit positively charged. Vibrations and rotations alter this, and this makes H$_2$O a very strong infrared absorber.
 
-CO$_2$ has no intrinsic dipole moment, but it has two vibrational modes (INSERT FIGURE HERE) which alter its dipole moment. This is typical of linear triatomic molecules. As such, it is a strong infrared absorber as well.
+CO$_2$ has no intrinsic dipole moment, but it has two vibrational modes (see Figure \ref{CO2 Dipole}) which alter its dipole moment. This is typical of linear triatomic molecules. As such, it is a strong infrared absorber as well.
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        \begin{scope}[yshift= 4 cm]
+            \draw[-] (-1.7,0.1) -- (0,0.1);
+            \draw[-] (-1.7,-0.1) -- (0,-0.1);
+            \draw[-] (1.7,-0.1) -- (1,-0.1);
+            \draw[-] (1.7,0.1) -- (1,0.1);
+            \draw[fill=none, thick, mymagenta] (-2,0) circle (0.3);
+            \draw[fill=none, thick, mymagenta] (2,0) circle (0.3);
+            \draw[fill=none, ultra thick, myorange] (0.5,0) circle (0.5);
+            \node[] at (0.5,0) {C};
+            \node[] at (2,0) {O};
+            \node[] at (-2,0) {O};
+        \end{scope}
+        \begin{scope}[yshift = 2cm]
+            \draw[-] (-1.7,0.1) -- (-1,0.1);
+            \draw[-] (-1.7,-0.1) -- (-1,-0.1);
+            \draw[-] (1.7,-0.1) -- (0,-0.1);
+            \draw[-] (1.7,0.1) -- (0,0.1);
+            \draw[fill=none, thick, mymagenta] (-2,0) circle (0.3);
+            \draw[fill=none, thick, mymagenta] (2,0) circle (0.3);
+            \draw[fill=none, ultra thick, myorange] (-0.5,0) circle (0.5);
+            \node[] at (-0.5,0) {C};
+            \node[] at (2,0) {O};
+            \node[] at (-2,0) {O};
+        \end{scope}
+        \begin{scope}
+            \draw[-] (-1.7,0.1) -- (-0.5,0.1);
+            \draw[-] (-1.7,-0.1) -- (-0.5,-0.1);
+            \draw[-] (1.7,-0.1) -- (0.5,-0.1);
+            \draw[-] (1.7,0.1) -- (0.5,0.1);
+            \draw[fill=none, thick, mymagenta] (-2,0) circle (0.3);
+            \draw[fill=none, thick, mymagenta] (2,0) circle (0.3);
+            \draw[fill=none, ultra thick, myorange] (0,0) circle (0.5);
+            \node[] at (0,0) {C};
+            \node[] at (2,0) {O};
+            \node[] at (-2,0) {O};
+        \end{scope}
+    \end{tikzpicture}
+    \hspace{20mm}
+    \begin{tikzpicture}
+        \begin{scope}[yshift = 4cm]
+            \draw[-] (-1.7,0.1) -- (-0.5,0.6);
+            \draw[-] (-1.7,-0.1) -- (-0.5,0.4);
+            \draw[-] (1.7,-0.1) -- (0.5,0.4);
+            \draw[-] (1.7,0.1) -- (0.5,0.6);
+            \draw[fill=none, thick, mymagenta] (-2,0) circle (0.3);
+            \draw[fill=none, thick, mymagenta] (2,0) circle (0.3);
+            \draw[fill=none, ultra thick, myorange] (0,0.5) circle (0.5);
+            \node[] at (0,0.5) {C};
+            \node[] at (2,0) {O};
+            \node[] at (-2,0) {O};
+        \end{scope}
+        \begin{scope}[yshift = 2cm]
+            \draw[-] (-1.7,0.1) -- (-0.5,-0.4);
+            \draw[-] (-1.7,-0.1) -- (-0.5,-0.6);
+            \draw[-] (1.7,-0.1) -- (0.5,-0.6);
+            \draw[-] (1.7,0.1) -- (0.5,-0.4);
+            \draw[fill=none, thick, mymagenta] (-2,0) circle (0.3);
+            \draw[fill=none, thick, mymagenta] (2,0) circle (0.3);
+            \draw[fill=none, ultra thick, myorange] (0,-0.5) circle (0.5);
+            \node[] at (0,-0.5) {C};
+            \node[] at (2,0) {O};
+            \node[] at (-2,0) {O};
+        \end{scope}
+        \begin{scope}
+            \draw[-] (-1.7,0.1) -- (-0.5,0.1);
+            \draw[-] (-1.7,-0.1) -- (-0.5,-0.1);
+            \draw[-] (1.7,-0.1) -- (0.5,-0.1);
+            \draw[-] (1.7,0.1) -- (0.5,0.1);
+            \draw[fill=none, thick, mymagenta] (-2,0) circle (0.3);
+            \draw[fill=none, thick, mymagenta] (2,0) circle (0.3);
+            \draw[fill=none, ultra thick, myorange] (0,0) circle (0.5);
+            \node[] at (0,0) {C};
+            \node[] at (2,0) {O};
+            \node[] at (-2,0) {O};
+        \end{scope}
+    \end{tikzpicture}
+    \caption{The two dipole moments of CO$_2$ that alter its dipole moment, thus making it a strong absorber/emitter in the infrared. Arrows indicate the movement of the central carbon molecule.}
+    \label{CO2 Dipole}
+\end{figure}
 
 Meanwhile, N$_2$ and O$_2$ are both diatomic molecules made up of identical atoms, and so don't couple strongly to the electromagnetic field, since none of the rotational or vibrational modes change the molecules' dipole moment. This is why N$_2$ and O$_2$ are both optically inactive.
 
