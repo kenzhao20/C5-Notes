@@ -199,7 +199,7 @@ Finally, we define the vorticity $\vec{\omega}$ as the curl of the velocity:
 \end{align}
 If you refer back to the box on \hyperref[VC Interp]{Vector Calculus Interpretation}, this should remind you that the curl of the velocity is the \textbf{local} rotation of the velocity field, not the \textbf{global} rotation. We will usually be considering the vertical component of the vorticity $[\vec{\omega}]_z$, which we will often write just as $\xi$.
 
-\section{Why There Is Motion in the First Place}
+\section{Why There Is Motion in the First Place}\label{Differential Heating}
 
 It's important to consider why there is motion in Atmospheres and Ocean in the first place.
 
@@ -219,8 +219,6 @@ This differential heating causes horizontal temperature gradients, which in turn
     \caption{Figure from Ray's book showing differential heating. More heat is }
     \label{Diff Heating}
 \end{figure}
-
-
 
 \section{What is Special About `Geophysical' Fluid Mechanics?}\label{GFD Special}
 
@@ -2281,18 +2279,21 @@ linearisation\dots
 
 \chapter{Ocean Circulation}\label{Oceans}
 
-As already touched upon, the oceans, while similar to the atmosphere in the sense that it is a fluid affected by gravity (and so stratification) and rotation (and so coriolis), differs dynamically due to a few facts.
+Throughout GFD, we have formulated models that apply to both the oceans and the atmosphere, but mostly with a focus on the atmosphere. Geostrophic and hydrostatic balance are accurate diagnostic relations in the ocean, our analysis using the shallow water system of waves is applicable to the oceans, aas is our discussion on instability and turbulence.
 
-\begin{enumerate}
-    \item Equation of state: $g'$ is much smaller, so $L_d$ is much smaller
-    \item Rossby number
-    \item External forcing
-    \item Bathymetry
-\end{enumerate}
+Now we pay explicit attention to just the oceans, but, as before, concepts here may be applicable to the atmosphere. As already touched upon, the oceans, while similar to the atmosphere in the sense that it is a fluid on a planet and so is affected by gravity (and so stratification) and rotation (and so coriolis), differs from the atmosphere dynamically in a few key ways.
+
+First, the oceans are externally forced differently to the atmosphere. Recall our discussion in Section \ref{Differential Heating} that differential heating from the sun drives motion in the atmosphere: the atmosphere and oceans must transport energy poleward to close the energy budget. While the oceans accomplish this as well, the oceans are also, crucially, forced externally via atmospheric winds.
+
+Second, unlike the atmosphere, the ocean has walls. This leads to effects in which we must consider. We considered this while discussing coastal \ref{Kelvin} waves, for example, but we will consider this further when we incorporate effects like friction.
+
+Third, the equation of state and typical sea-water conditions means that variations in density within the ocean are very small, and seawater is much denser than the atmosphere. This implies that, if we were to model the ocean using a reduced gravity model, $g'$ would be much smaller, and therefore $L_d$ is also shorter. If we were to model the ocean using a continuous stratification, $N$ would be smaller, which, again, implies that $L_d$ is shorter in the ocean.
+
+Finally, $Ro$ is much smaller in the ocean than in the atmosphere. $f$ is comparable in both the atmospheres and oceans. Meanwhile, both $L$ and $U$ are smaller in the ocean. We can understand this somewhat as follows, but I emphasise that what I am about to say is by no means a \textit{sufficient} explanation\footnote{And to be honest I don't know a dynamically sound argument why $Ro$ is smaller in the oceans. I think, however, an argument might go like this. First, note the energy recieved by the oceans and the atmospheres in \qty{}{\watt\per\square\meter}}. We expect $L$ to be set by $L_d$, which recall depends on the stratification. Since $N$ is smaller in the ocean, $L$ is smaller in the ocean. Meanwhile, we expect $U$ to be set by the energy and momentum budgets. While the atmosphere is directly forced by differential heating and latent heat releases, we expect (?) this energy source to be larger than the wind-stress the atmosphere exerts on the oceans, so we expect $U$ to be larger in the atmosphere. I have only explained why both $L$ and $U$ are smaller in the ocean than in the atmospheres, but note crucially that I have not explained why $U$ is smaller by a larger amount than $L$, and \textit{this} is what is required to explain why $Ro$ is smaller in the ocean than in the atmosphere.
 
 We'll be exploring some effects of external forcing \ref{Ekman Transport} and the small rossby number \ref{Sverdrup Balance}.
 
-\section{Ekman Transport}\label{Ekman Transport}
+\section{Ekman Transport (Shallow Ocean Circulation)}\label{Ekman Transport}
 
 We begin by considering the effect of external forcing due to friction. For the ocean, this will be due to the atmosphere blowing over the ocean, which exerts a shear stress on the surface of the ocean, forcing the ocean to move in the same direction as the air. A \textbf{stress} is a force per unit area across a boundary. In this case, this is the boundary between the atmosphere adn the ocean. A \textbf{shear} stress is 
 
@@ -2302,24 +2303,109 @@ Ekman transport is the transport due to the circulation of
 
 Assume $Ro\ll1$ so we can neglect the acceleration/advection term in Equation \ref{Horizontal Approximate} and that $\rho=\rho_0=const$:
 \begin{align*}
-    f\vec{k}\times\vec{u}+\frac{1}{\rho_0}\vec{\nabla}_h p = \vec{F}_b
+    f\vec{k}\times\vec{u}_h+\frac{1}{\rho_0}\vec{\nabla}_h p = \vec{F}_b
 \end{align*}
 
 We now no longer neglect other forces, and reintroduce the horizontal stress force. We assume that the horizontal stresses vary the most vertically, which means that we can write $F_b$ to a good approximation as follows:
-\begin{align*}
+\begin{gather*}
     \vec{F_b} = \frac{1}{\rho_0}\frac{\partial \vec{\tau}}{\partial z}\\
-    \tau=\underbrace{\rho_0\nu\frac{\partial \vec{u}_h}{\partial z}}_{\text{viscous stress}}-
-    \rho_0 \vec{u}_h'w'
-\end{align*}
-where $\vec{\tau}$ is the horizontal stress vector\footnote{If you are familiar with fluid mechanics, you will notice that, in reality, the stress is actually a tensor.}. 
+    \vec{\tau}=\underbrace{\rho_0\nu\frac{\partial \vec{u}_h}{\partial z}}_{\text{viscous stress}}-
+    \underbrace{\rho_0 \overline{\vec{u}_h'w'}}_{\text{turbulent eddy stress}}
+\end{gather*}
+where $\vec{\tau}$ is the horizontal stress vector\footnote{If you are familiar with fluid mechanics, you will notice that, in reality, the stress is actually a tensor. [FOOTNOTE UNDER CONSTRUCTION]}. The second term is a bit more complicated, but just think of it as the effect of turbulent momentum fluxes which produce an effective force on the fluid (and read this\footnote{
+    The explanation of the $\rho_0 \overline{\vec{u}_h'w'}$ is as follows. First we perform a \href{https://en.wikipedia.org/wiki/Reynolds_decomposition}{Reynolds Decomposition} by splitting the velocity into a (time, space, or other suitably defined) average (indicated by a bar) and a fluctuation indicated by a prime:
+    \begin{align*}
+        \vec{u}_h = \overline{\vec{u}_h}+\vec{u}_h'
+        \\
+        w = \overline{w}+w'
+    \end{align*}
+    where the fluctuations average out to $0$ (e.g., $\overline{w'}=0$).
+
+    While the fluctuations by themselves might average out to $0$, there might be correlations that don't average out to $0$. The turbulent momentum flux is the average correlation between the horizontal velocity and the vertical velocity: if there are correlations, then this will result in momentum being advected downwards or upwards. 
+    
+    For example, if $\vec{u}_h'$ is more likely to be pointing eastward when $w'<0$, then this will result in eastward momentum preferentially being advected downwards by vertical velocity fluctuations, which causes an effective momentum flux.
+} footnote if you want more). Ekman transport is therefore a three-way balance between coriolis, pressure gradient forces, and horizontal stress from friction.
+
+We define the \textbf{Ekman Layer} as lying between $z=0$, where the surface of the ocean is, and $z=-H$, where $z=-H$ when $\vec{\tau}=\vec{0}$. This specifies where $z=-H$, but note that we do not necessarily need to solve for $H$.
 
 \subsection{Ekman Spiral}
 
-\subsection{Ekman Volume Flux}
 
-\section{Sverdrup Balance}\label{Sverdrup Balance}
 
-\section{Stommel Box Model}\label{MOC}
+\subsection{Ekman Flux}
+
+We had to make the highly dubious approximation of the turbulent eddy stress term by a single (constant) turbulent eddy viscosity, we do not have to make the same assumption here. We again decompose the velocity $\vec{u}_h$ into a geostrophic component and an ekman (ageostrophic) component:
+\begin{align*}
+    \vec{u}_h = \vec{u}_g + \vec{u}_{Ek}
+\end{align*}
+where, again, $\vec{u}_g$ is defined as in Equation \ref{Geostrophic Balance}.
+
+This implies that $\vec{u}_{Ek}$ is given by the following expression:
+\begin{align*}
+    \vec{u}_{Ek} = - \frac{1}{\rho_0 f}\vec{k}\times\frac{\partial \vec{\tau}}{\partial z}
+\end{align*}
+
+We now integrate this expression from $z=-H$ to $z=0$, and note that we can remain completely ignorant of the precise expression for $\vec{\tau}$ and make use simply of our boundary conditions. We define $\vec{U}_{Ek}$ as follows:
+\begin{align*}
+    \vec{U}_{Ek}&\equiv
+    \int_{z=-H}^{z=0}\vec{u}_{Ek}\, dz
+    \\
+    &=
+    -\frac{1}{\rho_0 f}\vec{k}\times\int_{z=-H}^{z=0}\frac{\partial \vec{\tau}}{\partial z}\, dz
+    \\
+    &=
+    -\frac{1}{\rho_0 f}\vec{k}\times\int_{\vec{\tau}=\vec{0}}^{\vec{\tau}=\vec{\tau}_s}\,d\vec{\tau}
+\end{align*}
+\begin{gather}
+    \therefore\BOX{
+        \vec{U}_{Ek}=-\frac{1}{\rho_0 f}\vec{k}\times\vec{\tau}_s
+    }
+\end{gather}
+
+We therefore have an expression for the Ekman Flux $\vec{U}_{Ek}$: the column integrated fluid flux from wind-forcing. Note a key nuance that this flux is not a volume flux: the dimensions are not a volume per second, but an area per second. To find the volume flux, we would also need to integrate this expression horizontally perpendicular to $\vec{U}_{Ek}$. (E.g., if $\vec{U}_{Ek}$ is pointing northward, we would need to integrate this zonally, i.e., from west to east to find the volume flux.)
+
+Physically, we have a very similar situation to \hyperref[Geostrophic Box]{Geostrophic Balance}, for $\vec{U}_{Ek}$, we have a total balance between the horizontal stress $\vec{\tau}$ and the coriolis force. To make this more clear, we can write an expression for $\vec{U}_{Ek}$ another way:
+\begin{align*}
+    f\vec{k}\times \vec{U}_{Ek} = \frac{1}{\rho_0}\vec{\tau}_s
+\end{align*}
+which looks very analogous to Equation \ref{Geo Bal}, which expresses geostrophic balance.
+
+Note that, in the northern hemisphere, $\vec{U}_{Ek}$ points to the right of $\vec{\tau}_s$, and vice versal in the southern hemisphere.
+
+We have so far considered the horizontal Ekman flux, but we now wish to consider the vertical Ekman flux. We again decompose the vertical velocity $w$ into a geostrophic component\footnote{Recall that $w_g=0$ only if $\rho$ and $f$ do not vary, and while $\rho=\rho_0=const$, we do not wish to make the $f$-plane approximation here!} and an Ekman (ageostrophic) component. 
+
+We wish to find the Ekman vertical velocity at $z=-H$ which we write as $w_{Ek}$. To find $w_{Ek}$, we apply Equation \ref{Incompressibility}, and integrate this equation again from $z=-H$ to $z=0$, where we assume that $w=0$ at $z=0$\footnote{It suffices just to assume that $w(z=0)\ll w(z=-H)$, which makes sense when we recall that $w=0$ is set by the fluid interface, and the air-sea interface moves much slower than the the interface within th ocean (recall our derivation of the \hyperref[RG Box]{Reduced Gravity System})}.
+
+We define $w_{Ek}$ as follows:
+\begin{align*}
+    w_{Ek}&\equiv
+    w(z=-H)
+    \\
+    &= w(z=-H)-w(z=0)
+    \\
+    &=\int_{z=-H}^{z=0}\frac{\partial w}{\partial z}\,dz
+    \\
+    &=\int_{z=-H}^{z=0}\vec{\nabla}\cdot\vec{u} - \vec{\nabla}_h \cdot \vec{u}_{Ek}\,dz
+    \\
+    &=\vec{\nabla}_h \cdot\int_{z=-H}^{z=0}\vec{u}_{Ek}\,dz
+    \\
+    &=\vec{\nabla}_h \cdot \vec{U}_{Ek}
+\end{align*}
+\begin{gather}
+    \therefore \BOX{
+        w_{Ek}=\vec{k}\cdot \vec{\nabla} \times \left( \frac{1}{\rho_0 f}\vec{\tau}_s \right) = \left[
+            \vec{\nabla} \times \left( \frac{1}{\rho_0 f}\vec{\tau}_s \right)
+        \right]_z
+    }
+\end{gather}
+
+In other words, the ekman upwelling is equal to the ($z$-component of the) vorticity of the $\frac{1}{\rho_0 f}\vec{\tau}_s$. This could come from $f$, or it could come from the surface wind-stress field $\vec{\tau}_s$. 
+
+\section{Sverdrup Balance (Deep Ocean Circulation)}\label{Sverdrup Balance}
+
+We now turn our focus to below the Ekman layer, i.e., to $z<-H$. 
+
+\section{Box Models of the Meridional Overturning Circulation}\label{MOC}
 
 In this section we aim to construct a simple box model of the \textbf{Atlantic Meridional Overturning Circulation} (AMOC). The AMOC is a complex overturning circulation, consisting of warm waters which flow from the Southern Ocean northward, before turning cold and salty, sinking in the North Atlantic, and flowing southward to complete the loop.
 
