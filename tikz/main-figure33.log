@@ -565,10 +565,10 @@ Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )) (/usr/local/texlive/2025/texmf-dist/tex/generic/iftex/ifluatex.sty
 Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
 )
-runsystem(uname -s > "tikz/main-figure31.w18")...executed.
+runsystem(uname -s > "tikz/main-figure33.w18")...executed.
 
-(./tikz/main-figure31.w18)
-runsystem(rm -- "tikz/main-figure31.w18")...executed.
+(./tikz/main-figure33.w18)
+runsystem(rm -- "tikz/main-figure33.w18")...executed.
 
 )
 \c@svg@param@lastpage=\count336
@@ -1024,7 +1024,7 @@ Package: titling 2009/09/04 v2.1d maketitle typesetting
 Package translations Info: No language package found. I am going to use `english' as default language. on input line 141.
 \@quotelevel=\count501
 \@quotereset=\count502
-No file tikz/main-figure31.aux.
+No file tikz/main-figure33.aux.
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 141.
 LaTeX Font Info:    ... okay on input line 141.
 LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 141.
@@ -1120,8 +1120,8 @@ Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'tikz/main-figure31.bbl' not found.
-No file tikz/main-figure31.bbl.
+Package biblatex Info: ... file 'tikz/main-figure33.bbl' not found.
+No file tikz/main-figure33.bbl.
 Package biblatex Info: Reference section=0 on input line 141.
 Package biblatex Info: Reference segment=0 on input line 141.
 LaTeX Font Info:    Trying to load font information for U+msa on input line 144.
@@ -1137,7 +1137,7 @@ LaTeX Font Info:    Trying to load font information for U+rsfs on input line 144
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 
-No file tikz/main-figure31.toc.
+No file tikz/main-figure33.toc.
 
 
 
@@ -3159,11 +3159,8 @@ LaTeX Warning: Reference `SW Lin mass' on page 133 undefined on input line 1950.
 
 LaTeX Warning: Hyper reference `SW Def Radius Box' on page 133 undefined on input line 1963.
 
-\openout5 = `tikz/main-figure31.dpth'.
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 
-[133
-
-{/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 
 
 LaTeX Warning: Hyper reference `PV' on page 134 undefined on input line 2006.
@@ -3186,7 +3183,11 @@ LaTeX Warning: Reference `SW mom' on page 134 undefined on input line 2062.
 
 LaTeX Warning: Reference `RG Fig' on page 135 undefined on input line 2064.
 
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to disable this.
+\openout5 = `tikz/main-figure33.dpth'.
+
+[135
+
+{/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 
 LaTeX Warning: Hyper reference `shallow box' on page 135 undefined on input line 2130.
 
@@ -3368,26 +3369,26 @@ LaTeX Warning: There were undefined references.
 
 
 Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                tikz/main-figure31
+(biblatex)                tikz/main-figure33
 (biblatex)                and rerun LaTeX afterwards.
 
-Package logreq Info: Writing requests to 'tikz/main-figure31.run.xml'.
-\openout1 = `tikz/main-figure31.run.xml'.
+Package logreq Info: Writing requests to 'tikz/main-figure33.run.xml'.
+\openout1 = `tikz/main-figure33.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 44223 strings out of 473190
- 950551 string characters out of 5715800
+ 43967 strings out of 473190
+ 945140 string characters out of 5715800
  1567845 words of memory out of 5000000
- 66807 multiletter control sequences out of 15000+600000
+ 66551 multiletter control sequences out of 15000+600000
  576652 words of font info for 106 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 120i,25n,124p,1415b,1930s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on tikz/main-figure31.pdf (1 page, 73046 bytes).
+ 120i,25n,124p,1415b,1907s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on tikz/main-figure33.pdf (1 page, 56576 bytes).
 PDF statistics:
- 181 PDF objects out of 1000 (max. 8388607)
- 47 compressed objects within 1 object stream
+ 171 PDF objects out of 1000 (max. 8388607)
+ 41 compressed objects within 1 object stream
  1 named destinations out of 1000 (max. 500000)
  162 words of extra memory for PDF output out of 10000 (max. 10000000)
 
