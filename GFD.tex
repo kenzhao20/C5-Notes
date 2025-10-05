@@ -1481,7 +1481,13 @@ We define the \textbf{potential vorticity} (\textbf{PV}) $Q$ in this context as 
 \begin{align*}
     \boxed{Q = \frac{f+\xi}{h}}
 \end{align*}
-We can interpret this as the absolute vorticity in the $z$-direction $[\vec{\omega}_a]_z$, which is the sum of the planetary vorticity in the $z$-direction $f$ (the coriolis parameter!) and the relative vorticity in the $z$ direction $\xi$, divided by the thickness of the layer $h$.
+$Q$ is the absolute vorticity in the $z$-direction $[\vec{\omega}_a]_z$, which is the sum of the planetary vorticity in the $z$-direction $f$ (the coriolis parameter!) and the relative vorticity in the $z$ direction $\xi=\frac{\partial v}{\partial x}-\frac{\partial u}{\partial y}$, divided by the thickness of the layer $h$.
+
+In a way, we can think of \textbf{PV} as encoding the two important properties of GFD: rotation and stratification. The rotation is encoded by the $f+\xi$ term, which is the total (planetary+relative) vorticity in the $z$-direction. The stratification is encoded by the layer thickness $h$. If $h$ is small, then this implies that the layer of constant density is very thin, which implies that density in the broader fluid increases rapidly with height. Conversely, if $h$ is large, then this implies that the layer of constant density is very thick, which implies that density in the broader fluid increases very slowly with height.
+
+\subsection{Material Conservation of Potential Vorticity}
+
+\subsubsection{Derivation}
 
 We first take the $z$ component of the curl Equation \ref{SW mom} (and recalling that $f\neq const$):
 \begin{align*}
@@ -1505,13 +1511,63 @@ Using product rule, this implies the following:
 
 \begin{fact}{Material Conservation of Potential Vorticity}{Cons PV Box}\label{Cons PV Box}
     For a shallow water system, the \textbf{Potential Vorticity} (\textbf{PV}) $Q$ is materially conserved: 
-    \begin{align}
+
+    \begin{minipage}{.48\linewidth}
+        \begin{align}
         \BOX{
             \frac{D_h Q}{Dt}=0
         }
     \end{align}
-    In other words, following a fluid parcel, the potential vorticity remains constant.
+    \end{minipage}
+    \begin{minipage}{.48\linewidth}
+        \begin{align}
+        \BOX{
+            Q = \frac{f+\xi}{h}
+        }
+    \end{align}
+    \end{minipage}
+    
+    \vspace{2mm} where $\xi=\frac{\partial v}{\partial x}-\frac{\partial u}{\partial y}$ the relative vorticity. In other words, following a fluid parcel, the potential vorticity remains constant.
 \end{fact}
+
+\subsubsection{Interpretation}
+
+We can interpret material conservation of potential vorticity by considering an infinitesimally thin column of fluid.
+
+This column of fluid lies between the bottom ($z=b$) and top ($z=\eta$) of the layer, and is infintesimally thin. We impose that the column is infinitesimally thin to ensure that $u$, $v$, and $h$ do not vary appreciably over the entire column. However, we \textit{must} consider the entire column of fluid because our assumption (in the derivation) that $u$ and $v$ do not vary with $z$.
+
+As this column of fluid is advected around, it must conserve its angular momentum in the $z$-direction. Suppose the column is initially rotating with some (total) angular velocity. If the column is stretched (i.e., if $h$ increases), it become thinner (because the total volume of the column remains constant), and so it must therefore rotate faster to conserve angular momentum.
+
+\begin{figure}[]
+    \centering
+    \begin{tikzpicture}
+    \begin{scope}[xshift=-3cm]
+        \draw[<->] (-1.5,0) -- (-1.5,-4);
+        \node[] at (-1.75,-2) {$h$};
+        \draw (0,0) ellipse (1 and 0.5);
+        \draw (-1,0) -- (-1,-4);
+        \draw (-1,-4) arc (180:360:1 and 0.5);
+        \draw [dashed] (-1,-4) arc (180:360:1 and -0.5);
+        \draw (1,-4) -- (1,0);
+        \draw[->, ultra thick, mymagenta] (-1,-2) arc (180:360:1 and 0.5);
+        \draw[->, ultra thick, mymagenta] (-1,-1.5) arc (180:360:1 and 0.5);
+        \draw[->, ultra thick, mymagenta] (-1,-2.5) arc (180:360:1 and 0.5);
+        %\fill [gray,opacity=0.5] (-1,0) -- (-1,-3.5) arc (180:360:1 and 0.5) -- (1,0) arc (0:180:1 and -0.5);
+    \end{scope}
+    \begin{scope}[xshift=3cm,yshift=-1.2cm]
+        \draw (0,0) ellipse (2 and 0.5);
+        \draw[<->] (-2.5,0) -- (-2.5,-1.6);
+        \node[] at (-2.75,-0.8) {$h$};
+        \draw (-2,0) -- (-2,-1.6);
+        \draw (-2,-1.6) arc (180:360:2 and 0.5);
+        \draw [dashed] (-2,-1.6) arc (180:360:2 and -0.5);
+        \draw (2,-1.6) -- (2,0);
+        \draw[->, ultra thick, mymagenta] (-2,-0.8) arc (180:360:2 and 0.5);
+        %\fill [gray,opacity=0.5] (-1,0) -- (-1,-3.5) arc (180:360:1 and 0.5) -- (1,0) arc (0:180:1 and -0.5);
+    \end{scope}
+    \end{tikzpicture}
+    \caption{Intuition behind the Conservation of Potential Vorticity. When the fluid column gets stretched verticall (i.e., $h$ increases), the fluid must rotate (\textcolor{mymagenta}{magenta arrows \rule{0.2cm}{0.2cm}}) faster, and vice versa.}
+\end{figure}
 
 \section{A Brief Primer on Waves}
 
@@ -2248,7 +2304,33 @@ If we assume that the perturbations are hydrostatic, this implies that $k\ll m$.
 
 \section{Quasi-Geostrophic Theory}\label{QG}
 
+
+
 \subsection{Derivation}
+
+\subsubsection{Assumptions}
+
+We first assume that $Ro<1$, i.e., $Ro$ is small but not extremely small. Second, we assume density variations are small so we can use the Boussinesq approximation. Third, we assume that the background pressure and density fields are hydrostatic. Fourth, we use the \hyperref[beta plane box]{$\beta$-plane approximation}. (Fifth) We further assume that $\frac{\beta y}{f_0}\sim O(Ro)$.
+
+Our strategy is to now decompose each field into a geostrophic and ageostrophic component:
+\begin{align*}
+    \vec{u} = \vec{u}_g + \vec{u}_{ag}
+    \\
+    p = \bar{p}(z) p_g + p_{ag}
+    \\
+    \rho = \bar{\rho}(z) \rho_g + \rho_{ag}
+\end{align*}
+such that
+\begin{align*}
+    \frac{\partial \bar{p}}{\partial z} = -\bar{\rho}g
+\end{align*}
+
+We further assume that the ratio of the magnitude of the ageostrophic comoponents to the geostrophic components are of order $Ro$. For example:
+\begin{align*}
+    \frac{\left|\vec{u}_{ag}\right|}{\left|\vec{u}_g\right|}\sim O (Ro)
+\end{align*}
+
+We aim to derive a simplified set of equations from Equations \ref{Horizontal Approximate}, \ref{Vertical Approximate}, \ref{Incompressibility}, and 
 
 \begin{fact}{The Quasi-Geostrophic Equations}{QG Box}\label{QG Box}
     The Quasi-Geostrophic Equations, which govern a Boussinesq, hydrostatic fluid on the $\beta$-plane, evolves according to the Quasi-Geostrophic Potential Vorticity Equation if $Ro^2\ll Ro \ll 1$.
@@ -2258,7 +2340,7 @@ If we assume that the perturbations are hydrostatic, this implies that $k\ll m$.
             \frac{D_g q}{Dt} = 0
         }
     \end{gather}
-    where $\frac{D_g}{Dt}=$ the geostrophic material derivative, $q=$ the quasi-geostrophic potential vorticity, $\vec{u}_g=$ the horizontal geostrophic velocity, $p_g=$ the geostrophic pressure field, $\rho_g=$ the geostrophic density field, and $w_{ag}=$ the ageostrophic vertical velocity. These obey the following relations:
+    where $\frac{D_g}{Dt}=$ the geostrophic material derivative, $q=$ the quasi-geostrophic potential vorticity, $\psi=$ the streamfunction, $\vec{u}_g=$ the horizontal geostrophic velocity, $p_g=$ the geostrophic pressure field, $\rho_g=$ the geostrophic density field, and $w_{ag}=$ the ageostrophic vertical velocity. These obey the following relations:
 
     \begin{minipage}{0.42\linewidth}
         \begin{gather}
@@ -2287,6 +2369,8 @@ If we assume that the perturbations are hydrostatic, this implies that $k\ll m$.
 \end{fact}
 
 \subsection{Interpretation}
+
+Interpretaiton of Equation \label{QGPV} is straightforward and analogous to 
 
 \section{Quasi-Geostrophic Rossby Waves}
 
