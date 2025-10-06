@@ -1,6 +1,6 @@
 # C5-Notes
 
-These are set of latex notes based off the notes I took for the C5: Physics of Atmospheres and Oceans course.
+These are set of latex notes based off the notes I took for the C5: Physics of Atmospheres and Oceans course. You can access the course in the 'main.pdf' file.
 
 These are free to use, however, they are unfinished, so please do not distribute these freely online!
 
