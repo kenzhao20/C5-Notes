@@ -2,7 +2,7 @@
 
 \section*{Introduction}
 
-This section of the course was lectured by \href{https://www.physics.ox.ac.uk/our-people/allenm}{Myles Allen} covering a sort of miscellaneous set of topics. His stated goal (at time of writing) is to introduce to you certain methods using climate as an example. \vspace{5 mm}
+This section of the course was lectured by \href{https://www.physics.ox.ac.uk/our-people/allenm}{Myles Allen}, covering a miscellaneous set of topics. His stated goal (at time of writing) was to introduce you to certain more general methods using climate/weather as an example. \vspace{5 mm}
 
 \noindent This section consists of three chapters:\vspace{5 mm}
 
@@ -12,7 +12,7 @@ This section of the course was lectured by \href{https://www.physics.ox.ac.uk/ou
         \begin{quote}
             We consider the Earth as a simple, low-dimensional, linear, deterministic dynamical system. We solve the system using normal modes and a further method (not discussed by Myles) using the quasi-steady approximation.
 
-            In many cases we find this to reveal multiple timescales of response: a shorter timescale response (where the slower component stays constant) and longer timescale response (where the faster component is always in time-varying equilibrium).
+            In many cases we find this to reveal multiple timescales of response: a shorter timescale response (where the slower component stays constant) and a longer timescale response (where the faster component is always in time-varying equilibrium).
         \end{quote}
 
     \item \hyperref[Predictability]{Predictability}: 
@@ -42,16 +42,16 @@ In reality, the climate is highly non-linear and stochastic. As such, we should 
 \begin{equation}\label{Dynamical System Eqn}
     \dot{\vec{x}}=\hat{J}\vec{x}+\vec{f}
 \end{equation}
-where $\vec{x}\in\mathbb{R}^n$ is the state-vector of the system, $\hat{J}\in\mathbb{R}^n\times\mathbb{R}^n$ is the linear(ised) Jacobian, and $\vec{f}\in\mathbb{R}^n$ is the external forcing. 
+where $\vec{x}\in\mathbb{R}^n$\footnote{This is just fancy-speak for an $n$ dimensional vector.} is the state-vector of the system, $\hat{J}\in\mathbb{R}^n\times\mathbb{R}^n$ is the linear(ised) Jacobian, and $\vec{f}\in\mathbb{R}^n$ is the external forcing. 
 
 We apply this first to an energy-budget equation for the climate, characterised by the state-vector $(T_s,T_d)$ representing perturbations of the mean atmospheric/surface-ocean temperature and deep ocean temperature, respectively, governed by the equations:
-\begin{align}
+\begin{gather}
     \label{T_s}
-    &\boxed{C_s \dot{T}_s = F_{ext}(t)-\lambda T_s -\gamma (T_s-T_d) - \lambda'(T_s-T_d)}
+    \boxed{C_s \dot{T}_s = F_{ext}(t)-\lambda T_s -\gamma (T_s-T_d) - \lambda'(T_s-T_d)}
     \\ 
     \label{T_d}
-    &\boxed{C_d \dot{T}_d = -\gamma (T_d-T_s)}
-\end{align}
+    \boxed{C_d \dot{T}_d = -\gamma (T_d-T_s)}
+\end{gather}
 where $C_s$, $C_d$ are the effective heat capacities of the atmosphere/surface oceans and deep oceans per unit area, respectively. The left-hand side represents the change in the energy (per unit area) and the right-hand side represents various energy fluxes (per unit area). The various terms are explained below:
 \begin{figure}[H]
 \begin{tabular}{|p{2.8cm}|p{13.4cm}|}
@@ -63,7 +63,7 @@ $F_{ext}(t)$ & The perturbation in external forcing due to albedo, aerosol, gree
 \hline
 $\lambda T_s$ & The additional energy radiated to space (per unit area) due to warming. If $\lambda T_s>0$ then \textit{more} energy is being radiated into space, which typically results in cooling. $\lambda$ is the \textit{climate sensitivity parameter}. \\ 
 \hline
-$-\gamma (T_s-T_d)$ & The energy flux from the atmosphere/surface oceans \textit{into} the deep oceans. This is typically small, due to the fact that the oceans are very stably stratified. As such, mixing/convection is severely inhibited, and surface waters can only penetrate into the deep oceans at a select few areas (cf. Sec.\ref{MOC}).\\
+$-\gamma (T_s-T_d)$ & The energy flux from the atmosphere/surface oceans \textit{into} the deep oceans. This is typically small, due to the fact that the oceans are very stably stratified. As such, mixing/convection is severely inhibited, and surface waters can only penetrate into the deep oceans at a select few places (cf. Sec.\ref{MOC}).\\
 \hline
 $- \lambda'(T_s-T_d)$ & The additional energy radiated into space due to the system being out of equilibrium. We have reason to believe (empirically, due to climate models) that this occurs. We encode this crudely by letting $(T_s-T_d)$ represent the degree to which the climate is out of equilibrium.\\
 \hline
@@ -73,7 +73,7 @@ Note that if we add Equations \ref{T_s} and \ref{T_d}, we do not get $0$ on the 
 
 \section{Solving the System by Diagonalising the Matrix}
 
-Before you read this section, I should note that, while this method is completely general to linear systems, it is a very time-consuming method to do in the exam. Furthermore, I think more physical intuition comes from another method of solving the system which I explain in Section \ref{Hewitt Method}. If you're low on time, and the question asks you to sketch it, it might be easier to think in terms of the method in Section \ref{Hewitt Method}.
+Before you read this section, I should note that, while this method is completely general to linear systems, it is very time-consuming to use this method in the exam. Furthermore, I think more physical intuition comes from another method of solving the system which I explain in Section \ref{Hewitt Method}. If you're low on time, and the question asks you to sketch it, it might be easier to think in terms of the method in Section \ref{Hewitt Method}.
 
 This method relies on some prior knowledge of linear algebra, specifically diagonalisation, eigenvectors, and eigenvalues. I'll review them quickly here, but if you're familiar with the content you can skip to Section \ref{App to Dym}. 
 
