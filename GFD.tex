@@ -2,7 +2,7 @@
 
 \section*{Introduction}
 
-This section of the course was lectured by \href{https://www.physics.ox.ac.uk/our-people/woollings}{Tim Woollings} covering Basic and Advanced Geophysical Fluid Dynamics (GFD). Basic GFD is covered in HT, while Advanced GFD is covered in Trinity term.\vspace{5 mm}
+This section of the course was lectured by \href{https://www.physics.ox.ac.uk/our-people/woollings}{Tim Woollings}, covering Basic and Advanced Geophysical Fluid Dynamics (GFD). Basic GFD is covered in HT, while Advanced GFD is covered in Trinity term.\vspace{5 mm}
 
 \noindent This section consists of six chapters. Basic GFD covers the first four chapters, and Advanced GFD covers the last two:\vspace{5 mm}
 
@@ -10,39 +10,47 @@ This section of the course was lectured by \href{https://www.physics.ox.ac.uk/ou
     \item \hyperref[Prelim GFD]{Preliminaries}: 
         
         \begin{quote}
-            This chapter covers some preliminaries that are worth getting out of the way prior to 
-        \end{quote}
+            This chapter covers some preliminaries worth knowing prior to . This includes a reminder on Vector Calculus \hyperref[VC box]{Definitions} and \hyperref[VC Interp]{Interpretations}, Fluid Mechanics, and brief discussions on differential heating and the effects of stratification and rotation.
+        \end{quote} 
 
     \item \hyperref[EoM GFD]{The Equations of Motion}: 
     
         \begin{quote}
-            To be perfectly honest, you could skip almost all of the section except for the final coloured box should you wish. Here we introduce the primitive equations of motion governing the fluid mechanics of the atmospheres and oceans. We main aim of this chapter is to simplify the equations of motion blah blah balh
+            To be perfectly honest, you could skip almost all of this section except for the final coloured box should you wish. Here we introduce the primitive equations of motion governing the fluid mechanics of the atmospheres and oceans. We main aim of this chapter is to derive a final simplified set of equations.
         \end{quote}
     
     \item \hyperref[Dia Relations]{The Fundamental Diagnostic Relations}:
         
         \begin{quote}
-            We introduce some fundamental diagnostic (time-independent) relations, including hydrostatic balance and geostrophic balance, then discuss the implications on (anti-)cyclones and Thermal Wind Balance. We use hydrostatic balance to transform explicitly into pressure coordinates, and express the prior relations in terms of pressure coordinates.
+            We introduce some fundamental diagnostic (time-independent) relations, including hydrostatic balance and geostrophic balance, then discuss the implications on (anti-) cyclones and Thermal Wind Balance. We use hydrostatic balance to transform explicitly into pressure coordinates, and express the prior relations in terms of pressure coordinates.
 
-            I should note that even though such relations are diagnostic (i.e., they feature no time-derivatives), it is worth considering that such relations might still hold even if the system is changing: in this case, the relations may hold in a quasi-steady manner (a concept introduced in Part \ref{Climate Dynamics}).
+            Even though such relations are diagnostic (i.e., they feature no time-derivatives), these relations might still hold even if the system is changing: in this case, the relations may hold in a quasi-steady manner (a concept introduced in Part \ref{Climate Dynamics}).
         \end{quote}
     
     \item \hyperref[Shallow Water System]{The Shallow Water System}:
         
         \begin{quote}
-            We finally analyse a simple time-dependent system. In doing so, we sacrifice the vertical dimension (i.e., dispense of the vertical coordinate $z$) and work solely in a 2D system. We use this sytem to introduce energy in GFD, including KE (Kinetic Energy) and APE (Available Potential energy), as well as Potential Vorticity. Finally, we show that the (linearised) Shallow Water Systems allows certain wave solutions, including Poincaré, Kelvin, and Rossby Waves.
+            We finally analyse a simple time-dependent system. In doing so, we sacrifice the vertical dimension (i.e., dispense of the vertical coordinate $z$) and work solely in a 2D system. We use this sytem to introduce energy in GFD, including KE (Kinetic Energy) and APE (Available Potential energy), as well as Potential Vorticity. 
+            
+            Finally, we show that the (linearised) Shallow Water Systems allows certain wave solutions, including Poincaré, Rossby, and Kelvin Waves, which redistribute energy in the Atmosphere and Oceans.
         \end{quote}
     
     \item \hyperref[3D Systems]{3D Systems}:
         
         \begin{quote}
-            We reintroduce the vertical coordinate $z$ and analyse 3D GFD. After a brief stint looking at 3D Gravity Waves, we introduce Quasi-Geostrophic Theory. We then analyse Rossby Waves through this framework, then give a very cursory introduction to Instability and Geostrophic Turbulence.
+            We reintroduce the vertical coordinate $z$ and analyse 3D time-dependent responses in GFD. After a briefly disussing 3D Gravity Waves (the analogue to the Shallow Water Poincaré waves), we derive and interpret Quasi-Geostrophic Theory.
+            
+            We then analyse Rossby Waves through this framework, then give a very cursory introduction to Instability and Geostrophic Turbulence.
         \end{quote}
 
     \item \hyperref[Oceans]{Ocean Circulation}:
         
         \begin{quote}
-            The final section in GFD focuses exclusively on the Oceans. We first introduce Ekman Transport (which is applicable to the Atmosphere, in its own right). We then analyse the implications of such transport, including Sverdrup Balance. Finally, we briefly discuss the Meridional Overturning Circulation, and introduce two simple models which aim to capture the dynamics: the Stommel and Gnanadesikan Box Models.
+            The final section in GFD focuses exclusively on the Oceans, although some concepts may be applicable to the atmosphere. 
+            
+            We first introduce Ekman Transport, and analyse analyse its implications, which include up/downwelling of fluid and Sverdrup Balance, the implication of both Ekman up/downwelling and conservation of potential vorticity.
+            
+            Finally, we briefly discuss the Meridional Overturning Circulation, and introduce two simple models which aim to capture the dynamics: the Stommel and Gnanadesikan Box Models.
         \end{quote}
 \end{enumerate}
 
@@ -58,11 +66,11 @@ You should be familiar with all the information in the box below:
     Let $\vec{r}=(x,y,z)^T$ denote the position vector and $t$ denote the time.\vspace{3mm}
 
     \begin{minipage}{0.49\linewidth}
-        We write the \textbf{partial derivative} of coordinate $x_1$ as follows (the subscripts indicate which variables are held constant while differentiating; in this case, coordinates $x_2, \, x_3,\, t$ are held constant while differentiating with respect to $x_1$):
+        We write the \textbf{partial derivative} with respect to coordinate $x$ as follows (the subscripts indicate which variables are held constant while differentiating; in this case, coordinates $y, \, z,\, t$ are held constant while differentiating with respect to $x$):
         \begin{align}\label{partial}
-            \partial_{x_1}=\frac{\partial}{\partial x_1}=\left( \frac{\partial}{\partial x_1} \right)_{x_2,\,x_3,\,t}
+            \partial_{x}=\frac{\partial}{\partial x}=\left( \frac{\partial}{\partial x} \right)_{y,\,z,\,t}
         \end{align}
-        Often we will omit the large brackets and leave implicit which coordinates are being held constant.
+        Often we will omit the large brackets and leave implicit which coordinates are being held constant. Analogous for $y$, $z$, $t$.
     \end{minipage}
     \hfill
     \begin{minipage}{0.49\linewidth}
@@ -109,17 +117,17 @@ You should be familiar with all the information in the box below:
 
 \end{fact}
 
-In this box we mentioned a \textbf{scalar field} and \textbf{vector field}. A field is just anything that has a value at each point in space and time. A \textbf{scalar field} is a field that takes a scalar value at each point. For example, the pressure field $p=p(\vec{r},t)$ is a scalar field, which denotes the pressure at each point in space/time. Meanwhile, a \textbf{vector field} is a field that takes a vector value at each point. The velocity field $\vec{u}=\vec{u}(\vec{r},t)$ is a vector field, which denotes the velocity at each point in space/time. While this isn't strictly correct, you can just think of a vector field as three scalar fields stacked on top of each other (one for each component).
+In this box we mentioned a \textbf{scalar field} and a \textbf{vector field}. A field is just anything that has a value at each point in space and time. A \textbf{scalar field} is a field that takes a scalar value at each point. For example, the pressure field $p=p(\vec{r},t)$ is a scalar field, which denotes the pressure at each point in space and time. Meanwhile, a \textbf{vector field} is a field that takes a vector value at each point. The velocity field $\vec{u}=\vec{u}(\vec{r},t)$ is a vector field, which denotes the velocity at each point in space and time. While this isn't strictly correct, you can just think of a vector field as three scalar fields stacked on top of each other (one for each component).
 
-Now we will interpret in turn the \textbf{Gradient}, the \textbf{Curl}, and the \textbf{Divergence}.
+Now we will interpret the \textbf{Gradient}, the \textbf{Curl}, and the \textbf{Divergence}.
 
 \subsection{The Gradient}
 
-We can only take the gradient of a \textbf{scalar field} and the the gradient of a field is always a \textbf{vector field}.
+We can only take the gradient of a \textbf{scalar field}, and the gradient is always a \textbf{vector field}.
 
-The gradient encodes the local change properties of the \textbf{scalar field}. More specifically, at each point in space and time, the value of the gradient is a vector with the following properties: the direction (in 3D space) of the vector is in the direction of steepest ascent, and the magnitude of the vector denotes how much the scalar field ascends at that point.
+The gradient encodes the local change properties of the \textbf{scalar field} with respect to space. More specifically, at each point in space and time, the value of the gradient is a vector with the following properties: the direction (in 3D space) of the vector is in the direction of steepest ascent, and the magnitude of the vector denotes how much the scalar field ascends at that point.
 
-You should be familiar with the one-dimensional Taylor Expansions. Consider some function $f: \mathbb{R} \to \mathbb{R}$\footnote{This is fancy speak for the function $f(x)$ takes real numbers as an input and outputs real numbers.}. The following holds expresses the Taylor expansion of $f$, which holds for small $\delta x$:
+You should be familiar with the one-dimensional Taylor expansions. Consider some function $f: \mathbb{R} \to \mathbb{R}$\footnote{This is fancy speak for the function $f(x)$ takes real numbers as an input and outputs real numbers.}. The following is the Taylor expansion of $f$, which holds for small $\delta x$:
 \begin{align*}
     f(x+\delta x)=f(x)+\frac{df}{dx}\delta x
 \end{align*}
@@ -133,9 +141,9 @@ Consider the case where $\delta \vec{r}$ is perpendicular to $\vec{\nabla}p$ (i.
 
 \subsection{The Curl}
 
-We can only take the curl of a \textbf{vector field}, a field that take a vector at each point in space. The curl is always a \textbf{vector field}.
+We can only take the curl of a \textbf{vector field}, and the curl is always a \textbf{vector field}.
 
-Broadly, the curl measures the local rotation of the \textbf{vector field}. More specifically, at each point in space and time, the value of the curl is a vector with the following properties: the direction (in 3D space) of the vector is in the direction perpendicular to the plain of rotation (following the right-hand rule)\footnote{This is simply a convention. The right hand rule means that if you form a thumbs up with your right hand, your thumb is parallel with the vector if and only if the rotation is in the direction from your knuckles to the end of your fingers (following your fingers).}, and the magnitude of the vector denotes how much local rotation there is at this point.
+Broadly, the curl measures the local rotation of the \textbf{vector field}. More specifically, at each point in space and time, the value of the curl is a vector with the following properties: the direction (in 3D space) of the vector is in the direction perpendicular to the plain of rotation (following the right-hand rule)\footnote{This is just a convention. The right hand rule means that if you form a thumbs up with your right hand, your thumb is parallel with the curl if and only if the rotation is in the direction from your knuckles to the end of your fingers (following your fingers).}, and the magnitude of the vector denotes how much local rotation there is at this point.
 
 Note crucially that this only measures the \textbf{local} rotation, not the global rotation. The example often given to explain this distinction is a paddleboard: consider a very small paddleboard suspended in a fluid with a velocity field $\vec{u}(\vec{r})$. The paddleboard is pushed around by the flow. The curl of $\vec{u}$ encodes whether the paddleboard itself will turn, not whether it will follow a circular path.
 
@@ -192,11 +200,11 @@ Note crucially that this only measures the \textbf{local} rotation, not the glob
 
 \subsection{The Divergence}
 
-We can only take the divergence of a \textbf{vector field}, a field that takes a vector value at each point in space. The divergence is always a \textbf{scalar field}.
+We can only take the divergence of a \textbf{vector field}, and the divergence is always a \textbf{scalar field}.
 
 Broadly, the divergence measures the local `spreading out' properties of a \textbf{vector field}. More specifically, at each point in space and time, the value of the divergence is a scalar that is larger the more 
 
-I find the divergence theorem to explain divergence the easiest:
+I find the divergence theorem explains divergence the easiest:
 \begin{align}
     \label{Div Thm}
     \iiint_v \vec{\nabla}\cdot \vec{u} \,dV \equiv \iint_s \vec{u}\cdot d\vec{S}
@@ -209,7 +217,37 @@ The divergence can therefore be thought of as the outwards flux of $\vec{u}$ at 
 
 As a summary:
 \begin{fact}{Vector Calculus Interpretation}{VC Interp}\label{VC Interp}
-    The gradient blah blah blah [UNDER CONSTRUCTION]
+    \begin{minipage}{.39\linewidth}
+    \begin{tcolorbox}[colback=myyellow!50!white,colframe=mymagenta]
+        \begin{align*}
+            \vec{\nabla}p
+        \end{align*}
+
+        The \textbf{Gradient} $\vec{\nabla}p$ is a vector field which encodes how the scalar field $p$ varies with space.
+
+        $\vec{\nabla}p$ always points towards the direction of steepest ascent in $p$, and is perpendicular to contours of constant $p$.
+    \end{tcolorbox}
+    \end{minipage}
+    \begin{minipage}{.34\linewidth}
+    \begin{tcolorbox}[colback=myyellow!50!white,colframe=mymagenta]
+        \begin{align*}
+            \vec{\nabla}\times \vec{u}
+        \end{align*}
+
+        The \textbf{Curl} $\vec{\nabla}\times \vec{u}$ is a vector field which encodes the local rotation properties of the vector field $\vec{u}$.
+
+        The curl does \textit{not} encode the large-scale rotation properties of $\vec{u}$.
+    \end{tcolorbox}
+    \end{minipage}
+    \begin{minipage}{.25\linewidth}
+    \begin{tcolorbox}[colback=myyellow!50!white,colframe=mymagenta]
+        \begin{align*}
+            \vec{\nabla}\cdot\vec{u}
+        \end{align*}
+
+        The \textbf{Divergence} $\vec{\nabla}\cdot\vec{u}$ is a scalar field which encodes the local `spreading out' properties of the vector field $\vec{u}$.
+    \end{tcolorbox}
+    \end{minipage}
 \end{fact}
 
 \section{A Quick Reminder of Fluid Mechanics}
@@ -531,14 +569,14 @@ Acceleration of Gravity & $g$ & $g\sim g$ & \qty{10}{\metre\per\second\squared}\
 
 I do not write out all the details here, as they would easily take multiple pages. If you are curious about the details, refer to the mini-scale analysis I do in deriving \ref{Hydrostatic GFD}. A more rigorous method would be non-dimensionalisation, but this is overkill for our purposes. Again, if you are curious about the details, refer to the mini-non-dimensionalisation I do in deriving the \hyperref[Rossby Number]{Rossby Number}. 
 
-Suffice it to say that we eliminate many terms through this scale analysis. This includes any terms that feature the viscosity $\nu$, the centrifugal force, and many terms arising from our local cartesian coordinate system. 
+Suffice it to say that we eliminate many terms through this scale analysis. This includes any terms that feature the viscosity $\nu$ and many terms arising from our local cartesian coordinate system. The centrifugal force is \textit{not} eliminated universally by our scale analysis, but we neglect this term for a different reason.\footnote{The reason is that we can rewrite the centrifugal force is a conservative force, i.e., we can write it as the gradient of a scalar field: i.e., there exists a $\Phi$ such that $-\vec{\Omega}\times\vec{\Omega}\times\vec{r}=-\vec{\nabla}\Phi$. After this, we can simply subsume this into our gravitational potential.}
 
-After eliminating small terms, we get our final simplified set of equations. 
+After eliminating the small terms, we arrive at our final simplified set of equations. 
 
 \section{The Simplified Equations of Motion}
 
 \begin{fact}{The Simplified Equations of Motion for GFD}{Eqns for GFD Box}\label{Eqns for GFD Box}
-    We define the horizontal gradient operator taken at constant $z$ as $\vec{\nabla}_h=\left( \frac{\partial}{\partial x},\frac{\partial}{\partial x},0 \right)^T$, the horizontal velocity as $\vec{u}_h=\left( u,v,0 \right)^T$, the horizontal forces as $\vec{F}_h$, and the \textbf{coriolis parameter} as $f=2\Omega\sin\phi$ where $\phi=$ the latitude.
+    We define the horizontal gradient operator as $\vec{\nabla}_h=\left( \frac{\partial}{\partial x},\frac{\partial}{\partial x},0 \right)^T$, the horizontal velocity as $\vec{u}_h=\left( u,v,0 \right)^T$, the horizontal forces as $\vec{F}_h$, and the \textbf{coriolis parameter} as $f=2\Omega\sin\phi$ where $\phi=$ the latitude.
 
     The simplified equations of motion we will be using are as follows: \vspace{2mm}
 
@@ -571,9 +609,9 @@ After eliminating small terms, we get our final simplified set of equations.
     \end{gather}
 \end{fact}
 
-Physically, the \textbf{coriolis parameter} $f=2\Omega \sin \phi$ is the planetary vorticity: it is the vorticity that a fluid parcel at rest (relative to the surface of the Earth) has in the $z$-direction. Note that we've ignored the Energy Equation (\ref{Energy Equation}). This equation is important, but we don't really discuss it in C5.
+Physically, the \textbf{coriolis parameter} $f=2\Omega \sin \phi$ is the planetary vorticity: it is the vorticity that a fluid parcel at rest (relative to the surface of the Earth) has in the $z$-direction. Note that we've ignored the Energy Equation (\ref{Energy Equation}). This equation is important, and it is used to derive an approximate mass conservation equation later in section , but the details are slightly convoluted and we don't really discuss it in C5.
 
-We will mostly be dealing with the horizontal momentum equation \ref{Horizontal Approximate}, so it is worth detailing the meanings of each terms. The first term, $\frac{D\vec{u}_h}{Dt}$ is the material derivative of $\vec{u}_h$. It represents the acceleration of $\vec{u}_h$ and the advection of $\vec{u}_h$. The $f\vec{k}\times\vec{u}_h$ term is the acceleration due to coriolis. The $\frac{1}{\rho}\vec{\nabla}_h p$ is the force due to the horizontal pressure gradient. Finally, the $\vec{F}_h$ term is external forces, e.g., friction, wind-forcing, etc.
+We will mostly be dealing with the horizontal momentum equation \ref{Horizontal Approximate}, so it is worth detailing the interpretation of each terms. The first term, $\frac{D\vec{u}_h}{Dt}$ is the material derivative of $\vec{u}_h$. It represents the acceleration and advection of $\vec{u}_h$. The $f\vec{k}\times\vec{u}_h$ term is the acceleration due to coriolis. The $\frac{1}{\rho}\vec{\nabla}_h p$ is the force due to the horizontal pressure gradient. Finally, the $\vec{F}_h$ term is external forces, e.g., friction, wind-forcing, etc.
 
 \chapter{The Fundamental Diagnostic Relations}\label{Dia Relations}
 
@@ -707,7 +745,7 @@ We can also write the Rossby Number in terms of a ratio between the planetary vo
 
 The actual size of $Ro$ depends on the kind of system we are considering: i.e., what are the length-scales and velocity-scales of the system. But it also, crucially, depends on the coriolis parameter $f=2\Omega\sin\phi$. $f=0$ at or near the equator, and so it is unlikely that $Ro$ will ever be small near the equator. However, this does not imply that rotation is unimportant near the equator, but it does imply that the flow is probably not geostrophic near the equator.
 
-Much of the theory of GFD that we will discuss will require the system to be geostrophic, or approximately geostrophic, which means that much of what we apply will only be very accurate in the mid-/high-latitudes (coincidentally where we are!). It is worth bearing this in mind.
+Much of what we will discuss here in GFD will require $Ro$ to be small and for the system to be geostrophic, or approximately geostrophic. This means that what we discuss is really only guaranteed to be accurate in the mid-/high-latitudes (coincidentally where we are!). It is worth bearing this in mind. However, note that $Ro$ being small is a \textit{sufficient} condition (provided of our assumptions are not bad either) – it is not a \textit{necessary} condition. $Ro$ being large does not imply that our theories must fail.
 
 \subsection{Geostrophic Balance}
 
@@ -1514,6 +1552,7 @@ Using product rule, this implies the following:
 
     \begin{minipage}{.48\linewidth}
         \begin{align}
+        \label{SW Cons PV}
         \BOX{
             \frac{D_h Q}{Dt}=0
         }
@@ -1538,7 +1577,7 @@ This column of fluid lies between the bottom ($z=b$) and top ($z=\eta$) of the l
 
 As this column of fluid is advected around, it must conserve its angular momentum in the $z$-direction. Suppose the column is initially rotating with some (total) angular velocity. If the column is stretched (i.e., if $h$ increases), it become thinner (because the total volume of the column remains constant), and so it must therefore rotate faster to conserve angular momentum.
 
-\begin{figure}[]
+\begin{figure}[H]
     \centering
     \begin{tikzpicture}
     \begin{scope}[xshift=-3cm]
@@ -2159,7 +2198,10 @@ Therefore, since generally $g'\ll g$, and $L_d\sim\sqrt{g'}$, then $L_d$ is much
 
 \section{Justifying the Shallow Water System}\label{SW Justification}
 
-[UNDER CONSTRUCTION]
+I strongly \textit{strongly} emphasise that this section is off-syllabus. However, I thought I'd write it here to make the section more complete. I follow the Vallis' derivation in his book \cite{Vallis}, where it can be found in chapter 3.
+
+In these entire set of notes, we formulate and analyse models of the atmosphere and oceans. Of course, part of the accuracy relies on the accuracy of our analysis, but crucially part of the accuracy also relies on the accuracy of the models. The shallow water system would not be as interesting of a system (to us at least) if we did not have some evidence that the model was faithful and captured (some) dynamics of the atmosphere and oceans.
+
 
 \chapter{Time-Dependent 3D Systems}\label{3D Systems}
 
@@ -2335,7 +2377,7 @@ We aim to derive a simplified set of equations from Equations \ref{Horizontal Ap
 \begin{fact}{The Quasi-Geostrophic Equations}{QG Box}\label{QG Box}
     The Quasi-Geostrophic Equations, which govern a Boussinesq, hydrostatic fluid on the $\beta$-plane, evolves according to the Quasi-Geostrophic Potential Vorticity Equation if $Ro^2\ll Ro \ll 1$.
     \begin{gather}
-        \label{QGPV}
+        \label{QGPV Cons}
         \BOX{
             \frac{D_g q}{Dt} = 0
         }
@@ -2344,24 +2386,30 @@ We aim to derive a simplified set of equations from Equations \ref{Horizontal Ap
 
     \begin{minipage}{0.42\linewidth}
         \begin{gather}
+            \label{Geostrophic MD}
             \BOX{
                 \frac{D_g}{Dt}=\frac{\partial }{\partial t}+ \vec{u}_g\cdot\vec{\nabla}
             }
             \\
+            \label{Streamfct}
             \boxed{\vec{u}_g = \vec{k}\times\vec{\nabla}_h\psi}
             \\
+            \label{wag}
             \boxed{w_{ag}=-\frac{D_g}{Dt}\left( \frac{f_0}{N^2} \frac{\partial \psi}{\partial z}\right)}
         \end{gather}
     \end{minipage}
     \hfill
     \begin{minipage}{0.56\linewidth}
         \begin{gather}
+            \label{QGPV}
             \BOX{
                 q=f_0+\beta y + \vec{\nabla}_h^2 \psi + \frac{\partial }{\partial z}\left( \frac{f_0^2}{N^2} \frac{\partial \psi}{\partial z} \right)
             }
             \\
+            \label{p QGPV}
             \boxed{p_g = \rho_0 f \psi}
             \\
+            \label{rho QGPV}
             \boxed{\rho_g = \frac{\rho_0 f_0}{g}\frac{\partial \psi}{\partial z}}
         \end{gather}
     \end{minipage}
@@ -2370,13 +2418,59 @@ We aim to derive a simplified set of equations from Equations \ref{Horizontal Ap
 
 \subsection{Interpretation}
 
-Interpretaiton of Equation \label{QGPV} is straightforward and analogous to 
+Before interpreting all the equations, it's first important to note the \textit{practical} achievement of these equations. We have drastically reduced the amount of variables we need to solve for by writing all the fields of interest ($u_g$, $v_g$, $w_{ag}$, $p_g$, and $\rho_g$) in terms of a single scalar field which is the streamfunction $\psi(\vec{r},t)$. Furthermore, this streamfunction has a fully three-dimensional dependence, constituting our simple but fully 3D model of the atmosphere/ocean. 
+
+Interpretation of Equation \ref{QGPV Cons} is straightforward and analogous to our interpretation of \hyperref[Cons PV Box]{Conservation of Potential Vorticity} for the \hyperref[Shallow Water System]{Shallow Water System}. I should note, though, that we should think of this equation as a linearised version, as we use the geostrophic material derivative, rather than the material derivative. Recall that we assume that the flow is to leading order geostrophic, so assuming that the advection is accurately characterised by just the geostrophic velocities is not a bad assumption.
+
+Interpretation of \ref{QGPV} is also relatively straightforward. $q$ is our quasi-geostrophic potential vorticity, an approximation of the potential vorticity. The terms are as follows:
+\begin{align*}
+    q = \underbrace{f_0 + \beta y}_{f=\text{Planetary Vorticity}}
+    +
+    \overbrace{\vec{\nabla}_h^2 \psi}^{\xi=\text{Relative Vorticity}}
+    +\underbrace{\frac{\partial }{\partial z}\left( \frac{f_0^2}{N^2} \frac{\partial \psi}{\partial z} \right)}_\text{Vortex Stretching/Squishing}
+\end{align*}
+The first two terms are identified straightforwardly. $f_0+\beta y$ is manifestly a first approximation of the planetary vorticty, and $\vec{\nabla}_h^2\psi$ is equal to the relative vorticity if one considers Equation \ref{Streamfct}. 
+
+The third term is a bit less straightforward. First consider the form of \hyperref[Cons PV Box]{Conservation of Potential Vorticity} for the \hyperref[Shallow Water System]{Shallow Water System} and expand Equation \ref{SW Cons PV} as follows (after multiplying by $h$):
+\begin{align*}
+    0&=h\frac{D}{Dt}\left( \frac{f+\xi}{h} \right)
+    \\
+    &=
+    \frac{D}{Dt}(f+\xi) + \boxed{-\frac{f+\xi}{h}\frac{D}{Dt}(h)}
+\end{align*}
+Writing in it this form separates the two components of potential vorticity. The first term expresses the change in the vorticity of a fluid parcel, while the second boxed term expresses the change in the thickness of the column. In, other words, the second term captures the vortex stretching/squishing effect of conservation of potential vorticity.
+
+If we expand Equation \ref{QGPV Cons} analogously we get the following:
+\begin{align*}
+    0 &= \frac{D_g}{Dt}\left( f+\xi +  \frac{\partial }{\partial z}\left( \frac{f_0^2}{N^2} \frac{\partial \psi}{\partial z} \right)\right)
+    \\
+    &=\frac{D_g}{Dt}(f+\xi) + \boxed{f_0 \frac{D_g}{Dt}\left( \frac{\partial }{\partial z}\left( \frac{f_0}{N^2} \frac{\partial \psi}{\partial z} \right)\right)}
+\end{align*}
+
+We identify the boxed terms as analogous to each other: they both correspond to vortex stretching/squishing. Making this analogy allows us to interpret each component the third term more readily:
+\begin{align*}
+    (f+\xi)\frac{1}{h}\frac{D}{Dt}(h) & \longleftrightarrow
+    f_0\frac{1}{\partial z}\left( -\frac{D_g}{Dt}\left( \frac{f_0}{N^2} \frac{\partial \psi}{\partial z}\right) \right)
+    \\
+    f+\xi & \longleftrightarrow f_0
+    \\
+    \frac{1}{h} & \longleftrightarrow \frac{\partial}{\partial z}
+    \\
+    \frac{D}{Dt}(h) & \longleftrightarrow -\frac{D_g}{Dt}\left( \frac{f_0}{N^2} \frac{\partial \psi}{\partial z}\right)=w_{ag}
+\end{align*}
+
+Much of this can be argued from dimensional grounds, and, of course, they must match up dimensionally. The $f_0$ corresponds to the $f+\xi$ term, and is a good first order approximation because we assumed that $Ro$ was small, and therefore that $\frac{\xi}{f}$ was small. The $\frac{1}{h}$ corresponds to the $\frac{\partial}{\partial z}$ [UNDER CONSTRUCTION IDK WHY LOL]
+
+Finally, the The $\frac{D}{Dt}(h)$ corresponds to the $w_{ag}$. Recall that the interface height in the shallow water system is [ALSO UNDER CONSTRUCTION]
+
+Equations \ref{p QGPV} and \ref{rho QGPV} have a straightforward interpretation as well. The former is simply the constraint imposed by geostrophy, and the latter is the constraint imposed by hydrostasy.
+
 
 \section{Quasi-Geostrophic Rossby Waves}
 
 \subsection{Derivation}
 
-As before with the \hyperref[Shallow Water System]{Shallow Water System} we linearise the \hyperref[QGPV]{Quasi-Geostrophic Potential Vorticity Equation}. However, we now assume that the background state is a constant zonal flow, i.e., we linearise about the state $\vec{u}_g=(0,U,0)$ with a constant background stratificaiton ($N=const$). This implies that we're linearising about a streamfunction $\Psi$ such that:
+As before with the \hyperref[Shallow Water System]{Shallow Water System} we linearise the \hyperref[QGPV]{Quasi-Geostrophic Potential Vorticity Equation} about a background state. However, this time we assume that the background state is a constant zonal flow, i.e., we linearise about the state $\vec{u}_g=(0,U,0)$ with a constant background stratificaiton ($N=const$). In other words, we linearise about a streamfunction $\Psi$ such that:
 \begin{align*}
     \psi = \Psi + \psi'
     \\
@@ -2384,6 +2478,7 @@ As before with the \hyperref[Shallow Water System]{Shallow Water System} we line
     \\
     \Psi = -Uy
 \end{align*}
+Specifying 
 
 We also use the \hyperref[beta plane box]{$\beta$-plane approximation}.
 
@@ -2409,6 +2504,10 @@ linearisation\dots
         }
     \end{gather}
 \end{fact}
+
+\subsection{Interpretation}
+
+
 
 \section{Instabilities and Geostrophic Turbulence}
 
