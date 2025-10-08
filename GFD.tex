@@ -705,10 +705,10 @@ We thus see three non-dimesional coefficients appear in front of each of the ter
 Now, written just in terms of the non-dimensional coefficients, we write the (isotropic) non-dimensional horizontal momentum equation:
 \begin{align}
     \label{Horizontal Approximate nondim}
-    \underbrace{St\,\frac{\partial\vec{\hat{u}}_h}{\partial t}}_{O(St)}+
-    \underbrace{Ro\,\left( \vec{\hat{u}}_h\cdot\vec{\hat{\nabla}} \right)\vec{\hat{u}}_h}_{O(Ro)}+
-    \underbrace{\vec{k}\times\vec{\hat{u}}_h}_{O(1)}+
-    \underbrace{P\,\vec{\nabla}_h\hat{p}}_{O(P)}=0
+    \underbrace{St\,\frac{\partial\vec{\hat{u}}_h}{\partial t}}_{\mathcal{O}(St)}+
+    \underbrace{Ro\,\left( \vec{\hat{u}}_h\cdot\vec{\hat{\nabla}} \right)\vec{\hat{u}}_h}_{\mathcal{O}(Ro)}+
+    \underbrace{\vec{k}\times\vec{\hat{u}}_h}_{\mathcal{O}(1)}+
+    \underbrace{P\,\vec{\nabla}_h\hat{p}}_{\mathcal{O}(P)}=0
 \end{align}
 
 Note that because we have nondimensionalised such that each variable is of order one, the $\vec{k}\times\vec{\hat{u}}_h$ is always of order one, while the other terms are of order $St$, $Ro$, and $P$, respectively.
@@ -2356,7 +2356,7 @@ If we assume that the perturbations are hydrostatic, this implies that $k\ll m$.
 
 \subsubsection{Assumptions}
 
-We first assume that $Ro<1$, i.e., $Ro$ is small but not extremely small. Second, we assume density variations are small so we can use the Boussinesq approximation. Third, we assume that the background pressure and density fields are hydrostatic. Fourth, we use the \hyperref[beta plane box]{$\beta$-plane approximation}. (Fifth) We further assume that $\frac{\beta y}{f_0}\sim O(Ro)$.
+We first assume that $Ro<1$, i.e., $Ro$ is small but not extremely small. Second, we assume density variations are small so we can use the Boussinesq approximation. Third, we assume that the background pressure and density fields are hydrostatic. Fourth, we use the \hyperref[beta plane box]{$\beta$-plane approximation}. (Fifth) We further assume that $\frac{\beta y}{f_0}\sim \mathcal{O}(Ro)$.
 
 Our strategy is to now decompose each field into a geostrophic and ageostrophic component:
 \begin{align*}
