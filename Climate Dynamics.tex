@@ -408,7 +408,7 @@ Let us solve this system explicitly for some given $F_{ext}(t)$. Suppose $F_{ext
     \end{cases}
 \end{align*}
 
-Now clearly, if $t<0$, $T_s(t)=T_d(t)=0$. For the values of $t>0$, we integrate explicitly to find the solutions in each case. On a short timescale:
+Now clearly, for $t<0$, $T_s(t)=T_d(t)=0$. For $t>0$, we integrate explicitly to find the solutions in each case. On a short timescale:
 \begin{align*}
     T_s(t) & \approx \frac{1}{C_s}e^{-\frac{t}{\tau_s}}\int_0^t F e^{\frac{\hat{t}}{\tau_s}}d\hat{t}\\
     &=\frac{1}{C_s}e^{-\frac{t}{\tau_s}} \left( F\tau_s
@@ -418,6 +418,20 @@ Now clearly, if $t<0$, $T_s(t)=T_d(t)=0$. For the values of $t>0$, we integrate 
     T_d(t)& \approx 0 
 \end{align*}
 We find then that on an $O(\tau_s)$ timescale, $T_s$ equilibrates with a timescale of $\tau_s$ to its new equilibrium value, and $T_d$ remains constant. Note how, despite the fact that $T_d=0=const$, the deep oceans are not `invisible'. The impact of the deep oceans is encoded in the timescale $\tau_s$, which I remind you depends on the $\gamma$ parameter, representing the heat flux from the atmosphere/surface-ocean to the deep oceans. The atmosphere/surface-ocean thus equilibrates to a level where the heat flux in (from the increase in $F_{ext}(t)$) equals the heat flux out (from more heat flux into space, and, crucially, more heat flux into the deep oceans).
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[domain=-0:4]
+        \draw[very thin,color=gray] (-0.1,-0.1) grid (3.9,3.9);
+        \draw[->] (-0.2,0) -- (4.2,0) node[right] {$t$};
+        \draw[->] (0,-0.2) -- (0,4.2) node[above] {$T$};
+        \draw[dashed,thick,myorange] plot (\x,{0}) node[below] {$T_d(t)=0$};
+        \draw[dotted,thick,mymagenta] plot (\x,{1}) node[above] {$\frac{F\tau_s}{C_s}$};
+        \draw[color=mydarkblue,ultra thick] plot (\x,{1-exp(-\x)}) node[below] {$T_s(t) = \frac{F\tau_s}{C_s}\left( 1-e^{-\frac{t}{\tau_s}} \right)$};
+    \end{tikzpicture}
+    \caption{The short timescale response of the system to constant forcing. The response of $T_s$ and $T_d$ are drawn as a \textcolor{mydarkblue}{filled blue line \rule{0.25cm}{0.25cm}} and \textcolor{myorange}{dashed orange line \rule{0.25cm}{0.25cm}}, respectively. The \textcolor{mymagenta}{dotted magenta line \rule{0.25cm}{0.25cm}} indicates what $T_s$ tends to on a short timescale.}
+    \label{Short const F figure}
+\end{figure}
 
 On long timescales:
 \begin{align}
