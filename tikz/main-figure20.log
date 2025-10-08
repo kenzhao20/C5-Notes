@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.6.26)  8 OCT 2025 17:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.6.26)  8 OCT 2025 17:47
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -2583,19 +2583,20 @@ Overfull \hbox (2.43333pt too wide) in paragraph at lines 356--386
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 
 
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 
 
 Chapter 13.
 
-LaTeX Warning: Reference `Jac' on page 91 undefined on input line 483.
+LaTeX Warning: Reference `Jac' on page 91 undefined on input line 523.
 
 
 
 
-LaTeX Warning: Reference `dx' on page 92 undefined on input line 513.
+LaTeX Warning: Reference `dx' on page 92 undefined on input line 553.
 
 
-LaTeX Warning: Reference `dx' on page 92 undefined on input line 517.
+LaTeX Warning: Reference `dx' on page 92 undefined on input line 557.
 
 
 
@@ -2640,8 +2641,11 @@ Chapter 15.
 
 
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to disable this.
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to disable this.
+\openout5 = `tikz/main-figure20.dpth'.
 
+[98
+
+]
 
 
 LaTeX Warning: Reference `Div Thm' on page 99 undefined on input line 214.
@@ -2723,11 +2727,8 @@ LaTeX Warning: Hyper reference `Geophysical Fluid Dynamics' on page 101 undefine
 
 LaTeX Warning: Hyper reference `Hydrostatic Balance' on page 101 undefined on input line 320.
 
-\openout5 = `tikz/main-figure20.dpth'.
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 
-[101
-
-]
 
 
 LaTeX Warning: Hyper reference `Ekman Transport' on page 102 undefined on input line 367.
@@ -3432,15 +3433,15 @@ Package logreq Info: Writing requests to 'tikz/main-figure20.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 43962 strings out of 473190
- 945138 string characters out of 5715800
+ 44017 strings out of 473190
+ 946371 string characters out of 5715800
  1567860 words of memory out of 5000000
- 66547 multiletter control sequences out of 15000+600000
+ 66602 multiletter control sequences out of 15000+600000
  576652 words of font info for 106 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  120i,25n,124p,1415b,1907s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on tikz/main-figure20.pdf (1 page, 4380 bytes).
+Output written on tikz/main-figure20.pdf (1 page, 4688 bytes).
 PDF statistics:
  143 PDF objects out of 1000 (max. 8388607)
  23 compressed objects within 1 object stream

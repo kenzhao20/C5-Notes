@@ -385,8 +385,8 @@ Note the nuance in these two approximations, where we confusingly seem to set th
     \end{minipage}
 \end{fact}
 
-\section{Solutions}\label{Dynamical Systems Solutions}
-We can use either of the methods above to solve the ODEs. Let us now specify that $\vec{f}(t)=(F_{ext}(t),0)^T$ and assume that $T_s(0)=T_d(0)=0$. In the solution, we get two different responses for an arbitrary $F_{ext}(t)$:\vspace{5 mm}
+\section{Example Solutions}\label{Dynamical Systems Solutions}
+We can use either of the methods above to solve the ODEs. Let us now specify that $\vec{f}(t)=(F_{ext}(t),0)^T$ (i.e., that only the atmosphere/surface oceans are forced directly) and assume that $T_s(0)=T_d(0)=0$. In the solution, we get two different responses for an arbitrary $F_{ext}(t)$:\vspace{5 mm}
 
 \noindent On short timescales, i.e., the normal mode with the larger eigenvalue and thus shorter timescale (we define $\tau_s\equiv\frac{C_s}{\lambda+\lambda'+\gamma}$): 
 \begin{align}
@@ -398,8 +398,11 @@ On long timescales, i.e., the normal mode with the smaller eigenvalue and thus l
     T_s(t) & \approx \frac{1}{\lambda+\gamma+\lambda'}\left(F_{ext}(t)+(\gamma+\lambda ')T_d(t)\right) \\ 
     T_d(t) & \approx \frac{\gamma}{C_d(\lambda+\gamma+\lambda')}\int_0^tF_{ext}(\hat{t}) e^{-\frac{t+\hat{t}}{\tau_d}}d\hat{t}  \label{T_d long step soln}
 \end{align}
+Let us now solve this system explicitly for some given $F_{ext}(t)$. 
 
-Let us solve this system explicitly for some given $F_{ext}(t)$. Suppose $F_{ext}(t)$ is a step-function, representing, for example, an instantaneous emission of CO$_2$ which remains in the atmosphere indefinitely:
+\subsubsection{Constant \texorpdfstring{$F_{ext}$}{F-ext}}
+
+Suppose $F_{ext}(t)$ is a step-function, representing, for example, an instantaneous emission of CO$_2$ which remains in the atmosphere indefinitely:
 \begin{align*}
     F_{ext}=
     \begin{cases}
@@ -421,15 +424,15 @@ We find then that on an $O(\tau_s)$ timescale, $T_s$ equilibrates with a timesca
 
 \begin{figure}[H]
     \centering
-    \begin{tikzpicture}[domain=-0:4]
+    \begin{tikzpicture}[domain=0:4]
         \draw[very thin,color=gray] (-0.1,-0.1) grid (3.9,3.9);
         \draw[->] (-0.2,0) -- (4.2,0) node[right] {$t$};
         \draw[->] (0,-0.2) -- (0,4.2) node[above] {$T$};
         \draw[dashed,thick,myorange] plot (\x,{0}) node[below] {$T_d(t)=0$};
-        \draw[dotted,thick,mymagenta] plot (\x,{1}) node[above] {$\frac{F\tau_s}{C_s}$};
+        \draw[domain=4:0,dotted,thick,mymagenta] plot (\x,{1}) node[left] {$\frac{F\tau_s}{C_s}$};
         \draw[color=mydarkblue,ultra thick] plot (\x,{1-exp(-\x)}) node[below] {$T_s(t) = \frac{F\tau_s}{C_s}\left( 1-e^{-\frac{t}{\tau_s}} \right)$};
     \end{tikzpicture}
-    \caption{The short timescale response of the system to constant forcing. The response of $T_s$ and $T_d$ are drawn as a \textcolor{mydarkblue}{filled blue line \rule{0.25cm}{0.25cm}} and \textcolor{myorange}{dashed orange line \rule{0.25cm}{0.25cm}}, respectively. The \textcolor{mymagenta}{dotted magenta line \rule{0.25cm}{0.25cm}} indicates what $T_s$ tends to on a short timescale.}
+    \caption{The short timescale response of the system subject to constant forcing. The response of $T_s$ and $T_d$ are drawn as a \textcolor{mydarkblue}{filled blue line \rule{0.25cm}{0.25cm}} and \textcolor{myorange}{dashed orange line \rule{0.25cm}{0.25cm}}, respectively. The \textcolor{mymagenta}{dotted magenta line \rule{0.25cm}{0.25cm}} indicates what $T_s$ tends towards on a short timescale.}
     \label{Short const F figure}
 \end{figure}
 
@@ -439,6 +442,44 @@ On long timescales:
     T_d(t) & \approx \frac{\gamma}{C_d(\lambda+\gamma+\lambda')}\int_0^t F e^{-\frac{t+\hat{t}}{\tau_d}}d\hat{t}\\
     &=
 \end{align}
+
+\subsubsection{Linearly Increasing \texorpdfstring{$F_{ext}$}{F-ext}}
+
+Suppose $F_{ext}(t)$ is a function that is initially $0$, but then after time $t=0$ begins linearly increasing. This might represent, for example, emissions of CO$_2$ which begin at time $t=0$:
+\begin{align*}
+    F_{ext}=
+    \begin{cases}
+        0 & \text{if } t<0 \\
+        Gt & \text{if } t>0
+    \end{cases}
+\end{align*}
+
+Again, it's clear that, for $t<0$, $T_s(t)=T_d(t)=0$. For $t>0$, we again integrate explicitly to find the solutions in each case. On a short timescale:
+\begin{align*}
+    T_s(t) & \approx \frac{1}{C_s}e^{-\frac{t}{\tau_s}}\int_0^t G\hat{t}\, e^{\frac{\hat{t}}{\tau_s}}d\hat{t}\\
+    &= \frac{1}{C_s}e^{-\frac{t}{\tau_s}} G \left( 
+        \left[ \hat{t}\tau_s e^{\frac{\hat{t}}{\tau_s}} \right]_0^t - \left[ \tau_s^2 e^{\frac{\hat{t}}{\tau_s}} \right]_0^t
+     \right)
+    \\
+    &=\frac{G\tau_s^2}{C_s}\left( \frac{t}{\tau_s} -1+e^{-\frac{t}{\tau_s}} \right)
+    \\ 
+    T_d(t)& \approx 0 
+\end{align*}
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[domain=0:4]
+        \draw[very thin,color=gray] (-0.1,-0.1) grid (3.9,3.9);
+        \draw[->] (-0.2,0) -- (4.2,0) node[right] {$t$};
+        \draw[->] (0,-0.2) -- (0,4.2) node[above] {$T$};
+        \draw[dashed,thick,myorange] plot (\x,{0}) node[below] {$T_d(t)=0$};
+        \draw[domain=1:4,dotted,thick,mymagenta] plot (\x,{\x-1}) node[right] {$\frac{F\tau_s}{C_s}$};
+        \draw[color=mydarkblue,ultra thick] plot (\x,{\x-1+exp(-\x)}) node[above] {$T_s(t) = \frac{G\tau_s^2}{C_s}\left( \frac{t}{\tau_s}-1+e^{-\frac{t}{\tau_s}} \right)$};
+        \node[] at (1,-0.3) {$\tau_s$};
+    \end{tikzpicture}
+    \caption{The short timescale response of the system subject to linearly increasing forcing. The response of $T_s$ and $T_d$ are drawn as a \textcolor{mydarkblue}{filled blue line \rule{0.25cm}{0.25cm}} and \textcolor{myorange}{dashed orange line \rule{0.25cm}{0.25cm}}, respectively. The \textcolor{mymagenta}{dotted magenta line \rule{0.25cm}{0.25cm}} indicates what $T_s$ tends towards on a short timescale.}
+    \label{Short lin F figure}
+\end{figure}
 
 [EXAMPLE SOLUTIONS UNDER CONSTRUCTION]
 

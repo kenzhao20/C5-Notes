@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.6.26)  8 OCT 2025 17:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.6.26)  8 OCT 2025 17:47
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -2583,19 +2583,20 @@ Overfull \hbox (2.43333pt too wide) in paragraph at lines 356--386
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 
 
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 
 
 Chapter 13.
 
-LaTeX Warning: Reference `Jac' on page 91 undefined on input line 483.
+LaTeX Warning: Reference `Jac' on page 91 undefined on input line 523.
 
 
 
 
-LaTeX Warning: Reference `dx' on page 92 undefined on input line 513.
+LaTeX Warning: Reference `dx' on page 92 undefined on input line 553.
 
 
-LaTeX Warning: Reference `dx' on page 92 undefined on input line 517.
+LaTeX Warning: Reference `dx' on page 92 undefined on input line 557.
 
 
 
@@ -2888,12 +2889,12 @@ A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 
 
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 \openout5 = `tikz/main-figure27.dpth'.
 
 [113
 
 {/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 
 LaTeX Warning: Reference `GW Quadratic' on page 113 undefined on input line 946.
 
@@ -3433,15 +3434,15 @@ Package logreq Info: Writing requests to 'tikz/main-figure27.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 44000 strings out of 473190
- 945905 string characters out of 5715800
+ 43999 strings out of 473190
+ 945890 string characters out of 5715800
  1567860 words of memory out of 5000000
- 66584 multiletter control sequences out of 15000+600000
+ 66583 multiletter control sequences out of 15000+600000
  576652 words of font info for 106 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  120i,25n,124p,1415b,1907s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on tikz/main-figure27.pdf (1 page, 61107 bytes).
+Output written on tikz/main-figure27.pdf (1 page, 61115 bytes).
 PDF statistics:
  173 PDF objects out of 1000 (max. 8388607)
  41 compressed objects within 1 object stream
