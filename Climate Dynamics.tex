@@ -69,7 +69,7 @@ $- \lambda'(T_s-T_d)$ & The additional energy radiated into space due to the sys
 \hline
 \end{tabular}
 \end{figure}
-Note that if we add Equations \ref{T_s} and \ref{T_d}, we do not get $0$ on the right hand side: the climate is not an isolated system. There is a net energy flux from $F_{ext}$, $-\lambda T_s$, and $-\lambda ' (T_s-T_d)$.
+Note that if we add Equations \ref{T_s} and \ref{T_d}, we do not get $0$ on the right-hand side: the climate is not an isolated system. There is a net energy flux from $F_{ext}$, $-\lambda T_s$, and $-\lambda ' (T_s-T_d)$.
 
 \section{Solving the System by Diagonalising the Matrix}
 
@@ -187,7 +187,7 @@ where $g_i(t)=\sum_{j}[\hat{E}^{-1}]_{ij}[\vec{f}]_j$. You'll have to calculate 
 
 So we can solve our ODE if we find the \textbf{eigenvectors} and \textbf{eigenvalues} of $\hat{J}$! We've transformed our problem into a linear algebra problem! So how do we solve this now?
 
-\subsubsection{Solving the Linear Algebra Problem}
+\subsubsection{Solving the Linear Algebra Problem}\label{Lin Alg}
 
 We rewrite Equation \ref{Eigenequation} as follows:
 \begin{align*}
@@ -218,7 +218,7 @@ to obtain our eigenvalues $\lambda_i$. Once we have done that we can go through 
 
 \subsection{Application to Our Dynamical System}\label{App to Dym}
 
-Before we apply this method to our dynamical system, we make an important simplification. Typically, $C_s\ll C_d$, representing the massive heat capacity of the deep oceans compared to the atmosphere and land. If we write $\hat{J}$ as:
+Let us now apply this method to our dynamical system. We first write the Jacobian as follows to simplify the algebra:
 \begin{align*}
     \hat{J}=\left( \begin{array}{cc}
         -\frac{\lambda+\gamma+\lambda'}{C_s} & \frac{\gamma+\lambda'}{C_s} \\\\
@@ -231,9 +231,10 @@ Before we apply this method to our dynamical system, we make an important simpli
     \end{array}
     \right)
 \end{align*}
-and assume further that $\lambda$, $\gamma$, and $\lambda'$ are of similar size, we can conclude that $|a|,|b|\gg |c|$. 
 
-Let us now continue with our method. We want to find the eigenvalues of $\hat{J}$. Let us refer to the eigenvalues as $r_i$ to avoid confusion. We want to solve:
+Typically, $C_s\ll C_d$, representing the massive heat capacity of the deep oceans compared to the atmosphere and land. If we assume further that $\lambda$, $\gamma$, and $\lambda'$ are of similar size, we can conclude that $|a|,|b|\gg |c|$. This will be important later for an approximation that we will make. 
+
+Let us now continue with our method. We want to find the eigenvalues of $\hat{J}$. Let us refer to the eigenvalues as $r_i$ instead of $\lambda_i$ to avoid confusion. We want to solve:
 \begin{align*}
     \det\left( \begin{array}{cc}
         -a-r_i & b \\\\
@@ -245,7 +246,7 @@ This is a straightforward quadratic in $r_i$, which has the solution:
 \begin{align*}
     r_i=\frac{1}{2}\left( -a-c \pm \sqrt{a^2-2ac+4bc+c^2} \right)
 \end{align*}
-We now keep only first order in $\frac{c}{a}$, and write:
+Because $|a|\gg |c|$, we keep only first order in $\frac{c}{a}$, and write:
 \begin{align*}
     r_i&=\frac{1}{2}\left( -a-c \pm \sqrt{a^2-2ac+4bc+c^2} \right)\\
     &= \frac{1}{2}\left( 
@@ -253,10 +254,13 @@ We now keep only first order in $\frac{c}{a}$, and write:
      \right) \\ 
     &\approx \frac{1}{2}\left( 
         -a-c \pm a\left(1-\frac{c}{a}+\frac{2bc}{a^2}\right)
-     \right) \\ 
-    r_2&\approx c\left( -1+\frac{b}{a} \right)\hspace{2mm},\hspace{2mm}r_1\approx -a-\frac{bc}{a}
+     \right) 
+    \\ 
+    r_2&\approx \underbrace{c}_{\mathcal{O}(c)} \biggl( \overbrace{-1+\frac{b}{a}}^{\mathcal{O}(1)} \biggr)
+    \hspace{2mm},\hspace{2mm}
+    r_1\approx -\underbrace{a}_{\mathcal{O}(a)}-\overbrace{\frac{c}{a}}^{\mathcal{O}\left( \frac{c}{a} \right)\ll 1}\underbrace{b}_{\mathcal{O}(a)}
 \end{align*}
-Recall again that $c\ll a,b$. The eigenvalue on the left $r_2$ is of order $c$, so it is small, but note both terms are of order $c$. As such, we cannot neglect any terms in $r_2$. The eigenvector on the right $r_1$ has the second $-bc/a$ term much smaller than the first $-a$ term, so we can neglect the second term. Our eigenvectors $r_i$ are therefore:
+Recall again that $|c|\ll |a|,|b|$. The eigenvalue on the left $r_2$ is of order $c$, so it is small, but note both terms are of order $c$. As such, we cannot neglect any terms in $r_2$.\footnote{Well, nothing is stopping us from neglecting both terms, but this would be a worse approximation. Exercise: approximate $r_2\approx 0$ and show that this approximation results in $T_d=0$ for all time. This is the result of the assumption we've implicitly made by approximating $r_2=0$. In effect we've assumed that $C_s$ is ridiculously small compared to $C_d$, therefore any flux from $T_s$ will result in no change from $T_d$.} The eigenvector on the right $r_1$ has the second $-bc/a$ term much smaller than the first $-a$ term, so we can neglect the second term. Our eigenvectors $r_i$ are therefore:
 \begin{align*}
     r_1\approx-a\hspace{2mm},\hspace{2mm} r_2\approx c\left(-1 +\frac{b}{a}\right)
 \end{align*}
@@ -309,7 +313,7 @@ Having found the (approximate) eigenvalues, our goal now is to find the (approxi
     \end{enumerate}
 \end{fact}
 
-Note though that it's not as simple as just plugging the eigenvalues and eigenvectors into \ref{Dym System Gen Sol}. We also need to find $g_i(t)$, which means we need to invert the matrix of eigenvalues $\hat{E}$ to find $\hat{E}^{-1}$. This is incredibly time consuming, especially for an exam (but it is possible!), so I'd recommend reading up on this next unofficial method.
+Note though that it's not as simple as just plugging the eigenvalues and eigenvectors into \ref{Dym System Gen Sol}. If there is any forcing (i.e., if $\vec{f}\neq 0$) we would also need to find $g_i(t)$, which means we need to invert the matrix of eigenvalues $\hat{E}$ to find $\hat{E}^{-1}$. This is incredibly time consuming, especially for an exam (but it is possible!), so I'd recommend reading up on this next unofficial method.
 
 \section{Solving the System by Separating Timescales}\label{Hewitt Method}
 
@@ -321,7 +325,9 @@ However I should emphasise that this is an `\textbf{unofficial}' method. I canno
 
 As already mentioned, we must exploit the separation of timescales here. Here, $T_s$ evolves much faster than $T_d$, which allows us to make two approximations.\footnote{A full rigorous treatment requires non-dimensionalising the equations, but we believe this is ultimately not needed for physical intuition in this case.}
 
-The first approximation we make is valid on \textit{short} time-scales. The terms on the right hand side of equation \ref{T_s} and \ref{T_d} are of both around the same size, therefore $C_s\dot T_s$ and $C_d\dot T_d$ are around the same size. However, since $C_d\gg C_s$, we require that $\dot T_d\ll \dot T_s$. Are first approximation thus involves letting $\dot T_d\approx0$, and we integrate this to find that $T_d(t)=0$ for all times. Physically, this represents the fact that $T_d$ does not respond on very short timescales due to the massive heat capacity $C_d$. Equations \ref{T_s} and \ref{T_d} thus reduce to:
+\subsubsection{The System on Short Timescales}
+
+The first approximation we make is valid on \textit{short} time-scales. The terms on the right-hand side of equation \ref{T_s} and \ref{T_d} are of both around the same size, therefore $C_s\dot T_s$ and $C_d\dot T_d$ are around the same size. However, since $C_d\gg C_s$, we require that $\dot T_d\ll \dot T_s$. Are first approximation thus involves letting $\dot T_d\approx0$, and we integrate this to find that $T_d(t)=0$ for all times. Physically, this represents the fact that $T_d$ does not respond on very short timescales due to the massive heat capacity $C_d$. Equations \ref{T_s} and \ref{T_d} thus reduce to:
 \begin{align}
     \label{T_s short}
     C_s\dot T_s &=F_{ext}(t)-(\lambda +\gamma+ \lambda')T_s\\ 
@@ -330,7 +336,11 @@ The first approximation we make is valid on \textit{short} time-scales. The term
 \end{align}
 on short timescales. We can integrate Equation \ref{T_s short} using an integrating factor, with the general solution in Section \ref{Dynamical Systems Solutions}. The timescale is set by comparing the $T_s$ term to the $\dot T_s$ term: $\tau_s\sim \frac{C_s}{\lambda+\lambda'+\gamma}=1/r_1$. Thus on an $O(\tau_s)$ timescale, $T_s$ equilibrates and $T_d$ remains constant (at $0$). We have derived our first eigenvalue ($1/\tau_s$) and eigenvector ($(1,0)^T$) here without diagonalising anything!
 
-The second approximation we make is valid on \textit{long} time-scales. Here we consider when $T_d$ is of the same size as $T_s$. For this to be the case, the terms on the right hand side of equation \ref{T_d} must be massive (because $C_d$) is massive, and so the terms on the right hand side of equation \ref{T_s} must be massive, and so $C_s \dot T_s$ must be massive as well. We anticipate that under such conditions, $T_s$ will evolve rapidly into equilibrium, as the only way to balance such a system must be to allow $C_s \dot T_s=0$. On this timescale, we say that $T_s$ is \textbf{quasi-steady}: $T_s$ evolves rapidly into equilibrium with $T_d$, and so we set $\dot T_s=0$ in Equation \ref{T_s}. Equations \ref{T_s} and \ref{T_d} thus reduce to:
+\subsubsection{The System on Long Timescales}
+
+The second approximation we make is valid on \textit{long} time-scales. Here we consider when $T_d$ is of the same size as $T_s$. For this to be the case, the terms on the right-hand side of equation \ref{T_d} must be massive (because $C_d$) is massive, and so the terms on the right-hand side of equation \ref{T_s} must be massive, and so $C_s \dot T_s$ must be massive as well. However, this is impossible, since $C_s \dot T_s \ll C_d \dot T_d$, therefore, the only way equation \ref{T_s} can be satisfied is if the terms on the right-hand side balance each other. Therefore, we assume that  $C_s \dot T_s=0$ on these timescales.
+
+Another way of thinking about this is as follows. We anticipate that under these conditions (where the terms on the right-hand side of Equation \ref{T_s} are massive), $\dot T_s$ will initially be very large, and so $T_s$ will evolve rapidly into equilibrium, thus ensuring that $C_s \dot T_s=0$ most of the time. On this timescale, we say that $T_s$ is \textbf{quasi-steady}: $T_s$ evolves rapidly into equilibrium with $T_d$, and so we set $\dot T_s=0$ in Equation \ref{T_s}. Equations \ref{T_s} and \ref{T_d} thus reduce to:
 \begin{align}
     0 & = F_{ext}(t)-\lambda T_s -\gamma (T_s-T_d) - \lambda'(T_s-T_d) \label{T_s long} \\ 
     C_d \dot{T_d} &= -\gamma (T_d-T_s) \label{T_d long}
@@ -486,6 +496,8 @@ Again, it's clear that, for $t<0$, $T_s(t)=T_d(t)=0$. For $t>0$, we again integr
 
 \subsection{Rewriting the Solutions in Terms of Emission}
 
+
+
 [UNDER CONSTRUCTION]
 
 \section{Analogous Systems}
@@ -496,7 +508,7 @@ We can apply this to similar systems. Consider, for example, a carbon budget equ
     R_b \dot{C_b} &= r (C_a-C_b) - s (C_b-C_d)\\
     R_d \dot{C_d} &=  s (C_b-C_d)
 \end{align}
-where $C_a,C_b,C_d$ are the effective CO$_2$ anomalies in the atmosphere, biosphere/surface-ocean, and deep ocean, respectively. The left hand side is the change in CO$_2$ concentrations, and the right hand side are carbon fluxes. It's typically the case that $R_d\gg R_b\gg R_a$ due to similar reasons as before, as well as a bit of ocean chemistry. We can use the exact same method as before to define three timescales:
+where $C_a,C_b,C_d$ are the effective CO$_2$ anomalies in the atmosphere, biosphere/surface-ocean, and deep ocean, respectively. The left hand side is the change in CO$_2$ concentrations, and the right-hand side are carbon fluxes. It's typically the case that $R_d\gg R_b\gg R_a$ due to similar reasons as before, as well as a bit of ocean chemistry. We can use the exact same method as before to define three timescales:
 \begin{enumerate}
     \item A short timescale ($t_a\sim\mathcal{O}\left(\frac{R_a}{r}\right)$):  We set $C_b\approx C_d\approx 0$, as $C_b,C_d$ respond very slowly. $C_a$ evolves according to $R_a \dot{C_a} = E(t)-r C_a$.
     \item A medium timescale ($t_b\sim\mathcal{O}\left(\frac{R_b}{s}\right)$): We set $C_d \approx 0$ since $C_d$ responds very slowly, and we set $\dot{C_a} \approx 0$ as $C_a$ evolves rapidly into equilibrium with $C_b$. We then get that $C_a(t)$ evolves quasi-steadily ($C_a(t)\approx C_b(t)+\frac{E(t)}{r}$) and $C_b$ evolves according to $R_b \dot{C_b}=E(t)-sC_b$.
@@ -524,9 +536,9 @@ where $\hat{J}\in\mathbb{R}^n\times\mathbb{R}^n$ is the Jacobian given by:
     \vdots & \vdots & \vdots \\
     \end{array} \right)
 \end{align} 
-Given that $\vec{x}$ has $n$-dimensions, we require $n$ initial conditions given by $\vec{x}(t=t_0)$ to integrate this ODE. This will typically achieved via data assimilation, but all that needs to be known at this point is that we cannot know the initial conditions to a sufficient precision, because the system is chaotic.
+Given that $\vec{x}$ has $n$-dimensions, we require $n$ initial conditions given by $\vec{x}(t=t_0)$ to integrate this ODE. This will typically achieved via data assimilation, but all that needs to be known at this point is that we cannot know the initial conditions to a sufficient precision. That's just life \begin{CJK}{UTF8}{min}\texttt{¯\textbackslash\_(ツ)\_/¯}\end{CJK}
 
-Therefore, we aim to find how errors in the initial conditions propagate and evolve. Suppose that the actual state of the system is given by $\vec{y}(t)$ and our prediction is given by $\vec{x}(t)$. We assume $\vec{y}$ time-evolves by Equation \ref{Jac}.\footnote{This amounts to the assumption that our model is perfect, i.e., there is no model error. This is, of course, false, so this method is only applicable to dealing with errors arising from errors in initial conditions.} We define some initial error or perturbation\footnote{We use error and perturbation interchangeably in this chapter} $\vec{\delta x}(t)$ such that, at all times, the following holds:
+The system is also \textbf{chaotic}: small initial errors in initial conditions will not remain small final errors, once we've integrated the system. Our aim now is to investigate how errors in the initial conditions propagate and evolve. Suppose that the actual state of the system is given by $\vec{y}(t)$ and our prediction is given by $\vec{x}(t)$. We assume $\vec{y}$ time-evolves by Equation \ref{Jac}.\footnote{This amounts to the assumption that our model is perfect, i.e., there is no model error. This is, of course, false, so this method is only applicable to dealing with errors arising from errors in initial conditions.} We define some initial error or perturbation\footnote{We use error and perturbation interchangeably in this chapter} $\vec{\delta x}(t)$ such that, at all times, the following holds:
 \begin{align}
     \vec{y}(t)=\vec{x}(t)+\vec{\delta x}(t)
 \end{align}
@@ -543,14 +555,16 @@ We know that
 where we have used the definition of $\vec{\delta x}(t)$ and the fact that $\hat{J}$ is a linear(ised) operator. Therefore, 
 \begin{align*}
     \vec{\delta x}(t_0+\delta t) & = \vec{\delta x}(t_0)+ \int_{t_0}^{t_0+\delta t} \hat{J} \vec{\delta x}(t') dt'\\
-    & \approx \vec{\delta x}(t_0)+ \hat{J} \delta t\vec{\delta x}(t_0)\\
-    & = (\mathbb{I} + \hat{J}\delta t)\vec{\delta x}(t_0)
+    & \approx \vec{\delta x}(t_0)+ \hat{J} \,\delta t\,\vec{\delta x}(t_0)
+    \\
+    & = (\mathbb{I} + \hat{J}\,\delta t)\,\vec{\delta x}(t_0)
 \end{align*}
 Where we have used the fact that $\delta t$ is small. We define the linear error propagator $\hat{A}$ as:
-\begin{align}
-    & \BOX{\hat{A} = (\mathbb{I} + \hat{J}\delta t)}\\
-    & \BOX{\vec{\delta x}(t_0+\delta t)\approx\hat{A}\vec{\delta x}(t_0)} \label{dx}
-\end{align}
+\begin{gather}
+    \BOX{\hat{A} = (\mathbb{I} + \hat{J}\delta t)}
+    \\
+    \BOX{\vec{\delta x}(t_0+\delta t)\approx\hat{A}\vec{\delta x}(t_0)} \label{dx}
+\end{gather}
 
 \section{Local Perturbation Growth}
 
@@ -571,8 +585,20 @@ if and only if:
     \hat{A}^T\hat{A}\vec{\delta x}(t_0)=\lambda\vec{\delta x}(t_0)
 \end{align*}
 This is a stationary point only if the initial error $\vec{\delta x}(t_0)$ is an eigenvector of $\hat{A}^T\hat{A}$. However, not all stationary points are maximisers (e.g., it could be a minimiser or a saddle point). It turns out that the final error is maximised only if the initial error is the \textit{largest} eigenvector of $\hat{A}^T\hat{A}$\footnote{
-    This is deduced by considering the Hessian: the matrix of second partial derivatives. It can be shown, analogous to the 1D case, that the stationary point is a maximiser only if the Hessian is negative semidefinite (i.e., each eigenvalue $\leq0$). In this case, the hessian is the matrix $\hat{A}^T\hat{A}-\lambda\mathbb{I}$, which is clearly only negative semidefinite if $\lambda\geq$ the largest eigenvalue of $\hat{A}^T\hat{A}$.}
+    This is deduced by considering the Hessian: the matrix of second partial derivatives. It can be shown, analogous to the 1D case, that the stationary point is a maximiser only if the Hessian is negative semidefinite (i.e., each eigenvalue $\leq0$). In this case, the hessian is the matrix $\hat{A}^T\hat{A}-\lambda\mathbb{I}$, which is clearly only negative semidefinite if $\lambda\geq$ the largest eigenvalue of $\hat{A}^T\hat{A}$. However, $\lambda$ itself is an eigenvalue (so it cannot be larger than the largest eigenvalue), so it must be equal to the largest eigenvalue!}
 . Note that $\hat{A}^T\hat{A}$ is symmetric, so (by a theorem in linear algebra) eigenvectors will be orthogonal and eigenvalues will be real.
+
+Our goal now is to find the eigenvalues of $\hat{A}^T\hat{A}$. In an exam, you might be given the explicit form of $\hat{A}^T\hat{A}$, and you will have to find the eigenvalues and eigenvectors which will maximise (or minimise) the final error (following the method outlined \hyperref[Lin Alg]{here}). 
+
+Now at this point, Myles starts talking about \textbf{Singular Value Decomposition}s of matrices. Honestly, I do not believe it's needed to even mention Singular Value Decomposition.\footnote{
+    If you wan't an explanation of what are in Myles' Jupyter notebooks, I'll explain it here. [UNDER CONSTRUCTION]
+} All \textit{you} need to know is that $\hat{A}^T\hat{A}$ is a square symmetric matrix, and therefore that it can be diagonalised and that its eigenvectors are orthogonal. We write $\hat{A}^T\hat{A}$ (using the same notation as Myles) as follows:
+\begin{align*}
+    \hat{A}^T\hat{A} = \hat{R}\,\hat{Q}^2\,\hat{R}^{T}
+\end{align*}
+where $\hat{R}$ is a square matrix formed of the eigenvectors and $\hat{Q}^2$ is a diagonal matrix formed of the eigenvalues of $\hat{A}^T\hat{A}$. 2
+
+[UNDER CONSTRUCTION]
 
 \chapter{Estimation}\label{Estimation}
 
