@@ -649,7 +649,7 @@ A question you might (rightfully) have now is the following: if energy levels ar
 
 This question will be answered when we discuss \hyperref[Broadening]{Broadening Mechanisms}.
 
-\subsection{Line Strength\texorpdfstring{ $S$}{}}
+\subsection{Line Strength\texorpdfstring{ $S$}{}}\label{Line Strength}
 
 The line strength $S$ is determined by two factors.
 
@@ -1685,20 +1685,48 @@ Integrating again using the boundary conditions gives:
 We are now in a position to find expressions for all three variables. We can find $T$ by substituting \ref{Up+Down} into \ref{Up+Down tau}. We can find $E_+$ and $E_+$ by adding or subtracting (respectively) \ref{Up-Down} and \ref{Up+Down tau}. The solutions are:
 \begin{fact}{Radiative Equilibrium Solutions}{Rad Eq Box}\label{Rad Eq Box}
     A grey gas in pure radiative equilibrium will have a temperature profile $(T(\tau))$, upwards irradiance $(E_+(\tau))$, and downwards irradiance $(E_-(\tau))$ that obey the following relations:
+
     \begin{gather}
         \label{Radiative Eq Temperature}
-        \BOX{T^4=\frac{OLR}{2\sigma}(1+\tau_\infty-\tau)}\\
-        \BOX{E_+=\frac{OLR}{2}(2+\tau_\infty-\tau)}\\
-        \BOX{E_-=\frac{OLR}{2}(\tau_\infty-\tau)}
+        \BOX{T^4=\frac{OLR}{2\sigma}(1+\tau_\infty-\tau)}
     \end{gather}
+
+    \begin{minipage}{.48\linewidth}
+        \begin{gather}
+            \BOX{E_+=\frac{OLR}{2}(2+\tau_\infty-\tau)}
+        \end{gather}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{.48\linewidth}
+        \begin{gather}
+            \BOX{E_-=\frac{OLR}{2}(\tau_\infty-\tau)}
+        \end{gather}
+    \end{minipage}
 \end{fact}
 
-We can rewrite these equations using global energy conservation: $OLR=S_\star$ where $S_\star=(1-\alpha)\cos\zeta\,L_\star$ is the absorbed stellar flux per unit area at the surface of the planet.
+We can rewrite these equations using global energy conservation. We further assume that the entire atmosphere is in radiative equilibrium, so it must be receiving as much energy as it is emitting. Therefore the following holds:
 \begin{align}
-    {T^4=\frac{S_\star}{2\sigma}(1+\tau_\infty-\tau)}\\
-    {E_+=\frac{S_\star}{2}(2+\tau_\infty-\tau)}\\
-    {E_-=\frac{S_\star}{2}(\tau_\infty-\tau)}
+    \label{OLR Radiative Equilibrium Conservation}
+    OLR=S_\star
 \end{align}
+where $S_\star=(1-\alpha)\cos\zeta\,L_\star$ is the absorbed stellar flux per unit area at the surface of the planet.
+\begin{align}
+    \label{Radiative Eq T S}
+    {T^4=\frac{S_\star}{2\sigma}(1+\tau_\infty-\tau)}
+\end{align}
+
+\begin{minipage}{.48\linewidth}
+        \begin{gather}
+            E_+=\frac{S_\star}{2}(2+\tau_\infty-\tau)
+        \end{gather}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{.48\linewidth}
+        \begin{gather}
+            \label{Radiative Eq E- S}
+            E_-=\frac{S_\star}{2}(\tau_\infty-\tau)
+        \end{gather}
+\end{minipage}
 
 \subsection{Interpretation}
 
@@ -1719,20 +1747,61 @@ Next let's consider the temperature profile. As we can clearly see, as $\tau$ in
 
 Is it stable to convection? Recall that an atmosphere is stable if it satisfies \ref{Dry Stability}. We know it will be unstable at the ground, because at the ground the temperature gradient is infinite due to the discontinuity. Therefore, the air immediately above the ground will be warmed by the ground, and will convect. More generally though, we can directly differentiate \ref{Radiative Eq Temperature} to see if it satisfies \ref{Dry Stability} to find where (if any) the temperature profile is unstable:
 \begin{align*}
-    \frac{d}{dp}T^4&=-\frac{OLR}{2\sigma}\frac{d}{dp}(1+\tau_\infty-\tau)\\
-    4T^3\frac{dT}{dp}&=-\frac{OLR}{2\sigma}\frac{d\tau}{dp}\\
+    \frac{d}{dp}T^4&=-\frac{OLR}{2\sigma}\frac{d}{dp}(1+\tau_\infty-\tau)
+    \\
+    4T^3\frac{dT}{dp}&=-\frac{OLR}{2\sigma}\frac{d\tau}{dp}
+    \\
     \therefore
-    \frac{d\ln T}{d\ln p}&=-\frac{p}{4T^4}\frac{OLR}{2\sigma}\frac{d\tau}{dp}\\
+    \frac{d\ln T}{d\ln p}&=-\frac{p}{4T^4}\frac{OLR}{2\sigma}\frac{d\tau}{dp}
+    \\
     &=-\frac{p}{4}\frac{1}{OLR(1+\tau_\infty-\tau)/2\sigma}\frac{OLR}{2\sigma}
     \left( -\kappa(T(p),p) \frac{q(p)}{g} \right)
+    \\
+    &=-\frac{\kappa(T(\tau(p)),p)\, q(p)\, p}{4\,g\left( 1+\tau_\infty-\tau(p) \right)}
 \end{align*}
-Therefore, using :
-\begin{align}
-    \frac{d\ln T}{d\ln p} = \frac{p\kappa(T(p),p)q(p)}{4}
-\end{align}
+We therefore, given some expression for the functional dependence of $\kappa$, an expression for the vertical temperature structure of the grey gas atmosphere in radiative equilibrium.
 
-Note that we have not considered the diurnal cycle: we have assumed that the 
+For now, to make progress, we just assume that $\kappa = const$. This allows us to use the relation derived before for $\tau(p)$:
+\begin{align*}
+    \tau(p) = \tau_\infty \left( 1-\frac{p}{p_s} \right)
+    \\
+    \tau_\infty = \tau(p_s)=\frac{\kappa \,q \,p_s}{g}
+\end{align*}
+Therefore, our expression becomes:
+\begin{align*}
+    \frac{d\ln T}{d\ln p} = \frac{1}{4}\left( \frac{\tau_\infty p}{p_s +\tau_\infty p} \right)
+\end{align*}
+
+Clearly then, the temperature gradient of the atmosphere has no dependence whatsoever on the $OLR$. The only property the $OLR$ affects in a radiative equilibrium atmosphere is how hot the atmosphere is, but it does not affect how quickly temperature falls off with height.
+
+Let's look at some limits. At the top of the atmosphere, $p\to 0$, and as $p\to 0$, $\frac{d\ln T}{d\ln p}\to 0$ too. So near the top of the atmosphere, referring back to our \hyperref[Dry Stability Box]{Dry Stability Criterion}, an atmosphere in radiative equilibrium is almost always super-stable. This explains why stratospheres, where the vertical temperature structure is set by radiative equilibrium, only really occurs up high in the atmosphere and results in temperature profiles that are stable to convection.
+
+At the bottom of the atmosphere, where $p\to p_s$, $\frac{d\ln T}{d\ln p}\to \frac{1}{4}\left( \frac{\tau_\infty}{1+\tau_\infty} \right)$. The temperature profile at the ground then depends strongly on the optical thickness of the entire atmosphere $\tau_\infty$. If the atmosphere is optically thin $\left( \tau_\infty \ll 1 \right)$, then $\frac{d\ln T}{d\ln p}$ can also become arbitrarily small close to the surface (i.e., as $\tau_\infty \to 0$,$ \frac{d\ln T}{d\ln p} \to 0$). If the atmosphere is optically thick $\left( \tau_\infty \gg 1 \right)$, though, $\frac{d\ln T}{d\ln p} \to \frac{1}{4}$.
+
+Now, again, whether this ends up as actually unstable or not depends on the \hyperref[Dry Stability Box]{Dry Stability Criterion}, which depends on the heat capacity $c_p$ of the atmosphere, which, recalling our discussion on the \hyperref[Equipartition]{Equipartition Theorem}, depends on the number of degrees of freedom of the molecules that compose that atmosphere. For the Earth, where $c_p\approx 7/2 R$, an optically thick grey gas atmosphere would be \textit{just about} stable at the surface.
+
+More generally, an optically thick atmosphere at the surface will be unstable if $\frac{4R}{c_p}<1$.
+
+Note though that our model is extremely limited. First, we have assumed that the atmosphere is grey, and \textit{further} assumed that $\kappa$ has no dependence on $T$ or $p$. Recalling from Section \ref{Line Strength} that $S$ and therefore $\kappa$ has a strong exponential dependence on $T$ (as $T$ increases, $\kappa$ strongly increases), we expect $\kappa$ to be much larger near the surface of the planet (where $T$ is larger) than near the top of the atmopshere (where $T$ is smaller).
+
+It is not difficult to verify that, if this is the case, $\frac{d\ln T}{d\ln p}$ would be larger at $p\to p_s$ in an optically thick atmosphere, and therefore would be more prone to going unstable. (Exercise: let $\kappa = a p$, then integrate explicitly to find $d\ln T/d\ln p$. You should find that, now, $d\ln T/d\ln p \to 1/2$ instead of $1/4$).
+
+Second, we have not considered the diurnal cycle: we have assumed that the 
+[UNDER CONSTRUCTION]
 
 \subsection{Internal Leakage}
 
+In many cases, though, an atmosphere in radiative equilibrium is not only receiving energy from its star. It is also receiving energy from the planet: after formation, a planet often releases energy leftover from the formation. The Earth itself releases energy left over from formation (see here: \cite{EarthEnergy}). 
+
+In such a case, we should be clear what we mean by `Radiative Equilibrium'. `Radiative Equilibirum' in this context applies to the \textit{atmosphere}, not to the planet. We are assuming that the atmosphere receives as much energy as it releases, \textit{not} that the planet receives as much energy as it releases. Because of this, again the system is sort of in a quasi-steady state: the atmosphere is in a `steady state', but the planet is not: it is cooling and receiving less energy than it is emitting. However, because the atmosphere relaxes to equilibrium much faster than the planet, we can treat the atmosphere as simply in time-dependent equilibrium.
+
+Suppose that the planet's surface leaks energy at a rate of $F_{int}$. Then the energy budget of the atmosphere must sum to $0$, so the following criterion must hold (analogous to Equation \ref{OLR Radiative Equilibrium Conservation}):
+\begin{align*}
+    OLR = S_\star + F_{int}
+\end{align*}
+
+Equations \ref{Radiative Eq T S}-\ref{Radiative Eq E- S} are modified accordingly, but note that really the only affect of internal leakage is that, like $OLR$, $F_{int}$ only increases the temperature of the entire atmosphere monotonically – it does not affect the vertical temperature structure of the atmosphere. 
+
 \subsection{Shortwave absorbers}\label{Shortwave}
+
+[UNDER CONSTRUCTION]
