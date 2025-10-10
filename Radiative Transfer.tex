@@ -410,7 +410,7 @@ Second, while blackbodies emit radiation at all frequencies, its 'characteristic
 }\footnotetext{
     Why all the hassle? Why not find where $B(\nu,T)$ is maximum and define that as the characteristic frequency? We do not do this becuase this definition is not physically meaningful. Recall the discussion we had just last section: it is $B(\nu)\,d\nu$ that is meaningful, not $B(\nu)$. (Excercise: differentiate $B(\nu)$ to find where $B$ is maximum with respect to $\nu$. Then, transform into wavelength coordinates, making sure to transform $d\nu$ as well, then differentiate with respect to wavelength. You should find that the maximum wavelength is not the maximum frequency).
 } 
-Since the star will almost always be hotter than its planet, this results in what's called a \textit{spectral gap}: the planet tends to emit radiation at a much longer wavelength than its star, which is what enables the greenhouse effect (See Figure \ref{Spec Gap BB}).
+Since the star will almost always be hotter than its planet, this results in what's called a \textit{spectral gap}: the planet tends to emit radiation at a much longer wavelength than its star, which is what enables the greenhouse effect (See Figure \ref{Spec Gap BB}). For this reason, we often call the radiation emitted by the planet `\textbf{longwave}' radiation and the radiation emitted by the star `\textbf{shortwave}' radiation.
 
 \begin{figure}[H]
     \centering
@@ -1612,9 +1612,9 @@ Recall the frequency and angle integrated downwards and upwards Schwarszchild Eq
 \end{align*}
 where $E_+$, $E_+$ are now irradiances (rather than spectral irradiances).
 
-You'll note that we cannot actually solve this system, because we have three variables $(E_+,E_+,T)$ but only two equations. However, this should be the case: recall the general solutions to the non-frequency averaged upwards and downwards Schwarszschild Equations (\ref{Downwards Soln}, \ref{Upwards Soln}) featured $B(\tau')$ within the integral, which depends on the atmospheric temperature profile as a function of optical depth. In the previous chapters, we just took this as something given. For example, we might assume that $T$ follows the dry adiabat.
+As already noted, if we're not given some functional form of $T(\tau)$, then we cannot solve this system, because we have three variables $(E_+,E_+,T)$ but only two equations. Recall that the general solutions to the non-frequency averaged upwards and downwards Schwarszschild Equations (\ref{Downwards Soln}, \ref{Upwards Soln}) featured $B(\tau')$ within the integral, which depends on the atmospheric temperature profile as a function of optical depth. In the previous chapters, we just took this as something given. For example, we might assume that $T$ follows the dry adiabat.
 
-We now make the crucial assumption of radiative equilibrium: there is no net warming or heating from radiation at each optical depth. We now consider conservation of energy on some infinitesimal slab of atmosphere with optical thickness $\delta \tau$ and area $A$ by considering the upwards and downwards irradiances entering and leaving the slab. 
+We do not make these assumptions this chapter, and instead aim to solve for $T$. To solve for $T$, we must impose a constraint. This constraint will be that of \textbf{radiative equilibrium}: there is no net warming or heating from radiation at each optical depth. We now consider conservation of energy on some infinitesimal slab of atmosphere with optical thickness $\delta \tau$ and area $A$ by considering the upwards and downwards irradiances entering and leaving the slab. 
 \begin{align*}
     P_{in}=(E_+(\tau)+E_+(\tau+\delta\tau))A\\
     P_{out}=(E_+(\tau+\delta\tau)+E_+(\tau))A
@@ -1636,7 +1636,7 @@ We can freely divide by $A\neq0$ and take $\delta\tau\to0$ to find our third and
     \BOX{\frac{d}{d\tau}(E_+-E_-)=0}
 \end{align}
 
-We can now solve the coupled ODEs \ref{Upwards Grey}, \ref{Downwards Grey}, and \ref{Radiative Equilibrium} to give us expressions for $E_+$, $E_+$, and $T$ in terms of $\tau$. Finally, we can find $\tau$ as a function of $p$ (or $z$) in order to give us the temperature profile of an atmosphere in \textbf{radiative equilibrium}. 
+We can now solve the coupled ODEs \ref{Upwards Grey}, \ref{Downwards Grey}, and \ref{Radiative Equilibrium} to give us expressions for $E_+$, $E_-$, and $T$ in terms of $\tau$. Finally, we can find $\tau$ as a function of $p$ (or $z$) in order to give us the temperature profile of an atmosphere in \textbf{radiative equilibrium}. 
 
 There are two final nuances to note. First, we are effectively making the \textit{opposite} assumption to the one we made in deriving the adiabat (\ref{Dry Adiabat}): we are now assuming that radiation is the dominant energy transfer mechanism, rather than convection. It's worth noting that neither limit is entirely correct, whether radiation or convection wins out as the dominant mechanism depends on the situation. Having said this, which one turns out to be the dominant mechanism is not a coincidence, but is, of course, a consequence of the dynamics governing the system.
 
@@ -1802,6 +1802,18 @@ Suppose that the planet's surface leaks energy at a rate of $F_{int}$. Then the 
 
 Equations \ref{Radiative Eq T S}-\ref{Radiative Eq E- S} are modified accordingly, but note that really the only affect of internal leakage is that, like $OLR$, $F_{int}$ only increases the temperature of the entire atmosphere monotonically – it does not affect the vertical temperature structure of the atmosphere. 
 
-\subsection{Shortwave absorbers}\label{Shortwave}
+\section{Shortwave absorbers}\label{Shortwave}
+
+We now consider an atmosphere where there are shortwave absorbers/emitters in the atmosphere, i.e., we consider an atmosphere that can absorb absorb shortwave from the star. So far we have only dealt with a gas that is a longwave absorber/emitter: it can absorb the radiation emitted by the surface and other components of the atmosphere but not the radiation emitted by the star.
+
+What I just said should be slightly confusing. After all, we explicitly assumed earlier that that the atmosphere was grey ($\kappa = const$). Therefore, if the gas absorbs/emits longwave radiation it must also absorb/emit shortwave radiation.
+
+This is technically correct, so we should be explicit as to what we are modifying in the model, and why the physical interpretation of modification corresponds to adding shortwave absorbers/emitters to the atmosphere. The modification we make is as follows. We revise the Radiative Equilibrium criteiron (Equation \ref{Radiative Equilibrium}) to be below:
+\begin{align}
+    \BOX{\frac{d}{d\tau}\left( E_+ - E_- - E_{\star} \right)=0}
+\end{align}
+where $E_\star(\tau)=$ is the monotonically increasing downwards irradiance of the star. In this section we simply take $E_\star$ as a given (e.g., we let $E_\star\sim e^\tau$).
+
+What we are representing in this model, now, is that there is some downards irradiance from the star that is absorbed
 
 [UNDER CONSTRUCTION]
