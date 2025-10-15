@@ -7,6 +7,6 @@
   function = "auth"
 
 [[headers]]
-  for = "/*"
+  for = "/main.pdf"
   [headers.values]
-    X-Robots-Tag = "noindex, nofollow"
+    Content-Disposition = "attachment; filename=\"main.pdf\""
