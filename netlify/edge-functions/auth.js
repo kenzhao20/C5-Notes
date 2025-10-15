@@ -8,6 +8,7 @@ function getEnv(name) {
 
 export default async (req, ctx) => {
   const expected = getEnv(PASSWORD_ENV) || "";
+  console.log("Password env:", expected);
   const url = new URL(req.url);
 
   // Handle form submission (POST)
