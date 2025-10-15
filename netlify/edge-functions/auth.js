@@ -15,7 +15,7 @@ export default async (req, ctx) => {
     const form = await req.formData();
     if (form.get("password") === expected) {
       // ✅ Correct password → redirect to PDF
-      return Response.redirect("/main.pdf", 302);
+      return Response.redirect(url.origin + "/main.pdf", 302);
     }
     // ❌ Wrong password → message
     return new Response("<p>Wrong password. Try again.</p>", {
