@@ -1,0 +1,12 @@
+[build]
+  command = ""          # no build needed
+  publish = "site"      # serve this folder
+
+[[edge_functions]]
+  path = "/*"
+  function = "auth"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
