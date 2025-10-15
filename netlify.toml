@@ -6,6 +6,10 @@
   path = "/"
   function = "auth"
 
+[[edge_functions]]
+  path = "/main.pdf"
+  function = "auth"
+
 [[headers]]
   for = "/main.pdf"
   [headers.values]
