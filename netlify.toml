@@ -1,9 +1,13 @@
 [build]
   command = ""          # no build needed
   publish = "site"      # serve this folder
+  
+[[edge_functions]]
+  path = "/"
+  function = "auth"
 
 [[edge_functions]]
-  path = "/*"
+  path = "/main.pdf"
   function = "auth"
 
 [[headers]]
