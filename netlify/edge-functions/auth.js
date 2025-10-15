@@ -1,31 +1,50 @@
 // netlify/edge-functions/auth.js
 const PASSWORD_ENV = "SITE_PASSWORD";
 
+// --- Helper to read environment variable ---
 function getEnv(name) {
   if (typeof Netlify !== "undefined" && Netlify.env?.get) return Netlify.env.get(name);
   if (typeof Deno !== "undefined" && Deno.env?.get) return Deno.env.get(name);
+  return undefined;
 }
 
+// --- Main Edge Function ---
 export default async (req, ctx) => {
   const expected = getEnv(PASSWORD_ENV) || "";
-  console.log("Password env:", expected);
   const url = new URL(req.url);
+  const cookie = req.headers.get("cookie") || "";
 
-  // Handle form submission (POST)
+  console.log("[auth] Password env:", expected); // Debug line — safe to remove later
+
+  // ✅ If user already authenticated, allow request (let PDF load)
+  if (cookie.includes("access_granted=true")) {
+    return ctx.next();
+  }
+
+  // ✅ Handle password submission
   if (req.method === "POST") {
     const form = await req.formData();
-    if (form.get("password") === expected) {
-      // ✅ Correct password → redirect to PDF
-      return Response.redirect(url.origin + "/main.pdf", 302);
+    const provided = form.get("password");
+    if (provided === expected) {
+      // Set short-lived cookie and redirect to PDF
+      return new Response(null, {
+        status: 302,
+        headers: {
+          location: url.origin + "/main.pdf",
+          "set-cookie": "access_granted=true; Path=/; Max-Age=3600; HttpOnly; SameSite=Lax",
+          "cache-control": "no-store",
+        },
+      });
     }
-    // ❌ Wrong password → message
+
+    // ❌ Wrong password
     return new Response("<p>Wrong password. Try again.</p>", {
       headers: { "content-type": "text/html" },
       status: 401,
     });
   }
 
-  // Show the password form (GET)
+  // ✅ Show password form for GET requests (default)
   const html = `
     <!doctype html>
     <meta charset="utf-8">
