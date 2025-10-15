@@ -180,10 +180,10 @@ Physically, $S_i(t)$ is the $i$th normal mode, a mode that is decoupled complete
 Our final step is to relate $S_i$ back to $T_i$, which is easy if we note that $\vec{S}\equiv\hat{E}^{-1}\vec{T}$, therefore $\vec{T}=\hat{E}\vec{S}$. Therefore, $T_i=[v_i]_1S_1+[v_i]_2S_2$ so our general solution is:
 \begin{align}
     \BOX{
-        T_j=\sum_{i} \left( [v_j]_i \left( S_i(0)e^{\lambda_i t}+e^{\lambda_i t}\int_{0}^{t}g_i(t')e^{-\lambda_i t'}\,dt' \right) \right)
+        T_j(t)=\sum_{i} \left( [v_j]_i \left( S_i(0)e^{\lambda_i t}+e^{\lambda_i t}\int_{0}^{t}g_i(t')e^{-\lambda_i t'}\,dt' \right) \right)
     }
 \end{align}
-where $g_i(t)=\sum_{j}[\hat{E}^{-1}]_{ij}[\vec{f}]_j$. You'll have to calculate this explicitly for the problem at hand.
+where $g_i(t)=\sum_{j}[\hat{E}^{-1}]_{ij}[\vec{f}]_j$ and $S_i(0)=\sum_j [\hat{E}^{-1}]_{ij} T_j (0)$. You'll have to calculate this explicitly for the problem at hand.
 
 So we can solve our ODE if we find the \textbf{eigenvectors} and \textbf{eigenvalues} of $\hat{J}$! We've transformed our problem into a linear algebra problem! So how do we solve this now?
 
@@ -205,7 +205,7 @@ We rewrite Equation \ref{Eigenequation} as follows:
 \end{align*}
 where $\vec{0}=(0,0)^T$. 
 
-Now clearly, an easy solution is if we set $\vec{v}_i=\vec{0}$ and $\lambda_i=0$, but this is only one solution, and we wish to find the non-trivial solutions. One can show in linear algebra that a non-zero matrix times a non-zero vector can be equal to $\vec{0}$ only if the determinant of the matrix is zero. We thus solve for:
+Now clearly, an easy solution is if we set $\vec{v}_i=\vec{0}$, but this is only one solution, and we wish to find the non-trivial solutions. One can show in linear algebra that a non-zero matrix times a non-zero vector can be equal to $\vec{0}$ only if the determinant of that matrix is zero. We thus solve for:
 \begin{align*}
     \det\left( 
         \vec{J} - \lambda_i \left( \begin{array}{cc}
@@ -214,9 +214,15 @@ Now clearly, an easy solution is if we set $\vec{v}_i=\vec{0}$ and $\lambda_i=0$
     \end{array} \right)
     \right)=0
 \end{align*}
-to obtain our eigenvalues $\lambda_i$. Once we have done that we can go through each $\lambda_i$ one at a time and substitute the $\lambda_i$ into Equation \ref{Eigenequation} to find the corresponding $\vec{v}_i$. And we're done!
+to obtain our eigenvalues $\lambda_i$. This should give us a quadratic in $\lambda_i$ in $2$-dimensions, but if we have $N$ dimensions we should get a $N$-dimensional polynmial in $\lambda$. Once we have done that we can go through each $\lambda_i$ one at a time and substitute the $\lambda_i$ into Equation \ref{Eigenequation} to find the corresponding $\vec{v}_i$. And we're done!
 
 \subsection{Application to Our Dynamical System}\label{App to Dym}
+
+\subsubsection{Application without Simplifications}
+
+Let us refer again to our solution written in Equation \ref{Dynamical Solution}. We can make a few simplifications when applying this to our model. First, $\vec{f}=(F_{ext}/C_s,0)^T$, so we can set $[\vec{f}]_2=0$. 
+
+\subsubsection{Application with Simplifications}
 
 Let us now apply this method to our dynamical system. We first write the Jacobian as follows to simplify the algebra:
 \begin{align*}
@@ -313,7 +319,19 @@ Having found the (approximate) eigenvalues, our goal now is to find the (approxi
     \end{enumerate}
 \end{fact}
 
-Note though that it's not as simple as just plugging the eigenvalues and eigenvectors into \ref{Dym System Gen Sol}. If there is any forcing (i.e., if $\vec{f}\neq 0$) we would also need to find $g_i(t)$, which means we need to invert the matrix of eigenvalues $\hat{E}$ to find $\hat{E}^{-1}$. This is incredibly time consuming, especially for an exam (but it is possible!), so I'd recommend reading up on this next unofficial method.
+\subsubsection{Application without Simplifications}
+
+Of course, if you wish to solve the system exactly without making the approximations associated with the $Cs\ll C_d$ condition, then this is completely possible as well, albeit with slightly uglier algebra.
+
+You will eventually find that the first normal mode with the eigenvector $\vec{v}_1=(1,0)^T$ is actually more like $\vec{v}_1=(1,\epsilon)^T$, where $\epsilon$ is pretty small – the deep oceans do warm on the short timescale, although very slowly compared to the atmosphere!
+\begin{align}
+    \BOX{
+        T_j=\sum_{i} \left( [v_j]_i \left( S_i(0)e^{\lambda_i t}+e^{\lambda_i t}\int_{0}^{t}g_i(t')e^{-\lambda_i t'}\,dt' \right) \right)
+    }
+\end{align}
+where $g_i(t)=[\hat{E}^{-1}]_{i1}$.
+
+Note though that, either way, it's not as simple as just plugging the eigenvalues and eigenvectors into \ref{Dym System Gen Sol}. If there is any forcing (i.e., if $\vec{f}\neq 0$) we would also need to find $g_i(t)$, which means we need to invert the matrix of eigenvalues $\hat{E}$ to find $\hat{E}^{-1}$. This is fine on a computer, but in an exam this is incredibly time consuming (but it is possible!), so I'd recommend reading up on this next unofficial method.
 
 \section{Solving the System by Separating Timescales}\label{Hewitt Method}
 
@@ -534,18 +552,26 @@ On long timescales:
     T_s(t) & \approx \frac{1}{\lambda+\gamma+\lambda'}\left(Gt+(\gamma+\lambda ')T_d(t)\right) \\ 
     T_d(t) & \approx \frac{\gamma}{C_d(\lambda+\gamma+\lambda')}e^{-\frac{t}{\tau_d}}\int_0^t G\hat{t} e^{\frac{\hat{t}}{\tau_d}}d\hat{t}
     \\
-    &=\frac{\gamma}{C_d(\lambda+\gamma+\lambda')}e^{-\frac{t}{\tau_d}}\left( F\tau_d \left( e^{\frac{t}{\tau_d}}-1 \right) \right)
+    &=\frac{G\gamma}{C_d(\lambda+\gamma+\lambda')}e^{-\frac{t}{\tau_d}}
+    \left( 
+        \left[ \hat{t}\tau_d e^{\frac{\hat{t}}{\tau_d}} \right]_0^t-
+        \left[ \tau_d^2 e^{\frac{\hat{t}}{\tau_d}} \right]_0^t
+    \right)
     \\
-    &=\frac{\gamma\,F\,\tau_d}{C_d(\lambda+\gamma+\lambda')}\left( 1-e^{-\frac{t}{\tau_d}} \right)
+    &=\frac{G\gamma\tau_d}{C_d(\lambda+\gamma+\lambda')}\left( 
+        t-\tau_d+\tau_de^{-\frac{t}{\tau_d}}
+    \right)
     \\
-    &=\frac{F}{\lambda}\left( 1-e^{-\frac{t}{\tau_d}} \right)
+    &=\frac{G}{\lambda}\left( 
+        t-\tau_d+\tau_de^{-\frac{t}{\tau_d}}
+    \right)
 \end{align*}
 $T_s$ is again found by substituting our expression for $T_d$ into $T_s$:
 \begin{align*}
-    T_s(t)=\frac{F}{\lambda}\left( 1 - \frac{\gamma+\lambda'}{\lambda+\gamma+\lambda'}e^{-\frac{t}{\tau_d}}
+    T_s(t)=\frac{G}{\lambda}\left( t - \tau_d + \tau_d\frac{\gamma+\lambda'}{\lambda+\gamma+\lambda'}e^{-\frac{t}{\tau_d}}
      \right)
 \end{align*}
-Analogous to before, on an $\mathcal{O}(\tau_d)$ timescale, $T_d$ equilibrates with a timescale of $\tau_d$ to its new equilibrium value $\frac{F}{\lambda}$. Note that this equilibrium value is completely ignorant to $\lambda'$ and $\gamma$, which represent out-of-equilibrium effects – as expected. This is why we call $\lambda$ the \textbf{Equilibrium Climate Sensitivity Parameter} – it is what the climate tends towards in equilibrium. Meanwhile, $T_s$ also equilibrates towards this $\frac{F}{\lambda}$ value as well, but note that it already has a `headstart' at time $t=0$ to get to this equilibrium value. It gets to this point via the short timescale response, where $T_d$ effective doesn't respond fast enough.
+Analogous to before, on an $\mathcal{O}(\tau_d)$ timescale, $T_d$ equilibrates with a timescale of $\tau_d$ to its new `equilibrium' value $\frac{Gt}{\lambda}$. Note that, again, the `equilibrium' trend is completely ignorant to $\lambda'$ and $\gamma$, which represent out-of-equilibrium effects. $T_d$, $T_s$ also equilibrates towards this equilibrium trend as well, and, as before, it already has a `headstart' at time $t=0$ to get to this equilibrium value. It gets to this point via the short timescale response, where $T_d$ effective doesn't respond fast enough.
 
 \begin{figure}[H]
     \centering
@@ -553,9 +579,9 @@ Analogous to before, on an $\mathcal{O}(\tau_d)$ timescale, $T_d$ equilibrates w
         \draw[very thin,color=gray] (-0.1,-0.1) grid (3.9,3.9);
         \draw[->] (-0.2,0) -- (4.2,0) node[right] {$t$};
         \draw[->] (0,-0.2) -- (0,4.2) node[above] {$T$};
-        \draw[dashed,thick,myorange] plot (\x,{2-2*exp(-\x)}) node[below] {$T_d(t)=\frac{F}{\lambda}\left( 1-e^{-\frac{t}{\tau_d}} \right)$};
-        \draw[domain=4:0,dotted,thick,mymagenta] plot (\x,{2}) node[left] {$\frac{F}{\lambda}$};
-        \draw[color=mydarkblue,ultra thick] plot (\x,{2-2*exp(-\x)/3}) node[above] {$T_s(t) = \frac{F}{\lambda}\left( 1-\frac{\gamma+\lambda'}{\lambda+\gamma+\lambda'}e^{-\frac{t}{\tau_s}} \right)$};
+        \draw[dashed,thick,myorange] plot (\x,{4*\x/3-4/3+4*exp(-\x)/3}) node[above] {$T_d(t)=\frac{G}{\lambda}\left( t-\tau_d+\tau_de^{-\frac{t}{\tau_d}} \right)$};
+        \draw[domain=1:4,dotted,thick,mymagenta] plot (\x,{4*\x/3-4/3}) node[left] {$\frac{Gt}{\lambda}$};
+        \draw[color=mydarkblue,ultra thick] plot (\x,{4/3*\x + exp(-\x)/3}) node[above] {$T_s(t) = \frac{F}{\lambda}\left( 1-\frac{\gamma+\lambda'}{\lambda+\gamma+\lambda'}e^{-\frac{t}{\tau_s}} \right)$};
         \node[] at (1,-0.3) {$\tau_d$};
     \end{tikzpicture}
     \caption{The long timescale response of the system subject to constant forcing. The response of $T_s$ and $T_d$ are drawn as a \textcolor{mydarkblue}{filled blue line \rule{0.25cm}{0.25cm}} and \textcolor{myorange}{dashed orange line \rule{0.25cm}{0.25cm}}, respectively. The \textcolor{mymagenta}{dotted magenta line \rule{0.25cm}{0.25cm}} indicates what both $T_s$ and $T_d$ tend toward on a long timescale.}
@@ -566,7 +592,7 @@ Analogous to before, on an $\mathcal{O}(\tau_d)$ timescale, $T_d$ equilibrates w
 
 \subsection{Rewriting the Solutions in Terms of Emission}
 
-
+So far we have only written the solution in terms of $F_{ext}(t)$, the external radiative forcing. However, we do not directly control radiative forcing – we only control CO$_2$ emissions! To represent this, let us first 
 
 [UNDER CONSTRUCTION]
 
@@ -633,10 +659,12 @@ Where we have used the fact that $\delta t$ is small. We define the linear error
 \begin{gather}
     \BOX{\hat{A} = (\mathbb{I} + \hat{J}\delta t)}
     \\
-    \BOX{\vec{\delta x}(t_0+\delta t)\approx\hat{A}\vec{\delta x}(t_0)} \label{dx}
+    \BOX{\vec{\delta x}(t_0+\delta t)\approx\hat{A}\,\vec{\delta x}(t_0)} \label{dx}
 \end{gather}
 
 \section{Local Perturbation Growth}
+
+\subsection{Criterion for Maximum Perturbation Growth}
 
 Suppose we want to find which initial errors will grow the most. This may because we want to run an ensemble weather forecast: instead of integrating from a single initial condition, we will integrate our weather model from multiple initial conditions compatible with the observations. Generally, the final states will be different from each other as they depend on the initial conditions, and the final spread will indicate how predictable the current state is or whether there are any low probability high impact weather events. However, we want to prudently choose which initial conditions we integrate from, given our limited computing resources, which is why we want to find which initial errors will grow the most.
 
@@ -651,22 +679,49 @@ Substituting in Equation \ref{dx} and differentiating with respect to $\vec{\del
     &=0
 \end{align*}
 if and only if:
-\begin{align*}
-    \hat{A}^T\hat{A}\vec{\delta x}(t_0)=\lambda\vec{\delta x}(t_0)
-\end{align*}
+\begin{align}
+    \label{ATA Eigenequation}
+    \boxed{\hat{A}^T\hat{A}\,\vec{\delta x}(t_0)=\lambda\,\vec{\delta x}(t_0)}
+\end{align}
 This is a stationary point only if the initial error $\vec{\delta x}(t_0)$ is an eigenvector of $\hat{A}^T\hat{A}$. However, not all stationary points are maximisers (e.g., it could be a minimiser or a saddle point). It turns out that the final error is maximised only if the initial error is the \textit{largest} eigenvector of $\hat{A}^T\hat{A}$\footnote{
     This is deduced by considering the Hessian: the matrix of second partial derivatives. It can be shown, analogous to the 1D case, that the stationary point is a maximiser only if the Hessian is negative semidefinite (i.e., each eigenvalue $\leq0$). In this case, the hessian is the matrix $\hat{A}^T\hat{A}-\lambda\mathbb{I}$, which is clearly only negative semidefinite if $\lambda\geq$ the largest eigenvalue of $\hat{A}^T\hat{A}$. However, $\lambda$ itself is an eigenvalue (so it cannot be larger than the largest eigenvalue), so it must be equal to the largest eigenvalue!}
 . Note that $\hat{A}^T\hat{A}$ is symmetric, so (by a theorem in linear algebra) eigenvectors will be orthogonal and eigenvalues will be real.
 
-Our goal now is to find the eigenvalues of $\hat{A}^T\hat{A}$. In an exam, you might be given the explicit form of $\hat{A}^T\hat{A}$, and you will have to find the eigenvalues and eigenvectors which will maximise (or minimise) the final error (following the method outlined \hyperref[Lin Alg]{here}). 
+\subsection{Maximum Growth Direction Characteristics}
 
-Now at this point, Myles starts talking about \textbf{Singular Value Decomposition}s of matrices. Honestly, I do not believe it's needed to even mention Singular Value Decomposition.\footnote{
-    If you wan't an explanation of what are in Myles' Jupyter notebooks, I'll explain it here. [UNDER CONSTRUCTION]
-} All \textit{you} need to know is that $\hat{A}^T\hat{A}$ is a square symmetric matrix, and therefore that it can be diagonalised and that its eigenvectors are orthogonal. We write $\hat{A}^T\hat{A}$ (using the same notation as Myles) as follows:
+Now that we have a criterion for which errors will grow the most, we can find these directions and characterise them. To find them, we can simply find the eigenvalues and eigenvectors of $\hat{A}^T\hat{A}$. In an exam, you might be given the explicit form of $\hat{A}^T\hat{A}$, and you will have to find the eigenvalues and eigenvectors which will maximise (or minimise) the final error (following the method outlined \hyperref[Lin Alg]{here}).
+
+However, we'll do this in a slightly roundabout way. I promise this will be worth it. First, we introduce a concept called \textbf{Singular Value Decomposition} (SVD). An SVD is a decomposition of any matrix as follows:
 \begin{align*}
-    \hat{A}^T\hat{A} = \hat{R}\,\hat{Q}^2\,\hat{R}^{T}
+    \hat{A} = \hat{P}\, \hat{Q}\, \hat{R}^T
 \end{align*}
-where $\hat{R}$ is a square matrix formed of the eigenvectors and $\hat{Q}^2$ is a diagonal matrix formed of the eigenvalues of $\hat{A}^T\hat{A}$. 2
+where $\hat{P}\,,\,\hat{R}\in \mathbb{R}^n \times \mathbb{R}^n$ are orthonormal matrices and $\hat{Q}\in \mathbb{R}^n \times \mathbb{R}^n$ is a diagonal matrix. A matrix $\hat{P}$ is orthonormal if and only if it satisfies the following relation: $\hat{P}\hat{P}^T=\mathbb{I}$. All you need to know is that an SVD exists for any matrix, so it certainly exists for $\hat{A}$. Calculating $\hat{A}^T\hat{A}$ gives us:
+\begin{align*}
+    \hat{A}^T\hat{A}
+    &=
+    \hat{R}\,\hat{Q}^T\,\hat{P}^T\, \hat{P}\,\hat{Q}\,\hat{R}^T
+    \\
+    &=
+    \hat{R}\,\hat{Q}^2\,\hat{R}^T
+    \\
+    \therefore
+    \hat{R}^T \, \left( \hat{A}^T\hat{A} \right)\,\hat{R}
+    &=
+    \hat{Q}^2
+\end{align*}
+
+But $\hat{Q}$ is already diagonal! So actually, if we find the SVD of the matrix $\hat{A}$ – more specifically if we find $\hat{Q}$ and $\hat{R}$, we find the eigenvalues and eigenvectors for $\hat{A}^T\hat{A}$. 
+
+\subsubsection{Local Lyapunov Exponents}
+
+Suppose now that $\vec{\delta x}(t_0)$ is an eigenvector of $\hat{A}^T\hat{A}$ (i.e., it is a column of $\hat{R}$). 
+
+\subsubsection{`Rotation' of Perturbations}
+
+
+The columns of $\hat{R}$ are the eigenvectors that represent the initial directions of $\vec{\delta x}(t_0)$ that grow the most, and the diagonal entries of $\hat{Q}^2$ represent the growth rate.
+
+\subsection{Criterion for Maximum Perturbation Growth}
 
 [UNDER CONSTRUCTION]
 
