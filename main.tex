@@ -1,5 +1,22 @@
-\documentclass[a4paper,11pt]{report}
+\documentclass[a4paper,11pt,twoside]{report}
 %\immediate\write18{mkdir -p tikz}
+\usepackage[
+  margin=2cm, %sets margins = 2cm
+  headsep=6pt, %sets header closer to text
+  a4paper]{geometry} % decreases margins, sets paper size
+
+%HEADERS
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{} %clear fancy default setting
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter.\ #1}{}} %remove the 'chapter' from the heading
+\renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}} %make section lowercase
+\fancyhead[LE]{\leftmark} %Display chapters on left even pages
+\fancyhead[RO]{\rightmark} %Display sections on right odd pages
+\fancyfoot[C]{\thepage} %Display the page number
+\renewcommand{\headrulewidth}{0.4pt}
+\setlength{\headheight}{14pt}
+
 \usepackage[utf8]{inputenc}
 \usepackage{CJKutf8} %for the ツ emoji
 \usepackage{cancel} %cross things out in equations
@@ -101,7 +118,7 @@
 \usepackage{mathrsfs}  %special symbols
 \usepackage{xcolor} %Allows for colours in figures
 \usepackage{amsmath} %Formatting of equations
-\usepackage[margin=2cm,a4paper]{geometry} % decreases margins, sets paper size
+
 \usepackage[final]{hyperref} % adds hyper links inside the generated pdf file
 \hypersetup{
     colorlinks,breaklinks,
