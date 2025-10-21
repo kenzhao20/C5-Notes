@@ -9,6 +9,7 @@
 *.bcf
 *.log
 *.fls
+*.blg
 *.out
 *.synctex.gz
 *.synctex(busy)
