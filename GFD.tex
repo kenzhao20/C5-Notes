@@ -2340,13 +2340,19 @@ We again assume the \hyperref[f plane box]{$f$-plane approximation} so that we c
     \BOX{\omega^2 = \frac{N^2  k^2   + f^2 m^2}{k^2 + m^2}}
 \end{align}
 
-First take a look at a few limits. If $N=0$ (i.e., the density does not decrease or increase with height) or $k=0$ (i.e., the meridional wavelength is infinite), then the following equation reduces to inertial oscillations. This is for two different reasons. If $N=0$, there is no effect of gravity, because the buoyancy exactly cancels out the effect of gravity. Convsersely, if $k=0$, the wavefronts are 
+First take a look at a few limits. If $N=0$ (i.e., the density does not decrease or increase with height) or $k=0$ (i.e., the meridional wavelength is infinite), then the following equation reduces to inertial oscillations. This is for two different reasons. If $N=\frac{\partial \rho}{\partial z}=0$, there is no effect of gravity, because the buoyancy exactly cancels out the effect of gravity. Convsersely, if $k=0$, the wavefronts are (recall Figure \ref{Wavefronts Fig}) parallel to the $x$-direction, hence heach 
 
-Conversely, if $f=0$ or $m=0$, 
+Conversely, if $f=0$ or $m=0$, we fe
 
 To interpret this dispersion relation, let us first take the hydrostatic limit. Note that this is a \textit{further} assumption we must make. While we have already assumed that the background state is hydrostatic, we have not assumed that the perturbations are hydrostatic yet. 
 
-If we assume that the perturbations are hydrostatic, this implies that $k\ll m$. WHY?? [UNDER CONSTRUCTION]
+If we assume that the \textit{perturbations} are hydrostatic as well, which implies that the $\frac{\partial w'}{\partial t}=0$ in Equation \ref{V lin}. If one follows through the derivation (I have not yet done this), this supposedly makes the $k^2$ term in the demoninator vanish, so that the dispersion relation is as follows:
+\begin{align*}
+    \omega^2=\left( \frac{N}{m} \right)^2 k^2 + f^2
+\end{align*}
+We can now make a direct comparison between this dispersion relation and the analogous dispersion relation for \hyperref[IG SW Box]{Shallow Water Inertia-Gravity Waves}. We can now identify the $\frac{N}{m}$ term as analogous to the $c=\sqrt{gH}$ term. We see now then that the speed of gravity waves is set by the background stratification (which is encoded, now, by the buoyancy frequency $N$ but was encoded by the layer thickness $H$ in the \hyperref[Shallow Water System]{Shallow Water System}) and now the vertical wavenumber $m$.
+
+This is to be expected: now that we have moved to a fully three-dimensional system, we shoudl expect that the vertical dimension now plays some role in how waves propagate.
 
 \section{Quasi-Geostrophic Theory}\label{QG}
 
