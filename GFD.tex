@@ -1019,7 +1019,7 @@ Now we estimate each term in the final brackets in the final equation:
     \biggr)
 \end{align*}
 
-So we see that even though horizontal temperature gradients $\vec{\nabla}_h T$ are typically $1000$ times weaker than vertical temperature gradients $\frac{\partial T}{\partial z}$ (recall that horizontal temperature gradients roughly follow the Lapse Rate in Equation \ref{Dry Adiabatic Lapse Rate}), it is the term that features the horizontal temperature gradient that ends up begin much larger than the term that features the vertical temperature gradient.
+So we see that even though horizontal temperature gradients $\vec{\nabla}_h T$ are typically $1000$ times weaker than vertical temperature gradients $\frac{\partial T}{\partial z}$ (recall that temperature temperature gradients roughly follow the Lapse Rate in Equation \ref{Dry Adiabatic Lapse Rate}), it is the term that features the horizontal temperature gradient that ends up begin much larger than the term that features the vertical temperature gradient. We would not be able to make this approximation if the planet rotated much faster ($f$ were larger) or if typical horizontal gradients were much smaller ($\vec{\nabla}_h T$ were smaller)\footnote{Although, we while $f$ is a parameter set by the property of the planet, we expect $\vec{\nabla}_h T$ to be set by the dynamics, so whether/where this obtains on our planet is a bit more compliated.}.
 
 As such, we neglect\footnote{
     We do not actually have to neglect this term when we derive these equations in pressure coordinates!
@@ -2647,7 +2647,39 @@ In other words, the ekman upwelling is equal to the ($z$-component of the) vorti
 
 \section{Sverdrup Balance (Deep Ocean Circulation)}\label{Sverdrup Balance}
 
-We now turn our focus to below the Ekman layer, i.e., to $z<-H$. 
+\subsection{Conservation of Potential Vorticity}
+
+We now turn our focus to below the Ekman layer, i.e., to $z<-H$. We crucially assume that the flow is geostrophic below the Ekman layer (owing to the small $Ro$ in the ocean). However, we do \textit{not} make the $f$-plane approximation, and instead allow the coriolis parameter to vary according to the $\beta$-plane approimation. 
+
+This implies (exercise) that geostrophic flow is no longer incompressible in the horizontal direction, and so to maintain incompressibility overall, there must be upwelling or downwelling. This, upwelling or downwelling will end up being set by the ekman upwelling or downwelling, which is why surface wind-stress can have an effect deep in the ocean. We also assume that the density $\rho\approx\rho_0$ is constant.
+
+We first consider Equation \ref{Incompressibility}, and allow the horizontal velocities $u$ and $v$ to be geostrophic (i.e., set by Equation \ref{Geo Bal}):
+\begin{align*}
+    0 & = \vec{\nabla}\cdot\vec{u}
+    \\
+    &= \vec{\nabla}_h\cdot\vec{u}_h
+    +\frac{\partial w}{\partial z}
+    \\
+    &= 
+    \frac{1}{\rho_0}\vec{\nabla}_h\cdot\left( \frac{1}{f(y)}\vec{k}\times\vec{\nabla}_h p \right)+\frac{\partial w}{\partial z}
+    \\
+    &=
+    \frac{1}{\rho_0}
+    \vec{\nabla}_h\left( \frac{1}{f} \right)
+    \cdot \left( \vec{k}\times\vec{\nabla}_h p \right)
+    +
+    \frac{1}{\rho_0 f}
+    \vec{\nabla}_h
+    \cdot \vec{k}\times\vec{\nabla}_h p
+    +\frac{\partial w}{\partial z}
+    \\
+    0&=-\frac{\beta}{f}v+\frac{\partial w}{\partial z}
+\end{align*}
+
+Integrating this now from $z=-D$ (the depth of the ocean) to $z=-H$ and assuming the $w(z=-D)=0$, we find an equation for the depth-integrated meridional velocity:
+[UNDER CONSTRUCTION]
+
+\subsection{Western Boundary Currents: The Effects of Friction}
 
 \section{Box Models of the Meridional Overturning Circulation}\label{MOC}
 
@@ -2657,7 +2689,7 @@ This is a somewhat oversimplified version of the \textbf{MOC}, but I sadly don't
 
 Crucially, though, the water must sink in the North Atlantic, and this requires the water to be denser or at least as dense as the water below it. We must therefore consider the \textbf{equation of state} that governs the density of sea water.
 
-The equation of state is horribly complicated, and there (to the best of my knowledge) is no theoretical way to derive it. Instead, we use an empirically found Gibbs function of seawater $G$ to calculate the equation of state. Recalling that $dG = -S\,dT + \rho\,dp+\dots$, you can see that $\rho=\partial G/\partial p$.
+The equation of state is horribly complicated, and there is (to the best of my knowledge) no theoretical way to derive it. Instead, we use an empirically found Gibbs function of seawater $G$ to calculate the equation of state. Recalling that $dG = -S\,dT + \rho\,dp+\dots$, you can see that $\rho=\partial G/\partial p$.
 
 This, still, is too complicated for our purposes, so we simply linearise the equation of state and assume that water is incompressible (water is actually compressible).
 
