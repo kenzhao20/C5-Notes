@@ -7,7 +7,7 @@ This section of the course was lectured by \href{https://users.physics.ox.ac.uk/
 \noindent This section consists of four chapters:\vspace{5 mm}
 
 \begin{enumerate}
-    \item \hyperref[Basic Thermodynamics]{Basic Radiation Concepts}: 
+    \item \hyperref[Basic Radiation Concepts]{Basic Radiation Concepts}: 
         
         \begin{quote}
             We introduce the basic vocabulary needed to describe radiative transfer. We first characterise the radiation field, including how to encode the \hyperref[Solid Angle Box]{direction} and \hyperref[Radiance Box]{magnitude} of radiation. Next, we introduce the terminology to describe how objects \hyperref[Optical Depth Box]{absorb} (especially in the case of something like the atmosphere) and \hyperref[Emission Box]{emit} radiation.
@@ -34,7 +34,7 @@ This section of the course was lectured by \href{https://users.physics.ox.ac.uk/
 
             Finally, to build some more intuition, we calculate the $OLR$ explicitly for a grey gas (a gas whose optical properties exhibit no frequency dependence).
         \end{quote}
-    \item Radiative Equilibrium:
+    \item \hyperref[Radiative Equilibrium Chapter]{Radiative Equilibrium}:
         
         \begin{quote}
             We consider a grey gase in order to analyse how an atmosphere would behave in pure radiative equilibrium: i.e., if radiation were the dominant energy transport mechanism.
@@ -45,7 +45,7 @@ This section of the course was lectured by \href{https://users.physics.ox.ac.uk/
         \end{quote}
 \end{enumerate}
 
-\chapter{Basic Radiation Concepts}
+\chapter{Basic Radiation Concepts}\label{Basic Radiation Concepts}
 
 \section{Direction of Radiation: Rays and Solid Angle}
 
@@ -273,7 +273,7 @@ The second nuance is more important. It is the $L(\nu)\,d\nu$ term which is phys
 
 \noindent where we have defined $\hat{L}(\lambda)\equiv\frac{c}{\lambda^2}L\left(\frac{c}{\lambda}\right)$. Notice how the functional form fundamentally changes when we undergo an ultimately arbitrary coordinate transformation from $\nu$ to $\lambda$: the `\textit{frequency} spectral radiance' $L(\nu)$ and `\textit{wavelength} spectral radiance' $L(\lambda)$ are not the identical! But nothing physically \textit{out there} should depend on how we choose to write it down, so we conclude that $L(\nu)$ by itself is an artefact arising from our choice to represent it in terms of $\nu$.
 
-\section{Absorption: Optical Thickness and Transmission Function}
+\section{Absorption: Optical Thickness and Transmission Function}\label{Absorption Section}
 
 Now that we can characterise radiation in terms of direction and magnitude, we move to lay the foundations of characterising how matter interacts with radiation. We first consider absorption.
 
@@ -1604,7 +1604,7 @@ Calculating the $ECS$ and $DRF$ explicitly (and recalling that $\tau_\infty=\kap
 \end{align*}
 We thus find that $DRF>0$ in an atmosphere with a vertical temperature profile set by the dry adiabat: more greenhouse gas concentration results in a decrease in the outgoing longwave radiation. Recalling \hyperref[RF Box Takeaway]{our previous discussion} regarding radiative forcing, it's not a surprise that $DRF>0$, since the dry adiabat is one of the many mechanisms that results in an atmosphere where temperature decreases with height.
 
-\chapter{Radiative Equilibrium}
+\chapter{Radiative Equilibrium}\label{Radiative Equilibrium Chapter}
 
 \section{The Radiative Equilibrium Assumption}
 
@@ -1807,16 +1807,25 @@ Equations \ref{Radiative Eq T S}-\ref{Radiative Eq E- S} are modified accordingl
 
 \section{Shortwave absorbers}\label{Shortwave}
 
-We now consider an atmosphere where there are shortwave absorbers/emitters in the atmosphere, i.e., we consider an atmosphere that can absorb absorb shortwave from the star. So far we have only dealt with a gas that is a longwave absorber/emitter: it can absorb the radiation emitted by the surface and other components of the atmosphere but not the radiation emitted by the star.
+We now consider an atmosphere where there are shortwave absorbers/emitters in the atmosphere, i.e., we consider an atmosphere that can absorb shortwave from the star. So far we have only dealt with a gas that is a longwave absorber/emitter: it can absorb the radiation emitted by the surface and other components of the atmosphere but not the radiation emitted by the star.
 
 What I just said should be slightly confusing. After all, we explicitly assumed earlier that that the atmosphere was grey ($\kappa = const$). Therefore, if the gas absorbs/emits longwave radiation it must also absorb/emit shortwave radiation.
 
-This is technically correct, so we should be explicit as to what we are modifying in the model, and why the physical interpretation of modification corresponds to adding shortwave absorbers/emitters to the atmosphere. The modification we make is as follows. We revise the Radiative Equilibrium criteiron (Equation \ref{Radiative Equilibrium}) to be below:
+This is technically correct, so we should be explicit as to what we are modifying in the model, and why the physical interpretation of this modification corresponds to adding shortwave absorbers/emitters to the atmosphere. The modification we make is as follows. We revise the Radiative Equilibrium criterion (Equation \ref{Radiative Equilibrium}) to be below:
 \begin{align}
     \BOX{\frac{d}{d\tau}\left( E_+ - E_- - E_{\star} \right)=0}
 \end{align}
-where $E_\star(\tau)=$ is the monotonically increasing downwards irradiance of the star. In this section we simply take $E_\star$ as a given (e.g., we let $E_\star\sim e^\tau$).
+where $E_\star(\tau)=$ is the monotonically increasing ($E_\star$ is largest at the top of the atmosphere) downwards irradiance of the star. In this section we simply take $E_\star$ as a given function (e.g., we let $E_\star\sim e^\tau$) – we do not solve for it.
 
-What we are representing in this model, now, is that there is some downards irradiance from the star that is absorbed
+What we are representing in this model, now, is that there is some downards irradiance from the star at the top of the atmosphere that is (and here's the crucial part) \textbf{absorbed by shortwave absorbers in the atmosphere}. This implies that $E_\star$ decreases as it propagates downwards through the atmosphere, and this is how we are indirectly representing the effect of shortwave absorbers.\footnote{
+    Of course, another difference is that now the boundary condition at the top of the atmosphere is different. Whereas before there was no downwards irradiance ($E_-(\tau=\tau_\infty)=0$), now there is some non-zero downards irradiance ($E_-(\tau_\infty)+E_\star(\tau_\infty)=E_\star(\tau_\infty)\neq 0$). However, I am of the opinion that this is not the crucial difference. The crucial difference is that this downwards irradiance of the star is \textit{monotonic in} $\tau$. This ensures the effect of shortwave absorbers high in the atmosphere: there are shortwave absorbers which block the shortwave irradiance propagating downwards (by absorbing them), and re-emit some of the energy as longwave radiation (which is encoded in the $E_-$ term).}
+
+Let us now solve this system as before, this time with the $E_\star$. Before we do that, we will redefine our coordinate system for convenience (which we are well within our rights to - see Section \ref{Absorption Section}).
+
+\subsection{Derivation}
+
+\subsubsection{Redefinition Our Coordinate System}
+
+
 
 [UNDER CONSTRUCTION]
