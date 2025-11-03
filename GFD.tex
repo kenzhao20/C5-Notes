@@ -278,7 +278,7 @@ Third, we introduce the idea of \hyperref[Material Conservation]{Material Conser
 \begin{align}\label{Material Conservation}
     \frac{D A}{Dt }=0
 \end{align}
-In other words, if one follows a fluid parcel, that quantity does not change. However, as a whole, $A$, need not be globally conserved. If one considers Equation \ref{MatDerivTerms} and sets $\frac{D A}{Dt }=0$, then you can see that the only local change in $A$ is from fluid parcels with different $A$ being advected into that location.
+If Equation \ref{Material Conservation} obtains for some quantity $A$, this is equivalent to demanding that, if one follows a fluid parcel, the quantity $A$ does not change. However, as a whole, $A$, need not be globally conserved. If one considers Equation \ref{MatDerivTerms} and sets $\frac{D A}{Dt }=0$, then you can see that the only local change in $A$ is from fluid parcels with different $A$ being advected into that location.
 
 Exercise: refer forwards to Equation \ref{Energy Equation}. Note even if we assume that $Q=0$, we will find that $\frac{DT}{Dt}\neq 0$. In other words, temperature is not materially conserved (so long as $\beta\neq0$). This is why we introduced the idea of \hyperref[Potential Temperature]{Potential Temperature}, as it is the case that $\frac{D\theta}{Dt}=0$ (excercise: take \ref{Energy Equation}, solve for $\beta$ using the ideal gas law, set $Q=0$, and show that $\frac{D\theta}{Dt}=0$ using the product rule).
 
@@ -353,7 +353,7 @@ We know that the total angular momentum of the parcel is approximately equal to 
     L(\phi,u) = \underbrace{a\cos\phi}_{\vec{r}} \underbrace{\left( \Omega a \cos \phi + u \right)}_{\vec{u}}
 \end{align*}
 where $a=$ the radius of the Earth, $\phi=$ the latitude, $\Omega=$ the angular velocity of the Earth, and $u=$ the zonal velocity of the fluid parcel relative to the surface of the Earth. The angular momentum is equal to $\vec{r}\times\vec{u}$, the radius $\vec{r}$ times the velocity $\vec{u}$. The radius is equal to $a\cos\phi$ (as it is the radius from the axis of rotation), and the velocity is equal to $\Omega a \cos \phi + u$, the sum of the velocity from the rotation of the Earth and the velocity relative to the Earth.\footnote{
-    This is, strictly speaking, incorrect. The angular momentum is a vector (actually a pseudo-vector), so it’s strange to say that the angular momentum is equal to a scalar value. To be more precise, $L(\phi,u)$ is the component of the angular momentum in the direction aligned with the angular velocity of the Earth. In other words parallel the vector pointing directly upwards from the ground at the north pole.
+    This is, strictly speaking, incorrect. The angular momentum is a vector (actually a pseudo-vector), so it’s strange to say that the angular momentum is equal to a scalar value. To be more precise, $L(\phi,u)$ is the component of the angular momentum in the direction aligned with the angular velocity of the Earth. Equivalently, this is the component of the angular momentum parallel to the vector pointing directly upwards from the ground at the north pole.
 }
 
 Since there are no zonal forces on the air parcel, this implies that the angular momentum is conserved. Setting $L(\phi,u)=const$ imposes the constraint $u=u(\phi)$. We use our assumption that, at $\phi=0$ (the equator), the $u=0$ (fluid parcel is at rest). Therefore, some simple algebra gives us the following relation:
@@ -752,11 +752,11 @@ Much of what we will discuss here in GFD will require $Ro$ to be small and for t
 If $Ro\ll 1$ and all other forces are negligible, then rotation dominates dynamics. We can therefore neglect external forces (set $\vec{F}_h\approx0$) and acceleration and advection (set $D\vec{u}_h/Dt\approx0$) in Equation \ref{Horizontal Approximate nondim} (the horizontal momentum equation). Because the equation must equal $0$, we are forced to conclude that $P$ is of order one, so Equation \ref{Horizontal Approximate nondim} and therefore Equation \ref{Horizontal Approximate} must be a balance between the horizontal pressure gradient force and the coriolis force.\footnote{
     You might be suspicious from what I've said. After all, $Ro$ depends on velocity-scale $U$ and length-scale $L$, which we expect should be set by the dynamics and governed by the underlying equations of motion!
 
-    In other words, \textit{if} $Ro\ll 1$, then we expect the system to be in geostrophic balance, but why is $Ro\ll 1$ in the first place, and why would our atmosphere/ocean system tend towards a state such that $Ro\ll 1$ holds?
+    In other words, \textit{if} $Ro\ll 1$, then we expect the system to be in geostrophic balance, but why is $Ro\ll 1$ in the first place, and why would our atmosphere/ocean system tend towards a state such that $Ro\ll 1$ holds? If we set $Ro\ll 1$ \textit{a priori}, doesn't this mean we're putting in the answer by hand? Conversely, if we set $Ro\ll 1$ \textit{a posteriori} (based on observations), then this seems like putting the cart before the horse: again, $Ro\ll 1$ \textit{because} of the underlying equations of motion, not the other way around!
 
     The answer lies in the phenomenon of \textbf{geostrophic adjustment}, which you can read about in Vallis' textbook on GFD \cite{Vallis}. The gist is this: anomalies and instabilities on a rotating planet cannot simply propagate away (e.g., via gravity flattening the surface of a fluid, for example) from the source to make the fluid more homogenous. It cannot because the fluid is on a rotating planet, and so must preserve some form of angular momentum.
 
-    As such, after anomalies begin propagating away, there will come a point (where it reaches the anomaly reaches the \hyperref[SW Def Radius Box]{Rossby Deformation Scale}) where it is deflected by the coriolis force, and the system evolves \textit{towards} geostrophic balance.
+    As such, after anomalies begin propagating away, there will come a point (where the anomaly reaches the \hyperref[SW Def Radius Box]{Rossby Deformation Scale}) where it is deflected by the coriolis force, and the system evolves \textit{towards} geostrophic balance.
 
     More details, again, can be found in Vallis' book.
 } 
@@ -953,7 +953,11 @@ So it turns out anticyclones (where $\frac{\partial p}{\partial r}<0$) really ca
 
 \section{Thermal Wind Balance}
 
-Now that we have covered the fundamental diagnostic relations of \hyperref[Hydrostatic GFD Box]{Hydrostatic Balance} and \hyperref[Geostrophic Box]{Geostrophic Balance}, we now aim to put these two pieces of information together to find a relation between the horizontal velocity $\vec{u}_h$ and the temperature in an ideal gas atmosphere.
+Now that we have covered the fundamental diagnostic relations of \hyperref[Hydrostatic GFD Box]{Hydrostatic Balance} and \hyperref[Geostrophic Box]{Geostrophic Balance}, we now aim to put these two pieces of information together to find a relation between the horizontal velocity $\vec{u}_h$ and the temperature in an ideal gas atmosphere.\footnote{
+    I should note that when oceanographers refer to the `\textbf{thermal wind relation}', they do not require the fluid to follow the ideal gas equation of state. This should be expected, as seawater has a different, horribly complicated equation of state. As such, the `\textbf{thermal wind relation}' is often written as a relation between the horizontal velocity $\vec{u}_h$ and the density $\rho$.
+
+    I should also note a further subtlety. Observationally, pressure is very difficult to measure. [UNDER CONSTRUCTION]
+}
 
 We begin with Equations \ref{Hydrostatic Ideal Gas} and \ref{Geostrophic Ideal Gas} expressing respectively hydrostatic and geostrophic balance for an ideal gas. We first take the partial derivative with respect to $z$ of Equation \ref{Geostrophic Ideal Gas}:
 \begin{align*}
@@ -1074,7 +1078,7 @@ This might make more sense with a concrete example. Suppose that we have a blob 
 
 If you wan't to think of this in terms of curvature, since the temperature decreases then increases again when you pass through this cold blob, this implies that the temperature field $T(\vec{r})$ must be curved.  
 
-Using Equation \ref{Thermal Wind Vorticity} $\vec{\nabla}_h^2 T>0$ therefore implies that $\frac{\partial \xi}{\partial z}>0$ (in the northern hemisphere), therefore the vertical vorticity increases with height in this cold blob! Vice versa for a hot blob in the northern hemisphere: in a hot blob will have vorticity decreasing with height. 
+Using Equation \ref{Thermal Wind Vorticity} $\vec{\nabla}_h^2 T>0$ therefore implies that $\frac{\partial \xi}{\partial z}>0$ (in the northern hemisphere), therefore the vertical vorticity increases with height in this cold blob! Vice versa for a hot blob in the northern hemisphere: in a hot blob will have vorticity decreasing with height.
 
 \section{Pressure Coordinates}\label{Pressure Coords}
 \subsection{Partial Derivative Identities}
@@ -1570,7 +1574,7 @@ Using product rule, this implies the following:
     \end{align}
     \end{minipage}
     
-    \vspace{2mm} where $\xi=\frac{\partial v}{\partial x}-\frac{\partial u}{\partial y}$ the relative vorticity. In other words, following a fluid parcel, the potential vorticity remains constant.
+    \vspace{2mm} where $\xi=\frac{\partial v}{\partial x}-\frac{\partial u}{\partial y}$ the relative vorticity. Equivalently, following a fluid parcel, the potential vorticity remains constant.
 \end{fact}
 
 \subsubsection{Interpretation}
@@ -1618,16 +1622,16 @@ In the previous section, we derived geostrophic balance and  hydrostatic balance
 
 However, the Earth is never in perfect balance, and perturbations and anomalies will occur, either because we have built a wind farm, or the sun is radiating differently, or because freshwater is being injected into certain areas in the oceans.
 
-We analyse how systems respond to these anomalies by looking for wave-like solutions: we plug in a solution that is proportional to $\exp(i(\vec{k}\cdot\vec{x}-\omega t))$, where $\vec{k}=(k_x,k_y,k_z)^T\in\mathbb{R}^3$ is the angular wavevector (the vector analogue of the wavenumber – refer to Section \ref{F, W, W} if you've forgotton what a wavenumber is) and $\omega$ is the angular frequency.
+In this course, we analyse how systems respond to these anomalies by looking only for wave-like solutions: we plug in a solution that is proportional to $\exp(i(\vec{k}\cdot\vec{x}-\omega t))$, where $\vec{k}=(k_x,k_y,k_z)^T\in\mathbb{R}^3$ is the angular wavevector (the vector analogue of the wavenumber – refer to Section \ref{F, W, W} if you've forgotton what a wavenumber is) and $\omega$ is the angular frequency.
 
-The justification for plugging in this somewhat convoluted function is as follows. We want a function that is simple enough such that the solution is easy to interpret. However, we also want a function complicated enough such that it can encode certain spatial and time dependencies. This is why we pick the exponential function, which is simple, which depends on a linear sum of space and time, which. More fundamentally, any function can be approximated by a sum of periodic complex function like $\exp(i(\vec{k}\cdot\vec{x}-\omega t))$.
+The justification for plugging in this somewhat convoluted function is as follows. Practically, we want a function that is simple enough such that the solution is easy to interpret. However, we also want a function complicated enough such that it can encode certain spatial and time dependencies. This is why we pick the exponential function, which is simple, which depends on a linear sum of space and time, which. More fundamentally, any function\footnote{I think, please correct my maths if it's bad.} can be approximated by an infinite sum of periodic complex function like $\exp(i(\vec{k}\cdot\vec{x}-\omega t))$ – we assume that these can be accurately approximated by a large enough sum.
 
-In practice, though, you don't have to really think about this, and you can just plug in $\exp(i(\vec{k}\cdot\vec{x}-\omega t))$ into the equations of motion. After plugging these in, we will find that $\vec{k}$ and $\omega$ are constrained by these equations, and solving for this constraint gives us a \textbf{Dispersion Relation}:
+In practice, though, you can just keep this in the back of your mind, and you'll mostly just be plugging in $\exp(i(\vec{k}\cdot\vec{x}-\omega t))$ into the equations of motion. After plugging these in, we will find that $\vec{k}$ and $\omega$ are constrained by these equations, and solving for this constraint gives us a \textbf{Dispersion Relation}:
 \begin{align*}
     \omega=\omega(\vec{k})
-\end{align*}
+\end{align*} 
 
-In other words, the frequency with which the perturbation oscillates is set by the spatial scale (or vice versa). This will give us valuable information regarding how these waves propogate.
+In other words, the frequency with which the perturbation oscillates is set by the spatial scale (or vice versa). This will give us valuable information regarding how these waves propogate. Furthermore, we expect the anomalies that generate/excite these waves to have a similar timescale/lengthscale based on general principles of how waves resonate. However, again, this is just a very cursory approximation. We know (e.g., from turbulence for example – think Kolmogorov's $k^{-\frac{5}{3}}$ kinetic energy spectrum\footnote{As always, the atmosphere/oceans are far more complicated than this due at least in part to the presence of rotation. See Vallis \cite{Vallis} Ch. 12.}) that energy can propogate from one lengthscale to another.
 
 \subsection{The wave-vector and the angular frequency}
 
@@ -1756,12 +1760,15 @@ Substituting this into the linearised shallow water equations gives us the follo
 \end{align*}
 
 Because these equations must apply for all $x,y,t$, we must impose that the coefficient in front of the exponential must be $0$. We therefore get the following equations:
-\begin{align*}
+\begin{align}
     -i\omega\,\eta_0 + iHk\,u_0+iHl\,v_0 =0
+    \nonumber
     \\
     igk\,\eta_0-i\omega\, u_0-f\,v_0+ =0
+    \nonumber
     \\
     igl\,\eta_0+f\,u_0-i\omega \,v_0=0
+    \nonumber
     \\
     \therefore
     \left( \begin{array}{ccc}
@@ -1775,7 +1782,8 @@ Because these equations must apply for all $x,y,t$, we must impose that the coef
         v_0
     \end{array} \right)
     =\vec{0}
-\end{align*}
+    \label{Matrix Poincare}
+\end{align}
 
 Our goal is to find the dispersion relation governing $\omega=\omega(k,l)$, but we want this dispersion relation to be arbitrary regardless of $\eta_0$, $u_0$, and $v_0$ (and we expect these to be set by the nature of the initial perturbation that generates the waves). We also require that these $\eta_0$, $u_0$, $v_0\neq 0$ so that we have non-trivial solutions (the trivial solution, is, of course, $\eta'=0$, $\vec{u}_h'=\vec{0}$).
 
@@ -1812,7 +1820,7 @@ We therefore obtain the following dispersion relation for \textbf{Poincaré/Iner
     \BOX{\omega=0}\,\text{ or }\,\BOX{\omega^2 = f^2 + gH \left( k^2 + l^2 \right)}
 \end{align}
 
-The first $\omega=0$ solution implies that the wave is in a steady state, and does not propogate (since $\vec{c}_p=\vec{c}_g=0$). Plugging this into Equation \ref{SW Lin mom} (exercise!) shows that $\vec{u}_h'$ is geostrophic!
+The first $\omega=0$ solution implies that the wave is in a steady state, and does not propogate (since $\vec{c}_p=\vec{c}_g=0$). Plugging this into Equation \ref{SW Lin mom} (exercise!) shows that $\vec{u}_h'$ is geostrophic! Furthermore, the phase and group velocities are also $0$, thus implying (as expected) that geostrophic anomalies do not propagate. 
 
 The second $\omega^2=f^2+gH\left( k^2+l^2 \right)$ solution is more interesting. We now make an important simplification for ease of analysis. We call this the \textbf{$f$-plane approximation}.
 
@@ -1933,7 +1941,30 @@ Since $c_g=0$, \textbf{long-wave} Poincaré waves cannot transport energy, so in
 
 \subsubsection{Energetics}
 
+We now wish to find the $KE$ (Kinetic Energy per unit area) and $APE$ (Available Potential Energy per unit area) of this wave. To do this, we must first find $u_0$ and $v_0$ in terms of $\eta_0$ (we cannot solve for all three constants, as this will depend on properties of the initial perturbation, and we wish to keep analysis here general). Refering back to Equation \ref{Matrix Poincare}, we find (after some algebra) that the following obtains:
+\begin{align*}
+    &u_0 = \frac{\omega}{kH}\eta_0
+    \\
+    &v_0 = \frac{f}{kH}e^{-\frac{i\pi}{2}}\eta_0
+\end{align*}
+
+
+
 [UNDER CONSTRUCTION]
+
+\subsubsection{Explicit Solutions: Fluid Parcel Trajectories}
+
+Taking only the real part of our solutions for $\eta'$ and $\vec{u}'$ implies that the following hold:
+\begin{align*}
+    &\eta' = \eta_0 \cos(ikx-i\omega t)
+    \\
+    &u' = \frac{\omega}{kH}\eta_0 \cos(ikx-i\omega t)
+    \\
+    &v' = \frac{f}{kH}\eta_0 \sin(ikx-i\omega t)
+\end{align*}
+
+[UNDER CONSTRUCTION]
+
 
 \section{Rossby Waves}
 
