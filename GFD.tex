@@ -535,7 +535,7 @@ However, we are justified to use this equation if we assume that density variati
     \therefore \boxed{\vec{\nabla}\cdot \vec{u}=0}\label{Incompressible}
 \end{align}
 
-However, I should emphasise that this does \textit{not} allow us to assume that $\frac{D\rho}{Dt} = \frac{D\delta \rho}{Dt} = 0$ applies.
+However, I should emphasise that this does \textit{not} imply that $\frac{D\rho}{Dt} = \frac{D\delta \rho}{Dt} = 0$ (but it also doesn't prohibit it).
 
 \subsection{Scale Analysis}\label{Scale Analysis}
 
@@ -569,7 +569,20 @@ Acceleration of Gravity & $g$ & $g\sim g$ & \qty{10}{\metre\per\second\squared}\
 
 I do not write out all the details here, as they would easily take multiple pages. If you are curious about the details, refer to the mini-scale analysis I do in deriving \ref{Hydrostatic GFD}. A more rigorous method would be non-dimensionalisation, but this is overkill for our purposes. Again, if you are curious about the details, refer to the mini-non-dimensionalisation I do in deriving the \hyperref[Rossby Number]{Rossby Number}. 
 
-Suffice it to say that we eliminate many terms through this scale analysis. This includes any terms that feature the viscosity $\nu$ and many terms arising from our local cartesian coordinate system. The centrifugal force is \textit{not} eliminated universally by our scale analysis, but we neglect this term for a different reason.\footnote{The reason is that we can rewrite the centrifugal force is a conservative force, i.e., we can write it as the gradient of a scalar field: i.e., there exists a $\Phi$ such that $-\vec{\Omega}\times\vec{\Omega}\times\vec{r}=-\vec{\nabla}\Phi$. After this, we can simply subsume this into our gravitational potential.}
+Suffice it to say that we eliminate many terms through this scale analysis. This includes any terms that feature the viscosity $\nu$ and many terms arising from our local cartesian coordinate system. The centrifugal force is \textit{not} eliminated universally by our scale analysis, but we neglect this term for a different reason.\footnote{
+    The reason why we neglect the centrifugal force is for two reasons.
+    
+    First, the centrifugal force is a conservative force, i.e., we can write it as the gradient of a scalar field: i.e., there exists a $\phi$ such that $-\vec{\Omega}\times\vec{\Omega}\times\vec{r}=-\vec{\nabla}\phi$. Therefore, we can simply define an `effective gravitational potential' $\Phi=\phi+\psi$, where $\psi$ is the gravitational potential energy field.
+
+    The second reason is a bit more subtle.
+
+    First, consider the shape of the Earth (or any planet). Any non-rotating sufficiently-large planet (which has had (sufficient) time to come into equilibrium) is a sphere. The reason why is because it is \textit{this} configuration which minimises the gravitational potential energy, and it minimises the gravitational potential energy because the surface of the planet aligns with the surfaces/contours of constant gravitational potential energy $\psi$. In other words, the planet is spherical because surfaces of constant $\psi$ are also spherical.
+
+    For a rotating planet, the surfaces of constant potential energy are now deformed (the total potential $\Phi=\phi+\psi=$ the sum of the gravitational and the centrifugal potential energies). Now, the contours of constant $\Phi$ are \href{https://en.wikipedia.org/wiki/Spheroid}{oblate spheroids}, and so the planet's shape tends towards this.
+    
+    Recalling (from the \hyperref[VC Interp]{Vector Calculus Intepretation Box}) that the gradient of a scalar field $\Phi$ is perpendicular to the contours of constant $\Phi$, \textit{and} recalling that the force experienced by an object in this field is this gradient $\vec{F}=-\vec{\nabla}\Phi$, it turns out that the force experienced by an object will always be perpendicular to the surface of the planet. Therefore, the combined gravitational and centrifugal forces still points `downwards' at each point on the surface, similar to a non-rotating spherical planet. 
+    
+    This is the second reason why we neglect the centrifugal force. Because the combined centrifugal and gravitational force always points downwards, it is phenomenologically very similar to a situation with only the gravitational force. As such, we choose to neglect the centrifugal force for simplicity.}
 
 After eliminating the small terms, we arrive at our final simplified set of equations. 
 
@@ -737,15 +750,15 @@ We can now explain the \textbf{Rossby Number} $Ro$ very easily. $Ro$ compares th
 
 Note that I have not specified $P$. This is because we expect the pressure scale $P$ to be set by the dynamics governed by the \hyperref[Horizontal Approximate]{Horizontal Momentum Equation}. If $Ro\ll 1$, then we expect $P$ to be of order $1$ in order to balance the coriolis $\vec{k}\times\vec{\hat{u}}_h$ term. If $Ro\gg 1$, then we expect $P$ to be of order $Ro$ in order to balance the advection/acceleration $D\vec{\hat{u}}_h/Dt$ term. 
 
-We can also write the Rossby Number in terms of a ratio between the planetary vorticity and relative vorticity. The planetary vorticity $\omega_{planetary}$ is the angular velocity of a fluid parcel due to the rotation of the Earth, and scales as $f$. The relative vorticity is the vorticity of our fluid parcel in our coordinate system which is rotating with the Earth, and scales as $\omega_{relative}\sim[\vec{\omega}]_z=[\vec{\nabla}\times\vec{u}_h]_z\sim U/L$. Therefore:
+We can also write the Rossby Number in terms of a ratio between the planetary vorticity and relative vorticity. The planetary vorticity $\xi_{planetary}$ is the angular velocity of a fluid parcel due to the rotation of the Earth, and scales as $f$. The relative vorticity is the vorticity of our fluid parcel in our coordinate system which is rotating with the Earth, and scales as $\xi_{relative}=[\vec{\omega}]_z=[\vec{\nabla}\times\vec{u}_h]_z\sim U/L$. Therefore:
 \begin{align}
-    Ro &= \frac{\omega_{relative}}{\omega_{planetary}}\\
+    Ro &= \frac{\xi_{relative}}{\xi_{planetary}}\\
     &\sim\frac{U/L}{f}
 \end{align}
 
-The actual size of $Ro$ depends on the kind of system we are considering: i.e., what are the length-scales and velocity-scales of the system. But it also, crucially, depends on the coriolis parameter $f=2\Omega\sin\phi$. $f=0$ at or near the equator, and so it is unlikely that $Ro$ will ever be small near the equator. However, this does not imply that rotation is unimportant near the equator, but it does imply that the flow is probably not geostrophic near the equator.
+The actual size of $Ro$ depends on the kind of system we are considering: i.e., what are the length-scales and velocity-scales of the system. But it also, crucially, depends on the coriolis parameter $f=2\Omega\sin\phi$. $f=0$ at or near the equator, and so it is unlikely that $Ro$ will ever be small near the equator. However, let us be clear. This \textit{does not} imply that rotation in general is unimportant near the equator. However, this does \textit{suggest} that the flow is probably not geostrophic near the equator.
 
-Much of what we will discuss here in GFD will require $Ro$ to be small and for the system to be geostrophic, or approximately geostrophic. This means that what we discuss is really only guaranteed to be accurate in the mid-/high-latitudes (coincidentally where we are!). It is worth bearing this in mind. However, note that $Ro$ being small is a \textit{sufficient} condition (provided of our assumptions are not bad either) – it is not a \textit{necessary} condition. $Ro$ being large does not imply that our theories must fail.
+Much of what we will discuss here in GFD will require $Ro$ to be small and for the system to be geostrophic, or approximately geostrophic. This means that what we discuss is really only guaranteed to be accurate in the mid-/high-latitudes (coincidentally where we are!). It is worth bearing this in mind. However, note that $Ro$ being small is a \textit{sufficient} condition (provided that our other assumptions as sound) – it is not a \textit{necessary} condition. $Ro$ being large does not imply that our theories must fail, or that the flow cannot be geostrophic or approximately so.
 
 \subsection{Geostrophic Balance}
 
