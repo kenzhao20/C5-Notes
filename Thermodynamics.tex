@@ -1,4 +1,4 @@
-\part{Thermodynamics}\label{Thermodynamics}
+\part{Thermodynamics}\label{p Thermodynamics}
 
 \section*{Introduction}
 
@@ -7,10 +7,10 @@ This section of the course was lectured by \href{https://users.physics.ox.ac.uk/
 \noindent This section consists of three chapters:\vspace{5 mm}
 
 \begin{enumerate}
-    \item \hyperref[Basic Thermodynamics]{Basic Thermodynamic Concepts}: 
+    \item \hyperref[c Basic Thermodynamics]{Basic Thermodynamic Concepts}: 
         
         \begin{quote}
-            We recap some basic thermodynamic concepts you should be familiar with, like pressure, \hyperref[Ideal Gas Box]{ideal gases}, and \hyperref[Equipartition]{heat capacity}. We then explain how to extend such concepts to deal with gases consisting of \hyperref[Definition Multiple]{multiple constituents}. Finally, we introduce the important approximation of \hyperref[Hydrostatic Box]{Hydrostatic Balance}.
+            We recap some basic thermodynamic concepts you should be familiar with, like pressure, \hyperref[b Ideal Gas]{ideal gases}, and \hyperref[Equipartition]{heat capacity}. We then explain how to extend such concepts to deal with gases consisting of \hyperref[b Definition Multiple]{multiple constituents}. Finally, we introduce the important approximation of \hyperref[Hydrostatic Box]{Hydrostatic Balance}.
         \end{quote}
 
     \item \hyperref[Dry Thermodynamics]{Dry Thermodynamics}: 
@@ -25,7 +25,7 @@ This section of the course was lectured by \href{https://users.physics.ox.ac.uk/
         \end{quote}
 \end{enumerate}
 
-\chapter{Basic Thermodynamic Concepts}\label{Basic Thermodynamics}
+\chapter{Basic Thermodynamic Concepts}\label{c Basic Thermodynamics}
 
 \section{Definitions}
 
@@ -61,15 +61,15 @@ Note that many resources present the molar mass $M_a$ in units of \qty{}{\gram\p
     \underbrace{M_a}_{M_a\text{ in SI units of \qty{}{\kilogram\per\mole}}} = \underbrace{M_a}_{M_a\text{ in non-SI units of \qty{}{\gram\per\mole}}}\cdot\frac{\qty{1}{\kilogram}}{\qty{1000}{\gram}}
 \end{align*}
 
-\subsection{Multiple Constituents}\label{Multiple}
+\subsection{Multiple Constituents}\label{ss Multiple}
 
 In general, a planet's atmosphere is composed of multiple constituents. Our goal now is to introduce some vocabulary so we can specify the abundance of a certain constituent in the atmosphere.
 
-It turns out that we (or the examiner) must make two ultimately arbitrary decisions if we wish to refer to a certain constituent's abundance. First, we can either refer to a constituent's abundance by its \textit{mass}, or by its \textit{number} (in \textit{moles}). Second, we can either refer to a \textit{concentration} or a \textit{ratio}. These choices are ultimately arbitrary because one may freely convert between them with the molar mass using Equation \ref{density to number}.
+It turns out that we (or the examiner) must make two ultimately arbitrary decisions if we wish to refer to a certain constituent's abundance. First, we can either refer to a constituent's abundance by its \textit{mass}, or by its \textit{number} (in \textit{moles}). Second, we can either refer to a \textit{concentration} or a \textit{ratio}. These choices are ultimately arbitrary because one may freely convert between them with the molar mass using Equation \ref{eq density to number}.
 
 Suppose our atmosphere is composed of constituents  $\mathbb{S}=\{a,b,c,\ldots\}$. Each species $i\in\mathbb{S}$ has a molar mass of $M_i$ and a number density of $n_i$. Then we can refer to its abundance as follows. All quantities are dimensionless.
 
-\begin{fact}{Definitions Regarding Constituent Abundance}{Definition Multiple}\label{Definition Multiple}
+\begin{fact}{Definitions Regarding Constituent Abundance}{Definition Multiple}\label{b Definition Multiple}
     We can refer to the abundance of a certain constituent $a$ in an atmosphere/ocean as follows:\newline\newline
     \begin{tabular}{|p{0.8cm}|p{6.5cm}|p{7.5cm}|}
         \hline
@@ -97,7 +97,7 @@ Suppose our atmosphere is composed of constituents  $\mathbb{S}=\{a,b,c,\ldots\}
     where $n_i=$ the number density of $i$; $M_i=$ the molar mass of $i$; and $\rho_i=$ the density of $i$. We let $x_a$ and $q_a$ denote the mole fraction and mass fraction of $a$, respectively.
 
     Which term you use is arbitrary, as you can freely convert between all four expressions using algebra or by using the following formula:
-    \begin{align}\label{density to number}
+    \begin{align}\label{eq density to number}
         \rho_A=\frac{n_AM_A}{N_A}
     \end{align}
     where $N_A=\text{Avogadro's Number}\sim$ \qty{6.02e23}{\per\mole} (it's on your formula sheet).\footnote{
@@ -106,14 +106,14 @@ Suppose our atmosphere is composed of constituents  $\mathbb{S}=\{a,b,c,\ldots\}
 \end{fact}
 
 We also introduce the concept of '\textbf{dilute}': some constituent $a$ is in the \textbf{dilute} limit if and only if:
-\begin{align}\label{Dilute}
+\begin{align}\label{eq Dilute}
     \boxed{n_a\ll\sum\limits_{i\in\mathbb{S},i\neq a} n_i\hspace{10mm}\text{and/or}\hspace{10mm}
     \rho_a\ll\sum\limits_{i\in\mathbb{S},i\neq a} \rho_i}
 \end{align}
 
 An important upshot of this is that, in the dilute limit, fractions/concentrations and mixing ratios are equivalent. In many problems, this simplifies the algebra massively, but you're not always allowed to assume that constituents are dilute (especially in exams!).
 
-Note also that there is some ambiguity in the `and/or' in Equation \ref{Dilute}. For example, we might have a situation where $n_a\ll\sum n_i$ but \textbf{not} $\rho_a\ll\sum \rho_i$ (or vice versa). This occurs only if the molar masses $M_a$ and $M_i$ are not all of similar size (convince yourself that this is the case using Eqn. \ref{density to number}). This is almost never the case in scenarios we consider, so you can just treat the `and/or' as just an `and' in Equation \ref{Dilute}.
+Note also that there is some ambiguity in the `and/or' in Equation \ref{eq Dilute}. For example, we might have a situation where $n_a\ll\sum n_i$ but \textbf{not} $\rho_a\ll\sum \rho_i$ (or vice versa). This occurs only if the molar masses $M_a$ and $M_i$ are not all of similar size (convince yourself that this is the case using Eqn. \ref{eq density to number}). This is almost never the case in scenarios we consider, so you can just treat the `and/or' as just an `and' in Equation \ref{eq Dilute}.
 
 Sometimes, we'll see people refer to dilute constituents in terms of \textit{ppm} (parts per million) or \textit{ppmv} (parts per million volume). \textit{ppm} is defined as the \textit{Mass Fraction} or \textit{Mass Concentration} multiplied by $10^{6}$ ($q_a\times10^6$) while \textit{ppmv} is defined the \textit{Mole Fraction} or \textit{Molar Concentration} multiplied by $10^{6}$ ($x_a\times10^6$).
 
@@ -150,14 +150,14 @@ In Earth's ocean, the absolute salinity in units of \qty{}{\gram\per\kilogram} i
 \subsection{Single Constituent Atmosphere}
 
 An \textbf{Ideal Gas} is a theoretical gas consisting of molecules which interact only via perfectly elastic collisions. No real gas is ideal, but many gases, including 99\% of Earth's atmosphere (Nitrogen, Oxygen, and Argon), behave approximately like ideal gases under atmospheric conditions like ours. Ideal gases obey the ideal gas law, and we'll start from the version of the ideal gas law that you've probably seen before (and assume that the gas is made up of a single constituent $a$ for simplicity):
-\begin{align}\label{Ideal Gas Primitive}
+\begin{align}\label{eq Ideal Gas Primitive}
     \boxed{pV=N_ak_BT}
 \end{align}
 where $p=$ pressure, $V=$ volume, $N_a=$ number of molecules of $a$, $k_B=$ Boltzmann's constant, and $T=$ temperature. We can divide by the volume, then multiply and divide by $\frac{M_a}{N_A}$ to get: 
 \begin{align*}
-    p&=n_ak_BT & \text{; }&\text{Divide \ref{Ideal Gas Primitive} by }V\\
+    p&=n_ak_BT & \text{; }&\text{Divide \ref{eq Ideal Gas Primitive} by }V\\
     &=\left(\frac{n_aM_a}{N_A}\right)\left(\frac{k_BN_A}{M_a}\right)T&\text{; }&\text{Multiply and divide by }\frac{M_a}{N_A}\\
-    &=\rho_a\left(\frac{k_BN_A}{M_a}\right)T & \text{; }& \text{Use \ref{density to number} to substitute for }\rho_a\\
+    &=\rho_a\left(\frac{k_BN_A}{M_a}\right)T & \text{; }& \text{Use \ref{eq density to number} to substitute for }\rho_a\\
     &=\rho_a\left(\frac{R^*}{M_a}\right)T
     &\text{; }&R^*\equiv k_BN_A=\text{gas constant}\\
     &=\rho_aR_aT
@@ -165,15 +165,15 @@ where $p=$ pressure, $V=$ volume, $N_a=$ number of molecules of $a$, $k_B=$ Bolt
 \end{align*}
 
 The \textbf{Gas Constant} $R^*$ is defined as: $R^*\equiv k_BN_A\approx$ \qty{8.314}{\joule\per\mole\per\kelvin}. We further define the \textbf{Specific Gas Constant} $R_a\equiv \frac{R^*}{M_a}$ which has units of \qty{}{\joule\per\kilogram\per\kelvin}. \textbf{From now on I will refer to the specific gas constant $R_a$ by just writing just $R$.} The final line gives us the version of the ideal gas law we will use most often as it features only \textit{intensive} variables:
-\begin{fact}{Ideal Gas Law in Intensive Variables}{Ideal Gas Box}\label{Ideal Gas Box}
+\begin{fact}{Ideal Gas Law in Intensive Variables}{Ideal Gas Box}\label{b Ideal Gas}
 The ideal gas law featuring only intensive variables of $p$, $\rho$, and $T$.
-    \begin{equation}\label{Ideal Gas}
+    \begin{equation}\label{eq Ideal Gas}
     \BOX{
         p=\rho RT
     }
     \end{equation}
  $R$ is the specific gas constant, defined as the universal gas constant $R^*$ divided by the molar mass $M_a$.
-    \begin{equation}\label{Specific Gas Constant One}
+    \begin{equation}\label{eq Specific Gas Constant}
     \BOX{
         R=\frac{R^*}{M_a}
     }
@@ -190,7 +190,7 @@ So Equation \ref{Dalton's Law} says that the partial pressure (of an ideal gas) 
     In the dilute limit, it is equivalently set by the \textit{molar mixing ratio}.
 }: it is not affected in any way by the \textit{mass fraction} $q_a$ or \textit{mass mixing ratio}. We can further verify that, according to Dalton's Law, $p=\sum\limits_{i\in\mathbb{S}} p_i$ (since $\sum\limits_{i\in\mathbb{S}} x_i=1$): the total pressure is the sum of all the partial pressures.
 
-Now we apply the ideal gas law (Eqn. \ref{Ideal Gas Primitive}) individually to each constituent:
+Now we apply the ideal gas law (Eqn. \ref{eq Ideal Gas Primitive}) individually to each constituent:
 \begin{align*}
     p_a&=n_ak_BT\\
     p_b&=n_bk_BT\\
@@ -454,7 +454,7 @@ We use this to derive the Shallow Water/Reduced Gravity System in Chapter \ref{S
 
 \subsection{Example 2: Ideal Gas}\label{Example 2: Ideal Gas}
 
-The atmosphere can be roughly regarded as an ideal gas, so we can substitute in Equation \ref{Ideal Gas} to find that Equation \ref{Hydrostatic Balance} transforms into:
+The atmosphere can be roughly regarded as an ideal gas, so we can substitute in Equation \ref{eq Ideal Gas} to find that Equation \ref{Hydrostatic Balance} transforms into:
 \begin{align}
     \label{Hydrostatic Balance Ideal}
     \boxed{\frac{d\ln p}{dz}=-\frac{g}{RT}}
@@ -571,7 +571,7 @@ We assume that the system is closed ($dN=0$, so the parcel does not exchange air
 where $u$ and $s$ refer to the internal energy and entropy \textit{per unit mass} (remember, we want intensive variables only!). We now approximate the air parcel as an ideal gas. This means that:
 
 \begin{enumerate}
-    \item The gas obeys the Ideal Gas Law (\ref{Ideal Gas})
+    \item The gas obeys the Ideal Gas Law (\ref{eq Ideal Gas})
     \item The internal energy is a function of temperature only: $u=c_vT$, where $c_v=$ the specific heat capacity at constant volume.
     \item The specific heat capacities are related in the following way: $c_v+R=c_p$ (also per unit mass)
 \end{enumerate}
@@ -580,7 +580,7 @@ where $u$ and $s$ refer to the internal energy and entropy \textit{per unit mass
     &\text{; }&du=c_vdT \text{and assuming } \frac{\partial c_v}{\partial T}\approx0
     \\
     &=-p\,d\left(\frac{RT}{p}\right)+T\,ds
-    &\text{; }&\text{Ideal gas using Eqn. \ref{Ideal Gas}}
+    &\text{; }&\text{Ideal gas using Eqn. \ref{eq Ideal Gas}}
     \\
     &=-pR\left(\frac{dT}{p}-\frac{T\,dp}{p^2}\right)+T\,ds
     &\text{; }&\text{Assume } \bar{M} \text{ is constant.}
@@ -637,7 +637,7 @@ However, we should be wary of the limits of our conclusions here. Recall that we
 
 This assumption is not bad in the Earth's troposphere, partly because here the atmosphere is heated from below: the atmosphere is transparent to the radiation from the sun, which penetrates through the atmosphere and heats the ground. The ground then heats the air above it, which becomes buoyant and convects. Similarly, Jupiter's internal energy leakage maintains a convective troposphere. However, not all planetary atmospheres and not even all of Earth's atmosphere obey this assumption.
 
-Finally, now, we can see now why many atmospheres have temperatures decreasing as pressure decreases or height increases. The first fact is readily noted from Eqn. \ref{Dry Adiabat}. We can show the second fact by combining the Dry Adiabat \ref{Dry Adiabat}, \hyperref[Hydrostatic Balance]{Hydrostatic Balance}, and \hyperref[Ideal Gas]{Ideal Gas} to obtain an equation linking temperature with height:
+Finally, now, we can see now why many atmospheres have temperatures decreasing as pressure decreases or height increases. The first fact is readily noted from Eqn. \ref{Dry Adiabat}. We can show the second fact by combining the Dry Adiabat \ref{Dry Adiabat}, \hyperref[Hydrostatic Balance]{Hydrostatic Balance}, and \hyperref[eq Ideal Gas]{Ideal Gas} to obtain an equation linking temperature with height:
 \begin{align}
     \frac{R}{c_p}&=\frac{d\ln T}{d\ln p}\nonumber
     \\
@@ -648,7 +648,7 @@ Finally, now, we can see now why many atmospheres have temperatures decreasing a
     &\text{; }& \text{\ref{Hydrostatic Balance}}\nonumber
     \\
     &=\frac{d T}{d z}\frac{p}{T}\frac{RT}{p}(- g)^{-1}
-    &\text{; }& \text{\ref{Ideal Gas}}\nonumber
+    &\text{; }& \text{\ref{eq Ideal Gas}}\nonumber
     \\
     \label{Dry Adiabatic Lapse Rate}
     &\therefore\,
@@ -747,7 +747,7 @@ We now make two assumptions. First, we assume that $h$ is small, therefore, $p(z
     \label{Buoyancy Force}
     \therefore \,\,& \BOX{F_b=g\left( \frac{\rho_a-\rho_p}{\rho_p} \right)}
 \end{align}
-where $F_b=$ the buoyancy force. Physically, the buoyant force is intuitive: if the air parcel is lighter than the ambient air ($\rho_p<\rho_a$) it will convect and rise, and vice versa. Furthermore, we can write $F_b$ in terms of the temperature $T$ (using \ref{Ideal Gas}) or potential temperature $\theta$ (using \ref{Potential Temperature}) in very neat forms, since many terms cancel top and bottom:
+where $F_b=$ the buoyancy force. Physically, the buoyant force is intuitive: if the air parcel is lighter than the ambient air ($\rho_p<\rho_a$) it will convect and rise, and vice versa. Furthermore, we can write $F_b$ in terms of the temperature $T$ (using \ref{eq Ideal Gas}) or potential temperature $\theta$ (using \ref{Potential Temperature}) in very neat forms, since many terms cancel top and bottom:
 \begin{align}
     F_b=g\left( \frac{\rho_a-\rho_p}{\rho_p} \right)\nonumber\\
     \label{Buoyancy Force Temp}
@@ -1017,7 +1017,7 @@ We define the (specific) \textbf{Enthalpy} $h$ as follows:
 \begin{align}
     h=u+p\frac{1}{\rho}
 \end{align}
-For an ideal gas, we can substitute for $p$ using \ref{Ideal Gas} and $u=c_vT$ to write $h$ in terms of $T$ only:
+For an ideal gas, we can substitute for $p$ using \ref{eq Ideal Gas} and $u=c_vT$ to write $h$ in terms of $T$ only:
 \begin{align*}
     h&=\underbrace{c_vT}_{u}+\underbrace{\rho R T}_{p}\frac{1}{\rho}\\
     &=\underbrace{(c_v+R)}_{c_p}T\\
@@ -1207,7 +1207,7 @@ Let us first consider the $L\,dq$ term:
         \\
         &=L\, d \left( \frac{M_c e}{M_a (p-e)} \right)
         &\text{; }
-        &\text{Ideal Gas (\ref{Ideal Gas}) and assume }T_c=T_a
+        &\text{Ideal Gas (\ref{eq Ideal Gas}) and assume }T_c=T_a
         \\
         &\approx L\, d \left( \frac{M_c}{M_a} \frac{e}{p} \right)
         &\text{; }
