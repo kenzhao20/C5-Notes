@@ -171,10 +171,10 @@ Recall that $\hat{\Sigma}$ is completely diagonal, so our coupled equations are 
     \dot{S}_i=\lambda_i S_i + g_i
 \end{align*}
 Therefore, using an integrating factor, our solution is:
-\begin{align*}
+\begin{align}
     \label{Dym System Gen Sol}
     S_i(t)=S_i(0)e^{\lambda_i t}+e^{\lambda_i t}\int_{0}^{t}g_i(t')e^{-\lambda_i t'}\,dt'
-\end{align*}
+\end{align}
 Physically, $S_i(t)$ is the $i$th normal mode, a mode that is decoupled completely from the other modes: this mode will evolve completely ignorant to the behaviour of the other modes. The eigenvectors $\lambda_i$, which have dimensions of inverse-time, represent the timescales of the $i$th normal mode $\tau_i\sim 1/\lambda_i$.
 
 Our final step is to relate $S_i$ back to $T_i$, which is easy if we note that $\vec{S}\equiv\hat{E}^{-1}\vec{T}$, therefore $\vec{T}=\hat{E}\vec{S}$. Therefore, $T_i=[v_i]_1S_1+[v_i]_2S_2$ so our general solution is:
@@ -220,7 +220,7 @@ to obtain our eigenvalues $\lambda_i$. This should give us a quadratic in $\lamb
 
 \subsubsection{Application without Simplifications}
 
-Let us refer again to our solution written in Equation \ref{Dynamical Solution}. We can make a few simplifications when applying this to our model. First, $\vec{f}=(F_{ext}/C_s,0)^T$, so we can set $[\vec{f}]_2=0$. 
+Let us refer again to our solution written in Equation \ref{eq Dynamical Solution}. We can make a few simplifications when applying this to our model. First, $\vec{f}=(F_{ext}/C_s,0)^T$, so we can set $[\vec{f}]_2=0$. 
 
 \subsubsection{Application with Simplifications}
 
@@ -325,6 +325,7 @@ Of course, if you wish to solve the system exactly without making the approximat
 
 You will eventually find that the first normal mode with the eigenvector $\vec{v}_1=(1,0)^T$ is actually more like $\vec{v}_1=(1,\epsilon)^T$, where $\epsilon$ is pretty small – the deep oceans do warm on the short timescale, although very slowly compared to the atmosphere!
 \begin{align}
+    \label{eq Dynamical Solution}
     \BOX{
         T_j=\sum_{i} \left( [v_j]_i \left( S_i(0)e^{\lambda_i t}+e^{\lambda_i t}\int_{0}^{t}g_i(t')e^{-\lambda_i t'}\,dt' \right) \right)
     }
