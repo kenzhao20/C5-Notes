@@ -1677,11 +1677,11 @@ The derivative of the right hand side wrt $\tau$ is $0$ (again due to \ref{Radia
     E_-(\tau_\infty)=0\,\, \therefore\nonumber\\
     E_+-E_-&=OLR\label{Up-Down}
 \end{align}
-Therefore:
+Therefore (substituting our expression for $E_+-E_-$ from Equation \ref{Up-Down} into Equation \ref{Up+Down}):
 \begin{align*}
     \frac{d}{d\tau}(E_++E_-)=-OLR
 \end{align*}
-Integrating again using the boundary conditions gives:
+Integrating (and using the boundary conditions again) gives:
 \begin{align}
     E_++E_-=OLR(1+\tau_\infty-\tau)\label{Up+Down tau}
 \end{align}
@@ -1813,6 +1813,7 @@ What I just said should be slightly confusing. After all, we explicitly assumed 
 
 This is technically correct, so we should be explicit as to what we are modifying in the model, and why the physical interpretation of this modification corresponds to adding shortwave absorbers/emitters to the atmosphere. The modification we make is as follows. We revise the Radiative Equilibrium criterion (Equation \ref{Radiative Equilibrium}) to be below:
 \begin{align}
+    \label{Radiative Equilibrium Shortwave}
     \BOX{\frac{d}{d\tau}\left( E_+ - E_- - E_{\star} \right)=0}
 \end{align}
 where $E_\star(\tau)=$ is the monotonically increasing ($E_\star$ is largest at the top of the atmosphere) downwards irradiance of the star. In this section we simply take $E_\star$ as a given function (e.g., we let $E_\star\sim e^\tau$) – we do not solve for it.
@@ -1820,12 +1821,126 @@ where $E_\star(\tau)=$ is the monotonically increasing ($E_\star$ is largest at 
 What we are representing in this model, now, is that there is some downards irradiance from the star at the top of the atmosphere that is (and here's the crucial part) \textbf{absorbed by shortwave absorbers in the atmosphere}. This implies that $E_\star$ decreases as it propagates downwards through the atmosphere, and this is how we are indirectly representing the effect of shortwave absorbers.\footnote{
     Of course, another difference is that now the boundary condition at the top of the atmosphere is different. Whereas before there was no downwards irradiance ($E_-(\tau=\tau_\infty)=0$), now there is some non-zero downards irradiance ($E_-(\tau_\infty)+E_\star(\tau_\infty)=E_\star(\tau_\infty)\neq 0$). However, I am of the opinion that this is not the crucial difference. The crucial difference is that this downwards irradiance of the star is \textit{monotonic in} $\tau$. This ensures the effect of shortwave absorbers high in the atmosphere: there are shortwave absorbers which block the shortwave irradiance propagating downwards (by absorbing them), and re-emit some of the energy as longwave radiation (which is encoded in the $E_-$ term).}
 
-Let us now solve this system as before, this time with the $E_\star$. Before we do that, we will redefine our coordinate system for convenience (which we are well within our rights to - see Section \ref{Absorption Section}).
+Let us now solve this system as before, this time with the $E_\star$. 
 
 \subsection{Derivation}
 
-\subsubsection{Redefinition Our Coordinate System}
+Before we derive the vertical profile, we first redefine our coordinate system for convenience (which we are well within our rights to - see Section \ref{Absorption Section}). We now set $\tau=0$ at $p=0$ rather than $p=p_s$, but allow $\tau$ to increase with height as before. This means that $\tau=-\tau_\infty$ at $p=p_s$. We don't \textit{need} to do this, so the following derivation would be exactly the same (save swapping out a few boundary conditions).
 
+We derive the solutions analogous to how we derived the solutions without shortwave absorbers. As before, we add and subtract Equations \ref{Upwards Grey} and \ref{Downwards Grey}. Adding the equations gives (as before):
+\begin{align*}
+    \frac{d}{d\tau}(E_+-E_-)=-E_+-E_-+2\sigma T^4
+\end{align*}
+This time we must subtract $\frac{d E_\star}{d\tau}$ to both sides to fulfil our revised Radiative Equilibrium criterion (Equation \ref{Radiative Equilibrium Shortwave}) to obtain the following:
+\begin{align*}
+    \frac{d}{d\tau}(E_+-E_- - E_\star)
+    =
+    -E_+-E_-+2\sigma T^4 -\frac{dE_\star}{d\tau}
+\end{align*}
+Now we use Equation \ref{Radiative Equilibrium Shortwave} to find that the left hand side is $0$:
+\begin{align}\label{Up+Down Short}
+    E_++E_-=2\sigma T^4-\frac{dE_\star}{d\tau}
+\end{align}
+which is the shortwave version of Equation \ref{Up+Down}
 
+Again, analogous to the derivation before, we subtract Equations \ref{Upwards Grey} and \ref{Downwards Grey}:
+\begin{align*}
+    \frac{d}{d\tau}(E_++E_-)=-E_++E_-
+\end{align*}
+To massage this into the version we would like, we add $E_\star$ to both sides. Therefore:
+\begin{align*}
+    \frac{d}{d\tau}\left(E_++E_- + \int_{0}^{\tau}E_\star(\tau')\, d\tau'\right)
+    =
+    -E_+ + E_- + E_\star
+\end{align*}
+The derivative of the right hand side wrt $\tau$ is $0$ (again due to Equation \ref{Radiative Equilibrium Shortwave}) so is constant. We can find the value of the right-hand-side by applying the boundary conditions. We apply the boundary condition at the top of the atmosphere:
+\begin{gather}
+    E_+(0)=OLR \,\, ;\,\,  
+    E_-(0)=0\,\, ;\,\,  
+    E_\star(0)=E_{\star,top}
+    \,\, 
+    \therefore
+    \nonumber\\
+    E_+-E_--E_\star=OLR-E_{\star,top}\label{Up-Down Short}
+\end{gather}
+Therefore (substituting our expression for $E_+-E_-$ from Equation \ref{Up-Down Short} into Equation \ref{Up+Down Short}):
+\begin{align*}
+    \frac{d}{d\tau}\left(E_++E_- + \int_{0}^{\tau}E_\star(\tau')\, d\tau'\right)
+    =-OLR+E_{\star,top}
+\end{align*}
+Integrating (again using the boundary conditions gives):
+\begin{align}
+    E_++E_-
+    +\int_{0}^{\tau}E_\star(\tau')\, d\tau'
+    =
+    (OLR-E_{\star,top})(1-\tau)
+    +E_{\star,top}\nonumber
+    \\
+    \therefore
+    E_++E_-
+    =
+    (OLR-E_{\star,top})(1-\tau)
+    +E_{\star,top}
+    +\int_{\tau}^{0}E_\star(\tau')\, d\tau'
+    \label{Up+Down tau Short}
+\end{align}
+Again, we are in a position to find expressions for all three variables. We can find $T$ by substituting \ref{Up+Down Short} into \ref{Up+Down tau Short}. We can find $E_+$ and $E_+$ by adding or subtracting (respectively) \ref{Up-Down Short} and \ref{Up+Down tau Short}. The solutions are:
+
+\begin{fact}{Radiative Equilibrium Solutions (with Shortwave Absorber)}{Rad Eq Box Short}\label{Rad Eq Box Short}
+    A grey gas in pure radiative equilibrium with a shortwave absorber will have a temperature profile $(T(\tau))$, upwards irradiance $(E_+(\tau))$, and downwards irradiance $(E_-(\tau))$ that obey the following relations:
+
+    \begin{gather}
+        \label{Radiative Eq Temperature Short}
+        \BOX{
+            2\sigma T^4=(OLR-E_{\star,top})(1-\tau)
+            +E_{\star,top}
+            +\int_{\tau}^{0}E_\star(\tau')\, d\tau'
+            +\frac{dE_\star}{d\tau}
+            }
+    \end{gather}
+    We can rewrite this equation as follows (exercise):
+    \begin{gather}
+        \label{Radiative Eq Temperature Short Rewritten}
+        \BOX{
+            2\sigma T^4=OLR(1-\tau)
+            +\frac{dE_\star}{d\tau}
+            -\int_{\tau}^{0}(E_{\star,top}-E_\star(\tau'))\, d\tau'
+            }
+    \end{gather}
+
+    \begin{minipage}{.48\linewidth}
+        \begin{gather}
+            \BOX{\text{[UNDER CONSTRUCTION]}}
+        \end{gather}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{.48\linewidth}
+        \begin{gather}
+            \BOX{\text{[UNDER CONSTRUCTION]}}
+        \end{gather}
+    \end{minipage}
+
+    \vspace{2mm}
+    where $E_\star(\tau)$ is the downwards shortwave irradiance which monotonically increases with $\tau$. In this problem, we simply treat this as given.
+\end{fact}
+
+\subsection{Interpretation}
+
+First, we should check that we recover the \hyperref[Rad Eq Box]{no-short-wave-absorbers solution} if we set $E_\star=E_{\star,top}$ for all $\tau$. Looking at Equation \ref{Radiative Eq Temperature Short Rewritten}, we can see that our temperature profile reduces to $2\sigma T^4 = OLR(1-\tau)$, which is identical to the temperature profile from before (up to, of course, our arbitrary redefinition of $\tau$). 
+
+Now, lets examine how the presence of shortwave absorbers modifies our temperature profile (Equation \ref{Radiative Eq Temperature Short Rewritten}). The first $\frac{d E_\star}{d\tau}$ term represents shortwave warming from absorption. If $\frac{d E_\star}{d\tau}>0$, then $E_\star$ increases with optical depth $\tau$, and therefore decreases as the shortwave irradiance propagates \textit{downwards} through the atmosphere. This indicates that there is \textit{strong} shortwave absorption at this optical depth, which results in local warming at this point.
+
+The second $-\int_{\tau}^{0}(E_{\star,top}-E_\star(\tau'))\, d\tau'$ term represents 
+
+\begin{align*}
+    2\sigma T^4=\underbrace{OLR(1-\tau)}_\text{original solution}
+    +\overbrace{\frac{dE_\star}{d\tau}}^\text{shortwave warming}
+    -\underbrace{\int_{\tau}^{0}(E_{\star,top}-E_\star(\tau'))\, d\tau'}_\text{????}
+\end{align*}
+
+To make these discussions more concrete, we now let $E_\star(\tau)$ be given by the following:
+\begin{align*}
+    E_\star = E_{\star,top}e^{a\tau}
+\end{align*}
 
 [UNDER CONSTRUCTION]
