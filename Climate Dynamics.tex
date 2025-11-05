@@ -445,65 +445,79 @@ Suppose $F_{ext}(t)$ is a step-function, representing, for example, an instantan
 \end{align*}
 
 Now clearly, for $t<0$, $T_s(t)=T_d(t)=0$. For $t>0$, we integrate explicitly to find the solutions in each case. On a short timescale:
-\begin{align*}
-    T_s(t) & \approx \frac{1}{C_s}e^{-\frac{t}{\tau_s}}\int_0^t F e^{\frac{\hat{t}}{\tau_s}}d\hat{t}\\
-    &=\frac{1}{C_s}e^{-\frac{t}{\tau_s}} \left( F\tau_s
-    \left( e^{\frac{t}{\tau_s}} - 1 \right) \right)\\
-    &=\frac{F\tau_s}{C_s}\left( 1-e^{-\frac{t}{\tau_s}} \right)
-    \\
-    &=\frac{F}{\lambda+\lambda'+\gamma}\left( 1-e^{-\frac{t}{\tau_s}} \right)
-    \\ 
-    T_d(t)& \approx 0 
-\end{align*}
-We find then that on an $\mathcal{O}(\tau_s)$ timescale, $T_s$ equilibrates with a timescale of $\tau_s$ to its new equilibrium value $\frac{F}{\lambda+\lambda'+\gamma}$ (which I emphasise is completely ignorant of the timescale $\tau_s$ or the heat capacity $C_s$!), and $T_d$ remains constant. Note how, despite the fact that $T_d=0=const$, the deep oceans are not `invisible'. The impact of the deep oceans is encoded in the timescale $\tau_s$ and the parameter $\gamma$ and $\lambda'$. The atmosphere/surface-ocean thus equilibrates to a level where the heat flux in (from the increase in $F_{ext}(t)$) equals the heat flux out (from more heat flux into space, and, crucially, more heat flux into the deep oceans).
 
 \begin{figure}[H]
+    \centering
+    \begin{subfigure}{0.48\linewidth}
+        \begin{align*}
+            T_s(t) & \approx \frac{1}{C_s}e^{-\frac{t}{\tau_s}}\int_0^t F e^{\frac{\hat{t}}{\tau_s}}d\hat{t}\\
+            &=\frac{1}{C_s}e^{-\frac{t}{\tau_s}} \left( F\tau_s
+            \left( e^{\frac{t}{\tau_s}} - 1 \right) \right)\\
+            &=\frac{F\tau_s}{C_s}\left( 1-e^{-\frac{t}{\tau_s}} \right)
+            \\
+            &=\frac{F}{\lambda+\lambda'+\gamma}\left( 1-e^{-\frac{t}{\tau_s}} \right)
+            \\ 
+            T_d(t)& \approx 0 
+        \end{align*}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.48\linewidth}
     \centering
     \begin{tikzpicture}[domain=0:4]
         \draw[very thin,color=gray] (-0.1,-0.1) grid (3.9,3.9);
         \draw[->] (-0.2,0) -- (4.2,0) node[right] {$t$};
         \draw[->] (0,-0.2) -- (0,4.2) node[above] {$T$};
-        \draw[dashed,thick,myorange] plot (\x,{0}) node[below] {$T_d(t)=0$};
+        \draw[dashed,ultra thick,myorange] plot (\x,{0}) node[below] {$T_d(t)=0$};
         \draw[domain=4:0,dotted,thick,mymagenta] plot (\x,{1}) node[left] {$\frac{F}{\lambda+\lambda'+\gamma}$};
-        \draw[color=mydarkblue,ultra thick] plot (\x,{1-exp(-\x)}) node[below] {$T_s(t) = \frac{F}{\lambda+\lambda'+\gamma}\left( 1-e^{-\frac{t}{\tau_s}} \right)$};
+        \draw[color=mydarkblue,ultra thick] plot (\x,{1-exp(-\x)}) node[above] {$T_s(t) = \frac{F}{\lambda+\lambda'+\gamma}\left( 1-e^{-\frac{t}{\tau_s}} \right)$};
         \node[] at (1,-0.3) {$\tau_s$};
     \end{tikzpicture}
+    \end{subfigure}
     \caption{The short timescale response of the system subject to constant forcing. The response of $T_s$ and $T_d$ are drawn as a \textcolor{mydarkblue}{filled blue line \rule{0.25cm}{0.25cm}} and \textcolor{myorange}{dashed orange line \rule{0.25cm}{0.25cm}}, respectively. The \textcolor{mymagenta}{dotted magenta line \rule{0.25cm}{0.25cm}} indicates what $T_s$ tends towards on a short timescale.}
     \label{Short const F figure}
 \end{figure}
 
+We find then that on an $\mathcal{O}(\tau_s)$ timescale, $T_s$ equilibrates with a timescale of $\tau_s$ to its new equilibrium value $\frac{F}{\lambda+\lambda'+\gamma}$ (which I emphasise is completely ignorant of the timescale $\tau_s$ or the heat capacity $C_s$!), and $T_d$ remains constant. Note how, despite the fact that $T_d=0=const$, the deep oceans are not `invisible'. The impact of the deep oceans is encoded in the timescale $\tau_s$ and the parameter $\gamma$ and $\lambda'$. The atmosphere/surface-ocean thus equilibrates to a level where the heat flux in (from the increase in $F_{ext}(t)$) equals the heat flux out (from more heat flux into space, and, crucially, more heat flux into the deep oceans).
+
 On long timescales:
-\begin{align*}
-    T_s(t) & \approx \frac{1}{\lambda+\gamma+\lambda'}\left(F+(\gamma+\lambda ')T_d(t)\right) \\ 
-    T_d(t) & \approx \frac{\gamma}{C_d(\lambda+\gamma+\lambda')}e^{-\frac{t}{\tau_d}}\int_0^t F e^{\frac{\hat{t}}{\tau_d}}d\hat{t}
-    \\
-    &=\frac{\gamma}{C_d(\lambda+\gamma+\lambda')}e^{-\frac{t}{\tau_d}}\left( F\tau_d \left( e^{\frac{t}{\tau_d}}-1 \right) \right)
-    \\
-    &=\frac{\gamma\,F\,\tau_d}{C_d(\lambda+\gamma+\lambda')}\left( 1-e^{-\frac{t}{\tau_d}} \right)
-    \\
-    &=\frac{F}{\lambda}\left( 1-e^{-\frac{t}{\tau_d}} \right)
-\end{align*}
-Notice how the response of $T_d$ on this long timescale is pretty much exactly analogous to the response of $T_s$ on a short timescale. We find how $T_s$ evolves by substituting our expression for $T_d$ into $T_s$:
-\begin{align*}
-    T_s(t)=\frac{F}{\lambda}\left( 1 - \frac{\gamma+\lambda'}{\lambda+\gamma+\lambda'}e^{-\frac{t}{\tau_d}}
-     \right)
-\end{align*}
-We find then that on an $\mathcal{O}(\tau_d)$ timescale, $T_d$ equilibrates with a timescale of $\tau_d$ to its new equilibrium value $\frac{F}{\lambda}$. Note that this equilibrium value is completely ignorant to $\lambda'$ and $\gamma$, which represent out-of-equilibrium effects – as expected. This is why we call $\lambda$ the \textbf{Equilibrium Climate Sensitivity Parameter} – it is what the climate tends towards in equilibrium. Meanwhile, $T_s$ also equilibrates towards this $\frac{F}{\lambda}$ value as well, but note that it already has a `headstart' at time $t=0$ to get to this equilibrium value. It gets to this point via the short timescale response, where $T_d$ effective doesn't respond fast enough.
 
 \begin{figure}[H]
+    \centering
+    \begin{subfigure}{0.48\linewidth}
+        \begin{align*}
+            T_s(t) & \approx \frac{1}{\lambda+\gamma+\lambda'}\left(F+(\gamma+\lambda ')\,T_d(t)\right) \\ 
+            T_d(t) & \approx \frac{\gamma}{C_d(\lambda+\gamma+\lambda')}e^{-\frac{t}{\tau_d}}\int_0^t F e^{\frac{\hat{t}}{\tau_d}}d\hat{t}
+            \\
+            &=\frac{\gamma}{C_d(\lambda+\gamma+\lambda')}e^{-\frac{t}{\tau_d}}\left( F\tau_d \left( e^{\frac{t}{\tau_d}}-1 \right) \right)
+            \\
+            &=\frac{\gamma\,F\,\tau_d}{C_d(\lambda+\gamma+\lambda')}\left( 1-e^{-\frac{t}{\tau_d}} \right)
+            \\
+            &=\frac{F}{\lambda}\left( 1-e^{-\frac{t}{\tau_d}} \right)
+            \\
+            \therefore
+            T_s(t)&\approx\frac{F}{\lambda}\left( 1 - \frac{\gamma+\lambda'}{\lambda+\gamma+\lambda'}e^{-\frac{t}{\tau_d}}\right)
+        \end{align*}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.48\linewidth}
     \centering
     \begin{tikzpicture}[domain=0:4]
         \draw[very thin,color=gray] (-0.1,-0.1) grid (3.9,3.9);
         \draw[->] (-0.2,0) -- (4.2,0) node[right] {$t$};
         \draw[->] (0,-0.2) -- (0,4.2) node[above] {$T$};
-        \draw[dashed,thick,myorange] plot (\x,{2-2*exp(-\x)}) node[below] {$T_d(t)=\frac{F}{\lambda}\left( 1-e^{-\frac{t}{\tau_d}} \right)$};
+        \draw[dashed,ultra thick,myorange] plot (\x,{2-2*exp(-\x)}) node[below] {$T_d(t)=\frac{F}{\lambda}\left( 1-e^{-\frac{t}{\tau_d}} \right)$};
         \draw[domain=4:0,dotted,thick,mymagenta] plot (\x,{2}) node[left] {$\frac{F}{\lambda}$};
         \draw[color=mydarkblue,ultra thick] plot (\x,{2-2*exp(-\x)/3}) node[above] {$T_s(t) = \frac{F}{\lambda}\left( 1-\frac{\gamma+\lambda'}{\lambda+\gamma+\lambda'}e^{-\frac{t}{\tau_s}} \right)$};
         \node[] at (1,-0.3) {$\tau_d$};
     \end{tikzpicture}
+    \end{subfigure}
     \caption{The long timescale response of the system subject to constant forcing. The response of $T_s$ and $T_d$ are drawn as a \textcolor{mydarkblue}{filled blue line \rule{0.25cm}{0.25cm}} and \textcolor{myorange}{dashed orange line \rule{0.25cm}{0.25cm}}, respectively. The \textcolor{mymagenta}{dotted magenta line \rule{0.25cm}{0.25cm}} indicates what both $T_s$ and $T_d$ tend toward on a long timescale.}
     \label{Long const F figure}
 \end{figure}
+
+Notice how the response of $T_d$ on this long timescale is pretty much exactly analogous to the response of $T_s$ on a short timescale. Note that we found how $T_s$ evolves by substituting our expression for $T_d$ into $T_s$.
+
+We find then that on an $\mathcal{O}(\tau_d)$ timescale, $T_d$ equilibrates with a timescale of $\tau_d$ to its new equilibrium value $\frac{F}{\lambda}$. Note that this equilibrium value is completely ignorant to $\lambda'$ and $\gamma$, which represent out-of-equilibrium effects – as expected. This is why we call $\lambda$ the \textbf{Equilibrium Climate Sensitivity Parameter} – it is what the climate tends towards in equilibrium. Meanwhile, $T_s$ also equilibrates towards this $\frac{F}{\lambda}$ value as well, but note that it already has a `headstart' at time $t=0$ to get to this equilibrium value. It gets to this point via the short timescale response, where $T_d$ effectively didn't respond fast enough to noticably change
 
 \subsubsection{Linearly Increasing \texorpdfstring{$F_{ext}$}{F-ext}}
 
@@ -517,23 +531,26 @@ Suppose $F_{ext}(t)$ is a function that is initially $0$, but then after time $t
 \end{align*}
 
 Again, it's clear that, for $t<0$, $T_s(t)=T_d(t)=0$. For $t>0$, we again integrate explicitly to find the solutions in each case. On a short timescale:
-\begin{align*}
-    T_s(t) & \approx \frac{1}{C_s}e^{-\frac{t}{\tau_s}}\int_0^t G\hat{t}\, e^{\frac{\hat{t}}{\tau_s}}d\hat{t}\\
-    &= \frac{1}{C_s}e^{-\frac{t}{\tau_s}} G \left( 
-        \left[ \hat{t}\tau_s e^{\frac{\hat{t}}{\tau_s}} \right]_0^t - \left[ \tau_s^2 e^{\frac{\hat{t}}{\tau_s}} \right]_0^t
-     \right)
-    \\
-    &=\frac{G\tau_s}{C_s}\left( t -\tau_s+\tau_s e^{-\frac{t}{\tau_s}} \right)
-    \\
-    &=\frac{G}{\lambda+\lambda'+\gamma}
-    \left( t -\tau_s+\tau_s e^{-\frac{t}{\tau_s}} \right)
-    \\ 
-    T_d(t)& \approx 0 
-\end{align*}
-
-Interpretation is similar to before, with a few twists. On an $\mathcal{O}(\tau_s)$ timescale, $T_s$ equilibrates with a timescale of $\tau_s$ to its new equilibrium value, but this time its new equilibrium value is one where it increases linearly. Note again that this equilibrium value is completely ignorant of the timescale $\tau_s$ or the heat capacity $C_s$. As before, $T_d$ remains constant, but its effect is still encoded in the timescale $\tau_s$ and the parameters $\gamma$ and $\lambda'$.
 
 \begin{figure}[H]
+    \centering
+    \begin{subfigure}{0.48\linewidth}
+        \begin{align*}
+            T_s(t) & \approx \frac{1}{C_s}e^{-\frac{t}{\tau_s}}\int_0^t G\hat{t}\, e^{\frac{\hat{t}}{\tau_s}}d\hat{t}\\
+            &= \frac{1}{C_s}e^{-\frac{t}{\tau_s}} G \left( 
+                \left[ \hat{t}\tau_s e^{\frac{\hat{t}}{\tau_s}} \right]_0^t - \left[ \tau_s^2 e^{\frac{\hat{t}}{\tau_s}} \right]_0^t
+            \right)
+            \\
+            &=\frac{G\tau_s}{C_s}\left( t -\tau_s+\tau_s e^{-\frac{t}{\tau_s}} \right)
+            \\
+            &=\frac{G}{\lambda+\lambda'+\gamma}
+            \left( t -\tau_s+\tau_s e^{-\frac{t}{\tau_s}} \right)
+            \\ 
+            T_d(t)& \approx 0 
+        \end{align*}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.48\linewidth}
     \centering
     \begin{tikzpicture}[domain=0:4]
         \draw[very thin,color=gray] (-0.1,-0.1) grid (3.9,3.9);
@@ -544,9 +561,12 @@ Interpretation is similar to before, with a few twists. On an $\mathcal{O}(\tau_
         \draw[color=mydarkblue,ultra thick] plot (\x,{\x-1+exp(-\x)}) node[above] {$T_s(t) = \frac{G}{\lambda+\lambda' +\gamma}\left( t-\tau_s+\tau_s e^{-\frac{t}{\tau_s}} \right)$};
         \node[] at (1,-0.3) {$\tau_s$};
     \end{tikzpicture}
+    \end{subfigure}
     \caption{The short timescale response of the system subject to linearly increasing forcing. The response of $T_s$ and $T_d$ are drawn as a \textcolor{mydarkblue}{filled blue line \rule{0.25cm}{0.25cm}} and \textcolor{myorange}{dashed orange line \rule{0.25cm}{0.25cm}}, respectively. The \textcolor{mymagenta}{dotted magenta line \rule{0.25cm}{0.25cm}} indicates what $T_s$ tends towards on a short timescale.}
     \label{Short lin F figure}
 \end{figure}
+
+Interpretation is similar to before, with a few twists. On an $\mathcal{O}(\tau_s)$ timescale, $T_s$ equilibrates with a timescale of $\tau_s$ to its new equilibrium value, but this time its new equilibrium value is one where it increases linearly. Note again that this equilibrium value is completely ignorant of the timescale $\tau_s$ or the heat capacity $C_s$. As before, $T_d$ remains constant, but its effect is still encoded in the timescale $\tau_s$ and the parameters $\gamma$ and $\lambda'$.
 
 On long timescales:
 \begin{align*}
