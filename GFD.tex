@@ -780,7 +780,7 @@ If $Ro\ll 1$ and all other forces are negligible, then rotation dominates dynami
         \label{Geo Bal}
         \BOX{f\vec{k}\times\vec{u}_h=-\frac{1}{\rho}\vec{\nabla}_hp}
     \end{align}
-    This results in a velocity field determined by the pressure gradient as follows (Exercise: Show that Equation \ref{Geostrophic Balance} satisfies Equation \ref{Geo Bal} for any arbitrary pressure field $p$):
+    This results in a velocity field determined by the pressure gradient as follows (Exercise: Show that Equation \ref{Geostrophic Balance} satisfies Equation \ref{Geo Bal} for any arbitrary pressure field $p$ if we assume $\vec{\nabla}_hf=0$):
     \begin{align}\label{Geostrophic Balance}
         \boxed{\vec{u}_h=\frac{1}{\rho f}\vec{k}\times\vec{\nabla}_hp}
     \end{align}
@@ -1036,7 +1036,7 @@ Now we estimate each term in the final brackets in the final equation:
     \biggr)
 \end{align*}
 
-So we see that even though horizontal temperature gradients $\vec{\nabla}_h T$ are typically $1000$ times weaker than vertical temperature gradients $\frac{\partial T}{\partial z}$ (recall that temperature temperature gradients roughly follow the Lapse Rate in Equation \ref{Dry Adiabatic Lapse Rate}), it is the term that features the horizontal temperature gradient that ends up begin much larger than the term that features the vertical temperature gradient. We would not be able to make this approximation if the planet rotated much faster ($f$ were larger) or if typical horizontal gradients were much smaller ($\vec{\nabla}_h T$ were smaller)\footnote{Although, we while $f$ is a parameter set by the property of the planet, we expect $\vec{\nabla}_h T$ to be set by the dynamics, so whether/where this obtains on our planet is a bit more compliated.}.
+So we see that even though horizontal temperature gradients $\vec{\nabla}_h T$ are typically $1000$ times weaker than vertical temperature gradients $\frac{\partial T}{\partial z}$ (recall that temperature temperature gradients roughly follow the Lapse Rate in Equation \ref{Dry Adiabatic Lapse Rate}), it is the term that features the horizontal temperature gradient that ends up begin much larger than the term that features the vertical temperature gradient. We would not be able to make this approximation if the planet rotated much faster ($f$ were larger) or if typical horizontal gradients were much smaller ($\vec{\nabla}_h T$ were smaller)\footnote{Although, while $f$ is a parameter set by the planet and not the fluid, we expect $\vec{\nabla}_h T$ to be set by the dynamics governing the fluid, so whether/where this obtains is a bit more compliated.}.
 
 As such, we neglect\footnote{
     We do not actually have to neglect this term when we derive these equations in pressure coordinates!
@@ -1626,7 +1626,7 @@ As this column of fluid is advected around, it must conserve its angular momentu
         %\fill [gray,opacity=0.5] (-1,0) -- (-1,-3.5) arc (180:360:1 and 0.5) -- (1,0) arc (0:180:1 and -0.5);
     \end{scope}
     \end{tikzpicture}
-    \caption{Intuition behind the Conservation of Potential Vorticity. When the fluid column gets stretched verticall (i.e., $h$ increases), the fluid must rotate (\textcolor{mymagenta}{magenta arrows \rule{0.2cm}{0.2cm}}) faster, and vice versa.}
+    \caption{Intuition behind the Conservation of Potential Vorticity. When the fluid column gets stretched vertically (i.e., $h$ increases), the fluid must rotate (\textcolor{mymagenta}{magenta arrows \rule{0.2cm}{0.2cm}}) faster, and vice versa.}
 \end{figure}
 
 \section{A Brief Primer on Waves}
@@ -1952,22 +1952,15 @@ To explain this, let us consider the mechanism for how this wave sustains itself
 
 Since $c_g=0$, \textbf{long-wave} Poincaré waves cannot transport energy, so in general this will not be the mechanism for propagation of long length-scale anomalies. We must turn to other mechanisms to explain this.
 
-\subsubsection{Energetics}
+\subsubsection{Explicit Solutions: Fluid Parcel Trajectories}
 
-We now wish to find the $KE$ (Kinetic Energy per unit area) and $APE$ (Available Potential Energy per unit area) of this wave. To do this, we must first find $u_0$ and $v_0$ in terms of $\eta_0$ (we cannot solve for all three constants, as this will depend on properties of the initial perturbation, and we wish to keep analysis here general). Refering back to Equation \ref{Matrix Poincare}, we find (after some algebra) that the following obtains:
+We now wish to find explicit solutions for $\eta=\eta'$ and $\vec{u}_h=\vec{u}'$. To do this, we must first find $u_0$ and $v_0$ in terms of $\eta_0$ (we cannot solve for all three constants, as this will depend on properties of the initial perturbation, and we wish to keep analysis here general). Refering back to Equation \ref{Matrix Poincare}, we find (after some algebra) that the following obtains:
 \begin{align*}
     &u_0 = \frac{\omega}{kH}\eta_0
     \\
     &v_0 = \frac{f}{kH}e^{-\frac{i\pi}{2}}\eta_0
 \end{align*}
-
-
-
-[UNDER CONSTRUCTION]
-
-\subsubsection{Explicit Solutions: Fluid Parcel Trajectories}
-
-Taking only the real part of our solutions for $\eta'$ and $\vec{u}'$ implies that the following hold:
+Next, we take only the real part of our solutions for $\eta'$ and $\vec{u}'$ (since heights and velocities must be real) to find the following expressions:
 \begin{align*}
     &\eta' = \eta_0 \cos(ikx-i\omega t)
     \\
@@ -1976,7 +1969,66 @@ Taking only the real part of our solutions for $\eta'$ and $\vec{u}'$ implies th
     &v' = \frac{f}{kH}\eta_0 \sin(ikx-i\omega t)
 \end{align*}
 
+Let's examine some behaviour. Both $u'$ and $v'$ scale inversely with $kH$, so as the vertical wavelength increases (i.e., $k$ decreases) or the layer thickness decreases so too does $u'$ and $v'$ for a given surface height anomaly $\eta_0$. 
+
+$u'$ scales with $\omega$, while $v'$ scales with $f$. This asymmetry is because we are only considering $\vec{k}=(k,0)^T$ (i.e., $l=0$), so the velocity \textit{parallel} to the direction of $\vec{k}$ scales as $\omega$ while the velocity \textit{perpendicular} to $\vec{k}$ scales as $f$. Now $\omega\geq f$ for all $k$ (refer back to the \hyperref[IG SW Box]{dispersion relation}), so $u'>v'$ always. In the shortwave limit ($k\gg 1/L_d$) especially, where the wave is essentially just a \textbf{gravity wave} which feels little effect of rotation, $u'\gg v'$, and so the velocity is almost completely in the direction of propagation.
+
+Finally, a quick rearrangement of $u'$ and $v'$ shows the following:
+\begin{align*}
+    \frac{u'^2}{\omega^2}
+    +
+    \frac{v'^2}{f^2}
+    =
+    \left( \frac{\eta_0}{kH} \right)^2
+\end{align*}
+The $u'$ and $v'$ therefore trace out an ellipse!
+
+\subsubsection{Energetics}
+
+We now wish to investigate the energy in these waves. To do this, we calculate $\bar{KE}$ and $\bar{APE}$, the kinetic and available potential energies (respectively) \textit{averaged} spatially over a wavelength and temporally over a period:
+\begin{align*}
+    \bar{KE}=\frac{1}{T}\frac{1}{L_x}\frac{1}{L_y}
+    \int_{0}^{T}
+    \int_{0}^{L_x}
+    \int_{0}^{L_y}
+    \underbrace{\left( \frac{1}{2}\rho_0
+    h
+    u_h^2 \right)}_{KE}
+    \,dx\,dy\,dt
+    \\
+    \bar{PE}=\frac{1}{T}\frac{1}{L_x}\frac{1}{L_y}
+    \int_{0}^{T}
+    \int_{0}^{L_x}
+    \int_{0}^{L_y}
+    \underbrace{\left( \frac{1}{2}\rho_0
+    g
+    \eta^2 \right)}_{PE}
+    \,dx\,dy\,dt
+\end{align*}
+where $T=\frac{2\pi}{\omega}$, $L_x=\frac{2\pi}{k}$, and $L_y=\frac{2\pi}{k}$.
+
+For simplicity, again, we assume that $l=0$, such that the meridional wavelength is infinite, i.e., there is no dependence on $y$. As such, the integral with respect to $y$ simply cancels out with the $1/L_y$. Furthermore, since $\eta'$ and $\vec{u}_h'$ are small, we linearise such that the $h$ in the $\bar{PE}$ expression becomes a constant $H$:
+\begin{align*}
+    \bar{KE}=\frac{1}{T}\frac{1}{L_x}
+    \frac{1}{2}\rho_0
+    H
+    \int_{0}^{T}
+    \int_{0}^{L_x}
+    u_h^2
+    \,dx\,dy\,dt
+    \\
+    \bar{PE}=\frac{1}{T}\frac{1}{L_x}
+    \frac{1}{2}\rho_0
+    g
+    \int_{0}^{T}
+    \int_{0}^{L_x}
+    \eta^2
+    \,dx\,dy\,dt
+\end{align*}
+
 [UNDER CONSTRUCTION]
+
+
 
 
 \section{Rossby Waves}
