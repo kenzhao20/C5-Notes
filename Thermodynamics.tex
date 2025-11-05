@@ -232,17 +232,17 @@ For the Earth (excercise: consider only Nitrogen, Oxygen, and Argon), $\bar{M}\a
 \section{Heat Capacity and the Equipartition Theorem}\label{Equipartition}
 
 The heat capacity of an object is a measure of how much heat (which has dimensions of energy) is required to change an object's temperature. Let   $\dbar Q=$ the heat transferred to an object and $dT=$ the change in temperature of the object. Then the heat capacities of the object are:
-\begin{align}
+\begin{align*}
     c_v=\left(\frac{\dbar Q}{dT}\right)_V\\
     c_p=\left(\frac{\dbar Q}{dT}\right)_p
-\end{align}
+\end{align*}
 where the subscripts of $V$ and $p$ mean that the volume and pressure, respectively, are held constant as heat is added/removed from the system. Notationally, when we write $c_v$ or $c_p$, we usually mean the specific heat capacities: the heat capacities per mole or, more commonly, per mass. In exactly the same way as the specfic gas constant $R$, if not specified, assume that $c_p$ and $c_v$ denote the heat capacities \textit{per unit mass} (remember, \textit{intensive} variables!). For multiple constituents, we can calculate the specific heat capacities from molar heat capacities using the effective molar mass $\bar{M}$.
 
 It's useful to remember that the heat capacity itself often depends on the temperature. However, sometimes we'll assume that it does not for analytical progress (and not realism).
 
 It turns out, and one can derive this via statistical mechanics, that at high enough temperatures systems obey the Equipartition Theorem:
 \begin{align}
-    \label{Equipartition Eqn}
+    \label{eq Equipartition}
     \BOX{c_v\approx\frac{f}{2}R}
 \end{align}
 where $f=$ the number of \textit{fully excited} degrees of freedom an individual constituent has. So for a hot enough monatomic gas, $f=3$, since monatomic gases have $3$ translational degrees of freedom (forwards/backwards, up/down, right/left). For a hot enough linear diatomic gas (as seen in Fig. \ref{7DoF}), $f=7$, since diatomic gases have $3$ translational degrees of freedom, $3$ rotational degrees of freedom (spinning about the $x,y,z$ axes), and $2$ vibrational degrees of freedom\footnote{
@@ -368,7 +368,7 @@ In reality, the heat capacity \textit{per mole} (and \textit{not} per mass) at c
     \label{f=5}
 \end{figure}
 
-Of course, the \hyperref[Equipartition Eqn]{Equipartition Theorem} says nothing regarding situations in which a degree of freedom is not fully excited nor frozen out. We are (perhaps only by coincidence) lucky that the situation is relatively simple on Earth; since the temperature lies within a range such that certain degrees of freedom are very excited and others are very frozen, we can very easily explain and predict that the atmospheric heat capacity is approximately $5R^*/2$ using the \hyperref[Equipartition Eqn]{Equipartition Theorem}. However, you should be aware that the situation is not so simple on many other planetary atmospheres.
+Of course, the \hyperref[eq Equipartition]{Equipartition Theorem} says nothing regarding situations in which a degree of freedom is not fully excited nor frozen out. We are (perhaps only by coincidence) lucky that the situation is relatively simple on Earth; since the temperature lies within a range such that certain degrees of freedom are very excited and others are very frozen, we can very easily explain and predict that the atmospheric heat capacity is approximately $5R^*/2$ using the \hyperref[eq Equipartition]{Equipartition Theorem}. However, you should be aware that the situation is not so simple on many other planetary atmospheres.
 
 \section{Hydrostatic Balance}
 
@@ -405,11 +405,14 @@ First note that $\rho,g>0$, so $\frac{dp}{dz}<0$ always. This means that $p$ is 
 We will consistently be plotting atmospheric properties (e.g., humidity) in pressure coordinates (as opposed to height coordinates) throughout this course. This is for three reasons. First, it is much easier for instruments to measure the pressure than the height. In fact, this is how airplanes measure `barometric' height using a pressure altimeter \cite{Altimeter}. Second, most problems we encounter will require only knowledge of a variable's dependence on pressure. Third, pressure is a fundamental thermodynamic variable, and as such also gives us information regarding the thermodynamic properties of the system, as well as the (rough) height. We convert to pressure coordinates explicitly in Section \ref{Pressure Coords}.
 
 Second, note that if we rewrite Eqn. \ref{Hydrostatic Balance} in differential form, we get a very useful relation between the difference in pressure between two vertically separated points, and the mass per unit area within that layer.
-\begin{align}\label{Hydrostatic Differential}
-    dp& =-g(\rho\, dz) \\
-    & = -g \,dm\nonumber
-\end{align}
-where $dm=\rho\,dz$ is the mass per unit area within that layer. Therefore (integrating), we get that the pressure difference $\Delta p$ between the bottom and top of a layer of atmosphere is directly proportional to the mass per unit area within that layer. Take a moment to appreciate this: we can measure the mass of a layer of atmosphere by only measuring the pressure difference between the top and the bottom! Integrating Equation \ref{Hydrostatic Differential} from the bottom of the atmosphere ($p=p_s,m=0$) to the top of the atmosphere ($p=0,m=m_{tot}$) (and assuming that variation in $g$ is negligible) gives us:
+\begin{equation}
+    \label{eq Hydrostatic Differential}
+    \begin{aligned}
+        dp& =-g(\rho\, dz) \\
+        & = -g \,dm
+    \end{aligned}
+\end{equation}
+where $dm=\rho\,dz$ is the mass per unit area within that layer. Therefore (integrating), we get that the pressure difference $\Delta p$ between the bottom and top of a layer of atmosphere is directly proportional to the mass per unit area within that layer. Take a moment to appreciate this: we can measure the mass of a layer of atmosphere by only measuring the pressure difference between the top and the bottom! Integrating Equation \ref{eq Hydrostatic Differential} from the bottom of the atmosphere ($p=p_s,m=0$) to the top of the atmosphere ($p=0,m=m_{tot}$) (and assuming that variation in $g$ is negligible) gives us:
 \begin{align}\label{Total Mass Hydrostatic}
     m_{tot}=\frac{p_s}{g}
 \end{align}
@@ -707,19 +710,21 @@ We define the \textbf{Potential Temperature} $\theta$ as the temperature a parce
 \end{align}
 Recall that a few pages ago in our derivation of the \hyperref[Dry Adiabat]{Dry Adiabat} we found that:
 \begin{align}
-    \label{2.5}
+    \label{eq ds Dry Adiabat}
     ds=c_p\,d\left(\ln \left(T(p)^\frac{-R}{c_p}\right)\right)
 \end{align}
 
 Since the $\ln T(p)^\frac{-R}{c_p}$ term is within the differential, we can freely add and subtract constants within the differential, which corresponds to multiplying within the logarithm.\footnote{
-    Another way of looking at this is noting that $d \ln \left(\frac{1}{p_{ref}}\right)^\frac{-R}{c_p}=0$, and so we add $d \ln \left(\frac{1}{p_{ref}}\right)^\frac{-R}{c_p}=0$ to both sides to go from \ref{2.5} to \ref{2.6}.
+    Another way of looking at this is noting that $d \ln \left(\frac{1}{p_{ref}}\right)^\frac{-R}{c_p}=0$, and so we add $d \ln \left(\frac{1}{p_{ref}}\right)^\frac{-R}{c_p}=0$ to both sides to go from \ref{eq ds Dry Adiabat} to \ref{eq ds Dry Adiabat ref}.
 } We get then that:
-\begin{align}
-    \label{2.6}
-    ds&=c_p\,d\ln T\left(\frac{p}{p_{ref}}\right)^\frac{-R}{c_p}
-    \\
-    &=c_p\,d\ln\theta
-\end{align}
+\begin{equation}
+    \label{eq ds Dry Adiabat ref}
+    \begin{aligned}
+        ds&=c_p\,d\ln T\left(\frac{p}{p_{ref}}\right)^\frac{-R}{c_p}
+        \\
+        &=c_p\,d\ln\theta
+    \end{aligned}
+\end{equation}
 
 As you can see, if $ds=0$, as we assumed during convection, then $d\theta=0$. Therefore, as we lift or drop a parcel, $\theta$ is \hyperref[Material Conservation]{materially conserved}.\footnote{In the Ocean, even without radiative heating processes, $\theta$ is not conserved. This is because there is a third thermodynamic state variable, salinity, which will change the temperature of sea water without adding any heat. Oceanographers have come up with another kind of materially conserved temperature in the ocean: \textit{Conservative Temperature}.}
 
@@ -1051,7 +1056,7 @@ Therefore the total energy per unit area is:
 \begin{align*}
     E=\frac{1}{g}\int_{p_1}^{p_0}\left(u+\frac{p}{\rho} \right)\,dp+(z_0p_0-z_1p_1)
 \end{align*}
-We make a final, fourth assumption here that the pressure at the bottom $p_0$ and top $p_1$ of the column is unchanged between the final and initial states. This is ensured if we assume the entire column (inside and outside the column under consideration) is in hydrostatic balance and the mass of the air above, within, and below the column under consideration is unchanged (recall \ref{Hydrostatic Differential}). The change in energy $\Delta E$ between the final and initial states is then:
+We make a final, fourth assumption here that the pressure at the bottom $p_0$ and top $p_1$ of the column is unchanged between the final and initial states. This is ensured if we assume the entire column (inside and outside the column under consideration) is in hydrostatic balance and the mass of the air above, within, and below the column under consideration is unchanged (recall \ref{eq Hydrostatic Differential}). The change in energy $\Delta E$ between the final and initial states is then:
 \begin{align}
     \label{Delta E 1}
     \Delta E = \frac{1}{g}\Delta \int_{p_1}^{p_0}h\,dp + p_0 \Delta z_0 - p_1 \Delta z_1
