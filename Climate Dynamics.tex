@@ -597,15 +597,116 @@ So far we have only written the solution in terms of $F_{ext}(t)$, the external 
 
 [UNDER CONSTRUCTION]
 
-\section{Analogous Systems}
+\section{Analogous Systems: The Carbon Cycle}
 
-We can apply this to similar systems. Consider, for example, a carbon budget equation, given by:
+We can apply the previous method to similar systems. Consider, for example, a carbon budget equation, given by:
 \begin{align}
     R_a \dot{C_a} &= E(t)-r (C_a-C_b) \\ 
     R_b \dot{C_b} &= r (C_a-C_b) - s (C_b-C_d)\\
     R_d \dot{C_d} &=  s (C_b-C_d)
 \end{align}
-where $C_a,C_b,C_d$ are the effective CO$_2$ anomalies in the atmosphere, biosphere/surface-ocean, and deep ocean, respectively. The left hand side is the change in CO$_2$ concentrations, and the right-hand side are carbon fluxes. It's typically the case that $R_d\gg R_b\gg R_a$ due to similar reasons as before, as well as a bit of ocean chemistry. We can use the exact same method as before to define three timescales:
+where $C_a,C_b,C_d$ are the effective CO$_2$ anomalies in the atmosphere, biosphere/surface-ocean, and deep ocean, respectively. The left hand side is the change in CO$_2$ concentrations, and the right-hand side are carbon fluxes. It's typically the case that $R_d\gg R_b\gg R_a$ due to similar reasons as before, as well as a bit of ocean chemistry. 
+
+\begin{figure}[H]
+\begin{tabular}{|p{2.8cm}|p{13.4cm}|}
+\hline
+    Term & Interpretation \\
+\hline
+\hline
+$E(t)$ & The perturbation in CO$_2$ concentrations due to emissions from human or natural.\\
+\hline
+$-r(C_a-C_b)$ & The CO$_2$ flux from the atmosphere into the biosphere/surface-ocean. \\ 
+\hline
+$-s(C_b-C_d)$ & The CO$_2$ flux from the biosphere/surface-ocean into the deep ocean. Similar to temperature, this term is typically small.\\
+\hline
+\end{tabular}
+\end{figure}
+
+We can use the exact same methods as before to solve/understand this system. The first (official but more long-winded) method is to write this in terms of a matrix equation and diagonalise the matrix:
+\begin{align}
+    \left( \begin{array}{c}
+        \dot{C}_a \\\\ 
+        \dot{C}_b \\\\
+        \dot{C}_d
+    \end{array} 
+    \right)
+    =
+    \left( \begin{array}{ccc}
+        -\frac{r}{R_a} & \frac{r}{R_a} & 0
+        \\\\
+        \frac{r}{R_b} & -\frac{r+s}{R_b} & \frac{s}{R_b}
+        \\\\
+        0 & \frac{s}{R_d} & -\frac{s}{R_d}
+    \end{array}
+    \right)
+    \left(  \begin{array}{c}
+        {C}_a \\\\ 
+        {C}_b \\\\
+        {C}_d
+    \end{array}
+    \right)
+    +
+    \left( \begin{array}{c}
+        E(t)/R_a \\\\ 
+        0 \\\\
+        0
+    \end{array}
+    \right)
+\end{align}
+However, I'll mainly focus on the second method, and plot the response of the system to a linear injection of CO$_2$ into the atmosphere (i.e., we let $E(t)=0$ for $t<0$ and $E(t)=at$ for $t\geq 0$).
+
+\subsubsection{The Short Timescale Response}
+
+The short timescale response is found by setting $C_b\approx C_d\approx 0$, because both $C_b$ and $C_d$ respond very slowly on this timescale (since $R_d, R_b\gg R_a$). The response of the system is set by the timescale $t_a\sim\mathcal{O}\left(\frac{R_a}{r}\right)$, and $C_a(t)$, $C_b(t)$, and $C_d(t)$ evolve according to the following equations:
+
+\begin{align*}
+    &R_a \dot{C_a} = E(t)-r C_a
+    \\
+    &C_b = 0
+    \\
+    &C_d = 0
+\end{align*}
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[domain=0:4]
+        \draw[very thin,color=gray] (-0.1,-0.1) grid (3.9,3.9);
+        \draw[->] (-0.2,0) -- (4.2,0) node[right] {$t$};
+        \draw[->] (0,-0.2) -- (0,4.2) node[above] {$T$};
+        \draw[dashed,thick,myorange] plot (\x,{0}) node[below] {$T_d(t)=0$};
+        \draw[domain=4:0,dotted,thick,mymagenta] plot (\x,{1}) node[left] {$\frac{F}{\lambda+\lambda'+\gamma}$};
+        \draw[color=mydarkblue,ultra thick] plot (\x,{1-exp(-\x)}) node[below] {$T_s(t) = \frac{F}{\lambda+\lambda'+\gamma}\left( 1-e^{-\frac{t}{\tau_s}} \right)$};
+        \node[] at (1,-0.3) {$\tau_s$};
+    \end{tikzpicture}
+    \caption{The short timescale response of the system subject to constant forcing. The response of $T_s$ and $T_d$ are drawn as a \textcolor{mydarkblue}{filled blue line \rule{0.25cm}{0.25cm}} and \textcolor{myorange}{dashed orange line \rule{0.25cm}{0.25cm}}, respectively. The \textcolor{mymagenta}{dotted magenta line \rule{0.25cm}{0.25cm}} indicates what $T_s$ tends towards on a short timescale.}
+    \label{fig Short E}
+\end{figure}
+
+\subsubsection{The Medium Timescale Response}
+
+The medium timescale response is found by setting $\dot{C_b} \approx\dot{C_a} \approx 0$, because both  We make the first approximation because $C_d$ responds very slowly on this timescale (since $R_d\gg R_b$), and we make the second approximation because $C_a$ evolves rapidly into equilibrium with $C_b$ on this timescale (since $R_a\ll R_b$), and proceeds to evolve quasi-steadily. The response of the system is set by the timescale $t_b\sim\mathcal{O}\left(\frac{R_b}{s}\right)$, and $C_a(t)$, $C_b(t)$, and $C_d(t)$ evolve according to the following equations:
+\begin{align*}
+    C_a(t)\approx C_b(t)+\frac{E(t)}{r}
+    \\
+    R_b \dot{C_b}=E(t)-sC_b
+    \\
+    C_d = 0
+\end{align*}
+
+\subsubsection{The Long Timescale Response}
+
+The medium timescale response is found by setting $C_b\approx 0$ and $\dot{C_a} \approx 0$ because foth $C_d$ and $C_a$ evolve rapidly into equilibrium with $C_d$ on this timescale (since $R_a,R_b\ll R_d$), and proceed to evolve quasi-steadily. $C_a(t)$, $C_b(t)$, and $C_d(t)$ evolve according to the following equations:
+\begin{align*}
+    C_a(t)\approx C_b(t)+\frac{E(t)}{r}
+    \\
+    R_b \dot{C_b}=E(t)-sC_b
+    \\
+    C_d = 0
+\end{align*}
+
+The timescale for which this system responds is a bit more complicated 
+The response of the system is set by the timescale $t_b\sim\mathcal{O}\left(\frac{R_b}{s}\right)$, and 
+
 \begin{enumerate}
     \item A short timescale ($t_a\sim\mathcal{O}\left(\frac{R_a}{r}\right)$):  We set $C_b\approx C_d\approx 0$, as $C_b,C_d$ respond very slowly. $C_a$ evolves according to $R_a \dot{C_a} = E(t)-r C_a$.
     \item A medium timescale ($t_b\sim\mathcal{O}\left(\frac{R_b}{s}\right)$): We set $C_d \approx 0$ since $C_d$ responds very slowly, and we set $\dot{C_a} \approx 0$ as $C_a$ evolves rapidly into equilibrium with $C_b$. We then get that $C_a(t)$ evolves quasi-steadily ($C_a(t)\approx C_b(t)+\frac{E(t)}{r}$) and $C_b$ evolves according to $R_b \dot{C_b}=E(t)-sC_b$.
