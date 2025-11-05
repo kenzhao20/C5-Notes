@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.6.26)  5 NOV 2025 16:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.6.26)  5 NOV 2025 16:34
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -2777,37 +2777,37 @@ File: UTF8.enc 2021/10/16 4.8.5
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.chr
 File: UTF8.chr 2021/10/16 4.8.5
 )
-LaTeX Font Info:    Trying to load font information for OMS+cmtt on input line 737.
-LaTeX Font Info:    No file OMScmtt.fd. on input line 737.
+LaTeX Font Info:    Trying to load font information for OMS+cmtt on input line 731.
+LaTeX Font Info:    No file OMScmtt.fd. on input line 731.
 
 LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbackslash' on input line 737.
+(Font)              for symbol `textbackslash' on input line 731.
 
-LaTeX Font Info:    Trying to load font information for C70+min on input line 737.
+LaTeX Font Info:    Trying to load font information for C70+min on input line 731.
 (/usr/local/texlive/2025/texmf-dist/tex/latex/cjk/contrib/wadalab/c70min.fd
 File: c70min.fd 2021/10/16 4.8.5
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/cjk/contrib/wadalab/c70min.fdx
 File: c70min.fdx 2021/10/16 4.8.5
 )
 
-LaTeX Warning: Reference `Jac' on page 99 undefined on input line 739.
+LaTeX Warning: Reference `Jac' on page 99 undefined on input line 733.
 
 
 
 
-LaTeX Warning: Reference `dx' on page 100 undefined on input line 773.
+LaTeX Warning: Reference `dx' on page 100 undefined on input line 767.
 
 
-LaTeX Warning: Reference `dx' on page 100 undefined on input line 777.
+LaTeX Warning: Reference `dx' on page 100 undefined on input line 771.
 
 
 
 
-LaTeX Warning: Reference `ATA Eigenequation' on page 101 undefined on input line 794.
+LaTeX Warning: Reference `ATA Eigenequation' on page 101 undefined on input line 788.
 
 
-LaTeX Warning: Hyper reference `Lin Alg' on page 101 undefined on input line 794.
+LaTeX Warning: Hyper reference `Lin Alg' on page 101 undefined on input line 788.
 
 
 
@@ -3674,11 +3674,11 @@ Package logreq Info: Writing requests to 'tikz/main-figure21.run.xml'.
 Here is how much of TeX's memory you used:
  45963 strings out of 473190
  973492 string characters out of 5715800
- 1591563 words of memory out of 5000000
+ 1592563 words of memory out of 5000000
  68501 multiletter control sequences out of 15000+600000
  577387 words of font info for 109 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 120i,25n,124p,1415b,1925s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 120i,25n,124p,1415b,1924s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
 Output written on tikz/main-figure21.pdf (1 page, 80922 bytes).
 PDF statistics:

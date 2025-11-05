@@ -653,21 +653,33 @@ We can use the exact same methods as before to solve/understand this system. The
     \end{array}
     \right)
 \end{align}
-However, I'll mainly focus on the second method, and plot the response of the system to a linear injection of CO$_2$ into the atmosphere (i.e., we let $E(t)=0$ for $t<0$ and $E(t)=at$ for $t\geq 0$).
+However, I'll mainly focus on the second method here. I'll also plot the responses to a constant injection of CO$_2$ into the atmosphere (i.e., we consider the case where $E(t)=E_0=const$).
 
 \subsubsection{The Short Timescale Response}
 
 The short timescale response is found by setting $C_b\approx C_d\approx 0$, because both $C_b$ and $C_d$ respond very slowly on this timescale (since $R_d, R_b\gg R_a$). The response of the system is set by the timescale $t_a\sim\mathcal{O}\left(\frac{R_a}{r}\right)$, and $C_a(t)$, $C_b(t)$, and $C_d(t)$ evolve according to the following equations:
 
-\begin{align*}
-    &R_a \dot{C_a} = E(t)-r C_a
-    \\
-    &C_b = 0
-    \\
-    &C_d = 0
-\end{align*}
 
 \begin{figure}[H]
+\centering
+\begin{subfigure}{0.48\linewidth}
+    \begin{align*}
+        &R_a \dot{C_a} = E(t)-r C_a
+        \\
+        &C_b = 0
+        \\
+        &C_d = 0
+    \end{align*}
+
+    For $E=E_0$:
+    \begin{align*}
+        C_a(t) = \frac{E_0}{r}\left( 1-e^{-\frac{t}{\tau_a}} \right)
+        \\
+        \tau_a = \frac{R_a}{r}
+    \end{align*}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.48\linewidth}
     \centering
     \begin{tikzpicture}[domain=0:4]
         \draw[very thin,color=gray] (-0.1,-0.1) grid (3.9,3.9);
@@ -678,6 +690,7 @@ The short timescale response is found by setting $C_b\approx C_d\approx 0$, beca
         \draw[color=mydarkblue,ultra thick] plot (\x,{1-exp(-\x)}) node[below] {$T_s(t) = \frac{F}{\lambda+\lambda'+\gamma}\left( 1-e^{-\frac{t}{\tau_s}} \right)$};
         \node[] at (1,-0.3) {$\tau_s$};
     \end{tikzpicture}
+\end{subfigure}
     \caption{The short timescale response of the system subject to constant forcing. The response of $T_s$ and $T_d$ are drawn as a \textcolor{mydarkblue}{filled blue line \rule{0.25cm}{0.25cm}} and \textcolor{myorange}{dashed orange line \rule{0.25cm}{0.25cm}}, respectively. The \textcolor{mymagenta}{dotted magenta line \rule{0.25cm}{0.25cm}} indicates what $T_s$ tends towards on a short timescale.}
     \label{fig Short E}
 \end{figure}
@@ -686,37 +699,99 @@ The short timescale response is found by setting $C_b\approx C_d\approx 0$, beca
 
 The medium timescale response is found by setting $\dot{C_b} \approx\dot{C_a} \approx 0$, because both  We make the first approximation because $C_d$ responds very slowly on this timescale (since $R_d\gg R_b$), and we make the second approximation because $C_a$ evolves rapidly into equilibrium with $C_b$ on this timescale (since $R_a\ll R_b$), and proceeds to evolve quasi-steadily. The response of the system is set by the timescale $t_b\sim\mathcal{O}\left(\frac{R_b}{s}\right)$, and $C_a(t)$, $C_b(t)$, and $C_d(t)$ evolve according to the following equations:
 \begin{align*}
-    C_a(t)\approx C_b(t)+\frac{E(t)}{r}
+    C_a(t)= C_b(t)+\frac{E(t)}{r}
     \\
     R_b \dot{C_b}=E(t)-sC_b
     \\
     C_d = 0
 \end{align*}
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{0.48\linewidth}
+    \begin{align*}
+        &R_a \dot{C_a} = E(t)-r C_a
+        \\
+        &C_b = 0
+        \\
+        &C_d = 0
+    \end{align*}
+
+    For $E=E_0$:
+    \begin{align*}
+        C_a(t) = \frac{E_0}{r}\left( 1-e^{-\frac{t}{\tau_a}} \right)
+        \\
+        \tau_a = \frac{R_a}{r}
+    \end{align*}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.48\linewidth}
+    \centering
+    \begin{tikzpicture}[domain=0:4]
+        \draw[very thin,color=gray] (-0.1,-0.1) grid (3.9,3.9);
+        \draw[->] (-0.2,0) -- (4.2,0) node[right] {$t$};
+        \draw[->] (0,-0.2) -- (0,4.2) node[above] {$T$};
+        \draw[dashed,thick,myorange] plot (\x,{0}) node[below] {$T_d(t)=0$};
+        \draw[domain=4:0,dotted,thick,mymagenta] plot (\x,{1}) node[left] {$\frac{F}{\lambda+\lambda'+\gamma}$};
+        \draw[color=mydarkblue,ultra thick] plot (\x,{1-exp(-\x)}) node[below] {$T_s(t) = \frac{F}{\lambda+\lambda'+\gamma}\left( 1-e^{-\frac{t}{\tau_s}} \right)$};
+        \node[] at (1,-0.3) {$\tau_s$};
+    \end{tikzpicture}
+\end{subfigure}
+    \caption{The short timescale response of the system subject to constant forcing. The response of $T_s$ and $T_d$ are drawn as a \textcolor{mydarkblue}{filled blue line \rule{0.25cm}{0.25cm}} and \textcolor{myorange}{dashed orange line \rule{0.25cm}{0.25cm}}, respectively. The \textcolor{mymagenta}{dotted magenta line \rule{0.25cm}{0.25cm}} indicates what $T_s$ tends towards on a short timescale.}
+    \label{fig Medium E}
+\end{figure}
 
 \subsubsection{The Long Timescale Response}
 
 The medium timescale response is found by setting $C_b\approx 0$ and $\dot{C_a} \approx 0$ because foth $C_d$ and $C_a$ evolve rapidly into equilibrium with $C_d$ on this timescale (since $R_a,R_b\ll R_d$), and proceed to evolve quasi-steadily. $C_a(t)$, $C_b(t)$, and $C_d(t)$ evolve according to the following equations:
 \begin{align*}
-    C_a(t)\approx C_b(t)+\frac{E(t)}{r}
+    C_a(t)= C_b(t)+\frac{E(t)}{r}
     \\
-    R_b \dot{C_b}=E(t)-sC_b
+    C_b(t) = C_d(t)+\frac{E(t)}{s}
     \\
-    C_d = 0
+    R_d\dot{C}_d = E(t)
 \end{align*}
 
-The timescale for which this system responds is a bit more complicated 
-The response of the system is set by the timescale $t_b\sim\mathcal{O}\left(\frac{R_b}{s}\right)$, and 
+\begin{figure}[H]
+\centering
+\begin{subfigure}{0.48\linewidth}
+    \begin{align*}
+        &R_a \dot{C_a} = E(t)-r C_a
+        \\
+        &C_b = 0
+        \\
+        &C_d = 0
+    \end{align*}
 
-\begin{enumerate}
-    \item A short timescale ($t_a\sim\mathcal{O}\left(\frac{R_a}{r}\right)$):  We set $C_b\approx C_d\approx 0$, as $C_b,C_d$ respond very slowly. $C_a$ evolves according to $R_a \dot{C_a} = E(t)-r C_a$.
-    \item A medium timescale ($t_b\sim\mathcal{O}\left(\frac{R_b}{s}\right)$): We set $C_d \approx 0$ since $C_d$ responds very slowly, and we set $\dot{C_a} \approx 0$ as $C_a$ evolves rapidly into equilibrium with $C_b$. We then get that $C_a(t)$ evolves quasi-steadily ($C_a(t)\approx C_b(t)+\frac{E(t)}{r}$) and $C_b$ evolves according to $R_b \dot{C_b}=E(t)-sC_b$.
-    \item A long timescale ($t_d\gg\mathcal{O}\left(\frac{R_b}{s}\right)$): We set $\dot{C_a}\approx \dot{C_b} \approx 0$ since $C_a,C_b$ evolve rapidly into equilibrium with $C_d$. We then get that $C_a(t)$ and $C_b(t)$ evolve quasi-steadily ($C_a(t)\approx C_b(t)+\frac{E(t)}{r}$ and $C_b(t)\approx C_d(t) +\frac{E(t)}{s}$), and $C_d$ evolves according to $R_d \dot{C_d}=E(t)$. Note that it is difficult to define a timescale here as from our second method – we cannot simply compare $C_d$ to $\dot{C_d}$. 
-    
-    If we defer to diagonalising the matrix, we find that the eigenvalue is $0$, and so the timescale is actually $t_d\sim\infty$! This reflects the fact that our carbon budget system is closed, and once you pump in carbon (represented by the $E(t)$ term), it has nowhere to go other than to stay in the system. As such, if $E(t)>0$ for all $t$, the system will never relax to a steady state, and $Ca$, $C_b$, and $C_d$ will all grow without bound.
+    For $E=E_0$:
+    \begin{align*}
+        C_a(t) = \frac{E_0}{r}\left( 1-e^{-\frac{t}{\tau_a}} \right)
+        \\
+        \tau_a = \frac{R_a}{r}
+    \end{align*}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.48\linewidth}
+    \centering
+    \begin{tikzpicture}[domain=0:4]
+        \draw[very thin,color=gray] (-0.1,-0.1) grid (3.9,3.9);
+        \draw[->] (-0.2,0) -- (4.2,0) node[right] {$t$};
+        \draw[->] (0,-0.2) -- (0,4.2) node[above] {$T$};
+        \draw[dashed,thick,myorange] plot (\x,{0}) node[below] {$T_d(t)=0$};
+        \draw[domain=4:0,dotted,thick,mymagenta] plot (\x,{1}) node[left] {$\frac{F}{\lambda+\lambda'+\gamma}$};
+        \draw[color=mydarkblue,ultra thick] plot (\x,{1-exp(-\x)}) node[below] {$T_s(t) = \frac{F}{\lambda+\lambda'+\gamma}\left( 1-e^{-\frac{t}{\tau_s}} \right)$};
+        \node[] at (1,-0.3) {$\tau_s$};
+    \end{tikzpicture}
+\end{subfigure}
+    \caption{The short timescale response of the system subject to constant forcing. The response of $T_s$ and $T_d$ are drawn as a \textcolor{mydarkblue}{filled blue line \rule{0.25cm}{0.25cm}} and \textcolor{myorange}{dashed orange line \rule{0.25cm}{0.25cm}}, respectively. The \textcolor{mymagenta}{dotted magenta line \rule{0.25cm}{0.25cm}} indicates what $T_s$ tends towards on a short timescale.}
+    \label{fig Long E}
+\end{figure}
 
-    If you wish to solve what happens in this system, I would recommend doing the returning quasi-steady method, and solving the single ODE governing $C_d$ (assuming that $C_a$ and $C_b$ are quasisteady). 
-\end{enumerate}
-This system, again, may be solved by finding eigenvalues and eigenvectors. 
+It is difficult to define a timescale here using the second method – we cannot simply compare $C_d$ to $\dot{C_d}$. 
+
+If we defer to diagonalising the matrix, we find that the corresponding eigenvalue for this normal mode is $0$, and so the timescale is actually $t_d\sim\infty$! This reflects the fact that our carbon budget system is closed, and once you pump in carbon (represented by the $E(t)$ term), it has nowhere to go other than to stay in the system. As such, if $E(t)>0$ for all $t$, the system will never relax to a steady state, and $Ca$, $C_b$, and $C_d$ will all grow without bound.
+
+This system, again, may be solved by finding eigenvalues and eigenvectors, butnI would recommend doing the second quasi-steady method, and solving the single ODE governing $C_d$ (assuming that $C_a$ and $C_b$ are quasisteady). 
 
 \chapter{Predictability}\label{Predictability}
 

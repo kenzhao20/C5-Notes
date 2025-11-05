@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.6.26)  5 NOV 2025 16:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.6.26)  5 NOV 2025 16:47
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -2764,6 +2764,10 @@ Overfull \hbox (2.43767pt too wide) in paragraph at lines 611--623
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 
 
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to disable this.
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to disable this.
+
+
 
 
 Chapter 13.
@@ -2774,37 +2778,37 @@ File: UTF8.enc 2021/10/16 4.8.5
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.chr
 File: UTF8.chr 2021/10/16 4.8.5
 )
-LaTeX Font Info:    Trying to load font information for OMS+cmtt on input line 737.
-LaTeX Font Info:    No file OMScmtt.fd. on input line 737.
+LaTeX Font Info:    Trying to load font information for OMS+cmtt on input line 812.
+LaTeX Font Info:    No file OMScmtt.fd. on input line 812.
 
 LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbackslash' on input line 737.
+(Font)              for symbol `textbackslash' on input line 812.
 
-LaTeX Font Info:    Trying to load font information for C70+min on input line 737.
+LaTeX Font Info:    Trying to load font information for C70+min on input line 812.
 (/usr/local/texlive/2025/texmf-dist/tex/latex/cjk/contrib/wadalab/c70min.fd
 File: c70min.fd 2021/10/16 4.8.5
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/cjk/contrib/wadalab/c70min.fdx
 File: c70min.fdx 2021/10/16 4.8.5
 )
 
-LaTeX Warning: Reference `Jac' on page 99 undefined on input line 739.
+LaTeX Warning: Reference `Jac' on page 100 undefined on input line 814.
 
 
 
 
-LaTeX Warning: Reference `dx' on page 100 undefined on input line 773.
+LaTeX Warning: Reference `dx' on page 101 undefined on input line 848.
 
 
-LaTeX Warning: Reference `dx' on page 100 undefined on input line 777.
+LaTeX Warning: Reference `dx' on page 101 undefined on input line 852.
 
 
 
 
-LaTeX Warning: Reference `ATA Eigenequation' on page 101 undefined on input line 794.
+LaTeX Warning: Reference `ATA Eigenequation' on page 102 undefined on input line 869.
 
 
-LaTeX Warning: Hyper reference `Lin Alg' on page 101 undefined on input line 794.
+LaTeX Warning: Hyper reference `Lin Alg' on page 102 undefined on input line 869.
 
 
 
@@ -2819,31 +2823,31 @@ Chapter 14.
 (./GFD.tex
 
 
-LaTeX Warning: Hyper reference `Prelim GFD' on page 106 undefined on input line 10.
+LaTeX Warning: Hyper reference `Prelim GFD' on page 107 undefined on input line 10.
 
 
-LaTeX Warning: Hyper reference `VC box' on page 106 undefined on input line 13.
+LaTeX Warning: Hyper reference `VC box' on page 107 undefined on input line 13.
 
 
-LaTeX Warning: Hyper reference `VC Interp' on page 106 undefined on input line 13.
+LaTeX Warning: Hyper reference `VC Interp' on page 107 undefined on input line 13.
 
 
-LaTeX Warning: Hyper reference `EoM GFD' on page 106 undefined on input line 16.
+LaTeX Warning: Hyper reference `EoM GFD' on page 107 undefined on input line 16.
 
 
-LaTeX Warning: Hyper reference `Dia Relations' on page 106 undefined on input line 22.
+LaTeX Warning: Hyper reference `Dia Relations' on page 107 undefined on input line 22.
 
 
-LaTeX Warning: Reference `Climate Dynamics' on page 106 undefined on input line 27.
+LaTeX Warning: Reference `Climate Dynamics' on page 107 undefined on input line 27.
 
 
-LaTeX Warning: Hyper reference `Shallow Water System' on page 106 undefined on input line 30.
+LaTeX Warning: Hyper reference `Shallow Water System' on page 107 undefined on input line 30.
 
 
-LaTeX Warning: Hyper reference `3D Systems' on page 106 undefined on input line 38.
+LaTeX Warning: Hyper reference `3D Systems' on page 107 undefined on input line 38.
 
 
-LaTeX Warning: Hyper reference `Oceans' on page 106 undefined on input line 46.
+LaTeX Warning: Hyper reference `Oceans' on page 107 undefined on input line 46.
 
 
 
@@ -2855,129 +2859,129 @@ A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 
 
 
-LaTeX Warning: Reference `Div Thm' on page 109 undefined on input line 214.
+LaTeX Warning: Reference `Div Thm' on page 110 undefined on input line 214.
 
 
-LaTeX Warning: Reference `Div Thm' on page 109 undefined on input line 214.
+LaTeX Warning: Reference `Div Thm' on page 110 undefined on input line 214.
 
 
-LaTeX Warning: Hyper reference `Dry Adiabat' on page 109 undefined on input line 257.
+LaTeX Warning: Hyper reference `Dry Adiabat' on page 110 undefined on input line 257.
 
 
-LaTeX Warning: Hyper reference `Material Derivative' on page 109 undefined on input line 259.
+LaTeX Warning: Hyper reference `Material Derivative' on page 110 undefined on input line 259.
 
 
-LaTeX Warning: Hyper reference `Material Derivative' on page 109 undefined on input line 264.
+LaTeX Warning: Hyper reference `Material Derivative' on page 110 undefined on input line 264.
 
 
-LaTeX Warning: Reference `Material Derivative' on page 109 undefined on input line 266.
+LaTeX Warning: Reference `Material Derivative' on page 110 undefined on input line 266.
 
 
 
 
-LaTeX Warning: Hyper reference `Material Conservation' on page 110 undefined on input line 275.
+LaTeX Warning: Hyper reference `Material Conservation' on page 111 undefined on input line 275.
 
 
-LaTeX Warning: Hyper reference `Material Conservation' on page 110 undefined on input line 277.
+LaTeX Warning: Hyper reference `Material Conservation' on page 111 undefined on input line 277.
 
 
-LaTeX Warning: Reference `Material Conservation' on page 110 undefined on input line 281.
+LaTeX Warning: Reference `Material Conservation' on page 111 undefined on input line 281.
 
 
-LaTeX Warning: Reference `MatDerivTerms' on page 110 undefined on input line 281.
+LaTeX Warning: Reference `MatDerivTerms' on page 111 undefined on input line 281.
 
 
-LaTeX Warning: Reference `Energy Equation' on page 110 undefined on input line 283.
+LaTeX Warning: Reference `Energy Equation' on page 111 undefined on input line 283.
 
 
-LaTeX Warning: Hyper reference `Potential Temperature' on page 110 undefined on input line 283.
+LaTeX Warning: Hyper reference `Potential Temperature' on page 111 undefined on input line 283.
 
 
-LaTeX Warning: Reference `Energy Equation' on page 110 undefined on input line 283.
+LaTeX Warning: Reference `Energy Equation' on page 111 undefined on input line 283.
 
 
-LaTeX Warning: Hyper reference `VC Interp' on page 110 undefined on input line 289.
+LaTeX Warning: Hyper reference `VC Interp' on page 111 undefined on input line 289.
 
 
-LaTeX Warning: Hyper reference `Navier Stokes' on page 110 undefined on input line 295.
+LaTeX Warning: Hyper reference `Navier Stokes' on page 111 undefined on input line 295.
 
 
-LaTeX Warning: Hyper reference `Radiative Transfer' on page 110 undefined on input line 295.
+LaTeX Warning: Hyper reference `Radiative Transfer' on page 111 undefined on input line 295.
 
 
-LaTeX Warning: Reference `Diff Heating' on page 110 undefined on input line 297.
+LaTeX Warning: Reference `Diff Heating' on page 111 undefined on input line 297.
 
 
-LaTeX Warning: Reference `Diff Heating' on page 110 undefined on input line 303.
+LaTeX Warning: Reference `Diff Heating' on page 111 undefined on input line 303.
 
 
-LaTeX Warning: Hyper reference `Emission Box' on page 110 undefined on input line 303.
+LaTeX Warning: Hyper reference `Emission Box' on page 111 undefined on input line 303.
 
 The command '\includegraphics [width=0.5\linewidth ]{Figures/GFD/Diff Heating.jpg}' has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 
 
 
-LaTeX Warning: Hyper reference `Geophysical Fluid Dynamics' on page 111 undefined on input line 314.
+LaTeX Warning: Hyper reference `Geophysical Fluid Dynamics' on page 112 undefined on input line 314.
 
 
-LaTeX Warning: Hyper reference `Hydrostatic Balance' on page 111 undefined on input line 320.
+LaTeX Warning: Hyper reference `Hydrostatic Balance' on page 112 undefined on input line 320.
 
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 
 
 
-LaTeX Warning: Hyper reference `Ekman Transport' on page 112 undefined on input line 367.
+LaTeX Warning: Hyper reference `Ekman Transport' on page 113 undefined on input line 367.
 
 
 
 Chapter 16.
 
-LaTeX Warning: Reference `Navier Stokes' on page 113 undefined on input line 377.
+LaTeX Warning: Reference `Navier Stokes' on page 114 undefined on input line 377.
 
 
-LaTeX Warning: Reference `Mass Conservation' on page 113 undefined on input line 377.
+LaTeX Warning: Reference `Mass Conservation' on page 114 undefined on input line 377.
 
 
-LaTeX Warning: Reference `Energy Equation' on page 113 undefined on input line 377.
+LaTeX Warning: Reference `Energy Equation' on page 114 undefined on input line 377.
 
 
-LaTeX Warning: Reference `EoS' on page 113 undefined on input line 377.
+LaTeX Warning: Reference `EoS' on page 114 undefined on input line 377.
 
 
 
 
-LaTeX Warning: Reference `Inertial to Rotating' on page 114 undefined on input line 409.
+LaTeX Warning: Reference `Inertial to Rotating' on page 115 undefined on input line 409.
 
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 
-LaTeX Warning: Reference `Rotating' on page 114 undefined on input line 446.
+LaTeX Warning: Reference `Rotating' on page 115 undefined on input line 446.
 
 
-LaTeX Warning: Reference `Inertial' on page 114 undefined on input line 446.
+LaTeX Warning: Reference `Inertial' on page 115 undefined on input line 446.
 
 
-LaTeX Warning: Reference `Inertial' on page 114 undefined on input line 446.
+LaTeX Warning: Reference `Inertial' on page 115 undefined on input line 446.
 
 
-LaTeX Warning: Reference `Rotating' on page 114 undefined on input line 446.
+LaTeX Warning: Reference `Rotating' on page 115 undefined on input line 446.
 
 
-LaTeX Warning: Reference `Inertial' on page 114 undefined on input line 446.
+LaTeX Warning: Reference `Inertial' on page 115 undefined on input line 446.
 
 
-LaTeX Warning: Reference `Inertial' on page 114 undefined on input line 446.
+LaTeX Warning: Reference `Inertial' on page 115 undefined on input line 446.
 
 
-LaTeX Warning: Reference `Rotating Relation' on page 114 undefined on input line 454.
+LaTeX Warning: Reference `Rotating Relation' on page 115 undefined on input line 454.
 
 
 
 
-LaTeX Warning: Reference `Navier Stokes' on page 115 undefined on input line 478.
+LaTeX Warning: Reference `Navier Stokes' on page 116 undefined on input line 478.
 
 
-LaTeX Warning: Reference `LocCartes' on page 115 undefined on input line 487.
+LaTeX Warning: Reference `LocCartes' on page 116 undefined on input line 487.
 
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 
@@ -2986,21 +2990,21 @@ Overfull \hbox (148.6591pt too wide) in paragraph at lines 514--515
  []
 
 
-LaTeX Warning: Reference `Navier Stokes Rotating' on page 115 undefined on input line 525.
+LaTeX Warning: Reference `Navier Stokes Rotating' on page 116 undefined on input line 525.
 
 
-LaTeX Warning: Reference `Mass Conservation' on page 115 undefined on input line 529.
+LaTeX Warning: Reference `Mass Conservation' on page 116 undefined on input line 529.
 
 
 
 
-LaTeX Warning: Reference `Hydrostatic GFD' on page 116 undefined on input line 570.
+LaTeX Warning: Reference `Hydrostatic GFD' on page 117 undefined on input line 570.
 
 
-LaTeX Warning: Hyper reference `Rossby Number' on page 116 undefined on input line 570.
+LaTeX Warning: Hyper reference `Rossby Number' on page 117 undefined on input line 570.
 
 
-LaTeX Warning: Hyper reference `VC Interp' on page 116 undefined on input line 585.
+LaTeX Warning: Hyper reference `VC Interp' on page 117 undefined on input line 585.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -3008,85 +3012,81 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-LaTeX Warning: Reference `Energy Equation' on page 117 undefined on input line 625.
+LaTeX Warning: Reference `Energy Equation' on page 118 undefined on input line 625.
 
 
-LaTeX Warning: Reference `Horizontal Approximate' on page 117 undefined on input line 627.
+LaTeX Warning: Reference `Horizontal Approximate' on page 118 undefined on input line 627.
 
 
 
 Chapter 17.
 
-LaTeX Warning: Reference `Vertical Approximate' on page 118 undefined on input line 633.
+LaTeX Warning: Reference `Vertical Approximate' on page 119 undefined on input line 633.
 
 
-LaTeX Warning: Reference `Hydrostatic GFD' on page 118 undefined on input line 684.
+LaTeX Warning: Reference `Hydrostatic GFD' on page 119 undefined on input line 684.
 
 
-LaTeX Warning: Hyper reference `p Thermodynamics' on page 118 undefined on input line 684.
+LaTeX Warning: Hyper reference `p Thermodynamics' on page 119 undefined on input line 684.
 
 
-LaTeX Warning: Reference `Hydrostatic Balance' on page 118 undefined on input line 684.
+LaTeX Warning: Reference `Hydrostatic Balance' on page 119 undefined on input line 684.
 
 
-LaTeX Warning: Reference `eq Ideal Gas' on page 118 undefined on input line 686.
-
-
-
-
-LaTeX Warning: Reference `Horizontal Approximate' on page 119 undefined on input line 695.
-
-
-LaTeX Warning: Reference `Horizontal Approximate' on page 119 undefined on input line 705.
+LaTeX Warning: Reference `eq Ideal Gas' on page 119 undefined on input line 686.
 
 
 
 
-LaTeX Warning: Hyper reference `Horizontal Approximate' on page 120 undefined on input line 751.
+LaTeX Warning: Reference `Horizontal Approximate' on page 120 undefined on input line 695.
+
+
+LaTeX Warning: Reference `Horizontal Approximate' on page 120 undefined on input line 705.
 
 
 
 
-LaTeX Warning: Reference `Horizontal Approximate nondim' on page 121 undefined on input line 765.
-
-
-LaTeX Warning: Reference `Horizontal Approximate nondim' on page 121 undefined on input line 765.
-
-
-LaTeX Warning: Reference `Horizontal Approximate' on page 121 undefined on input line 765.
-
-
-LaTeX Warning: Citation 'Vallis' on page 121 undefined on input line 775.
-
-
-LaTeX Warning: Hyper reference `SW Def Radius Box' on page 121 undefined on input line 775.
-
-
-LaTeX Warning: Reference `Horizontal Approximate' on page 121 undefined on input line 778.
-
-
-LaTeX Warning: Reference `Geostrophic Balance' on page 121 undefined on input line 783.
-
-
-LaTeX Warning: Reference `Geo Bal' on page 121 undefined on input line 783.
-
-
-LaTeX Warning: Reference `Geo Bal' on page 121 undefined on input line 803.
-
-
-LaTeX Warning: Reference `eq Ideal Gas' on page 121 undefined on input line 805.
-
-
-LaTeX Warning: Reference `Geostrophic Balance' on page 121 undefined on input line 813.
+LaTeX Warning: Hyper reference `Horizontal Approximate' on page 121 undefined on input line 751.
 
 
 
 
-LaTeX Warning: Hyper reference `VC Interp' on page 122 undefined on input line 815.
+LaTeX Warning: Reference `Horizontal Approximate nondim' on page 122 undefined on input line 765.
 
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to disable this.
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 
+LaTeX Warning: Reference `Horizontal Approximate nondim' on page 122 undefined on input line 765.
+
+
+LaTeX Warning: Reference `Horizontal Approximate' on page 122 undefined on input line 765.
+
+
+LaTeX Warning: Citation 'Vallis' on page 122 undefined on input line 775.
+
+
+LaTeX Warning: Hyper reference `SW Def Radius Box' on page 122 undefined on input line 775.
+
+
+LaTeX Warning: Reference `Horizontal Approximate' on page 122 undefined on input line 778.
+
+
+LaTeX Warning: Reference `Geostrophic Balance' on page 122 undefined on input line 783.
+
+
+LaTeX Warning: Reference `Geo Bal' on page 122 undefined on input line 783.
+
+
+LaTeX Warning: Reference `Geo Bal' on page 122 undefined on input line 803.
+
+
+LaTeX Warning: Reference `eq Ideal Gas' on page 122 undefined on input line 805.
+
+
+LaTeX Warning: Reference `Geostrophic Balance' on page 122 undefined on input line 813.
+
+
+
+
+LaTeX Warning: Hyper reference `VC Interp' on page 123 undefined on input line 815.
 
 \openout5 = `tikz/main-figure30.dpth'.
 
@@ -3095,42 +3095,46 @@ A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 {/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 
-LaTeX Warning: Reference `GW Quadratic' on page 123 undefined on input line 959.
+
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to disable this.
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to disable this.
+
+LaTeX Warning: Reference `GW Quadratic' on page 124 undefined on input line 959.
 
 
-LaTeX Warning: Hyper reference `Hydrostatic GFD Box' on page 123 undefined on input line 969.
+LaTeX Warning: Hyper reference `Hydrostatic GFD Box' on page 124 undefined on input line 969.
 
 
-LaTeX Warning: Hyper reference `Geostrophic Box' on page 123 undefined on input line 969.
+LaTeX Warning: Hyper reference `Geostrophic Box' on page 124 undefined on input line 969.
 
 
 
 
-LaTeX Warning: Reference `Hydrostatic Ideal Gas' on page 124 undefined on input line 975.
+LaTeX Warning: Reference `Hydrostatic Ideal Gas' on page 125 undefined on input line 975.
 
 
-LaTeX Warning: Reference `Geostrophic Ideal Gas' on page 124 undefined on input line 975.
+LaTeX Warning: Reference `Geostrophic Ideal Gas' on page 125 undefined on input line 975.
 
 
-LaTeX Warning: Reference `Geostrophic Ideal Gas' on page 124 undefined on input line 975.
+LaTeX Warning: Reference `Geostrophic Ideal Gas' on page 125 undefined on input line 975.
 
 
-LaTeX Warning: Reference `Geostrophic Ideal Gas' on page 124 undefined on input line 1024.
+LaTeX Warning: Reference `Geostrophic Ideal Gas' on page 125 undefined on input line 1024.
 
 
-LaTeX Warning: Reference `Hydrostatic Ideal Gas' on page 124 undefined on input line 1024.
+LaTeX Warning: Reference `Hydrostatic Ideal Gas' on page 125 undefined on input line 1024.
 
 
-LaTeX Warning: Reference `Geo Bal' on page 124 undefined on input line 1024.
+LaTeX Warning: Reference `Geo Bal' on page 125 undefined on input line 1024.
 
 
-LaTeX Warning: Reference `Geostrophic Ideal Gas' on page 124 undefined on input line 1024.
+LaTeX Warning: Reference `Geostrophic Ideal Gas' on page 125 undefined on input line 1024.
 
 
-LaTeX Warning: Reference `Hydrostatic Ideal Gas' on page 124 undefined on input line 1024.
+LaTeX Warning: Reference `Hydrostatic Ideal Gas' on page 125 undefined on input line 1024.
 
 
-LaTeX Warning: Reference `Geo Bal' on page 124 undefined on input line 1024.
+LaTeX Warning: Reference `Geo Bal' on page 125 undefined on input line 1024.
 
 
 Overfull \hbox (2.48419pt too wide) detected at line 1024
@@ -3138,210 +3142,210 @@ Overfull \hbox (2.48419pt too wide) detected at line 1024
  []
 
 
-LaTeX Warning: Reference `Dry Adiabatic Lapse Rate' on page 124 undefined on input line 1039.
+LaTeX Warning: Reference `Dry Adiabatic Lapse Rate' on page 125 undefined on input line 1039.
 
 
-LaTeX Warning: Hyper reference `Geostrophic Box' on page 124 undefined on input line 1064.
+LaTeX Warning: Hyper reference `Geostrophic Box' on page 125 undefined on input line 1064.
 
 
-LaTeX Warning: Hyper reference `Hydrostatic GFD Box' on page 124 undefined on input line 1064.
+LaTeX Warning: Hyper reference `Hydrostatic GFD Box' on page 125 undefined on input line 1064.
 
 
-LaTeX Warning: Reference `u Thermal' on page 124 undefined on input line 1066.
+LaTeX Warning: Reference `u Thermal' on page 125 undefined on input line 1066.
 
 
-LaTeX Warning: Reference `v Thermal' on page 124 undefined on input line 1066.
-
-
-
-
-LaTeX Warning: Hyper reference `VC Interp' on page 125 undefined on input line 1084.
-
-
-LaTeX Warning: Reference `Thermal Wind Vorticity' on page 125 undefined on input line 1088.
-
-
-LaTeX Warning: Reference `Thermal Wind Vorticity' on page 125 undefined on input line 1094.
+LaTeX Warning: Reference `v Thermal' on page 125 undefined on input line 1066.
 
 
 
 
-LaTeX Warning: Reference `P inverse' on page 126 undefined on input line 1132.
+LaTeX Warning: Hyper reference `VC Interp' on page 126 undefined on input line 1084.
 
 
-LaTeX Warning: Reference `P -1' on page 126 undefined on input line 1132.
+LaTeX Warning: Reference `Thermal Wind Vorticity' on page 126 undefined on input line 1088.
 
 
-LaTeX Warning: Hyper reference `Hydrostatic GFD Box' on page 126 undefined on input line 1134.
-
-
-LaTeX Warning: Reference `Hydrostatic GFD' on page 126 undefined on input line 1134.
-
-
-LaTeX Warning: Hyper reference `Geostrophic Box' on page 126 undefined on input line 1134.
-
-
-LaTeX Warning: Reference `Geostrophic Balance' on page 126 undefined on input line 1134.
-
-
-LaTeX Warning: Reference `Thermal Wind' on page 126 undefined on input line 1134.
-
-
-LaTeX Warning: Reference `Mass Conservation' on page 126 undefined on input line 1134.
-
-
-LaTeX Warning: Reference `Hydrostatic GFD' on page 126 undefined on input line 1138.
-
-
-LaTeX Warning: Reference `P inverse' on page 126 undefined on input line 1138.
-
-
-LaTeX Warning: Reference `Hydrostatic Balance Ideal' on page 126 undefined on input line 1157.
-
-
-LaTeX Warning: Reference `Geostrophic Balance' on page 126 undefined on input line 1165.
-
-
-LaTeX Warning: Reference `P -1' on page 126 undefined on input line 1165.
-
-
-LaTeX Warning: Hyper reference `Hydrostatic GFD Box' on page 126 undefined on input line 1183.
+LaTeX Warning: Reference `Thermal Wind Vorticity' on page 126 undefined on input line 1094.
 
 
 
 
-LaTeX Warning: Reference `Thermal Wind' on page 127 undefined on input line 1203.
+LaTeX Warning: Reference `P inverse' on page 127 undefined on input line 1132.
 
 
-LaTeX Warning: Reference `Geostrophic Pressure' on page 127 undefined on input line 1203.
+LaTeX Warning: Reference `P -1' on page 127 undefined on input line 1132.
 
 
-LaTeX Warning: Reference `Hydrostatic Pressure Ideal' on page 127 undefined on input line 1203.
+LaTeX Warning: Hyper reference `Hydrostatic GFD Box' on page 127 undefined on input line 1134.
+
+
+LaTeX Warning: Reference `Hydrostatic GFD' on page 127 undefined on input line 1134.
+
+
+LaTeX Warning: Hyper reference `Geostrophic Box' on page 127 undefined on input line 1134.
+
+
+LaTeX Warning: Reference `Geostrophic Balance' on page 127 undefined on input line 1134.
+
+
+LaTeX Warning: Reference `Thermal Wind' on page 127 undefined on input line 1134.
+
+
+LaTeX Warning: Reference `Mass Conservation' on page 127 undefined on input line 1134.
+
+
+LaTeX Warning: Reference `Hydrostatic GFD' on page 127 undefined on input line 1138.
+
+
+LaTeX Warning: Reference `P inverse' on page 127 undefined on input line 1138.
+
+
+LaTeX Warning: Reference `Hydrostatic Balance Ideal' on page 127 undefined on input line 1157.
+
+
+LaTeX Warning: Reference `Geostrophic Balance' on page 127 undefined on input line 1165.
+
+
+LaTeX Warning: Reference `P -1' on page 127 undefined on input line 1165.
+
+
+LaTeX Warning: Hyper reference `Hydrostatic GFD Box' on page 127 undefined on input line 1183.
 
 
 
 
-LaTeX Warning: Reference `Mass Conservation' on page 128 undefined on input line 1267.
+LaTeX Warning: Reference `Thermal Wind' on page 128 undefined on input line 1203.
 
 
-LaTeX Warning: Reference `Mass Conservation' on page 128 undefined on input line 1306.
+LaTeX Warning: Reference `Geostrophic Pressure' on page 128 undefined on input line 1203.
+
+
+LaTeX Warning: Reference `Hydrostatic Pressure Ideal' on page 128 undefined on input line 1203.
+
+
+
+
+LaTeX Warning: Reference `Mass Conservation' on page 129 undefined on input line 1267.
+
+
+LaTeX Warning: Reference `Mass Conservation' on page 129 undefined on input line 1306.
 
 
 
 Chapter 18.
 
-LaTeX Warning: Hyper reference `Hydrostatic GFD Box' on page 129 undefined on input line 1323.
+LaTeX Warning: Hyper reference `Hydrostatic GFD Box' on page 130 undefined on input line 1323.
 
 
-LaTeX Warning: Hyper reference `Geostrophic Box' on page 129 undefined on input line 1323.
+LaTeX Warning: Hyper reference `Geostrophic Box' on page 130 undefined on input line 1323.
 
 
-LaTeX Warning: Reference `Hydrostatic GFD' on page 129 undefined on input line 1323.
+LaTeX Warning: Reference `Hydrostatic GFD' on page 130 undefined on input line 1323.
 
 
-LaTeX Warning: Reference `Geostrophic Balance' on page 129 undefined on input line 1323.
-
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to disable this.
-
-LaTeX Warning: Reference `Horizontal Approximate' on page 129 undefined on input line 1363.
-
-
-LaTeX Warning: Reference `Vertical Approximate' on page 129 undefined on input line 1363.
-
-
-LaTeX Warning: Reference `Mass Conservation' on page 129 undefined on input line 1363.
-
-
-LaTeX Warning: Reference `Mass Conservation' on page 129 undefined on input line 1365.
-
-
-LaTeX Warning: Reference `Incompressibility' on page 129 undefined on input line 1365.
-
-
-LaTeX Warning: Reference `Incompressibility' on page 129 undefined on input line 1367.
-
-
-
-
-LaTeX Warning: Hyper reference `Hydrostatic GFD' on page 130 undefined on input line 1376.
-
-
-LaTeX Warning: Reference `Vertical Approximate' on page 130 undefined on input line 1376.
-
-
-LaTeX Warning: Reference `Const Density Hydrostatic' on page 130 undefined on input line 1378.
-
-
-LaTeX Warning: Reference `Horizontal Approximate' on page 130 undefined on input line 1383.
-
-
-LaTeX Warning: Reference `SW mom' on page 130 undefined on input line 1396.
-
-
-LaTeX Warning: Reference `Horizontal Approximate' on page 130 undefined on input line 1396.
-
-
-LaTeX Warning: Reference `Mass Conservation' on page 130 undefined on input line 1404.
-
-
-
-
-LaTeX Warning: Reference `SW mass' on page 131 undefined on input line 1435.
-
-
-LaTeX Warning: Reference `SW Justification' on page 131 undefined on input line 1437.
-
-
-
-
-LaTeX Warning: Reference `SW mom' on page 132 undefined on input line 1481.
-
-
-
-
-LaTeX Warning: Reference `SW mass' on page 133 undefined on input line 1491.
-
-
-LaTeX Warning: Reference `SW mass' on page 133 undefined on input line 1506.
-
-
-LaTeX Warning: Reference `SW Energy Short' on page 133 undefined on input line 1530.
-
-
-
-
-LaTeX Warning: Reference `SW mom' on page 134 undefined on input line 1551.
-
-
-LaTeX Warning: Reference `SW mass' on page 134 undefined on input line 1557.
-
-
+LaTeX Warning: Reference `Geostrophic Balance' on page 130 undefined on input line 1323.
 
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 
-LaTeX Warning: Reference `F, W, W' on page 135 undefined on input line 1638.
+LaTeX Warning: Reference `Horizontal Approximate' on page 130 undefined on input line 1363.
 
 
-LaTeX Warning: Citation 'Vallis' on page 135 undefined on input line 1647.
+LaTeX Warning: Reference `Vertical Approximate' on page 130 undefined on input line 1363.
+
+
+LaTeX Warning: Reference `Mass Conservation' on page 130 undefined on input line 1363.
+
+
+LaTeX Warning: Reference `Mass Conservation' on page 130 undefined on input line 1365.
+
+
+LaTeX Warning: Reference `Incompressibility' on page 130 undefined on input line 1365.
+
+
+LaTeX Warning: Reference `Incompressibility' on page 130 undefined on input line 1367.
+
+
+
+
+LaTeX Warning: Hyper reference `Hydrostatic GFD' on page 131 undefined on input line 1376.
+
+
+LaTeX Warning: Reference `Vertical Approximate' on page 131 undefined on input line 1376.
+
+
+LaTeX Warning: Reference `Const Density Hydrostatic' on page 131 undefined on input line 1378.
+
+
+LaTeX Warning: Reference `Horizontal Approximate' on page 131 undefined on input line 1383.
+
+
+LaTeX Warning: Reference `SW mom' on page 131 undefined on input line 1396.
+
+
+LaTeX Warning: Reference `Horizontal Approximate' on page 131 undefined on input line 1396.
+
+
+LaTeX Warning: Reference `Mass Conservation' on page 131 undefined on input line 1404.
+
+
+
+
+LaTeX Warning: Reference `SW mass' on page 132 undefined on input line 1435.
+
+
+LaTeX Warning: Reference `SW Justification' on page 132 undefined on input line 1437.
+
+
+
+
+LaTeX Warning: Reference `SW mom' on page 133 undefined on input line 1481.
+
+
+
+
+LaTeX Warning: Reference `SW mass' on page 134 undefined on input line 1491.
+
+
+LaTeX Warning: Reference `SW mass' on page 134 undefined on input line 1506.
+
+
+LaTeX Warning: Reference `SW Energy Short' on page 134 undefined on input line 1530.
+
+
+
+
+LaTeX Warning: Reference `SW mom' on page 135 undefined on input line 1551.
+
+
+LaTeX Warning: Reference `SW mass' on page 135 undefined on input line 1557.
 
 
 
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 
+LaTeX Warning: Reference `F, W, W' on page 136 undefined on input line 1638.
 
 
-LaTeX Warning: Reference `SW height' on page 137 undefined on input line 1725.
-
-
-LaTeX Warning: Reference `SW mom' on page 137 undefined on input line 1737.
-
-
-LaTeX Warning: Hyper reference `Shallow Water System' on page 137 undefined on input line 1740.
+LaTeX Warning: Citation 'Vallis' on page 136 undefined on input line 1647.
 
 
 
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 
-LaTeX Warning: Reference `SW Lin mom' on page 138 undefined on input line 1836.
+
+
+LaTeX Warning: Reference `SW height' on page 138 undefined on input line 1725.
+
+
+LaTeX Warning: Reference `SW mom' on page 138 undefined on input line 1737.
+
+
+LaTeX Warning: Hyper reference `Shallow Water System' on page 138 undefined on input line 1740.
+
+
+
+
+LaTeX Warning: Reference `SW Lin mom' on page 139 undefined on input line 1836.
 
 
 
@@ -3352,40 +3356,40 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-LaTeX Warning: Hyper reference `Rossby Box' on page 140 undefined on input line 1903.
+LaTeX Warning: Hyper reference `Rossby Box' on page 141 undefined on input line 1903.
 
 
-LaTeX Warning: Reference `SW Lin mom' on page 140 undefined on input line 1916.
-
-
-
-
-LaTeX Warning: Reference `SW Lin mom' on page 141 undefined on input line 1929.
-
-
-LaTeX Warning: Reference `SW Lin mass' on page 141 undefined on input line 1931.
-
-
-LaTeX Warning: Reference `SW Lin mom' on page 141 undefined on input line 1951.
-
-
-LaTeX Warning: Reference `Matrix Poincare' on page 141 undefined on input line 1957.
+LaTeX Warning: Reference `SW Lin mom' on page 141 undefined on input line 1916.
 
 
 
 
-LaTeX Warning: Hyper reference `IG SW Box' on page 142 undefined on input line 1978.
+LaTeX Warning: Reference `SW Lin mom' on page 142 undefined on input line 1929.
+
+
+LaTeX Warning: Reference `SW Lin mass' on page 142 undefined on input line 1931.
+
+
+LaTeX Warning: Reference `SW Lin mom' on page 142 undefined on input line 1951.
+
+
+LaTeX Warning: Reference `Matrix Poincare' on page 142 undefined on input line 1957.
 
 
 
 
-LaTeX Warning: Reference `SW Lin mom' on page 143 undefined on input line 2067.
+LaTeX Warning: Hyper reference `IG SW Box' on page 143 undefined on input line 1978.
 
 
-LaTeX Warning: Reference `v Ro' on page 143 undefined on input line 2085.
 
 
-LaTeX Warning: Reference `u Ro' on page 143 undefined on input line 2085.
+LaTeX Warning: Reference `SW Lin mom' on page 144 undefined on input line 2067.
+
+
+LaTeX Warning: Reference `v Ro' on page 144 undefined on input line 2085.
+
+
+LaTeX Warning: Reference `u Ro' on page 144 undefined on input line 2085.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -3393,254 +3397,254 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-LaTeX Warning: Reference `SW Lin mass' on page 144 undefined on input line 2114.
+LaTeX Warning: Reference `SW Lin mass' on page 145 undefined on input line 2114.
 
 
-LaTeX Warning: Hyper reference `SW Def Radius Box' on page 144 undefined on input line 2127.
-
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to disable this.
-
-
-
-LaTeX Warning: Hyper reference `PV' on page 145 undefined on input line 2170.
-
-
-LaTeX Warning: Hyper reference `Cons PV Box' on page 145 undefined on input line 2170.
-
-
-LaTeX Warning: Reference `Cyclones' on page 145 undefined on input line 2181.
+LaTeX Warning: Hyper reference `SW Def Radius Box' on page 145 undefined on input line 2127.
 
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 
 
 
-LaTeX Warning: Reference `GFD Special' on page 146 undefined on input line 2226.
+LaTeX Warning: Hyper reference `PV' on page 146 undefined on input line 2170.
 
 
-LaTeX Warning: Reference `SW mom' on page 146 undefined on input line 2226.
+LaTeX Warning: Hyper reference `Cons PV Box' on page 146 undefined on input line 2170.
 
 
-LaTeX Warning: Reference `RG Fig' on page 146 undefined on input line 2228.
+LaTeX Warning: Reference `Cyclones' on page 146 undefined on input line 2181.
 
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 
 
 
-LaTeX Warning: Hyper reference `shallow box' on page 147 undefined on input line 2294.
+LaTeX Warning: Reference `GFD Special' on page 147 undefined on input line 2226.
 
 
-LaTeX Warning: Hyper reference `SW Def Radius Box' on page 147 undefined on input line 2299.
+LaTeX Warning: Reference `SW mom' on page 147 undefined on input line 2226.
 
 
-LaTeX Warning: Citation 'Vallis' on page 147 undefined on input line 2307.
+LaTeX Warning: Reference `RG Fig' on page 147 undefined on input line 2228.
+
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to disable this.
+
+
+
+LaTeX Warning: Hyper reference `shallow box' on page 148 undefined on input line 2294.
+
+
+LaTeX Warning: Hyper reference `SW Def Radius Box' on page 148 undefined on input line 2299.
+
+
+LaTeX Warning: Citation 'Vallis' on page 148 undefined on input line 2307.
 
 
 
 Chapter 19.
 
-LaTeX Warning: Hyper reference `RG Box' on page 148 undefined on input line 2314.
+LaTeX Warning: Hyper reference `RG Box' on page 149 undefined on input line 2314.
 
 
-LaTeX Warning: Hyper reference `2D Poincare' on page 148 undefined on input line 2316.
+LaTeX Warning: Hyper reference `2D Poincare' on page 149 undefined on input line 2316.
 
 
-LaTeX Warning: Hyper reference `QG' on page 148 undefined on input line 2316.
+LaTeX Warning: Hyper reference `QG' on page 149 undefined on input line 2316.
 
 
-LaTeX Warning: Reference `Horizontal Approximate' on page 148 undefined on input line 2331.
+LaTeX Warning: Reference `Horizontal Approximate' on page 149 undefined on input line 2331.
 
 
-LaTeX Warning: Reference `Vertical Approximate' on page 148 undefined on input line 2331.
+LaTeX Warning: Reference `Vertical Approximate' on page 149 undefined on input line 2331.
 
 
-LaTeX Warning: Reference `Scale Analysis' on page 148 undefined on input line 2340.
+LaTeX Warning: Reference `Scale Analysis' on page 149 undefined on input line 2340.
 
 
-LaTeX Warning: Hyper reference `RG Box' on page 148 undefined on input line 2352.
+LaTeX Warning: Hyper reference `RG Box' on page 149 undefined on input line 2352.
 
 
-LaTeX Warning: Reference `H bous' on page 148 undefined on input line 2352.
+LaTeX Warning: Reference `H bous' on page 149 undefined on input line 2352.
 
 
-LaTeX Warning: Reference `V bous' on page 148 undefined on input line 2352.
+LaTeX Warning: Reference `V bous' on page 149 undefined on input line 2352.
 
 
 
 
-LaTeX Warning: Reference `H bous' on page 149 undefined on input line 2375.
+LaTeX Warning: Reference `H bous' on page 150 undefined on input line 2375.
 
 
-LaTeX Warning: Reference `V bous' on page 149 undefined on input line 2375.
+LaTeX Warning: Reference `V bous' on page 150 undefined on input line 2375.
 
 
-LaTeX Warning: Reference `Energy Equation' on page 149 undefined on input line 2375.
+LaTeX Warning: Reference `Energy Equation' on page 150 undefined on input line 2375.
 
 
-LaTeX Warning: Reference `Incompressibility' on page 149 undefined on input line 2375.
+LaTeX Warning: Reference `Incompressibility' on page 150 undefined on input line 2375.
 
 
-LaTeX Warning: Reference `H bous' on page 149 undefined on input line 2377.
+LaTeX Warning: Reference `H bous' on page 150 undefined on input line 2377.
 
 
-LaTeX Warning: Reference `H lin' on page 149 undefined on input line 2377.
+LaTeX Warning: Reference `H lin' on page 150 undefined on input line 2377.
 
 
-LaTeX Warning: Reference `V bous' on page 149 undefined on input line 2377.
+LaTeX Warning: Reference `V bous' on page 150 undefined on input line 2377.
 
 
-LaTeX Warning: Reference `V lin' on page 149 undefined on input line 2377.
+LaTeX Warning: Reference `V lin' on page 150 undefined on input line 2377.
 
 
-LaTeX Warning: Reference `Incompressibility' on page 149 undefined on input line 2377.
+LaTeX Warning: Reference `Incompressibility' on page 150 undefined on input line 2377.
 
 
-LaTeX Warning: Reference `Incompressible GW' on page 149 undefined on input line 2377.
+LaTeX Warning: Reference `Incompressible GW' on page 150 undefined on input line 2377.
 
 
-LaTeX Warning: Reference `Energy Equation' on page 149 undefined on input line 2377.
+LaTeX Warning: Reference `Energy Equation' on page 150 undefined on input line 2377.
 
 
-LaTeX Warning: Reference `MC lin' on page 149 undefined on input line 2377.
+LaTeX Warning: Reference `MC lin' on page 150 undefined on input line 2377.
 
 
-LaTeX Warning: Citation 'Vallis' on page 149 undefined on input line 2379.
+LaTeX Warning: Citation 'Vallis' on page 150 undefined on input line 2379.
 
 
-LaTeX Warning: Reference `V lin' on page 149 undefined on input line 2405.
+LaTeX Warning: Reference `V lin' on page 150 undefined on input line 2405.
 
 
-LaTeX Warning: Reference `Incompressible GW' on page 149 undefined on input line 2405.
+LaTeX Warning: Reference `Incompressible GW' on page 150 undefined on input line 2405.
 
 
-LaTeX Warning: Reference `V lin' on page 149 undefined on input line 2405.
+LaTeX Warning: Reference `V lin' on page 150 undefined on input line 2405.
 
 
-LaTeX Warning: Reference `MC lin' on page 149 undefined on input line 2405.
+LaTeX Warning: Reference `MC lin' on page 150 undefined on input line 2405.
 
 
-LaTeX Warning: Hyper reference `2D Poincare' on page 149 undefined on input line 2415.
+LaTeX Warning: Hyper reference `2D Poincare' on page 150 undefined on input line 2415.
 
 
 
 
-LaTeX Warning: Hyper reference `f plane box' on page 150 undefined on input line 2440.
+LaTeX Warning: Hyper reference `f plane box' on page 151 undefined on input line 2440.
 
 
-LaTeX Warning: Reference `Wavefronts Fig' on page 150 undefined on input line 2445.
+LaTeX Warning: Reference `Wavefronts Fig' on page 151 undefined on input line 2445.
 
 
-LaTeX Warning: Reference `V lin' on page 150 undefined on input line 2451.
+LaTeX Warning: Reference `V lin' on page 151 undefined on input line 2451.
 
 
-LaTeX Warning: Hyper reference `IG SW Box' on page 150 undefined on input line 2455.
+LaTeX Warning: Hyper reference `IG SW Box' on page 151 undefined on input line 2455.
 
 
-LaTeX Warning: Hyper reference `Shallow Water System' on page 150 undefined on input line 2455.
+LaTeX Warning: Hyper reference `Shallow Water System' on page 151 undefined on input line 2455.
 
 
-LaTeX Warning: Hyper reference `beta plane box' on page 150 undefined on input line 2467.
+LaTeX Warning: Hyper reference `beta plane box' on page 151 undefined on input line 2467.
 
 
 
 
-LaTeX Warning: Reference `Horizontal Approximate' on page 151 undefined on input line 2487.
+LaTeX Warning: Reference `Horizontal Approximate' on page 152 undefined on input line 2487.
 
 
-LaTeX Warning: Reference `Vertical Approximate' on page 151 undefined on input line 2487.
+LaTeX Warning: Reference `Vertical Approximate' on page 152 undefined on input line 2487.
 
 
-LaTeX Warning: Reference `Incompressibility' on page 151 undefined on input line 2487.
+LaTeX Warning: Reference `Incompressibility' on page 152 undefined on input line 2487.
 
 
-LaTeX Warning: Reference `QGPV Cons' on page 151 undefined on input line 2535.
+LaTeX Warning: Reference `QGPV Cons' on page 152 undefined on input line 2535.
 
 
-LaTeX Warning: Hyper reference `Cons PV Box' on page 151 undefined on input line 2535.
+LaTeX Warning: Hyper reference `Cons PV Box' on page 152 undefined on input line 2535.
 
 
-LaTeX Warning: Hyper reference `Shallow Water System' on page 151 undefined on input line 2535.
+LaTeX Warning: Hyper reference `Shallow Water System' on page 152 undefined on input line 2535.
 
 
-LaTeX Warning: Reference `QGPV' on page 151 undefined on input line 2537.
+LaTeX Warning: Reference `QGPV' on page 152 undefined on input line 2537.
 
 
 
 
-LaTeX Warning: Reference `Streamfct' on page 152 undefined on input line 2544.
+LaTeX Warning: Reference `Streamfct' on page 153 undefined on input line 2544.
 
 
-LaTeX Warning: Hyper reference `Cons PV Box' on page 152 undefined on input line 2546.
+LaTeX Warning: Hyper reference `Cons PV Box' on page 153 undefined on input line 2546.
 
 
-LaTeX Warning: Hyper reference `Shallow Water System' on page 152 undefined on input line 2546.
+LaTeX Warning: Hyper reference `Shallow Water System' on page 153 undefined on input line 2546.
 
 
-LaTeX Warning: Reference `SW Cons PV' on page 152 undefined on input line 2546.
+LaTeX Warning: Reference `SW Cons PV' on page 153 undefined on input line 2546.
 
 
-LaTeX Warning: Reference `QGPV Cons' on page 152 undefined on input line 2555.
+LaTeX Warning: Reference `QGPV Cons' on page 153 undefined on input line 2555.
 
 
-LaTeX Warning: Reference `p QGPV' on page 152 undefined on input line 2578.
+LaTeX Warning: Reference `p QGPV' on page 153 undefined on input line 2578.
 
 
-LaTeX Warning: Reference `rho QGPV' on page 152 undefined on input line 2578.
+LaTeX Warning: Reference `rho QGPV' on page 153 undefined on input line 2578.
 
 
-LaTeX Warning: Hyper reference `Shallow Water System' on page 152 undefined on input line 2585.
+LaTeX Warning: Hyper reference `Shallow Water System' on page 153 undefined on input line 2585.
 
 
-LaTeX Warning: Hyper reference `QGPV' on page 152 undefined on input line 2585.
+LaTeX Warning: Hyper reference `QGPV' on page 153 undefined on input line 2585.
 
 
 
 
-LaTeX Warning: Hyper reference `beta plane box' on page 153 undefined on input line 2595.
+LaTeX Warning: Hyper reference `beta plane box' on page 154 undefined on input line 2595.
 
 
 
 Chapter 20.
 
-LaTeX Warning: Reference `Differential Heating' on page 154 undefined on input line 2632.
+LaTeX Warning: Reference `Differential Heating' on page 155 undefined on input line 2632.
 
 
-LaTeX Warning: Reference `Kelvin' on page 154 undefined on input line 2634.
+LaTeX Warning: Reference `Kelvin' on page 155 undefined on input line 2634.
 
 
-LaTeX Warning: Reference `Ekman Transport' on page 154 undefined on input line 2640.
+LaTeX Warning: Reference `Ekman Transport' on page 155 undefined on input line 2640.
 
 
-LaTeX Warning: Reference `Sverdrup Balance' on page 154 undefined on input line 2640.
-
-
-
-
-LaTeX Warning: Reference `Horizontal Approximate' on page 155 undefined on input line 2650.
-
-
-LaTeX Warning: Reference `Geostrophic Balance' on page 155 undefined on input line 2687.
+LaTeX Warning: Reference `Sverdrup Balance' on page 155 undefined on input line 2640.
 
 
 
 
-LaTeX Warning: Hyper reference `Geostrophic Box' on page 156 undefined on input line 2713.
+LaTeX Warning: Reference `Horizontal Approximate' on page 156 undefined on input line 2650.
 
 
-LaTeX Warning: Reference `Geo Bal' on page 156 undefined on input line 2717.
-
-
-LaTeX Warning: Reference `Incompressibility' on page 156 undefined on input line 2723.
-
-
-LaTeX Warning: Hyper reference `RG Box' on page 156 undefined on input line 2723.
+LaTeX Warning: Reference `Geostrophic Balance' on page 156 undefined on input line 2687.
 
 
 
 
-LaTeX Warning: Reference `Incompressibility' on page 157 undefined on input line 2758.
+LaTeX Warning: Hyper reference `Geostrophic Box' on page 157 undefined on input line 2713.
 
 
-LaTeX Warning: Reference `Geo Bal' on page 157 undefined on input line 2758.
+LaTeX Warning: Reference `Geo Bal' on page 157 undefined on input line 2717.
+
+
+LaTeX Warning: Reference `Incompressibility' on page 157 undefined on input line 2723.
+
+
+LaTeX Warning: Hyper reference `RG Box' on page 157 undefined on input line 2723.
+
+
+
+
+LaTeX Warning: Reference `Incompressibility' on page 158 undefined on input line 2758.
+
+
+LaTeX Warning: Reference `Geo Bal' on page 158 undefined on input line 2758.
 
 
 
@@ -3673,18 +3677,18 @@ Package logreq Info: Writing requests to 'tikz/main-figure30.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 45891 strings out of 473190
- 972092 string characters out of 5715800
+ 45893 strings out of 473190
+ 972128 string characters out of 5715800
  1591563 words of memory out of 5000000
- 68429 multiletter control sequences out of 15000+600000
+ 68431 multiletter control sequences out of 15000+600000
  577387 words of font info for 109 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 120i,25n,124p,1415b,1925s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on tikz/main-figure30.pdf (1 page, 61404 bytes).
+ 120i,25n,124p,1415b,1924s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on tikz/main-figure30.pdf (1 page, 52796 bytes).
 PDF statistics:
- 182 PDF objects out of 1000 (max. 8388607)
- 41 compressed objects within 1 object stream
+ 177 PDF objects out of 1000 (max. 8388607)
+ 38 compressed objects within 1 object stream
  1 named destinations out of 1000 (max. 500000)
  166 words of extra memory for PDF output out of 10000 (max. 10000000)
 
