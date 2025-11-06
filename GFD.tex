@@ -2209,17 +2209,79 @@ However, recall that $u\sim 1/f$ because it is geostrophic, therefore at the nor
 
 \section{Kelvin Waves}
 
-[KELVIN WAVES UNDER CONSTRUCTION]
+For Rossby Waves, we assumed that the anomalies were to leading order \hyperref[Geostrophic Box]{geostrophic}, which recall is a balance between the the corilis force and the pressure gradient force. There are at least two cases where the flow cannot be to leading order geostrophic. In both cases, the coriolis force is too small to support a non-zero pressure-gradient.
 
-For Rossby Waves, we assumed that the anomalies were to leading order geostrophic, which recall is a blance between the the corilis force and the pressure gradient force. There are at least two cases in which this assumption cannot hold.
+The first case is along a boundary or a coastline. A fluid cannot flow into a boundary or a coastline\footnote{
+    This is often called the `no-penetration boundary condition'. Mathematically, it's expressed as follows: let the boundary of the fluid be specified by some function $f(x,y,z)=0$ and let $\vec{n}$ be the vector normal to the surface (which should be parallel to $\vec{\nabla}f$ remember!). Then, for all $x,y,z$ that satisfy $f(x,y,z)=0$, the following relation must hold:
+    \begin{align*}
+        \vec{n}\cdot\vec{u}(x,y,z)|_{f(x,y,z)=0}=0
+    \end{align*}
+}, and so must flow parallel to it (if there is any flow at all). As such, there can be no coriolis forces acting parallel to the boundary (since, remember, the coriolis force $=f\vec{k}\times\vec{u}$ and so is at right angles to the velocity) because no fluid can flow into the wall. As such, geostrophic balance cannot obtain parallel to the coast (or along the coast) because pressure gradients in this direction cannot be supported by coriolis forces.
 
-The first case is along a boundary or a coastline.
+I should note that, in this case, we ruled out the flow being geostrophic in a certain direction. This does \textit{not} prohibit the flow from being geostrophic in other directions!
 
-The second case is along the equator, where $f\approx 0$, therefore $Ro \gg 1$. 
+The second case is along the equator, where $\Omega=0$, therefore $f= 0$. In this case, while $\vec{u}$ may flow across the equator, the coriolis force still vanishes \textit{at} the equator. As such, there can also be no geostrophic balance here.
 
 \subsection{Coastal Kelvin Waves}
 
+\subsubsection{Derivation}
+
+For simplicity, let us consider a flat boundary in the meridional direction. I.e., let the surface be expressed by the function $f(x,y,z)=x=0$. As such, we require that $u(x=0,y,z)=0$ at every point in the fluid (since the fluid cannot flow into the boundary).
+
+To derive the dispersion relation for Coastal Kelvin we anticipate that $u=0$ for \textbf{all} $x$. I should emphasise how \textit{strong} this assumption is. The boundary only requires that $u=0$ for $x=0$ (i.e., there can be no zonal flow \textit{at} the boundary), but we are now imposing the much stronger assumption that $u=0$ for \textbf{all} values of $x$ (i.e., there is no zonal flow \textit{anywhere}). You should question how realistic this assumption is\dots\footnote{See this paper if you're curious for another treatment see this paper \cite{M&H13}.}
+
+Setting $u=0$ everywhere reduces our set of \hyperref[L SW Eqn]{linearised equations of motion} to the following three equations (being the momentum equations and the mass equation):
+\begin{align}
+    \label{eq Coastal Kelvin u}
+    -fv+g\frac{\partial h}{\partial x}=0
+    \\
+    \label{eq Coastal Kelvin v}
+    \frac{\partial v}{\partial t}+g\frac{\partial h}{\partial y}=0
+    \\
+    \label{eq Coastal Kelvin h}
+    \frac{\partial h}{\partial t}+H\frac{\partial v}{\partial y}=0
+\end{align}
+
+Differentiating Equation \ref{eq Coastal Kelvin v} with respect to $y$ and Equation \ref{eq Coastal Kelvin h} with respect to $t$, then substituting for $\frac{\partial^2 v}{\partial t \partial y}$ gives us the following wave equation for $h$:
+\begin{align*}
+    \frac{\partial^2 h}{\partial t^2}-\underbrace{gH}_{=c^2}\frac{\partial^2 h}{\partial y^2}=0
+\end{align*}
+The general solution to this equation is (derived without using our $\exp\left( ikx+ily - i\omega t \right)$ strategy):
+\begin{align*}
+    h(x,y,t)=A(x)f(y-ct)
+\end{align*}
+where $c=\pm\sqrt{gH}=$ the gravity wave speed, again! Note that we've found that this wave is non-dispersive in the $y$-direction (since we can write $f(y-ct)=f(\frac{1}{l}(ly-\omega t))$ where $\omega = cl$), so the phase and group velocities are identical and travel with velocity $c=\pm\sqrt{gH}$ in the meridional direction. In other words, our solution (so far) allows the wave to travel up and down the coastline. We have not yet derived a constraint for the sign of $c$.\footnote{I.e., whether $c=\sqrt{gH}$ or $c=-\sqrt{gH}$.} Suffice it to say that, as written above (in the $f(y-ct)$ form), if $c>0$ then the wave propagates northward and if $c<0$ the wave propagates southward.\footnote{
+    If we had written it as $f(y+ct)$, $c>0$ would correspond to the wave propagating southward and $c<0$ would correspond to the wave propagating northward. This is convention that we must pick at the outset, and remain consistent throughout.}
+
+To find the dependence on $A(x)$, we differentiate Equation \ref{eq Coastal Kelvin u} with respect to $t$ and substitute for $\frac{\partial v}{\partial t}$ in Equation \ref{eq Coastal Kelvin v}:
+\begin{align*}
+    \frac{\partial^2 h}{\partial t \partial x}+f \frac{\partial h}{\partial y}=0
+\end{align*}
+and substitute for our expression for $h$, which gives the following equation for $A(x)$:
+\begin{align*}
+    -c \frac{dA}{dx}-fA(x)=0
+\end{align*}
+which has the solution:
+\begin{align*}
+    A(x)=h_0 e^{-\frac{f}{c}x}=h_0 e^{\mp \frac{x}{L_d}}
+\end{align*}
+where $L_d$ is the \hyperref[SW Def Radius Box]{Rossby Deformation Radius} (it's back again!).
+
+\textit{This} relation, combined with a suitable boundary condition, will end up constraining the sign of $c$. Note first that $A(x)$ (and therefore $h(x)$) is exponential in $x$, and therefore will tend towards $\infty$ when $x$ becomes big and positive or negative, depending on the sign of $f/c$.
+
+The sign of $f/c$ is therefore crucial to understanding the $x$-dependence. If $f/c>0$, $h\to\infty$ as $x\to -\infty$. Conversely, if $f/c<0$, $h\to\infty$ as $x\to\infty$. To properly 
+
+
+
+Now let us consider just the Northern hemisphere such that $f>0$.
+
+We first consider a western boundary such that there is fluid for $x>0$ but no fluid for $x<0$. If $c=\sqrt{gH}>0$, then $f/c>0$, therefore 
+
+[UNDER CONSTRUCTION]
+
 \subsection{Equatorial Kelvin Waves}
+
+[UNDER CONSTRUCTION]
 
 \section{The Effects of Stratification: the Reduced Gravity System}
 
@@ -2300,7 +2362,7 @@ Importantly, the reduced gravity system affects the \hyperref[SW Def Radius Box]
 \begin{align*}
     L_d = \frac{\sqrt{g' H}}{f}
 \end{align*}
-Therefore, since generally $g'\ll g$, and $L_d\sim\sqrt{g'}$, then $L_d$ is much smaller than we anticipated before.
+Since, generally, $g'\ll g$, and $L_d\sim\sqrt{g'}$, then $L_d$ is much smaller than we anticipated before.
 
 \section{Justifying the Shallow Water System}\label{SW Justification}
 
