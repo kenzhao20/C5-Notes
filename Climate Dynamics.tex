@@ -943,9 +943,9 @@ In other words, then, to first order in $\delta t$, errors do not rotate, and si
 
 \section{The Pseudo-Inverse \texorpdfstring{$\hat{K}$}{K-hat}}
 
-Suppose we take $n$ measurements, which we encode in some matrix $\vec{y}\in\mathbb{R}^m$, with some random error $\vec{\epsilon}\in\mathbb{R}^m$, in order to estimate some values $\vec{x}\in\mathbb{R}^n$ where $n<m$. The measurements $\vec{y}$ are some (known) function of $\vec{x}$ like so: $\vec{y}=f(\vec{x})+\vec{\epsilon}$ where $f:\mathbb{R}^n\to\mathbb{R}^m$.
+Suppose we take $n$ measurements (or make $n$ observations), which we encode in some matrix $\vec{y}\in\mathbb{R}^m$, with some random error $\vec{\epsilon}\in\mathbb{R}^m$, in order to estimate some values $\vec{x}\in\mathbb{R}^n$ where $n<m$. The measurements $\vec{y}$ are some (known) function of $\vec{x}$ like so: $\vec{y}=f(\vec{x})+\vec{\epsilon}$ where $f:\mathbb{R}^n\to\mathbb{R}^m$.
 
-In some cases, $f$ is linear, and we can represent $f(\vec{x})=\hat{H}\vec{x}$ where $\hat{H}\in\mathbb{R}^m\times\mathbb{R}^n$ (i.e., $\hat{H}$ is an $m\times n$ matrix). We know $\vec{y}$, but we wish to estimate $\vec{x}$. Since $m<n$, the system is overdetermined: we cannot simply invert $\hat{H}$ and solve for $\vec{x}$, which is exacerbated by the error $\vec{\epsilon}$.
+In some cases, $f$ is linear, and we can represent $f(\vec{x})=\hat{H}\vec{x}$ where $\hat{H}\in\mathbb{R}^m\times\mathbb{R}^n$ (i.e., $\hat{H}$ is an $m\times n$ matrix). We know $\vec{y}$, but we wish to estimate $\vec{x}$. Since $m<n$, the system is overdetermined: we cannot simply invert $\hat{H}$ and solve for $\vec{x}$, and this is exacerbated by (unknown) the error $\vec{\epsilon}$.
 
 Instead, we we apply linear regression, and minimise the squared difference between the actual (error-prone) measurements $\vec{y}$ and the predicted measurements $\vec{\hat{y}}=\hat{H}\vec{x}$, where $\vec{\hat{x}}\in\mathbb{R}^m$ is our estimate of $\vec{x}$. (We denote our prediction/estimates by hats and the real values without hats).
 
@@ -966,13 +966,13 @@ We call $\hat{K}$ the pseudo-inverse of $\hat{H}$ because $\hat{K}\hat{H}=\mathb
     Suppose you need to estimate some quantities $x_i$ based on some data $y_j$. Find the \textbf{least-squares estimator} in the following way:
     \begin{enumerate}
         \item Rearrange the system into a linear system as follows:
-    \begin{align*}
-        \vec{y}=\hat{H}\vec{x}
-    \end{align*}
-        \item Enter the matrix $\hat{H}$ into your calculator and calculate the \textbf{pseudo-inverse} $\hat{K}= (\hat{H}^T\hat{H})^{-1}\hat{H}^T$. 
-        \item Yeet the $\hat{H}$ onto the observations $\vec{y}$ (which you should be given), i.e., estimate $\vec{x}$ as $\vec{\hat{x}}=\hat{K}\vec{y}_0$.
-        \item Watch the examiners award you The Gibbs Prize for Performance in the MPhys examination (£500).
-        \item Donate those £500 (and maybe the prize as well) to the author(s) of these lecture notes.
+            \begin{align*}
+                \vec{y}=\hat{H}\vec{x}
+            \end{align*}
+        \item Enter the matrix $\hat{H}$ into your calculator and calculate the \textbf{pseudo-inverse} $\hat{K}= (\hat{H}^T\hat{H})^{-1}\hat{H}^T$.
+        \item Yeet the pseudo-inverse $\hat{K}$ onto the observations $\vec{y}$ (which you should be given), i.e., estimate $\vec{x}$ as $\vec{\hat{x}}=\hat{K}\vec{y}_0$.
+        \item Watch the examiners award you The Scott Prize (£750) for the Best Performance in the MPhys examination.
+        \item Donate those £750 (and maybe the prize as well) to the author(s) of these lecture notes.
     \end{enumerate}
 \end{fact}
 
