@@ -54,6 +54,7 @@ As a brief review, we'll need to know the following \textit{intensive} variables
     \hline
     \end{tabular}
     \caption{Basic Intensive Thermodynamic Variables}
+    \label{t Basic Thermo Vars}
 \end{table}
 
 Note that many resources present the molar mass $M_a$ in units of \qty{}{\gram\per\mole} (grams per mole). This is in order to produce more pretty numbers: for example, the molar mass of N$_2$ is \qty{28.01e-3}{\kilogram\per\mole} $=$ \qty{28.01}{\gram\per\mole}. Be wary of units, and always remember to convert everything to SI units when performing calculations. In this case you can convert the molar mass from units of \qty{}{\gram\per\mole} to units of \qty{}{\kilogram\per\mole} by dividing by $1000$:
@@ -235,10 +236,12 @@ For the Earth (excercise: consider only Nitrogen, Oxygen, and Argon), $\bar{M}\a
 \section{Heat Capacity and the Equipartition Theorem}\label{Equipartition}
 
 The heat capacity of an object is a measure of how much heat (which has dimensions of energy) is required to change an object's temperature. Let   $\dbar Q=$ the heat transferred to an object and $dT=$ the change in temperature of the object. Then the heat capacities of the object are:
-\begin{align*}
+\begin{align}
+    \label{eq cv}
     c_v=\left(\frac{\dbar Q}{dT}\right)_V\\
+    \label{eq cp}
     c_p=\left(\frac{\dbar Q}{dT}\right)_p
-\end{align*}
+\end{align}
 where the subscripts of $V$ and $p$ mean that the volume and pressure, respectively, are held constant as heat is added/removed from the system. Notationally, when we write $c_v$ or $c_p$, we usually mean the specific heat capacities: the heat capacities per mole or, more commonly, per mass. In exactly the same way as the specfic gas constant $R$, if not specified, assume that $c_p$ and $c_v$ denote the heat capacities \textit{per unit mass} (remember, \textit{intensive} variables!). For multiple constituents, we can calculate the specific heat capacities from molar heat capacities using the effective molar mass $\bar{M}$.
 
 It's useful to remember that the heat capacity itself often depends on the temperature. However, sometimes we'll assume that it does not for analytical progress (and not realism).
@@ -708,7 +711,7 @@ We cannot naively use temperature as we did before, because parcel $A$'s tempera
 We now want to define a quantity which serves the same role as temperature did before (i.e., a variable which encodes which way heat will flow) but which is \textit{also}, unlike temperature, \hyperref[Material Conservation]{materially conserved}. Let us consider a more general scenario, and move each parcel to some third pressure $p_{ref}$\footnote{Set $p_{ref}=p_B$ to recover our first example.}. 
 
 We define the \textbf{Potential Temperature} $\theta$ as the temperature a parcel \textit{would} have if it were perfectly adiabatically moved to some reference pressure level $p_{ref}$:
-\begin{align}\label{Potential Temperature}
+\begin{align}\label{eq Potential Temperature}
     \BOX{\theta(T,p)=T\left(\frac{p}{p_{ref}}\right)^{-\frac{R}{c_p}}}
 \end{align}
 Recall that a few pages ago in our derivation of the \hyperref[Dry Adiabat]{Dry Adiabat} we found that:
@@ -755,7 +758,7 @@ We now make two assumptions. First, we assume that $h$ is small, therefore, $p(z
     \label{Buoyancy Force}
     \therefore \,\,& \BOX{F_b=g\left( \frac{\rho_a-\rho_p}{\rho_p} \right)}
 \end{align}
-where $F_b=$ the buoyancy force. Physically, the buoyant force is intuitive: if the air parcel is lighter than the ambient air ($\rho_p<\rho_a$) it will convect and rise, and vice versa. Furthermore, we can write $F_b$ in terms of the temperature $T$ (using \ref{eq Ideal Gas}) or potential temperature $\theta$ (using \ref{Potential Temperature}) in very neat forms, since many terms cancel top and bottom:
+where $F_b=$ the buoyancy force. Physically, the buoyant force is intuitive: if the air parcel is lighter than the ambient air ($\rho_p<\rho_a$) it will convect and rise, and vice versa. Furthermore, we can write $F_b$ in terms of the temperature $T$ (using \ref{eq Ideal Gas}) or potential temperature $\theta$ (using \ref{eq Potential Temperature}) in very neat forms, since many terms cancel top and bottom:
 \begin{align}
     F_b=g\left( \frac{\rho_a-\rho_p}{\rho_p} \right)\nonumber\\
     \label{Buoyancy Force Temp}
@@ -856,14 +859,14 @@ If \ref{Dry Stability Stable} obtains then an atmosphere will be \textit{super-s
 
 We can formulate an equivalent criterion for potential temperature. Recall that if two parcels of air have potential temperatures $\theta_A$ and $\theta_B$ such that $\theta_A>\theta_B$, then parcel $A$ will have a higher temperature than parcel $B$ if they're at the same pressure.
 
-We can very straightforwardly derive an equivalent criterion for convective instability, this time in terms of potential tempreature $\theta$, by rearranging \ref{Potential Temperature} for $T(\theta)$ and substituting that into \ref{Dry Stability}.
+We can very straightforwardly derive an equivalent criterion for convective instability, this time in terms of potential tempreature $\theta$, by rearranging \ref{eq Potential Temperature} for $T(\theta)$ and substituting that into \ref{Dry Stability}.
 
 \begin{align*}
     1&<\frac{c_p}{R}\frac{d\ln T(\theta)}{d\ln p}
     &\text{ ; }&\text{\ref{Dry Stability}}
     \\
     &=\frac{c_p}{R}\frac{d\ln \left( \theta\left( \frac{p}{p_{ref}} \right)^{\frac{R}{c_p}} \right)}{d\ln p}
-    &\text{ ; }&\text{substitute \ref{Potential Temperature}}
+    &\text{ ; }&\text{substitute \ref{eq Potential Temperature}}
     \\
     &=\frac{c_p}{R} \left( 
         \frac{d \ln \theta}{d \ln p}+
@@ -1089,7 +1092,7 @@ during convection.
 
 \chapter{Moist Thermodynamics}\label{Moist Thermodynamics}
 
-\section{Phase Transitions}
+\section{Phase Transitions}\label{s Phase Transitions}
 
 In the previous chapter, we considered only atmospheres made up completely of constituents that do not undergo any phase transitions. However, Earth's atmosphere (and many others) clearly do not obey this assumption. Earth's atmosphere has a non-negligible amount of condensible substances: water vapour (look outside and you might see a cloud!), which clearly condense, evaporate, and freeze in Earth-like conditions.
 
@@ -1246,7 +1249,7 @@ We can now apply product rule and assume that the condensible is always saturate
     &=q\frac{L^2}{R_c T^2}\,dT-Lq\,d\ln p\\
     &=q\frac{L^2}{R_cT}\,d\ln T-Lq\,d\ln p
 \end{align*}
-We now subsitute this into \ref{1st law latent heat} and, for simplicity, let $ds=0$ from the outset.\footnote{We could allow $ds\neq 0$ and derive what's called an \textbf{Equivalent Moist Potential Temperature} $\theta_E$ (analogous to \hyperref[Potential Temperature]{Potential Temperature} $\theta$), which is similarly \hyperref[Material Conservation]{materially conserved} for moist saturated parcels of air. We don't for brevity, but if you wish to read up more on it, here is a resource: whoops I forgot to insert the link, please let me know if this is still here!} Following identical algebra in the derivation of the \hyperref[Dry Adiabat]{Dry Adiabat}, and carefully distinguishing between $R_a$ and $R_c$ (the specific gas constants of the non-condensible and dilute condensible), we find that:
+We now subsitute this into \ref{1st law latent heat} and, for simplicity, let $ds=0$ from the outset.\footnote{We could allow $ds\neq 0$ and derive what's called an \textbf{Equivalent Moist Potential Temperature} $\theta_E$ (analogous to \hyperref[eq Potential Temperature]{Potential Temperature} $\theta$), which is similarly \hyperref[Material Conservation]{materially conserved} for moist saturated parcels of air. We don't for brevity, but if you wish to read up more on it, here is a resource: whoops I forgot to insert the link, please let me know if this is still here!} Following identical algebra in the derivation of the \hyperref[Dry Adiabat]{Dry Adiabat}, and carefully distinguishing between $R_a$ and $R_c$ (the specific gas constants of the non-condensible and dilute condensible), we find that:
 \begin{align*}
     c_v\,dT & =-R_a\,dT+\frac{R_aT\,dp}{p}-L\,dq\\
     \therefore c_p\,dT &= \frac{R_a T\,dp}{p} - q\frac{L^2}{R_cT}\,d\ln T+Lq\,d\ln p\\
