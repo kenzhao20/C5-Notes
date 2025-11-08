@@ -258,16 +258,36 @@ First we introduce the concept of a fluid element. This is an infinitesimal volu
 
 Second, we introduce the \hyperref[Material Derivative]{Material Derivative}:
 \begin{align}
-    \frac{D}{Dt}=\underbrace{\frac{\partial}{\partial t}}_{\text{Time Derivative at a Fixed Point}}+\underbrace{\vec{u}\cdot\vec{\nabla}}_{\text{Advection}}
+    \textcolor{myorange}{\frac{D}{Dt}}
+    =
+    \underbrace{
+        \textcolor{mydarkblue}{\frac{\partial}{\partial t}}
+        }_{\textcolor{mydarkblue}{\text{Time Derivative at a Fixed Point}}}+
+        \underbrace{
+            \textcolor{mymagenta}{\vec{u}\cdot\vec{\nabla}}}_{\textcolor{mymagenta}{\text{Advection}}}
     \label{Material Derivative}
 \end{align}
 The \hyperref[Material Derivative]{Material Derivative} of a quantity is the time-derivative of a quantity \textit{following a fluid element}. This is useful because it is much easier to consider what effects might change a quantity of a fluid element. For example, the forces per unit mass $\vec{F}$ affect a fluid parcel as follows: $\frac{D\vec{u}}{Dt}=\vec{F}$ (this is just Newton's second law).
 
 However, in GFD, we will mostly be interested in how a quantity changes at a \textbf{fixed point in space} $\left(\text{indicated by the } \frac{\partial}{\partial t} \text{ term}\right)$, \textit{not following a fluid element}. If we rearrange the Equation \ref{Material Derivative} for $\left( \frac{\partial}{\partial t} \right)$, we find that the quantity at some point is modified by both whatever affects the fluid element $\left( \frac{D}{D t} \right)$, for example the force $\vec{F}$, and the properties of fluid elements which are advected into that location $-\vec{u}\cdot\vec{\nabla}$:
 \begin{align}\label{MatDerivTerms}
-    \underbrace{\frac{\partial A}{\partial t}}_{\text{Local change in }A}=
-    \underbrace{\frac{DA}{Dt}}_{{\text{Change in }A \text{ following a fluid element}}}-
-    \underbrace{\vec{u}\cdot\vec{\nabla}A}_{\text{Advection of fluid elements with different }A}
+    \underbrace{
+        \textcolor{mydarkblue}{\frac{\partial A}{\partial t}}
+        }_{
+            \textcolor{mydarkblue}{\text{Local change in }A}
+        }
+        =
+    \underbrace{\textcolor{myorange}{
+        \frac{DA}{Dt}}
+        }_{{\textcolor{myorange}{\text{Change in }A \text{
+             following a fluid element}}}
+             }
+        -
+    \underbrace{\textcolor{mymagenta}{
+        \vec{u}\cdot\vec{\nabla}A}
+        }_{
+            \textcolor{mymagenta}{\text{Advection of fluid elements with different }A}
+            }
 \end{align}
 
 Hopefully you can see why this physically makes sense. The local change in $A$ is the is comprised of the the change in $A$ following a fluid element, i.e., comprised of what happens exactly at that point, \textbf{and} advection, i.e., the effect of fluid elements that low into that point. Advection is the negative dot product of $\vec{u}$ with the gradient of $A$. Hopefully this makes sense too: the gradient points in the direction of increasing $A$. If $A$ is increasing in the same direction as $\vec{u}$, then $\vec{u}$ is `blowing' areas of lower $A$ into areas of higher $A$, so this should be a negative contribution to the local change in $A$.
@@ -377,7 +397,11 @@ Looking back, this should be seen as as cursory, highly unrealistic taste of the
 For simplicity we ignore state variables like salinity, humidity, etc., and restrict our attention to a system fully characterised by 6-state variables: the velocity $\vec{u}=(u,v,w)$, pressure $p$, density $\rho$, and temperature $T$. These are governed by six equations: 3 momentum budget equations (\ref{Navier Stokes}), one mass budget equation (\ref{Mass Conservation}), one energy budget equation (\ref{Energy Equation}), and an equation of state (\ref{EoS}). Each term is labelled below:
 \begin{gather}
     \boxed{\underbrace{\frac{D\vec{u}}{Dt}}_{\text{Acceleration and Advection}}
-    =\overbrace{-\frac{1}{\rho}\vec{\nabla}p}^\text{Pressure Gradients}\underbrace{-g\vec{k}}_\text{Gravity}+\overbrace{\nu\vec{\nabla}^2\vec{u}}^\text{Viscous Dissipation}\underbrace{+\frac{\nu}{3}\vec{\nabla}(\vec{\nabla}\cdot\vec{u})}_\text{}+\overbrace{\vec{F}}^\text{Other Forces}}
+    =
+    \overbrace{-\frac{1}{\rho}\vec{\nabla}p}^\text{Pressure Gradients}-
+    \underbrace{\vec{F}_g}_\text{Gravity}+
+    \overbrace{\nu\vec{\nabla}^2\vec{u}}^\text{Viscous Dissipation}
+    \underbrace{+\frac{\nu}{3}\vec{\nabla}(\vec{\nabla}\cdot\vec{u})}_\text{}+\overbrace{\vec{F}}^\text{Other Forces}}
     \label{Navier Stokes}
     \\
     \boxed{\underbrace{\frac{D\rho}{Dt}}_\text{Change in Mass of Fluid Parcel}
@@ -477,14 +501,16 @@ The \textbf{centrifugal force} is the force that pushes objects away from the ax
 
 We have thus transformed Equation \ref{Navier Stokes} into a rotating coordinate system:
 \begin{align}
-    \frac{D\vec{u}}{Dt}+2\vec{\Omega}\times\vec{u}+\frac{1}{\rho}\vec{\nabla}p+g\vec{k}=-\vec{\Omega}\times\vec{\Omega}\times\vec{r}+\nu\vec{\nabla}^2\vec{u}+\frac{\nu}{3}\vec{\nabla}(\vec{\nabla}\cdot\vec{u})+\vec{F}\label{Navier Stokes Rotating}
+    \frac{D\vec{u}}{Dt}+2\vec{\Omega}\times\vec{u}+\frac{1}{\rho}\vec{\nabla}p-\vec{F}_g=-\vec{\Omega}\times\vec{\Omega}\times\vec{r}+\nu\vec{\nabla}^2\vec{u}+\frac{\nu}{3}\vec{\nabla}(\vec{\nabla}\cdot\vec{u})+\vec{F}\label{Navier Stokes Rotating}
 \end{align}
 
 \subsection{Local Cartesian Coordinates}
 
-We have just learnt how to deal with coordinate systems that vary with time. We will now skim over (since the details aren't that interesting) how to deal with coordinate systems that vary with space.
+We have just derived that derivatives change if we use a coordinate system which varies with time: more specifically centrifugal and coriolis forces appear. We now explicitly specify the coordinate system we will be using. This coordinate system will vary in space, so we will ahve to derive how the equations of motion look in this coordinate system. I will end up skimming over  the details (since they aren't that interesting).
 
-We wish to use a coordinate system that follows the surface of the Earth, with the basis vectors $\hat{x}$, $\hat{y}$, $\hat{z}$, pointing in the east, north, and upwards (away from the centre of the Earth) directions. In this coordinate system, we define the position and velocity coordiates $(x,y,z)$ and $(u,v,w)$ as indicating distance and velocity in the east, north, and upwards directions, respectively. We further define the latitude $\phi\in[-\frac{\pi}{2},\frac{\pi}{2}]$ ($\phi=0$ indicates the equator, $\phi=\pm\frac{\pi}{2}$ is the north/south pole) and the radial distance $r$ where $r=a+z$ where $a=$ the radius of the Earth (see Figure \ref{LocCartes}).
+We wish to use a coordinate system that follows the surface of the Earth, with the basis vectors $\hat{x}$, $\hat{y}$, $\hat{z}$, pointing in the east, north, and upwards (away from the centre of the Earth) directions. In this coordinate system, we define the position and velocity coordiates $(x,y,z)$ and $(u,v,w)$ as indicating distance and velocity in the east, north, and upwards directions, respectively. We also refer to the east-west direction as the \textbf{zonal} direction and the north-south direction as the \textbf{meridional} direction.
+
+We further define the latitude $\phi\in[-\frac{\pi}{2},\frac{\pi}{2}]$ ($\phi=0$ indicates the equator, $\phi=\pm\frac{\pi}{2}$ is the north/south pole) and the radial distance $r$ where $r=a+z$ where $a=$ the radius of the Earth (see Figure \ref{LocCartes}).
 \begin{figure}[H]
     \centering
     \scalebox{1.4}{
@@ -515,6 +541,17 @@ We wish to use a coordinate system that follows the surface of the Earth, with t
     \caption{Local Carteisan Coordinates. $(x',y',z')$ indicate our global cartesian coordinate system, while $(x,y,z)$ indicate our local cartesian coordinate system in magenta arrows.}
     \label{LocCartes}
 \end{figure}
+
+Our goal now is to derive how these basis vectors $\hat{x}$, $\hat{y}$, $\hat{z}$ vary with space and time.
+
+The first step is noting that the following relation obtains:
+\begin{align*}
+    \vec{\Omega} = \Omega (\hat{y}\cos\theta+\hat{k}\sin\theta)
+\end{align*}
+
+[UNDER CONSTRUCTION]
+
+
 Churning through the algebra, we get:
 \begin{align*}
     \frac{Du}{Dt}-\left( 2\Omega+\frac{u}{r\cos\phi} \right)\left( v\sin\phi-w\cos\phi \right)+\frac{1}{\rho}\frac{\partial p}{\partial x}
@@ -572,11 +609,11 @@ I do not write out all the details here, as they would easily take multiple page
 Suffice it to say that we eliminate many terms through this scale analysis. This includes any terms that feature the viscosity $\nu$ and many terms arising from our local cartesian coordinate system. The centrifugal force is \textit{not} eliminated universally by our scale analysis, but we neglect this term for a different reason.\footnote{
     The reason why we neglect the centrifugal force is for two reasons.
     
-    First, the centrifugal force is a conservative force, i.e., we can write it as the gradient of a scalar field: i.e., there exists a $\phi$ such that $-\vec{\Omega}\times\vec{\Omega}\times\vec{r}=-\vec{\nabla}\phi$. Therefore, we can simply define an `effective gravitational potential' $\Phi=\phi+\psi$, where $\psi$ is the gravitational potential energy field.
+    First, the centrifugal force is a conservative force, i.e., we can write it as the gradient of a scalar field: i.e., there exists a $\psi$ such that $-\vec{\Omega}\times\vec{\Omega}\times\vec{r}=-\vec{\nabla}\phi$. Therefore, we can simply define an `effective gravitational potential' $\Phi=\phi+\psi$, where $\phi$ is the gravitational potential energy field.
 
     The second reason is a bit more subtle.
 
-    First, consider the shape of the Earth (or any planet). Any non-rotating sufficiently-large planet (which has had (sufficient) time to come into equilibrium) is a sphere. The reason why is because it is \textit{this} configuration which minimises the gravitational potential energy, and it minimises the gravitational potential energy because the surface of the planet aligns with the surfaces/contours of constant gravitational potential energy $\psi$. In other words, the planet is spherical because surfaces of constant $\psi$ are also spherical.
+    First, consider the shape of the Earth (or any planet). Any non-rotating sufficiently-large planet (which has had (sufficient) time to come into equilibrium) is a sphere. The reason why is because it is \textit{this} configuration which minimises the gravitational potential energy, and it minimises the gravitational potential energy because the surface of the planet aligns with the surfaces/contours of constant gravitational potential energy $\phi$. In other words, the planet is spherical because surfaces of constant $\phi$ are also spherical.
 
     For a rotating planet, the surfaces of constant potential energy are now deformed (the total potential $\Phi=\phi+\psi=$ the sum of the gravitational and the centrifugal potential energies). Now, the contours of constant $\Phi$ are \href{https://en.wikipedia.org/wiki/Spheroid}{oblate spheroids}, and so the planet's shape tends towards this.
     
@@ -1364,7 +1401,7 @@ We now aim to derive these equations from three primitive (approximate) equation
 
 Second, we assume that the density is constant $\rho=\rho_0$ for all time and at all points. This immediately implies (from Equation \ref{Mass Conservation}) that the system must be incompressible, so we know that Equation \ref{Incompressibility} holds.
 
-Third, we assume that the system is \textbf{shallow}: $H/L\ll 1$ where $H$ is the vertical lengthscale and $L$ is the horizontal lengthscale. If we non-dimensionalise \ref{Incompressibility}, we derive that the vertical velocity scale $W$ is much smaller than the horizontal velocity scale $U$: $W\ll U$:
+Third, we assume that the system is \textbf{shallow}: $H/L\ll 1$ where $H$ is the vertical lengthscale and $L$ is the horizontal lengthscale. If we estimate the size of the terms in \ref{Incompressibility}, we derive that the vertical velocity scale $W$ is much smaller than the horizontal velocity scale $U$: $W\ll U$:
 \begin{align*}
     \vec{\nabla}\cdot\vec{u}=0\\
     \underbrace{\vec{\nabla}_h\cdot\vec{u}_h}_{U/L}+\underbrace{\frac{\partial w}{\partial z}}_{W/H}=0\\
@@ -1590,7 +1627,7 @@ Using product rule, this implies the following:
     \vspace{2mm} where $\xi=\frac{\partial v}{\partial x}-\frac{\partial u}{\partial y}$ the relative vorticity. Equivalently, following a fluid parcel, the potential vorticity remains constant.
 \end{fact}
 
-\subsubsection{Interpretation}
+\subsubsection{Interpretation}\label{ss PV interpretation}
 
 We can interpret material conservation of potential vorticity by considering an infinitesimally thin column of fluid.
 
@@ -2269,11 +2306,7 @@ where $L_d$ is the \hyperref[SW Def Radius Box]{Rossby Deformation Radius} (it's
 
 \textit{This} relation, combined with a suitable boundary condition, will end up constraining the sign of $c$. Note first that $A(x)$ (and therefore $h(x)$) is exponential in $x$, and therefore will tend towards $\infty$ when $x$ becomes big and positive or negative, depending on the sign of $f/c$.
 
-The sign of $f/c$ is therefore crucial to understanding the $x$-dependence. If $f/c>0$, $h\to\infty$ as $x\to -\infty$. Conversely, if $f/c<0$, $h\to\infty$ as $x\to\infty$. To properly 
-
-
-
-Now let us consider just the Northern hemisphere such that $f>0$.
+The sign of $f/c$ is therefore crucial to understanding the $x$-dependence. If $f/c>0$, $h\to\infty$ as $x\to -\infty$. Conversely, if $f/c<0$, $h\to\infty$ as $x\to\infty$. To simplify things, let us first consider just the Northern hemisphere such that $f>0$. The sign of $f/c$ is therefore equal to the sign of $c$.
 
 We first consider a western boundary such that there is fluid for $x>0$ but no fluid for $x<0$. If $c=\sqrt{gH}>0$, then $f/c>0$, therefore 
 
@@ -2721,20 +2754,20 @@ We now no longer neglect other forces, and reintroduce the horizontal stress for
     \underbrace{\rho_0 \overline{\vec{u}_h'w'}}_{\text{turbulent eddy stress}}
 \end{gather*}
 where $\vec{\tau}$ is the horizontal stress vector\footnote{If you are familiar with fluid mechanics, you will notice that, in reality, the stress is actually a tensor. [FOOTNOTE UNDER CONSTRUCTION]}. The second term is a bit more complicated, but just think of it as the effect of turbulent momentum fluxes which produce an effective force on the fluid (and read this\footnote{
-    The explanation of the $\rho_0 \overline{\vec{u}_h'w'}$ is as follows. First we perform a \href{https://en.wikipedia.org/wiki/Reynolds_decomposition}{Reynolds Decomposition} by splitting the velocity into a (time, space, or other suitably defined) average (indicated by a bar) and a fluctuation indicated by a prime:
+    The explanation of the $\rho_0 \overline{\vec{u}_h'w'}$ is as follows. First we perform a \href{https://en.wikipedia.org/wiki/Reynolds_decomposition}{Reynolds Decomposition} by splitting the velocity into a (time, space, or other suitably defined) average indicated by a bar and a fluctuation indicated by a prime:
     \begin{align*}
-        \vec{u}_h = \overline{\vec{u}_h}+\vec{u}_h'
+        \vec{u}_h = \overline{\vec{u}}_h+\vec{u}_h'
         \\
         w = \overline{w}+w'
     \end{align*}
     where the fluctuations average out to $0$ (e.g., $\overline{w'}=0$).
 
-    While the fluctuations by themselves might average out to $0$, there might be correlations that don't average out to $0$. The turbulent momentum flux is the average correlation between the horizontal velocity and the vertical velocity: if there are correlations, then this will result in momentum being advected downwards or upwards. 
+    While the fluctuations by themselves might average out to $0$, there might be correlations between fluctuations that do not average out to $0$. The turbulent momentum flux is the average correlation between the horizontal velocity and the vertical velocity: if there are correlations, then this will result in momentum being advected downwards or upwards. 
     
-    For example, if $\vec{u}_h'$ is more likely to be pointing eastward when $w'<0$, then this will result in eastward momentum preferentially being advected downwards by vertical velocity fluctuations, which causes an effective momentum flux.
+    For example, if $\vec{u}_h'$ is more likely to be pointing eastward when $w'<0$, then this will result in eastward momentum preferentially being advected downwards by vertical velocity fluctuations, which causes an effective momentum flux/stress.
 } footnote if you want more). Ekman transport is therefore a three-way balance between coriolis, pressure gradient forces, and horizontal stress from friction.
 
-We define the \textbf{Ekman Layer} as lying between $z=0$, where the surface of the ocean is, and $z=-H$, where $z=-H$ when $\vec{\tau}=\vec{0}$. This specifies where $z=-H$, but note that we do not necessarily need to solve for $H$.
+We define the \textbf{Ekman Layer} as lying between $z=0$, where the surface of the ocean is, and $z=-H$, where $z=-H(x,y,t)$ when $\vec{\tau}=\vec{0}$. This specifies where $z=-H(x,y,t)$, but note that we do not necessarily need to solve for $H(x,y,t)$. Note also that $H(x,y,t)$ may vary in time and space.
 
 \subsection{Ekman Spiral}
 
@@ -2770,7 +2803,7 @@ We now integrate this expression from $z=-H$ to $z=0$, and note that we can rema
     }
 \end{gather}
 
-We therefore have an expression for the Ekman Flux $\vec{U}_{Ek}$: the column integrated fluid flux from wind-forcing. Note a key nuance that this flux is not a volume flux: the dimensions are not a volume per second, but an area per second. To find the volume flux, we would also need to integrate this expression horizontally perpendicular to $\vec{U}_{Ek}$. (E.g., if $\vec{U}_{Ek}$ is pointing northward, we would need to integrate this zonally, i.e., from west to east to find the volume flux.)
+We therefore have an expression for the Ekman Flux $\vec{U}_{Ek}$: the column integrated fluid flux from wind-forcing. Note a key nuance that this flux is not a volume flux: the dimensions are not a volume per second, but an area per second. To find the volume flux, we would also need to integrate this expression horizontally perpendicular to $\vec{U}_{Ek}$. (E.g., if $\vec{U}_{Ek}$ is pointing northward, we would need to integrate this zonally (i.e., from west to east) to find the volume flux.)
 
 Physically, we have a very similar situation to \hyperref[Geostrophic Box]{Geostrophic Balance}, for $\vec{U}_{Ek}$, we have a total balance between the horizontal stress $\vec{\tau}$ and the coriolis force. To make this more clear, we can write an expression for $\vec{U}_{Ek}$ another way:
 \begin{align*}
@@ -2807,13 +2840,17 @@ We define $w_{Ek}$ as follows:
     }
 \end{gather}
 
-In other words, the ekman upwelling is equal to the ($z$-component of the) vorticity of the $\frac{1}{\rho_0 f}\vec{\tau}_s$. This could come from $f$, or it could come from the surface wind-stress field $\vec{\tau}_s$. 
+In other words, the ekman upwelling is equal to the ($z$-component of the) vorticity of the $\frac{1}{\rho_0 f}\vec{\tau}_s$. This could come from $f$, or it could come from the surface wind-stress field $\vec{\tau}_s$.
+
+Suppose we have a surface wind-stress field $\vec{\tau}_s(x,y)$ given by $-\hat{y}\tau_0\,\cos\frac{y}{L_y}$. 
+
+[FIGURE UNDER CONSTRUCTION]
 
 \section{Sverdrup Balance (Deep Ocean Circulation)}\label{Sverdrup Balance}
 
 \subsection{Conservation of Potential Vorticity}
 
-We now turn our focus to below the Ekman layer, i.e., to $z<-H$. We crucially assume that the flow is geostrophic below the Ekman layer (owing to the small $Ro$ in the ocean). However, we do \textit{not} make the $f$-plane approximation, and instead allow the coriolis parameter to vary according to the $\beta$-plane approimation. 
+We now turn our focus to below the Ekman layer, i.e., to $z<-H$. We crucially assume that the flow is geostrophic below the Ekman layer (owing to the small $Ro$ in the ocean). However, we do \textit{not} make the $f$-plane approximation, and instead allow the coriolis parameter to vary according to the \hyperref[beta plane box]{$\beta$-plane approimation}. 
 
 This implies (exercise) that geostrophic flow is no longer incompressible in the horizontal direction, and so to maintain incompressibility overall, there must be upwelling or downwelling. This, upwelling or downwelling will end up being set by the ekman upwelling or downwelling, which is why surface wind-stress can have an effect deep in the ocean. We also assume that the density $\rho\approx\rho_0$ is constant.
 
@@ -2841,9 +2878,32 @@ We first consider Equation \ref{Incompressibility}, and allow the horizontal vel
 \end{align*}
 
 Integrating this now from $z=-D$ (the depth of the ocean) to $z=-H$ and assuming the $w(z=-D)=0$, we find an equation for the depth-integrated meridional velocity:
-[UNDER CONSTRUCTION]
+\begin{align*}
+    \int_{-D}^{-H}\beta v\,dz = \int_{-D}^{-H}\frac{\partial w}{\partial z}\,dz
+    \\
+    \beta V = f\left( w(z=-H)-w(z=-D) \right)
+\end{align*}
+where $V=\int_{-D}^{-H} v\,dz$ is the vertically integrated meridional velocity.
+
+We now assume that the vertically velocity at $z=-H$ is set by Ekman upwelling so that $w(z=-H)=w_{Ek}$ obtains, and that the ocean has a flat bottom (or at least a roughly such that $w(z=-D)\ll w(z=-H)$) so that $w(z=-D)\approx 0$. As such, the vertically integrated meriodional velocity depends on the vertical upwelling or downwelling:
+\begin{equation}
+    \label{eq Sverdrup Balance}
+    \begin{aligned}
+        \beta V &= f w_{Ek}
+        \\
+        &=\left[
+            \vec{\nabla} \times \left( \frac{1}{\rho_0 f}\vec{\tau}_s \right)
+        \right]_z
+    \end{aligned}
+\end{equation}
+
+We can think of Equation \ref{eq Sverdrup Balance} bas expressing \hyperref[Cons PV Box]{material conservation of potential vorticity} of deep seawater. If $w_{Ek}>0$, this corresponds to a column being stretched. As such, the absolute vorticity of the fluid parcel must increase, but because $Ro\ll 1$, the planetary voriticity is much larger than the relative vorticity ($f\gg \xi$). As such, the only way the parcel can effectively increase vorticity is by flowing northward and increasing its planetary vorticity. Therefore, if $w_{Ek}>0$, so too must $V$.
+
+[FIGURE UNDER CONSTRUCTION]
 
 \subsection{Western Boundary Currents: The Effects of Friction}
+
+
 
 \section{Box Models of the Meridional Overturning Circulation}\label{MOC}
 
