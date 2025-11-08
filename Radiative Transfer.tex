@@ -51,6 +51,7 @@ This section of the course was lectured by \href{https://users.physics.ox.ac.uk/
 
 In general, radiation will not only be a function of position $\vec{r}$ but will also be a function of direction\footnote{This is why your eyes will hurt if you look directly at the sun but they won't if you look at these lecture notes.}. We can encode the direction that some radiation is propagates with a \textbf{ray}, a vector $\vec{\omega}$ of (dimensionless) length $1$ on a unit sphere (see Figure \ref{3D Ray}). $\vec{\omega}$ encodes information regarding the direction of propagation, but not regarding the magnitude (e.g., energy) of the radiation. In Cartesian coordinates, this is:
 \begin{align}
+    \label{eq ray}
     \vec{\omega}=\left(\begin{array}{ccc}
          \sin(\theta)\cos(\phi)\\
          \sin(\theta)\sin(\phi)\\
@@ -151,6 +152,7 @@ Intuitively, the differential solid angle is the dimensionless area element in s
 
 We also define the \textbf{projected} differential solid angle $d\Omega_\perp$. This accounts for the fact that if we have some surface which is absorbing radiation, radiation parallel to the surface will not be absorbed.
 \begin{align}
+    \label{eq Diff Solid Angle}
     \BOX{d\Omega_\perp=\cos\zeta\,d\Omega}
 \end{align}
 where $\zeta$ is the \textbf{zenith angle}, the angle between the ray ($\vec{\omega}$) and the ray normal to the surface in question. Sometimes we orient our axes such that $\theta=\zeta$ because it simplifies the system, but note that we do not always do this nor does this always simplify the situation.
@@ -209,7 +211,7 @@ As a summary:
         \begin{tcolorbox}[colback=myyellow!50!white,colframe=mymagenta]
             \textbf{Irradiance} $E$: The energy flux per unit time and area through the surface in question.
             \begin{align*}
-                F&=\frac{\partial \phi}{\partial A}
+                E&=\frac{\partial \phi}{\partial A}
                 \\&
                 =\frac{\text{Power flux \textbf{through} the \textbf{surface}}}{\text{per }(\text{Area})}
             \end{align*}
@@ -352,7 +354,7 @@ We now specify that the spectral radiance is travelling through a slab of air wi
             \BOX{\tau_\nu(p=0)=\tau_{\nu,\infty}}
         \end{gather}
     \end{minipage}
-    
+
     \vspace{2mm}The transmission function $\mathcal{T}_\nu$ between two points $p_1$ and $p_2$ encodes how much the spectral radiance is attenuated between the two points and is:
 
     \begin{minipage}{.5\linewidth}
@@ -401,6 +403,7 @@ We now turn to emission.
 
 We first define a \textbf{blackbody} as a theoretical object which absorbs all incident electromagnetic radiation. To a good approximation, many stellar bodies are blackbodies, including the Sun. One can show that such a body must emit spectral radiance at all times given by $L_{BB}(\nu,T)$, where $T$ is the temperature of the blackbody:
 \begin{align}
+    \label{eq BB}
     \boxed{L_{BB}\,d\nu=B(\nu,T)\,d\nu=\frac{2h\nu^3}{c^2}\frac{1}{\exp\left( \frac{h\nu}{k_BT} \right)-1}\,d\nu}
 \end{align}
 You do not have to memorise this, but you should be aware of a few properties. 
@@ -459,10 +462,12 @@ To find the (non-spectral) irradiance of a blackbody, we integrate over all freq
 
 Many bodies are not like blackbodies at all, even approximately. We thus define the \textbf{emissivity} $\epsilon\in[0,1]$ of an object as follows:
 \begin{align}
+    \label{eq Emissivity}
     \BOX{\epsilon(\nu,T,p)=\frac{L(\nu,T,p)}{B(\nu,T)}}
 \end{align}
 where $T=$ the temperature; $p=$ the pressure; and $L$ is the spectral radiance emission of the object in question. Physically, the emissivity encodes how much the object is like a blackbody at each frequency, temperature, and pressure. For a perfect blackbody, $\epsilon=1$ for all frequencies, temperatures, and pressures. One can show that, in local thermodynamic equilibrium, the emissivity of an object is exactly equal to its absorptivity $\alpha$:
 \begin{align}
+    \label{eq Absorptivity}
     \boxed{\epsilon(\nu,T,p)=\alpha(\nu,T,p)}
 \end{align}
 
