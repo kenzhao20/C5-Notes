@@ -300,10 +300,11 @@ Third, we introduce the idea of \hyperref[Material Conservation]{Material Conser
 \end{align}
 If Equation \ref{Material Conservation} obtains for some quantity $A$, this is equivalent to demanding that, if one follows a fluid parcel, the quantity $A$ does not change. However, as a whole, $A$, need not be globally conserved. If one considers Equation \ref{MatDerivTerms} and sets $\frac{D A}{Dt }=0$, then you can see that the only local change in $A$ is from fluid parcels with different $A$ being advected into that location.
 
-Exercise: refer forwards to Equation \ref{Energy Equation}. Note even if we assume that $Q=0$, we will find that $\frac{DT}{Dt}\neq 0$. In other words, temperature is not materially conserved (so long as $\beta\neq0$). This is why we introduced the idea of \hyperref[Potential Temperature]{Potential Temperature}, as it is the case that $\frac{D\theta}{Dt}=0$ (excercise: take \ref{Energy Equation}, solve for $\beta$ using the ideal gas law, set $Q=0$, and show that $\frac{D\theta}{Dt}=0$ using the product rule).
+Exercise: refer forwards to Equation \ref{Energy Equation}. Note even if we assume that $Q=0$, we will find that $\frac{DT}{Dt}\neq 0$. In other words, temperature is not materially conserved (so long as $\beta\neq0$). This is why we introduced the idea of \hyperref[eq Potential Temperature]{Potential Temperature}, as it is the case that $\frac{D\theta}{Dt}=0$ (excercise: take \ref{Energy Equation}, solve for $\beta$ using the ideal gas law, set $Q=0$, and show that $\frac{D\theta}{Dt}=0$ using the product rule).
 
 Finally, we define the vorticity $\vec{\omega}$ as the curl of the velocity:
 \begin{align}
+    \label{eq Vorticity}
     \vec{\omega}=\vec{\nabla}\times\vec{u}
 \end{align}
 If you refer back to the box on \hyperref[VC Interp]{Vector Calculus Interpretation}, this should remind you that the curl of the velocity is the \textbf{local} rotation of the velocity field, not the \textbf{global} rotation. We will usually be considering the vertical component of the vorticity $[\vec{\omega}]_z$, which we will often write just as $\xi$.
@@ -424,7 +425,7 @@ Second, these equations are currently too complicated to be analytically tractab
 
 \section{Simplifications}
 
-\subsection{Rotating Coordinate Systems}
+\subsection{Rotating Coordinate Systems}\label{ss Rotating}
 
 As already mentioned, the momentum budget equation applies for an \textit{inertial coordinate system}, i.e., a coordinate system which is not accelerating. However we wish to describe the dynamics in a rotating coordinate system which rotates with the Earth (or planet). Our goal now is to  find a relation between the time derivative of some arbitrary vector $\vec{A}$ in an inertial coordinate system $\left(\frac{d\vec{A}}{dt}\right)_I$ and the time derivative in a rotating coordinate system $\left(\frac{d\vec{A}}{dt}\right)$.
 
@@ -504,7 +505,7 @@ We have thus transformed Equation \ref{Navier Stokes} into a rotating coordinate
     \frac{D\vec{u}}{Dt}+2\vec{\Omega}\times\vec{u}+\frac{1}{\rho}\vec{\nabla}p-\vec{F}_g=-\vec{\Omega}\times\vec{\Omega}\times\vec{r}+\nu\vec{\nabla}^2\vec{u}+\frac{\nu}{3}\vec{\nabla}(\vec{\nabla}\cdot\vec{u})+\vec{F}\label{Navier Stokes Rotating}
 \end{align}
 
-\subsection{Local Cartesian Coordinates}
+\subsection{Local Cartesian Coordinates}\label{s Local Cartesian Coordinates}
 
 We have just derived that derivatives change if we use a coordinate system which varies with time: more specifically centrifugal and coriolis forces appear. We now explicitly specify the coordinate system we will be using. This coordinate system will vary in space, so we will ahve to derive how the equations of motion look in this coordinate system. I will end up skimming over  the details (since they aren't that interesting).
 
@@ -546,7 +547,7 @@ Our goal now is to derive how these basis vectors $\hat{x}$, $\hat{y}$, $\hat{z}
 
 The first step is noting that the following relation obtains:
 \begin{align*}
-    \vec{\Omega} = \Omega (\hat{y}\cos\theta+\hat{k}\sin\theta)
+    \vec{\Omega} = \Omega (\hat{y}\cos\theta+\hat{z}\sin\theta)
 \end{align*}
 
 [UNDER CONSTRUCTION]
@@ -1187,6 +1188,7 @@ Starting first from the hydrostatic relation (Equation \ref{Hydrostatic GFD}), w
 \end{align}
 where we have defined the \textbf{geopotential height} $\Phi$ as follows:
 \begin{align}
+    \label{eq Geopotential}
     \BOX{\Phi =g\,z}
 \end{align}
 There is nothing special about \textbf{geopotential height}. You can literally just think of \textbf{geopotential height} $\Phi$ as the height variable $z$ multiplied by $g$. 
