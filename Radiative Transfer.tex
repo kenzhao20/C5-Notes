@@ -408,7 +408,7 @@ We first define a \textbf{blackbody} as a theoretical object which absorbs all i
 \end{align}
 You do not have to memorise this, but you should be aware of a few properties. 
 
-First, at all fixed frequencies $\nu$, $B(\nu,T)\,d\nu$ is monotonically increasing with $T$. As $T$ increases, so too does $B$ and every frequency, so if a blackbody warms up it releases more energy (See Figure \ref{Spec Rad BB}).
+First, at all fixed frequencies $\nu$, $B(\nu,T)\,d\nu$ monotonically increases with $T$. As $T$ increases, so too does $B$ at every frequency, so if a blackbody warms up it releases more energy (See Figure \ref{Spec Rad BB}).
 
 Second, while blackbodies emit radiation at all frequencies, its 'characteristic frequency' increases as temperature increases.\footnote{
     We define the 'characteristic frequency' as follows. First, define the cumulative blackbody radiance as $I_{BB}(\nu)=\int_0^\nu B(\nu',T)\,d\nu'$. $I_{BB}$ monotonically increases as $\nu$ increases (since $B(\nu')>0$), so $I_{BB}$ reaches its maximum value at $\nu=\infty$. We define the characteristic frequency $\nu_{char}(T)$ as the median emission frequency: the frequency where $I_{BB}$ is half its maximum value. 
@@ -417,7 +417,7 @@ Second, while blackbodies emit radiation at all frequencies, its 'characteristic
 }\footnotetext{
     Why all the hassle? Why not find where $B(\nu,T)$ is maximum and define that as the characteristic frequency? We do not do this becuase this definition is not physically meaningful. Recall the discussion we had just last section: it is $B(\nu)\,d\nu$ that is meaningful, not $B(\nu)$. (Excercise: differentiate $B(\nu)$ to find where $B$ is maximum with respect to $\nu$. Then, transform into wavelength coordinates, making sure to transform $d\nu$ as well, then differentiate with respect to wavelength. You should find that the maximum wavelength is not the maximum frequency).
 } 
-Since the star will almost always be hotter than its planet, this results in what's called a \textit{spectral gap}: the planet tends to emit radiation at a much longer wavelength than its star, which is what enables the greenhouse effect (See Figure \ref{Spec Gap BB}). For this reason, we often call the radiation emitted by the planet `\textbf{longwave}' radiation and the radiation emitted by the star `\textbf{shortwave}' radiation.
+Since the star will almost always be hotter than its planet, this results in what's called a \textit{spectral gap}: the planet tends to emit radiation at a much longer wavelength than its star, which is what enables the greenhouse effect (See Figure \ref{Spec Gap BB}). For this reason, we often call the radiation emitted by the planet `\textbf{longwave}'/`thermal' radiation and the radiation emitted by the star `\textbf{shortwave}'/`solar' radiation.
 
 \begin{figure}[H]
     \centering
@@ -1439,7 +1439,7 @@ As a summary:
         \end{gather}
     \end{minipage}
 
-    \textbf{DRF} encodes the extra power per unit area staying in the Earth caused by a perturbation $\lambda$. \textbf{ECS} encodes how much $T_s$ would have to change to affect $G$ and encodes all the feedbacks.
+    \vspace{2mm}\textbf{DRF} encodes the extra power per unit area staying in the Earth caused by a perturbation $\lambda$. \textbf{ECS} encodes how much $T_s$ would have to change to affect $G$ and encodes all the feedbacks.
 \end{fact}
 
 Now we'll calculate the \textbf{DRF} and let $\lambda=q$, the concentration of an absorber (a greenhouse gas) in the weak and strong line limits. We won't calculate the \textbf{ECS}, as it doesn't bring much insight at this point.
@@ -1526,7 +1526,7 @@ Physically, we can explain the situation using the concept of \hyperref[rad leve
 
 If we \textit{increase} the greenhouse gas concentration (i.e., $q=q_{fin}(p)>q_{in}(p)$), this increases the height where radiation can escape, and therefore decreases the radiating level $p_{rad}=p_{fin}<p_{in}$. 
 
-If temperature \textit{decreases} with height, and therefore \textit{increases} with pressure, $T(p_{fin})<T(p_{in})$, then the infrared emitters at $p_{fin}$ will have a lower temperature and will then, following general properties of \hyperref[Blackbody Frequency]{Blackbody Radiation}, emit less radiation. As such, $OLR$ decreases. Conversely, if temperature \textit{increases} with height, and therefore \textit{decreases} with pressure, $T(p_{fin})>T(p_{in})$, then the infrared emitters at $p_{fin}$ will have a higher temperature and will emit more radiation, increasing $OLR$.
+If temperature \textit{decreases} with height, and therefore \textit{increases} with pressure, $T(p_{fin})<T(p_{in})$, then the infrared emitters at $p_{fin}$ will have a lower temperature and will then, following general properties of \hyperref[Emission Box]{Blackbody Radiation}, emit less radiation. As such, $OLR$ decreases. Conversely, if temperature \textit{increases} with height, and therefore \textit{decreases} with pressure, $T(p_{fin})>T(p_{in})$, then the infrared emitters at $p_{fin}$ will have a higher temperature and will emit more radiation, increasing $OLR$.
 
 You should, then, ignoring interactions, expect a positive $DRF$ in the troposphere (where $\frac{dT}{dp}>0$) and a negative $DRF$ in the stratosphere (where $\frac{dT}{dp}<0$).
 
@@ -1623,7 +1623,7 @@ Calculating the $ECS$ and $DRF$ explicitly (and recalling that $\tau_\infty=\kap
     e^{-x}
     \,dx
 \end{align*}
-We thus find that $DRF>0$ in an atmosphere with a vertical temperature profile set by the dry adiabat: more greenhouse gas concentration results in a decrease in the outgoing longwave radiation. Recalling \hyperref[RF Box Takeaway]{our previous discussion} regarding radiative forcing, it's not a surprise that $DRF>0$, since the dry adiabat is one of the many mechanisms that results in an atmosphere where temperature decreases with height.
+We thus find that $DRF>0$ in an atmosphere with a vertical temperature profile set by the dry adiabat: more greenhouse gas concentration results in a decrease in the outgoing longwave radiation. Recalling \hyperref[RF Box Takeaway]{our previous discussion} regarding radiative forcing, it's not a surprise that $DRF>0$, since the dry adiabat is one of many mechanisms that result in an atmosphere where temperature decreases with height.
 
 \chapter{Radiative Equilibrium}\label{Radiative Equilibrium Chapter}
 
