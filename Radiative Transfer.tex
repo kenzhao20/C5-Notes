@@ -492,13 +492,17 @@ As a summary:
     \end{align}
 \end{fact}
 
-\subsection{Example: Calulating the Stellar Constant}\label{Example Stellar Const}
+\subsection{Example: Simple Energy Balance Model of the Earth}\label{ss Example Energy Balance}
 
-We've covered a lot of what are probably unfamiliar concepts to you at this point, so it would be useful to apply such concepts in the explicit calculation of something. This will hopefully build some intuition.
+We've covered a lot of what are probably unfamiliar concepts to you at this point, so it would be useful to apply such concepts in the explicit calculation of something. This will hopefully build some intuition. 
+
+Our goal now is to construct a simple energy balance model of the Earth, and using this model to calculate roughly some properties of the Earth (like the temperature). 
+
+\subsubsection{Calculating the Stellar Constant}
+
+Our first goal is to calculate the \textbf{Stellar Constant} $L_{\star}$, defined as the incident stellar irradiance on a \textit{flat} surface \textit{facing} the sun. 
 
 To a good approximation, stellar bodies are black bodies ($\epsilon=1$). We can use this to estimate the incident (not absorbed) radiative energy flux on the Earth (or any planet) from the Sun (or any star) by approximating that star as blackbody. 
-
-Our goal now is to calculate the \textbf{Stellar Constant} $L_{\star}$, defined as the incident stellar irradiance on a \textit{flat} surface \textit{facing} the sun. 
 
 There are two important nuances here. First, note that the \textbf{Stellar Constant} is \textit{not} necessarily equal to the incident stellar irradiance on the surface of the planet because the planet is \textit{curved}. The stellar constant is only equal to the incident stellar irradiance on the surface of the planet at the equator at 12:00 if the planet has no axial tilt. Second, note that this is also different from the \textit{absorbed} stellar power – to obtain that we have to do three things: first, account for the aforementioned nuance (i.e., that only the radiation perpendicular to the curved surface is absorbed); second, account for the albedo of the planet (some incident stellar irradiance is reflected); and third, integrate over the area of the planet.
 
@@ -544,6 +548,8 @@ Therefore the stellar constant is;
 
 Let's calculate this for our sun! Plugging in the radius of the Sun $R_\star\approx\qty{696.3e3}{\kilo\metre}$, the distance between the Earth and the Sun $d\approx\qty{149.6e6}{\kilo\metre}$, and the Sun's surface temperature $T_\star\approx\qty{5772}{\kelvin}$, we get that $L_\star=\approx\qty{1364}{\watt\per\square\meter}$. The literature value is approximately \qty{1361}{\watt\per\square\meter}, so we have gotten remarkably close!
 
+\subsubsection{Calculating the Earth Temperature}
+
 However, as already noted, the power actually absorbed by the planet is different. Again, we must factor in three things. We must factor in the curvature of the planet (which we assume is spherical), as the radiation is not perpendicular to the surface of the planet, and it is only radiation perpendicular to the surface. We must factor in albedo of the planet, as some radiation is reflected. And finally, we must integrate over area to find the power (rather than the power per unit area).
 
 We now integrate over the area of the planet and account for for reflection and curvature. Suppose some fraction $a\in[0,1]$ of the instellation is reflected. Therefore:
@@ -587,6 +593,8 @@ In equilibrium, $G=0$, which means we can solve for the equilibrium temperature 
     \right)^\frac{1}{4}
 \end{align*}
 Clearly then, the temperature of the planet should be proportional to the temperature of the star, and the constant of proportionality $\left(\frac{1-a}{4\epsilon_{eff}}\frac{R_{\star}^2}{d^2}\right)^\frac{1}{4}$ increases as the albedo decreases or as the emissivity decreases. The former might be due to reduced ice cover, and the latter might be due to an increase in greenhouse gas concentration, for example.
+
+Again, let's 
 
 \chapter{Molecular Spectroscopy}\label{Molecular Spectroscopy}
 
@@ -1401,7 +1409,14 @@ This allows us to solve for $\frac{\partial T_s}{\partial \lambda}$, which is wh
     \label{DRF and ECS}
     \BOX{
         \frac{\partial T_s}{\partial \lambda}=
-        \frac{\overbrace{-\partial G/\partial \lambda}^{DRF}}{\underbrace{\partial G/\partial T_s}_{ECS}}
+        \frac{\overbrace{\textcolor{mydarkblue}{-\partial G/\partial \lambda}
+            }^{
+                \textcolor{mydarkblue}{DRF}
+                }}
+            {\underbrace{\textcolor{mymagenta}{\partial G/\partial T_s}
+                }_{
+                    \textcolor{mymagenta}{ECS}
+                    }}
     }
 \end{align}
 Note the negative sign on the \textbf{DRF}.
@@ -1409,6 +1424,14 @@ Note the negative sign on the \textbf{DRF}.
 Physically, \textbf{DRF} is the extra power per unit area staying in (or leaving if $DRF<0$) the Earth per unit change in $\lambda$. This is closely connected to but distinct from the \textit{Radiative Forcing}, which is simply the the extra power or the extra power per unit area staying in (or leaving if $DRF<0$) the Earth. Now generally, this will encode how this parameter \textit{immediately} changes the radiative forcing. For example, if $\lambda=$ aerosol concentrations, this will immediately affect clouds and how they affect. Or, if $\lambda$ encodes some ice dynamics resulting in less ice-cover, this might affect the albedo.
 
 The \textbf{ECS} encodes how sensitive the climate (or more specifically, $T_s$) is to a change in radiative forcing. If there is some radiative forcing $G\neq 0$, the temperature will change, and this will affect other parts of the climate system to bring $G$ back to 0. Intuitively, you can think of this parameter as encoding all the \textit{feedbacks}. For example, when the temperature increases, some ice will melt, which will decrease the albedo and increase $G$, thus causing $T_s$ to increase even more! The most straightforward feedback is the \textbf{Planck Feedback}, which essentially encodes the fact that a hotter planet will radiate more blackbody radiation.
+
+Note that the $DRF$ is related but different to the \textbf{Radiative Forcing} (\textbf{RF}) which you may have heard before. The \textbf{RF} is the (instantaneous) change in the net downwards radiative flux $G$ (in \qty{}{\watt\per\square\meter}) caused by a change in some parameter $\lambda$ calculated at some fixed reference height (e.g., top of the atmosphere) keeping all other parameters fixed. Note that incalculating $DRF$, we assumed that the system was allowed to come back into equilibrium (e.g., by warming up) such that the net radiative flux was $0$. We are \textit{not} assuming the same for \textbf{RF}.\footnote{
+    There is another term called the \textbf{Effective Radiative Forcing} (\textbf{ERF}), which is also distinct from the \textbf{RF}. \textbf{ERF} is essentially the \textbf{RF} but you all all physical parameters to rapidly come back into equilibrium \textit{other than} the surface temperature and parameters related to the ocean and sea ice with the change in $\lambda$.
+
+    The point of using the \textbf{ERF} is to better capture actual radiative forcing on Earth. Before, we ignored \textit{all} physical parameters changing with $\lambda$, but this is not realistic, as many parameters which strongly affect $G$ (like cloud behaviour, for example) respond rapidly to a change in $\lambda$.
+
+    However, we still ignore processes related to the ocean and sea ice because these respond very slowly. Furthermore, we ignore the surface temperature as we wish to separate feedbacks from forcing.
+}
 
 As a summary:
 \begin{fact}{Radiative Forcing: DRF and ECS}{RF Box}\label{RF Box}
@@ -1595,7 +1618,7 @@ where $x=\tau_\infty-\tau'$.\footnote{
     The keen reader would have noticed that we could have completely avoided this change of coordinates if we simply defined our optical depth coordinate differently such that $\tau=0$ where $p=0$ (rather than where $p=p_s$) than and instead $\tau$ decreased with height (rather than increased with height)!
 
     However, recalling our discussion in Section \ref{Absorption}, we're fine, since these were all conventions anyways.
-} Recalling the discussion in \ref{Example Stellar Const}, where we defined the $OLR$ such that $OLR=\epsilon\,\sigma T^4$, we have defined everything in the brackets as our effective emissivity $\epsilon$ of the planet.
+} Recalling the discussion in \ref{ss Example Energy Balance}, where we defined the $OLR$ such that $OLR=\epsilon\,\sigma T^4$, we have defined everything in the brackets as our effective emissivity $\epsilon$ of the planet.
 
 Calculating the $ECS$ and $DRF$ explicitly (and recalling that $\tau_\infty=\kappa q p_s/g$):
 \begin{align*}
