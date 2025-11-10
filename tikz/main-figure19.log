@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.6.26)  10 NOV 2025 10:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.6.26)  10 NOV 2025 11:24
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -583,7 +583,12 @@ File: pgflibrarypatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgfdecorationsegmentlength=\dimen283
 )
 \tikz@lib@dec@box=\box82
-) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathmorphing.code.tex))
+) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathmorphing.code.tex)) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarysnakes.code.tex
+File: tikzlibrarysnakes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+Package pgf Warning: Snakes have been superseded by decorations. Please use the decoration libraries instead of the snakes library on input line 14.
+
+(/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.pathreplacing.code.tex (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathreplacing.code.tex)) (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.shapes.code.tex (/usr/local/texlive/2025/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.shapes.code.tex)))
 No auxiliary output files.
 
 \w@pgfexternal@auxout=\write5
@@ -2760,19 +2765,23 @@ A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 [96
 
 {/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-Overfull \hbox (2.43767pt too wide) in paragraph at lines 665--677
+
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to disable this.
+
+
+
+Overfull \hbox (2.43767pt too wide) in paragraph at lines 672--684
 [][] 
  []
 
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 
-Underfull \vbox (badness 4479) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
@@ -2784,7 +2793,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-LaTeX Warning: Reference `fig Long E' on page 100 undefined on input line 830.
+LaTeX Warning: Reference `fig Long E' on page 100 undefined on input line 837.
 
 
 
@@ -2796,37 +2805,37 @@ File: UTF8.enc 2021/10/16 4.8.5
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.chr
 File: UTF8.chr 2021/10/16 4.8.5
 )
-LaTeX Font Info:    Trying to load font information for OMS+cmtt on input line 850.
-LaTeX Font Info:    No file OMScmtt.fd. on input line 850.
+LaTeX Font Info:    Trying to load font information for OMS+cmtt on input line 857.
+LaTeX Font Info:    No file OMScmtt.fd. on input line 857.
 
 LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbackslash' on input line 850.
+(Font)              for symbol `textbackslash' on input line 857.
 
-LaTeX Font Info:    Trying to load font information for C70+min on input line 850.
+LaTeX Font Info:    Trying to load font information for C70+min on input line 857.
 (/usr/local/texlive/2025/texmf-dist/tex/latex/cjk/contrib/wadalab/c70min.fd
 File: c70min.fd 2021/10/16 4.8.5
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/cjk/contrib/wadalab/c70min.fdx
 File: c70min.fdx 2021/10/16 4.8.5
 )
 
-LaTeX Warning: Reference `Jac' on page 101 undefined on input line 852.
+LaTeX Warning: Reference `Jac' on page 101 undefined on input line 859.
 
 
 
 
-LaTeX Warning: Reference `dx' on page 102 undefined on input line 886.
+LaTeX Warning: Reference `dx' on page 102 undefined on input line 893.
 
 
-LaTeX Warning: Reference `dx' on page 102 undefined on input line 890.
+LaTeX Warning: Reference `dx' on page 102 undefined on input line 897.
 
 
 
 
-LaTeX Warning: Reference `ATA Eigenequation' on page 103 undefined on input line 907.
+LaTeX Warning: Reference `ATA Eigenequation' on page 103 undefined on input line 914.
 
 
-LaTeX Warning: Hyper reference `Lin Alg' on page 103 undefined on input line 907.
+LaTeX Warning: Hyper reference `Lin Alg' on page 103 undefined on input line 914.
 
 
 
@@ -3886,15 +3895,15 @@ Package logreq Info: Writing requests to 'tikz/main-figure19.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 46004 strings out of 473190
- 974242 string characters out of 5715800
- 1611564 words of memory out of 5000000
- 68542 multiletter control sequences out of 15000+600000
+ 46273 strings out of 473190
+ 984311 string characters out of 5715800
+ 1616817 words of memory out of 5000000
+ 68796 multiletter control sequences out of 15000+600000
  577387 words of font info for 109 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  120i,25n,124p,1415b,1932s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on tikz/main-figure19.pdf (1 page, 81329 bytes).
+Output written on tikz/main-figure19.pdf (1 page, 86461 bytes).
 PDF statistics:
  202 PDF objects out of 1000 (max. 8388607)
  50 compressed objects within 1 object stream
