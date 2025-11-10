@@ -2399,12 +2399,6 @@ Importantly, the reduced gravity system affects the \hyperref[SW Def Radius Box]
 \end{align*}
 Since, generally, $g'\ll g$, and $L_d\sim\sqrt{g'}$, then $L_d$ is much smaller than we anticipated before.
 
-\section{Justifying the Shallow Water System}\label{SW Justification}
-
-I strongly \textit{strongly} emphasise that this section is off-syllabus. However, I thought I'd write it here to make the section more complete. I follow the Vallis' derivation in his book \cite{Vallis}, where it can be found in chapter 3.
-
-In these entire set of notes, we formulate and analyse models of the atmosphere and oceans. Of course, part of the accuracy relies on the accuracy of our analysis, but crucially part of the accuracy also relies on the accuracy of the models. The shallow water system would not be as interesting of a system (to us at least) if we did not have some evidence that the model was faithful and captured (some) dynamics of the atmosphere and oceans.
-
 
 \chapter{Time-Dependent 3D Systems}\label{3D Systems}
 
@@ -2539,7 +2533,9 @@ We again assume the \hyperref[f plane box]{$f$-plane approximation} so that we c
     \BOX{\omega^2 = \frac{N^2  k^2   + f^2 m^2}{k^2 + m^2}}
 \end{align}
 
-First take a look at a few limits. If $N=0$ (i.e., the density does not decrease or increase with height) or $k=0$ (i.e., the meridional wavelength is infinite), then the following equation reduces to inertial oscillations. This is for two different reasons. If $N=\frac{\partial \rho}{\partial z}=0$, there is no effect of gravity, because the buoyancy exactly cancels out the effect of gravity. Convsersely, if $k=0$, the wavefronts are (recall Figure \ref{Wavefronts Fig}) parallel to the $x$-direction, hence heach 
+First take a look at a few limits. If $N=0$ (i.e., the density does not decrease or increase with height) or $k=0$ (i.e., the meridional wavelength is infinite), then the following equation reduces to inertial oscillations. In other words, the wave does not `feel' the effect of gravity.
+
+This is for two different physical reasons. If $N=\frac{\partial \rho}{\partial z}=0$, buoyancy exactly cancels out the effect of gravity. Convsersely, if $k=0$, the wavefronts are (recall Figure \ref{Wavefronts Fig}) parallel to the $x$-direction, hence  
 
 Conversely, if $f=0$ or $m=0$, we fe
 
@@ -2555,7 +2551,13 @@ This is to be expected: now that we have moved to a fully three-dimensional syst
 
 \section{Quasi-Geostrophic Theory}\label{QG}
 
+Our goal now is to explain Quasi-Geostrophic Theory. So far, we have a few models of the atmosphere and oceans. We have the \hyperref[Eqns for GFD Box]{`primitive' equations of motion} and the \hyperref[Shallow Water System]{shallow water equations}. 
 
+The former set of equations are much too complicated to solve exactly, so we must make numerous approximations (e.g., we assumed $Ro\ll 1$ or the hydrostatic relation). Furthermore, the system is relatively complicated, which reduces the level to which we can understand solutions or behaviour. Conversely, the second set of equations is much simpler and more interpretable, but it has the limitation of being $2D$ only.
+
+Our goal now is to formulate a theory that strikes a balance between the accuracy of the first set of the equations and the simplicity of the second set of equations.
+
+Our general strategy is to start from the \hyperref[Eqns for GFD Box]{`primitive' equations of motion} and let $Ro\ll 1$, but instead of keeping only $\mathcal{O}(Ro^0)$, we keep $\mathcal{O}(Ro)$
 
 \subsection{Derivation}
 
@@ -2922,3 +2924,16 @@ This, still, is too complicated for our purposes, so we simply linearise the equ
 \begin{gather}
     \rho=\rho_0(1-\alpha (T-T_0)+\beta(S-S_0))
 \end{gather}
+
+\chapter{Appendix: Further OFF-SYLLABUS Details}
+
+I strongly \textit{strongly} emphasise that this section is off-syllabus. However, I thought I'd write it here to make the notes more complete.
+
+\section{Justifying the Shallow Water System}\label{SW Justification}
+
+I follow the Vallis' derivation in his book \cite{Vallis}, where it can be found in chapter 3.
+
+In these entire set of notes, we formulate and analyse models of the atmosphere and oceans. Of course, part of the accuracy relies on the accuracy of our analysis, but crucially part of the accuracy also relies on the accuracy of the models. The shallow water system would not be as interesting of a system (to us at least) if we did not have some evidence that the model was faithful and captured (some) dynamics of the atmosphere and oceans.
+
+\section{The Thermodynamic Equation}
+
