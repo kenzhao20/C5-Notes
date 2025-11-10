@@ -1487,8 +1487,10 @@ There are again, two key takeaways. First, that this time $OLR_{\nu_c}$ is propo
 
 The second takeaway is exactly the same second takeaway in the previous section: the $DRF$ could be positive or negative depending on $T(T_s,p')$. This is clear since the right hand term in brackets is exactly the same in both \ref{DRF Strong Explicit} and \ref{DRF Weak Explicit}.
 
+\subsubsection{Understanding \texorpdfstring{DRF}{DRF}}
+
 \begin{fact}{Radiative Forcing Key Takeaways}{RF Box Takeaway}\label{RF Box Takeaway}
-    The two key takeaways for isolated line radiative forcing are:
+    The two key takeaways for isolated line radiative forcing are:\vspace{2mm}
 
     \begin{minipage}{0.5\linewidth}
     \begin{tcolorbox}[colback=myyellow!50!white,colframe=mymagenta]
@@ -1517,6 +1519,16 @@ The second takeaway is exactly the same second takeaway in the previous section:
     \end{tcolorbox}
     \end{minipage}
 \end{fact}
+
+It's extremely important to note that the sign of $DRF$ is general, and indicates that the vertical temperature profile of the atmosphere is essential for explaining the greenhouse effect.
+
+Physically, we can explain the situation using the concept of \hyperref[rad level box]{radiating level}. Suppose we have some initial concentration of greenhouse gases $q_{in}(p)$, such that the initial radiating level is at $p_{rad}=p_{in}$. In other words, the initial concentration of greenhouse gases is such that most radiation escaping is from $p=p_{in}$. 
+
+If we \textit{increase} the greenhouse gas concentration (i.e., $q=q_{fin}(p)>q_{in}(p)$), this increases the height where radiation can escape, and therefore decreases the radiating level $p_{rad}=p_{fin}<p_{in}$. 
+
+If temperature \textit{decreases} with height, and therefore \textit{increases} with pressure, $T(p_{fin})<T(p_{in})$, then the infrared emitters at $p_{fin}$ will have a lower temperature and will then, following general properties of \hyperref[Blackbody Frequency]{Blackbody Radiation}, emit less radiation. As such, $OLR$ decreases. Conversely, if temperature \textit{increases} with height, and therefore \textit{decreases} with pressure, $T(p_{fin})>T(p_{in})$, then the infrared emitters at $p_{fin}$ will have a higher temperature and will emit more radiation, increasing $OLR$.
+
+You should, then, ignoring interactions, expect a positive $DRF$ in the troposphere (where $\frac{dT}{dp}>0$) and a negative $DRF$ in the stratosphere (where $\frac{dT}{dp}<0$).
 
 \section{Grey Gas OLR}
 
