@@ -2909,23 +2909,89 @@ We can think of Equation \ref{eq Sverdrup Balance} bas expressing \hyperref[Cons
 
 
 
-\section{Box Models of the Meridional Overturning Circulation}\label{MOC}
+\section{The Meridional Overturning Circulation}\label{MOC}
 
 In this section we aim to construct a simple box model of the \textbf{Atlantic Meridional Overturning Circulation} (AMOC). The AMOC is a complex overturning circulation, consisting of warm waters which flow from the Southern Ocean northward, before turning cold and salty, sinking in the North Atlantic, and flowing southward to complete the loop.
 
-This is a somewhat oversimplified version of the \textbf{MOC}, but I sadly don't have the time nor energy to get into it at this point. 
+This is a somewhat oversimplified version of the \textbf{MOC}, but I sadly don't have the time nor energy to get into it at this point.
 
-Crucially, though, the water must sink in the North Atlantic, and this requires the water to be denser or at least as dense as the water below it. We must therefore consider the \textbf{equation of state} that governs the density of sea water.
+Crucially, though, the water must sink in the North Atlantic, and this (we think) requires the water to be denser or at least as dense as the water below it. We must therefore consider the \textbf{equation of state} that governs the density of sea water.
 
-The equation of state is horribly complicated, and there is (to the best of my knowledge) no theoretical way to derive it. Instead, we use an empirically found Gibbs function of seawater $G$ to calculate the equation of state. Recalling that $dG = -S\,dT + \rho\,dp+\dots$, you can see that $\rho=\partial G/\partial p$.
+\subsection{The Equation of State of Seawater}
 
-This, still, is too complicated for our purposes, so we simply linearise the equation of state and assume that water is incompressible (water is actually compressible).
+The equation of state for seawater, unlike the simple \hyperref[b Ideal Gas]{ideal gas law} for air, is horribly complicated, and there is (to the best of my knowledge) no theoretical way to derive it. Instead, we use an empirically found Gibbs function of seawater $G$ to calculate the equation of state. Recalling that $dG = -S\,dT + \rho\,dp+\dots$, you can see that $\rho=\partial G/\partial p$.
 
+This, still, is too complicated for our purposes, so we simply linearise the equation of state and assume that water is incompressible so that $\frac{\partial \rho}{\partial p}=0$.\footnote{Water is actually compressible\dots but oh whale.}
 \begin{gather}
     \rho=\rho_0(1-\alpha (T-T_0)+\beta(S-S_0))
 \end{gather}
+where $\rho_0 = \rho(T=T_0,S=S_0)$, $\alpha = \frac{\partial \rho}{\partial T}|_{T=T_0}$, and $\beta = \frac{\partial \rho}{\partial S}|_{S=S_0}$
 
-\chapter{Appendix: Further OFF-SYLLABUS Details}
+I should really emphasise that, for almost all purposes, this equation of state is not empirically adequate to explain the behaviour of global ocean circulation. (see this paper \cite{N15}). However, we will use it for now for simplicity.
+
+\subsection{The Stommel Box Model}
+
+Now we construct a simple box model of the AMOC: a model where we partition the ocean into large boxes. These large boxes have uniform properties, the fluxes (of water, in this case) between the boxes if parameterised by certain expressions.
+
+We let one box represent the waters in the low-latitudes (\textcolor{myorange}{\textbf{Box 1}}), and let the other box represent the waters in the sub-polar north atlantic (\textcolor{myorange}{\textbf{Box 2}}). 
+
+We set the temperature and salinity of these boxes at \textcolor{myorange}{$T_1$}, \textcolor{myorange}{$T_2$}, \textcolor{myorange}{$S_1$}, \textcolor{myorange}{$S_2$}.
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        \draw[-] (0,0) -- (10,0) -- (10, 5) -- (0,5) -- cycle;
+        \draw[-] (5,0) -- (5,5);
+        \draw[ultra thick, mydarkblue,->] (4,3.55) -- (6,3.55);
+        \node[mydarkblue] at (6.5,3.55) {flux};
+        \node[mydarkblue] at (3.75,3.55) {$q$};
+        \node[mydarkblue] at (3.75,1) {$q$};
+        \draw[ultra thick, mydarkblue,->] (6,1) -- (4,1);
+        \node[mydarkblue] at (6.5,1) {flux};
+        \node[mydarkblue] at (3.75,1) {$q$};
+        \draw[ultra thick, mydarkblue,->] (3.5,4.5) -- (3.5,5.5);
+        \node[mydarkblue] at (3.5,5.75) {evaporation};
+        \node[mydarkblue] at (6.5,5.75) {precipitation};
+        \draw[ultra thick, mydarkblue,->] (6.5,5.5) -- (6.5,4.5);
+        \node[mydarkblue] at (6.5,4.25) {$E$};
+        \node[mydarkblue] at (3.5,4.25) {$E$};
+        \draw [->,thick,mymagenta,
+            line join=round,
+            decorate, decoration={
+                zigzag,
+                segment length=6,
+                amplitude=.9,post=lineto,
+                post length=2pt
+            }]  (8.25,4.5) -- (8.25,5.75);
+        \node[mymagenta] at (8.25,5.95) {cooling};
+        \draw [->,thick,mymagenta,
+            line join=round,
+            decorate, decoration={
+                zigzag,
+                segment length=6,
+                amplitude=.9,post=lineto,
+                post length=2pt
+            }]  (1.75,5.75) -- (1.75,4.5);
+        \node[mymagenta] at (1.75,5.95) {heating};
+        \node[] at (0,5.25) {Equator};
+        \node[] at (10,5.25) {Pole (North)};
+        \node[] at (11.3,4.8) {Top of Ocean};
+        \node[] at (-1.6,0.2) {Bottom of Ocean};
+        \node[myorange] at (2,2.45) {Temperature: $T_1$};
+        \node[myorange] at (2,1.95) {Salinity: $S_1$};
+        \node[myorange] at (8,2.45) {Temperature: $T_2$};
+        \node[myorange] at (8,1.95) {Salinity: $S_2$};
+        \node[myorange] at (2.5,-0.4) {\textbf{Box 1}};
+        \node[myorange] at (7.5,-0.4) {\textbf{Box 2}};
+    \end{tikzpicture}
+    \caption{The Stommel Box Model}
+\end{figure}
+
+\subsection{The Gnanadesikan Box Model}
+
+\part{Appendix}
+
+\chapter{Further OFF-SYLLABUS Details}
 
 I strongly \textit{strongly} emphasise that this section is off-syllabus. However, I thought I'd write it here to make the notes more complete.
 
