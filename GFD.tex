@@ -2925,17 +2925,19 @@ This, still, is too complicated for our purposes, so we simply linearise the equ
 \begin{gather}
     \rho=\rho_0(1-\alpha (T-T_0)+\beta(S-S_0))
 \end{gather}
-where $\rho_0 = \rho(T=T_0,S=S_0)$, $\alpha = \frac{\partial \rho}{\partial T}|_{T=T_0}$, and $\beta = \frac{\partial \rho}{\partial S}|_{S=S_0}$
+where $\rho_0 = \rho(T=T_0,S=S_0)$, $\alpha = \frac{\partial \rho}{\partial T}|_{T=T_0}$, and $\beta = \frac{\partial \rho}{\partial S}|_{S=S_0}$ and both $\alpha,\beta>0$.
 
-I should really emphasise that, for almost all purposes, this equation of state is not empirically adequate to explain the behaviour of global ocean circulation. (see this paper \cite{N15}). However, we will use it for now for simplicity.
+I should really emphasise that, for almost all purposes, this equation of state is not empirically adequate to explain the behaviour of global ocean circulation. (see this paper \cite{N15}). However, we will use it for now for simplicity. Crucially, we expect a \textit{lower} salinity to \textit{decrease} the density of seawater, but a \textit{lower} temperature to \textit{increase} the density of seawater.
 
 \subsection{The Stommel Box Model}
 
-Now we construct a simple box model of the AMOC: a model where we partition the ocean into large boxes. These large boxes have uniform properties, the fluxes (of water, in this case) between the boxes if parameterised by certain expressions.
+Now we construct a simple box model of the AMOC (See Figure \ref{fig Stommel}): a model where we partition the ocean into large boxes. These large boxes have uniform properties, the fluxes (of water, in this case) between the boxes if parameterised by certain expressions.
 
-We let one box represent the waters in the low-latitudes (\textcolor{myorange}{\textbf{Box 1}}), and let the other box represent the waters in the sub-polar north atlantic (\textcolor{myorange}{\textbf{Box 2}}). 
+We let one box represent the waters in the low-latitudes (\textcolor{myorange}{\textbf{Box 1}}), and let the other box represent the waters in the sub-polar north atlantic (\textcolor{myorange}{\textbf{Box 2}}). We set the temperature and salinity of these boxes at \textcolor{myorange}{$T_1$}, \textcolor{myorange}{$T_2$}, \textcolor{myorange}{$S_1$}, \textcolor{myorange}{$S_2$}. 
 
-We set the temperature and salinity of these boxes at \textcolor{myorange}{$T_1$}, \textcolor{myorange}{$T_2$}, \textcolor{myorange}{$S_1$}, \textcolor{myorange}{$S_2$}.
+Because the Earth is cooler at the poles than at the equator, we expect there to be \textcolor{mymagenta}{cooling} and \textcolor{mymagenta}{heating} at the poles and equator (respectively). We therefore set $\textcolor{myorange}{T_2}<\textcolor{myorange}{T_1}$. Furthermore, there is net \textcolor{mydarkblue}{precipitation} and \textcolor{mydarkblue}{evaporation} at the poles and the equator (respectively), also partially because of the temperature difference.
+
+Finally, we 
 
 \begin{figure}[H]
     \centering
@@ -2945,15 +2947,14 @@ We set the temperature and salinity of these boxes at \textcolor{myorange}{$T_1$
         \draw[ultra thick, mydarkblue,->] (4,3.55) -- (6,3.55);
         \node[mydarkblue] at (6.5,3.55) {flux};
         \node[mydarkblue] at (3.75,3.55) {$q$};
-        \node[mydarkblue] at (3.75,1) {$q$};
         \draw[ultra thick, mydarkblue,->] (6,1) -- (4,1);
-        \node[mydarkblue] at (6.5,1) {flux};
-        \node[mydarkblue] at (3.75,1) {$q$};
+        \node[mydarkblue] at (3.5,1) {flux};
+        \node[mydarkblue] at (6.25,1) {$q$};
         \draw[ultra thick, mydarkblue,->] (3.5,4.5) -- (3.5,5.5);
         \node[mydarkblue] at (3.5,5.75) {evaporation};
-        \node[mydarkblue] at (6.5,5.75) {precipitation};
+        \node[mydarkblue] at (6.5,4.25) {precipitation};
         \draw[ultra thick, mydarkblue,->] (6.5,5.5) -- (6.5,4.5);
-        \node[mydarkblue] at (6.5,4.25) {$E$};
+        \node[mydarkblue] at (6.5,5.75) {$E$};
         \node[mydarkblue] at (3.5,4.25) {$E$};
         \draw [->,thick,mymagenta,
             line join=round,
@@ -2985,6 +2986,7 @@ We set the temperature and salinity of these boxes at \textcolor{myorange}{$T_1$
         \node[myorange] at (7.5,-0.4) {\textbf{Box 2}};
     \end{tikzpicture}
     \caption{The Stommel Box Model}
+    \label{fig Stommel}
 \end{figure}
 
 \subsection{The Gnanadesikan Box Model}
