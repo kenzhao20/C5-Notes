@@ -42,22 +42,22 @@ As a brief review, we'll need to know the following \textit{intensive} variables
         Symbol & Name & Units & Meaning \\
     \hline
     \hline
-    $p$ & Pressure & \qty{}{\pascal} (Pascal); \qty{}{\bar} (Bar); \qty{}{\newton\per\square\metre} (Newtons per square metre); & The force exerted by the fluid in \textit{all} directions at some location. \qty{1}{\bar} $\approx$ \qty{e5}{\pascal}. \\
+    \(p\) & Pressure & \qty{}{\pascal} (Pascal); \qty{}{\bar} (Bar); \qty{}{\newton\per\square\metre} (Newtons per square metre); & The force exerted by the fluid in \textit{all} directions at some location. \qty{1}{\bar} \(\approx\) \qty{e5}{\pascal}. \\
     \hline
-    $T$ & Temperature & \qty{}{\kelvin} (Kelvin) & A measure of the heat content of the system. \\
+    \(T\) & Temperature & \qty{}{\kelvin} (Kelvin) & A measure of the heat content of the system. \\
     \hline
-    $\rho$ & Density & \qty{}{\kilogram\per\metre\cubed} (Kilograms per metre cubed) & The mass per unit volume.\\
+    \(\rho\) & Density & \qty{}{\kilogram\per\metre\cubed} (Kilograms per metre cubed) & The mass per unit volume.\\
     \hline
-    $n_a$ & Number Density & \qty{}{\per\metre\cubed} (Inverse metre cubed) & The number of molecules of some substance $a$ in one metre cubed. \\
+    \(n_a\) & Number Density & \qty{}{\per\metre\cubed} (Inverse metre cubed) & The number of molecules of some substance \(a\) in one metre cubed. \\
     \hline
-    $M_a$ & Molar mass & \qty{}{\kilogram\per\mole} (Kilograms per mole) & The mass of $N_A\sim$ \qty{6.02e23}{} molecules (one mole) of $a$.\\
+    \(M_a\) & Molar mass & \qty{}{\kilogram\per\mole} (Kilograms per mole) & The mass of \(N_A\sim\) \qty{6.02e23}{} molecules (one mole) of \(a\).\\
     \hline
     \end{tabular}
     \caption{Basic Intensive Thermodynamic Variables}
     \label{t Basic Thermo Vars}
 \end{table}
 
-Note that many resources present the molar mass $M_a$ in units of \qty{}{\gram\per\mole} (grams per mole). This is in order to produce more pretty numbers: for example, the molar mass of N$_2$ is \qty{28.01e-3}{\kilogram\per\mole} $=$ \qty{28.01}{\gram\per\mole}. Be wary of units, and always remember to convert everything to SI units when performing calculations. In this case you can convert the molar mass from units of \qty{}{\gram\per\mole} to units of \qty{}{\kilogram\per\mole} by dividing by $1000$:
+Note that many resources present the molar mass \(M_a\) in units of \qty{}{\gram\per\mole} (grams per mole). This is in order to produce more pretty numbers: for example, the molar mass of N\(_2\) is \qty{28.01e-3}{\kilogram\per\mole} \(=\) \qty{28.01}{\gram\per\mole}. Be wary of units, and always remember to convert everything to SI units when performing calculations. In this case you can convert the molar mass from units of \qty{}{\gram\per\mole} to units of \qty{}{\kilogram\per\mole} by dividing by \(1000\):
 \begin{align*}
     \underbrace{\textcolor{mydarkblue}{M_a}}_{\textcolor{mydarkblue}{M_a\text{ in SI units of \qty{}{\kilogram\per\mole}}}}
     =
@@ -71,10 +71,10 @@ In general, a planet's atmosphere is composed of multiple constituents. Our goal
 
 It turns out that we (or the examiner) must make two ultimately arbitrary decisions if we wish to refer to a certain constituent's abundance. First, we can either refer to a constituent's abundance by its \textit{mass}, or by its \textit{number} (in \textit{moles}). Second, we can either refer to a \textit{concentration} or a \textit{ratio}. These choices are ultimately arbitrary because one may freely convert between them with the molar mass using Equation \ref{eq density to number}.
 
-Suppose our atmosphere is composed of constituents  $\mathbb{S}=\{a,b,c,\ldots\}$. Each species $i\in\mathbb{S}$ has a molar mass of $M_i$ and a number density of $n_i$. Then we can refer to its abundance as follows. All quantities are dimensionless.
+Suppose our atmosphere is composed of constituents  \(\mathbb{S}=\{a,b,c,\ldots\}\). Each species \(i\in\mathbb{S}\) has a molar mass of \(M_i\) and a number density of \(n_i\). Then we can refer to its abundance as follows. All quantities are dimensionless.
 
 \begin{fact}{Definitions Regarding Constituent Abundance}{Definition Multiple}\label{b Definition Multiple}
-    We can refer to the abundance of a certain constituent $a$ in an atmosphere/ocean as follows:\newline\newline
+    We can refer to the abundance of a certain constituent \(a\) in an atmosphere/ocean as follows:\newline\newline
     \begin{tabular}{|p{0.8cm}|p{6.5cm}|p{7.5cm}|}
         \hline
         & Fraction/Concentration & Mixing Ratio \\
@@ -98,18 +98,18 @@ Suppose our atmosphere is composed of constituents  $\mathbb{S}=\{a,b,c,\ldots\}
         \hline
     \end{tabular}\newline
 
-    where $n_i=$ the number density of $i$; $M_i=$ the molar mass of $i$; and $\rho_i=$ the density of $i$. We let $x_a$ and $q_a$ denote the mole fraction and mass fraction of $a$, respectively.
+    where \(n_i=\) the number density of \(i\); \(M_i=\) the molar mass of \(i\); and \(\rho_i=\) the density of \(i\). We let \(x_a\) and \(q_a\) denote the mole fraction and mass fraction of \(a\), respectively.
 
     Which term you use is arbitrary, as you can freely convert between all four expressions using algebra or by using the following formula:
     \begin{align}\label{eq density to number}
         \rho_A=\frac{n_AM_A}{N_A}
     \end{align}
-    where $N_A=\text{Avogadro's Number}\sim$ \qty{6.02e23}{\per\mole} (it's on your formula sheet).\footnote{
-        To avoid a small confusion, note how only number densities $n_i$, not molar densities, are used in the definition for the \textit{molar} concentrations/mixing ratios. Using molar densities or number densities give the same result. This is because the number of moles per volume of a substance is directly proportional to the number density: $n_i^{mol}=n_iN_A$. As such, the $N_A$'s simply cancel top and bottom in the fraction.
+    where \(N_A=\text{Avogadro's Number}\sim\) \qty{6.02e23}{\per\mole} (it's on your formula sheet).\footnote{
+        To avoid a small confusion, note how only number densities \(n_i\), not molar densities, are used in the definition for the \textit{molar} concentrations/mixing ratios. Using molar densities or number densities give the same result. This is because the number of moles per volume of a substance is directly proportional to the number density: \(n_i^{mol}=n_iN_A\). As such, the \(N_A\)'s simply cancel top and bottom in the fraction.
     } 
 \end{fact}
 
-We also introduce the concept of '\textbf{dilute}': some constituent $a$ is in the \textbf{dilute} limit if and only if:
+We also introduce the concept of '\textbf{dilute}': some constituent \(a\) is in the \textbf{dilute} limit if and only if:
 \begin{align}\label{eq Dilute}
     \boxed{n_a\ll\sum\limits_{i\in\mathbb{S},i\neq a} n_i\hspace{10mm}\text{and/or}\hspace{10mm}
     \rho_a\ll\sum\limits_{i\in\mathbb{S},i\neq a} \rho_i}
@@ -117,47 +117,47 @@ We also introduce the concept of '\textbf{dilute}': some constituent $a$ is in t
 
 An important upshot of this is that, in the dilute limit, fractions/concentrations and mixing ratios are equivalent. In many problems, this simplifies the algebra massively, but you're not always allowed to assume that constituents are dilute (especially in exams!).
 
-Note also that there is some ambiguity in the `and/or' in Equation \ref{eq Dilute}. For example, we might have a situation where $n_a\ll\sum n_i$ but \textbf{not} $\rho_a\ll\sum \rho_i$ (or vice versa). This occurs only if the molar masses $M_a$ and $M_i$ are not all of similar size (convince yourself that this is the case using Eqn. \ref{eq density to number}). This is almost never the case in scenarios we consider, so you can just treat the `and/or' as just an `and' in Equation \ref{eq Dilute}.
+Note also that there is some ambiguity in the `and/or' in Equation \ref{eq Dilute}. For example, we might have a situation where \(n_a\ll\sum n_i\) but \textbf{not} \(\rho_a\ll\sum \rho_i\) (or vice versa). This occurs only if the molar masses \(M_a\) and \(M_i\) are not all of similar size (convince yourself that this is the case using Eqn. \ref{eq density to number}). This is almost never the case in scenarios we consider, so you can just treat the `and/or' as just an `and' in Equation \ref{eq Dilute}.
 
-Sometimes, we'll see people refer to dilute constituents in terms of \textit{ppm} (parts per million) or \textit{ppmv} (parts per million volume). \textit{ppm} is defined as the \textit{Mass Fraction} or \textit{Mass Concentration} multiplied by $10^{6}$ ($q_a\times10^6$) while \textit{ppmv} is defined the \textit{Mole Fraction} or \textit{Molar Concentration} multiplied by $10^{6}$ ($x_a\times10^6$).
+Sometimes, we'll see people refer to dilute constituents in terms of \textit{ppm} (parts per million) or \textit{ppmv} (parts per million volume). \textit{ppm} is defined as the \textit{Mass Fraction} or \textit{Mass Concentration} multiplied by \(10^{6}\) (\(q_a\times10^6\)) while \textit{ppmv} is defined the \textit{Mole Fraction} or \textit{Molar Concentration} multiplied by \(10^{6}\) (\(x_a\times10^6\)).
 
 \subsubsection{Atmospheric Composition: Planetary Examples}
 
-In \textit{Mole Fraction} $x_a$:
+In \textit{Mole Fraction} \(x_a\):
 \begin{multicols}{2}
 \begin{itemize}
     \item Earth's Atmosphere: 
     \begin{itemize}
-        \item Nitrogen N$_2$: 0.78
-        \item Oxygen O$_2$: 0.21
+        \item Nitrogen N\(_2\): 0.78
+        \item Oxygen O\(_2\): 0.21
         \item Argon Ar: 0.0093
-        \item Carbon Dioxide CO$_2$: 0.000430 (430 \textit{ppmv})\footnote{At time of writing!}
-        \item Water Vapour H$_2$O: A few percent.\footnote{This strongly depends on time and location due to dynamics discussed in \hyperref[Moist Thermodynamics]{Moist Thermodynamics}.}
+        \item Carbon Dioxide CO\(_2\): 0.000430 (430 \textit{ppmv})\footnote{At time of writing!}
+        \item Water Vapour H\(_2\)O: A few percent.\footnote{This strongly depends on time and location due to dynamics discussed in \hyperref[Moist Thermodynamics]{Moist Thermodynamics}.}
     \end{itemize}
     \item  Venus' Atmosphere:
     \begin{itemize}
-        \item Carbon Dioxide CO$_2$: 0.965
-        \item Nitrogen N$_2$: 0.035
-        \item Sulfur Dioxide SO$_2$: 150 \textit{ppmv}
+        \item Carbon Dioxide CO\(_2\): 0.965
+        \item Nitrogen N\(_2\): 0.035
+        \item Sulfur Dioxide SO\(_2\): 150 \textit{ppmv}
     \end{itemize}
     \item  Jupiter's (Outer) Atmosphere:
     \begin{itemize}
-        \item Hydrogen H$_2$: 0.86
-        \item Helium He$_2$: 0.136
+        \item Hydrogen H\(_2\): 0.86
+        \item Helium He\(_2\): 0.136
     \end{itemize}
 \end{itemize}
 \end{multicols}
-In Earth's ocean, the absolute salinity in units of \qty{}{\gram\per\kilogram} is defined as the mass fraction of salt. You can think of this as a $ppt$ (parts per thousand). The ocean hovers around \qty{30}{\gram\per\kilogram}.
+In Earth's ocean, the absolute salinity in units of \qty{}{\gram\per\kilogram} is defined as the mass fraction of salt. You can think of this as a \(ppt\) (parts per thousand). The ocean hovers around \qty{30}{\gram\per\kilogram}.
 
 \section{Ideal Gases}
 
 \subsection{Single Constituent Atmosphere}
 
-An \textbf{Ideal Gas} is a theoretical gas consisting of molecules which interact only via perfectly elastic collisions. No real gas is ideal, but many gases, including 99\% of Earth's atmosphere (Nitrogen, Oxygen, and Argon), behave approximately like ideal gases under atmospheric conditions like ours. Ideal gases obey the ideal gas law, and we'll start from the version of the ideal gas law that you've probably seen before (and assume that the gas is made up of a single constituent $a$ for simplicity):
+An \textbf{Ideal Gas} is a theoretical gas consisting of molecules which interact only via perfectly elastic collisions. No real gas is ideal, but many gases, including 99\% of Earth's atmosphere (Nitrogen, Oxygen, and Argon), behave approximately like ideal gases under atmospheric conditions like ours. Ideal gases obey the ideal gas law, and we'll start from the version of the ideal gas law that you've probably seen before (and assume that the gas is made up of a single constituent \(a\) for simplicity):
 \begin{align}\label{eq Ideal Gas Primitive}
     \boxed{pV=N_ak_BT}
 \end{align}
-where $p=$ pressure, $V=$ volume, $N_a=$ number of molecules of $a$, $k_B=$ Boltzmann's constant, and $T=$ temperature. We can divide by the volume, then multiply and divide by $\frac{M_a}{N_A}$ to get: 
+where \(p=\) pressure, \(V=\) volume, \(N_a=\) number of molecules of \(a\), \(k_B=\) Boltzmann's constant, and \(T=\) temperature. We can divide by the volume, then multiply and divide by \(\frac{M_a}{N_A}\) to get: 
 \begin{align*}
     p&=n_ak_BT & \text{; }&\text{Divide \ref{eq Ideal Gas Primitive} by }V\\
     &=\left(\frac{n_aM_a}{N_A}\right)\left(\frac{k_BN_A}{M_a}\right)T&\text{; }&\text{Multiply and divide by }\frac{M_a}{N_A}\\
@@ -168,15 +168,15 @@ where $p=$ pressure, $V=$ volume, $N_a=$ number of molecules of $a$, $k_B=$ Bolt
     &\text{; }&R_a\equiv\frac{R^*}{M_a}=\text{specific gas constant}
 \end{align*}
 
-The \textbf{Gas Constant} $R^*$ is defined as: $R^*\equiv k_BN_A\approx$ \qty{8.314}{\joule\per\mole\per\kelvin}. We further define the \textbf{Specific Gas Constant} $R_a\equiv \frac{R^*}{M_a}$ which has units of \qty{}{\joule\per\kilogram\per\kelvin}. \textbf{From now on I will refer to the specific gas constant $R_a$ by just writing just $R$.} The final line gives us the version of the ideal gas law we will use most often as it features only \textit{intensive} variables:
+The \textbf{Gas Constant} \(R^*\) is defined as: \(R^*\equiv k_BN_A\approx\) \qty{8.314}{\joule\per\mole\per\kelvin}. We further define the \textbf{Specific Gas Constant} \(R_a\equiv \frac{R^*}{M_a}\) which has units of \qty{}{\joule\per\kilogram\per\kelvin}. \textbf{From now on I will refer to the specific gas constant \(R_a\) by just writing just \(R\).} The final line gives us the version of the ideal gas law we will use most often as it features only \textit{intensive} variables:
 \begin{fact}{Ideal Gas Law in Intensive Variables}{Ideal Gas Box}\label{b Ideal Gas}
-The ideal gas law featuring only intensive variables of $p$, $\rho$, and $T$.
+The ideal gas law featuring only intensive variables of \(p\), \(\rho\), and \(T\).
     \begin{equation}\label{eq Ideal Gas}
     \BOX{
         p=\rho RT
     }
     \end{equation}
- $R$ is the specific gas constant, defined as the universal gas constant $R^*$ divided by the molar mass $M_a$.
+ \(R\) is the specific gas constant, defined as the universal gas constant \(R^*\) divided by the molar mass \(M_a\).
     \begin{equation}\label{eq Specific Gas Constant}
     \BOX{
         R=\frac{R^*}{M_a}
@@ -186,13 +186,13 @@ The ideal gas law featuring only intensive variables of $p$, $\rho$, and $T$.
 
 \subsection{Multiple Constituents in an Atmosphere and Dalton's Law}\label{Multiple Dalt}
 
-What if we now have multiple constituents in an atmosphere, all with different molar masses $M_i$? We first must define the \textit{partial pressure} $p_a$ of some constituent \textit{a} as the pressure the gas \textit{would} have if you removed all other constituents and left $a$ on its own. Dalton's Law (\ref{Dalton's Law}) allows us to relate the partial pressure of an individual constituent $p_a$ to the total pressure $p$ if all constituents are ideal gases:
+What if we now have multiple constituents in an atmosphere, all with different molar masses \(M_i\)? We first must define the \textit{partial pressure} \(p_a\) of some constituent \textit{a} as the pressure the gas \textit{would} have if you removed all other constituents and left \(a\) on its own. Dalton's Law (\ref{Dalton's Law}) allows us to relate the partial pressure of an individual constituent \(p_a\) to the total pressure \(p\) if all constituents are ideal gases:
 \begin{align}\label{Dalton's Law}
     \boxed{\frac{p_a}{p}=\frac{n_a}{\sum\limits_{i\in\mathbb{S}} n_i}=x_a}
 \end{align}
-So Equation \ref{Dalton's Law} says that the partial pressure (of an ideal gas) is set by the \textit{mole fraction}/\textit{molar concentration} $x_a$\footnote{
+So Equation \ref{Dalton's Law} says that the partial pressure (of an ideal gas) is set by the \textit{mole fraction}/\textit{molar concentration} \(x_a\)\footnote{
     In the dilute limit, it is equivalently set by the \textit{molar mixing ratio}.
-}: it is not affected in any way by the \textit{mass fraction} $q_a$ or \textit{mass mixing ratio}. We can further verify that, according to Dalton's Law, $p=\sum\limits_{i\in\mathbb{S}} p_i$ (since $\sum\limits_{i\in\mathbb{S}} x_i=1$): the total pressure is the sum of all the partial pressures.
+}: it is not affected in any way by the \textit{mass fraction} \(q_a\) or \textit{mass mixing ratio}. We can further verify that, according to Dalton's Law, \(p=\sum\limits_{i\in\mathbb{S}} p_i\) (since \(\sum\limits_{i\in\mathbb{S}} x_i=1\)): the total pressure is the sum of all the partial pressures.
 
 Now we apply the ideal gas law (Eqn. \ref{eq Ideal Gas Primitive}) individually to each constituent:
 \begin{align*}
@@ -200,7 +200,7 @@ Now we apply the ideal gas law (Eqn. \ref{eq Ideal Gas Primitive}) individually 
     p_b&=n_bk_BT\\
     \vdots
 \end{align*}
-We then sum up the equation above for each constituent and recall that $p=\sum\limits_{i\in\mathbb{S}} p_i$ (from \ref{Dalton's Law}) to get:
+We then sum up the equation above for each constituent and recall that \(p=\sum\limits_{i\in\mathbb{S}} p_i\) (from \ref{Dalton's Law}) to get:
 \begin{align*}
     p&=\left(\sum\limits_{i\in\mathbb{S}} n_i\right)k_BT
     &&
@@ -215,34 +215,34 @@ We then sum up the equation above for each constituent and recall that $p=\sum\l
     &\text{; }&\text{Define the \textbf{effective molar mass} }\bar{M}
     \\
     p&=\rho\, R \,T
-    &\text{; }&\text{Define the \textbf{specific gas constant} $R$}
+    &\text{; }&\text{Define the \textbf{specific gas constant} \(R\)}
 \end{align*}
 We should focus on the last three lines of algebra to remember two key facts:
 \begin{enumerate}
-    \item The specific gas constant $R$ for a gas consisting of multiple constituents is the gas constant $R^*$ divided by the \textbf{total effective molar mass} $\bar{M}$ (analogous to the single component case):
+    \item The specific gas constant \(R\) for a gas consisting of multiple constituents is the gas constant \(R^*\) divided by the \textbf{total effective molar mass} \(\bar{M}\) (analogous to the single component case):
     \begin{align}
         R=\frac{R^*}{\bar{M}}
     \end{align}
-    \item The effective molar mass is the average of the individual molar masses $M_i$ \textbf{weighted by particle number} $n_i$/\textbf{mole fraction} $x_i$:
+    \item The effective molar mass is the average of the individual molar masses \(M_i\) \textbf{weighted by particle number} \(n_i\)/\textbf{mole fraction} \(x_i\):
     \begin{align}
         \boxed{\bar{M} =\frac{\sum\limits_{i\in\mathbb{S}} n_iM_i}{\sum\limits_{i\in\mathbb{S}} n_i}=\sum\limits_{i\in\mathbb{S}} x_iM_i}
     \end{align}
-    In the single component case, $\bar{M}=M_a$.
+    In the single component case, \(\bar{M}=M_a\).
 \end{enumerate}
 
-For the Earth (excercise: consider only Nitrogen, Oxygen, and Argon), $\bar{M}\approx$ \qty{29e-3}{\kilogram\per\mole} so the \textbf{Specific Gas Constant} $R\approx$ \qty{287}{\joule\per\kilogram\per\kelvin} (it will be on your formula sheet).
+For the Earth (excercise: consider only Nitrogen, Oxygen, and Argon), \(\bar{M}\approx\) \qty{29e-3}{\kilogram\per\mole} so the \textbf{Specific Gas Constant} \(R\approx\) \qty{287}{\joule\per\kilogram\per\kelvin} (it will be on your formula sheet).
 
 
 \section{Heat Capacity and the Equipartition Theorem}\label{Equipartition}
 
-The heat capacity of an object is a measure of how much heat (which has dimensions of energy) is required to change an object's temperature. Let   $\dbar Q=$ the heat transferred to an object and $dT=$ the change in temperature of the object. Then the heat capacities of the object are:
+The heat capacity of an object is a measure of how much heat (which has dimensions of energy) is required to change an object's temperature. Let   \(\dbar Q=\) the heat transferred to an object and \(dT=\) the change in temperature of the object. Then the heat capacities of the object are:
 \begin{align}
     \label{eq cv}
     c_v=\left(\frac{\dbar Q}{dT}\right)_V\\
     \label{eq cp}
     c_p=\left(\frac{\dbar Q}{dT}\right)_p
 \end{align}
-where the subscripts of $V$ and $p$ mean that the volume and pressure, respectively, are held constant as heat is added/removed from the system. Notationally, when we write $c_v$ or $c_p$, we usually mean the specific heat capacities: the heat capacities per mole or, more commonly, per mass. In exactly the same way as the specfic gas constant $R$, if not specified, assume that $c_p$ and $c_v$ denote the heat capacities \textit{per unit mass} (remember, \textit{intensive} variables!). For multiple constituents, we can calculate the specific heat capacities from molar heat capacities using the effective molar mass $\bar{M}$.
+where the subscripts of \(V\) and \(p\) mean that the volume and pressure, respectively, are held constant as heat is added/removed from the system. Notationally, when we write \(c_v\) or \(c_p\), we usually mean the specific heat capacities: the heat capacities per mole or, more commonly, per mass. In exactly the same way as the specfic gas constant \(R\), if not specified, assume that \(c_p\) and \(c_v\) denote the heat capacities \textit{per unit mass} (remember, \textit{intensive} variables!). For multiple constituents, we can calculate the specific heat capacities from molar heat capacities using the effective molar mass \(\bar{M}\).
 
 It's useful to remember that the heat capacity itself often depends on the temperature. However, sometimes we'll assume that it does not for analytical progress (and not realism).
 
@@ -251,10 +251,10 @@ It turns out, and one can derive this via statistical mechanics, that at high en
     \label{eq Equipartition}
     \BOX{c_v\approx\frac{f}{2}R}
 \end{align}
-where $f=$ the number of \textit{fully excited} degrees of freedom an individual constituent has. So for a hot enough monatomic gas, $f=3$, since monatomic gases have $3$ translational degrees of freedom (forwards/backwards, up/down, right/left). For a hot enough linear diatomic gas (as seen in Fig. \ref{7DoF}), $f=7$, since diatomic gases have $3$ translational degrees of freedom, $3$ rotational degrees of freedom (spinning about the $x,y,z$ axes), and $2$ vibrational degrees of freedom\footnote{
-    One might expect there to be only $1$ vibrational degree of freedom (i.e., they can only vibrate in and out\ldots right?). The reason why it's $2$ is slightly complicated, and requires some background knowledge in statistical mechanics. In the derivation for the equipartition theorem, $f= $ the number of quadratic terms in the Hamiltonian. For translations, $H=\frac{1}{2m}\left(p_x^2+p_y^2+p_z^2\right)$ so $f=3$, and similarly for rotations. For vibrations, we approximate the Hamiltonian as a simple harmonic oscillator (which it will be if the vibrations are small enough), so there are \textit{two} quadratic terms, arising from the kinetic and potential energies in the Hamiltonian (i.e., a spring): $H=\frac{1}{2m}p^2+\frac{1}{2}m\omega^2x^2$.
+where \(f=\) the number of \textit{fully excited} degrees of freedom an individual constituent has. So for a hot enough monatomic gas, \(f=3\), since monatomic gases have \(3\) translational degrees of freedom (forwards/backwards, up/down, right/left). For a hot enough linear diatomic gas (as seen in Fig. \ref{7DoF}), \(f=7\), since diatomic gases have \(3\) translational degrees of freedom, \(3\) rotational degrees of freedom (spinning about the \(x,y,z\) axes), and \(2\) vibrational degrees of freedom\footnote{
+    One might expect there to be only \(1\) vibrational degree of freedom (i.e., they can only vibrate in and out\ldots right?). The reason why it's \(2\) is slightly complicated, and requires some background knowledge in statistical mechanics. In the derivation for the equipartition theorem, \(f= \) the number of quadratic terms in the Hamiltonian. For translations, \(H=\frac{1}{2m}\left(p_x^2+p_y^2+p_z^2\right)\) so \(f=3\), and similarly for rotations. For vibrations, we approximate the Hamiltonian as a simple harmonic oscillator (which it will be if the vibrations are small enough), so there are \textit{two} quadratic terms, arising from the kinetic and potential energies in the Hamiltonian (i.e., a spring): \(H=\frac{1}{2m}p^2+\frac{1}{2}m\omega^2x^2\).
 
-    Looking ahead, one can calculate the characteristic energy scale $E$ of N$_2$'s vibrational mode by solving analytically for the eigenvalues of the simple harmonic oscillator and finding the difference. One then only needs to quote two empirical constants: $m=$ the reduced mass of the N$_2$, and $\omega$ (which encodes the strength of the bond between the N atoms). 
+    Looking ahead, one can calculate the characteristic energy scale \(E\) of N\(_2\)'s vibrational mode by solving analytically for the eigenvalues of the simple harmonic oscillator and finding the difference. One then only needs to quote two empirical constants: \(m=\) the reduced mass of the N\(_2\), and \(\omega\) (which encodes the strength of the bond between the N atoms). 
 }.
 
 \begin{figure}[H]
@@ -312,17 +312,17 @@ where $f=$ the number of \textit{fully excited} degrees of freedom an individual
 
 But what does it mean for a degree of freedom to be `\textit{fully excited}' or for the temperature to be `\textit{high enough}'? 
 
-To answer these questions, we must briefly discuss quantum mechanics, because the constituents of gases obey the laws of quantum mechanics (as do all things, we think). One way in which quantum mechanics differs from classical mechanics is that often (but not always) the energy that a system can have is \textbf{discretised} rather than \textbf{continuous}. For example, a system may only have energies specifically equal to $0$, $E$, $1.8E$,\ldots This means that the system can only receive or give energy in discrete amounts called 'quanta' (equal to the difference in energy between two discretely spaced energy levels) – if the molecule cannot receive these exact amounts of energy, then the molecule cannot receive energy at all.
+To answer these questions, we must briefly discuss quantum mechanics, because the constituents of gases obey the laws of quantum mechanics (as do all things, we think). One way in which quantum mechanics differs from classical mechanics is that often (but not always) the energy that a system can have is \textbf{discretised} rather than \textbf{continuous}. For example, a system may only have energies specifically equal to \(0\), \(E\), \(1.8E\),\ldots This means that the system can only receive or give energy in discrete amounts called 'quanta' (equal to the difference in energy between two discretely spaced energy levels) – if the molecule cannot receive these exact amounts of energy, then the molecule cannot receive energy at all.
 
 This leads to a uniquely quantum mechanical effect\footnote{
     This also explains the \href{https://en.wikipedia.org/wiki/Ultraviolet_catastrophe}{ultraviolet catastrophe}!
-}. Consider a molecule currently with energy equal to $0$, with the lowest energy level above this with energy $E$. If the temperature is too low, the molecule might only get $0.001E$ energy on average, and is highly unlikely to get energy even close to $E$. As such, the molecule will never get enough energy to jump to the higher energy level (or any energy level higher than that). We say that there is not enough energy to `excite' that degree of freedom and that that degree of freedom is `frozen' out. More rigourously, if $k_BT\ll E$, where $E$ is the size of the energy quanta of some degree of freedom, then that degree of freedom is frozen out. If $k_BT\gg E$, then that degree of freedom is `\textit{fully excited}', and this is what it means for the temperature to be `\textit{high enough}'.
+}. Consider a molecule currently with energy equal to \(0\), with the lowest energy level above this with energy \(E\). If the temperature is too low, the molecule might only get \(0.001E\) energy on average, and is highly unlikely to get energy even close to \(E\). As such, the molecule will never get enough energy to jump to the higher energy level (or any energy level higher than that). We say that there is not enough energy to `excite' that degree of freedom and that that degree of freedom is `frozen' out. More rigourously, if \(k_BT\ll E\), where \(E\) is the size of the energy quanta of some degree of freedom, then that degree of freedom is frozen out. If \(k_BT\gg E\), then that degree of freedom is `\textit{fully excited}', and this is what it means for the temperature to be `\textit{high enough}'.
 
-The size of this quanta of energy $E$ depends on the system, but for the constituents in atmospheres, the quanta for vibrational degrees of freedom tend to be very large. For example, the energy of the first vibrational mode of Nitrogen is $E\sim$ \qty{4.7e-20}{\joule}. This seems small until you remember that this is \textit{per molecule}. The temperature required for $k_BT\sim E$ is $T\sim E/k_B\sim$ \qty{3400}{\kelvin}.
+The size of this quanta of energy \(E\) depends on the system, but for the constituents in atmospheres, the quanta for vibrational degrees of freedom tend to be very large. For example, the energy of the first vibrational mode of Nitrogen is \(E\sim\) \qty{4.7e-20}{\joule}. This seems small until you remember that this is \textit{per molecule}. The temperature required for \(k_BT\sim E\) is \(T\sim E/k_B\sim\) \qty{3400}{\kelvin}.
 
-Earth's atmosphere mainly consists of a diatomic gas, so we might expect $f=7$. However, $f\approx5$ because the translational degrees of freedom are all fully excited, but only $2$ rotational degrees of freedom are excited and none of the vibrational degrees of freedom are (See Figure \ref{f=5}. I have drawn the excited degrees of freedom as thick magenta lines, and the frozen degrees of freedom as dashed thin magenta lines). 
+Earth's atmosphere mainly consists of a diatomic gas, so we might expect \(f=7\). However, \(f\approx5\) because the translational degrees of freedom are all fully excited, but only \(2\) rotational degrees of freedom are excited and none of the vibrational degrees of freedom are (See Figure \ref{f=5}. I have drawn the excited degrees of freedom as thick magenta lines, and the frozen degrees of freedom as dashed thin magenta lines). 
 
-In reality, the heat capacity \textit{per mole} (and \textit{not} per mass) at constant volume is $c_v^*\approx$ \qty{20.83}{\joule\per\kelvin\per\mole}. $R^*\approx$ \qty{8.314}{\joule\per\kelvin\per\mole}, so our prediction would be $c_v^*\approx 5R^*/2\approx$ \qty{20.79}{\joule\per\kelvin\per\mole}, which is actually very close to the measured value!
+In reality, the heat capacity \textit{per mole} (and \textit{not} per mass) at constant volume is \(c_v^*\approx\) \qty{20.83}{\joule\per\kelvin\per\mole}. \(R^*\approx\) \qty{8.314}{\joule\per\kelvin\per\mole}, so our prediction would be \(c_v^*\approx 5R^*/2\approx\) \qty{20.79}{\joule\per\kelvin\per\mole}, which is actually very close to the measured value!
 
 \begin{figure}[H]
     \centering
@@ -374,7 +374,7 @@ In reality, the heat capacity \textit{per mole} (and \textit{not} per mass) at c
     \label{f=5}
 \end{figure}
 
-Of course, the \hyperref[eq Equipartition]{Equipartition Theorem} says nothing regarding situations in which a degree of freedom is not fully excited nor frozen out. We are (perhaps only by coincidence) lucky that the situation is relatively simple on Earth; since the temperature lies within a range such that certain degrees of freedom are very excited and others are very frozen, we can very easily explain and predict that the atmospheric heat capacity is approximately $5R^*/2$ using the \hyperref[eq Equipartition]{Equipartition Theorem}. However, you should be aware that the situation is not so simple on many other planetary atmospheres.
+Of course, the \hyperref[eq Equipartition]{Equipartition Theorem} says nothing regarding situations in which a degree of freedom is not fully excited nor frozen out. We are (perhaps only by coincidence) lucky that the situation is relatively simple on Earth; since the temperature lies within a range such that certain degrees of freedom are very excited and others are very frozen, we can very easily explain and predict that the atmospheric heat capacity is approximately \(5R^*/2\) using the \hyperref[eq Equipartition]{Equipartition Theorem}. However, you should be aware that the situation is not so simple on many other planetary atmospheres.
 
 \section{Hydrostatic Balance}
 
@@ -394,7 +394,7 @@ The \textit{hydrostatic approximation} assumes that these are the dominant force
 \begin{align*}
     0=p(z+\delta z)-\rho g\delta z+p(z)
 \end{align*}
-Rearranging and letting $\delta z\to0$ gives us \textbf{Hydrostatic Balance}:
+Rearranging and letting \(\delta z\to0\) gives us \textbf{Hydrostatic Balance}:
 \begin{fact}{Hydrostatic Balance}{Hydrostatic Box}\label{Hydrostatic Box}
 Hydrostatic Balance governs the vertical pressure variation in a fluid if we assume that vertical acceleration (and advection) is small.
     \begin{equation}\label{Hydrostatic Balance}
@@ -406,7 +406,7 @@ Pressure decreases with altitude in order to balance the force of gravity.
 \end{fact}
 \noindent There are two very useful facts that should be noted at this time. 
 
-First note that $\rho,g>0$, so $\frac{dp}{dz}<0$ always. This means that $p$ is monotonic in $z$, implying that there is always a one-to-one relation between $p$ and $z$. This allows us to convert between \textbf{height coordinates} and \textbf{pressure coordinates}. For example, in \textit{height coordinates}, we might let $\vec{u}=\vec{u}(x,y,z)$, $p=p(x,y,z)$. In this case, we would have pressure $p$ at some height $z$ (and horizontal position) as  a variable. In \textit{pressure coordinates}, on the other hand, we let $\vec{u}=\vec{u}(x,y,p)$, $z=z(x,y,p)$. In this case, we would have the height $z$ of some given pressure surface $p$ (and horizontal position) as a variable.
+First note that \(\rho,g>0\), so \(\frac{dp}{dz}<0\) always. This means that \(p\) is monotonic in \(z\), implying that there is always a one-to-one relation between \(p\) and \(z\). This allows us to convert between \textbf{height coordinates} and \textbf{pressure coordinates}. For example, in \textit{height coordinates}, we might let \(\vec{u}=\vec{u}(x,y,z)\), \(p=p(x,y,z)\). In this case, we would have pressure \(p\) at some height \(z\) (and horizontal position) as  a variable. In \textit{pressure coordinates}, on the other hand, we let \(\vec{u}=\vec{u}(x,y,p)\), \(z=z(x,y,p)\). In this case, we would have the height \(z\) of some given pressure surface \(p\) (and horizontal position) as a variable.
 
 We will consistently be plotting atmospheric properties (e.g., humidity) in pressure coordinates (as opposed to height coordinates) throughout this course. This is for three reasons. First, it is much easier for instruments to measure the pressure than the height. In fact, this is how airplanes measure `barometric' height using a pressure altimeter \cite{Altimeter}. Second, most problems we encounter will require only knowledge of a variable's dependence on pressure. Third, pressure is a fundamental thermodynamic variable, and as such also gives us information regarding the thermodynamic properties of the system, as well as the (rough) height. We convert to pressure coordinates explicitly in Section \ref{Pressure Coords}.
 
@@ -418,7 +418,7 @@ Second, note that if we rewrite Eqn. \ref{Hydrostatic Balance} in differential f
         & = -g \,dm
     \end{aligned}
 \end{equation}
-where $dm=\rho\,dz$ is the mass per unit area within that layer. Therefore (integrating), we get that the pressure difference $\Delta p$ between the bottom and top of a layer of atmosphere is directly proportional to the mass per unit area within that layer. Take a moment to appreciate this: we can measure the mass of a layer of atmosphere by only measuring the pressure difference between the top and the bottom! Integrating Equation \ref{eq Hydrostatic Differential} from the bottom of the atmosphere ($p=p_s,m=0$) to the top of the atmosphere ($p=0,m=m_{tot}$) (and assuming that variation in $g$ is negligible) gives us:
+where \(dm=\rho\,dz\) is the mass per unit area within that layer. Therefore (integrating), we get that the pressure difference \(\Delta p\) between the bottom and top of a layer of atmosphere is directly proportional to the mass per unit area within that layer. Take a moment to appreciate this: we can measure the mass of a layer of atmosphere by only measuring the pressure difference between the top and the bottom! Integrating Equation \ref{eq Hydrostatic Differential} from the bottom of the atmosphere (\(p=p_s,m=0\)) to the top of the atmosphere (\(p=0,m=m_{tot}\)) (and assuming that variation in \(g\) is negligible) gives us:
 \begin{align}\label{Total Mass Hydrostatic}
     m_{tot}=\frac{p_s}{g}
 \end{align}
@@ -429,19 +429,19 @@ The surface pressure on a rocky planet thus gives an immediate estimate of the a
 \begin{itemize}
     \item Earth: 
     \begin{itemize}
-        \item Surface Pressure:\newline $p_s\approx$ \qty{1e5}{\pascal}
-        \item Gravitational Acceleration:\newline $g\approx$ \qty{9.81e0}{\metre\per\second\squared}
-        \item Atmospheric Mass:\newline $m_{tot}\approx$ \qty{1.02e4}{\kilogram\per\metre\squared}
+        \item Surface Pressure:\newline \(p_s\approx\) \qty{1e5}{\pascal}
+        \item Gravitational Acceleration:\newline \(g\approx\) \qty{9.81e0}{\metre\per\second\squared}
+        \item Atmospheric Mass:\newline \(m_{tot}\approx\) \qty{1.02e4}{\kilogram\per\metre\squared}
     \end{itemize}
     \item Venus: 
     \begin{itemize}
-        \item Surface Pressure:\newline $p_s\approx$ \qty{93e5}{\pascal}
-        \item Gravitational Acceleration:\newline $g\approx$ \qty{8.87e0}{\metre\per\second\squared}
-        \item Atmospheric Mass:\newline $m_{tot}\approx$ \qty{1.05e6}{\kilogram\per\metre\squared}
+        \item Surface Pressure:\newline \(p_s\approx\) \qty{93e5}{\pascal}
+        \item Gravitational Acceleration:\newline \(g\approx\) \qty{8.87e0}{\metre\per\second\squared}
+        \item Atmospheric Mass:\newline \(m_{tot}\approx\) \qty{1.05e6}{\kilogram\per\metre\squared}
     \end{itemize}
 \end{itemize}
 \end{multicols}
-\noindent Let us now apply all this to find the mass of CO$_2$ in the atmosphere:
+\noindent Let us now apply all this to find the mass of CO\(_2\) in the atmosphere:
 \begin{align*}
     m_{CO_2}&= \underbrace{\frac{p_s}{g}}_\text{Mass of Atmosphere} \underbrace{\frac{\overbrace{12\times10^{-3}}^{\text{molar mass of CO}_2}}{\underbrace{29\times10^{-3}}_{\hat{M} \text{of air}}} \underbrace{430 \times 10^{-6}}_{\text{mole fraction of CO}_2}}_{\text{mass fraction of CO}_2}\\
     &\approx\text{\qty{1.5}{\kilogram\per\meter\squared}}
@@ -449,7 +449,7 @@ The surface pressure on a rocky planet thus gives an immediate estimate of the a
 So not much actually (but a lot radiatively, as you'll see in Part \ref{Radiative Transfer})!
 \subsection{Example 1: Constant Density}
 
-In the ocean, for example, we can make the (sometimes) good approximation that $\rho=\text{const}$. We can then integrate \ref{Hydrostatic Balance} with the boundary condition that $p(z=\eta)=p_s$ where $p_s$ is, for example, the pressure at the surface of the ocean and $\eta$ is the height of the surface. Note that this derivation is completely general, and that both $p_s$ and $\eta$ may in general be functions of $x$,$y$, and $t$, and $\eta$ could be, for example, below the ocean surface at some interface.
+In the ocean, for example, we can make the (sometimes) good approximation that \(\rho=\text{const}\). We can then integrate \ref{Hydrostatic Balance} with the boundary condition that \(p(z=\eta)=p_s\) where \(p_s\) is, for example, the pressure at the surface of the ocean and \(\eta\) is the height of the surface. Note that this derivation is completely general, and that both \(p_s\) and \(\eta\) may in general be functions of \(x\),\(y\), and \(t\), and \(\eta\) could be, for example, below the ocean surface at some interface.
 \begin{align*}
     \frac{d p}{d z}&=-\rho g\\
     \int_{p_s}^{p}dp&=-\int_{\eta}^{z}\rho g \, dz\\
@@ -469,15 +469,15 @@ The atmosphere can be roughly regarded as an ideal gas, so we can substitute in 
     \boxed{\frac{d\ln p}{dz}=-\frac{g}{RT}}
 \end{align}
 
-If we make the approximation that $T(z)\sim\text{const}$ (which is not a bad approximation in Kelvin) we can integrate to find that $p$ falls off exponentially.
+If we make the approximation that \(T(z)\sim\text{const}\) (which is not a bad approximation in Kelvin) we can integrate to find that \(p\) falls off exponentially.
 \begin{align*}
     p(z)=p(z=0)e^{-z/H}
 \end{align*}
-where $H=\frac{RT}{g}$ is the scale height. Plugging in Earth-like numbers\footnote{
-    $R\approx$ \qty{290}{\joule\per\kilogram\per\kelvin}, $T\approx$ \qty{240}{\kelvin}, $g\approx$ \qty{9.8}{\meter\per\square\second}. Only keeping two significant figures because we're interested in rough estimates here!
-} gives $H\approx\qty{7.1}{\kilo\meter}$. This means that, roughly, the pressure falls off by a factor of $e$ every $7.1$ kilometers. Equivalently, the pressure falls off by a factor of $10$ every $H\ln 10\approx\qty{16}{\kilo\meter}$.
+where \(H=\frac{RT}{g}\) is the scale height. Plugging in Earth-like numbers\footnote{
+    \(R\approx\) \qty{290}{\joule\per\kilogram\per\kelvin}, \(T\approx\) \qty{240}{\kelvin}, \(g\approx\) \qty{9.8}{\meter\per\square\second}. Only keeping two significant figures because we're interested in rough estimates here!
+} gives \(H\approx\qty{7.1}{\kilo\meter}\). This means that, roughly, the pressure falls off by a factor of \(e\) every \(7.1\) kilometers. Equivalently, the pressure falls off by a factor of \(10\) every \(H\ln 10\approx\qty{16}{\kilo\meter}\).
 
-Referring to the figure below, you can see that the pressure falls by a factor of $10$ approximately every \qty{17}{\kilo\meter}, which is pretty close!
+Referring to the figure below, you can see that the pressure falls by a factor of \(10\) approximately every \qty{17}{\kilo\meter}, which is pretty close!
 
 \begin{figure}[H]
     \begin{subfigure}{0.5\linewidth}
@@ -489,11 +489,11 @@ Referring to the figure below, you can see that the pressure falls by a factor o
     \begin{subfigure}{0.45\linewidth}
         \centering
         \includegraphics[width=0.8\linewidth]{Figures/Thermodynamics/Earth Radiosonde Pressure.png}
-    \caption{Radiosonde measurement of the Earth. Note the log scale on the pressure axis, so if $p\sim e^{-z}$ we should expect a straight line, which we remarkably see. Notice how smooth the measurement is, despite the fact that it's a single radiosonde at a single  (horizontal) point in space. Figure from Ray's book \cite{Ray}.}
+    \caption{Radiosonde measurement of the Earth. Note the log scale on the pressure axis, so if \(p\sim e^{-z}\) we should expect a straight line, which we remarkably see. Notice how smooth the measurement is, despite the fact that it's a single radiosonde at a single  (horizontal) point in space. Figure from Ray's book \cite{Ray}.}
     \end{subfigure}
 \end{figure}
 
-Recall that $R=R^*/\bar{M}$. This means that if we know the temperature, gravitational acceleration, and scale height of another planet's atmosphere, we can deduce the effective molar mass of the constituents of the atmosphere, and thus gain information on the planet's atmospheric composition! 
+Recall that \(R=R^*/\bar{M}\). This means that if we know the temperature, gravitational acceleration, and scale height of another planet's atmosphere, we can deduce the effective molar mass of the constituents of the atmosphere, and thus gain information on the planet's atmospheric composition! 
 
 \subsection{Example 3: Solid Rock Planet}
 
@@ -502,12 +502,12 @@ If we want to include curvature (since planets are more like spheres than infini
     \frac{d p}{d r}&=-\rho g\\
     &=-\rho \frac{G M(r)}{r^{2}}
 \end{align*}
-We can couple this with a differential equation governing the mass below some radius $r$ called $M(r)$:
+We can couple this with a differential equation governing the mass below some radius \(r\) called \(M(r)\):
 \begin{align*}
     \frac{d M}{d r} = 4\pi r^2\rho
 \end{align*}
 
-To solve these equations, as before, we need an expression for $\rho(r)$ and boundary conditions. $\rho(r)$ is typically given by the equation of state governing the material in question. For the Earth, for example, we might approximate $\rho\approx \text{const}$ below the ground ($r<r_s$) and $\rho$ as ideal as in \hyperref[Example 2: Ideal Gas]{Example 2} above the ground ($r>r_s$). For boundary conditions, we know that $M(r=0)=0$ and we can let $p(r=0)=p_0$ where $p_0$ is unknown. We can then integrate the equations, then solve for $p_0$ in terms of some other known reference pressure (e.g., if we know $p(r=r_s)=p_s$ we can write $p_0$ in terms of $p_s$).
+To solve these equations, as before, we need an expression for \(\rho(r)\) and boundary conditions. \(\rho(r)\) is typically given by the equation of state governing the material in question. For the Earth, for example, we might approximate \(\rho\approx \text{const}\) below the ground (\(r<r_s\)) and \(\rho\) as ideal as in \hyperref[Example 2: Ideal Gas]{Example 2} above the ground (\(r>r_s\)). For boundary conditions, we know that \(M(r=0)=0\) and we can let \(p(r=0)=p_0\) where \(p_0\) is unknown. We can then integrate the equations, then solve for \(p_0\) in terms of some other known reference pressure (e.g., if we know \(p(r=r_s)=p_s\) we can write \(p_0\) in terms of \(p_s\)).
 
 \chapter{Dry Thermodynamics}\label{Dry Thermodynamics}
 
@@ -571,18 +571,18 @@ To explain (some of) the aforementioned phenomenon, we start from the first law 
     \label{First Law}
     dU=-p\,dV+T\,dS+\mu\,dN
 \end{align}
-where $U=$ internal energy; $p=$ pressure; $V=$ volume; $T=$ temperature; $S=$ entropy; $\mu=$ chemical potential; and $N=$ number of molecules. Roughly, the $-p\,dV$ term corresponds to work done by the parcel (i.e., energy transferred by the parcel pushing or being pushed by its surroundings), $T\,dS$ corresponds to the heat transfer between the parcel and its surroundings, and $\mu\,dN$ corresponds to energy gained or lost by exchanging particles with its surroundings.
+where \(U=\) internal energy; \(p=\) pressure; \(V=\) volume; \(T=\) temperature; \(S=\) entropy; \(\mu=\) chemical potential; and \(N=\) number of molecules. Roughly, the \(-p\,dV\) term corresponds to work done by the parcel (i.e., energy transferred by the parcel pushing or being pushed by its surroundings), \(T\,dS\) corresponds to the heat transfer between the parcel and its surroundings, and \(\mu\,dN\) corresponds to energy gained or lost by exchanging particles with its surroundings.
 
-We assume that the system is closed ($dN=0$, so the parcel does not exchange air with its environment\footnote{This amounts to the assumption that entrainment does not occur. This is usually false, but it's not a bad assumption for what we aim to explain.}) and divide by the mass of the air parcel to find: 
+We assume that the system is closed (\(dN=0\), so the parcel does not exchange air with its environment\footnote{This amounts to the assumption that entrainment does not occur. This is usually false, but it's not a bad assumption for what we aim to explain.}) and divide by the mass of the air parcel to find: 
 \begin{align*}
     du=-p\,d\left(\frac{1}{\rho}\right)+T\,ds
 \end{align*}
-where $u$ and $s$ refer to the internal energy and entropy \textit{per unit mass} (remember, we want intensive variables only!). We now approximate the air parcel as an ideal gas. This means that:
+where \(u\) and \(s\) refer to the internal energy and entropy \textit{per unit mass} (remember, we want intensive variables only!). We now approximate the air parcel as an ideal gas. This means that:
 
 \begin{enumerate}
     \item The gas obeys the Ideal Gas Law (\ref{eq Ideal Gas})
-    \item The internal energy is a function of temperature only: $u=c_vT$, where $c_v=$ the specific heat capacity at constant volume.
-    \item The specific heat capacities are related in the following way: $c_v+R=c_p$ (also per unit mass)
+    \item The internal energy is a function of temperature only: \(u=c_vT\), where \(c_v=\) the specific heat capacity at constant volume.
+    \item The specific heat capacities are related in the following way: \(c_v+R=c_p\) (also per unit mass)
 \end{enumerate}
 \begin{align*}
     c_v\,dT&=-p\,d\left(\frac{1}{\rho}\right)+T\,ds
@@ -596,7 +596,7 @@ where $u$ and $s$ refer to the internal energy and entropy \textit{per unit mass
     \\
     &=-R\,dT+\frac{RT\,dp}{p}+T\,ds
 \end{align*}
-Dividing by $T$ and rearranging, we find that:
+Dividing by \(T\) and rearranging, we find that:
 \begin{align*}
     ds & = \frac{R_a+c_v}{T}\,dT+R\frac{dp}{p}
     \\
@@ -606,9 +606,9 @@ Dividing by $T$ and rearranging, we find that:
      & = c_p\,d\left(\ln \left(T(p)^\frac{-R}{c_p}\right)\right)
      &\text{; }&\ln(x)-a\ln(y)=\ln\left(x(y)^{-a}\right)
 \end{align*}
-If we make the crucial assumption that the parcel exchanges a negligible amount of heat with its surroundings, then we can approximate $ds=0$\footnote{
-    Why can we only approximate $ds=0$ and not set $ds=0$? It is because the relation  $\dbar Q=T\,ds$ (where  $\dbar Q$ is the heat transfer) holds only if the process is reversible, but we have made no such assumptions here. If the process is irreversible, as it probably is, then  $\dbar Q\leq T\,ds$ and so it is possible for  $\dbar Q=0$ and $ds\neq 0$.
-}. In reality, there is some level of heat transfer ($ds\neq0)$, but these processes are typically much slower (timescale $\sim$ days/weeks) than the changes in pressure caused by upwards/downwards parcel motion (timescale $\sim$ hours). We can thus conclude that:
+If we make the crucial assumption that the parcel exchanges a negligible amount of heat with its surroundings, then we can approximate \(ds=0\)\footnote{
+    Why can we only approximate \(ds=0\) and not set \(ds=0\)? It is because the relation  \(\dbar Q=T\,ds\) (where  \(\dbar Q\) is the heat transfer) holds only if the process is reversible, but we have made no such assumptions here. If the process is irreversible, as it probably is, then  \(\dbar Q\leq T\,ds\) and so it is possible for  \(\dbar Q=0\) and \(ds\neq 0\).
+}. In reality, there is some level of heat transfer (\(ds\neq0)\), but these processes are typically much slower (timescale \(\sim\) days/weeks) than the changes in pressure caused by upwards/downwards parcel motion (timescale \(\sim\) hours). We can thus conclude that:
 \begin{align*}
     0 & = c_p\,d\left(\ln \left(T(p)^\frac{-R}{c_p}\right)\right)
 \end{align*}
@@ -638,11 +638,11 @@ and so we derive:
 \end{fact}
 \subsection{Physical Interpretation}
 
-Equation \ref{Dry Adiabat} is the \textbf{Dry Adiabat}. `\textbf{Dry}' because we have no condensation, and `\textbf{Adiabat}' because we assume $dS=0$ (and the word `adiabatic' refers to processes where $dS=0$). Constants $(p_0,T_0)$ refer to the initial temperature and pressure of the air parcel. 
+Equation \ref{Dry Adiabat} is the \textbf{Dry Adiabat}. `\textbf{Dry}' because we have no condensation, and `\textbf{Adiabat}' because we assume \(dS=0\) (and the word `adiabatic' refers to processes where \(dS=0\)). Constants \((p_0,T_0)\) refer to the initial temperature and pressure of the air parcel. 
 
-Physically \ref{Dry Adiabat} corresponds to a parcel starting at some temperature and pressure ($T_0,p_0$) and being displaced upwards/downwards. When it is displaced upwards/downwards, it undergoes negligible diabatic heating and entrainment, so it's temperature does not change that way. However, when the ambient pressure changes, it expands/contracts, and the air parcel does positive/negative work on its surroundings. This \textit{decreases}/\textit{increases} the internal energy of the parcel, thus decreasing/increasing the temperature. That's why $T$ decreases as $p$ decreases in \ref{Dry Adiabat}. 
+Physically \ref{Dry Adiabat} corresponds to a parcel starting at some temperature and pressure (\(T_0,p_0\)) and being displaced upwards/downwards. When it is displaced upwards/downwards, it undergoes negligible diabatic heating and entrainment, so it's temperature does not change that way. However, when the ambient pressure changes, it expands/contracts, and the air parcel does positive/negative work on its surroundings. This \textit{decreases}/\textit{increases} the internal energy of the parcel, thus decreasing/increasing the temperature. That's why \(T\) decreases as \(p\) decreases in \ref{Dry Adiabat}. 
 
-However, we should be wary of the limits of our conclusions here. Recall that we started this section considering an air parcel, not the entire atmosphere! We must make a final, crucial assumption that rising and falling air parcels (convection) are the dominant mechanisms for heat transport within some domain in the atmosphere (e.g., from the ground to a certain height – for example the tropopause). \textit{This} implies that the temperature profile of the atmosphere within this domain follows the \textbf{Dry Adiabat}. If this domain extends to the ground, we may take the initial conditions initial conditions $(p_0,T_0)$ to be the temperature and pressure of the surface $(p_s,T_s)$.
+However, we should be wary of the limits of our conclusions here. Recall that we started this section considering an air parcel, not the entire atmosphere! We must make a final, crucial assumption that rising and falling air parcels (convection) are the dominant mechanisms for heat transport within some domain in the atmosphere (e.g., from the ground to a certain height – for example the tropopause). \textit{This} implies that the temperature profile of the atmosphere within this domain follows the \textbf{Dry Adiabat}. If this domain extends to the ground, we may take the initial conditions initial conditions \((p_0,T_0)\) to be the temperature and pressure of the surface \((p_s,T_s)\).
 
 This assumption is not bad in the Earth's troposphere, partly because here the atmosphere is heated from below: the atmosphere is transparent to the radiation from the sun, which penetrates through the atmosphere and heats the ground. The ground then heats the air above it, which becomes buoyant and convects. Similarly, Jupiter's internal energy leakage maintains a convective troposphere. However, not all planetary atmospheres and not even all of Earth's atmosphere obey this assumption.
 
@@ -669,12 +669,12 @@ Finally, now, we can see now why many atmospheres have temperatures decreasing a
     \begin{subfigure}{0.6\linewidth}
         \centering
         \begin{tikzpicture}
-            \draw[thick,->] (0,0) -- (4.5,0) node[anchor=north west] {$\ln T$};
-            \draw[thick,->] (0,0) -- (0,4.5) node[anchor=south east] {$-\ln p$};
-            \draw[ultra thick] (3,0) node[anchor=north] {$(\ln T_s,\ln p_s)$} -- (0,4);
+            \draw[thick,->] (0,0) -- (4.5,0) node[anchor=north west] {\(\ln T\)};
+            \draw[thick,->] (0,0) -- (0,4.5) node[anchor=south east] {\(-\ln p\)};
+            \draw[ultra thick] (3,0) node[anchor=north] {\((\ln T_s,\ln p_s)\)} -- (0,4);
             \node[circle,draw,fill=black,inner sep=0pt,minimum size =0.1cm] at (3,0){};
-            \draw (1,1) node[anchor=north west] {$R$} -- (2.25,1);
-            \draw (1,1) node[anchor=south east] {$c_p$} -- (1,2.67);
+            \draw (1,1) node[anchor=north west] {\(R\)} -- (2.25,1);
+            \draw (1,1) node[anchor=south east] {\(c_p\)} -- (1,2.67);
         \end{tikzpicture}
     \caption{The Dry Adiabat, as predicted by Equation \ref{Dry Adiabat}.}
     \end{subfigure}
@@ -687,30 +687,30 @@ Finally, now, we can see now why many atmospheres have temperatures decreasing a
     \caption{The Dry Adiabat: Theory and Observation}
 \end{figure}
 
-Note that $R$ and $c_p$ have the same units/dimensions, so $\frac{R}{c_p}$ is dimensionless. We can use the \hyperref[Equipartition]{Equipartition Theorem} to estimate how quickly $T$ falls off with decreasing $p$. We know that $c_v\approx \frac{f}{2}R\approx\frac{5}{2}R$ for the Earth, and we know that $c_p\approx c_v+R$ for an ideal gas. Therefore, $c_p\approx \frac{7}{2}R$, so for the Earth:
+Note that \(R\) and \(c_p\) have the same units/dimensions, so \(\frac{R}{c_p}\) is dimensionless. We can use the \hyperref[Equipartition]{Equipartition Theorem} to estimate how quickly \(T\) falls off with decreasing \(p\). We know that \(c_v\approx \frac{f}{2}R\approx\frac{5}{2}R\) for the Earth, and we know that \(c_p\approx c_v+R\) for an ideal gas. Therefore, \(c_p\approx \frac{7}{2}R\), so for the Earth:
 \begin{align*}
     \frac{R}{c_p}\approx\frac{R}{\frac{7}{2}R}=\frac{2}{7}\approx\frac{d \ln T}{d \ln p}\approx0.286
 \end{align*}
 
-Of course, the atmosphere does not actually follow a \textbf{Dry Adiabat}, as clearly shown by Figure \ref{Earth T Observation}. If we look at only the troposphere (i.e., the lower portion of Figure \ref{Earth T Observation} where $p>\qty{100}{\milli\bar}$), we can estimate from the figure that $d\ln T/d\ln p\approx \frac{\ln(300/180)}{\ln(1000/100)}\approx 0.222$. This is pretty close to the predicted $0.286$, but decidedly much lower! Of course outside of the troposphere our prediction is completely off.
+Of course, the atmosphere does not actually follow a \textbf{Dry Adiabat}, as clearly shown by Figure \ref{Earth T Observation}. If we look at only the troposphere (i.e., the lower portion of Figure \ref{Earth T Observation} where \(p>\qty{100}{\milli\bar}\)), we can estimate from the figure that \(d\ln T/d\ln p\approx \frac{\ln(300/180)}{\ln(1000/100)}\approx 0.222\). This is pretty close to the predicted \(0.286\), but decidedly much lower! Of course outside of the troposphere our prediction is completely off.
 
-This is because some of our assumptions were not as accurate as we would like. In reality, $dN\neq0$, and entrainment occurs, and $dS\neq0$, and diabatic heating occurs. Some of this diabatic heating is due to condensation, which we will learn how to deal with in the next chapter on \hyperref[Moist Thermodynamics]{Moist Thermodynamics}. We'll find that this will act to shallow the temperature profile (i.e., decrease $d\ln T/d\ln p$). Some of this is radiative heating, which we will discuss in the next part on \hyperref[Radiative Transfer]{Radiative Transfer}.
+This is because some of our assumptions were not as accurate as we would like. In reality, \(dN\neq0\), and entrainment occurs, and \(dS\neq0\), and diabatic heating occurs. Some of this diabatic heating is due to condensation, which we will learn how to deal with in the next chapter on \hyperref[Moist Thermodynamics]{Moist Thermodynamics}. We'll find that this will act to shallow the temperature profile (i.e., decrease \(d\ln T/d\ln p\)). Some of this is radiative heating, which we will discuss in the next part on \hyperref[Radiative Transfer]{Radiative Transfer}.
 
-However, (dry) convection as a mechanism always perturbs an existing atmospheric profile towards an \textbf{Adiabat} and a temperature slope of $2/7$, and it is other processes (radiation, fluid dynamics, moisture) that pull the atmosphere away from an adiabat. In some cases, like in the \textbf{stratosphere}, radiation pulls the atmospheric profile to be super-stable, in which case convection is prohibited due to the stability of the atmosphere. In other cases, these other processes pull the atmospheric profile to be unstable, in which case convection takes over to push the atmosphere back to the \textbf{Adiabat}. What we have just touched upon is \hyperref[Radiative-Convective Equilibrium]{Radiative-Convective Equilibrium}, which we will discuss more in Part \ref{Clouds}.
+However, (dry) convection as a mechanism always perturbs an existing atmospheric profile towards an \textbf{Adiabat} and a temperature slope of \(2/7\), and it is other processes (radiation, fluid dynamics, moisture) that pull the atmosphere away from an adiabat. In some cases, like in the \textbf{stratosphere}, radiation pulls the atmospheric profile to be super-stable, in which case convection is prohibited due to the stability of the atmosphere. In other cases, these other processes pull the atmospheric profile to be unstable, in which case convection takes over to push the atmosphere back to the \textbf{Adiabat}. What we have just touched upon is \hyperref[Radiative-Convective Equilibrium]{Radiative-Convective Equilibrium}, which we will discuss more in Part \ref{Clouds}.
 
 \section{Potential Temperature}
 
-In basic thermodynamics, we often introduce the concept of temperature operationally in the following way: suppose we have two objects $A$ and $B$, with temperatures $T_A$ and $T_B$, respectively, and we place them in contact with each other. `Temperature' encodes whether heat will flow, and which way the heat will flow. If $T_A=T_B$, no heat will flow. If $T_B>T_A$, heat will flow from $B$ to $A$, and vice versa if $T_B<T_A$.
+In basic thermodynamics, we often introduce the concept of temperature operationally in the following way: suppose we have two objects \(A\) and \(B\), with temperatures \(T_A\) and \(T_B\), respectively, and we place them in contact with each other. `Temperature' encodes whether heat will flow, and which way the heat will flow. If \(T_A=T_B\), no heat will flow. If \(T_B>T_A\), heat will flow from \(B\) to \(A\), and vice versa if \(T_B<T_A\).
 
-However, this will not work in atmospheric thermodynamics. Suppose we have two parcels of air called $A$ and $B$ at pressures $p_A$ and $p_B$\footnote{We are getting used to using pressure as a coordinate rather than height, remember!} with temperatures $T_A$ and $T_B$, respectively. Suppose we displace parcel $A$ in order to place it in contact with parcel $B$ (with no entrainment ($dN=0$) or diabatic heating ($dS=0$)).\vspace{5mm}
+However, this will not work in atmospheric thermodynamics. Suppose we have two parcels of air called \(A\) and \(B\) at pressures \(p_A\) and \(p_B\)\footnote{We are getting used to using pressure as a coordinate rather than height, remember!} with temperatures \(T_A\) and \(T_B\), respectively. Suppose we displace parcel \(A\) in order to place it in contact with parcel \(B\) (with no entrainment (\(dN=0\)) or diabatic heating (\(dS=0\))).\vspace{5mm}
 
 Which way will heat flow?\vspace{5mm}
 
-We cannot naively use temperature as we did before, because parcel $A$'s temperature will change following the \hyperref[Dry Adiabat]{Dry Adiabat} as we move it to a different pressure. In other words, temperature is not a variable which is \hyperref[Material Conservation]{Materially Conserved} in Atmospheric/Oceanic Thermodynamics. A variable is \hyperref[Material Conservation]{Materially Conserved} if and only if it remains constant following a air/water parcel. This is a concept which will become very important in Part \ref{Geophysical Fluid Dynamics}.
+We cannot naively use temperature as we did before, because parcel \(A\)'s temperature will change following the \hyperref[Dry Adiabat]{Dry Adiabat} as we move it to a different pressure. In other words, temperature is not a variable which is \hyperref[Material Conservation]{Materially Conserved} in Atmospheric/Oceanic Thermodynamics. A variable is \hyperref[Material Conservation]{Materially Conserved} if and only if it remains constant following a air/water parcel. This is a concept which will become very important in Part \ref{Geophysical Fluid Dynamics}.
 
-We now want to define a quantity which serves the same role as temperature did before (i.e., a variable which encodes which way heat will flow) but which is \textit{also}, unlike temperature, \hyperref[Material Conservation]{materially conserved}. Let us consider a more general scenario, and move each parcel to some third pressure $p_{ref}$\footnote{Set $p_{ref}=p_B$ to recover our first example.}. 
+We now want to define a quantity which serves the same role as temperature did before (i.e., a variable which encodes which way heat will flow) but which is \textit{also}, unlike temperature, \hyperref[Material Conservation]{materially conserved}. Let us consider a more general scenario, and move each parcel to some third pressure \(p_{ref}\)\footnote{Set \(p_{ref}=p_B\) to recover our first example.}. 
 
-We define the \textbf{Potential Temperature} $\theta$ as the temperature a parcel \textit{would} have if it were perfectly adiabatically moved to some reference pressure level $p_{ref}$:
+We define the \textbf{Potential Temperature} \(\theta\) as the temperature a parcel \textit{would} have if it were perfectly adiabatically moved to some reference pressure level \(p_{ref}\):
 \begin{align}\label{eq Potential Temperature}
     \BOX{\theta(T,p)=T\left(\frac{p}{p_{ref}}\right)^{-\frac{R}{c_p}}}
 \end{align}
@@ -720,8 +720,8 @@ Recall that a few pages ago in our derivation of the \hyperref[Dry Adiabat]{Dry 
     ds=c_p\,d\left(\ln \left(T(p)^\frac{-R}{c_p}\right)\right)
 \end{align}
 
-Since the $\ln T(p)^\frac{-R}{c_p}$ term is within the differential, we can freely add and subtract constants within the differential, which corresponds to multiplying within the logarithm.\footnote{
-    Another way of looking at this is noting that $d \ln \left(\frac{1}{p_{ref}}\right)^\frac{-R}{c_p}=0$, and so we add $d \ln \left(\frac{1}{p_{ref}}\right)^\frac{-R}{c_p}=0$ to both sides to go from \ref{eq ds Dry Adiabat} to \ref{eq ds Dry Adiabat ref}.
+Since the \(\ln T(p)^\frac{-R}{c_p}\) term is within the differential, we can freely add and subtract constants within the differential, which corresponds to multiplying within the logarithm.\footnote{
+    Another way of looking at this is noting that \(d \ln \left(\frac{1}{p_{ref}}\right)^\frac{-R}{c_p}=0\), and so we add \(d \ln \left(\frac{1}{p_{ref}}\right)^\frac{-R}{c_p}=0\) to both sides to go from \ref{eq ds Dry Adiabat} to \ref{eq ds Dry Adiabat ref}.
 } We get then that:
 \begin{equation}
     \label{eq ds Dry Adiabat ref}
@@ -732,9 +732,9 @@ Since the $\ln T(p)^\frac{-R}{c_p}$ term is within the differential, we can free
     \end{aligned}
 \end{equation}
 
-As you can see, if $ds=0$, as we assumed during convection, then $d\theta=0$. Therefore, as we lift or drop a parcel, $\theta$ is \hyperref[Material Conservation]{materially conserved}.\footnote{In the Ocean, even without radiative heating processes, $\theta$ is not conserved. This is because there is a third thermodynamic state variable, salinity, which will change the temperature of sea water without adding any heat. Oceanographers have come up with another kind of materially conserved temperature in the ocean: \textit{Conservative Temperature}.}
+As you can see, if \(ds=0\), as we assumed during convection, then \(d\theta=0\). Therefore, as we lift or drop a parcel, \(\theta\) is \hyperref[Material Conservation]{materially conserved}.\footnote{In the Ocean, even without radiative heating processes, \(\theta\) is not conserved. This is because there is a third thermodynamic state variable, salinity, which will change the temperature of sea water without adding any heat. Oceanographers have come up with another kind of materially conserved temperature in the ocean: \textit{Conservative Temperature}.}
 
-Recalling that $TdS=dQ=$ heat, we find that the potential temperature is a measure of the extent to which diabatic/heat transfer processes have heated or cooled our parcel of air. It can be a proxy for how wrong we were to assume that $dS=0$ in our derivation of \hyperref[Dry Adiabat]{Dry Adiabat}.
+Recalling that \(TdS=dQ=\) heat, we find that the potential temperature is a measure of the extent to which diabatic/heat transfer processes have heated or cooled our parcel of air. It can be a proxy for how wrong we were to assume that \(dS=0\) in our derivation of \hyperref[Dry Adiabat]{Dry Adiabat}.
 
 \section{Convection}\label{Convection}
 
@@ -744,21 +744,21 @@ The atmosphere (and ocean) is a fluid, so even in the absence of most forces lik
 
 We already accounted for the effects of pressure in deriving \hyperref[Hydrostatic Balance]{Hydrostatic Balance} and the \hyperref[Dry Adiabat]{Dry Adiabat}. In the former case, the pressure gradient force acts to push fluid parcels upwards away from lower altitude regions of high pressure to higher altitude regions of low pressure in order to counteract the force of gravity on the ambient air. In the latter case, we only consider large-scale pressure gradients in the ambient atmosphere and we ignored pressure gradients across a fluid parcel.
 
-Now we wish to take into account pressure gradients across a fluid parcel, and consider a fluid parcel which does \textit{not} have the same density as the air around it. Suppose we have a fluid parcel of mass $m$ occupying some volume $V$. For simplicity assume the fluid parcel is rectangular, with a horizontal area of $A$ and a height of $h$ such that $V=Ah$.
+Now we wish to take into account pressure gradients across a fluid parcel, and consider a fluid parcel which does \textit{not} have the same density as the air around it. Suppose we have a fluid parcel of mass \(m\) occupying some volume \(V\). For simplicity assume the fluid parcel is rectangular, with a horizontal area of \(A\) and a height of \(h\) such that \(V=Ah\).
 
-Let us consider the forces per unit mass on the fluid parcel in the vertical direction. There are three forces of interest: the gravitational force $F_g=-g$, the pressure force on the \textit{bottom} pushing the parcel \textit{upwards} $F_{bot}=p(z)A/m$, and the pressure force on the \textit{top} pushing the parcel \textit{downards} $F_{top}=p(z+h)A/m$. $p(z)$ is the pressure at height $z$. The net force is then:
+Let us consider the forces per unit mass on the fluid parcel in the vertical direction. There are three forces of interest: the gravitational force \(F_g=-g\), the pressure force on the \textit{bottom} pushing the parcel \textit{upwards} \(F_{bot}=p(z)A/m\), and the pressure force on the \textit{top} pushing the parcel \textit{downards} \(F_{top}=p(z+h)A/m\). \(p(z)\) is the pressure at height \(z\). The net force is then:
 \begin{align*}
     F_z=-g-\frac{A}{m}(p(z+h)-p(z))
 \end{align*}
 
-We now make two assumptions. First, we assume that $h$ is small, therefore, $p(z+h)-p(z)\approx \frac{dp}{dz} h$. Second, we assume that the pressure in the fluid is set by \hyperref[Hydrostatic Balance]{Hydrostatic Balance}, therefore $p(z+h)-p(z)\approx \frac{dp}{dz} h=-\rho_a g h$, where $\rho_a$ is the density of the ambient air. We define $\rho_p=m/V$ as the density of the fluid parcel, and find that the total force on fluid parcel  is:
+We now make two assumptions. First, we assume that \(h\) is small, therefore, \(p(z+h)-p(z)\approx \frac{dp}{dz} h\). Second, we assume that the pressure in the fluid is set by \hyperref[Hydrostatic Balance]{Hydrostatic Balance}, therefore \(p(z+h)-p(z)\approx \frac{dp}{dz} h=-\rho_a g h\), where \(\rho_a\) is the density of the ambient air. We define \(\rho_p=m/V\) as the density of the fluid parcel, and find that the total force on fluid parcel  is:
 \begin{align}
     F_b&=-g+\frac{Ah}{m}\rho_a g\nonumber\\
     &=g\left( -1+ \frac{\rho_a}{\rho_p}\right)\nonumber\\
     \label{Buoyancy Force}
     \therefore \,\,& \BOX{F_b=g\left( \frac{\rho_a-\rho_p}{\rho_p} \right)}
 \end{align}
-where $F_b=$ the buoyancy force. Physically, the buoyant force is intuitive: if the air parcel is lighter than the ambient air ($\rho_p<\rho_a$) it will convect and rise, and vice versa. Furthermore, we can write $F_b$ in terms of the temperature $T$ (using \ref{eq Ideal Gas}) or potential temperature $\theta$ (using \ref{eq Potential Temperature}) in very neat forms, since many terms cancel top and bottom:
+where \(F_b=\) the buoyancy force. Physically, the buoyant force is intuitive: if the air parcel is lighter than the ambient air (\(\rho_p<\rho_a\)) it will convect and rise, and vice versa. Furthermore, we can write \(F_b\) in terms of the temperature \(T\) (using \ref{eq Ideal Gas}) or potential temperature \(\theta\) (using \ref{eq Potential Temperature}) in very neat forms, since many terms cancel top and bottom:
 \begin{align}
     F_b=g\left( \frac{\rho_a-\rho_p}{\rho_p} \right)\nonumber\\
     \label{Buoyancy Force Temp}
@@ -767,25 +767,25 @@ where $F_b=$ the buoyancy force. Physically, the buoyant force is intuitive: if 
 \end{align}
 So a parcel will convect and rise if it is warmer or has a higher potential temperature than its ambient surroundings.
 
-Finally, another way of thinking of the buoyant force is as a kind of `\textit{reduced gravity}'. The fluid acts like its on a planet of gravitational acceleration $g'=g\left( \frac{\rho_a-\rho_p}{\rho_p} \right)$ not $g$. This will be how we think of things in Chapter \ref{Shallow Water System}. 
+Finally, another way of thinking of the buoyant force is as a kind of `\textit{reduced gravity}'. The fluid acts like its on a planet of gravitational acceleration \(g'=g\left( \frac{\rho_a-\rho_p}{\rho_p} \right)\) not \(g\). This will be how we think of things in Chapter \ref{Shallow Water System}. 
 
 \subsection{Convective Instability Criterion}
 
-Now we wish to find whether our atmosphere is convectively stable, i.e., whether the atmosphere will spontaneously undergo convection. If pressure and density did not appreciably change by height, then this would be easy: if $T(z)>T(z+c)$ where $c>0$ (and assuming that $\frac{\partial \rho}{\partial T}<0$), then we will have denser air overlying lighter air, and the parcels will convect.\footnote{
-    This is the case if we're considering two layers of different temperature and composition that are in contact. This is because, at the point of contact, pressure changes only infinitessimaly, so the \hyperref[Dry Adiabat]{Dry Adiabat} is inapplicable (since $dp\approx0$). To determine whether these two layers are convectively stable, you must compare the densities directly, which depend on both the temperature of each layer and the molecular composition.
+Now we wish to find whether our atmosphere is convectively stable, i.e., whether the atmosphere will spontaneously undergo convection. If pressure and density did not appreciably change by height, then this would be easy: if \(T(z)>T(z+c)\) where \(c>0\) (and assuming that \(\frac{\partial \rho}{\partial T}<0\)), then we will have denser air overlying lighter air, and the parcels will convect.\footnote{
+    This is the case if we're considering two layers of different temperature and composition that are in contact. This is because, at the point of contact, pressure changes only infinitessimaly, so the \hyperref[Dry Adiabat]{Dry Adiabat} is inapplicable (since \(dp\approx0\)). To determine whether these two layers are convectively stable, you must compare the densities directly, which depend on both the temperature of each layer and the molecular composition.
 }
 
-As before, the situation is a bit more complicated in an atmosphere when density and pressure vary significantly with height. Suppose again that we have an atmospheric temperature profile $T=T(p)$ (not necessarily following the dry adiabat). Suppose we lift a parcel at some pressure $p$ to some (smaller) pressure $p-\delta p$.
+As before, the situation is a bit more complicated in an atmosphere when density and pressure vary significantly with height. Suppose again that we have an atmospheric temperature profile \(T=T(p)\) (not necessarily following the dry adiabat). Suppose we lift a parcel at some pressure \(p\) to some (smaller) pressure \(p-\delta p\).
 
-That parcel will be convectively unstable and continue rising if it is lighter (and therefore hotter) than the ambient surrounding air. We assume that the parcel is initially in equilibrium with its surroundings ($T_{parcel}(p)=T_{ambient}(p)$). We then Taylor Expand:
+That parcel will be convectively unstable and continue rising if it is lighter (and therefore hotter) than the ambient surrounding air. We assume that the parcel is initially in equilibrium with its surroundings (\(T_{parcel}(p)=T_{ambient}(p)\)). We then Taylor Expand:
 \begin{align*}
     T_{parcel}(p-\delta p)&>T_{ambient}(p-\delta p)\\
     {T_{parcel}(p)}-\frac{d T_{parcel}}{d p}\delta p & >T_{ambient}(p)-\frac{d T_{ambient}}{d p}\delta p\\
     \frac{d \ln T_{parcel}}{d \ln p} & <\frac{d \ln T_{ambient}}{d \ln p}
 \end{align*}
-Substituting in the \hyperref[Dry Adiabat]{Dry Adiabat} for $\frac{d \ln T_{parcel}}{d \ln p}$ we find the dry stability criterion:
+Substituting in the \hyperref[Dry Adiabat]{Dry Adiabat} for \(\frac{d \ln T_{parcel}}{d \ln p}\) we find the dry stability criterion:
 \begin{fact}{The Dry Stability Criterion}{Dry Stability Box}\label{Dry Stability Box}
-Suppose a dry atmosphere has a temperature profile $T(p)$. It will be:
+Suppose a dry atmosphere has a temperature profile \(T(p)\). It will be:
 \begin{multicols}{3}
     \centering
     Unstable to convection if:\newline
@@ -808,7 +808,7 @@ Physically, the idea is as follows: an atmosphere is stable if the temperature d
 
 If \ref{Dry Stability Stable} obtains then an atmosphere will be \textit{super-stable} and will inhibit convection. A quick sanity check to remember which way the inequality is in \ref{Dry Stability Stable} is the following: an isothermal\footnote{
     `Iso' meaning same and `thermal' meaning temperature, so `Isothermal' means constant temperature.
-} atmosphere is always super-stable. An isothermal atmosphere will have $\frac{d \ln T}{d \ln p} = 0$, so $\left( \frac{d \ln T}{d \ln p} < \frac{R}{c_p} \right)$ corresponds to stability. If one has a \textit{super-stable} atmosphere then that indicates that there has been some other dominant energy transport mechanism that has kept the atmosphere in this state. This is characteristic of a \textbf{stratosphere}.\footnote{
+} atmosphere is always super-stable. An isothermal atmosphere will have \(\frac{d \ln T}{d \ln p} = 0\), so \(\left( \frac{d \ln T}{d \ln p} < \frac{R}{c_p} \right)\) corresponds to stability. If one has a \textit{super-stable} atmosphere then that indicates that there has been some other dominant energy transport mechanism that has kept the atmosphere in this state. This is characteristic of a \textbf{stratosphere}.\footnote{
     Recall the footnote on \hyperref[Vertical Structure]{this} page. This is why Ray prefers that definition of \textbf{stratosphere}: a stratsophere should be characterised by what energy transport mechanism is dominant, not whether it happens to have shortwave absorbers.
 } 
 
@@ -816,10 +816,10 @@ If \ref{Dry Stability Stable} obtains then an atmosphere will be \textit{super-s
     \centering
     \begin{tikzpicture}
         \begin{scope}
-            \draw[thick,->] (0,0) -- (4,0) node[anchor=south] {$\ln T$};
-            \draw[thick,->] (0,0) -- (0,4) node[anchor=south east] {$-\ln p$};
-            \draw[ultra thick] (3,0) node[anchor=north] {$(\ln T_s,\ln p_s)$} -- (0,3);
-            %\draw[ultra thick] (3,0) node[anchor=north] {$(\ln T_s,\ln p_s)$} -- (0,4);
+            \draw[thick,->] (0,0) -- (4,0) node[anchor=south] {\(\ln T\)};
+            \draw[thick,->] (0,0) -- (0,4) node[anchor=south east] {\(-\ln p\)};
+            \draw[ultra thick] (3,0) node[anchor=north] {\((\ln T_s,\ln p_s)\)} -- (0,3);
+            %\draw[ultra thick] (3,0) node[anchor=north] {\((\ln T_s,\ln p_s)\)} -- (0,4);
             \node[circle,draw,fill=black,inner sep=0pt,minimum size =0.1cm] at (3,0){};
             \node[circle,draw,fill=mymagenta,inner sep=0pt,minimum size =0.2cm] (A) at (1.5,1.5){};
             \node at (2.5,2.5){Unstable};
@@ -828,10 +828,10 @@ If \ref{Dry Stability Stable} obtains then an atmosphere will be \textit{super-s
             \draw[thick,mymagenta] (B) -- (C);
         \end{scope}
         \begin{scope}[xshift=5.5cm]
-            \draw[thick,->] (0,0) -- (4,0) node[anchor=south] {$\ln T$};
-            \draw[thick,->] (0,0) -- (0,4) node[anchor=south east] {$-\ln p$};
-            \draw[ultra thick] (2.625,0) node[anchor=north] {$(\ln T_s,\ln p_s)$} -- (0,3.5);
-            %\draw[ultra thick] (3,0) node[anchor=north] {$(\ln T_s,\ln p_s)$} -- (0,4);
+            \draw[thick,->] (0,0) -- (4,0) node[anchor=south] {\(\ln T\)};
+            \draw[thick,->] (0,0) -- (0,4) node[anchor=south east] {\(-\ln p\)};
+            \draw[ultra thick] (2.625,0) node[anchor=north] {\((\ln T_s,\ln p_s)\)} -- (0,3.5);
+            %\draw[ultra thick] (3,0) node[anchor=north] {\((\ln T_s,\ln p_s)\)} -- (0,4);
             \node[circle,draw,fill=black,inner sep=0pt,minimum size =0.1cm] at (2.625,0){};
             \node[circle,draw,fill=mymagenta,inner sep=0pt,minimum size =0.2cm] (A) at (1.5,1.5){};
             \node at (2.5,2.5){Neutrally Stable};
@@ -840,10 +840,10 @@ If \ref{Dry Stability Stable} obtains then an atmosphere will be \textit{super-s
             \draw[thick,mymagenta] (B) -- (C);
         \end{scope}
         \begin{scope}[xshift=11cm]
-            \draw[thick,->] (0,0) -- (4,0) node[anchor=south] {$\ln T$};
-            \draw[thick,->] (0,0) -- (0,4) node[anchor=south east] {$-\ln p$};
-            \draw[ultra thick] (1.5,0) node[anchor=north] {$(\ln T_s,\ln p_s)$} -- (1.5,3);
-            %\draw[ultra thick] (3,0) node[anchor=north] {$(\ln T_s,\ln p_s)$} -- (0,4);
+            \draw[thick,->] (0,0) -- (4,0) node[anchor=south] {\(\ln T\)};
+            \draw[thick,->] (0,0) -- (0,4) node[anchor=south east] {\(-\ln p\)};
+            \draw[ultra thick] (1.5,0) node[anchor=north] {\((\ln T_s,\ln p_s)\)} -- (1.5,3);
+            %\draw[ultra thick] (3,0) node[anchor=north] {\((\ln T_s,\ln p_s)\)} -- (0,4);
             \node[circle,draw,fill=black,inner sep=0pt,minimum size =0.1cm] at (1.5,0){};
             \node[circle,draw,fill=mymagenta,inner sep=0pt,minimum size =0.2cm] (A) at (1.5,1.5){};
             \node at (2.5,2.5){Stable};
@@ -857,9 +857,9 @@ If \ref{Dry Stability Stable} obtains then an atmosphere will be \textit{super-s
 
 \subsection{Convective Stability Criterion with Potential Temperature}
 
-We can formulate an equivalent criterion for potential temperature. Recall that if two parcels of air have potential temperatures $\theta_A$ and $\theta_B$ such that $\theta_A>\theta_B$, then parcel $A$ will have a higher temperature than parcel $B$ if they're at the same pressure.
+We can formulate an equivalent criterion for potential temperature. Recall that if two parcels of air have potential temperatures \(\theta_A\) and \(\theta_B\) such that \(\theta_A>\theta_B\), then parcel \(A\) will have a higher temperature than parcel \(B\) if they're at the same pressure.
 
-We can very straightforwardly derive an equivalent criterion for convective instability, this time in terms of potential tempreature $\theta$, by rearranging \ref{eq Potential Temperature} for $T(\theta)$ and substituting that into \ref{Dry Stability}.
+We can very straightforwardly derive an equivalent criterion for convective instability, this time in terms of potential tempreature \(\theta\), by rearranging \ref{eq Potential Temperature} for \(T(\theta)\) and substituting that into \ref{Dry Stability}.
 
 \begin{align*}
     1&<\frac{c_p}{R}\frac{d\ln T(\theta)}{d\ln p}
@@ -879,11 +879,11 @@ We can very straightforwardly derive an equivalent criterion for convective inst
     &\text{ ; }
     &\ln p^{R/c_p}=R/c_p\ln p
 \end{align*}
-Therefore, since $\theta>0$ and $p>0$ always, we get that our atmosphere is unstable if and only if:
+Therefore, since \(\theta>0\) and \(p>0\) always, we get that our atmosphere is unstable if and only if:
 \begin{align}\label{Dry Stability Potential Temperature}
     \boxed{\frac{d\theta}{dp}>0}
 \end{align}
-Using the hydrostatic relation and the fact that $g>0,\rho>0$, we get our criterion for instability in height coordinates:
+Using the hydrostatic relation and the fact that \(g>0,\rho>0\), we get our criterion for instability in height coordinates:
 \begin{align}
     \BOX{\frac{d\theta}{dz}<0}
 \end{align}
@@ -894,10 +894,10 @@ Therefore, if potential temperature decreases with height, then our atmosphere i
     \centering
     \begin{tikzpicture}
         \begin{scope}
-            \draw[thick,->] (0,0) -- (4,0) node[anchor=south] {$\theta$};
-            \draw[thick,->] (0,0) -- (0,4) node[anchor=south east] {$z$};
-            \draw[ultra thick] (3,0) node[anchor=north] {$(\theta_s,0)$} -- (0,3);
-            %\draw[ultra thick] (3,0) node[anchor=north] {$(\ln T_s,\ln p_s)$} -- (0,4);
+            \draw[thick,->] (0,0) -- (4,0) node[anchor=south] {\(\theta\)};
+            \draw[thick,->] (0,0) -- (0,4) node[anchor=south east] {\(z\)};
+            \draw[ultra thick] (3,0) node[anchor=north] {\((\theta_s,0)\)} -- (0,3);
+            %\draw[ultra thick] (3,0) node[anchor=north] {\((\ln T_s,\ln p_s)\)} -- (0,4);
             \node[circle,draw,fill=black,inner sep=0pt,minimum size =0.1cm] at (3,0){};
             \node[circle,draw,fill=mymagenta,inner sep=0pt,minimum size =0.2cm] (A) at (1.5,1.5){};
             \node at (2.5,3.5){Unstable};
@@ -906,10 +906,10 @@ Therefore, if potential temperature decreases with height, then our atmosphere i
             \draw[thick,mymagenta] (B) -- (C);
         \end{scope}
         \begin{scope}[xshift=5.5cm]
-            \draw[thick,->] (0,0) -- (4,0) node[anchor=south] {$\theta$};
-            \draw[thick,->] (0,0) -- (0,4) node[anchor=south east] {$z$};
-            \draw[ultra thick] (1.5,0) node[anchor=north] {$(\theta_s,0)$} -- (1.5,3);
-            %\draw[ultra thick] (3,0) node[anchor=north] {$(\ln T_s,\ln p_s)$} -- (0,4);
+            \draw[thick,->] (0,0) -- (4,0) node[anchor=south] {\(\theta\)};
+            \draw[thick,->] (0,0) -- (0,4) node[anchor=south east] {\(z\)};
+            \draw[ultra thick] (1.5,0) node[anchor=north] {\((\theta_s,0)\)} -- (1.5,3);
+            %\draw[ultra thick] (3,0) node[anchor=north] {\((\ln T_s,\ln p_s)\)} -- (0,4);
             \node[circle,draw,fill=black,inner sep=0pt,minimum size =0.1cm] at (1.5,0){};
             \node[circle,draw,fill=mymagenta,inner sep=0pt,minimum size =0.2cm] (A) at (1.5,1.5){};
             \node at (2.5,3.5){Neutrally Stable};
@@ -918,10 +918,10 @@ Therefore, if potential temperature decreases with height, then our atmosphere i
             \draw[thick,mymagenta] (B) -- (C);
         \end{scope}
         \begin{scope}[xshift=11cm]
-            \draw[thick,->] (0,0) -- (4,0) node[anchor=south] {$\theta$};
-            \draw[thick,->] (0,0) -- (0,4) node[anchor=south east] {$z$};
-            \draw[ultra thick] (0,0) node[anchor=north west] {$(\theta_s,0)$} -- (3,3);
-            %\draw[ultra thick] (3,0) node[anchor=north] {$(\ln T_s,\ln p_s)$} -- (0,4);
+            \draw[thick,->] (0,0) -- (4,0) node[anchor=south] {\(\theta\)};
+            \draw[thick,->] (0,0) -- (0,4) node[anchor=south east] {\(z\)};
+            \draw[ultra thick] (0,0) node[anchor=north west] {\((\theta_s,0)\)} -- (3,3);
+            %\draw[ultra thick] (3,0) node[anchor=north] {\((\ln T_s,\ln p_s)\)} -- (0,4);
             \node[circle,draw,fill=black,inner sep=0pt,minimum size =0.1cm] at (0,0){};
             \node[circle,draw,fill=mymagenta,inner sep=0pt,minimum size =0.2cm] (A) at (1.5,1.5){};
             \node at (2.5,3.5){Stable};
@@ -935,29 +935,29 @@ Therefore, if potential temperature decreases with height, then our atmosphere i
 
 \subsection{CAPE, LFC, LNB}
 
-We have so far characterised \textit{whether} convection will occur in our dry atmosphere, but now we wish to know what will happen \textit{during} convection. We start again by considering a parcel of air at an initial pressure $p_0$ with a temperature of $T_p(p_0)$. Let $T_a(p)$ be the temperature profile of the ambient atmosphere, and assume that initially the parcel is in equilibrium with its surroundings (i.e., assume $T_p(p_0)=T_a(p_0)$).
+We have so far characterised \textit{whether} convection will occur in our dry atmosphere, but now we wish to know what will happen \textit{during} convection. We start again by considering a parcel of air at an initial pressure \(p_0\) with a temperature of \(T_p(p_0)\). Let \(T_a(p)\) be the temperature profile of the ambient atmosphere, and assume that initially the parcel is in equilibrium with its surroundings (i.e., assume \(T_p(p_0)=T_a(p_0)\)).
 
-We define the \textbf{L}evel of \textbf{F}ree \textbf{C}onvection (\textbf{LFC}) $p_{LFC}$ as the \textit{closest} location to $p_0$ where $T_p(p)=T_a(p)$, $dT_p/dp<dT_a/dp$ (the parcel is convectively unstable), and $p<p_0$ (it's higher). 
+We define the \textbf{L}evel of \textbf{F}ree \textbf{C}onvection (\textbf{LFC}) \(p_{LFC}\) as the \textit{closest} location to \(p_0\) where \(T_p(p)=T_a(p)\), \(dT_p/dp<dT_a/dp\) (the parcel is convectively unstable), and \(p<p_0\) (it's higher). 
 
-We define the \textbf{L}evel of \textbf{N}eutral \textbf{B}uoyancy (\textbf{LNB}) $p_{LNB}$ as the location where $T_p(p)=T_a(p)$, $dT_p/dp>dT_a/dp$ (the parcel is convectively stable), and $p<p_{LFC}$ (it's higher than the \textbf{LFC}).
+We define the \textbf{L}evel of \textbf{N}eutral \textbf{B}uoyancy (\textbf{LNB}) \(p_{LNB}\) as the location where \(T_p(p)=T_a(p)\), \(dT_p/dp>dT_a/dp\) (the parcel is convectively stable), and \(p<p_{LFC}\) (it's higher than the \textbf{LFC}).
 
-We define the \textbf{C}onvective \textbf{A}vailable \textbf{P}otential \textbf{E}nergy (\textbf{CAPE}) as the total available potential energy (per unit mass) for a parcel of air from the Level of Free Convection to the Level of Neutral Buoyancy. In other words, $CAPE$ is equal to the total kinetic energy per unit mass a parcel would gain if it was allowed to convect from the Level of Free Convection to the Level of Neutral Buoyancy:
+We define the \textbf{C}onvective \textbf{A}vailable \textbf{P}otential \textbf{E}nergy (\textbf{CAPE}) as the total available potential energy (per unit mass) for a parcel of air from the Level of Free Convection to the Level of Neutral Buoyancy. In other words, \(CAPE\) is equal to the total kinetic energy per unit mass a parcel would gain if it was allowed to convect from the Level of Free Convection to the Level of Neutral Buoyancy:
 \begin{align}
     CAPE=\int_{z_{LFC}}^{z_{LNB}}F_b\,dz
 \end{align}
-We can substitute for $F_b$ using \ref{Buoyancy Force Temp} and convert to pressure coordinates using \ref{Hydrostatic Balance Ideal} to find that:
+We can substitute for \(F_b\) using \ref{Buoyancy Force Temp} and convert to pressure coordinates using \ref{Hydrostatic Balance Ideal} to find that:
 \begin{gather*}
     CAPE=\int_{z_{LFC}}^{z_{LNB}}\frac{T_p-T_a}{T_a}g\,dz\\
     =\int_{p_{LFC}}^{p_{LNB}}\frac{T_p-T_a}{\bcancel{T_a}}(-R\bcancel{T_a}\,d\ln p)\\
     \therefore \boxed{CAPE=R\int_{p_{LNB}}^{p_{LFC}}\left( T_p-T_a \right)\,d\ln p}
 \end{gather*}
-We know $T_p(p)$, since $T_p(p)$ follows the \hyperref[Dry Adiabat]{Dry Adiabat} with $(p_0,T_0)=(p_{LFC},T_{LFC})$, so we can straightfowardly calculate $CAPE$ if we are given the atmospheric temperature profile $T_a(p)$.
+We know \(T_p(p)\), since \(T_p(p)\) follows the \hyperref[Dry Adiabat]{Dry Adiabat} with \((p_0,T_0)=(p_{LFC},T_{LFC})\), so we can straightfowardly calculate \(CAPE\) if we are given the atmospheric temperature profile \(T_a(p)\).
 
 We further define \textbf{C}onvective \textbf{IN}hibition (\textbf{CIN}) as the energy a fluid parcel would need to overcome to reach the \textbf{LFC}:
 \begin{align*}
     \boxed{CIN = R\int_{p_{LFC}}^{p_{0}}\left( T_p-T_a \right)\,d\ln p}
 \end{align*}
-We expect $CIN<0$ and $CAPE>0$. Above \textbf{LNB}, we expect there to be more `$CIN$', which will prevent the parcel from rising further. However, at this point, the parcel will have already gained kinetic energy from $CAPE$. We call where the parcel `stops' the \textbf{L}evel of \textbf{M}aximum \textbf{A}scent (\textbf{LMA}), which occurs at $p_{LMA}$ where the `$CIN$' above \textbf{LNB} equals the $CAPE$:
+We expect \(CIN<0\) and \(CAPE>0\). Above \textbf{LNB}, we expect there to be more `\(CIN\)', which will prevent the parcel from rising further. However, at this point, the parcel will have already gained kinetic energy from \(CAPE\). We call where the parcel `stops' the \textbf{L}evel of \textbf{M}aximum \textbf{A}scent (\textbf{LMA}), which occurs at \(p_{LMA}\) where the `\(CIN\)' above \textbf{LNB} equals the \(CAPE\):
 \begin{align*}
     \boxed{
         R\int_{p_{LMA}}^{p_{LNB}}\left( T_p-T_a \right)\,d\ln p = 
@@ -966,13 +966,13 @@ We expect $CIN<0$ and $CAPE>0$. Above \textbf{LNB}, we expect there to be more `
 \end{align*}
 
 \begin{fact}{Convection Definitions}{Convection Box}\label{Convection Box}
-    Let the ambient air temperature be $T_a(p)$ (black line \textcolor{black}{\rule{0.25cm}{0.25cm}}). Consider an air parcel at an initial pressure $p_0$ with a temperature of $T_p(p_0)=T_a(p_0)$ that is then lifted. Upon lifting, the parcel's temperature $T_p(p)$ follows the \hyperref[Dry Adiabat]{Dry Adiabat} (\textcolor{mymagenta}{dashed magenta line \rule{0.25cm}{0.25cm}}). Then:
+    Let the ambient air temperature be \(T_a(p)\) (black line \textcolor{black}{\rule{0.25cm}{0.25cm}}). Consider an air parcel at an initial pressure \(p_0\) with a temperature of \(T_p(p_0)=T_a(p_0)\) that is then lifted. Upon lifting, the parcel's temperature \(T_p(p)\) follows the \hyperref[Dry Adiabat]{Dry Adiabat} (\textcolor{mymagenta}{dashed magenta line \rule{0.25cm}{0.25cm}}). Then:
     \begin{quote}
-        \textbf{Level of Free Convection} (\textbf{LFC}): $p=p_{LFC}$ if $T_p(p)=T_a(p)$, $dT_p/dp<dT_a/dp$, and this is the first pressure $p<p_0$ where this occurs.
+        \textbf{Level of Free Convection} (\textbf{LFC}): \(p=p_{LFC}\) if \(T_p(p)=T_a(p)\), \(dT_p/dp<dT_a/dp\), and this is the first pressure \(p<p_0\) where this occurs.
 
-        \textbf{Level of Neutral Buoyancy} (\textbf{LNB}): $p=p_{LNB}$ if $T_p(p)=T_a(p)$, $dT_p/dp>dT_a/dp$, and this is the first pressure $p<p_{LFC}$ where this occurs.
+        \textbf{Level of Neutral Buoyancy} (\textbf{LNB}): \(p=p_{LNB}\) if \(T_p(p)=T_a(p)\), \(dT_p/dp>dT_a/dp\), and this is the first pressure \(p<p_{LFC}\) where this occurs.
 
-        \textbf{Level of Maximum Ascent} (\textbf{LMA}): $p=p_{LMA}$ where $p_{LMA}$ is determined by Equation \ref{LMA} (I.e., where the blue area \textcolor{mydarkblue}{\rule{0.25cm}{0.25cm}} equals the orange area \textcolor{myorange}{\rule{0.25cm}{0.25cm}}).
+        \textbf{Level of Maximum Ascent} (\textbf{LMA}): \(p=p_{LMA}\) where \(p_{LMA}\) is determined by Equation \ref{LMA} (I.e., where the blue area \textcolor{mydarkblue}{\rule{0.25cm}{0.25cm}} equals the orange area \textcolor{myorange}{\rule{0.25cm}{0.25cm}}).
     \end{quote}
 
     \noindent\begin{minipage}{.48\linewidth}
@@ -990,21 +990,21 @@ We expect $CIN<0$ and $CAPE>0$. Above \textbf{LNB}, we expect there to be more `
     \begin{figure}[H]
         \centering
         \begin{tikzpicture}
-            \draw[->] (0,0) -- (4.5,0) node[anchor=west]{$T$};
-            \draw[->] (0,0) -- (0,4.5) node[anchor=south]{$-\ln p$};
+            \draw[->] (0,0) -- (4.5,0) node[anchor=west]{\(T\)};
+            \draw[->] (0,0) -- (0,4.5) node[anchor=south]{\(-\ln p\)};
             \coordinate (ps) at (4.2,0);
-            \node[] at (4.2,-0.4) {$p_s$};
+            \node[] at (4.2,-0.4) {\(p_s\)};
             \coordinate (p0) at (4,0.5);
-            \node[] at (4.35,0.5) {$p_0$};
+            \node[] at (4.35,0.5) {\(p_0\)};
             \coordinate (end) at (0,4.5);
             \coordinate (LFC) at (2.7,1.8);
             \node[] at (3.1,2.1) {\textbf{LFC}};
-            \node[] at (2.7,1) {$CIN$ \textcolor{myyellow}{\rule{0.25cm}{0.25cm}}};
+            \node[] at (2.7,1) {\(CIN\) \textcolor{myyellow}{\rule{0.25cm}{0.25cm}}};
             \coordinate (LNB) at (1.3,3.2);
             \node[] at (0.8,3) {\textbf{LNB}};
             \coordinate (LMA) at (0.8,4.5);
             \node[] at (1.6,4.5) {\textbf{LMA}};
-            \node[] at (2.7,2.8) {$CAPE$ \textcolor{mydarkblue}{\rule{0.25cm}{0.25cm}}};
+            \node[] at (2.7,2.8) {\(CAPE\) \textcolor{mydarkblue}{\rule{0.25cm}{0.25cm}}};
             \filldraw[thick,fill=myyellow] (p0) .. controls +(0,1) and +(1,0) .. (LFC);
             \filldraw[thick,fill=mydarkblue] (LFC) .. controls +(-1,0) and +(0,-1) .. (LNB);
             \path[fill=myorange] (LNB) .. controls +(0,0.5) and +(0.5,-0.5) .. (LMA) -- (end);
@@ -1017,26 +1017,26 @@ We expect $CIN<0$ and $CAPE>0$. Above \textbf{LNB}, we expect there to be more `
             \draw[thick] (ps) .. controls +(0,0.1) and +(0,-0.5) .. (p0);
             \draw[thick] (LNB) .. controls +(0,0.5) and +(0.5,-0.5) .. (LMA);
         \end{tikzpicture}
-        \caption{Atmospheric Profile. The parcel is lifted from $p_0$. $CIN$ is proportional to the area shaded in \textbf{\textcolor{myyellow}{Yellow \rule{0.25cm}{0.25cm}}} and $CAPE$ is proportional to the area shaded in \textcolor{mydarkblue}{\textbf{Blue} \rule{0.25cm}{0.25cm}}.}
+        \caption{Atmospheric Profile. The parcel is lifted from \(p_0\). \(CIN\) is proportional to the area shaded in \textbf{\textcolor{myyellow}{Yellow \rule{0.25cm}{0.25cm}}} and \(CAPE\) is proportional to the area shaded in \textcolor{mydarkblue}{\textbf{Blue} \rule{0.25cm}{0.25cm}}.}
     \end{figure}
     \end{minipage}
 \end{fact}
 
 \subsection{Conservation of Enthalpy during Convection}
 
-We define the (specific) \textbf{Enthalpy} $h$ as follows:
+We define the (specific) \textbf{Enthalpy} \(h\) as follows:
 \begin{align}
     h=u+p\frac{1}{\rho}
 \end{align}
-For an ideal gas, we can substitute for $p$ using \ref{eq Ideal Gas} and $u=c_vT$ to write $h$ in terms of $T$ only:
+For an ideal gas, we can substitute for \(p\) using \ref{eq Ideal Gas} and \(u=c_vT\) to write \(h\) in terms of \(T\) only:
 \begin{align*}
     h&=\underbrace{c_vT}_{u}+\underbrace{\rho R T}_{p}\frac{1}{\rho}\\
     &=\underbrace{(c_v+R)}_{c_p}T\\
     &=c_pT
 \end{align*}
-Therefore we can interpret the enthalpy $h$ as an expression of the heat content of a system at constant pressure, like for example in the atmosphere.
+Therefore we can interpret the enthalpy \(h\) as an expression of the heat content of a system at constant pressure, like for example in the atmosphere.
 
-We introduce the enthalpy because we can show that, under suitable assumptions, the total enthalpy $H$ of an atmospheric column is conserved during convection:
+We introduce the enthalpy because we can show that, under suitable assumptions, the total enthalpy \(H\) of an atmospheric column is conserved during convection:
 \begin{align*}
     H=\iiint \rho h\,dV=const
 \end{align*}
@@ -1048,12 +1048,12 @@ We make three assumptions:
 \end{enumerate}
 The last assumption requires some elaboration. First, we \textit{don't} assume that no energy leaves the domain: we allow the column to do work on the air above or below itself as it expands/contracts. Second, we \textit{don't} assume that there is no heating within the column. In fact, we expect there to be some heating within the column in general: If a column is convectively unstable, then there will be \textbf{CAPE}, and we expect this to be converted into an appreciable amount of kinetic energy as the air parcels within the column convect. Once convection acts to remove the \textbf{CAPE}, we expect friction to slow the parcels down and convert the kinetic energy into heat. 
 
-We first consider the total energy in an atmospheric column per horizontal area between altitudes $z_0$ and $z_1$, which is the sum of the internal energy $u$ and the potential energy $gz$ (and we have assumed kinetic energy $\frac{1}{2}v^2$ is negligible):
+We first consider the total energy in an atmospheric column per horizontal area between altitudes \(z_0\) and \(z_1\), which is the sum of the internal energy \(u\) and the potential energy \(gz\) (and we have assumed kinetic energy \(\frac{1}{2}v^2\) is negligible):
 \begin{align*}
     E &= \int_{z_0}^{z_1} \rho \left( u + gz \right)dz\\
     &=\frac{1}{g}\int_{p_1}^{p_0} \left( u+gz \right)dp
 \end{align*}
-We then integrate the potential energy term $gz$ by parts:
+We then integrate the potential energy term \(gz\) by parts:
 \begin{align*}
     g\int_{p_1}^{p_0} z\,dp &= g\left[ zp \right]_{p_0}^{p_1}-g\int_{z_1}^{z_0}p\,dz\\
     &=g(z_0p_0-z_1p_1)+\int_{p_1}^{p_0}\frac{p}{\rho}dp
@@ -1062,27 +1062,27 @@ Therefore the total energy per unit area is:
 \begin{align*}
     E=\frac{1}{g}\int_{p_1}^{p_0}\left(u+\frac{p}{\rho} \right)\,dp+(z_0p_0-z_1p_1)
 \end{align*}
-We make a final, fourth assumption here that the pressure at the bottom $p_0$ and top $p_1$ of the column is unchanged between the final and initial states. This is ensured if we assume the entire column (inside and outside the column under consideration) is in hydrostatic balance and the mass of the air above, within, and below the column under consideration is unchanged (recall \ref{eq Hydrostatic Differential}). The change in energy $\Delta E$ between the final and initial states is then:
+We make a final, fourth assumption here that the pressure at the bottom \(p_0\) and top \(p_1\) of the column is unchanged between the final and initial states. This is ensured if we assume the entire column (inside and outside the column under consideration) is in hydrostatic balance and the mass of the air above, within, and below the column under consideration is unchanged (recall \ref{eq Hydrostatic Differential}). The change in energy \(\Delta E\) between the final and initial states is then:
 \begin{align}
     \label{Delta E 1}
     \Delta E = \frac{1}{g}\Delta \int_{p_1}^{p_0}h\,dp + p_0 \Delta z_0 - p_1 \Delta z_1
 \end{align}
-We now wish to equate this with the change in energy of the atmospheric column governed by \ref{First Law}. Since we have assumed that there is no heat or mass transfer to or from the system, we can set $dN=0$ and approximate $dS=0$. Therefore, the change in energy (per unit area), to a good approximation, is set by:
+We now wish to equate this with the change in energy of the atmospheric column governed by \ref{First Law}. Since we have assumed that there is no heat or mass transfer to or from the system, we can set \(dN=0\) and approximate \(dS=0\). Therefore, the change in energy (per unit area), to a good approximation, is set by:
 \begin{align}
     dE &= -p\,dV/A\nonumber\\
     &=p_0 d z_0-p_1 d z_1\nonumber\\
     \label{Delta E 2}
     \therefore \Delta E & = p_0 \Delta z_0 - p_1 \Delta z_1 
 \end{align}
-Therefore, setting \ref{Delta E 1} equal to \ref{Delta E 2} we can cancel the $p\Delta z$ to find that:
+Therefore, setting \ref{Delta E 1} equal to \ref{Delta E 2} we can cancel the \(p\Delta z\) to find that:
 \begin{align}
     \BOX{\Delta H = \Delta \iiint \rho h \,dz\,dx\,dy=0}
 \end{align}
-The enthalpy of a column is conserved under convection. If we assume that the atmosphere is an ideal gas (so that $h=c_pT$) and that $c_p$ is approximately independent of temperature (so that we can pull $c_p$ out of the integral), then we can convert to pressure coordinates to find that:
+The enthalpy of a column is conserved under convection. If we assume that the atmosphere is an ideal gas (so that \(h=c_pT\)) and that \(c_p\) is approximately independent of temperature (so that we can pull \(c_p\) out of the integral), then we can convert to pressure coordinates to find that:
 \begin{align*}
     H =  \int \int \frac{c_p}{g} \int  T \,dp\,dx\,dy
 \end{align*}
-Therefore we find that the enthalpy is proportional to $\int T\,dp$, and so:
+Therefore we find that the enthalpy is proportional to \(\int T\,dp\), and so:
 \begin{align}
     \boxed{
         \Delta \int T dp = 0
@@ -1115,9 +1115,9 @@ So what is a phase transition? We will only be dealing with what are called \tex
 
 Focus on the left-hand plot for now. The coloured regions indicate what phase water will be in at a certain the partial pressure (of the water) and temperature: gas (vapour), liquid (steam), and solid (ice). Crucially, this does not depend on the total pressure of the atmosphere or surrounding gases, but only the partial pressure of the condensible substance (in this case, the partial pressure of water). The solid black lines indicate \textbf{Phase Boundaries}. The \textbf{Triple Point} is the point where all three states can coexist. The \textbf{Critical Point} is the point past which there is no phase transition between gas and liquid.
 
-The pressure at the \textbf{Phase Boundaries} is the \textbf{Saturation Vapour Pressure} $p_{sat}(T)$. If the partial pressure $p<p_{sat}$, then more vapour (gas form) can be added without condensing. If the $p\geq p_{sat}$, then the gas will condense until the partial pressure reaches the saturation vapour pressure. However, it's important to remember that condensation is not instantaneous, which is partly why we can have atmospheric conditions where $p>p_{sat}$. This will be important when we consider \hyperref[Clouds]{Clouds}.
+The pressure at the \textbf{Phase Boundaries} is the \textbf{Saturation Vapour Pressure} \(p_{sat}(T)\). If the partial pressure \(p<p_{sat}\), then more vapour (gas form) can be added without condensing. If the \(p\geq p_{sat}\), then the gas will condense until the partial pressure reaches the saturation vapour pressure. However, it's important to remember that condensation is not instantaneous, which is partly why we can have atmospheric conditions where \(p>p_{sat}\). This will be important when we consider \hyperref[Clouds]{Clouds}.
 
-In fact all gases can condense if the temperature is low enough/partial pressure is high enough. CO$_2$ condenses on Mars, and N$_2$ condenses on Neptune. Why doesn't CO$_2$ and N$_2$ condense here on Earth? It all depends on the vertical structure of the atmosphere: the precise profile of $T=T(p)$. Recall that, as $p$ decreases, so too does $T$ (if our atmosphere follows the \hyperref[Dry Adiabat]{Dry Adiabat}). There are three cases, all labeled in the right-hand plot of Figure \ref{Phase Diagramme}.
+In fact all gases can condense if the temperature is low enough/partial pressure is high enough. CO\(_2\) condenses on Mars, and N\(_2\) condenses on Neptune. Why doesn't CO\(_2\) and N\(_2\) condense here on Earth? It all depends on the vertical structure of the atmosphere: the precise profile of \(T=T(p)\). Recall that, as \(p\) decreases, so too does \(T\) (if our atmosphere follows the \hyperref[Dry Adiabat]{Dry Adiabat}). There are three cases, all labeled in the right-hand plot of Figure \ref{Phase Diagramme}.
 
 \begin{enumerate}
     \item Case 1: The atmosphere has such a high pressure/temperature that it avoids a phase transition altogether by meandering around the critical point.
@@ -1125,9 +1125,9 @@ In fact all gases can condense if the temperature is low enough/partial pressure
     \item Case 3: The stratosphere starts before the atmosphere hits the phase boundary, in which case temperature no longer decreases with height, so it never crosses the phase boundary.
 \end{enumerate}
 
-For O$_2$ and N$_2$ in Earth like conditions, we are in case 3: it never gets cold enough for O$_2$ and N$_2$ to condense, which is why we have no O$_2$ and N$_2$ clouds. However, we are in Case 2 with water (H$_2$O), and so we do get water clouds!
+For O\(_2\) and N\(_2\) in Earth like conditions, we are in case 3: it never gets cold enough for O\(_2\) and N\(_2\) to condense, which is why we have no O\(_2\) and N\(_2\) clouds. However, we are in Case 2 with water (H\(_2\)O), and so we do get water clouds!
 
-When a gase condenses from phase $A$ to phase $B$, it typically releases a large amount of \textbf{Latent Heat}. Again, we would like to work in intensive variables, so we often work with the \textbf{Specific Latent Heat} $L_{A\to B}$ (units of \qty{}{\joule\per\kilogram}) which is the amount of energy released per kilogram of substance when underoing a phase transition from $A$ to $B$ ($L_{A\to B}>0$ if heat is released). Like heat capacity, this often has a temperature dependence, but we will in most cases treat this as constant.
+When a gase condenses from phase \(A\) to phase \(B\), it typically releases a large amount of \textbf{Latent Heat}. Again, we would like to work in intensive variables, so we often work with the \textbf{Specific Latent Heat} \(L_{A\to B}\) (units of \qty{}{\joule\per\kilogram}) which is the amount of energy released per kilogram of substance when underoing a phase transition from \(A\) to \(B\) (\(L_{A\to B}>0\) if heat is released). Like heat capacity, this often has a temperature dependence, but we will in most cases treat this as constant.
 
 \section{The Clausius-Clapeyron Relation}
 
@@ -1137,51 +1137,51 @@ We can derive the shape of the phase boundary with the \textbf{Clausius Clapeyro
         \frac{dp_{sat}}{dT}=\frac{L_{A\to B}}{T\left(\frac{1}{\rho_A}-\frac{1}{\rho_B}\right)}
         }
 \end{align}
-If we assume that $\rho_g\ll\rho_l$ (i.e., the gaseous form is much less dense than the liquid form), and that the gas is ideal, we find that:
+If we assume that \(\rho_g\ll\rho_l\) (i.e., the gaseous form is much less dense than the liquid form), and that the gas is ideal, we find that:
 \begin{align}
     \frac{d p_{sat}}{dT}&\approx\frac{L_{g\to l}}{T \frac{1}{\rho_g}}\nonumber\\
     & = \frac{L_{g \to l} p}{R_cT^2}\nonumber\\
     \therefore \,\,\,& \boxed{\frac{d \ln p_{sat}}{d \left( \frac{1}{T} \right)} \approx -\frac{L_{g\to l}}{R_c}}\label{Clausius Clapeyron Simplified}
 \end{align}
 
-Note that I have written $R_c$ to make clear that $R_c$ is the specific gas constant for the condensible (e.g., water) \textit{not} for the atmosphere. We can now derive an analytic expression for the saturation vapour pressure if we further assume that the latent heat is constant. 
+Note that I have written \(R_c\) to make clear that \(R_c\) is the specific gas constant for the condensible (e.g., water) \textit{not} for the atmosphere. We can now derive an analytic expression for the saturation vapour pressure if we further assume that the latent heat is constant. 
 \begin{align}
     \boxed{
         p_{sat}\approx p_0 \,e^{\frac{L}{R_c}\left( \frac{1}{T_0}-\frac{1}{T} \right)}
     }
     \label{Sat Vap Pressure}
 \end{align}
-where I now just write $L$ for the latent heat of condensation and $(T_0,p_0)$ are any point on the saturation vapour pressure curve. This could be, for example, the \textbf{triple point} or the \textbf{critical point}.
+where I now just write \(L\) for the latent heat of condensation and \((T_0,p_0)\) are any point on the saturation vapour pressure curve. This could be, for example, the \textbf{triple point} or the \textbf{critical point}.
 
 As we can see then, the saturation vapour pressure depends approximately \textit{exponentially} on temperature, so saturation vapour pressure decreases exponentially as temperature decreases. Conversely, if saturation vapour pressure decreases, T changes only logarithmically (i.e., very slowly).
 
 \section{The Moist Pseudo-Adiabat: Lifting Moist Parcels of Air}\label{Moist Pseudo Adiabat}
 
-Our goal now is to derive an analogous \hyperref[Dry Adiabat]{Dry Adiabat} relation for moist atmospheres consisting of some condensible substance $c$. We call this the \textbf{Moist Pseudo-Adiabat}. We call this a `\textit{Pseudo}'-Adiabat because we assume, for mathematical convenience, that the condensible substance $c$ is instantaneously removed from the air parcel. This occurs if, for example, $c$ instantaneously rains out (but rain is not the only way in which this may occur!). When the condensible is removed, this constitutes a diabatic process ($dN\neq 0$), so strictly speaking we will not derive an adiabat in this section.
+Our goal now is to derive an analogous \hyperref[Dry Adiabat]{Dry Adiabat} relation for moist atmospheres consisting of some condensible substance \(c\). We call this the \textbf{Moist Pseudo-Adiabat}. We call this a `\textit{Pseudo}'-Adiabat because we assume, for mathematical convenience, that the condensible substance \(c\) is instantaneously removed from the air parcel. This occurs if, for example, \(c\) instantaneously rains out (but rain is not the only way in which this may occur!). When the condensible is removed, this constitutes a diabatic process (\(dN\neq 0\)), so strictly speaking we will not derive an adiabat in this section.
 
-In reality, rising moist air parcels that condense will not instantaneously eject its condensed $c$, and so will not follow the pseudo-adiabat. However, the pseudo-adiabat is a good approximation if the amount of condensate left in the air parcel is small, which is at least the case on Earth.
+In reality, rising moist air parcels that condense will not instantaneously eject its condensed \(c\), and so will not follow the pseudo-adiabat. However, the pseudo-adiabat is a good approximation if the amount of condensate left in the air parcel is small, which is at least the case on Earth.
 
 Recall that we are using the same logic as we did before in deriving the \hyperref[Dry Adiabat]{Dry Adiabat}. As such, we are still assuming that the dominant mechanism of heat transport within the atmosphere is vertical convection, only this time the air parcels convecting are moist (have condensible substances in them). 
 
-We will now consider two limiting cases. In both cases, we make the crucial assumption that the air parcels remain saturated with the condensible. In other words, we assume that the partial pressure of the condensible is equal to the saturation vapour pressure $p_{sat}$.
+We will now consider two limiting cases. In both cases, we make the crucial assumption that the air parcels remain saturated with the condensible. In other words, we assume that the partial pressure of the condensible is equal to the saturation vapour pressure \(p_{sat}\).
 
 \subsection{Limit I: Single Component Condensible Atmosphere} 
 
-We consider the first limiting case, with an atmosphere made up wholly of one condensible substance $c$. Since there is only one constituent, the total pressure is equal to the partial pressure of the $c$. There are two possibilities now.
+We consider the first limiting case, with an atmosphere made up wholly of one condensible substance \(c\). Since there is only one constituent, the total pressure is equal to the partial pressure of the \(c\). There are two possibilities now.
 
-The first possibility obtains if the temperature at the ground $T_g(p_g)$ is too low such that $p_g>p_{sat}(T_g(p_g))$, i.e., the pressure at the ground is higher than the saturation vapour pressure at the ground. Then there will be an ocean of $c$ at the surface. The pressure within the ocean will obey \hyperref[Hydrostatic Balance]{Hydrostatic Relation}, and the surface of the ocean is determined by where the pressure and temperature intersect the phase boundary ($p=p_s=p_{sat}(T_s(p_s))$).
+The first possibility obtains if the temperature at the ground \(T_g(p_g)\) is too low such that \(p_g>p_{sat}(T_g(p_g))\), i.e., the pressure at the ground is higher than the saturation vapour pressure at the ground. Then there will be an ocean of \(c\) at the surface. The pressure within the ocean will obey \hyperref[Hydrostatic Balance]{Hydrostatic Relation}, and the surface of the ocean is determined by where the pressure and temperature intersect the phase boundary (\(p=p_s=p_{sat}(T_s(p_s))\)).
 
 The temperature above the surface of the ocean is set by convecting air parcels. These air parcels originate from the surface of the ocean, and are initially saturated. However, recall that we have assumed that the air parcel remains saturated.\footnote{
     I'm not sure how justified this assumption is. I plan to ask Ray about this at some point, but if this footnote is still here when you're reading it I have not (yet).
-} As such, the atmospheric profile must lie on the phase boundary, so the temperature is fixed to the phase boundary and is as follows (found by rearranging \ref{Sat Vap Pressure} for $T$ in terms of $p_{sat}$):
+} As such, the atmospheric profile must lie on the phase boundary, so the temperature is fixed to the phase boundary and is as follows (found by rearranging \ref{Sat Vap Pressure} for \(T\) in terms of \(p_{sat}\)):
 \begin{align}
     \text{If } p_g>p_{sat(T_g)}\text{: }& T(p)=\frac{T_s}{1-\frac{RT_s}{L}\ln\frac{p}{p_{s}}} \label{1 component moist adiabat} \\
     &p_s = p_{sat}(T_s)
 \end{align}
 
-The surface pressure $p_s$, then, is set by the surface temperature $T_s$. Recalling Equation \ref{Total Mass Hydrostatic}, the mass of the atmosphere is set by how hot it is. Physically, this corresponds to how much $c$ you can evaporate from the ocean!
+The surface pressure \(p_s\), then, is set by the surface temperature \(T_s\). Recalling Equation \ref{Total Mass Hydrostatic}, the mass of the atmosphere is set by how hot it is. Physically, this corresponds to how much \(c\) you can evaporate from the ocean!
 
-The second possibility obtains if the temperature at the ground $T_g(p_g)$ is too high such that $p_g<p_{sat}(T_g(p_g))$, i.e., the pressure at the ground is lower than the saturation vapour pressure at the ground. Then there will be no surface $c$ ocean, and the  atmosphere will follow the \hyperref[Dry Adiabat]{Dry Adiabat} until it reaches the phase boundary at the \textbf{lifted condensation level}, after which it will follow Equation \ref{1 component moist adiabat}:
+The second possibility obtains if the temperature at the ground \(T_g(p_g)\) is too high such that \(p_g<p_{sat}(T_g(p_g))\), i.e., the pressure at the ground is lower than the saturation vapour pressure at the ground. Then there will be no surface \(c\) ocean, and the  atmosphere will follow the \hyperref[Dry Adiabat]{Dry Adiabat} until it reaches the phase boundary at the \textbf{lifted condensation level}, after which it will follow Equation \ref{1 component moist adiabat}:
 \begin{align}
     \text{If } p_s<p_{sat(T_s)}\text{: }
     &
@@ -1199,18 +1199,18 @@ In other words, the temperature follows the Dry Adiabat until the \textbf{lifted
 
 \subsubsection{Derivation}
 
-We now consider the second limiting case, where the atmosphere is mainly made up of a non-condensible substance $a$, and a dilute condensible substance $c$. We follow a similar derivaiton to the \hyperref[Dry Adiabat]{Dry Adiabat}, and start from the first law of thermodynamics, but this time include the extra latent heat term $-L\,dq$:
+We now consider the second limiting case, where the atmosphere is mainly made up of a non-condensible substance \(a\), and a dilute condensible substance \(c\). We follow a similar derivaiton to the \hyperref[Dry Adiabat]{Dry Adiabat}, and start from the first law of thermodynamics, but this time include the extra latent heat term \(-L\,dq\):
 \begin{align}\label{1st law latent heat}
     du=-p\,d\left(\frac{1}{\rho}\right)+T\,ds-L\,dq
 \end{align}
 
-\noindent where $L=$ the latent heat of condensation and $q=\rho_c/\rho_a=$ the mass mixing ratio of $c$ in its gaseous form (and \textit{not} $c$ in its liquid form, which we assume (recall) is removed immediately from the parcel of air). For water, $q=$ the mass mixing ratio of the water vapour and the dry air, \textit{not} the water droplets and the dry air. In the dilute limit, $q\ll 1$, and $q$ is equal to the mass fraction. 
+\noindent where \(L=\) the latent heat of condensation and \(q=\rho_c/\rho_a=\) the mass mixing ratio of \(c\) in its gaseous form (and \textit{not} \(c\) in its liquid form, which we assume (recall) is removed immediately from the parcel of air). For water, \(q=\) the mass mixing ratio of the water vapour and the dry air, \textit{not} the water droplets and the dry air. In the dilute limit, \(q\ll 1\), and \(q\) is equal to the mass fraction. 
 
-Take care to note the assumptions we're making here, and what the letters we've written actually mean. $u$, $\rho$, $T$,  and $s$ refer to properties of $a$ in the parcel of air, while $p$ refers to the total pressure of both the $a$ and $c$. Here we are implicitly making three assumptions. First, we assume that we are in the dilute limit $q\ll 1$, therefore $\rho=\rho_a+\rho_c\approx\rho_a$. Second, we assume the heat capacities of $a$ and $c$ are of similar size, and that therefore the specific internal energy $u$ is primarily made up of the internal energy of $a$.
+Take care to note the assumptions we're making here, and what the letters we've written actually mean. \(u\), \(\rho\), \(T\),  and \(s\) refer to properties of \(a\) in the parcel of air, while \(p\) refers to the total pressure of both the \(a\) and \(c\). Here we are implicitly making three assumptions. First, we assume that we are in the dilute limit \(q\ll 1\), therefore \(\rho=\rho_a+\rho_c\approx\rho_a\). Second, we assume the heat capacities of \(a\) and \(c\) are of similar size, and that therefore the specific internal energy \(u\) is primarily made up of the internal energy of \(a\).
 
-As a sanity check, let us consider the minus sign on the $L\,dq$ term. This makes physical sense: we expect the internal energy of the $a$ to \textit{increase} if condensation occurs, since latent heat is released when $c$ condenses, and heat is added to $a$ in the air parcel. If condensation occurs, then the mass of the liquid $c$ (e.g., water droplets) must increase, and therefore (by mass conservation) the mass of the gaseous $c$ (e.g., water vapour) must decrease. Therefore, the mass mixing ratio of $c$ must decrease, so $dq<0$, therefore $-L\,dq>0$, as expected.
+As a sanity check, let us consider the minus sign on the \(L\,dq\) term. This makes physical sense: we expect the internal energy of the \(a\) to \textit{increase} if condensation occurs, since latent heat is released when \(c\) condenses, and heat is added to \(a\) in the air parcel. If condensation occurs, then the mass of the liquid \(c\) (e.g., water droplets) must increase, and therefore (by mass conservation) the mass of the gaseous \(c\) (e.g., water vapour) must decrease. Therefore, the mass mixing ratio of \(c\) must decrease, so \(dq<0\), therefore \(-L\,dq>0\), as expected.
 
-Let us first consider the $L\,dq$ term:
+Let us first consider the \(L\,dq\) term:
 \begin{align*}
     L\,dq&=L\, d \left( \frac{\rho_c}{\rho_a} \right)
         &\text{; }
@@ -1228,7 +1228,7 @@ Let us first consider the $L\,dq$ term:
         &\text{; }
         &\text{Define}\epsilon=\frac{M_c}{M_a}
 \end{align*}
-where $\rho_c=$ the density of the condensible $c$; $\rho_a=$ the density of the air $a$; $M_c=$ the molar mass of the condensible; $M_a=$ the molar mass of the air; $p=p_a+p_c=$ the total pressure; $e=p_c=$ the partial pressure of the condensible; and $\epsilon=M_c/M_a=$ the ratio of molar masses $c$ and $a$.
+where \(\rho_c=\) the density of the condensible \(c\); \(\rho_a=\) the density of the air \(a\); \(M_c=\) the molar mass of the condensible; \(M_a=\) the molar mass of the air; \(p=p_a+p_c=\) the total pressure; \(e=p_c=\) the partial pressure of the condensible; and \(\epsilon=M_c/M_a=\) the ratio of molar masses \(c\) and \(a\).
 
 We can now apply product rule and assume that the condensible is always saturated. This allows us to use the simplified version of Clausius Clapyeron (\ref{Clausius Clapeyron Simplified}):
 \begin{align*}
@@ -1249,13 +1249,13 @@ We can now apply product rule and assume that the condensible is always saturate
     &=q\frac{L^2}{R_c T^2}\,dT-Lq\,d\ln p\\
     &=q\frac{L^2}{R_cT}\,d\ln T-Lq\,d\ln p
 \end{align*}
-We now subsitute this into \ref{1st law latent heat} and, for simplicity, let $ds=0$ from the outset.\footnote{We could allow $ds\neq 0$ and derive what's called an \textbf{Equivalent Moist Potential Temperature} $\theta_E$ (analogous to \hyperref[eq Potential Temperature]{Potential Temperature} $\theta$), which is similarly \hyperref[Material Conservation]{materially conserved} for moist saturated parcels of air. We don't for brevity, but if you wish to read up more on it, here is a resource: whoops I forgot to insert the link, please let me know if this is still here!} Following identical algebra in the derivation of the \hyperref[Dry Adiabat]{Dry Adiabat}, and carefully distinguishing between $R_a$ and $R_c$ (the specific gas constants of the non-condensible and dilute condensible), we find that:
+We now subsitute this into \ref{1st law latent heat} and, for simplicity, let \(ds=0\) from the outset.\footnote{We could allow \(ds\neq 0\) and derive what's called an \textbf{Equivalent Moist Potential Temperature} \(\theta_E\) (analogous to \hyperref[eq Potential Temperature]{Potential Temperature} \(\theta\)), which is similarly \hyperref[Material Conservation]{materially conserved} for moist saturated parcels of air. We don't for brevity, but if you wish to read up more on it, here is a resource: whoops I forgot to insert the link, please let me know if this is still here!} Following identical algebra in the derivation of the \hyperref[Dry Adiabat]{Dry Adiabat}, and carefully distinguishing between \(R_a\) and \(R_c\) (the specific gas constants of the non-condensible and dilute condensible), we find that:
 \begin{align*}
     c_v\,dT & =-R_a\,dT+\frac{R_aT\,dp}{p}-L\,dq\\
     \therefore c_p\,dT &= \frac{R_a T\,dp}{p} - q\frac{L^2}{R_cT}\,d\ln T+Lq\,d\ln p\\
     \therefore c_p\,d\ln T - \frac{q L^2}{R_c T^2}d\ln T&=R_a\,d\ln p + \frac{Lq}{T}d\ln p
 \end{align*}
-Solving for $\frac{d\ln T}{d\ln p}$ and rearranging, we find the \textbf{Moist Pseudo-Adiabat} in the dilute limit:
+Solving for \(\frac{d\ln T}{d\ln p}\) and rearranging, we find the \textbf{Moist Pseudo-Adiabat} in the dilute limit:
 \begin{fact}{Dilute Moist Pseudo-Adiabat}{Moist PA Box}\label{Moist PA Box}
     The adiabat for an atmosphere consisting of a dilute condensible is as follows:
     \begin{align}\label{dilute moist adiabat}
@@ -1263,28 +1263,28 @@ Solving for $\frac{d\ln T}{d\ln p}$ and rearranging, we find the \textbf{Moist P
     \end{align}
     This is in general a \textit{shallower} slope than the \hyperref[Dry Adiabat Box]{Dry Adiabat} due to the latent heat of condensation keeping the parcel warm.
 \end{fact}
-I have written $q=q_{sat}$ and $c_p=c_p^a$ to remind us that, first, we have made the crucial assumption that the air parcel remains saturated, and second, that $c_p$ is the heat capacity of the non-condensible $a$.
+I have written \(q=q_{sat}\) and \(c_p=c_p^a\) to remind us that, first, we have made the crucial assumption that the air parcel remains saturated, and second, that \(c_p\) is the heat capacity of the non-condensible \(a\).
 
 \subsubsection{Physical Interpretation}
 
-Equation \ref{dilute moist adiabat} is, in general, not analytically solvable. However, we have written it in the form that provides easy interpretation. The first term on the right-hand-side ($R/c_p^a$) is the slope of the adiabat if there were no condensation (the \hyperref[Dry Adiabat]{Dry Adiabat}), while the second complicated looking fraction on the right-hand-side are the changes in the slope due to condensation. Setting $q_{sat}=0$ recovers the Dry Adiabat.
+Equation \ref{dilute moist adiabat} is, in general, not analytically solvable. However, we have written it in the form that provides easy interpretation. The first term on the right-hand-side (\(R/c_p^a\)) is the slope of the adiabat if there were no condensation (the \hyperref[Dry Adiabat]{Dry Adiabat}), while the second complicated looking fraction on the right-hand-side are the changes in the slope due to condensation. Setting \(q_{sat}=0\) recovers the Dry Adiabat.
 
-Note that although we have made the dilute assumption that $q_{sat}\ll 1$, the corrections on the right hand side are generally of order $1$. This is because the corrections go as $\frac{L q_{sat}}{R_a T}$ and $\frac{Lq_{sat}}{c_p T}\frac{L}{R_cT}$, and it is gernally the case that, for water vapour on Earth at least, $\frac{L}{R_a T}\gg 1$.
+Note that although we have made the dilute assumption that \(q_{sat}\ll 1\), the corrections on the right hand side are generally of order \(1\). This is because the corrections go as \(\frac{L q_{sat}}{R_a T}\) and \(\frac{Lq_{sat}}{c_p T}\frac{L}{R_cT}\), and it is gernally the case that, for water vapour on Earth at least, \(\frac{L}{R_a T}\gg 1\).
 
 It is almost always the case (although I cannot show algebraically) that the moist adiabat is shallower than the dry adiabat, i.e., that temperature decreases less with a decrease in pressure (and increase in height): 
 \begin{align*}
     \frac{d\ln T_{moist}}{d\ln p} < \frac{d\ln T_{dry}}{dp}
 \end{align*}
 
-Physically, this corresponds to to the effect of the condensible. As a parcel rises, the pressure decreases, so it expands and cools (following the dry adiabat). However, since the temperature decreases, so too does the saturation vapour pressure (\ref{Clausius Clapeyron}). So if the parcel is saturated, as we have assumed, $c$ must condense and release latent heat into the surrounding air parcel, warming the parcel a bit and offsetting the cooling from expansion.
+Physically, this corresponds to to the effect of the condensible. As a parcel rises, the pressure decreases, so it expands and cools (following the dry adiabat). However, since the temperature decreases, so too does the saturation vapour pressure (\ref{Clausius Clapeyron}). So if the parcel is saturated, as we have assumed, \(c\) must condense and release latent heat into the surrounding air parcel, warming the parcel a bit and offsetting the cooling from expansion.
 
 Finally, we must note that we have made the assumption that the parcel remains saturated. In general, this will be the case for rising saturated parcels of air, which will only condense so much as to remain approximatly saturated. However, if a parcel is \textit{sinking}, then clearly it is not always realistic to assume that it will automatically acquire some more water vapour to remain saturated. As such, if a parcel of air is sinking, it will most likely follow the \hyperref[Dry Adiabat Box]{Dry Adiabat}. 
 
-\subsubsection{What Happens if $q<q_{sat}$?}
+\subsubsection{What Happens if \(q<q_{sat}\)?}
 
-Suppose we start an air parcel off sub-saturated (i.e., $q<q_{sat}$, initially). What temperature profile will it follow as it is lifted? 
+Suppose we start an air parcel off sub-saturated (i.e., \(q<q_{sat}\), initially). What temperature profile will it follow as it is lifted? 
 
-Initially, as it is lifted, its mass mixing ratio $q$ will remain constant, and its temperature will decrease following the \hyperref[Dry Adiabat]{Dry Adiabat}. This will continue until the temperature has cooled so much (following the Dry Adiabat) causing the saturation vapour pressure to decrease sufficiently such that $q=q_{sat}$. After this point, it will follow the \hyperref[dilute moist adiabat]{Dilute Moist Pseudo-Adiabat}.
+Initially, as it is lifted, its mass mixing ratio \(q\) will remain constant, and its temperature will decrease following the \hyperref[Dry Adiabat]{Dry Adiabat}. This will continue until the temperature has cooled so much (following the Dry Adiabat) causing the saturation vapour pressure to decrease sufficiently such that \(q=q_{sat}\). After this point, it will follow the \hyperref[dilute moist adiabat]{Dilute Moist Pseudo-Adiabat}.
 
 \subsection{Moist Convection}
 
