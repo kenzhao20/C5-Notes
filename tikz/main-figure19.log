@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.6.26)  10 NOV 2025 11:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.6.26)  11 NOV 2025 20:27
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -2773,6 +2773,9 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to disable this.
 
+LaTeX Warning: Reference `eq Dynamical Solution' on page 97 undefined on input line 657.
+
+
 
 
 Overfull \hbox (2.43767pt too wide) in paragraph at lines 672--684
@@ -3712,105 +3715,119 @@ LaTeX Warning: Hyper reference `Cons PV Box' on page 161 undefined on input line
 
 
 
+LaTeX Warning: Hyper reference `b Ideal Gas' on page 162 undefined on input line 2924.
+
+
+LaTeX Warning: Citation 'N15' on page 162 undefined on input line 2932.
+
+
+LaTeX Warning: Reference `fig Stommel' on page 162 undefined on input line 2936.
+
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to disable this.
+
+
+
+
+
 
 Chapter 21.
 
-LaTeX Warning: Citation 'Vallis' on page 163 undefined on input line 2934.
+LaTeX Warning: Citation 'Vallis' on page 165 undefined on input line 3004.
 
 )
 
 
-LaTeX Warning: Hyper reference `eq Absorptivity' on page 164 undefined on input line 227.
+LaTeX Warning: Hyper reference `eq Absorptivity' on page 166 undefined on input line 227.
 
 
-LaTeX Warning: Hyper reference `eq BB' on page 164 undefined on input line 229.
+LaTeX Warning: Hyper reference `eq BB' on page 166 undefined on input line 229.
 
 
-LaTeX Warning: Hyper reference `beta plane box' on page 164 undefined on input line 231.
+LaTeX Warning: Hyper reference `beta plane box' on page 166 undefined on input line 231.
 
 
-LaTeX Warning: Hyper reference `Group Velocity' on page 164 undefined on input line 233.
+LaTeX Warning: Hyper reference `Group Velocity' on page 166 undefined on input line 233.
 
 
-LaTeX Warning: Hyper reference `eq cp' on page 164 undefined on input line 235.
+LaTeX Warning: Hyper reference `eq cp' on page 166 undefined on input line 235.
 
 
-LaTeX Warning: Hyper reference `Phase Velocity' on page 164 undefined on input line 237.
+LaTeX Warning: Hyper reference `Phase Velocity' on page 166 undefined on input line 237.
 
 
-LaTeX Warning: Hyper reference `eq cv' on page 164 undefined on input line 239.
+LaTeX Warning: Hyper reference `eq cv' on page 166 undefined on input line 239.
 
 
-LaTeX Warning: Hyper reference `Radiance Box' on page 164 undefined on input line 241.
+LaTeX Warning: Hyper reference `Radiance Box' on page 166 undefined on input line 241.
 
 
-LaTeX Warning: Hyper reference `eq Emissivity' on page 164 undefined on input line 243.
+LaTeX Warning: Hyper reference `eq Emissivity' on page 166 undefined on input line 243.
 
 
-LaTeX Warning: Hyper reference `Eqns for GFD Box' on page 164 undefined on input line 245.
+LaTeX Warning: Hyper reference `Eqns for GFD Box' on page 166 undefined on input line 245.
 
 
-LaTeX Warning: Hyper reference `Radiance Box' on page 164 undefined on input line 247.
+LaTeX Warning: Hyper reference `Radiance Box' on page 166 undefined on input line 247.
 
 
-LaTeX Warning: Hyper reference `RG Box' on page 164 undefined on input line 249.
+LaTeX Warning: Hyper reference `RG Box' on page 166 undefined on input line 249.
 
 
-LaTeX Warning: Hyper reference `Radiance Box' on page 164 undefined on input line 251.
+LaTeX Warning: Hyper reference `Radiance Box' on page 166 undefined on input line 251.
 
 
-LaTeX Warning: Hyper reference `Optical Thickness' on page 164 undefined on input line 253.
+LaTeX Warning: Hyper reference `Optical Thickness' on page 166 undefined on input line 253.
 
 
-LaTeX Warning: Hyper reference `Radiance Box' on page 164 undefined on input line 255.
+LaTeX Warning: Hyper reference `Radiance Box' on page 166 undefined on input line 255.
 
 
-LaTeX Warning: Hyper reference `SW Def Radius Box' on page 164 undefined on input line 257.
+LaTeX Warning: Hyper reference `SW Def Radius Box' on page 166 undefined on input line 257.
 
 
-LaTeX Warning: Hyper reference `F, W, W' on page 164 undefined on input line 259.
+LaTeX Warning: Hyper reference `F, W, W' on page 166 undefined on input line 259.
 
 
-LaTeX Warning: Hyper reference `t Basic Thermo Vars' on page 164 undefined on input line 261.
+LaTeX Warning: Hyper reference `t Basic Thermo Vars' on page 166 undefined on input line 261.
 
 
-LaTeX Warning: Hyper reference `t Basic Thermo Vars' on page 164 undefined on input line 265.
+LaTeX Warning: Hyper reference `t Basic Thermo Vars' on page 166 undefined on input line 265.
 
 
-LaTeX Warning: Hyper reference `F, W, W' on page 164 undefined on input line 267.
+LaTeX Warning: Hyper reference `F, W, W' on page 166 undefined on input line 267.
 
 
-LaTeX Warning: Hyper reference `F, W, W' on page 164 undefined on input line 269.
+LaTeX Warning: Hyper reference `F, W, W' on page 166 undefined on input line 269.
 
 
-LaTeX Warning: Hyper reference `OLR Soln' on page 164 undefined on input line 271.
+LaTeX Warning: Hyper reference `OLR Soln' on page 166 undefined on input line 271.
 
 
-LaTeX Warning: Hyper reference `eq ray' on page 164 undefined on input line 275.
+LaTeX Warning: Hyper reference `eq ray' on page 166 undefined on input line 275.
 
 
-LaTeX Warning: Hyper reference `eq Vorticity' on page 164 undefined on input line 275.
+LaTeX Warning: Hyper reference `eq Vorticity' on page 166 undefined on input line 275.
 
 
-LaTeX Warning: Hyper reference `Solid Angle Box' on page 164 undefined on input line 277.
+LaTeX Warning: Hyper reference `Solid Angle Box' on page 166 undefined on input line 277.
 
 
-LaTeX Warning: Hyper reference `eq Diff Solid Angle' on page 164 undefined on input line 277.
+LaTeX Warning: Hyper reference `eq Diff Solid Angle' on page 166 undefined on input line 277.
 
 
-LaTeX Warning: Hyper reference `ss Rotating' on page 164 undefined on input line 279.
+LaTeX Warning: Hyper reference `ss Rotating' on page 166 undefined on input line 279.
 
 
-LaTeX Warning: Hyper reference `t Basic Thermo Vars' on page 164 undefined on input line 281.
+LaTeX Warning: Hyper reference `t Basic Thermo Vars' on page 166 undefined on input line 281.
 
 
-LaTeX Warning: Hyper reference `s Phase Transitions' on page 164 undefined on input line 283.
+LaTeX Warning: Hyper reference `s Phase Transitions' on page 166 undefined on input line 283.
 
 
-LaTeX Warning: Hyper reference `s Local Cartesian Coordinates' on page 164 undefined on input line 285.
+LaTeX Warning: Hyper reference `s Local Cartesian Coordinates' on page 166 undefined on input line 285.
 
 
-LaTeX Warning: Hyper reference `eq Geopotential' on page 164 undefined on input line 287.
+LaTeX Warning: Hyper reference `eq Geopotential' on page 166 undefined on input line 287.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 289--290
@@ -3818,55 +3835,55 @@ Underfull \hbox (badness 10000) in paragraph at lines 289--290
  []
 
 
-LaTeX Warning: Hyper reference `PV' on page 164 undefined on input line 293.
+LaTeX Warning: Hyper reference `PV' on page 166 undefined on input line 293.
 
 
-LaTeX Warning: Hyper reference `b Definition Multiple' on page 164 undefined on input line 295.
+LaTeX Warning: Hyper reference `b Definition Multiple' on page 166 undefined on input line 295.
 
 
-LaTeX Warning: Hyper reference `eq Specific Gas Constant' on page 164 undefined on input line 297.
+LaTeX Warning: Hyper reference `eq Specific Gas Constant' on page 166 undefined on input line 297.
 
 
-LaTeX Warning: Hyper reference `Rossby Box' on page 164 undefined on input line 299.
+LaTeX Warning: Hyper reference `Rossby Box' on page 166 undefined on input line 299.
 
 
-LaTeX Warning: Hyper reference `t Basic Thermo Vars' on page 164 undefined on input line 301.
+LaTeX Warning: Hyper reference `t Basic Thermo Vars' on page 166 undefined on input line 301.
 
 
-LaTeX Warning: Hyper reference `t Basic Thermo Vars' on page 164 undefined on input line 303.
+LaTeX Warning: Hyper reference `t Basic Thermo Vars' on page 166 undefined on input line 303.
 
 
-LaTeX Warning: Hyper reference `Absorption' on page 164 undefined on input line 305.
+LaTeX Warning: Hyper reference `Absorption' on page 166 undefined on input line 305.
 
 
-LaTeX Warning: Hyper reference `Optical Thickness' on page 164 undefined on input line 307.
+LaTeX Warning: Hyper reference `Optical Thickness' on page 166 undefined on input line 307.
 
 
-LaTeX Warning: Hyper reference `eq Potential Temperature' on page 164 undefined on input line 309.
+LaTeX Warning: Hyper reference `eq Potential Temperature' on page 166 undefined on input line 309.
 
 
-LaTeX Warning: Hyper reference `s Local Cartesian Coordinates' on page 164 undefined on input line 311.
+LaTeX Warning: Hyper reference `s Local Cartesian Coordinates' on page 166 undefined on input line 311.
 
 
-LaTeX Warning: Hyper reference `Eqns for GFD Box' on page 164 undefined on input line 315.
+LaTeX Warning: Hyper reference `Eqns for GFD Box' on page 166 undefined on input line 315.
 
 
-LaTeX Warning: Hyper reference `s Local Cartesian Coordinates' on page 164 undefined on input line 317.
+LaTeX Warning: Hyper reference `s Local Cartesian Coordinates' on page 166 undefined on input line 317.
 
 
-LaTeX Warning: Hyper reference `b Definition Multiple' on page 164 undefined on input line 319.
+LaTeX Warning: Hyper reference `b Definition Multiple' on page 166 undefined on input line 319.
 
 
-LaTeX Warning: Hyper reference `VC box' on page 164 undefined on input line 323.
+LaTeX Warning: Hyper reference `VC box' on page 166 undefined on input line 323.
 
 
-LaTeX Warning: Hyper reference `VC box' on page 164 undefined on input line 325.
+LaTeX Warning: Hyper reference `VC box' on page 166 undefined on input line 325.
 
 
-LaTeX Warning: Hyper reference `Eqns for GFD Box' on page 164 undefined on input line 327.
+LaTeX Warning: Hyper reference `Eqns for GFD Box' on page 166 undefined on input line 327.
 
 
-LaTeX Warning: Hyper reference `Material Derivative' on page 164 undefined on input line 329.
+LaTeX Warning: Hyper reference `Material Derivative' on page 166 undefined on input line 329.
 
 
 
@@ -3895,17 +3912,17 @@ Package logreq Info: Writing requests to 'tikz/main-figure19.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 46273 strings out of 473190
- 984311 string characters out of 5715800
+ 46275 strings out of 473190
+ 984342 string characters out of 5715800
  1616817 words of memory out of 5000000
- 68796 multiletter control sequences out of 15000+600000
+ 68798 multiletter control sequences out of 15000+600000
  577387 words of font info for 109 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 120i,25n,124p,1415b,1932s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 120i,25n,124p,1447b,1932s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on tikz/main-figure19.pdf (1 page, 86461 bytes).
+Output written on tikz/main-figure19.pdf (1 page, 86459 bytes).
 PDF statistics:
- 202 PDF objects out of 1000 (max. 8388607)
+ 203 PDF objects out of 1000 (max. 8388607)
  50 compressed objects within 1 object stream
  1 named destinations out of 1000 (max. 500000)
  166 words of extra memory for PDF output out of 10000 (max. 10000000)
