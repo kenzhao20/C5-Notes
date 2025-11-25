@@ -904,9 +904,11 @@ If you consider blobs of higher or lower pressure (which I will draw with circle
     \caption{Cyclones and Anticyclones in the northern hemisphere (\(f>0\)). Isobars are drawn as solid black lines \textcolor{black}{\rule{0.25cm}{0.25cm}}., the pressure gradient force \(\left( -\frac{1}{\rho}\vec{\nabla}_h p \right)\) as \textcolor{mymagenta}{thick dotted magenta arrows \rule{0.25cm}{0.25cm}}, the coriolis force \(\left( -f\vec{k}\times\vec{u}_h \right)\) as \textcolor{myorange}{thick dashed orange arrows \rule{0.25cm}{0.25cm}}, and the velocity \(\left( \vec{u}_h \right)\) as \textcolor{mydarkblue}{thick filled dark blue arrows \rule{0.25cm}{0.25cm}}.}
 \end{figure}
 
-Now, of course, cyclones and anti-cyclones as I have described them here are theoretical approximations to \textit{actual} cyclones and anti-cyclones. One way in which actual cyclones/anti-cyclones differ is that they are subject to other forces, like friction with the ground or centrifugal forces. Another way in which actual cyclones/anti-cyclones differ is that they are three-dimensional, and we have not considered the vertical velocity in cyclones or anti-cyclones.
+Now, of course, cyclones and anti-cyclones as I have described them here are theoretical approximations to \textit{actual} cyclones and anti-cyclones. We do not yet have the full vocabulary needed to fully describe such systems, but I couldn't think of anywhere else to put this information, so you can refer to the next subsections as brief detours that might require revisiting once you are familiar with the concept of \hyperref[PV]{Potential Voriticity}.
 
-However, we do not yet have the vocabulary needed to fully describe such systems. We will have to postpone discussion regarding this for now.
+We will have to postpone discussion regarding this for now.
+
+One way in which actual cyclones/anti-cyclones differ is that they are subject to other forces, like friction with the ground or centrifugal forces. Another way in which actual cyclones/anti-cyclones differ is that they are fully three-dimensional, and we have not considered the vertical velocity in cyclones or anti-cyclones, and that they 
 
 Suffice it to say that cyclones and anti-cyclones are weather systems that propogate across the mid-/high-latitudes. They can be generated if there is energy to cause an area of high or low pressure, and they dissipate due to the effects of surface friction and potential vorticity (a concept we will cover later). Because of how cyclones and anti-cyclones interact with the ground and friction, cyclones result in areas of rising air, while anti-cyclones result in areas of sinking air. Thinking back to convection, this brings unsettled, cloudy, and rainy conditions in the former case.
 
@@ -914,7 +916,7 @@ Suffice it to say that cyclones and anti-cyclones are weather systems that propo
 
 We will now make a brief detour to analyse how the centrifugal force affects cyclones and anti-cyclones. 
 
-I should be clear \textit{which} centrifugal force we are considering in this subsection. In this case, we are considering the the centrifugal force on the air parcel arising from the fact that the air parcel is moving in a circle \textit{around the centre of the cyclone or anti-cyclone}, and is therefore accelerating inwards towards the cyclone. This gives rise to a centrifugal force that pushes the air parcel away from the centre of the cyclone (in the frame of reference rotating with the cyclone/anti-cyclone).
+I should be clear \textit{which} centrifugal force we are considering in this subsection. In this case, we are considering the the centrifugal force on the air parcel arising from the fact that the air parcel is moving in a circle \textit{around the centre of the cyclone or anti-cyclone}, and is therefore accelerating inwards towards the cyclone (which is associated with the $\frac{D\vec{u}}{Dt}$ term which we previously neglected). This gives rise to a centrifugal force that pushes the air parcel away from the centre of the cyclone (in the frame of reference rotating with the cyclone/anti-cyclone).
 
 We are \textit{not} considering the centrifugal force on the air parcel arising from the fact that air parcel is moving in a circle \textit{around the centre of the Earth} (due to the fact that the Earth is spinning), and is therefore accelerating inwards towards the centre of the Earth. This gives rise to a centrifugal force that pushes the air parcel away from the centre of the Earth (in the frame of reference rotating with the Earth but not the cyclone/anti-cyclone). 
 
@@ -966,9 +968,9 @@ In this direction, there are three forces on the air parcel. We already consider
 
 Notice how, for a cyclone, the centrifugal force points in the same direction as the coriolis force. For an anti-cyclone, the centrifugal force points in the opposite driection as the coriolis force (i.e., in the direction of the pressure gradient force).
 
-Therefore, if the pressure gradient force is of a similar size for both a cyclone and anti-cyclone, we should expect the coriolis force to be \textit{smaller} in a cyclone than in an anticyclone. Since the corilis force scales as the wind speed \(u_h\), we expect a cyclone to produce \textit{weaker} winds than an anti-cyclone for the same pressure gradients. Turning this on its head, if a cyclone and an anti-cyclone have similar wind-speeds, we expect the cyclone to have \textit{stronger} pressure gradients.
+Therefore, if the pressure gradient force is of a similar size (and this is a big if) for both a cyclone and anti-cyclone, we should expect the coriolis force to be \textit{smaller} in a cyclone than in an anticyclone. Since the corilis force scales as the wind speed \(u_h\), we therefore expect a cyclone to produce \textit{weaker} winds than an anti-cyclone for the same pressure gradients. Turning this on its head, if a cyclone and an anti-cyclone have similar wind-speeds, we expect the cyclone to have \textit{stronger} pressure gradients.
 
-We can understand this algebraically as well. The force balance in the \(r\)-direction is as follows:
+But will cyclones and anti-cyclones have similar size pressure gradient forces? Let us try to understand this algebraically. The force balance in the \(r\)-direction is as follows:
 \begin{align}
     \label{GW Quadratic}
     \boxed{
@@ -1000,7 +1002,18 @@ If we solve Equation \ref{GW Quadratic} directly, we find that \(u_h\) is given 
         -f \pm \sqrt{f^2 + \frac{4}{\rho r}\frac{\partial p}{\partial r}}
      \right)
 \end{align*}
-So it turns out anticyclones (where \(\frac{\partial p}{\partial r}<0\)) really can't form in this simple model if \(\left|\frac{1}{\rho}\frac{\partial p}{\partial r}\right|>\frac{rf^2}{4}\), i.e., if the pressure gradient is too large.
+So it turns out that, generally, anticyclones (where \(\frac{\partial p}{\partial r}<0\)) really can't form in this simple model if \(\left|\frac{1}{\rho}\frac{\partial p}{\partial r}\right|>\frac{rf^2}{4}\), i.e., if the pressure gradient is too large, whereas there is no pressure gradient cap for cyclones. 
+
+\subsection{The Effects of Friction}
+
+Our second detour is in the effects of friction. To make things simpler, we once again ignore the centrifugal force. We focus on the bit of the cyclone/anti-cyclone closest to the ground, where friction is no longer negligible.
+
+Representing the effects of friction is incredibly complicated, especially since at this scale turbulence is typically non-negligible. For now, let us just suppose that this can be somewhat represented by a simple linear drag $-\alpha \vec{u}_h$ term such that the approximate horizontal momentum balance equation now becomes:
+\begin{align*}
+    f\vec{k}\times\vec{u}_h = -\frac{1}{\rho}\vec{\nabla}p - \underbrace{\alpha\vec{u}_h}_{\text{friction}}
+\end{align*}
+
+[UNDER CONSTRUCTION]
 
 \section{Thermal Wind Balance}
 
