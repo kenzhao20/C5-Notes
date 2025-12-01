@@ -906,6 +906,10 @@ If you consider blobs of higher or lower pressure (which I will draw with circle
     \caption{Cyclones and Anticyclones in the northern hemisphere (\(f>0\)). Isobars are drawn as solid black lines \textcolor{black}{\rule{0.25cm}{0.25cm}}., the pressure gradient force \(\left( -\frac{1}{\rho}\vec{\nabla}_h p \right)\) as \textcolor{mymagenta}{thick dotted magenta arrows \rule{0.25cm}{0.25cm}}, the coriolis force \(\left( -f\vec{k}\times\vec{u}_h \right)\) as \textcolor{myorange}{thick dashed orange arrows \rule{0.25cm}{0.25cm}}, and the velocity \(\left( \vec{u}_h \right)\) as \textcolor{mydarkblue}{thick filled dark blue arrows \rule{0.25cm}{0.25cm}}.}
 \end{figure}
 
+More generally, areas of high or low pressure might not be perfect circular blobs. Consider the `observations'\footnote{
+    Technically, these are not really observations, but `reanalysis'. Essentially what that means is that observations and models are combined to produce and temporally and spatially observationally (but model-biased) estimate of the atmospheric state.
+} shown in Figure \ref{f ERA40 geostrophic}.
+
 Now, of course, cyclones and anti-cyclones as I have described them here are theoretical approximations to \textit{actual} cyclones and anti-cyclones. We do not yet have the full vocabulary needed to fully describe such systems, but I couldn't think of anywhere else to put this information, so you can refer to the next subsections as brief detours that might require revisiting once you are familiar with the concept of \hyperref[PV]{Potential Voriticity}.
 
 We will have to postpone discussion regarding this for now.
@@ -913,6 +917,29 @@ We will have to postpone discussion regarding this for now.
 One way in which actual cyclones/anti-cyclones differ is that they are subject to other forces, like friction with the ground or centrifugal forces. Another way in which actual cyclones/anti-cyclones differ is that they are fully three-dimensional, and we have not considered the vertical velocity in cyclones or anti-cyclones, and that they 
 
 Suffice it to say that cyclones and anti-cyclones are weather systems that propogate across the mid-/high-latitudes. They can be generated if there is energy to cause an area of high or low pressure, and they dissipate due to the effects of surface friction and potential vorticity (a concept we will cover later). Because of how cyclones and anti-cyclones interact with the ground and friction, cyclones result in areas of rising air, while anti-cyclones result in areas of sinking air. Thinking back to convection, this brings unsettled, cloudy, and rainy conditions in the former case.
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{0.45\linewidth}
+        \includegraphics[width=\linewidth]{Figures/GFD/ERA40 MSLP.png}
+        \caption{Mean sea level pressure.}
+        \label{sf ERA40 MSLP}
+    \end{subfigure}
+    \begin{subfigure}{0.45\linewidth}
+        \includegraphics[width=\linewidth]{Figures/GFD/ERA40 Isotach 850 hPa.png}
+        \caption{Windspeed/isotach\footnotemark at \qty{850}{\hecto\pascal}.}
+        \label{sf ERA40 u_h}
+    \end{subfigure}
+    \begin{subfigure}{0.6\linewidth}
+        \includegraphics[width=\linewidth]{Figures/GFD/ERA40 geopotential isotach 250hPa.png}
+        \caption{Geopotential height (for now think of this as a proxy for pressure) and windspeed at \qty{250}{\hecto\pascal}.}
+        \label{sf ERA40 phi u_h}
+    \end{subfigure}
+    \caption{Annual Mean Renalysis Data from ERA40 \cite{ERA40} comparing pressure $p_s$ (or geopotential height $\Phi$) and horizontal wind speed $\vec{u}_h$. Geostrophic balance predicts that the direction of $\vec{u}_h$ should be along isobars, and the magnitude of $\vec{u}_h$ should scale with pressure gradients.The former is shown by figures \ref{sf ERA40 MSLP} and \ref{sf ERA40 u_h}. Note that the colours should be slightly out of phase (as predicted by geostrophic balance) -- focus instead on the arrows in figure \ref{sf ERA40 u_h}, which should blow along the blobs in figure \ref{sf ERA40 MSLP}. The latter is shown by figure \ref{sf ERA40 phi u_h}, where the colours and contours should roughly line up. As you can see, though, there are clear deviations not only at the equator but at high latitudes too! We're clearly missing something here.}
+    \label{f ERA40 geostrophic}
+\end{figure}
+
+\footnotetext{Meaning contours of constant speed.}
 
 \subsection{Gradient-Wind Balance}
 
