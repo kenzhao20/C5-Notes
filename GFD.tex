@@ -434,6 +434,27 @@ As already mentioned, the momentum budget equation applies for an \textit{inerti
 We consider two coordinate systems: an \textit{inertial} coordinate system and a \textit{rotating} coordinate system. Both systems share an origin, but the \textit{inertial} coordinate system rotates with a constant angular velocity \(\vec{\Omega}\) where \(|\vec{\Omega}|\) is the angular speed (in \qty{}{\radian\per\second}) and \(\vec{\Omega}\) points along the axis of rotation.
 
 Now consider some arbitrary vector \(\vec{A}(t)\) in or rotating coordinate system. The time derivative in the inertial coordinate system \(\left(\frac{d\vec{A}}{dt}\right)_I\) is related to the time derivative in the rotating coordinate system \(\left(\frac{d\vec{A}}{dt}\right)_R\) as follows (see Figure \ref{Inertial to Rotating}):
+\begin{align}
+    \left(\frac{d\vec{A}}{dt}\right)_I=\left(\frac{d\vec{A}}{dt}\right)_R+\vec{\Omega}\times\vec{A}
+    \label{Rotating Relation}
+\end{align}
+
+If we let \(\vec{A}=\vec{r}\), where \(\vec{r}\) is the position of our fluid parcel, we can apply Equation \ref{Rotating Relation} twice to obtain an expression for the acceleration of a fluid parcel in a rotating coordinate system.
+\begin{align*}
+    \vec{u}_I &= \left( \frac{d\vec{r}}{dt} \right)_I\\
+    &= \left( \frac{d\vec{r}}{dt} \right)_R+\vec{\Omega}\times \vec{r}\\
+    \vec{u}_I & = \vec{u}_R+\vec{\Omega}\times \vec{r}\\
+    \therefore \vec{a}_I & =
+    \left( \frac{d\vec{u}_I}{dt} \right)_I\\
+    &= \left( \frac{d\vec{u}_I}{dt} \right)_R+\vec{\Omega}\times \vec{u}_I\\
+    &= \left( \frac{d\vec{u}_R}{dt} \right)_R
+    +\vec{\Omega}\times\left( \frac{d\vec{r}}{dt} \right)_R
+    +\vec{\Omega}\times\left( 
+        \vec{u}_R+\vec{\Omega}\times \vec{r}
+     \right)\\
+    &=\vec{a}_R+2\vec{\Omega}\times\vec{u}_R+\vec{\Omega}\times\vec{\Omega}\times\vec{r}
+\end{align*}
+
 \begin{figure}[H]
     \centering
     \begin{subfigure}{0.45\linewidth}
@@ -473,26 +494,6 @@ Now consider some arbitrary vector \(\vec{A}(t)\) in or rotating coordinate syst
     \caption{The change in \(\vec{A}\) in a rotating (\ref{Rotating}) and inertial (\ref{Inertial}) coordinate system. As seen in \ref{Inertial}, the change in the inertial coordinate system \(\delta t \left( \frac{\partial \vec{A}}{\partial t} \right)_I\) (thick arrow) is equal to sum of the change in the rotating coordinate system \(\left( \delta t \left( \frac{\partial \vec{A}}{\partial t} \right)_R \right)\) \textit{and} the rotation of the rotating coordinate system \(\left(\delta t\,\vec{\Omega}\times\vec{A} \right)\) (thick dashed arrows).}
     \label{Inertial to Rotating}
 \end{figure}
-\begin{align}
-    \left(\frac{d\vec{A}}{dt}\right)_I=\left(\frac{d\vec{A}}{dt}\right)_R+\vec{\Omega}\times\vec{A}
-    \label{Rotating Relation}
-\end{align}
-
-If we let \(\vec{A}=\vec{r}\), where \(\vec{r}\) is the position of our fluid parcel, we can apply Equation \ref{Rotating Relation} twice to obtain an expression for the acceleration of a fluid parcel in a rotating coordinate system.
-\begin{align*}
-    \vec{u}_I &= \left( \frac{d\vec{r}}{dt} \right)_I\\
-    &= \left( \frac{d\vec{r}}{dt} \right)_R+\vec{\Omega}\times \vec{r}\\
-    \vec{u}_I & = \vec{u}_R+\vec{\Omega}\times \vec{r}\\
-    \therefore \vec{a}_I & =
-    \left( \frac{d\vec{u}_I}{dt} \right)_I\\
-    &= \left( \frac{d\vec{u}_I}{dt} \right)_R+\vec{\Omega}\times \vec{u}_I\\
-    &= \left( \frac{d\vec{u}_R}{dt} \right)_R
-    +\vec{\Omega}\times\left( \frac{d\vec{r}}{dt} \right)_R
-    +\vec{\Omega}\times\left( 
-        \vec{u}_R+\vec{\Omega}\times \vec{r}
-     \right)\\
-    &=\vec{a}_R+2\vec{\Omega}\times\vec{u}_R+\vec{\Omega}\times\vec{\Omega}\times\vec{r}
-\end{align*}
 
 Therefore the acceleration in the rotating frame of reference \(\vec{a}\) is equal to the acceleration in a inertial coordinate system summed with two fictitious\href{https://xkcd.com/123/}{\(^*\)}  forces: the \textbf{centrifugal force} and the \textbf{coriolis force}.
 \begin{align}
@@ -545,12 +546,59 @@ We further define the latitude \(\phi\in[-\frac{\pi}{2},\frac{\pi}{2}]\) (\(\phi
     \label{LocCartes}
 \end{figure}
 
-Our goal now is to derive how these basis vectors \(\hat{x}\), \(\hat{y}\), \(\hat{z}\) vary with space and time.
+Our goal now is to derive which extra terms appear in the equations of motion if we write it in terms of this coordinate system. 
 
-The first step is noting that the following relation obtains:
+The first step is to write out \(\vec{u}\) in this coordinate system:
 \begin{align*}
-    \vec{\Omega} = \Omega (\hat{y}\cos\theta+\hat{z}\sin\theta)
+    \vec{u}=\left( \begin{array}{c}
+        u\\
+        v\\
+        w
+    \end{array} \right)
+    =u\hat{x}+v\hat{y}+w\hat{z}
 \end{align*}
+
+The second step is to consider the material derivative \(\frac{D\vec{u}}{Dt}\), taking into account that it is not necessarily the case that \(\frac{D\hat{x}}{Dt}=0\) and using product rule:
+\begin{align*}
+    \frac{D\vec{u}}{Dt} = 
+    \frac{Du}{Dt}\hat{x} +
+    \frac{Dv}{Dt}\hat{y} +
+    \frac{Dw}{Dt}\hat{z} +
+    u\frac{D\hat{x}}{Dt} +
+    v\frac{D\hat{y}}{Dt} +
+    w\frac{D\hat{z}}{Dt}
+\end{align*}
+
+Our goal now is to derive how these basis vectors \(\hat{x}\), \(\hat{y}\), \(\hat{z}\) vary with space, i.e., the precise value of \(\frac{D\hat{x}}{Dt}\). Writing this out explicitly:
+\begin{align*}
+    \frac{D\hat{x}}{Dt}
+    =
+    \frac{\partial \hat{x}}{\partial t}
+    +
+    u\frac{\partial \hat{x}}{\partial x}
+    +
+    v\frac{\partial \hat{x}}{\partial y}
+    +
+    w\frac{\partial \hat{x}}{\partial z}
+\end{align*}
+Our basis vectors do not change in time (relative to the rotating non-local cartesian coordinate system) so we can set \(\frac{\partial \hat{x}}{\partial t}=\frac{\partial \hat{y}}{\partial t}=\frac{\partial \hat{z}}{\partial t}=0\). The spatial derivatives can be found geometrically using some trigonometry (I, at this point in time, can't be bothered to write more than this). Therefore:
+\begin{align*}
+    \left.
+        \begin{array}{r}
+             \frac{\partial \hat{x}}{\partial x}=\frac{1}{r}\tan\phi \, \hat{y}-\frac{1}{r}\hat{z}
+            \\[4pt]
+            \frac{\partial \hat{x}}{\partial y}=0
+            \\[4pt]
+            \frac{\partial \hat{x}}{\partial z}=0
+        \end{array}
+    \right\}
+    \to \frac{D\hat{x}}{Dt}= \frac{u}{r}\left( \tan\phi\,\hat{y}-\hat{z} \right)
+\end{align*}
+
+% The first step is noting that the following relation obtains:
+% \begin{align*}
+%     \vec{\Omega} = \Omega (\hat{y}\cos\theta+\hat{z}\sin\theta)
+% \end{align*}
 
 [UNDER CONSTRUCTION]
 
