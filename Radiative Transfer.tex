@@ -924,7 +924,8 @@ So far, everything is roughly very accurate. We now make the \textit{Two-Stream 
     & = L\,2\pi \\
     & = 2\pi \,L \frac{\int_{\Omega_+}\,d\Omega_\perp}{\int_{\Omega_+}\,d\Omega_\perp} \\
     & \approx 2\pi \frac{\int_{\Omega_+}L\,d\Omega_\perp}{\int_{\Omega_+}\,d\Omega_\perp} \\
-    & = 2\pi \, \frac{F_+}{\pi}\\\int_{\Omega_+}L\,d\Omega & \approx 2F_+
+    & = 2\pi \, \frac{F_+}{\pi}\\
+    \int_{\Omega_+}L\,d\Omega & \approx 2F_+
 \end{align*}
 We can go through a similar reasoning with $F_-$, which allows us to derive the angle-averaged upwards and downwards Schwarszchild Equations:
 \begin{align}
@@ -951,7 +952,7 @@ Note the extra `$-$' sign on Equation \ref{Downwards Schwarszchild Initial}. Com
         \end{gather}
     \end{minipage}
 
-    $B(\tau_\nu)$ is the blackbody radiation at some optical depth $\tau_\nu$. To solve these equations we require some functional form of $B(\tau_\nu)$.
+    \vspace{2mm}$B(\tau_\nu)$ is the blackbody radiation at some optical depth $\tau_\nu$. To solve these equations we require some functional form of $B(\tau_\nu)$.
 
     We can relate optical depth coordinates $\tau_\nu$ to pressure coordinates $p$ using \ref{Optical Pressure}:
     \begin{align}
@@ -961,6 +962,28 @@ Note the extra `$-$' sign on Equation \ref{Downwards Schwarszchild Initial}. Com
     where $\tilde{\theta}=$ the effective propagation angle.
 \end{fact}
 
+I should explain why these equations look a bit different from the equations in Tadd's lecture notes. The first fact is that Tadd has defined \(\tau\) to have an opposite sign to the way that Ray (and I) have defined it.\footnote{
+    I plan to change the notes to be more in line with Tadd, but that is a job for a later time.
+}, which should flip the signs of the derivatives with respect to \(\tau\). Second, Tadd defines the following quantities \(F\) (the net spectral irradiance) and \(\bar{L}\) (the mean spectral radiance):
+\begin{align*}
+    F = F_+-F_-
+    \\
+    \bar{L}_\nu = \frac{L_++L_-}{2}
+\end{align*}
+where
+\begin{align*}
+    L_+ = \frac{1}{2\pi}\int_{\Omega_+}L\,d\Omega & \approx \frac{1}{\pi}F_+
+    \\
+    L_- = \frac{1}{2\pi}\int_{\Omega_-}L\,d\Omega & \approx \frac{1}{\pi}F_+
+\end{align*}
+The \(\approx\)'s are found by using the two-stream approximation. A brief rearrangement (exercise) should convince you that Equations \ref{Upwards Schwarzschild} and \ref{Downwards Schwarzschild} are identical to Tadd's equations (up to a sign of \(\tau\)):
+\begin{align*}
+    \frac{dF}{d\tau_\nu} + 2 \pi \bar{L} = 2\pi B_\nu
+    \\
+    2\pi \frac{d\bar{L}}{d\tau_\nu} + F = 0
+\end{align*}
+
+To be perfectly honest, I do not know why Tadd writes the equations in this form, as I think Equations \ref{Upwards Schwarzschild} and \ref{Downwards Schwarzschild} are more intuitive. That being said, I also haven't attended Tadd's lectures nor have I read Tadd's notes thoroughly, so he may have a good reason!
 
 \section{General Solutions and Radiating Level}
 
