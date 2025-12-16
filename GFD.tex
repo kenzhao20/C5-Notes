@@ -2042,7 +2042,7 @@ In the \textbf{short-wave limit}, the wavelength of the wave is \textbf{very sma
     \boxed{\omega(k)\approx ck = \sqrt{gH}k}
 \end{align*} 
 
-In the \textbf{short-wave} limit then, the wave is what we call a \textbf{gravity wave}, and feels no effects of rotation! We can also think of this in terms of the Rossby Number. If \(U\sim\sqrt{g H}\) and \(L\ll L_d\), this implies that \(Ro\gg 1\). Since there is no other intrinsic timescale here, we can conclude that the the \(f\vec{k}\times\vec{u}_h\) is much smaller than both terms in Equation \ref{SW Lin mom}.
+In the \textbf{short-wave} limit then, the wave is what we call a \textbf{gravity wave}\footnote{Not to be confused with \href{https://en.wikipedia.org/wiki/Gravitational_wave}{gravitational waves}!}, and feels no effects of rotation! We can also think of this in terms of the Rossby Number. If \(U\sim\sqrt{g H}\) and \(L\ll L_d\), this implies that \(Ro\gg 1\). Since there is no other intrinsic timescale here, we can conclude that the the \(f\vec{k}\times\vec{u}_h\) is much smaller than both terms in Equation \ref{SW Lin mom}.
 
 Such a wave is \textbf{non-dispersive}, meaning that \(c_g=c_p\). Calculating \(c_g\) and \(c_p\) in this limit shows the following to obtain:
 \begin{align*}
@@ -2104,7 +2104,7 @@ Next, we take only the real part of our solutions for \(\eta'\) and \(\vec{u}'\)
 
 Let's examine some behaviour. Both \(u'\) and \(v'\) scale inversely with \(kH\), so as the vertical wavelength increases (i.e., \(k\) decreases) or the layer thickness decreases so too does \(u'\) and \(v'\) for a given surface height anomaly \(\eta_0\). 
 
-\(u'\) scales with \(\omega\), while \(v'\) scales with \(f\). This asymmetry is because we are only considering \(\vec{k}=(k,0)^T\) (i.e., \(l=0\)), so the velocity \textit{parallel} to the direction of \(\vec{k}\) scales as \(\omega\) while the velocity \textit{perpendicular} to \(\vec{k}\) scales as \(f\). Now \(\omega\geq f\) for all \(k\) (refer back to the \hyperref[IG SW Box]{dispersion relation}), so \(u'>v'\) always. In the shortwave limit (\(k\gg 1/L_d\)) especially, where the wave is essentially just a \textbf{gravity wave} which feels little effect of rotation, \(u'\gg v'\), and so the velocity is almost completely in the direction of propagation.
+\(u'\) scales with \(\omega\), while \(v'\) scales with \(f\). This asymmetry is because we are only considering \(\vec{k}=(k,0)^T\) (i.e., \(l=0\)), so the velocity \textit{parallel} to the direction of \(\vec{k}\) scales as \(\omega\) while the velocity \textit{perpendicular} to \(\vec{k}\) scales as \(f\). Now \(\omega\geq f\) for all \(k\) (refer back to the \hyperref[IG SW Box]{dispersion relation}), so \(u'>v'\) always. In the shortwave limit (\(k\gg 1/L_d\)) especially, where the wave is essentially just a \textbf{gravity wave} which feels little effect of rotation, \(u'\gg v'\), and so the velocity is almost completely in the direction of propagation. Convsersely, in the longwave limit, \(\omega\sim f\), and so \(u'\sim v'\), so the dynamics are roughly isotropic.  
 
 Finally, a quick rearrangement of \(u'\) and \(v'\) shows the following:
 \begin{align*}
@@ -2114,7 +2114,6 @@ Finally, a quick rearrangement of \(u'\) and \(v'\) shows the following:
     =
     \left( \frac{\eta_0}{kH} \right)^2
 \end{align*}
-The \(u'\) and \(v'\) therefore trace out an ellipse!
 
 \subsubsection{Energetics}
 
@@ -2148,7 +2147,7 @@ For simplicity, again, we assume that \(l=0\), such that the meridional waveleng
     \int_{0}^{T}
     \int_{0}^{L_x}
     u_h^2
-    \,dx\,dy\,dt
+    \,dx\,dt
     \\
     \bar{PE}=\frac{1}{T}\frac{1}{L_x}
     \frac{1}{2}\rho_0
@@ -2156,15 +2155,40 @@ For simplicity, again, we assume that \(l=0\), such that the meridional waveleng
     \int_{0}^{T}
     \int_{0}^{L_x}
     \eta^2
-    \,dx\,dy\,dt
+    \,dx\,dt
 \end{align*}
 
-Using our explicit
+Using our explicit expressions for \(u'\), \(v'\), and \(\eta\), and recalling that the integral of \(\cos^2\) over a period/wavelength is \(\frac{1}{2}\)\footnote{
+    I.e., the fact that the following obtains:
+    \begin{align*}
+        \frac{1}{T}\frac{1}{L_x}
+        \int_{0}^{T}
+        \int_{0}^{L_x}
+        \cos^2\left( ikx-i\omega t \right)
+        \,dx\,dt = \frac{\omega}{2\pi}\frac{k}{2\pi}
+        \int_{0}^{\frac{2\pi}{\omega}}
+        \int_{0}^{\frac{2\pi}{k}}
+        \cos^2\left( ikx-i\omega t \right)
+        \,dx\,dt = \frac{1}{2}
+    \end{align*}
+}, we find:
+\begin{gather*}
+    \bar{KE} = \frac{1}{4}\rho_0\, H\, \eta_0^2\,\frac{\omega^2+f^2}{k^2}
+    =\frac{1}{4}\rho_0\, \frac{1}{H^2}\, \eta_0^2\,\frac{c^2k^2+2f^2}{k^2}
+    \\
+    \bar{PE}=\frac{1}{4}\rho_0 \,g\, \eta_0^2
+\end{gather*}
+
+Interestingly, \(\bar{PE}\) has no dependence on the actual spatial size of the anomaly -- it only cares about the amplitude. Conversely, \(\bar{KE}\) has a strong dependence -- as \(k\) grows arbitrarily small, \(\bar{KE}\) goes to \(\infty\). Comparing the relative sizes of \(\bar{KE}\) and \(\bar{PE}\) gives:
+\begin{align*}
+    \frac{\bar{KE}}{\bar{PE}}=\frac{c^2k^2+2f^2}{c^2k^2}
+\end{align*}
+
+In the shortwave (gravity wave) limit, where \(c^2k^2\gg f^2\), we find that \(\frac{\bar{KE}}{\bar{PE}}\sim 1\) -- the energy is divided roughly evenly between the potential energy and the kinetic energy. Conversely, in the longwave (inertial oscillation) limit, where \(c^2k^2\ll f^2\), we find that \(\frac{\bar{KE}}{\bar{PE}}\gg 1\).
+
+Physically, hopefully, this makes sense. In the shortwave limit, the wave is effectively a gravity wave, and does not feel the effects of rotation at all. 
 
 [UNDER CONSTRUCTION]
-
-
-
 
 \section{Rossby Waves}
 
@@ -2357,7 +2381,7 @@ The second case is along the equator, where \(\Omega=0\), therefore \(f= 0\). In
 
 For simplicity, let us consider a flat boundary in the meridional direction. I.e., let the surface be expressed by the function \(f(x,y,z)=x=0\). As such, we require that \(u(x=0,y,z)=0\) at every point in the fluid (since the fluid cannot flow into the boundary).
 
-To derive the dispersion relation for Coastal Kelvin we anticipate that \(u=0\) for \textbf{all} \(x\). I should emphasise how \textit{strong} this assumption is. The boundary only requires that \(u=0\) for \(x=0\) (i.e., there can be no zonal flow \textit{at} the boundary), but we are now imposing the much stronger assumption that \(u=0\) for \textbf{all} values of \(x\) (i.e., there is no zonal flow \textit{anywhere}). You should question how realistic this assumption is\dots\footnote{See this paper if you're curious for another treatment see this paper \cite{M&H13}.}
+To derive the dispersion relation for Coastal Kelvin we anticipate that \(u=0\) for \textbf{all} \(x\). I should emphasise how \textit{strong} this assumption is. The boundary only requires that \(u=0\) for \(x=0\) (i.e., there can be no zonal flow \textit{at} the boundary), but we are now imposing the much stronger assumption that \(u=0\) for \textbf{all} values of \(x\) (i.e., there is no zonal flow \textit{anywhere}). You should question how realistic this assumption is\dots\footnote{See this paper if you're curious for another treatment \cite{M&H13}.}
 
 Setting \(u=0\) everywhere reduces our set of \hyperref[L SW Eqn]{linearised equations of motion} to the following three equations (being the momentum equations and the mass equation):
 \begin{align}
@@ -2379,14 +2403,15 @@ The general solution to this equation is (derived without using our \(\exp\left(
 \begin{align*}
     h(x,y,t)=A(x)f(y-ct)
 \end{align*}
-where \(c=\pm\sqrt{gH}=\) the gravity wave speed, again! Note that we've found that this wave is non-dispersive in the \(y\)-direction (since we can write \(f(y-ct)=f(\frac{1}{l}(ly-\omega t))\) where \(\omega = cl\)), so the phase and group velocities are identical and travel with velocity \(c=\pm\sqrt{gH}\) in the meridional direction. In other words, our solution (so far) allows the wave to travel up and down the coastline. We have not yet derived a constraint for the sign of \(c\).\footnote{I.e., whether \(c=\sqrt{gH}\) or \(c=-\sqrt{gH}\).} Suffice it to say that, as written above (in the \(f(y-ct)\) form), if \(c>0\) then the wave propagates northward and if \(c<0\) the wave propagates southward.\footnote{
+where \(c=\pm\sqrt{gH}=\) the gravity wave speed, again! Note that we've found that this wave is non-dispersive in the \(y\)-direction (since we can write \(f(y-ct)=f(\frac{1}{l}(ly-\omega t))\) where \(\omega = cl\)), so the phase and group velocities are identical and travel with velocity \(c=\pm\sqrt{gH}\) in the meridional direction. In other words, our solution (so far) allows the wave to travel up and down the coastline. As written above (in the \(f(y-ct)\) form), if \(c>0\) then the wave propagates northward and if \(c<0\) the wave propagates southward.\footnote{
     If we had written it as \(f(y+ct)\), \(c>0\) would correspond to the wave propagating southward and \(c<0\) would correspond to the wave propagating northward. This is convention that we must pick at the outset, and remain consistent throughout.}
+However, wee have not yet derived a constraint for the sign of \(c\).\footnote{I.e., whether \(c=\sqrt{gH}\) or \(c=-\sqrt{gH}\).} 
 
 To find the dependence on \(A(x)\), we differentiate Equation \ref{eq Coastal Kelvin u} with respect to \(t\) and substitute for \(\frac{\partial v}{\partial t}\) in Equation \ref{eq Coastal Kelvin v}:
 \begin{align*}
     \frac{\partial^2 h}{\partial t \partial x}+f \frac{\partial h}{\partial y}=0
 \end{align*}
-and substitute for our expression for \(h\), which gives the following equation for \(A(x)\):
+and substitute in our expression for \(h\), which gives the following equation for \(A(x)\):
 \begin{align*}
     -c \frac{dA}{dx}-fA(x)=0
 \end{align*}
@@ -2400,9 +2425,13 @@ where \(L_d\) is the \hyperref[SW Def Radius Box]{Rossby Deformation Radius} (it
 
 The sign of \(f/c\) is therefore crucial to understanding the \(x\)-dependence. If \(f/c>0\), \(h\to\infty\) as \(x\to -\infty\). Conversely, if \(f/c<0\), \(h\to\infty\) as \(x\to\infty\). To simplify things, let us first consider just the Northern hemisphere such that \(f>0\). The sign of \(f/c\) is therefore equal to the sign of \(c\).
 
-We first consider a western boundary such that there is fluid for \(x>0\) but no fluid for \(x<0\). If \(c=\sqrt{gH}>0\), then \(f/c>0\), therefore 
+We first consider a western boundary such that there is fluid for \(x>0\) but no fluid for \(x<0\). If \(c=\sqrt{gH}>0\), then \(f/c>0\), therefore the perturbation 
 
 [UNDER CONSTRUCTION]
+
+\subsubsection{Interpretation}
+
+
 
 \subsection{Equatorial Kelvin Waves}
 
@@ -2487,8 +2516,11 @@ Importantly, the reduced gravity system affects the \hyperref[SW Def Radius Box]
 \begin{align*}
     L_d = \frac{\sqrt{g' H}}{f}
 \end{align*}
-Since, generally, \(g'\ll g\), and \(L_d\sim\sqrt{g'}\), then \(L_d\) is much smaller than we anticipated before.
+Since, generally, \(g'\ll g\), and \(L_d\sim\sqrt{g'}\), \(L_d\) is much smaller than we anticipated before. 
 
+Crucially, though, \(L_d\) now depends on the stratification of the system. Compare two systems, one with a large stratification (i.e., \(\frac{\partial\rho}{\partial z}\) is large) and one with a small stratification (i.e., \(\frac{\partial\rho}{\partial z}\) is small). The former system would be represented by a larger $\Delta \rho_0$, while the latter system would be represented by a smaller $\Delta \rho_0$.
+
+Therefore, a system with a stronger stratification will have a larger \hyperref[SW Def Radius Box]{Rossby Deformation Radius}.
 
 \chapter{Time-Dependent 3D Systems}\label{3D Systems}
 
