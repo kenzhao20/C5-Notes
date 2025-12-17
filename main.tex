@@ -21,6 +21,13 @@
 \usepackage[utf8]{inputenc}
 \usepackage{CJKutf8} %for the ツ emoji
 \usepackage{cancel} %cross things out in equations
+%define CCancel to cancel using different colours
+\newcommand\Ccancel[2][black]{
+    \let\OldcancelColor\CancelColor
+    \renewcommand\CancelColor{\color{#1}}
+    \cancel{#2}
+    \renewcommand\CancelColor{\OldcancelColor}
+}
 \usepackage{wrapfig} %wrap text around figures
 \usepackage[most]{tcolorbox} %coloured boxes!
 %define some colourblind friendly colours
@@ -29,7 +36,8 @@
   \definecolor{mymagenta}{RGB}{202,58,126}
   \definecolor{myorange}{RGB}{236,108,44}
   \definecolor{myyellow}{RGB}{243,179,62}
-\tcbsetforeverylayer{shield externalize} %externalise the colorbox!
+%externalise the colorbox!
+\tcbsetforeverylayer{shield externalize}
 %boxes for ideas
 \newtcbtheorem[auto counter,number within=part]{fact}%
   {Key Idea}{fonttitle=\bfseries\upshape, fontupper=\upshape,
