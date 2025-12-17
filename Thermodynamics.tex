@@ -948,7 +948,7 @@ We define the \textbf{C}onvective \textbf{A}vailable \textbf{P}otential \textbf{
 We can substitute for \(F_b\) using \ref{Buoyancy Force Temp} and convert to pressure coordinates using \ref{Hydrostatic Balance Ideal} to find that:
 \begin{gather*}
     CAPE=\int_{z_{LFC}}^{z_{LNB}}\frac{T_p-T_a}{T_a}g\,dz\\
-    =\int_{p_{LFC}}^{p_{LNB}}\frac{T_p-T_a}{\bcancel{T_a}}(-R\bcancel{T_a}\,d\ln p)\\
+    =\int_{p_{LFC}}^{p_{LNB}}\frac{T_p-T_a}{\Ccancel[mydarkblue]{T_a}}(-R\Ccancel[mydarkblue]{T_a}\,d\ln p)\\
     \therefore \boxed{CAPE=R\int_{p_{LNB}}^{p_{LFC}}\left( T_p-T_a \right)\,d\ln p}
 \end{gather*}
 We know \(T_p(p)\), since \(T_p(p)\) follows the \hyperref[Dry Adiabat]{Dry Adiabat} with \((p_0,T_0)=(p_{LFC},T_{LFC})\), so we can straightfowardly calculate \(CAPE\) if we are given the atmospheric temperature profile \(T_a(p)\).
