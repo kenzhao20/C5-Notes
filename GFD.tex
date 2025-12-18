@@ -300,7 +300,7 @@ Third, we introduce the idea of \hyperref[Material Conservation]{Material Conser
 \end{align}
 If Equation \ref{Material Conservation} obtains for some quantity \(A\), this is equivalent to demanding that, if one follows a fluid parcel, the quantity \(A\) does not change. However, as a whole, \(A\), need not be globally conserved. If one considers Equation \ref{MatDerivTerms} and sets \(\frac{D A}{Dt }=0\), then you can see that the only local change in \(A\) is from fluid parcels with different \(A\) being advected into that location.
 
-Exercise: refer forwards to Equation \ref{Energy Equation}. Note even if we assume that \(Q=0\), we will find that \(\frac{DT}{Dt}\neq 0\). In other words, temperature is not materially conserved (so long as \(\beta\neq0\)). This is why we introduced the idea of \hyperref[eq Potential Temperature]{Potential Temperature}, as it is the case that \(\frac{D\theta}{Dt}=0\) (excercise: take \ref{Energy Equation}, solve for \(\beta\) using the ideal gas law, set \(Q=0\), and show that \(\frac{D\theta}{Dt}=0\) using the product rule).
+Exercise: refer forwards to Equation \ref{Energy Equation}. Note even if we assume that \(Q=0\), we will find that \(\frac{DT}{Dt}\neq 0\). In other words, temperature is not materially conserved (so long as \(\beta\neq0\)). This is why we introduced the idea of \hyperref[eq Potential Temperature]{Potential Temperature}, as it is the case that \(\frac{D\theta}{Dt}=0\) (excercise: take \ref{Energy Equation}, solve for \(\beta\) using the ideal gas law, set \(Q=0\), and show that \(\frac{D\theta}{Dt}=0\) using the product rule. Solution found in the \hyperref[Appendix]{Appendix}).
 
 Finally, we define the vorticity \(\vec{\omega}\) as the curl of the velocity:
 \begin{align}
@@ -397,7 +397,9 @@ Looking back, this should be seen as as cursory, highly unrealistic taste of the
 
 \section{The Primitive Equations of Motion}
 
-For simplicity we ignore state variables like salinity, humidity, etc., and restrict our attention to a system fully characterised by 6-state variables: the velocity \(\vec{u}=(u,v,w)\), pressure \(p\), density \(\rho\), and temperature \(T\). These are governed by six equations: 3 momentum budget equations (\ref{Navier Stokes}), one mass budget equation (\ref{Mass Conservation}), one energy budget equation (\ref{Energy Equation}), and an equation of state (\ref{EoS}). Each term is labelled below:
+For simplicity we ignore state variables like salinity, humidity, etc., and restrict our attention to a system fully characterised by 6-state variables: the velocity \(\vec{u}=(u,v,w)\), pressure \(p\), density \(\rho\), and temperature \(T\). These are governed by six equations: 3 momentum budget equations (\ref{Navier Stokes}), one mass budget equation (\ref{Mass Conservation}), one energy budget equation (\ref{Energy Equation})\footnote{
+    I should mention that this energy equation applies to an ideal gas. A more general energy equation (that might apply to, for example, seawater) is found in the \hyperref[Appendix]{Appendix}.
+}, and an equation of state (\ref{EoS}). Each term is labelled below:
 \begin{gather}
     \boxed{\underbrace{\frac{D\vec{u}}{Dt}}_{\text{Acceleration and Advection}}
     =
@@ -657,7 +659,7 @@ Acceleration of Gravity & \(g\) & \(g\sim g\) & \qty{10}{\metre\per\second\squar
 
 I do not write out all the details here, as they would easily take multiple pages. If you are curious about the details, refer to the mini-scale analysis I do in deriving \ref{Hydrostatic GFD}. A more rigorous method would be non-dimensionalisation, but this is overkill for our purposes. Again, if you are curious about the details, refer to the mini-non-dimensionalisation I do in deriving the \hyperref[Rossby Number]{Rossby Number}. 
 
-Suffice it to say that we eliminate many terms through this scale analysis. This includes any terms that feature the viscosity \(\nu\) and many terms arising from our local cartesian coordinate system. The centrifugal force is \textit{not} eliminated universally by our scale analysis, but we neglect this term for a different reason.\footnote{
+Suffice it to say that we eliminate many terms through this scale analysis. This includes any terms that feature the viscosity \(\nu\) and many terms arising from our local cartesian coordinate system. The centrifugal force is \textit{not} eliminated universally by our scale analysis, but we neglect this term for a different reason.\endnote{
     The reason why we neglect the centrifugal force is for two reasons.
     
     First, the centrifugal force is a conservative force, i.e., we can write it as the gradient of a scalar field: i.e., there exists a \(\psi\) such that \(-\vec{\Omega}\times\vec{\Omega}\times\vec{r}=-\vec{\nabla}\phi\). Therefore, we can simply define an `effective gravitational potential' \(\Phi=\phi+\psi\), where \(\phi\) is the gravitational potential energy field.
