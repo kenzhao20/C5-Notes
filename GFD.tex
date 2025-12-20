@@ -1135,7 +1135,7 @@ While we can solve this algebraically (it is not difficult), we will gain more u
         \end{tikzpicture}
         \caption{Anti-Cyclone: a \textbf{High} Pressure System. The fluid flows clockwise around an anti-cyclone in the northern hemisphere.}
     \end{subfigure}
-    \caption{[UNDER CONSTRUCTION] Cyclones and Anticyclones in the northern hemisphere (\(f>0\)) near the surface accounting for the effects of friction. Isobars are drawn as solid black lines \textcolor{black}{\rule{0.25cm}{0.25cm}}., the pressure gradient force \(\left( -\frac{1}{\rho}\vec{\nabla}_h p \right)\) as \textcolor{mymagenta}{thick dotted magenta arrows \rule{0.25cm}{0.25cm}}, the coriolis force \(\left( -f\vec{k}\times\vec{u}_h \right)\) as \textcolor{myorange}{thick dashed orange arrows \rule{0.25cm}{0.25cm}}, and the velocity \(\left( \vec{u}_h \right)\) as \textcolor{mydarkblue}{thick filled dark blue arrows \rule{0.25cm}{0.25cm}}.}
+    \caption{[UNDER CONSTRUCTION] Cyclones and Anticyclones in the northern hemisphere (\(f>0\)) near the surface accounting for the effects of friction. Isobars are drawn as solid black lines \textcolor{black}{\rule{0.25cm}{0.25cm}}, the pressure gradient force \(\left( -\frac{1}{\rho}\vec{\nabla}_h p \right)\) as \textcolor{mymagenta}{thick dotted magenta arrows \rule{0.25cm}{0.25cm}}, the coriolis force \(\left( -f\vec{k}\times\vec{u}_h \right)\) as \textcolor{myorange}{thick dashed orange arrows \rule{0.25cm}{0.25cm}}, and the velocity \(\left( \vec{u}_h \right)\) as \textcolor{mydarkblue}{thick filled dark blue arrows \rule{0.25cm}{0.25cm}}.}
 \end{figure}
 
 [UNDER CONSTRUCTION]
@@ -2981,7 +2981,16 @@ We now no longer neglect other forces, and reintroduce the horizontal stress for
     \vec{\tau}=\underbrace{\rho_0\nu\frac{\partial \vec{u}_h}{\partial z}}_{\text{viscous stress}}-
     \underbrace{\rho_0 \overline{\vec{u}_h'w'}}_{\text{turbulent eddy stress}}
 \end{gather*}
-where \(\vec{\tau}\) is the horizontal stress vector\footnote{If you are familiar with fluid mechanics, you will notice that, in reality, the stress is actually a tensor. [FOOTNOTE UNDER CONSTRUCTION]}. The second term is a bit more complicated, but just think of it as the effect of turbulent momentum fluxes which produce an effective force on the fluid (and read this\footnote{
+where \(\vec{\tau}\) is the horizontal stress vector\endnote{
+    If you are familiar with fluid mechanics, you will notice that, in reality, the stress is usually written as rank two symmetric tensor \(\tau_{ij}\), where the force is given by \(F_i = \sum_j \frac{\partial \tau_{ij}}{x_j}\).
+
+    However, in this case, we assume that \(\frac{\partial \tau_{iz}}{z}\gg\frac{\partial \tau_{iy}}{y},\frac{\partial \tau_{ix}}{x}\), i.e., that the vertical variation in \(\tau_{ij}\) is much larger than the horizontal variation.
+
+    We then define the horizontal stress vector \(\vec{\tau}\) as follows:
+    \begin{align*}
+        [\vec{\tau}]_i = \tau_{iz}
+    \end{align*}
+}. The second term is a bit more complicated, but just think of it as the effect of turbulent momentum fluxes which produce an effective force on the fluid (and read this\footnote{
     The explanation of the \(\rho_0 \overline{\vec{u}_h'w'}\) is as follows. First we perform a \href{https://en.wikipedia.org/wiki/Reynolds_decomposition}{Reynolds Decomposition} by splitting the velocity into a (time, space, or other suitably defined) average indicated by a bar and a fluctuation indicated by a prime:
     \begin{align*}
         \vec{u}_h = \overline{\vec{u}}_h+\vec{u}_h'
