@@ -616,16 +616,18 @@ where we have lumped together all the terms on the right-hand-side of \ref{Navie
 
 \subsection{Incompressibility}
 
-Our final assumption is regarding the compressibility of fluids. If a fluid has constant density (\(\rho=\rho_0=const\)), then by Equation \ref{Mass Conservation} \(\vec{\nabla}\cdot\vec{u}=0\) applies. We say that this fluid is \textbf{incompressible}: every bit of fluid that enters some volume must also leave.
+Our final assumption is regarding the compressibility of fluids. If the mass of a fluid element is conserved following the flow (i.e., \(\frac{D\rho}{Dt}=0\) holds) then, by Equation \ref{Mass Conservation}, \(\vec{\nabla}\cdot\vec{u}=0\) also holds. We say that this fluid is \textbf{incompressible}: every bit of fluid that enters some volume must also leave.
 
 We will end up assuming that \(\vec{\nabla}\cdot\vec{u}=0\). Note that this should seem, to you, a \textbf{highly} dubious assumption. First, we know that sound waves are possible (after all we can hear, both on land and in water), but sound waves are impossible in an incompressible fluid. Second, and more importantly, we know that the atmosphere is approximately an ideal gas, which can have its density changed if warmed or cooled. For the ocean, we know that temperature, salinity, and pressure all change the density of seawater.
 
-However, we are justified to use this equation if we assume that density variations \(\delta p = \delta p (x,y,z,t)\) are much smaller than the background density \(\rho_0\).
+More explicitly, in the former case, we know that \(\frac{D\rho}{Dt}\neq 0\) for a rising or falling air parcel, because it will follow the \hyperref[Dry Adiabat Box]{Dry Adiabat Box} and change its density accordingly!
+
+However, we are justified to use this equation if we assume that density variations \(\delta p = \delta p (x,y,z,t)\) are much smaller than the background density \(\rho_0\). We therefore assume that the following relation holds.
 \begin{align}
-    \therefore \boxed{\vec{\nabla}\cdot \vec{u}=0}\label{Incompressible}
+    \boxed{\vec{\nabla}\cdot \vec{u}=0}\label{Incompressible}
 \end{align}
 
-However, I should emphasise that this does \textit{not} imply that \(\frac{D\rho}{Dt} = \frac{D\delta \rho}{Dt} = 0\) (but it also doesn't prohibit it).
+However, I should emphasise that this does \textit{not} imply that \(\frac{D\rho}{Dt} = \frac{D\delta \rho}{Dt} = 0\) (but it also doesn't prohibit it). More discussion is in the Appendix in the section regarding the \hyperref[Appendix Thermodynamic Eqn]{Thermodynamic Equation}.
 
 \subsection{Scale Analysis}\label{Scale Analysis}
 
@@ -2590,7 +2592,7 @@ We now, in analogy to how we derived the dispersion relation before, linearise t
 Which equations are we linearising? We linearise Equations \ref{H bous} (Horizontal Momentum), \ref{V bous} (Vertical Momentum), and \ref{Energy Equation} (Energy Equation). We will also use Equation \ref{Incompressibility} (Incompressibility), but this equation does not need to be linearised. This will give us, in total, 5 equations.
 
 Skipping over the details of linearisation, we derive the following linearised equations (Equation \ref{H bous} becomes \ref{H lin}, \ref{V bous} becomes \ref{V lin}, \ref{Incompressibility} is \ref{Incompressible GW}, and \ref{Energy Equation} becomes \ref{MC lin}\footnote{
-    The details for this are a bit complicated. I'd honestly recommend ignoring this, but if you're interested I'd refer to Vallis' textbook \cite{Vallis}. You'll need to first refer to page 41 where he rewrites the energy equation (he calls it the `thermodynamic equation') in another form. Then skip to page 72 where he simplifies this equation using the Boussinesq approximation. Then finally he derives that \(\frac{D\rho}{Dt}=0\) if there is no heating.
+    The details for this are a bit complicated. I'd honestly recommend ignoring this, but if you're interested I'd refer to either the Appendix on the \hyperref[Appendix Thermodynamic Eqn]{Thermodynamic Equation}, or, for a fuller account, to Vallis' textbook \cite{Vallis}.
  }):
 
 \begin{minipage}{0.48\linewidth}
