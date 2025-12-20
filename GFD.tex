@@ -676,7 +676,7 @@ Suffice it to say that we eliminate many terms through this scale analysis. This
     
     This is the second reason why we neglect the centrifugal force. Because the combined centrifugal and gravitational force always points downwards, it is phenomenologically very similar to a situation with only the gravitational force. As such, we choose to neglect the centrifugal force for simplicity.}
 
-After eliminating the small terms, we arrive at our final simplified set of equations. 
+After eliminating the small terms, we arrive at our final set of simplified equations.
 
 \section{The Simplified Equations of Motion}
 
@@ -1044,7 +1044,7 @@ In this direction, there are three forces on the air parcel. We already consider
         \end{tikzpicture}
         \caption{Anti-Cyclone: a \textbf{High} Pressure System. The fluid flows clockwise around an anti-cyclone in the northern hemisphere.}
     \end{subfigure}
-    \caption{Gradient Wind Balance with cyclones and anticyclones in the northern hemisphere (\(f>0\)). Isobars are drawn as solid black lines \textcolor{black}{\rule{0.25cm}{0.25cm}}., the pressure gradient force \(\left( -\frac{1}{\rho}\vec{\nabla}_h p \right)\) as \textcolor{mymagenta}{thick dotted magenta arrows \rule{0.25cm}{0.25cm}}, the coriolis force \(\left( -f\vec{k}\times\vec{u}_h \right)\) as \textcolor{myorange}{thick dashed orange arrows \rule{0.25cm}{0.25cm}}, and the velocity \(\left( \vec{u}_h \right)\) as \textcolor{mydarkblue}{thick filled dark blue arrows \rule{0.25cm}{0.25cm}}.}
+    \caption{Cyclones and Anti-cyclones near the surface (in the northern hemisphere (\(f>0\))), accounting for the effects of friction. Gradient Wind Balance with cyclones and anticyclones in the northern hemisphere (\(f>0\)). Isobars are drawn as solid black lines \textcolor{black}{\rule{0.25cm}{0.25cm}}., the pressure gradient force \(\left( -\frac{1}{\rho}\vec{\nabla}_h p \right)\) as \textcolor{mymagenta}{thick dotted magenta arrows \rule{0.25cm}{0.25cm}}, the coriolis force \(\left( -f\vec{k}\times\vec{u}_h \right)\) as \textcolor{myorange}{thick dashed orange arrows \rule{0.25cm}{0.25cm}}, and the velocity \(\left( \vec{u}_h \right)\) as \textcolor{mydarkblue}{thick filled dark blue arrows \rule{0.25cm}{0.25cm}}.}
 \end{figure}
 
 Notice how, for a cyclone, the centrifugal force points in the same direction as the coriolis force. For an anti-cyclone, the centrifugal force points in the opposite driection as the coriolis force (i.e., in the direction of the pressure gradient force).
@@ -1093,6 +1093,50 @@ Representing the effects of friction is incredibly complicated, especially since
 \begin{align*}
     f\vec{k}\times\vec{u}_h = -\frac{1}{\rho}\vec{\nabla}p - \underbrace{\alpha\vec{u}_h}_{\text{friction}}
 \end{align*}
+
+While we can solve this algebraically (it is not difficult), we will gain more understanding from solving this graphically, by understanding the \(\alpha \vec{u}_h\) as a kind of small `correction' term on the existing geostrophic winds.
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{0.45\linewidth}
+        \centering
+        \begin{tikzpicture}
+            \draw[fill=none](0,0) circle (1.5);
+            \draw[fill=none](0,0) circle (3);
+            \draw[->,thick,mydarkblue] (2.121,2.121) arc[start angle=45, end angle=225, radius=3cm];
+            \draw[->,ultra thick,mymagenta,dotted] (2.121,2.121)--(1.131,1.131);
+            \node[] at (0.831,1.831) {\(-\frac{1}{\rho}\vec{\nabla}_h p\)};
+            \draw[->,ultra thick,myorange,densely dashed] (2.121,2.121)--(3.111,3.111);
+            \node[] at (3.111,3.411) {\(-f\vec{k}\times\vec{u}_h\)};
+            \draw[->,ultra thick,mydarkblue] (2.121,2.121)--(1.131,3.111);
+            \node[] at (1.131,3.411) {\(\vec{u}_h\)};
+            \node[] at (0,0) {Low Pressure};
+            \node[] at (0,-2.1) {Medium Pressure};
+            \node[] at (0,-3.5) {High Pressure};
+        \end{tikzpicture}
+        \caption{Cyclone: a \textbf{Low} Pressure System. The fluid flows anti-clockwise around a cyclone in the northern hemisphere.}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.45\linewidth}
+        \centering
+        \begin{tikzpicture}
+            \draw[fill=none](0,0) circle (1.5);
+            \draw[fill=none](0,0) circle (3);
+            \draw[->,thick,mydarkblue] (2.121,2.121) arc[start angle=45, end angle=-135, radius=3cm];
+            \draw[->,ultra thick,myorange,densely dashed] (2.121,2.121)--(1.131,1.131);
+            \node[] at (0.831,1.831) {\(-f\vec{k}\times\vec{u}_h\)};
+            \draw[->,ultra thick,mymagenta,dotted] (2.121,2.121)--(3.111,3.111);
+            \node[] at (3.111,3.411) {\(-\frac{1}{\rho}\vec{\nabla}_h p\)};
+            \draw[->,ultra thick,mydarkblue] (2.121,2.121)--(3.111,1.131);
+            \node[] at (3.111,1.631) {\(\vec{u}_h\)};
+            \node[] at (0,0) {High Pressure};
+            \node[] at (0,-2.1) {Medium Pressure};
+            \node[] at (0,-3.5) {Low Pressure};
+        \end{tikzpicture}
+        \caption{Anti-Cyclone: a \textbf{High} Pressure System. The fluid flows clockwise around an anti-cyclone in the northern hemisphere.}
+    \end{subfigure}
+    \caption{[UNDER CONSTRUCTION] Cyclones and Anticyclones in the northern hemisphere (\(f>0\)) near the surface accounting for the effects of friction. Isobars are drawn as solid black lines \textcolor{black}{\rule{0.25cm}{0.25cm}}., the pressure gradient force \(\left( -\frac{1}{\rho}\vec{\nabla}_h p \right)\) as \textcolor{mymagenta}{thick dotted magenta arrows \rule{0.25cm}{0.25cm}}, the coriolis force \(\left( -f\vec{k}\times\vec{u}_h \right)\) as \textcolor{myorange}{thick dashed orange arrows \rule{0.25cm}{0.25cm}}, and the velocity \(\left( \vec{u}_h \right)\) as \textcolor{mydarkblue}{thick filled dark blue arrows \rule{0.25cm}{0.25cm}}.}
+\end{figure}
 
 [UNDER CONSTRUCTION]
 
