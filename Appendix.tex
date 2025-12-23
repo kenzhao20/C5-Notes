@@ -9,10 +9,116 @@ I follow the Vallis' derivation in his book \cite{Vallis}, where it can be found
 
 In these entire set of notes, we formulate and analyse models of the atmosphere and oceans. Of course, part of the accuracy relies on the accuracy of our analysis, but crucially part of the accuracy also relies on the accuracy of the models. The shallow water system would not be as interesting of a system (to us at least) if we did not have some evidence that the model was faithful and captured (some) dynamics of the atmosphere and oceans.
 
-\chapter*{The Thermodynamic Equation}
+\chapter*{The Thermodynamic Equation}\label{Appendix Thermodynamic Eqn}
 \addcontentsline{toc}{chapter}{The Thermodynamic Equation}
 
-Recall the thermodynamic equation (Equation \ref{Energy Equation})
+Recall the thermodynamic equation (Equation \ref{Energy Equation}):
+\begin{align*}
+  c_p \frac{DT}{Dt} - \frac{\beta T}{\rho} \frac{Dp}{Dt} = Q
+\end{align*}
+
+In this chapter we discuss this equation further. We first demonstrate (explicitly) conservation of potential temperature and rewrite conservation of buoyancy/mass under the Boussinesq approximation. The first part I'd say is fairly on-syllabus, but the second part is (I think) off-syllabus.
+
+I should first note that the form of Equation \ref{Energy Equation} is for ideal gases, where \(U = c_v T\) obtains. More generally, the thermodynamic equation is given by the following equation:
+\begin{align*}
+  \frac{DU}{Dt} + \frac{p}{\rho}\vec{\nabla}\cdot\vec{u} = Q + Q_c
+\end{align*}
+where \(Q_c=\) the energy change due to a change in composition. For an ideal gas, \(U = c_v T\), and so has no dependence on composition (because there are no interactions between constituents of the gas), so \(Q_c = 0\) for an ideal gas. Some brief can show that for an ideal gas the thermoydnamic equation is given by Equation \ref{Energy Equation}:
+\begin{align*}
+  c_p \frac{DT}{Dt} - \frac{\beta T}{\rho} \frac{Dp}{Dt} = Q
+\end{align*}
+For an ideal gas \(\rho = \frac{p}{RT}\) and so \(\beta = -\frac{1}{\rho}\frac{\partial \rho}{\partial T} = -\frac{1}{\rho} \left( -\frac{\rho}{T} \right) = \frac{1}{T}\). Therefore, the equation becomes:
+\begin{align*}
+  c_p \frac{DT}{Dt} - \frac{1}{\rho} \frac{Dp}{Dt} = Q
+\end{align*}
+
+Recalling that potential temperature is given by Equation \ref{eq Potential Temperature}, we can rearrange and substitute for \(T\) to find:
+\begin{align*}
+  Q & = c_p \left( \frac{p}{p_{ref}} \right)^{\frac{R}{c_p}} \frac{D}{Dt}\left( \theta \left( \frac{p}{p_{ref}} \right)^{\frac{R}{c_p}} \right) 
+  -
+  \frac{1}{\rho}\frac{Dp}{Dt}
+  \\
+  &=c_p \left( \frac{p}{p_{ref}} \right)^{\frac{R}{c_p}} \frac{D\theta}{Dt}  
+  + 
+  c_p\theta \left( p_{ref} \right)^{-\frac{R}{c_p}}
+  \frac{R}{c_p}p^{\frac{R}{c_p}-1}\frac{Dp}{Dt}
+  -
+  \frac{RT}{p}\frac{Dp}{Dt}
+  \\
+  &=c_p \left( \frac{p}{p_{ref}} \right)^{\frac{R}{c_p}}\frac{D\theta}{Dt}  
+  +
+  \Ccancel[myorange]{c_p} T \left( \frac{\Ccancel[mydarkblue]{p}}{\Ccancel[mymagenta]{p_{ref}}} \right)^{-\frac{R}{c_p}}
+  \left( \Ccancel[mymagenta]{p_{ref}} \right)^{-\frac{R}{c_p}}
+  \frac{R}{\Ccancel[myorange]{c_p}}p^{\Ccancel[mydarkblue]{\frac{R}{c_p}}-1}\frac{Dp}{Dt}
+  -
+  \frac{RT}{p}\frac{Dp}{Dt}
+  \\
+  &=c_p\left( \frac{p}{p_{ref}} \right)^{\frac{R}{c_p}}\frac{D\theta}{Dt}
+  +
+  \Ccancel[mydarkblue]{\frac{RT}{p}\frac{Dp}{Dt}}
+  -
+  \Ccancel[mydarkblue]{\frac{RT}{p}\frac{Dp}{Dt}}
+\end{align*}
+Therefore:
+\begin{align*}
+  \frac{D\theta}{Dt} = \frac{Q}{c_p}\left( \frac{p}{p_{ref}} \right)^{-\frac{R}{c_p}} = \frac{Q}{c_p} \frac{\theta}{T}
+\end{align*}
+
+We have therefore demonstrated that, in the absence of diabatic heating \(Q=0\), \(\theta\) is conserved following an air parcel.
+
+We now aim to derive the following equation 
+\begin{align*}
+  \frac{D\rho}{Dt}=0
+\end{align*}
+which is used in Section BLAH BLAH.
+
+In the lectures Tim (and previous lecturers) derive the above equation with the following argument. First consider mass conservation (Equation \ref{Mass Conservation}):
+\begin{align*}
+  \frac{D\rho}{Dt} + \rho\vec{\nabla}\cdot\vec{u}=0
+\end{align*}
+
+If we impose that the fluid is incompressible, the term on the right vanishes (as \(\vec{\nabla}\cdot\vec{u}=0\)). As such, it must be the case that, to remain consistent \(\frac{D\rho}{Dt}=0\).
+
+I believe that this argument is not sound.\footnote{
+  I should emphasise that I am not an expert in GFD, especially compared to the lecturers of C5, so be careful what I am about to say. Regardless, what I say follow \cite{Vallis} very closely, and Vallis is also an expert of GFD, so it's one GFD person's word against another GFD person's word. 
+} First, as already mentioned, air and seawater are both compressible: in both cases \(\rho\) is a function of \(p\), in the former case we dealt with this fact explicitly in deriving the \hyperref[Dry Adiabat Box]{Dry Adiabat}, and in the latter case oceanographers typically define a \textit{potential density}. 
+
+In what way, then, do we mean then, that air and seawater are \textit{approximately} incompressible? We deal with seawater first, because it is simpler. The key step we take is we decompose the density field as follows:
+\begin{align*}
+  &\rho(\vec{x},t) = \rho_0 + \delta\rho(\vec{x},t)\\
+  \text{where}\hspace{1cm}&
+  \rho_0 = const\\
+  \text{and}\hspace{1cm}&
+  \delta\rho \ll \rho_0 \sim \rho
+\end{align*}
+
+In other words, we assume that density variations are small compared to the ambient density\footnote{
+  In the ocean, seawater has a density of around \qty{1000}{\kilo\gram\per\meter\cubed} and varies by about \qty{30}{\kilo\gram\per\meter\cubed} so \(\delta \rho\) is around two orders of magnitude less than \(\rho_0\). For air, the same approximation clearly does not obtain. To see this, see Equation \ref{Hydrostatic Balance Ideal}. With height, \(p\) falls off roughly exponentially, while \(T\) falls of linearly. Since \(p\sim \rho T\), the only way this can hold is if \(\rho\) falls off roughly exponentially as well, so \(\rho\) decreases by roughly an order of magnitude between the ground and the tropopause.
+} This allows us to rewrite the mass conservation equation as follows (we also divide by \(\rho_0\)):
+\begin{align*}
+  \underbrace{\frac{D}{Dt}\left( \frac{\delta\rho}{\rho_0} \right)+\frac{\delta\rho}{\rho_0}\vec{\nabla}\cdot\vec{u}}_{\mathcal{O}\left( \frac{\delta \rho}{\rho_0} \right)} + \vec{\nabla}\cdot\vec{u}=0
+\end{align*}
+Neglecting terms of \(\mathcal{O}\left( \frac{\delta\rho}{\rho_0} \right)\) allows us to claim that, to zeroth order in \(\frac{\delta\rho}{\rho_0}\):
+\begin{align*}
+  \vec{\nabla}\cdot\vec{u}=0
+\end{align*}
+
+However, crucially, this equation is approximate (i.e., it obtains to zeroth order). If we wish to consider the spatial dependence of the density field \(\rho(\vec{x},t)=\delta_0+\delta\rho(\vec{x},t)\), we are inherently considering small variations (since \(\delta\rho\ll \rho_0\)), so we must allow the possibility that \(\vec{\nabla}\cdot\vec{u}\neq0\) to first or higher order of \(\frac{\delta\rho}{\rho_0}\)!
+
+You'll need to first refer to page 41 where he rewrites the energy equation (he calls it the `thermodynamic equation') in another form. Then skip to page 72 where he simplifies this equation using the Boussinesq approximation. Then finally he derives that \(\frac{D\rho}{Dt}=0\) if there is no heating.
+
+[UNDER CONSTRUCTION]
+
+For air, the situation is different, since the density varies by roughly an order of magnitude from the ground to the tropopause. Here we instead decompose the density field as follows:
+\begin{align*}
+  &\rho(\vec{x},t) = \rho_0 + \tilde{\rho}(z) + \delta\rho(\vec{x},t)\\
+  \text{where}\hspace{1cm}&
+  \rho_0 = const\\
+  \text{and}\hspace{1cm}&
+  \delta\rho \ll \rho_0,\tilde{\rho}(z)
+\end{align*}
+
+Here, we allow large variations of density with height (following the hydrostatic relation), but assume that variations from hydrostatic equilibrium are small both horizontally and vertically. 
 
 \addcontentsline{toc}{chapter}{Definitions and Symbols}
 \chapter*{Definitions and Symbols}
