@@ -251,7 +251,7 @@ It turns out, and one can derive this via statistical mechanics, that at high en
     \label{eq Equipartition}
     \BOX{c_v\approx\frac{f}{2}R}
 \end{align}
-where \(f=\) the number of \textit{fully excited} degrees of freedom an individual constituent has. So for a hot enough monatomic gas, \(f=3\), since monatomic gases have \(3\) translational degrees of freedom (forwards/backwards, up/down, right/left). For a hot enough linear diatomic gas (as seen in Fig. \ref{7DoF}), \(f=7\), since diatomic gases have \(3\) translational degrees of freedom, \(3\) rotational degrees of freedom (spinning about the \(x,y,z\) axes), and \(2\) vibrational degrees of freedom\footnote{
+where \(f=\) the number of \textit{fully excited} degrees of freedom an individual constituent has. So for a hot enough monatomic gas, \(f=3\), since monatomic gases have \(3\) translational degrees of freedom (forwards/backwards, up/down, right/left). For a hot enough linear diatomic gas (as seen in Fig. \ref{7DoF}), \(f=7\), since diatomic gases have \(3\) translational degrees of freedom, \(3\) rotational degrees of freedom (spinning about the \(x,y,z\) axes), and \(2\) vibrational degrees of freedom\endnote{
     One might expect there to be only \(1\) vibrational degree of freedom (i.e., they can only vibrate in and out\ldots right?). The reason why it's \(2\) is slightly complicated, and requires some background knowledge in statistical mechanics. In the derivation for the equipartition theorem, \(f= \) the number of quadratic terms in the Hamiltonian. For translations, \(H=\frac{1}{2m}\left(p_x^2+p_y^2+p_z^2\right)\) so \(f=3\), and similarly for rotations. For vibrations, we approximate the Hamiltonian as a simple harmonic oscillator (which it will be if the vibrations are small enough), so there are \textit{two} quadratic terms, arising from the kinetic and potential energies in the Hamiltonian (i.e., a spring): \(H=\frac{1}{2m}p^2+\frac{1}{2}m\omega^2x^2\).
 
     Looking ahead, one can calculate the characteristic energy scale \(E\) of N\(_2\)'s vibrational mode by solving analytically for the eigenvalues of the simple harmonic oscillator and finding the difference. One then only needs to quote two empirical constants: \(m=\) the reduced mass of the N\(_2\), and \(\omega\) (which encodes the strength of the bond between the N atoms). 
@@ -322,7 +322,7 @@ The size of this quanta of energy \(E\) depends on the system, but for the const
 
 Earth's atmosphere mainly consists of a diatomic gas, so we might expect \(f=7\). However, \(f\approx5\) because the translational degrees of freedom are all fully excited, but only \(2\) rotational degrees of freedom are excited and none of the vibrational degrees of freedom are (See Figure \ref{f=5}. I have drawn the excited degrees of freedom as thick magenta lines, and the frozen degrees of freedom as dashed thin magenta lines). 
 
-In reality, the heat capacity \textit{per mole} (and \textit{not} per mass) at constant volume is \(c_v^*\approx\) \qty{20.83}{\joule\per\kelvin\per\mole}. \(R^*\approx\) \qty{8.314}{\joule\per\kelvin\per\mole}, so our prediction would be \(c_v^*\approx 5R^*/2\approx\) \qty{20.79}{\joule\per\kelvin\per\mole}, which is actually very close to the measured value!
+In reality, the heat capacity \textit{per mole} (and \textit{not} per mass) at constant volume and pressure are (respectively), \(c_v^*\approx\) \qty{20.83}{\joule\per\kelvin\per\mole} \(c_p^*\approx\) \qty{29.13}{\joule\per\kelvin\per\mole}\footnote{Source: the data sheet.}. \(R^*\approx\) \qty{8.314}{\joule\per\kelvin\per\mole}, so our predictions would be \(c_v^*\approx 5R^*/2\approx\) \qty{20.79}{\joule\per\kelvin\per\mole} and \(c_p^*\approx 7R^*/2\approx\) \qty{29.10}{\joule\per\kelvin\per\mole}, which are actually very close to the measured values!
 
 \begin{figure}[H]
     \centering
@@ -606,7 +606,7 @@ Dividing by \(T\) and rearranging, we find that:
      & = c_p\,d\left(\ln \left(T(p)^\frac{-R}{c_p}\right)\right)
      &\text{; }&\ln(x)-a\ln(y)=\ln\left(x(y)^{-a}\right)
 \end{align*}
-If we make the crucial assumption that the parcel exchanges a negligible amount of heat with its surroundings, then we can approximate \(ds=0\)\footnote{
+If we make the crucial assumption that the parcel exchanges a negligible amount of heat with its surroundings, then we can approximate \(ds=0\)\endnote{
     Why can we only approximate \(ds=0\) and not set \(ds=0\)? It is because the relation  \(\dbar Q=T\,ds\) (where  \(\dbar Q\) is the heat transfer) holds only if the process is reversible, but we have made no such assumptions here. If the process is irreversible, as it probably is, then  \(\dbar Q\leq T\,ds\) and so it is possible for  \(\dbar Q=0\) and \(ds\neq 0\).
 }. In reality, there is some level of heat transfer (\(ds\neq0)\), but these processes are typically much slower (timescale \(\sim\) days/weeks) than the changes in pressure caused by upwards/downwards parcel motion (timescale \(\sim\) hours). We can thus conclude that:
 \begin{align*}
@@ -1291,3 +1291,5 @@ Initially, as it is lifted, its mass mixing ratio \(q\) will remain constant, an
 Ideas from Section \ref{Convection} carry over to here, but are changed subtly. To avoid repetition the bulk of this discussion will be in Chapter \ref{Convection Clouds}.
 
 However, for completion, it's useful to note that, similar to dry convection, moist convection as a mechanism always perturbs an existing atmospheric profile towards a \textbf{Moist Pseudo-Adiabat}. It is other processes (now just radiation and fluid dynamics) that pull the atmosphere away from this pseudo-adiabat.
+
+\printendnotes
