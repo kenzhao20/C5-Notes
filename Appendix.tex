@@ -19,11 +19,19 @@ Recall the thermodynamic equation (Equation \ref{Energy Equation}):
 
 In this chapter we discuss this equation further. We first demonstrate (explicitly) conservation of potential temperature and rewrite conservation of buoyancy/mass under the Boussinesq approximation. The first part I'd say is fairly on-syllabus, but the second part is (I think) off-syllabus.
 
-I should first note that the form of Equation \ref{Energy Equation} is for ideal gases, where \(U = c_v T\) obtains. More generally, the thermodynamic equation is given by the following equation:
+I should first note that the form of Equation \ref{Energy Equation} is for ideal gases, where \(u = c_v T\) obtains. More generally, the thermodynamic equation is given by the following equation:
 \begin{align*}
-  \frac{DU}{Dt} + \frac{p}{\rho}\vec{\nabla}\cdot\vec{u} = Q + Q_c
+  \underbrace{\frac{Du}{Dt}}_{du} 
+  + 
+  \underbrace{\frac{p}{\rho}\vec{\nabla}\cdot\vec{u} }_{-p\,dV =\, \dbar W}
+  = 
+  \underbrace{Q}_{-S\,dT = \, \dbar Q}
+  + 
+  \underbrace{Q_c}_{\mu\,dN}
 \end{align*}
-where \(Q_c=\) the energy change due to a change in composition. For an ideal gas, \(U = c_v T\), and so has no dependence on composition (because there are no interactions between constituents of the gas), so \(Q_c = 0\) for an ideal gas. Some brief can show that for an ideal gas the thermoydnamic equation is given by Equation \ref{Energy Equation}:
+where \(Q_c=\) the energy change due to a change in composition. As you can see (from the labels) this is really just the First Law of Thermodynamics (Equation \ref{First Law}) per unit mass and with respect to time!
+
+For an ideal gas, \(U = c_v T\), and so has no dependence on composition (because there are no interactions between constituents of the gas), so \(Q_c = 0\) for an ideal gas. Some brief can show that for an ideal gas the thermoydnamic equation is given by Equation \ref{Energy Equation}:
 \begin{align*}
   c_p \frac{DT}{Dt} - \frac{\beta T}{\rho} \frac{Dp}{Dt} = Q
 \end{align*}
