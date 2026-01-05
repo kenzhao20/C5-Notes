@@ -25,7 +25,7 @@ This section of the course was lectured by \href{https://www.physics.ox.ac.uk/ou
         
         \begin{quote}
             We introduce some fundamental diagnostic (time-independent) relations, including \hyperref[Hydrostatic GFD Box]{hydrostatic balance} and \hyperref[Geostrophic Box]{geostrophic balance}, then discuss the implications on \hyperref[Cyclones]{(anti-)cyclones} and \hyperref[s Thermal Wind]{Thermal Wind Balance}. We use hydrostatic balance to transform explicitly into \hyperref[Pressure Coords]{pressure coordinates}, and express the prior relations in terms of pressure coordinates.
-
+            
             Even though such relations are diagnostic (i.e., they feature no time-derivatives), these relations might still hold even if the system is changing: in this case, the relations may hold in a quasi-steady manner (a concept introduced in Part \ref{Climate Dynamics}).
         \end{quote}
     
@@ -401,31 +401,24 @@ This differential heating causes horizontal temperature gradients, which in turn
 
 It is also important to consider what sets \textbf{Geophysical Fluid Dynamics} apart from most other Fluid Dynamics. There are two important properties that \textbf{Geophysical Fluid Dynamics} aim to investigate: \textbf{stratification} and \textbf{rotation}. The effects of these will pop up again and again throughout this course in \hyperref[Geophysical Fluid Dynamics]{GFD}.
 
+This bit is technically off syllabus, but `Hadley's' model probably isn't, so don't skip that part if you're in a hurry. I include this section just because I think it provides quite a lot of unity to the GFD course, as these ideas will pop up again and again. You can ask yourself going forward regarding the models: which part of this model encodes the rotation, adn which bit encodes the stratification. How would the behaviour of the system differ if the system weren't rotating/weren't stratification (or, more accurately, if the rotation or stratification were weak in comparison to other dynamical effects).
 
+\textbf{Rotation} is important because, generally, planets rotate, and this places constraints on the way that fluid parcels move. In the absensce of any torque, a fluid parcel will retain its angular momentum. On a non-rotating planet, this corresponds to moving in a straight line. On a \textit{rotating} planet, this will \textit{not} correspond to moving in a straight line (relative to the surface of the Earth).\footnote{
+    The situation is considerably complicated by the spherical (or more accurately oblate spheroid) nature of the Earth. For more details, see \cite{Andy_Coriolis_Optical_Illusion}.
+}
 
-\subsection{Stratification}
+Roughly, rotation also acts to remove vertical variation of fluid properties. In other words, it makes the flow look more two-dimensional, and this is shown by the Taylor-Proudman Effect (briefly explained in this \href{https://www.physics.ox.ac.uk/research/group/geophysical-and-astrophysical-fluid-dynamics/tutorials/0}{link}), where a fluid of constant density will have no velocity variation in the vertical if is rotating sufficiently fast enough.
 
-\textbf{Stratification} is important because the fluids in the atmospheres and oceans are affected by gravity and vary in density. 
-
-You have already seen the effect of stratification when we derived the \hyperref[Hydrostatic Balance]{Hydrostatic Balance}. We found that pressure decreases with height 
-\begin{align*}
-    \frac{dp}{dz}=-\rho g\\
-    \frac{d}{dz}\left( \rho R T \right)=-\rho g\\
-    RT \frac{d \rho}{dz} + \frac{}{}
-\end{align*}
-
-REFER TO THE BUOYANCY FREQUENCY SECTION IN THE CLOUDS SECTION
-
-[UNDER CONSTRUCTION]
+\textbf{Stratification} is important because the fluids in the atmospheres and oceans are a) subject to gravity and b) can vary in density (due to pressure, temperature, or salinity). This leads to (this is not an airtight argument) a fluid where the main variation in density is in the vertical. Among other effects, this acts to work against the Taylor-Proudman Effect (as density is no longer constant), 
 
 \subsection{Rotation Pt. 2: `Hadley's' Model of the Trade Winds}
 
-\textbf{Rotation} is important because, generally, planets rotate, and the equations of motion ensure that fluid parcels must obey conservation of angular momentum. The idea is as follows: if a fluid parcel is at rest relative to the surface of the Earth, its total angular momentum will actually differ depending on where it is. If it is at the poles, it will have no angular momentum, whereas if it is at the equator, it will have a large amount of angular momentum.
+I've included this section because it is explicitly mentioned in the lecture slides, so I assume it's on-syllabus.
 
-In the previous section, we discussed how differential heating implies that there must be some motion. This motion is required to close the energy budget. Becuase there both is net radiative heating at the equator and net radiative cooling at the poles, and the equator and poles are not heating and cooling over time, there must be some mechanism transfering energy from the equator to the poles. This is achieved by the atmospheres and oceans.
+In the previous section, we discussed how differential heating implies that there must be some motion. This motion is required to close the energy budget. Becuase there is both net radiative heating at the equator and net radiative cooling at the poles, and the equator and poles are not heating and cooling over time, there must be some mechanism transfering energy from the equator to the poles. This is achieved by the atmospheres and oceans.
 
 Let us then consider a extremely simple model of this: \textbf{Hadley's Model}\footnote{
-    I should note that this is not \textit{exactly} Hadley's model. Hadley's model originally assumed that an air parcel's \textbf{linear momentum} is conserved, but we will assume that an air parcel's \textbf{angular momentum} is conserved. See \cite{Hadley_Model} (and remember that the letters that look like f's are s's).
+    I should note that this is not \textit{exactly} Hadley's model. Hadley assumed that an air parcel's \textbf{linear momentum} is conserved, but we will assume that (a component of) the air parcel's \textbf{angular momentum} is conserved. See \cite{Hadley_Model} (and remember that the letters that look like f's are s's).
 } of convection as a zonally (zonally means east-west) symmetric equator-to-pole convection cell:
 \begin{figure}[H]
     \centering
@@ -438,33 +431,29 @@ Let us then consider a extremely simple model of this: \textbf{Hadley's Model}\f
     \caption{Convection Cell: [FIGURE UNDER CONSTRUCTION]}
 \end{figure}
 
-I should note that I actually have reservations regarding how useful or even consistent this model is. However, I include this becuase it is on the course.
+Let us consider a fluid parcel in this convection cell. We assume that this fluid parcel starts out at the equator at rest (relative to the surface of the Earth) and moves north. We also assume that there are no zonal forces (i.e., no east-west forces) acting on the fluid parcel (this is a highly unrealistic assumption)! We further assume that the radius of the Earth \(a\) is much larger than the height of the fluid parcel above the Earth.
 
-Let us not consider a fluid parcel in this convection cell. We assume that this fluid parcel starts out at the equator at rest (relative to the surface of the Earth) and moves north. We also assume that there are no zonal forces (i.e., no east-west forces) acting on the fluid parcel. This is a highly unrealistic assumption. We further assume that the radius of the Earth \(a\) is much larger than the height of the fluid parcel above the Earth.
-
-We know that the total angular momentum of the parcel is approximately equal to the following:
+Let \(L(\phi,u)\) represent the component of the angular momentum in the direction aligned with the angular velocity of the Earth. Equivalently, this is the component of the angular momentum parallel to the vector pointing directly upwards from the ground at the north pole. We know that this is approximately equal to the following:
 \begin{align*}
     L(\phi,u) = \underbrace{a\cos\phi}_{\vec{r}} \underbrace{\left( \Omega a \cos \phi + u \right)}_{\vec{u}}
 \end{align*}
-where \(a=\) the radius of the Earth, \(\phi=\) the latitude, \(\Omega=\) the angular velocity of the Earth, and \(u=\) the zonal velocity of the fluid parcel relative to the surface of the Earth. The angular momentum is equal to \(\vec{r}\times\vec{u}\), the radius \(\vec{r}\) times the velocity \(\vec{u}\). The radius is equal to \(a\cos\phi\) (as it is the radius from the axis of rotation), and the velocity is equal to \(\Omega a \cos \phi + u\), the sum of the velocity from the rotation of the Earth and the velocity relative to the Earth.\footnote{
-    This is, strictly speaking, incorrect. The angular momentum is a vector (actually a pseudo-vector), so it’s strange to say that the angular momentum is equal to a scalar value. To be more precise, \(L(\phi,u)\) is the component of the angular momentum in the direction aligned with the angular velocity of the Earth. Equivalently, this is the component of the angular momentum parallel to the vector pointing directly upwards from the ground at the north pole.
-}
+where \(a=\) the radius of the Earth, \(\phi=\) the latitude, \(\Omega=\) the angular velocity of the Earth, and \(u=\) the zonal velocity of the fluid parcel relative to the surface of the Earth. The angular momentum is equal to \(\vec{r}\times\vec{u}\), the radius \(\vec{r}\) times the velocity \(\vec{u}\). The radius is equal to \(a\cos\phi\) (as it is the radius from the axis of rotation), and the velocity is equal to \(\Omega a \cos \phi + u\), the sum of the velocity from the rotation of the Earth and the velocity relative to the Earth.
 
-Since there are no zonal forces on the air parcel, this implies that the angular momentum is conserved. Setting \(L(\phi,u)=const\) imposes the constraint \(u=u(\phi)\). We use our assumption that, at \(\phi=0\) (the equator), the \(u=0\) (fluid parcel is at rest). Therefore, some simple algebra gives us the following relation:
+Since there are no zonal forces, we can conclude that the angular momentum of the air parcel (in this direction) is conserved. Setting \(L(\phi,u)=const\) imposes the constraint \(u=u(\phi)\). We use our assumption that, at \(\phi=0\) (the equator), the \(u=0\) (fluid parcel is at rest). Therefore, some simple algebra gives us the following relation:
 \begin{align*}
     \boxed{u=a\Omega \left( \frac{1}{\cos\phi}-\cos\phi
     \right)}
 \end{align*}
 
-Essentially, what this says is that, as the air parcel moves north (as \(\phi\) increases), the zonal velocity \(u\) also increases! Conservation of angular velocity imposes that the air parcel is deflected as it moves northwards, so fluid parcel motion cannot always be as straightforward on a rotating planet as on a non-rotating planet.
+As the air parcel moves north (as \(\phi\) increases), the zonal velocity \(u\) also increases. Conservation of angular velocity imposes that the air parcel is deflected westward as it moves northwards, so fluid parcel motion cannot always be as straightforward on a rotating planet as on a non-rotating planet.
 
 Of course, this model is highly unrealistic. Firstly, it predicts that \(u\to\infty\) at \(\cos\phi\to\pi/2\), which is clearly unphysical. Secondly, from observations, we pretty much never observe \(u\geq\qty{150}{\metre\per\second}\), so the model fails much earlier than \(u\to\infty\). In reality, our assumption that there were no zonal forces was a very inaccurate assumption: as horizontal velocities become arbitrarily large, these induce large shears (a shear is when a layer of stuff (e.g., air) is sliding over another layer of stuff (e.g., air)), which in turn induce large forces either from viscous or turbulent eddy stresses.\footnote{For a cursory look at the effect of vertical stresses, refer to this section on \hyperref[Ekman Transport]{Ekman Transport}!}
 
-The general moral of the story is: there are conservation laws that constrain motion more on rotating planets than non-rotating planets. 
+That being said, I'm not sure this is the key reason why the model fails. The main issue (I think) is the fact that the air parcel moving East will generate forces (see Equation \ref{Horizontal Approximate}) that will act to deflect the parcel back equatorward. To keep the balance, the force that moves the parcel northward will need to become unrealistically large to keep the parcel moving northward.
 
-However, as already mentioned, I'm not actually sure that this is a very good example. Firstly, it seems highly unrealistic to assume that the parcel conserves its angular momentum, given the fact that it must be pushed (presumably) by some force to travel poleward. Secondly, [UNDER CONSTRUCTION]
+Regardless of whether this is the best example, the general moral of the story is: there are conservation laws that constrain motion on rotating planets which are not present on non-rotating planets.
 
-Looking back, this should be seen as as cursory, highly unrealistic taste of the effect that stratification and rotation might have on dynamics. It won't be much of an exaggeration ot say that we'll spend most of GFD discussing the effects of rotation.
+Looking back, this should be seen as as cursory, highly unrealistic taste of the effect that rotation might have on dynamics. It won't be much of an exaggeration to say that we'll spend most of GFD discussing the effects of rotation.
 
 \chapter{The Equations of Motion}\label{EoM GFD}
 
@@ -677,15 +666,37 @@ We will now see that the equations of motion in general also look different if w
 
 This will be a bit convoluted, but we will introduce three coordinate systems, all of which rotate with the Earth\footnote{We've already dealt with the fact that the coordinate system is rotating in the previous section!}. For now we introduce the first two.
 
-First is the \textbf{global cartesian coordinate system}, with basis vectors pointing in the \(x',y',z'\) directions as shown in Figure \ref{LocCartes}. The origin is located at the centre of the Earth, and the basis vectors rotate with the Earth (i.e., they rotate with angular velocity \(\vec{\Omega}\)). The basis vectors do vary with time (as they're rotating with the Earth), but \textit{do not} vary with space. This is your classic 3D cartesian coordinate system.
+First is the \textbf{global cartesian coordinate system}, with basis vectors pointing in the \(x',y',z'\) directions as shown in Figure \ref{LocCartes}. The origin is located at the centre of the Earth, and the basis vectors rotate with the Earth (i.e., they rotate with angular velocity \(\vec{\Omega}\)). The basis vectors do vary with time (as they're rotating with the Earth), but \textit{do not} vary with space. This is your classic 3D cartesian coordinate system, and the equations of motion in this frame of reference are straightforwardly the \(x,y,\) and \(z\) components of Equation \ref{Navier Stokes Rotating}.
 
 Second, we introduce the \textbf{spherical coordinate system}. Again, the origin is located at the centre of the Earth, and the basis vectors rotate with the Earth (i.e., they rotate with angular velocity \(\vec{\Omega}\)). However, this time, the basis vectors also \textit{vary with space}. The basis vectors would be aligned with magenta arrows in Figure \ref{LocCartes} at that point, but they would not look like that at another point on the sphere! This is your classic 3D curvilinear spherical coordinate system.
 
-We identify the basis vectors 
+We identify the basis vectors \(\hat{r}\), \(\hat{\phi}\), \(\hat{\theta}\) as pointing in the radial (upward away from the centre of the Earth), northward, and eastward directions. Explicitly, they are given as follows (in matrix form for brevity):
+\begin{align*}
+    \left( \begin{array}{c}
+        \hat{r}
+        \\
+        \hat{\phi}
+        \\
+        \hat{\theta}
+    \end{array} \right)
+    =
+    \left( \begin{array}{ccc}
+        \sin\phi\cos\theta & \sin\phi\sin\theta & \cos\phi
+        \\
+        \cos\phi\cos\theta & \cos\phi\sin\theta & -\sin\phi
+        \\
+        -\sin\theta & -\cos\theta & 0
+    \end{array} \right)
+    \left( \begin{array}{c}
+        \hat{x}
+        \\
+        \hat{y}
+        \\
+        \hat{z}
+    \end{array} \right)
+\end{align*}
 
-
-We identify the basis vectors \(\hat{x}\), \(\hat{y}\), \(\hat{z}\) as pointing in the eastward, northward, and upward (away from the centre of the Earth) directions. In this coordinate
-
+[UNDER CONSTRUCTION]
 
 In this coordinate system, we define the position and velocity coordiates \((x,y,z)\) and \((u,v,w)\) as indicating distance and velocity in the east, north, and upwards directions, respectively. We also refer to the east-west direction as the \textbf{zonal} direction and the north-south direction as the \textbf{meridional} direction. We further identify the coordinates we will be using. \(r=\) the radial coordinate, identifying the distance from the centre of the Earth, \(\) 
 
@@ -1117,11 +1128,7 @@ If \(Ro\ll 1\) and all other forces are negligible, then rotation dominates dyna
 
     In other words, \textit{if} \(Ro\ll 1\), then we expect the system to be in geostrophic balance, but why is \(Ro\ll 1\) in the first place, and why would our atmosphere/ocean system tend towards a state such that \(Ro\ll 1\) holds? If we set \(Ro\ll 1\) \textit{a priori}, doesn't this mean we're putting in the answer by hand? Conversely, if we set \(Ro\ll 1\) \textit{a posteriori} (based on observations), then this seems like putting the cart before the horse: again, \(Ro\ll 1\) \textit{because} of the underlying equations of motion, not the other way around!
 
-    The answer lies in the phenomenon of \textbf{geostrophic adjustment}, which you can read about in Vallis' textbook on GFD \cite{Vallis}. The gist is this: anomalies and instabilities on a rotating planet cannot simply propagate away (e.g., via gravity flattening the surface of a fluid, for example) from the source to make the fluid more homogenous. It cannot because the fluid is on a rotating planet, and so must preserve some form of angular momentum.
-
-    As such, after anomalies begin propagating away, there will come a point (where the anomaly reaches the \hyperref[SW Def Radius Box]{Rossby Deformation Scale}) where it is deflected by the coriolis force, and the system evolves \textit{towards} geostrophic balance.
-
-    More details, again, can be found in Vallis' book.
+    % The answer lies in the phenomenon of \hyperref[Geostrophic Adjustment]{Geostrophic Adjustment}.
 } 
 
 \begin{fact}{Geostrophic Balance}{Geostrophic Box}\label{Geostrophic Box}
@@ -1341,7 +1348,9 @@ If we solve Equation \ref{GW Quadratic} directly, we find that \(u_h\) is given 
         -f \pm \sqrt{f^2 + \frac{4}{\rho r}\frac{\partial p}{\partial r}}
      \right)
 \end{align*}
-So it turns out that, generally, anticyclones (where \(\frac{\partial p}{\partial r}<0\)) really can't form in this simple model if \(\left|\frac{1}{\rho}\frac{\partial p}{\partial r}\right|>\frac{rf^2}{4}\), i.e., if the pressure gradient is too large, whereas there is no pressure gradient cap for cyclones. 
+So it turns out that, generally, anticyclones (where \(\frac{\partial p}{\partial r}<0\)) really can't form in this simple model if \(\left|\frac{1}{\rho}\frac{\partial p}{\partial r}\right|>\frac{rf^2}{4}\), i.e., if the pressure gradient is too large, whereas there is no pressure gradient cap for cyclones.
+
+A final note to say that if the \(fu_h\) term is small compared to the other terms then we have the centrifugal force balancing the pressure gradient force (or the pressure gradient sustaining the centripetal acceleration of the air parcel), and this is called \textbf{cyclostrophic balance}.
 
 \subsection{The Effects of Friction}
 
@@ -1432,22 +1441,18 @@ So the ageostrophic component points inwards! Sketching out \(\vec{u}_h\) is sho
     \label{f friction cyclone}
 \end{figure}
 
-As we can see then, the effects of friction cause the surface of cyclones to be horizontally convergent, while anticyclones are horizontally divergent. Since the fluid is approximately incompressible, there must be vertical ascent of air in cyclones and horizontal descent of air in anticyclones.
+As we can see then, the effects of friction imply that the surface of cyclones are horizontally convergent, while anticyclones are horizontally divergent. Since the fluid is approximately incompressible, there must be vertical ascent of air in cyclones and horizontal descent of air in anticyclones.
 
-In both cases, the dynamics forces vertcial ascent or descent of air parcels. 
+In both cases, the dynamics couples strongly with vertical ascent or descent of air parcels.
 
-In the former case, this can cause condensation, cloud formation, and therefore precipitation. It can also provide the energy needed to overcome \hyperref[Convection Box]{CIN} so that the parcels can access the \hyperref[Convection Box]{CAPE}. This is why cyclones are often associated with more unsettled weather.
+In the former case, this is associated with condensation, cloud formation, and therefore precipitation. It can also provide the energy needed to overcome \hyperref[Convection Box]{CIN} so that the parcels can access the \hyperref[Convection Box]{CAPE}. This is why cyclones are often associated with more unsettled weather.\footnote{You should notice that I am careful not to talk about causality here, and this should be a running theme throughout this chapter. We are examining \textit{diagnostic} relations that feature no time-derivatives, so it is very difficult to gain insight as to the dynamics and causality under this framework. It is just as easy to (naively) say (just because of the lack of information provided by this approach) that horizontal convergence leads to vertical ascent, or, that vertical ascent leads to horizontal convergence.}
 
-This is also an mechanism whereby cyclones and anti-cyclones are dissipated, but we
-
-[UNDER CONSTRUCTION]
+This is also an mechanism whereby cyclones and anti-cyclones are dissipated, but we're getting ahead of ourselves. If you are familiar with \hyperref[PV]{Potential Vorticity}, then vertical ascent/descent in cyclones/anti-cyclones leads to vortex squashing/stretching, which decreases/increases the relative vorticity which effectively spins down cyclones and anti-cyclones throughout the atmosphere.
 
 \section{Thermal Wind Balance}\label{s Thermal Wind}
 
 Now that we have covered the fundamental diagnostic relations of \hyperref[Hydrostatic GFD Box]{Hydrostatic Balance} and \hyperref[Geostrophic Box]{Geostrophic Balance}, we now aim to put these two pieces of information together to find a relation between the horizontal velocity \(\vec{u}_h\) and the temperature in an ideal gas atmosphere.\footnote{
     I should note that when oceanographers refer to the `\textbf{thermal wind relation}', they do not require the fluid to follow the ideal gas equation of state. This should be expected, as seawater has a different, horribly complicated equation of state. As such, the `\textbf{thermal wind relation}' is often written as a relation between the horizontal velocity \(\vec{u}_h\) and the density \(\rho\).
-
-    I should also note a further subtlety. Observationally, pressure is very difficult to measure. [UNDER CONSTRUCTION]
 }
 
 We begin with Equations \ref{Hydrostatic Ideal Gas} and \ref{Geostrophic Ideal Gas} expressing respectively hydrostatic and geostrophic balance for an ideal gas. We first take the partial derivative with respect to \(z\) of Equation \ref{Geostrophic Ideal Gas}:
@@ -1539,7 +1544,7 @@ Written out, each component of \(\vec{u}_h=(u,v)^T\) is as follows:
     \end{align}
 \end{minipage}
 
-\vspace{2mm}The physical interpretation is as follows: if the system is approximately both \hyperref[Geostrophic Box]{Geostrophic} and \hyperref[Hydrostatic GFD Box]{Hydrostatic}, and obeys ideal gas law, then horizontal temperature gradients imply vertical velocity gradients (and vice versa).
+\vspace{2mm}The physical interpretation is as follows: if the system is approximately both \hyperref[Geostrophic Box]{Geostrophic} and \hyperref[Hydrostatic GFD Box]{Hydrostatic}, and obeys ideal gas law, then horizontal temperature gradients imply vertical velocity gradients (and vice versa). Another name for vertical velocity gradients is vertical wind shear.
 
 Let us now consider the vertical component of the vorticity. Recall that the voriticity is defined as follows: \(\vec{\omega}=\vec{\nabla}\times\vec{u}\). Therefore the vertical component is given by: \([\vec{\omega}]_z=\xi=\frac{\partial v}{\partial x}-\frac{\partial u}{\partial y}\). If we differentiate Equations \ref{u Thermal} and \ref{v Thermal} with respect to \(y\) and \(x\) (respectively), then subtract them we can find an equation governing \(\xi\):
 \begin{align}
@@ -1569,29 +1574,7 @@ This might make more sense with a concrete example. Suppose that we have a blob 
 
 If you wan't to think of this in terms of curvature, since the temperature decreases then increases again when you pass through this cold blob, this implies that the temperature field \(T(\vec{r})\) must be curved.  
 
-Using Equation \ref{Thermal Wind Vorticity} \(\vec{\nabla}_h^2 T>0\) therefore implies that \(\frac{\partial \xi}{\partial z}>0\) (in the northern hemisphere), therefore the vertical vorticity increases with height in this cold blob! Vice versa for a hot blob in the northern hemisphere: in a hot blob will have vorticity decreasing with height.
-
-\section{Incompressibility (Approximate Mass Conservation)}
-
-I should strongly emphasise that this approximation can only reasonably apply to either the ocean, or to thin layers of the atmosphere. 
-
-If the mass of a fluid element is conserved following the flow (i.e., \(\frac{D\rho}{Dt}=0\) holds) then, by Equation \ref{Mass Conservation}, \(\vec{\nabla}\cdot\vec{u}=0\) also holds. We say that this fluid is \textbf{incompressible}: every bit of fluid that enters some volume must also leave.
-
-We will end up assuming that \(\vec{\nabla}\cdot\vec{u}=0\). Note that this should seem, to you, a \textbf{highly} dubious assumption. First, we know that sound waves are possible (after all we can hear, both on land and in water), but sound waves are impossible in an incompressible fluid. Second, and more importantly, we know that the atmosphere is approximately an ideal gas, which can have its density changed if warmed or cooled. For the ocean, we know that temperature, salinity, and pressure all change the density of seawater.
-
-More explicitly, in the former case, we know that \(\frac{D\rho}{Dt}\neq 0\) for a rising or falling air parcel, because it will follow the \hyperref[Dry Adiabat Box]{Dry Adiabat Box} and change its density accordingly!
-
-However, we are justified to make this approximation if we assume that density variations \(\delta p = \delta p (x,y,z,t)\) are much smaller than the background density \(\rho_0\). We therefore assume that the following relation holds.
-
-\begin{fact}{Incompressibility}
-    If density variations are small in a fluid
-    \begin{align}
-        \BOX{\vec{\nabla}\cdot \vec{u}=0}\label{Incompressibility}
-    \end{align}
-    [UNDER CONSTRUCTION]
-\end{fact}
-
-However, I should emphasise that this does \textit{not} imply that \(\frac{D\rho}{Dt} = \frac{D\delta \rho}{Dt} = 0\) (but it also doesn't prohibit it), and that this is actually a pretty bad approximation for the atmosphere. More discussion is in the Appendix in the section regarding the \hyperref[Appendix Thermodynamic Eqn]{Thermodynamic Equation}.
+Using Equation \ref{Thermal Wind Vorticity} \(\vec{\nabla}_h^2 T>0\) therefore implies that \(\frac{\partial \xi}{\partial z}>0\) (in the northern hemisphere), therefore the vertical vorticity increases with height in this cold blob! Vice versa for a hot blob in the northern hemisphere: in a hot blob will have vorticity decreasing with height. A cyclone with a cold core (the storms we tend to get in the UK) then will have its vorticity increase with height, having stronger winds the higher you go, while a cyclone with a hot core (tropical cyclones/hurricanes that we don't tend to get in the UK) will have its vorticity decrease with height.
 
 \section{Pressure Coordinates}\label{Pressure Coords}
 \subsection{Partial Derivative Identities}
@@ -1898,7 +1881,11 @@ Our first tool to consider time-dependent changes is the shallow water system. W
 
 We now aim to derive these equations from three primitive (approximate) equations: the horizontal momentum equation (\ref{Horizontal Approximate}), the vertical momentum equation (\ref{Vertical Approximate}), and mass conservation (\ref{Mass Conservation}). First, we neglect all vertical and horizontal forces \(F_z\) and \(\vec{F}_h\) (e.g. neglect friction) other than gravity and pressure gradient forces.
 
-Second, we assume that the density is constant \(\rho=\rho_0\) for all time and at all points. This immediately implies (from Equation \ref{Mass Conservation}) that the system must be incompressible, so we know that Equation \ref{Incompressibility} holds.
+Second, we assume that the density is constant \(\rho=\rho_0\) for all time and at all points. This immediately implies (from Equation \ref{Mass Conservation}) that the \(\frac{D\rho}{Dt}\) term vanishes, so Equation \ref{Mass Conservation} turns into:
+\begin{align}
+    \label{Incompressibility}
+    \vec{\nabla}\cdot\vec{u}=0
+\end{align}
 
 Third, we assume that the system is \textbf{shallow}: \(H/L\ll 1\) where \(H\) is the vertical lengthscale and \(L\) is the horizontal lengthscale. If we estimate the size of the terms in \ref{Incompressibility}, we derive that the vertical velocity scale \(W\) is much smaller than the horizontal velocity scale \(U\): \(W\ll U\):
 \begin{align*}
@@ -2173,14 +2160,14 @@ However, the Earth is never in perfect balance, and perturbations and anomalies 
 
 In this course, we analyse how systems respond to these anomalies by looking only for wave-like solutions: we plug in a solution that is proportional to \(\exp(i(\vec{k}\cdot\vec{x}-\omega t))\), where \(\vec{k}=(k_x,k_y,k_z)^T\in\mathbb{R}^3\) is the angular wavevector (the vector analogue of the wavenumber – refer to Section \ref{F, W, W} if you've forgotton what a wavenumber is) and \(\omega\) is the angular frequency.
 
-The justification for plugging in this somewhat convoluted function is as follows. Practically, we want a function that is simple enough such that the solution is easy to interpret. However, we also want a function complicated enough such that it can encode certain spatial and time dependencies. This is why we pick the exponential function, which is simple, which depends on a linear sum of space and time, which. More fundamentally, any function\footnote{I think, please correct my maths if it's bad.} can be approximated by an infinite sum of periodic complex function like \(\exp(i(\vec{k}\cdot\vec{x}-\omega t))\) – we assume that these can be accurately approximated by a large enough sum.
+The justification for plugging in this somewhat convoluted function is as follows. Practically, we want a function that is simple enough such that the solution is easy to interpret. However, we also want a function complicated enough such that it can encode certain spatial and time dependencies. This is why we pick the exponential function: it is simple but also encodes some spatial and temporal dependence. More fundamentally, any function\footnote{I think, please correct my maths if it's bad.} can be approximated by an infinite sum of periodic complex functions like \(\exp(i(\vec{k}\cdot\vec{x}-\omega t))\) -- we assume that these can be accurately approximated by a large enough sum.
 
 In practice, though, you can just keep this in the back of your mind, and you'll mostly just be plugging in \(\exp(i(\vec{k}\cdot\vec{x}-\omega t))\) into the equations of motion. After plugging these in, we will find that \(\vec{k}\) and \(\omega\) are constrained by these equations, and solving for this constraint gives us a \textbf{Dispersion Relation}:
 \begin{align*}
     \omega=\omega(\vec{k})
 \end{align*} 
 
-In other words, the frequency with which the perturbation oscillates is set by the spatial scale (or vice versa). This will give us valuable information regarding how these waves propogate. Furthermore, we expect the anomalies that generate/excite these waves to have a similar timescale/lengthscale based on general principles of how waves resonate. However, again, this is just a very cursory approximation. We know (e.g., from turbulence for example – think Kolmogorov's \(k^{-\frac{5}{3}}\) kinetic energy spectrum\footnote{As always, the atmosphere/oceans are far more complicated than this due at least in part to the presence of rotation. See Vallis \cite{Vallis} Ch. 12.}) that energy can propogate from one lengthscale to another.
+In other words, the frequency with which the perturbation oscillates is set by the spatial scale (or vice versa). This will give us valuable information regarding how these waves propogate. Furthermore, we expect the anomalies that generate/excite these waves to have a similar timescale/lengthscale based on general principles of how waves resonate. However, again, this is just a very cursory approximation. We know (e.g., from turbulence for example – think Kolmogorov's \(k^{-\frac{5}{3}}\) kinetic energy spectrum\footnote{As always, the atmosphere/oceans are far more complicated than this due at least in part to the presence of rotation. See Vallis \cite{Vallis} Ch. 12.}) that energy can propogate from one lengthscale to another. We also won't be studying wave-mean flow interaction here.
 
 \subsection{The wave-vector and the angular frequency}
 
@@ -2387,7 +2374,7 @@ Having made this simplification, we can make two further simplifications. First,
     We can make this simplification without loss of generality because fo the following reason: the shallow water system with an \(f-\)plane approximation is isotropic in the \(x,y\), plane, so, for any wave-vector \(\vec{k}=(k,l)^T\) we can just rotate the coordinate system to align with the \(k\) vector and the dynamics remain unchanged. As such, we can set \(l=0\), because for any wave with a non-zero \(l\), we can just reorient our coordinate system such that our \(x\)-axis aligns with the wavevector \(\vec{k}\) so that \(l=0\).
 }. Second, we only consider the \(\omega>0\) solution. There is a difference between the \(\omega>0\) and \(\omega<0\) solution, but this isn't too relevant to what we wish to discuss (Exercise: solve for \(u_0\), \(v_0\) in terms of \(\eta_0\) and show that the sign of \(\omega\) affects this).
 
-\subsection{Interpretation}
+\subsection{Interpretation: Dispersion Relation, Phase/Group Velocities, and Long/Short-Wave Limits}
 
 With our simplifications, our dispersion relation looks like this:
 
@@ -2487,6 +2474,8 @@ Again, recalling that energy propagates at the group velocity, we can conclude t
 To explain this, let us consider the mechanism for how this wave sustains itself. In this limit, rotation is dominant. Suppose, again, that there is some surface height \(\eta'\) anomaly. This, again, would imply that \(\vec{\nabla}_h\eta'\neq 0\), which by Equation \ref{SW Lin mom} would implies that \(f\vec{k}\times\vec{u}'\neq0\).
 
 Since \(c_g=0\), \textbf{long-wave} Poincaré waves cannot transport energy, so in general this will not be the mechanism for propagation of long length-scale anomalies. We must turn to other mechanisms to explain this.
+
+\subsection{Interpretation: Explicit Trajectories and Energetics}
 
 \subsubsection{Explicit Solutions: Fluid Parcel Trajectories}
 
@@ -2593,9 +2582,24 @@ Interestingly, \(\bar{PE}\) has no dependence on the actual spatial size of the 
 
 In the shortwave (gravity wave) limit, where \(c^2k^2\gg f^2\), we find that \(\frac{\bar{KE}}{\bar{PE}}\sim 1\) -- the energy is divided roughly evenly between the potential energy and the kinetic energy. Conversely, in the longwave (inertial oscillation) limit, where \(c^2k^2\ll f^2\), we find that \(\frac{\bar{KE}}{\bar{PE}}\gg 1\).
 
-Physically, hopefully, this makes sense. In the shortwave limit, the wave is effectively a gravity wave, and does not feel the effects of rotation at all. 
+Physically, hopefully, this makes sense. In the shortwave limit, the wave is effectively a gravity wave, and does not feel the effects of rotation at all. The energy in the perturbation is split equally between Kinetic and Potential (following Equipartition). In the longwave limit, the wave is effectively an inertial oscillation, and does not feel the effects of gravity at all. Since potential energy can really only be stored gravitationally in this model, the inertial oscillation has a much higher kinetic energy.
+
+The energy flux vector \(\vec{S}\) (from Equation \ref{SW Energy}) is given (in linearised form we throw away the \(u_h^2\) term) by the following:
+\begin{align*}
+    \vec{S}=\rho_0\,g\,H\,\vec{u}_h\,\eta
+\end{align*}
 
 [UNDER CONSTRUCTION]
+
+% \subsection{Geostrophic Adjustment}\label{Geostrophic Adjustment}
+
+[UNDER CONSTRUCTION]
+
+which you can read about in Vallis' textbook on GFD \cite{Vallis}. The gist is this: anomalies and instabilities on a rotating planet cannot simply propagate away (e.g., via gravity flattening the surface of a fluid, for example) from the source to make the fluid more homogenous. It cannot because the fluid is on a rotating planet, and so must preserve some form of angular momentum.
+
+As such, after anomalies begin propagating away, there will come a point (where the anomaly reaches the \hyperref[SW Def Radius Box]{Rossby Deformation Scale}) where it is deflected by the coriolis force, and the system evolves \textit{towards} geostrophic balance.
+
+More details, again, can be found in Vallis' book.
 
 \section{Rossby Waves}\label{s Rossby SW}
 
@@ -2939,7 +2943,9 @@ Now we aim to represent time-dependent 3D responses of the atmospheres and ocean
 
 \subsection{The Boussinesq Approximation and Linearisation}
 
-Before linearising the system, we first invoke the \textbf{Boussinesq Approximation}. The \textbf{Boussinesq Approximation} is an approximation on the density field \(\rho\). We first split the density field into three components that obey the following relations:
+Before linearising the system, we first invoke the \textbf{Boussinesq Approximation}. The \textbf{Boussinesq Approximation} is an approximation exploiting the fact that the density field \(\rho\) is very nearly constant\footnote{
+    At least in the ocean! For the atmosphere, the Anelastic Approximation is more suitable, and instead exploits the fact that the density field varies strongly only in the vertical (due to the Hydrostatic Relation).
+}. We first decompose the density field into three components that obey the following relations:
 \begin{align*}
     &\rho(\vec{r},t)=\rho_0 + \hat{\rho}(z) + \rho'(\vec{r},t)
     \\
@@ -2948,31 +2954,54 @@ Before linearising the system, we first invoke the \textbf{Boussinesq Approximat
     &\rho_0,\bar{\rho} \gg \hat{\rho}(z),\rho'(\vec{r},t)
 \end{align*}
 
-If we multiply Equations \ref{Horizontal Approximate} (Horizontal Momentum) and \ref{Vertical Approximate} (Vertical Momentum) by \(\rho\) and expand every instance of \(\rho\) as above, we obtain the following equations:
+If we write out Equations \ref{Vertical Approximate} (Vertical Momentum), \ref{Mass Conservation} (Mass Conservation), and \ref{Horizontal Approximate} (Horizontal Momentum), and expand every instance of \(\rho\) as above, we obtain the following equations:
 \begin{align*}
-    (\rho_0+\hat{\rho}+\rho'(\vec{r},t))\frac{D\vec{u}_h}{Dt}+(\rho_0+\hat{\rho}+\rho'(\vec{r},t))f\vec{k}\times\vec{u}_h + \vec{\nabla}_h p = 0
+    \frac{D}{Dt}\left( \hat{\rho}(z)+\rho'(\vec{r},t) \right)+(\rho_0+\hat{\rho}(z)+\rho'(\vec{r},t))\vec{\nabla}\cdot\vec{u}=0
     \\
-    (\rho_0+\hat{\rho}+\rho'(\vec{r},t))\frac{Dw}{Dt}
+    (\rho_0+\hat{\rho}(z)+\rho'(\vec{r},t))\frac{Dw}{Dt}
     +
-    (\rho_0+\hat{\rho}+\rho'(\vec{r},t))g + \frac{\partial p}{\partial z}= 0
+    (\rho_0+\hat{\rho}(z)+\rho'(\vec{r},t))g + \frac{\partial p}{\partial z}= 0
+    \\
+    (\rho_0+\hat{\rho}(z)+\rho'(\vec{r},t))\frac{D\vec{u}_h}{Dt}+(\rho_0+\hat{\rho}(z)+\rho'(\vec{r},t))f\vec{k}\times\vec{u}_h + \vec{\nabla}_h p = 0
 \end{align*}
 
-Recalling that \(\rho_0 \gg \hat{\rho}, \rho'\), but also recalling from our scale analysis in Section \ref{Scale Analysis} that \(g\) is large, we neglect \textit{all} variations in \(\rho\) in these equations other than when \(\rho\) is multiplied by \(g\). This gives us the Approximate Momentum Equations under the Boussinesq Approximation:
-\begin{align}
-    \label{H bous}
+Recalling that \(\rho_0 \gg \hat{\rho}, \rho'\), but also recalling from our scale analysis in Section \ref{Scale Analysis} that \(g\) is large, we neglect \textit{all} variations in \(\rho\) in these equations other than when \(\rho\) is multiplied by \(g\). This gives us the following set of Equations under the Boussinesq Approximation:
+% \footnote{
+%     If you look in other resources, you might see the Boussinesq Equations feature a buoyancy \(b\) term. I explain how these set of boxed equations link to the more commonly referred to Boussinesq Equations in this endnote.\endnote{
+%         Consider now the full momentum equation:
+%         \begin{align*}
+%             \frac{D\vec{u}_h}{Dt}+f\vec{k}\times\vec{u}_h + \frac{1}{\rho_0}\vec{\nabla} p + \frac{\rho}{\rho_0}g\vec{k}= 0
+%         \end{align*}
+%         We now decompose the pressure field as follows:
+%         \begin{align*}
+%             p(\vec{r},t)=p_0(z)+\delta p(\vec{r},t)
+%         \end{align*}
+        
+%     } 
+% }
+\begin{gather}
+    \label{M bous}
     \boxed{
-        \rho_0\frac{D\vec{u}_h}{Dt}+\rho_0f\vec{k}\times\vec{u}_h + \vec{\nabla}_h p = 0
+        \vec{\nabla}\cdot\vec{u}=0
     }
     \\
     \label{V bous}
     \boxed{\frac{Dw}{Dt}
     +
     \frac{\rho(\vec{r},t)}{\rho_0}g + \frac{\partial p}{\partial z}= 0}
-\end{align}
-Take note that we can define a spatially/temporally varying analogue of the \hyperref[RG Box]{reduced gravity} (in the shallow water system) \(g'=\frac{\rho(\vec{r},t)}{\rho_0}g\), which, by stipulation, is much smaller than \(g\). Furthermore, note that we did \textit{not} need to assume that \(\rho'\ll \hat{\rho}\) in deriving Equations \ref{H bous} and \ref{V bous}. However, we will now assume that \(\rho'\ll \hat{\rho}\) when we linearise the equations.
+    \\
+    \label{H bous}
+    \boxed{
+        \frac{D\vec{u}_h}{Dt}+f\vec{k}\times\vec{u}_h + \frac{1}{\rho_0}\vec{\nabla}_h p = 0
+    }
+\end{gather}
+The upshot of these equations is that all variation in density has disappeared except in Equation \ref{V bous} where density variations may couple with gravity. The \ref{M bous} and \ref{H bous} look very similar to a fluid with constant density, although there is a complication regarding Equation \ref{M bous} that I should mention here.\footnote{
+    Note that we derived Equation \ref{M bous} from Equation \ref{Mass Conservation}. However, Equation \ref{M bous} does \textit{not} allow us to turn around and (via direct substitution into Equation \ref{Mass Conservation}) imply that \(\frac{D\rho}{Dt} = \frac{D\delta \rho}{Dt} = 0\) (but it also doesn't prohibit it). More discussion is in the Appendix in the section regarding the \hyperref[Appendix Thermodynamic Eqn]{Thermodynamic Equation}.
+} Note that we did \textit{not} need to assume that \(\rho'\ll \hat{\rho}\) in deriving Equations \ref{M bous} - \ref{H bous}. However, we will now assume that \(\rho'\ll \hat{\rho}\) when we linearise the equations.
 
-We now, in analogy to how we derived the dispersion relation before, linearise the equations of motion. We linearise about a state of rest \(\vec{u}=0\)\footnote{Note now that \(\vec{U}\) is the 3-dimensional velocity, not just the horizontal velocity.} and a continuous (given) stratification \(\rho=\bar{\rho}(z)\) and pressure field \(p=\bar{p}(z)\).
+We now, in analogy to how we derived the dispersion relation before, linearise the equations of motion. We linearise about a state of rest \(\vec{u}=0\)\footnote{Note now that \(\vec{u}\) is the 3-dimensional velocity, not just the horizontal velocity.} and a continuous (given) stratification \(\rho=\bar{\rho}(z)\) and pressure field \(p=\bar{p}(z)\).
 
+\vspace{-4mm}
 \begin{minipage}{0.48\linewidth}
     \begin{align*}
         \vec{u}_h = \vec{0}+\vec{u}_h'\\
@@ -2992,26 +3021,27 @@ We now, in analogy to how we derived the dispersion relation before, linearise t
     \frac{d\bar{p}}{dz}=-\bar{\rho}g
 \end{align*}
 
-Which equations are we linearising? We linearise Equations \ref{H bous} (Horizontal Momentum), \ref{V bous} (Vertical Momentum), and \ref{Energy Equation} (Energy Equation). We will also use Equation \ref{Incompressibility} (Incompressibility), but this equation does not need to be linearised. This will give us, in total, 5 equations.
+Which equations are we linearising? We linearise Equations \ref{V bous} (Horizontal Momentum), \ref{H bous} (Vertical Momentum), and a version of Equation \ref{Energy Equation} (Energy Equation). We will also use Equation \ref{M bous} (Incompressibility), but this equation is already linear. This will give us, in total, 5 equations.
 
-Skipping over the details of linearisation, we derive the following linearised equations (Equation \ref{H bous} becomes \ref{H lin}, \ref{V bous} becomes \ref{V lin}, \ref{Incompressibility} is \ref{Incompressible GW}, and \ref{Energy Equation} becomes \ref{MC lin}\footnote{
+Skipping over the details of linearisation, we derive the following linearised equations (Equation \ref{M bous} is \ref{Incompressible GW}, and Equation \ref{V bous} becomes \ref{V lin}, \ref{H bous} becomes \ref{H lin}, and \ref{Energy Equation} becomes \ref{MC lin}\footnote{
     The details for this are a bit complicated. I'd honestly recommend ignoring this, but if you're interested I'd refer to either the Appendix on the \hyperref[Appendix Thermodynamic Eqn]{Thermodynamic Equation}, or, for a fuller account, to Vallis' textbook \cite{Vallis}.
  }):
 
+\vspace{-3mm}
 \begin{minipage}{0.48\linewidth}
     \begin{align}
-        \label{H lin}
-        \boxed{\rho_0\frac{\partial \vec{u}_h'}{\partial t}+\rho_0 f\vec{k}\times\vec{u}_h' +\vec{\nabla}_h p' =0}
+        \label{Incompressible GW}
+        \boxed{\vec{\nabla}\cdot\vec{u}=0}
         \\
         \label{V lin}
-        \boxed{\rho_0 \frac{\partial w'}{\partial t} + \rho' g +\frac{\partial p'}{\partial z}=0}
+        \boxed{\frac{\partial w'}{\partial t} + \frac{\rho'}{\rho_0} g +\frac{1}{\rho_0}\frac{\partial p'}{\partial z}=0}
     \end{align}
 \end{minipage}
 \hfill
 \begin{minipage}{0.48\linewidth}
     \begin{align}
-        \label{Incompressible GW}
-        \boxed{\vec{\nabla}\cdot\vec{u}=0}
+        \label{H lin}
+        \boxed{\frac{\partial \vec{u}_h'}{\partial t}+f\vec{k}\times\vec{u}_h' +\frac{1}{\rho_0}\vec{\nabla}_h p' =0}
         \\
         \label{MC lin}
         \boxed{\frac{\partial \rho'}{\partial t} + w \frac{\partial \bar{\rho}}{\partial z}=0}
@@ -3019,6 +3049,8 @@ Skipping over the details of linearisation, we derive the following linearised e
 \end{minipage}
 
 \vspace{2mm} We thus have five linear equations governing five variables: \(u\), \(v\), \(w\), \(\rho\), and \(p\) (I'm being lazy and have dropped the primes (the \('\)'s) for brevity). Note that \(\bar{\rho}\) is a given background density field: you do not have to solve for this.
+
+As an aside, note that we can define a spatially/temporally varying analogue of the \hyperref[RG Box]{reduced gravity} (in the shallow water system) \(g'=\frac{\rho'}{\rho_0}g\), which, by stipulation, is much smaller than \(g\).
 
 \subsection{Aside: Buoyancy Oscillations}
 
@@ -3034,6 +3066,7 @@ This solutions describes columns of air (since \(\frac{\partial w}{\partial z}=0
 
 We now derive the dispersion relation for internal gravity waves. Tim derives the dispersion relation slightly different to how I personally prefer to derive it. As before, Tim's method is more general, but my method (in my humble opinion) is a bit easier to remember and churn out in an exam. I won't go through the details because they are straightforward. I encourage the reader to derive the equations themselves. The method is analogous to our derivation of the dispersion relation for \hyperref[2D Poincare]{Poincaré Waves}: we set each variable proportional to an exponential function as follows:
 
+\vspace{-3mm}
 \begin{minipage}{0.48\linewidth}
     \begin{align*}
         \vec{u}_h = \vec{u}_0 \exp \left( ikx + ily + imz - i\omega t \right)
