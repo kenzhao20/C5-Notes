@@ -167,8 +167,6 @@ Broadly, the curl measures the local rotation of the \textbf{vector field}. More
     Another way to look at it is follows: if the curl points out of the page towards you, the rotation is anti-clockwise.
 }, and the magnitude of the vector denotes how much local rotation there is at this point.
 
-Note crucially that this only measures the \textbf{local} rotation, not the global rotation. The example often given to explain this distinction is a paddleboard: consider a very small paddleboard suspended in a fluid with a velocity field \(\vec{u}(\vec{r})\). The paddleboard is pushed around by the flow. The curl of \(\vec{u}\) encodes whether the paddleboard itself will turn, not whether it will follow a circular path.
-
 \begin{figure}[H]
     \centering
     \begin{subfigure}{0.45\linewidth}
@@ -220,16 +218,18 @@ Note crucially that this only measures the \textbf{local} rotation, not the glob
     \caption{Paddleboard (\textcolor{mymagenta}{magenta triangle \rule{0.2cm}{0.2cm}}) demonstration of curl. The \textcolor{mydarkblue}{Dotted Blue Arrow \rule{0.2cm}{0.2cm}} indicates the direction of time evolution (the paddleboard is being advected by the velocity field \(\vec{u}(\vec{r})\)).}
 \end{figure}
 
+Note crucially that this only measures the \textbf{local} rotation, not the global rotation. The example often given to explain this distinction is a paddleboard: consider a very small paddleboard suspended in a fluid with a velocity field \(\vec{u}(\vec{r})\). The paddleboard is pushed around by the flow. The curl of \(\vec{u}\) encodes whether the paddleboard itself will turn, not whether it will follow a circular path.
+
 \subsection{The Divergence}
 
 We can only take the divergence of a \textbf{vector field}, and the divergence is always a \textbf{scalar field}.
 
-Broadly, the divergence measures the local `spreading out' properties of a \textbf{vector field}. More specifically, at each point in space and time, the value of the divergence is a scalar that is larger the more 
+Broadly, the divergence measures the local `spreading out' properties of a \textbf{vector field}; the higher the divergence, the more the vector field is `spreading out' at that point. 
 
 I find the divergence theorem explains divergence the easiest:
 \begin{align}
     \label{Div Thm}
-    \iiint_v \vec{\nabla}\cdot \vec{u} \,dV \equiv \iint_s \vec{u}\cdot d\vec{S}
+    \iiint_v \vec{\nabla}\cdot \vec{u} \,dV = \iint_s \vec{u}\cdot d\vec{S}
 \end{align}
 where \(v\) and \(s\) denote that we integrate over the volume and surface, respectively, of some closed 3D blob (closed means there are no holes on the blob). 
 
@@ -310,7 +310,7 @@ Second, we introduce the \hyperref[Material Derivative]{Material Derivative}\foo
             \textcolor{mymagenta}{\vec{u}\cdot\vec{\nabla}}}_{\textcolor{mymagenta}{\text{Advection}}}
     \label{Material Derivative}
 \end{align}
-The \hyperref[Material Derivative]{Material Derivative} of a quantity is the time-derivative of a quantity \textit{following a fluid element}.\footnote{
+The Material Derivative of a quantity is the time-derivative of a quantity \textit{following a fluid element}.\footnote{
     More specifically, this quantity \(A\) \textit{must} be a `per unit mass' quantity. This is because the following relation holds:
     \begin{align*}
         \frac{D}{Dt}\int_V \rho\,A \, dV = \int_V \rho \,\frac{DA}{Dt} \, dV
@@ -423,12 +423,21 @@ Let us then consider a extremely simple model of this: \textbf{Hadley's Model}\f
 \begin{figure}[H]
     \centering
     \begin{tikzpicture}
+        \node[] at (0,5.3) {North Pole};
+        \node[] at (5.8,0.3) {Equator};
+        \node[] at (5,-0.3) {Top of Atmosphere};
+        \node[] at (-0.8,3) {Ground};
         \draw (0,0) -- (5,0) arc[start angle=0, end angle=90, radius=5cm] -- cycle;
-        %\draw (5,0) -- (0,0) -- (0,5);
         \draw (0,0) -- (3,0) arc[start angle=0, end angle=90, radius=3cm] -- cycle;
+        \draw[ultra thick,mymagenta,->] (4,0.3) .. controls +(0.7,0) and +(0.5,-0.5) .. (3.3,3.3);
+        \draw[ultra thick,mymagenta,->] (3.3,3.3) .. controls +(-0.5,0.5) and +(0,0.7) .. (0.3,4);
+        \draw[ultra thick,mymagenta,->] (0.3,4) .. controls +(0,-0.7) and +(-0.5,0.5) .. (2.5,2.5);
+        \draw[ultra thick,mymagenta,->] (2.5,2.5) .. controls +(0.5,-0.5) and +(-0.7,0) .. (4,0.3);
+        % \draw[thick,mymagenta,->] (4,0.3) -- (3.3,3.3) -- (0.3,4) -- (2.5,2.5) -- cycle;
+        % \draw[thick,->] (p0) .. controls +(0,1) and +(1,0) .. (LFC);
         %\draw (3,0) -- (0,0) -- (0,3);
     \end{tikzpicture}
-    \caption{Convection Cell: [FIGURE UNDER CONSTRUCTION]}
+    \caption{Hadley's Convection Cell Model: heat is transported poleward by air parcels which are heated near the equator, rise, then flow poleward, before sinking and flowing southward to complete the loop. As the air parcels flow north/southward, they acquire a zonal velocity due to the rotation of the Earth.}
 \end{figure}
 
 Let us consider a fluid parcel in this convection cell. We assume that this fluid parcel starts out at the equator at rest (relative to the surface of the Earth) and moves north. We also assume that there are no zonal forces (i.e., no east-west forces) acting on the fluid parcel (this is a highly unrealistic assumption)! We further assume that the radius of the Earth \(a\) is much larger than the height of the fluid parcel above the Earth.
@@ -449,7 +458,7 @@ As the air parcel moves north (as \(\phi\) increases), the zonal velocity \(u\) 
 
 Of course, this model is highly unrealistic. Firstly, it predicts that \(u\to\infty\) at \(\cos\phi\to\pi/2\), which is clearly unphysical. Secondly, from observations, we pretty much never observe \(u\geq\qty{150}{\metre\per\second}\), so the model fails much earlier than \(u\to\infty\). In reality, our assumption that there were no zonal forces was a very inaccurate assumption: as horizontal velocities become arbitrarily large, these induce large shears (a shear is when a layer of stuff (e.g., air) is sliding over another layer of stuff (e.g., air)), which in turn induce large forces either from viscous or turbulent eddy stresses.\footnote{For a cursory look at the effect of vertical stresses, refer to this section on \hyperref[Ekman Transport]{Ekman Transport}!}
 
-That being said, I'm not sure this is the key reason why the model fails. The main issue (I think) is the fact that the air parcel moving East will generate forces (see Equation \ref{Horizontal Approximate}) that will act to deflect the parcel back equatorward. To keep the balance, the force that moves the parcel northward will need to become unrealistically large to keep the parcel moving northward.
+That being said, I'm not sure this is the key reason why the model fails. The main issue (I think) is the fact that the air parcel moving East will generate forces (see Equation \ref{Horizontal Approximate}) that will act to deflect the parcel back equatorward. To keep the balance, the force that moves the parcel northward will need to become unrealistically large to keep the parcel moving northward. If the parcel were truly to conserve its angular momentum, it would trace out inertial oscillations (see the long-wave limit in Section \ref{2D Poincare})!
 
 Regardless of whether this is the best example, the general moral of the story is: there are conservation laws that constrain motion on rotating planets which are not present on non-rotating planets.
 
@@ -488,7 +497,7 @@ However, the equations are currently not fit for purpose. First, these equations
 
 Second, these equations are currently too complicated to be analytically tractable. We will make various approximations later to simplify the equations of motion, however we should note that many of the terms we neglect cannot be neglected in a weather forecast or climate model.
 
-\section{Transforming the Equations of Motion}\label{s Transforming EoM}
+\section{Transforming Coordinate Systems}\label{s Transforming EoM}
 
 \subsection{Time-Dependent Coordinate Systems: Rotating Coordinate Systems}\label{ss Rotating}
 
@@ -658,34 +667,163 @@ We can now rewrite Equation \ref{Navier Stokes} to apply to a rotating coordinat
 
 Finally, I should note that Equations \ref{Mass Conservation Intro} - \ref{EoS} remain unchanged in a rotating coordinate system (although the individual terms may look different, the differences all cancel out in the end).
 
-\subsection{Space-Dependent Coordinate Systems: A Spherical Coordinate System}\label{s Local Cartesian Coordinates}
+\subsection{Space-Dependent Coordinate Systems Pt. 1: Spherical Coordinate System}\label{s Spherical Coordinates}
 
 We have just seen that the momentum budget equation (Equation \ref{Navier Stokes Rotating}) looks substantially different if we use a coordinate system which varies with time. More specifically, for a rotating coordinate system, centrifugal and coriolis forces appear.
 
 We will now see that the equations of motion in general also look different if we use a coordinate system which varies with space.
 
-This will be a bit convoluted, but we will introduce three coordinate systems, all of which rotate with the Earth\footnote{We've already dealt with the fact that the coordinate system is rotating in the previous section!}. For now we introduce the first two.
+This will be a bit convoluted, but we will introduce three coordinate systems, all of which rotate with the Earth\footnote{We've already dealt with the fact that the coordinate system is rotating in the previous section!}. In this section (\hyperref[s Spherical Coordinates]{Space-Dependent Coordinate Systems Pt. 1}) we will introduce the first two. We will only introduce the third coordinate system in \hyperref[s Local Cartesian Coordinates]{Space-Dependent Coordinate Systems Pt. 2}
 
 First is the \textbf{global cartesian coordinate system}, with basis vectors pointing in the \(x',y',z'\) directions as shown in Figure \ref{LocCartes}. The origin is located at the centre of the Earth, and the basis vectors rotate with the Earth (i.e., they rotate with angular velocity \(\vec{\Omega}\)). The basis vectors do vary with time (as they're rotating with the Earth), but \textit{do not} vary with space. This is your classic 3D cartesian coordinate system, and the equations of motion in this frame of reference are straightforwardly the \(x,y,\) and \(z\) components of Equation \ref{Navier Stokes Rotating}.
 
 Second, we introduce the \textbf{spherical coordinate system}. Again, the origin is located at the centre of the Earth, and the basis vectors rotate with the Earth (i.e., they rotate with angular velocity \(\vec{\Omega}\)). However, this time, the basis vectors also \textit{vary with space}. The basis vectors would be aligned with magenta arrows in Figure \ref{LocCartes} at that point, but they would not look like that at another point on the sphere! This is your classic 3D curvilinear spherical coordinate system.
 
-We identify the basis vectors \(\hat{r}\), \(\hat{\phi}\), \(\hat{\theta}\) as pointing in the radial (upward away from the centre of the Earth), northward, and eastward directions. Explicitly, they are given as follows (in matrix form for brevity):
+\begin{figure}[H]
+    \centering
+    \scalebox{1.4}{
+    \begin{tikzpicture},
+        \begin{scope}[3d view={110}{25.26}]
+            % Lambda Arc
+            \draw (0,0) -- (3,0) arc[start angle=0, end angle=90, radius=3cm] -- cycle;
+            % \drawfill[->,fill=myyellow] (0,0) -- (0.7,0.7) arc[start angle=0, end angle=225, radius=1cm] -- (0,0);
+        \end{scope}
+        \begin{scope}[3d view={110}{25.26}]
+            % Global Cartesian Coordinate System
+            \draw[->,opacity=0.7] (0,0,0) -- (2,0,0) node[anchor=north] {\(x'\)};
+            \draw[->,opacity=0.7] (0,0,0) -- (0,2,0) node[anchor=north] {\(y'\)};
+            \draw[->,opacity=0.7] (0,0,0) -- (0,0,2) node[anchor=north west] {\(z'\)};
+            %Global Cartesian Basis Vectors
+            \draw[->,opacity=0.7,mydarkblue, thick] (0,0,0) -- (0.5,0,0) node[anchor=north] {\(\hat{x}'\)};
+            \draw[->,opacity=0.7,mydarkblue, thick] (0,0,0) -- (0,0.5,0) node[anchor=north] {\(\hat{y}'\)};
+            \draw[->,opacity=0.7,mydarkblue, thick] (0,0,0) -- (0,0,0.5) node[anchor=west] {\(\hat{z}'\)};
+        \end{scope}
+        \begin{scope}[3d view={140}{25.26}]
+            % Circle in x-y plane
+            \draw[-,dashed] plot[domain=0:400,samples=41,smooth]({2*sin(\x)},{2*cos(\x)},{0});
+            % Circle in x, z plane
+            \draw[-,dashed] plot[domain=0:400,samples=41,smooth]({2*cos(0)*sin(\x)},{2*sin(0)*sin(\x)},{2*cos(\x)});
+            % Circle at top
+            \draw[-,dashed] plot[domain=0:360,samples=41,smooth]({1.414*sin(\x)},{1.414*cos(\x)},{1.414});
+            %Spherical Basis Vectors
+            \coordinate (A) at (1.414,0,1.414);
+            \draw[-] (0,0,0) -- (A);
+            \draw[->,thick,mymagenta] (A) -- ++(-0.3536,0,0.3536);
+            \draw[->,thick,mymagenta] (A) -- ++ (0,0.5,0);
+            \draw[->,thick,mymagenta] (A) -- ++ (0.3536,0,0.3536);
+            %\filldraw[fill=myorange,opacity=0.5] (1,0,0) .. controls +(0,0,0.8) and +(0.5,0.2,0) .. (0.7071,0,0.7071) -- (0,0,0);
+            %Phi Arc
+            % \filldraw[fill=myorange,opacity=0.5] (0,0,0) -- (0.7071,0,0.7071) arc[start angle=45, end angle=0, radius=1cm] -- cycle;
+            \filldraw[fill=myorange,opacity=0.5] (1,0,0) .. controls +(0,0,0.5) and +(0.1,0,-0.1) .. (0.7071,0,0.7071) -- (0,0,0) -- cycle;
+            %Lambda Arc
+            \filldraw[fill=myyellow,opacity=0.5] (1,0,0) .. controls +(0,0.5,0) and +(0.1,0.1,0) .. (0.866,0.5,0) -- (0,0,0) -- cycle;
+        \end{scope}
+        \begin{scope}
+            %Big circle on outside
+            \draw[-,dashed] plot[domain=0:400,samples=41,smooth]({2*sin(\x)},{2*cos(\x)});
+            %Basis vector lables
+            \node[mymagenta] at (-1.05,1.45) {\(\hat{\phi}\)};
+            \node[mymagenta] at (-0.65,1.1) {\(\hat{\lambda}\)};
+            \node[mymagenta] at (-1.5,0.95) {\(\hat{r}\)};
+            %Coordinate labels
+            \node at (-0.45,0.08) {\(\phi\)};
+            \node at (-0.4,-0.22) {\(\lambda\)};
+            \node at (-0.3,0.5) {\(r\)};
+        \end{scope}
+    \end{tikzpicture}}
+    \hspace{2cm}
+    \scalebox{1.4}{
+    \begin{tikzpicture},
+        \begin{scope}[3d view={110}{25.26}]
+            % Global Cartesian Coordinate System
+            \draw[->,opacity=0.7] (0,0,0) -- (2,0,0) node[anchor=north] {\(x'\)};
+            \draw[->,opacity=0.7] (0,0,0) -- (0,2,0) node[anchor=north] {\(y'\)};
+            \draw[->,opacity=0.7] (0,0,0) -- (0,0,2) node[anchor=north west] {\(z'\)};
+            %Global Cartesian Basis Vectors
+            \draw[->,opacity=0.7,mydarkblue, thick] (0,0,0) -- (0.5,0,0) node[anchor=north] {\(\hat{x}'\)};
+            \draw[->,opacity=0.7,mydarkblue, thick] (0,0,0) -- (0,0.5,0) node[anchor=north] {\(\hat{y}'\)};
+            \draw[->,opacity=0.7,mydarkblue, thick] (0,0,0) -- (0,0,0.5) node[anchor=west] {\(\hat{z}'\)};
+        \end{scope}
+        \begin{scope}[3d view={0}{25.26}]
+            % Circle in x-y plane
+            \draw[-,dashed] plot[domain=0:400,samples=41,smooth]({2*sin(\x)},{2*cos(\x)},{0});
+            % Circle in x, z plane
+            \draw[-,dashed] plot[domain=0:400,samples=41,smooth]({2*cos(0)*sin(\x)},{2*sin(0)*sin(\x)},{2*cos(\x)});
+            % Circle at top
+            \draw[-,dashed] plot[domain=0:360,samples=41,smooth]({1.414*sin(\x)},{1.414*cos(\x)},{-1.414});
+            %Spherical Basis Vectors
+            \coordinate (A) at (1.414,0,-1.414);
+            \draw[-] (0,0,0) -- (A);
+            \draw[->,thick,mymagenta] (A) -- ++(0.3536,0,0.3536);
+            \draw[->,thick,mymagenta] (A) -- ++ (0,0.5,0);
+            \draw[->,thick,mymagenta] (A) -- ++ (0.3536,0,-0.3536);
+            %\filldraw[fill=myorange,opacity=0.5] (1,0,0) .. controls +(0,0,0.8) and +(0.5,0.2,0) .. (0.7071,0,0.7071) -- (0,0,0);
+            %Phi Arc
+            % \filldraw[fill=myorange,opacity=0.5] (0,0,0) -- (0.7071,0,0.7071) arc[start angle=45, end angle=0, radius=1cm] -- cycle;
+            \filldraw[fill=myorange,opacity=0.5] (1,0,0) .. controls +(0,0,-0.5) and +(0.1,0,0.1) .. (0.7071,0,-0.7071) -- (0,0,0) -- cycle;
+            %Lambda Arc
+            \filldraw[fill=myyellow,opacity=0.5] (1,0,0) .. controls +(0,0.5,0) and +(0.1,0.1,0) .. (0.866,0.5,0) -- (0,0,0) -- cycle;
+        \end{scope}
+        \begin{scope}
+            %Big circle on outside
+            \draw[-,dashed] plot[domain=0:400,samples=41,smooth]({2*sin(\x)},{2*cos(\x)});
+            %Basis vector lables
+            \node[mymagenta] at (-1.05,1.45) {\(\hat{\phi}\)};
+            \node[mymagenta] at (-0.65,1.1) {\(\hat{\lambda}\)};
+            \node[mymagenta] at (-1.5,0.95) {\(\hat{r}\)};
+            %Coordinate labels
+            \node at (-0.45,0.08) {\(\phi\)};
+            \node at (-0.4,-0.22) {\(\lambda\)};
+            \node at (-0.3,0.5) {\(r\)};
+        \end{scope}
+    \end{tikzpicture}
+    % \begin{tikzpicture},
+    %     \begin{scope}[3d view={125}{25.26}]
+    %         \draw[->,opacity=0.7] (0,0,0) -- (1.5,0,0) node[anchor=north east] {\(x'\)};
+    %         \draw[->,opacity=0.7] (0,0,0) -- (0,1.5,0) node[anchor=north] {\(y'\)};
+    %         \draw[->,opacity=0.7] (0,0,0) -- (0,0,1.5) node[anchor=north west] {\(z'\)};
+    %         \draw[-,dashed] plot[domain=0:400,samples=41,smooth]({1.5*sin(\x)},{1.5*cos(\x)},{0});
+    %         \draw[-,dashed] plot[domain=0:400,samples=41,smooth]({1.5*cos(0)*sin(\x)},{1.5*sin(0)*sin(\x)},{1.5*cos(\x)});
+    %         \draw[-,dashed] plot[domain=0:360,samples=41,smooth]({1.0607*sin(\x)},{1.0607*cos(\x)},{1.0607});
+    %         \coordinate (A) at (1.0607,0,1.0607);
+    %         \draw[-] (0,0,0) -- (A);
+    %         \draw[->,thick,mymagenta] (A) -- (0.7071,0,1.414);
+    %         \draw[->,thick,mymagenta] (A) -- (1.0607,0.5,1.0607);
+    %         \draw[->,thick,mymagenta] (A) -- (1.414,0,1.414);
+    %         %\filldraw[fill=myorange,opacity=0.5] (1,0,0) .. controls +(0,0,0.8) and +(0.5,0.2,0) .. (0.7071,0,0.7071) -- (0,0,0);
+    %         \filldraw[fill=myorange,opacity=0.5] (1,0,0) .. controls +(0,0,0.5) and +(0.1,0,-0.1) .. (0.7071,0,0.7071) -- (0,0,0);
+    %     \end{scope}
+    %     \begin{scope}
+    %         \draw[-,dashed] plot[domain=0:400,samples=41,smooth]({1.5*sin(\x)},{1.5*cos(\x)});
+    %         \node at (-0.5,1.2) {\(y\)};
+    %         \node at (-0.2,0.8) {\(x\)};
+    %         \node at (-0.8,0.95) {\(z\)};
+    %         \node at (-0.35,0.04) {\(\phi\)};
+    %     \end{scope}
+    % \end{tikzpicture}
+    }
+    \caption{Spherical Coordinates. \((x',y',z')\) indicate the directions of the basis vectors in the global cartesian coordinate system, while \(\hat{r},\hat{\phi},\hat{\lambda}\) indicate the basis vectors of the spherical coordinate system in magenta arrows. As seen, these basis vectors are space-dependent, and change direction depending on where you are on Earth.}
+    \label{LocCartes}
+\end{figure}
+
+We identify the basis vectors \(\hat{r}\), \(\hat{\phi}\), \(\hat{\lambda}\) as pointing in the radial (upward away from the centre of the Earth), northward, and eastward directions.\footnote{
+    Note that I go against common mathematical convention here by using \(\phi=\frac{\pi}{2}-\theta\) where \(\theta=\) the polar angle. I do this here to follow convention in the GFD literature.
+}. We commonly refer to the east-west direction as the \textbf{zonal} direction (the direction of \(\hat{\lambda}\)) and the north-south direction (the direction of \(\hat{\phi}\)) as the \textbf{meridional} direction. Explicitly, they are given as follows (in matrix form for brevity):
 \begin{align*}
     \left( \begin{array}{c}
         \hat{r}
         \\
         \hat{\phi}
         \\
-        \hat{\theta}
+        \hat{\lambda}
     \end{array} \right)
     =
     \left( \begin{array}{ccc}
-        \sin\phi\cos\theta & \sin\phi\sin\theta & \cos\phi
+        \sin\phi\cos\lambda & \sin\phi\sin\lambda & \cos\phi
         \\
-        \cos\phi\cos\theta & \cos\phi\sin\theta & -\sin\phi
+        \cos\phi\cos\lambda & \cos\phi\sin\lambda & -\sin\phi
         \\
-        -\sin\theta & -\cos\theta & 0
+        -\sin\lambda & -\cos\lambda & 0
     \end{array} \right)
     \left( \begin{array}{c}
         \hat{x}
@@ -696,74 +834,40 @@ We identify the basis vectors \(\hat{r}\), \(\hat{\phi}\), \(\hat{\theta}\) as p
     \end{array} \right)
 \end{align*}
 
-[UNDER CONSTRUCTION]
-
-In this coordinate system, we define the position and velocity coordiates \((x,y,z)\) and \((u,v,w)\) as indicating distance and velocity in the east, north, and upwards directions, respectively. We also refer to the east-west direction as the \textbf{zonal} direction and the north-south direction as the \textbf{meridional} direction. We further identify the coordinates we will be using. \(r=\) the radial coordinate, identifying the distance from the centre of the Earth, \(\) 
-
-We further define the latitude \(\phi\in[-\frac{\pi}{2},\frac{\pi}{2}]\) (\(\phi=0\) indicates the equator, \(\phi=\pm\frac{\pi}{2}\) is the north/south pole) and the radial distance \(r\) where \(r=a+z\) where \(a=\) the radius of the Earth (see Figure \ref{LocCartes}).
-\begin{figure}[H]
-    \centering
-    \scalebox{1.4}{
-    \begin{tikzpicture},
-        \begin{scope}[3d view={125}{25.26}]
-            \draw[->,opacity=0.7] (0,0,0) -- (1.5,0,0) node[anchor=north east] {\(x'\)};
-            \draw[->,opacity=0.7] (0,0,0) -- (0,1.5,0) node[anchor=north] {\(y'\)};
-            \draw[->,opacity=0.7] (0,0,0) -- (0,0,1.5) node[anchor=north west] {\(z'\)};
-            \draw[-,dashed] plot[domain=0:400,samples=41,smooth]({1.5*sin(\x)},{1.5*cos(\x)},{0});
-            \draw[-,dashed] plot[domain=0:400,samples=41,smooth]({1.5*cos(0)*sin(\x)},{1.5*sin(0)*sin(\x)},{1.5*cos(\x)});
-            \draw[-,dashed] plot[domain=0:360,samples=41,smooth]({1.0607*sin(\x)},{1.0607*cos(\x)},{1.0607});
-            \coordinate (A) at (1.0607,0,1.0607);
-            \draw[-] (0,0,0) -- (A);
-            \draw[->,thick,mymagenta] (A) -- (0.7071,0,1.414);
-            \draw[->,thick,mymagenta] (A) -- (1.0607,0.5,1.0607);
-            \draw[->,thick,mymagenta] (A) -- (1.414,0,1.414);
-            %\filldraw[fill=myorange,opacity=0.5] (1,0,0) .. controls +(0,0,0.8) and +(0.5,0.2,0) .. (0.7071,0,0.7071) -- (0,0,0);
-            \filldraw[fill=myorange,opacity=0.5] (1,0,0) .. controls +(0,0,0.5) and +(0.1,0,-0.1) .. (0.7071,0,0.7071) -- (0,0,0);
-        \end{scope}
-        \begin{scope}
-            \draw[-,dashed] plot[domain=0:400,samples=41,smooth]({1.5*sin(\x)},{1.5*cos(\x)});
-            \node at (-0.5,1.2) {\(y\)};
-            \node at (-0.2,0.8) {\(x\)};
-            \node at (-0.8,0.95) {\(z\)};
-            \node at (-0.35,0.04) {\(\phi\)};
-        \end{scope}
-    \end{tikzpicture}}
-    \hspace{2cm}
-    \scalebox{1.4}{
-    \begin{tikzpicture},
-        \begin{scope}[3d view={125}{25.26}]
-            \draw[->,opacity=0.7] (0,0,0) -- (1.5,0,0) node[anchor=north east] {\(x'\)};
-            \draw[->,opacity=0.7] (0,0,0) -- (0,1.5,0) node[anchor=north] {\(y'\)};
-            \draw[->,opacity=0.7] (0,0,0) -- (0,0,1.5) node[anchor=north west] {\(z'\)};
-            \draw[-,dashed] plot[domain=0:400,samples=41,smooth]({1.5*sin(\x)},{1.5*cos(\x)},{0});
-            \draw[-,dashed] plot[domain=0:400,samples=41,smooth]({1.5*cos(0)*sin(\x)},{1.5*sin(0)*sin(\x)},{1.5*cos(\x)});
-            \draw[-,dashed] plot[domain=0:360,samples=41,smooth]({1.0607*sin(\x)},{1.0607*cos(\x)},{1.0607});
-            \coordinate (A) at (1.0607,0,1.0607);
-            \draw[-] (0,0,0) -- (A);
-            \draw[->,thick,mymagenta] (A) -- (0.7071,0,1.414);
-            \draw[->,thick,mymagenta] (A) -- (1.0607,0.5,1.0607);
-            \draw[->,thick,mymagenta] (A) -- (1.414,0,1.414);
-            %\filldraw[fill=myorange,opacity=0.5] (1,0,0) .. controls +(0,0,0.8) and +(0.5,0.2,0) .. (0.7071,0,0.7071) -- (0,0,0);
-            \filldraw[fill=myorange,opacity=0.5] (1,0,0) .. controls +(0,0,0.5) and +(0.1,0,-0.1) .. (0.7071,0,0.7071) -- (0,0,0);
-        \end{scope}
-        \begin{scope}
-            \draw[-,dashed] plot[domain=0:400,samples=41,smooth]({1.5*sin(\x)},{1.5*cos(\x)});
-            \node at (-0.5,1.2) {\(y\)};
-            \node at (-0.2,0.8) {\(x\)};
-            \node at (-0.8,0.95) {\(z\)};
-            \node at (-0.35,0.04) {\(\phi\)};
-        \end{scope}
-    \end{tikzpicture}}
-    \caption{Local Cartesian Coordinates. \((x',y',z')\) indicate our global cartesian coordinate system, while \((x,y,z)\) indicate our local cartesian coordinate system in magenta arrows.}
-    \label{LocCartes}
-\end{figure}
-
-Explicitly, \(\vec{r}=(x,y,z)=x\,\hat{x}+y\,\hat{y}+z\,\hat{z}\) are given by (where \(\theta=\) the longitude):
+In this coordinate system, we define the position of a fluid parcel on the Earth by the coordinates \((r,\phi,\lambda)\), indicating the radial distance (from the centre of the Earth), the latitude \(\phi\in[-\frac{\pi}{2},\frac{\pi}{2}]\) (\(\phi=0\) indicates the equator, \(\phi=\pm\frac{\pi}{2}\) is the north/south pole), and the longitude \(\lambda\in[0,2\pi]\). The position vector is therefore given by: \(\vec{r}=r\,\hat{r}+\phi\,\hat{\phi}+\lambda\,\hat{\lambda}\). The coordinates reprsenting the velocity of the fluid parcel is given by \((u,v,w)\) as the velocity in the east, north, and radial directions. They are given explicitly as follows:
 
 \vspace{-4mm}
 \begin{minipage}{.31\linewidth}
 \begin{align*}
-    x = r\cos\phi\sin\theta
+    u = r\,\cos\phi\,\dot{\lambda}
+\end{align*}
+\end{minipage}
+\begin{minipage}{.31\linewidth}
+\begin{align*}
+    v = r\,\dot{\phi}
+\end{align*}
+\end{minipage}
+\begin{minipage}{.31\linewidth}
+\begin{align*}
+    w = \dot{r}
+\end{align*}
+\end{minipage}
+\vspace{1mm}
+
+Again, the velocity vector is given by: \(\vec{u}=w\,\hat{r}+v\,\hat{\phi}+u\,\hat{\lambda}\).
+
+[UNDER CONSTRUCTION]
+
+In this coordinate system, we define the position and velocity coordiates \((x,y,z)\) and \((u,v,w)\) as indicating distance and velocity in the east, north, and upwards directions, respectively. \(r=\) the radial coordinate, identifying the distance from the centre of the Earth, \(\) 
+
+We further define the latitude \(\phi\in[-\frac{\pi}{2},\frac{\pi}{2}]\) (\(\phi=0\) indicates the equator, \(\phi=\pm\frac{\pi}{2}\) is the north/south pole) and the radial distance \(r\) where \(r=a+z\) where \(a=\) the radius of the Earth (see Figure \ref{LocCartes}).
+
+Explicitly, \(\vec{r}=(x,y,z)=x\,\hat{x}+y\,\hat{y}+z\,\hat{z}\) are given by (where \(\lambda=\) the longitude):
+
+\vspace{-4mm}
+\begin{minipage}{.31\linewidth}
+\begin{align*}
+    x = r\cos\phi\sin\lambda
 \end{align*}
 \end{minipage}
 \begin{minipage}{.31\linewidth}
@@ -861,7 +965,7 @@ The time derivatives are zero (\(\frac{\partial \hat{x}}{\partial t}=\frac{\part
 
 Plugging into Equation \ref{Navier Stokes Rotating}, churning through the algebra, and equating components, we get:
 \begin{align*}
-    \frac{Du}{Dt}-\left( 2\Omega+\frac{u}{r\cos\phi} \right)\left( v\sin\phi-w\cos\phi \right)+\frac{1}{\rho r \cos\phi}\frac{\partial p}{\partial \theta}
+    \frac{Du}{Dt}-\left( 2\Omega+\frac{u}{r\cos\phi} \right)\left( v\sin\phi-w\cos\phi \right)+\frac{1}{\rho r \cos\phi}\frac{\partial p}{\partial \lambda}
     =F_x
     \\
     \frac{Dv}{Dt}+\frac{wv}{r}+\left( 2\Omega+\frac{u}{r\cos\phi} \right)u\sin\phi+\frac{1}{\rho r}\frac{\partial p}{\partial \phi}=F_y
@@ -876,6 +980,8 @@ Finally, we introduce the \textbf{Local Cartesian Coordinate System}. This coord
 
 We identify the basis vectors \(\hat{x}\), \(\hat{y}\), \(\hat{z}\) as pointing in the eastward, northward, and upward (away from the centre of the Earth) directions \textit{at that very origin}. The further we stray from the origin, the more those basis vectors point in different directions! In this coordinate system, we define the position and velocity coordiates \((x,y,z)\) and \((u,v,w)\) as indicating distance and velocity in the east, north, and upwards directions, respectively. We also refer to the east-west direction as the \textbf{zonal} direction and the north-south direction as the \textbf{meridional} direction.
 
+\section{Simplifying the Equations of Motion}
+
 \subsection{Scale Analysis}\label{Scale Analysis}
 
 Finally, we make a few phenomenological simplifications. We do this here for simplicity, but our results are not general or particularily robust: many of the terms we will neglect are essential in climate/weather models. We do this here by performing a \textbf{scale analysis}: we estimate the size of quantities by their typical values (found empirically), then ignore terms that are much smaller than the other terms. We never neglect the pressure gradient term. \vspace{5mm}
@@ -886,7 +992,7 @@ Finally, we make a few phenomenological simplifications. We do this here for sim
     Scale & Symbol & Terms Approximated & Typical Magnitude \\
 \hline
 \hline
-Horizontal Scale & \(L\) & \(\frac{1}{r \cos\phi}\frac{\partial}{\partial \theta}\sim\frac{1}{L}\), \(\frac{1}{r}\frac{\partial}{\partial \phi}\sim\frac{1}{L}\)& \qty{e6}{\metre}\\
+Horizontal Scale & \(L\) & \(\frac{1}{r \cos\phi}\frac{\partial}{\partial \lambda}\sim\frac{1}{L}\), \(\frac{1}{r}\frac{\partial}{\partial \phi}\sim\frac{1}{L}\)& \qty{e6}{\metre}\\
 \hline
 Vertical Scale & \(H\) & \(\frac{\partial}{\partial r}=\frac{\partial}{\partial z}\sim\frac{1}{H}\)& \qty{e4}{\metre}\\
 \hline
@@ -946,6 +1052,8 @@ This includes any terms that feature the viscosity \(\nu\) and many terms arisin
 
 As a quick 
 This allows us to substitute \(a\) for \(r\) in many places, neglect many terms including \(w\) since they're small compared to \(u,v\), and equate certain spatial derivatives. After eliminating the small terms, we arrive at our final set of simplified equations.
+
+\subsection{Space-Dependent Coordinate Systems Pt. 2: Local Cartesian Coordinate Systems}\label{s Local Cartesian Coordinates}
 
 \section{The Simplified Equations of Motion}
 
