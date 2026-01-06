@@ -392,7 +392,7 @@ The \textit{hydrostatic approximation} assumes that these are the dominant force
     A full justification would have to start from \textit{dynamics}. One would have to show that, if an arbitrary system were \textit{not} in hydrostatic balance, then it would rapidly (relative to the timescales under consideration, which in this case might be days, months, or years) evolve to put itself approximately in hydrostatic balance.
 } Therefore:
 \begin{align*}
-    0=p(z+\delta z)-\rho g\delta z+p(z)
+    0=p(z+\delta z)-\rho\, g\,\delta z+p(z)
 \end{align*}
 Rearranging and letting \(\delta z\to0\) gives us \textbf{Hydrostatic Balance}:
 \begin{fact}{Hydrostatic Balance}{Hydrostatic Box}\label{Hydrostatic Box}
@@ -404,13 +404,13 @@ Hydrostatic Balance governs the vertical pressure variation in a fluid if we ass
     \end{equation}
 Pressure decreases with altitude in order to balance the force of gravity.
 \end{fact}
-\noindent There are two very useful facts that should be noted at this time. 
+\noindent There are two very useful facts that we should note.
 
-First note that \(\rho,g>0\), so \(\frac{dp}{dz}<0\) always. This means that \(p\) is monotonic in \(z\), implying that there is always a one-to-one relation between \(p\) and \(z\). This allows us to convert between \textbf{height coordinates} and \textbf{pressure coordinates}. For example, in \textit{height coordinates}, we might let \(\vec{u}=\vec{u}(x,y,z)\), \(p=p(x,y,z)\). In this case, we would have pressure \(p\) at some height \(z\) (and horizontal position) as  a variable. In \textit{pressure coordinates}, on the other hand, we let \(\vec{u}=\vec{u}(x,y,p)\), \(z=z(x,y,p)\). In this case, we would have the height \(z\) of some given pressure surface \(p\) (and horizontal position) as a variable.
+First, note that \(\rho,g>0\), so \(\frac{dp}{dz}<0\) always. This means that \(p\) is monotonic in \(z\), implying that there is always a one-to-one relation between \(p\) and \(z\). This allows us to convert between \textbf{height coordinates} and \textbf{pressure coordinates}. For example, in \textit{height coordinates}, we might let \(\vec{u}=\vec{u}(x,y,z)\), \(p=p(x,y,z)\). In this case, we would have pressure \(p\) at some height \(z\) (and horizontal position) as  a variable. In \textit{pressure coordinates}, on the other hand, we let \(\vec{u}=\vec{u}(x,y,p)\), \(z=z(x,y,p)\). In this case, we would have the height \(z\) of some given pressure surface \(p\) (and horizontal position) as a variable.
 
-We will consistently be plotting atmospheric properties (e.g., humidity) in pressure coordinates (as opposed to height coordinates) throughout this course. This is for three reasons. First, it is much easier for instruments to measure the pressure than the height. In fact, this is how airplanes measure `barometric' height using a pressure altimeter \cite{Altimeter}. Second, most problems we encounter will require only knowledge of a variable's dependence on pressure. Third, pressure is a fundamental thermodynamic variable, and as such also gives us information regarding the thermodynamic properties of the system, as well as the (rough) height. We convert to pressure coordinates explicitly in Section \ref{Pressure Coords}.
+We will consistently be plotting atmospheric properties (e.g., humidity) in pressure coordinates (as opposed to height coordinates) throughout this course. This is for three reasons. First, it is much easier for instruments to measure the pressure than the height. (In fact, this is how airplanes measure `barometric' height using a pressure altimeter \cite{Altimeter}.) Second, most problems we'll encounter will only require knowledge of a variable's pressure-dependence. Third, pressure is a fundamental thermodynamic variable, so it also encodes information regarding the thermodynamic properties of the system, as well as the (rough) height. We convert to pressure coordinates explicitly in Section \ref{Pressure Coords}.
 
-Second, note that if we rewrite Eqn. \ref{Hydrostatic Balance} in differential form, we get a very useful relation between the difference in pressure between two vertically separated points, and the mass per unit area within that layer.
+Second, note that if we rewrite Eqn. \ref{Hydrostatic Balance} in differential form, we obtain a very useful relation between the pressure difference between two vertically separated points, and the mass per unit area within that layer.
 \begin{equation}
     \label{eq Hydrostatic Differential}
     \begin{aligned}
@@ -449,7 +449,7 @@ The surface pressure on a rocky planet thus gives an immediate estimate of the a
 So not much actually (but a lot radiatively, as you'll see in Part \ref{Radiative Transfer})!
 \subsection{Example 1: Constant Density}
 
-In the ocean, for example, we can make the (sometimes) good approximation that \(\rho=\text{const}\). We can then integrate \ref{Hydrostatic Balance} with the boundary condition that \(p(z=\eta)=p_s\) where \(p_s\) is, for example, the pressure at the surface of the ocean and \(\eta\) is the height of the surface. Note that this derivation is completely general, and that both \(p_s\) and \(\eta\) may in general be functions of \(x\),\(y\), and \(t\), and \(\eta\) could be, for example, below the ocean surface at some interface.
+In the ocean we can make the (sometimes) good approximation that \(\rho=\text{const}\). We can then integrate \ref{Hydrostatic Balance} with the boundary condition that \(p(z=\eta)=p_s\) where \(p_s\) is, for example, the pressure at the surface of the ocean and \(\eta\) is the height of the surface. Note that this derivation is completely general, and that both \(p_s\) and \(\eta\) may in general be functions of \(x\),\(y\), and \(t\), and \(\eta\) could be, for example, below the ocean surface at some interface.
 \begin{align*}
     \frac{d p}{d z}&=-\rho g\\
     \int_{p_s}^{p}dp&=-\int_{\eta}^{z}\rho g \, dz\\
@@ -463,13 +463,13 @@ We use this to derive the Shallow Water/Reduced Gravity System in Chapter \ref{S
 
 \subsection{Example 2: Ideal Gas}\label{Example 2: Ideal Gas}
 
-The atmosphere can be roughly regarded as an ideal gas, so we can substitute in Equation \ref{eq Ideal Gas} to find that Equation \ref{Hydrostatic Balance} transforms into:
+The atmosphere can be approximated well as an ideal gas, so we can substitute in Equation \ref{eq Ideal Gas} to find that Equation \ref{Hydrostatic Balance} transforms into:
 \begin{align}
     \label{Hydrostatic Balance Ideal}
     \boxed{\frac{d\ln p}{dz}=-\frac{g}{RT}}
 \end{align}
 
-If we make the approximation that \(T(z)\sim\text{const}\) (which is not a bad approximation in Kelvin) we can integrate to find that \(p\) falls off exponentially.
+If we make the approximation that \(T(z)\sim\text{const}\) (which is not a bad approximation in Kelvin) we can integrate to find that \(p\) falls off exponentially with altitude.
 \begin{align*}
     p(z)=p(z=0)e^{-z/H}
 \end{align*}
@@ -497,12 +497,12 @@ Recall that \(R=R^*/\bar{M}\). This means that if we know the temperature, gravi
 
 \subsection{Example 3: Solid Rock Planet}
 
-If we want to include curvature (since planets are more like spheres than infinite planes), we can derive an analogous \hyperref[Hydrostatic Balance]{Hydrostatic Relation} where:
+If we want to include curvature (since planets are more like spheres than infinite planes), we should drop the assumption that \(g=const\) like so:
 \begin{align*}
     \frac{d p}{d r}&=-\rho g\\
     &=-\rho \frac{G M(r)}{r^{2}}
 \end{align*}
-We can couple this with a differential equation governing the mass below some radius \(r\) called \(M(r)\):
+We now need to solve for \(M(r)\), so we couple this equation with another differential equation governing the mass below some radius \(r\) called \(M(r)\):
 \begin{align*}
     \frac{d M}{d r} = 4\pi r^2\rho
 \end{align*}
@@ -554,7 +554,7 @@ In this chapter, we will attempt to explain some of this. We want to explain thi
         \item If temperature decreases with height, the heat is coming from below.
         \item If temperature increases with height, the heat is coming from above.
     \end{itemize}
-    \item There are two dominant heat transport mechanisms:
+    \item There are two dominant heat transport mechanisms we will cover:
     \begin{itemize}
         \item Convection, which we will explain in this section. This is dominant in the \textbf{troposphere}.
         \item Radiation, which will explain in Part \ref{Radiative Transfer}. This is dominant in the \textbf{stratsophere}.
@@ -566,14 +566,14 @@ In this chapter, we will attempt to explain some of this. We want to explain thi
 
 \subsection{Derivation}
 
-To explain (some of) the aforementioned phenomenon, we start from the first law of thermodynamics governing a parcel of air:
+To explain (some of) the aforementioned phenomenon, we start from the first law of thermodynamics governing a parcel of air (and anything else really):
 \begin{align}
     \label{First Law}
     dU=-p\,dV+T\,dS+\mu\,dN
 \end{align}
 where \(U=\) internal energy; \(p=\) pressure; \(V=\) volume; \(T=\) temperature; \(S=\) entropy; \(\mu=\) chemical potential; and \(N=\) number of molecules. Roughly, the \(-p\,dV\) term corresponds to work done by the parcel (i.e., energy transferred by the parcel pushing or being pushed by its surroundings), \(T\,dS\) corresponds to the heat transfer between the parcel and its surroundings, and \(\mu\,dN\) corresponds to energy gained or lost by exchanging particles with its surroundings.
 
-We assume that the system is closed (\(dN=0\), so the parcel does not exchange air with its environment\footnote{This amounts to the assumption that entrainment does not occur. This is usually false, but it's not a bad assumption for what we aim to explain.}) and divide by the mass of the air parcel to find: 
+We assume that the system is closed (\(dN=0\), so the parcel does not exchange air with its environment\footnote{This amounts to the assumption that entrainment does not occur. This is usually false, but it's not a bad assumption for what we aim to explain.} and the mass of the air parcel is constant) and divide by the mass of the air parcel to find:
 \begin{align*}
     du=-p\,d\left(\frac{1}{\rho}\right)+T\,ds
 \end{align*}
@@ -635,7 +635,7 @@ and so we derive:
         \end{gather}
     \end{minipage}
         
-    \vspace{2mm} If we crucially assume that \textbf{convection} is the \textbf{dominant vertical energy transport mechanism} in the atmosphere then the \textbf{atmosphere follows a dry adiabat}. This is somewhat accurate for Earth's troposphere.
+    \vspace{2mm} If we crucially assume that \textbf{convection} is the \textbf{dominant vertical energy transport mechanism} in the atmosphere then the \textbf{atmosphere follows a dry adiabat}. This is somewhat accurate for Earth's troposphere in the tropics.
 \end{fact}
 \subsection{Physical Interpretation}
 
@@ -643,9 +643,11 @@ Equation \ref{Dry Adiabat} is the \textbf{Dry Adiabat}. `\textbf{Dry}' because w
 
 Physically \ref{Dry Adiabat} corresponds to a parcel starting at some temperature and pressure (\(T_0,p_0\)) and being displaced upwards/downwards. When it is displaced upwards/downwards, it undergoes negligible diabatic heating and entrainment, so it's temperature does not change that way. However, when the ambient pressure changes, it expands/contracts, and the air parcel does positive/negative work on its surroundings. This \textit{decreases}/\textit{increases} the internal energy of the parcel, thus decreasing/increasing the temperature. That's why \(T\) decreases as \(p\) decreases in \ref{Dry Adiabat}. 
 
-However, we should be wary of the limits of our conclusions here. Recall that we started this section considering an air parcel, not the entire atmosphere! We must make a final, crucial assumption that rising and falling air parcels (convection) are the dominant mechanisms for heat transport within some domain in the atmosphere (e.g., from the ground to a certain height – for example the tropopause). \textit{This} implies that the temperature profile of the atmosphere within this domain follows the \textbf{Dry Adiabat}. If this domain extends to the ground, we may take the initial conditions initial conditions \((p_0,T_0)\) to be the temperature and pressure of the surface \((p_s,T_s)\).
+However, we should be wary of the limits of our conclusions here. Recall that we started this section considering an air parcel, not the entire atmosphere! We must make two final, crucial assumptions. First, that rising and falling air parcels (convection) are the dominant mechanisms for heat transport within some domain in the atmosphere (e.g., from the ground to a certain height -- for example the tropopause). This assumption, however, is not sufficient, as the air parcels could convect from different initial temperatures and pressures so that the resulting profile is still not a dry adiabat (see the image \href{https://en.wikipedia.org/wiki/Inversion_(meteorology)#/media/File:Absinkinversion.png}{here} which demonstrates this). The second assumption is that the rising and falling air parcels must \textit{come from} either the same temperature, or an initial profile that \textit{also} follows the dry adiabat.
 
-This assumption is not bad in the Earth's troposphere, partly because here the atmosphere is heated from below: the atmosphere is transparent to the radiation from the sun, which penetrates through the atmosphere and heats the ground. The ground then heats the air above it, which becomes buoyant and convects. Similarly, Jupiter's internal energy leakage maintains a convective troposphere. However, not all planetary atmospheres and not even all of Earth's atmosphere obey this assumption.
+Only now may we conclude that the temperature profile of the atmosphere within this domain follows the \textbf{Dry Adiabat}. If this domain extends to the ground, and we assume that the convecting air parcels mostly come from the ground, we may take the initial conditions \((p_0,T_0)\) to be the temperature and pressure of the surface \((p_s,T_s)\).
+
+This assumption is not bad in the Earth's troposphere especially in the tropics, partly because here the atmosphere is heated from below: the atmosphere is transparent to the radiation from the sun, which penetrates through the atmosphere and heats the ground. The ground then heats the air above it, which becomes buoyant and convects. Similarly, Jupiter's internal energy leakage maintains a convective troposphere. However, not all planetary atmospheres and not even all of Earth's atmosphere obey this assumption.
 
 Finally, now, we can see now why many atmospheres have temperatures decreasing as pressure decreases or height increases. The first fact is readily noted from Eqn. \ref{Dry Adiabat}. We can show the second fact by combining the Dry Adiabat \ref{Dry Adiabat}, \hyperref[Hydrostatic Balance]{Hydrostatic Balance}, and \hyperref[eq Ideal Gas]{Ideal Gas} to obtain an equation linking temperature with height:
 \begin{align}
@@ -695,7 +697,7 @@ Note that \(R\) and \(c_p\) have the same units/dimensions, so \(\frac{R}{c_p}\)
 
 Of course, the atmosphere does not actually follow a \textbf{Dry Adiabat}, as clearly shown by Figure \ref{Earth T Observation}. If we look at only the troposphere (i.e., the lower portion of Figure \ref{Earth T Observation} where \(p>\qty{100}{\milli\bar}\)), we can estimate from the figure that \(d\ln T/d\ln p\approx \frac{\ln(300/180)}{\ln(1000/100)}\approx 0.222\). This is pretty close to the predicted \(0.286\), but decidedly much lower! Of course outside of the troposphere our prediction is completely off.
 
-This is because some of our assumptions were not as accurate as we would like. In reality, \(dN\neq0\), and entrainment occurs, and \(dS\neq0\), and diabatic heating occurs. Some of this diabatic heating is due to condensation, which we will learn how to deal with in the next chapter on \hyperref[Moist Thermodynamics]{Moist Thermodynamics}. We'll find that this will act to shallow the temperature profile (i.e., decrease \(d\ln T/d\ln p\)). Some of this is radiative heating, which we will discuss in the next part on \hyperref[Radiative Transfer]{Radiative Transfer}.
+This is because some of our assumptions were not as accurate as we would like. In reality, \(dN\neq0\), and entrainment occurs, and \(dS\neq0\), and diabatic heating occurs. Some of this diabatic heating is due to condensation, which we will consider next chapter on \hyperref[Moist Thermodynamics]{Moist Thermodynamics}. We'll find that condensation will act to shallow the temperature profile (i.e., decrease \(d\ln T/d\ln p\)). Some of this is radiative heating, which we will discuss in the next part on \hyperref[Radiative Transfer]{Radiative Transfer}.
 
 However, (dry) convection as a mechanism always perturbs an existing atmospheric profile towards an \textbf{Adiabat} and a temperature slope of \(2/7\), and it is other processes (radiation, fluid dynamics, moisture) that pull the atmosphere away from an adiabat. In some cases, like in the \textbf{stratosphere}, radiation pulls the atmospheric profile to be super-stable, in which case convection is prohibited due to the stability of the atmosphere. In other cases, these other processes pull the atmospheric profile to be unstable, in which case convection takes over to push the atmosphere back to the \textbf{Adiabat}. What we have just touched upon is \hyperref[Radiative-Convective Equilibrium]{Radiative-Convective Equilibrium}, which we will discuss more in Part \ref{Clouds}.
 
@@ -703,13 +705,13 @@ However, (dry) convection as a mechanism always perturbs an existing atmospheric
 
 In basic thermodynamics, we often introduce the concept of temperature operationally in the following way: suppose we have two objects \(A\) and \(B\), with temperatures \(T_A\) and \(T_B\), respectively, and we place them in contact with each other. `Temperature' encodes whether heat will flow, and which way the heat will flow. If \(T_A=T_B\), no heat will flow. If \(T_B>T_A\), heat will flow from \(B\) to \(A\), and vice versa if \(T_B<T_A\).
 
-However, this will not work in atmospheric thermodynamics. Suppose we have two parcels of air called \(A\) and \(B\) at pressures \(p_A\) and \(p_B\)\footnote{We are getting used to using pressure as a coordinate rather than height, remember!} with temperatures \(T_A\) and \(T_B\), respectively. Suppose we displace parcel \(A\) in order to place it in contact with parcel \(B\) (with no entrainment (\(dN=0\)) or diabatic heating (\(dS=0\))).\vspace{5mm}
+However, this will not work in atmospheric thermodynamics. Suppose we have two parcels of air called \(A\) and \(B\) at pressures \(p_A\) and \(p_B\) with temperatures \(T_A\) and \(T_B\), respectively. Suppose we displace parcel \(A\) in order to place it in contact with parcel \(B\) (with no entrainment (\(dN=0\)) or diabatic heating (\(dS=0\))).\vspace{4mm}
 
-Which way will heat flow?\vspace{5mm}
+Which way will heat flow?\vspace{4mm}
 
-We cannot naively use temperature as we did before, because parcel \(A\)'s temperature will change following the \hyperref[Dry Adiabat]{Dry Adiabat} as we move it to a different pressure. In other words, temperature is not a variable which is \hyperref[Material Conservation]{Materially Conserved} in Atmospheric/Oceanic Thermodynamics. A variable is \hyperref[Material Conservation]{Materially Conserved} if and only if it remains constant following a air/water parcel. This is a concept which will become very important in Part \ref{Geophysical Fluid Dynamics}.
+We cannot naively use temperature as we did before, because parcel \(A\)'s temperature will change following the \hyperref[Dry Adiabat]{Dry Adiabat} as we move it to a different pressure. In other words, temperature is not a variable which is \hyperref[Material Conservation]{Materially Conserved} in Atmospheric/Oceanic Thermodynamics. A variable is Materially Conserved if and only if it remains constant following an air/water parcel. This is a concept which will become very important in Part \ref{Geophysical Fluid Dynamics}.
 
-We now want to define a quantity which serves the same role as temperature did before (i.e., a variable which encodes which way heat will flow) but which is \textit{also}, unlike temperature, \hyperref[Material Conservation]{materially conserved}. Let us consider a more general scenario, and move each parcel to some third pressure \(p_{ref}\)\footnote{Set \(p_{ref}=p_B\) to recover our first example.}. 
+We now define a quantity which serves the same role as temperature did before (i.e., a variable which encodes which way heat will flow) but which is \textit{also}, unlike temperature, is materially conserved. Let us consider a more general scenario, and move each parcel to some third pressure \(p_{ref}\).\footnote{Set \(p_{ref}=p_B\) to recover our first example.}
 
 We define the \textbf{Potential Temperature} \(\theta\) as the temperature a parcel \textit{would} have if it were perfectly adiabatically moved to some reference pressure level \(p_{ref}\):
 \begin{align}\label{eq Potential Temperature}
@@ -733,9 +735,9 @@ Since the \(\ln T(p)^\frac{-R}{c_p}\) term is within the differential, we can fr
     \end{aligned}
 \end{equation}
 
-As you can see, if \(ds=0\), as we assumed during convection, then \(d\theta=0\). Therefore, as we lift or drop a parcel, \(\theta\) is \hyperref[Material Conservation]{materially conserved}.\footnote{In the Ocean, even without radiative heating processes, \(\theta\) is not conserved. This is because there is a third thermodynamic state variable, salinity, which will change the temperature of sea water without adding any heat. Oceanographers have come up with another kind of materially conserved temperature in the ocean: \textit{Conservative Temperature}.}
+As you can see, if \(ds=0\), as we assumed during convection, then \(d\theta=0\). Therefore, as we lift or drop a parcel, \(\theta\) is materially conserved.\footnote{In the Ocean, even without radiative heating processes, \(\theta\) is not conserved. This is because there is a third thermodynamic state variable, salinity, which will change the temperature of sea water without adding any heat. Oceanographers have come up with another kind of materially conserved temperature in the ocean: \textit{Conservative Temperature}.}
 
-Recalling that \(TdS=dQ=\) heat, we find that the potential temperature is a measure of the extent to which diabatic/heat transfer processes have heated or cooled our parcel of air. It can be a proxy for how wrong we were to assume that \(dS=0\) in our derivation of \hyperref[Dry Adiabat]{Dry Adiabat}.
+Recalling that \(T\,dS=\,\dbar Q=\) heat, we find that the potential temperature is a measure of the extent to which diabatic/heat transfer processes have heated or cooled our parcel of air. It can be a proxy for how wrong we were to assume that \(dS=0\) in our derivation of \hyperref[Dry Adiabat]{Dry Adiabat}.
 
 \section{Convection}\label{Convection}
 
@@ -745,16 +747,16 @@ The atmosphere (and ocean) is a fluid, so even in the absence of most forces lik
 
 We already accounted for the effects of pressure in deriving \hyperref[Hydrostatic Balance]{Hydrostatic Balance} and the \hyperref[Dry Adiabat]{Dry Adiabat}. In the former case, the pressure gradient force acts to push fluid parcels upwards away from lower altitude regions of high pressure to higher altitude regions of low pressure in order to counteract the force of gravity on the ambient air. In the latter case, we only consider large-scale pressure gradients in the ambient atmosphere and we ignored pressure gradients across a fluid parcel.
 
-Now we wish to take into account pressure gradients across a fluid parcel, and consider a fluid parcel which does \textit{not} have the same density as the air around it. Suppose we have a fluid parcel of mass \(m\) occupying some volume \(V\). For simplicity assume the fluid parcel is rectangular, with a horizontal area of \(A\) and a height of \(h\) such that \(V=Ah\).
+We now consider pressure gradients \textit{across} a fluid parcel, and consider a fluid parcel which does \textit{not} have the same density as the air around it. Suppose we have a fluid parcel of mass \(m\) occupying some volume \(V\). For simplicity assume the fluid parcel is rectangular, with a horizontal area of \(A\) and a height of \(h\) such that \(V=Ah\).
 
 Let us consider the forces per unit mass on the fluid parcel in the vertical direction. There are three forces of interest: the gravitational force \(F_g=-g\), the pressure force on the \textit{bottom} pushing the parcel \textit{upwards} \(F_{bot}=p(z)A/m\), and the pressure force on the \textit{top} pushing the parcel \textit{downards} \(F_{top}=p(z+h)A/m\). \(p(z)\) is the pressure at height \(z\). The net force is then:
 \begin{align*}
     F_z=-g-\frac{A}{m}(p(z+h)-p(z))
 \end{align*}
 
-We now make two assumptions. First, we assume that \(h\) is small, therefore, \(p(z+h)-p(z)\approx \frac{dp}{dz} h\). Second, we assume that the pressure in the fluid is set by \hyperref[Hydrostatic Balance]{Hydrostatic Balance}, therefore \(p(z+h)-p(z)\approx \frac{dp}{dz} h=-\rho_a g h\), where \(\rho_a\) is the density of the ambient air. We define \(\rho_p=m/V\) as the density of the fluid parcel, and find that the total force on fluid parcel  is:
+We now make two assumptions. First, we assume that the air parcel is short (\(h\) is small) so \(p(z+h)-p(z)\approx \frac{dp}{dz}\, h\). Second, we assume that the pressure in the fluid is set by \hyperref[Hydrostatic Balance]{Hydrostatic Balance}, therefore \(\frac{dp}{dz}\, h=-\rho_a\, g\, h\), where \(\rho_a\) is the density of the ambient air. We define \(\rho_p=m/V\) as the density of the fluid parcel, and find that the total force on fluid parcel  is:
 \begin{align}
-    F_b&=-g+\frac{Ah}{m}\rho_a g\nonumber\\
+    F_b&=-g+\frac{A\,h}{m}\rho_a\,g\nonumber\\
     &=g\left( -1+ \frac{\rho_a}{\rho_p}\right)\nonumber\\
     \label{Buoyancy Force}
     \therefore \,\,& \BOX{F_b=g\left( \frac{\rho_a-\rho_p}{\rho_p} \right)}
@@ -768,15 +770,15 @@ where \(F_b=\) the buoyancy force. Physically, the buoyant force is intuitive: i
 \end{align}
 So a parcel will convect and rise if it is warmer or has a higher potential temperature than its ambient surroundings.
 
-Finally, another way of thinking of the buoyant force is as a kind of `\textit{reduced gravity}'. The fluid acts like its on a planet of gravitational acceleration \(g'=g\left( \frac{\rho_a-\rho_p}{\rho_p} \right)\) not \(g\). This will be how we think of things in Chapter \ref{Shallow Water System}. 
+Finally, another way of thinking of the buoyant force is as a kind of `\textit{reduced gravity}'. The fluid acts like it is on a planet of gravitational acceleration \(g'=g\left( \frac{\rho_a-\rho_p}{\rho_p} \right)\) not \(g\). This is a very important upshot of the \textbf{stratification} of the system due to hydrostatic balance. A system is said to be \textbf{stratified} if the density varies in the vertical. As you can see, if the density of the fluid parcel is equal to its environment (\(\rho_p = \rho_a\)) then \(F_b=0\), and so the air parcel will not `feel' the force of gravity at all! This is to be expected: the force of gravity is being cancelled out by the vertical pressure gradient force, which obeys hydrostatic balance. We will consider the effects of a kind of `\textit{reduced gravity}' in Chapter \ref{Shallow Water System}.
 
 \subsection{Convective Instability Criterion}
 
-Now we wish to find whether our atmosphere is convectively stable, i.e., whether the atmosphere will spontaneously undergo convection. If pressure and density did not appreciably change by height, then this would be easy: if \(T(z)>T(z+c)\) where \(c>0\) (and assuming that \(\frac{\partial \rho}{\partial T}<0\)), then we will have denser air overlying lighter air, and the parcels will convect.\footnote{
+Now we wish to find whether our atmosphere is convectively stable, i.e., whether the atmosphere will spontaneously undergo convection. If pressure and density did not appreciably change by height, then this would be easy: if \(T(z)>T(z+c)\) where \(c>0\) (and assuming that \(\frac{\partial \rho}{\partial T}<0\)), then we will have denser air overlying lighter air, and the parcels will convect (from Equation \ref{Buoyancy Force Temp}).\footnote{
     This is the case if we're considering two layers of different temperature and composition that are in contact. This is because, at the point of contact, pressure changes only infinitessimaly, so the \hyperref[Dry Adiabat]{Dry Adiabat} is inapplicable (since \(dp\approx0\)). To determine whether these two layers are convectively stable, you must compare the densities directly, which depend on both the temperature of each layer and the molecular composition.
 }
 
-As before, the situation is a bit more complicated in an atmosphere when density and pressure vary significantly with height. Suppose again that we have an atmospheric temperature profile \(T=T(p)\) (not necessarily following the dry adiabat). Suppose we lift a parcel at some pressure \(p\) to some (smaller) pressure \(p-\delta p\).
+As before, the situation more complicated in an atmosphere where density and pressure vary significantly with height. Suppose that we have an atmospheric temperature profile \(T=T(p)\) (not necessarily following the dry adiabat). Suppose we lift a parcel at some pressure \(p\) to some (smaller) pressure \(p-\delta p\).
 
 That parcel will be convectively unstable and continue rising if it is lighter (and therefore hotter) than the ambient surrounding air. We assume that the parcel is initially in equilibrium with its surroundings (\(T_{parcel}(p)=T_{ambient}(p)\)). We then Taylor Expand:
 \begin{align*}
@@ -803,15 +805,17 @@ Suppose a dry atmosphere has a temperature profile \(T(p)\). It will be:
     \end{align}
 \end{multicols}
 \end{fact}
-Note that \ref{Dry Stability} and \ref{Dry Stability Stable} are not automatically ruled out due to \ref{Dry Adiabat}. That is because \ref{Dry Adiabat} governs a perfectly adiabatic rising/falling parcel of air. While this is the dominant contribution to the atmospheric temperature profile in the troposphere,  it is not the only one (even within the troposphere). Other processes (water vapour, radiation, dynamics) can push the atmospheric temperature profile away from the dry adiabat and make it stable or unstable. However, typically, unstable atmospheres are removed very quickly through spontaneous convection.
+Note that \ref{Dry Stability} and \ref{Dry Stability Stable} are not automatically ruled out due to \ref{Dry Adiabat}. That is because \ref{Dry Adiabat} governs a perfectly adiabatic rising/falling parcel of air. While this is the dominant contribution to the atmospheric temperature profile in the troposphere,  it is not the only one (even within the troposphere). Other processes (water vapour, radiation, dynamics) can push the atmospheric temperature profile away from the dry adiabat and make it stable or unstable. Furthermore, as already mentioned, Equation \ref{Dry Adiabat} governs air parcels (not the atmospheric profile) and so needs to be supplemented by an initial condition: the resulting profile from dry convection need not reproduce the Dry Adiabatic slope if the parcels come from different initial temperature and pressures (again, see the image \href{https://en.wikipedia.org/wiki/Inversion_(meteorology)#/media/File:Absinkinversion.png}{here} for a demonstration of this). 
 
-Physically, the idea is as follows: an atmosphere is stable if the temperature decreases slow enough with height (\ref{Dry Stability Stable}). If it decreases too quickly (\ref{Dry Stability}), a lifted parcel of air will have cooled \textit{less} than its surroundings, and thus be warmer and lighter than its surroundings, and continue to rise due to buoyancy (\ref{Buoyancy Force Temp}).
+Typically, though, unstable atmospheres are removed very quickly through spontaneous convection.
+
+Physically, the idea of the \hyperref[Dry Stability Box]{Dry Stability Criteria} are as follows: an atmosphere is stable if the temperature decreases slow enough with height (\ref{Dry Stability Stable}). If it decreases too quickly (\ref{Dry Stability}), a lifted parcel of air will have cooled \textit{less} than its surroundings, and thus be warmer and lighter than its surroundings, and continue to rise due to buoyancy (\ref{Buoyancy Force Temp}).
 
 If \ref{Dry Stability Stable} obtains then an atmosphere will be \textit{super-stable} and will inhibit convection. A quick sanity check to remember which way the inequality is in \ref{Dry Stability Stable} is the following: an isothermal\footnote{
     `Iso' meaning same and `thermal' meaning temperature, so `Isothermal' means constant temperature.
 } atmosphere is always super-stable. An isothermal atmosphere will have \(\frac{d \ln T}{d \ln p} = 0\), so \(\left( \frac{d \ln T}{d \ln p} < \frac{R}{c_p} \right)\) corresponds to stability. If one has a \textit{super-stable} atmosphere then that indicates that there has been some other dominant energy transport mechanism that has kept the atmosphere in this state. This is characteristic of a \textbf{stratosphere}.\footnote{
     Recall the footnote on \hyperref[Vertical Structure]{this} page. This is why Ray prefers that definition of \textbf{stratosphere}: a stratsophere should be characterised by what energy transport mechanism is dominant, not whether it happens to have shortwave absorbers.
-} 
+}
 
 \begin{figure}[H]
     \centering
@@ -1096,7 +1100,7 @@ during convection.
 
 \section{Phase Transitions}\label{s Phase Transitions}
 
-In the previous chapter, we considered only atmospheres made up completely of constituents that do not undergo any phase transitions. However, Earth's atmosphere (and many others) clearly do not obey this assumption. Earth's atmosphere has a non-negligible amount of condensible substances: water vapour (look outside and you might see a cloud!), which clearly condense, evaporate, and freeze in Earth-like conditions.
+In the previous chapter, we considered only atmospheres without any phase transitions. However, Earth's atmosphere (and many others) clearly have phase transitions. Earth's atmosphere has a non-negligible amount of condensible substances: water vapour (look outside and you might see a cloud!), which clearly condense, evaporate, and freeze in Earth-like conditions.
 
 So what is a phase transition? We will only be dealing with what are called \textbf{First-Order Phase Transitions}, which occur when there is a \textit{discontinuity} in a thermodynamic state variable and an absorption or release of a large amount of energy, called \textbf{latent heat}. Phase transitions occur at certain temperatures and pressures\footnote{Whether a phase transition will occur might also depend on other thermodynamic state variables. For example, salinity is a thermodynamic variable which affects when sea water evaporates/freezes.}. We can represent this with a \textbf{Phase Diagramme}, as shown below:
 
@@ -1119,7 +1123,7 @@ Focus on the left-hand plot for now. The coloured regions indicate what phase wa
 
 The pressure at the \textbf{Phase Boundaries} is the \textbf{Saturation Vapour Pressure} \(p_{sat}(T)\). If the partial pressure \(p<p_{sat}\), then more vapour (gas form) can be added without condensing. If the \(p\geq p_{sat}\), then the gas will condense until the partial pressure reaches the saturation vapour pressure. However, it's important to remember that condensation is not instantaneous, which is partly why we can have atmospheric conditions where \(p>p_{sat}\). This will be important when we consider \hyperref[Clouds]{Clouds}.
 
-In fact all gases can condense if the temperature is low enough/partial pressure is high enough. CO\(_2\) condenses on Mars, and N\(_2\) condenses on Neptune. Why doesn't CO\(_2\) and N\(_2\) condense here on Earth? It all depends on the vertical structure of the atmosphere: the precise profile of \(T=T(p)\). Recall that, as \(p\) decreases, so too does \(T\) (if our atmosphere follows the \hyperref[Dry Adiabat]{Dry Adiabat}). There are three cases, all labeled in the right-hand plot of Figure \ref{Phase Diagramme}.
+In fact all gases can condense if the temperature is low enough/partial pressure is high enough. CO\(_2\) condenses on Mars and N\(_2\) condenses on Neptune. Why don't CO\(_2\) and N\(_2\) condense here on Earth? It all depends on the vertical structure of the atmosphere: the precise profile of \(T=T(p)\). Recall that, as \(p\) decreases, so too does \(T\) (if our atmosphere follows the \hyperref[Dry Adiabat]{Dry Adiabat}). There are three cases, all labeled in the right-hand plot of Figure \ref{Phase Diagramme}.
 
 \begin{enumerate}
     \item Case 1: The atmosphere has such a high pressure/temperature that it avoids a phase transition altogether by meandering around the critical point.
@@ -1163,7 +1167,7 @@ Our goal now is to derive an analogous \hyperref[Dry Adiabat]{Dry Adiabat} relat
 
 In reality, rising moist air parcels that condense will not instantaneously eject its condensed \(c\), and so will not follow the pseudo-adiabat. However, the pseudo-adiabat is a good approximation if the amount of condensate left in the air parcel is small, which is at least the case on Earth.
 
-Recall that we are using the same logic as we did before in deriving the \hyperref[Dry Adiabat]{Dry Adiabat}. As such, we are still assuming that the dominant mechanism of heat transport within the atmosphere is vertical convection, only this time the air parcels convecting are moist (have condensible substances in them). 
+Recall that we are using the same logic as we did before in deriving the \hyperref[Dry Adiabat]{Dry Adiabat}. As such, we are still assuming that the dominant mechanism of heat transport within the atmosphere is vertical convection, and the air parcels come from similar initial conditions. This time, though, the air parcels convecting are moist (have condensible substances in them).
 
 We will now consider two limiting cases. In both cases, we make the crucial assumption that the air parcels remain saturated with the condensible. In other words, we assume that the partial pressure of the condensible is equal to the saturation vapour pressure \(p_{sat}\).
 
