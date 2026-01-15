@@ -587,12 +587,12 @@ Therefore, the time derivative in the inertial coordinate system \(\left(\frac{d
     \begin{subfigure}{0.45\linewidth}
         \centering
         \begin{tikzpicture}
-            \draw[->] (0,0) -- (3.5,0) node[anchor=west] {\(x_R\)};
-            \draw[->] (0,0) -- (0,3.5) node[anchor=south] {\(y_R\)};
+            \draw[->] (0,0) -- (3.5,0) node[anchor=west] {\(x'\)};
+            \draw[->] (0,0) -- (0,3.5) node[anchor=south] {\(y'\)};
             \draw[thick,->] (0,0) -- (3,2) node[anchor= north] {\(\vec{A}(t)\)};
             \draw[thick,->] (0,0) -- (2,3) node[anchor=south] {\(\vec{A}(t+\delta t)\)};
             \draw[ultra thick,->] (3,2) -- (2,3) {};
-            \node[] at (3.5,2.75) {\(\delta t \left( \frac{\partial \vec{A}}{\partial t} \right)_R\)};
+            \node[] at (3.5,2.75) {\(\delta t \left( \frac{d \vec{A}}{d t} \right)_R\)};
         \end{tikzpicture}
         \caption{Change in \(\vec{A}\) in the Rotating Coordinate System}
         \label{Rotating}
@@ -601,19 +601,19 @@ Therefore, the time derivative in the inertial coordinate system \(\left(\frac{d
     \begin{subfigure}{0.45\linewidth}
         \centering
         \begin{tikzpicture}
-            \draw[->] (0,0) -- (3.5,0) node[anchor=west] {\(x_I\)};
-            \draw[->] (0,0) -- (0,3.5) node[anchor=east] {\(y_I\)};
+            \draw[->] (0,0) -- (3.5,0) node[anchor=west] {\(x\)};
+            \draw[->] (0,0) -- (0,3.5) node[anchor=east] {\(y\)};
             \draw[thick,->] (0,0) -- (3,2) node[anchor=west] {\(\vec{A}(t)\)};
             %\draw[dotted,->] (0,0) -- (2,3) node[anchor=south] {};
             \draw[thick,->] (0,0) -- (0.853,3.503) node[anchor=south east] {\(\vec{A}(t+\delta t)\)};
             \draw[ultra thick,->,dashed] (3,2) -- (2,3) {};
-            \node[] at (3.5,2.75) {\(\delta t \, \left( \frac{\partial \vec{A}}{\partial t} \right)_R\)};
+            \node[] at (3.5,2.75) {\(\delta t \, \left( \frac{d \vec{A}}{d t} \right)_R\)};
             \draw[ultra thick,->,dashed] (2,3) -- (0.853,3.503) {};
-            \node[] at (2,3.75) {\(\delta t \vec{\Omega}\times\vec{A}\)};
-            \draw[->,dashed] (0,0) -- (3.289,1.197) node[anchor=west] {\(x_R\)};
-            \draw[->,dashed] (0,0) -- (-1.197,3.289) node[anchor=east] {\(y_R\)};
+            \node[] at (2,3.75) {\(\delta t \,\vec{\Omega}\times\vec{A}\)};
+            \draw[->,dashed] (0,0) -- (3.289,1.197) node[anchor=west] {\(x'\)};
+            \draw[->,dashed] (0,0) -- (-1.197,3.289) node[anchor=east] {\(y'\)};
             \draw[ultra thick,->] (3,2) -- (0.853,3.503);
-            \node[] at (1.5,2) {\(\delta t \left( \frac{\partial \vec{A}}{\partial t} \right)_I\)};
+            \node[] at (1.5,2) {\(\delta t \left( \frac{d \vec{A}}{d t} \right)_I\)};
         \end{tikzpicture}
         \caption{Change in \(\vec{A}\) in the Inertial Coordinate System}
         \label{Inertial}
@@ -673,11 +673,11 @@ We have just seen that the momentum budget equation (Equation \ref{Navier Stokes
 
 We will now see that the equations of motion in general also look different if we use a coordinate system which varies with space.
 
-This will be a bit convoluted, but we will introduce three coordinate systems, all of which rotate with the Earth\footnote{We've already dealt with the fact that the coordinate system is rotating in the previous section!}. In this section (\hyperref[s Spherical Coordinates]{Space-Dependent Coordinate Systems Pt. 1}) we will introduce the first two. We will only introduce the third coordinate system in \hyperref[s Local Cartesian Coordinates]{Space-Dependent Coordinate Systems Pt. 2}
+We will introduce three coordinate systems, all of which rotate with the Earth.\footnote{We do not have to worry again here regarding this, as partial derivatives are linear, so we can just add the effects together.} This will be a bit convoluted, but we will only introduce the first two coordinate systems in this section (\hyperref[s Spherical Coordinates]{Space-Dependent Coordinate Systems Pt. 1}). We will then introduce the third coordinate system in \hyperref[s Local Cartesian Coordinates]{Space-Dependent Coordinate Systems Pt. 2}
 
-First is the \textbf{global cartesian coordinate system}, with basis vectors pointing in the \(x',y',z'\) directions as shown in Figure \ref{LocCartes}. The origin is located at the centre of the Earth, and the basis vectors rotate with the Earth (i.e., they rotate with angular velocity \(\vec{\Omega}\)). The basis vectors do vary with time (as they're rotating with the Earth), but \textit{do not} vary with space. This is your classic 3D cartesian coordinate system, and the equations of motion in this frame of reference are straightforwardly the \(x,y,\) and \(z\) components of Equation \ref{Navier Stokes Rotating}.
+First is the \textbf{global cartesian coordinate system}, with basis vectors \(\hat{x}',\hat{y}',\hat{z}'\) in the directions shown in Figure \ref{LocCartes}. The origin is located at the centre of the Earth, and the basis vectors rotate with the Earth (i.e., they rotate with angular velocity \(\vec{\Omega}=|\Omega|\hat{z}'\)). The basis vectors do vary with time (as they're rotating with the Earth), but \textit{do not} vary with space. This is your classic 3D cartesian coordinate system, and the equations of motion in this frame of reference are straightforwardly the \(x\),\(y\), and \(z\) components of Equation \ref{Navier Stokes Rotating}.
 
-Second, we introduce the \textbf{spherical coordinate system}. Again, the origin is located at the centre of the Earth, and the basis vectors rotate with the Earth (i.e., they rotate with angular velocity \(\vec{\Omega}\)). However, this time, the basis vectors also \textit{vary with space}. The basis vectors would be aligned with magenta arrows in Figure \ref{LocCartes} at that point, but they would not look like that at another point on the sphere! This is your classic 3D curvilinear spherical coordinate system.
+Second, we introduce the \textbf{spherical coordinate system}. Again, the origin is located at the centre of the Earth, and the basis vectors rotate with the Earth (i.e., they rotate with angular velocity \(\vec{\Omega}\)). However, this time, the basis vectors also \textit{vary with space}. The basis vectors at each point in space align themselves with the surface of the Earth as shown by the magenta arrows in Figure \ref{LocCartes}. Notice how the orientation of the magenta arrows change depending on the point. This is your classic 3D curvilinear spherical coordinate system.
 
 \begin{figure}[H]
     \centering
@@ -685,7 +685,10 @@ Second, we introduce the \textbf{spherical coordinate system}. Again, the origin
     \begin{tikzpicture},
         \begin{scope}[3d view={110}{25.26}]
             % Lambda Arc
-            \draw (0,0) -- (3,0) arc[start angle=0, end angle=90, radius=3cm] -- cycle;
+            % \tdplotsetmaincoords{0}{0}
+            \tdplotsetmaincoords{65.26}{110}
+            \tdplotdrawarc{(0,0,0)}{1}{0}{330}{anchor=north}{$\lambda$}
+            % \draw (0,0) -- (3,0) arc[start angle=0, end angle=90, radius=3cm] -- cycle;
             % \drawfill[->,fill=myyellow] (0,0) -- (0.7,0.7) arc[start angle=0, end angle=225, radius=1cm] -- (0,0);
         \end{scope}
         \begin{scope}[3d view={110}{25.26}]
@@ -696,15 +699,15 @@ Second, we introduce the \textbf{spherical coordinate system}. Again, the origin
             %Global Cartesian Basis Vectors
             \draw[->,opacity=0.7,mydarkblue, thick] (0,0,0) -- (0.5,0,0) node[anchor=north] {\(\hat{x}'\)};
             \draw[->,opacity=0.7,mydarkblue, thick] (0,0,0) -- (0,0.5,0) node[anchor=north] {\(\hat{y}'\)};
-            \draw[->,opacity=0.7,mydarkblue, thick] (0,0,0) -- (0,0,0.5) node[anchor=west] {\(\hat{z}'\)};
+            \draw[->,opacity=0.7,mydarkblue, thick] (0,0,0) -- (0,0,0.5) node[anchor=south west] {\(\hat{z}'\)};
         \end{scope}
         \begin{scope}[3d view={140}{25.26}]
             % Circle in x-y plane
-            \draw[-,dashed] plot[domain=0:400,samples=41,smooth]({2*sin(\x)},{2*cos(\x)},{0});
+            \draw[-,dashed] plot[domain=0:360,samples=37,smooth]({2*sin(\x)},{2*cos(\x)},{0});
             % Circle in x, z plane
-            \draw[-,dashed] plot[domain=0:400,samples=41,smooth]({2*cos(0)*sin(\x)},{2*sin(0)*sin(\x)},{2*cos(\x)});
+            \draw[-,dashed] plot[domain=0:360,samples=37,smooth]({2*cos(0)*sin(\x)},{2*sin(0)*sin(\x)},{2*cos(\x)});
             % Circle at top
-            \draw[-,dashed] plot[domain=0:360,samples=41,smooth]({1.414*sin(\x)},{1.414*cos(\x)},{1.414});
+            \draw[-,dashed] plot[domain=0:360,samples=37,smooth]({1.414*sin(\x)},{1.414*cos(\x)},{1.414});
             %Spherical Basis Vectors
             \coordinate (A) at (1.414,0,1.414);
             \draw[-] (0,0,0) -- (A);
@@ -715,19 +718,19 @@ Second, we introduce the \textbf{spherical coordinate system}. Again, the origin
             %Phi Arc
             % \filldraw[fill=myorange,opacity=0.5] (0,0,0) -- (0.7071,0,0.7071) arc[start angle=45, end angle=0, radius=1cm] -- cycle;
             \filldraw[fill=myorange,opacity=0.5] (1,0,0) .. controls +(0,0,0.5) and +(0.1,0,-0.1) .. (0.7071,0,0.7071) -- (0,0,0) -- cycle;
-            %Lambda Arc
-            \filldraw[fill=myyellow,opacity=0.5] (1,0,0) .. controls +(0,0.5,0) and +(0.1,0.1,0) .. (0.866,0.5,0) -- (0,0,0) -- cycle;
+            % %Lambda Arc
+            % \filldraw[fill=myyellow,opacity=0.5] (1,0,0) .. controls +(0,0.5,0) and +(0.1,0.1,0) .. (0.866,0.5,0) -- (0,0,0) -- cycle;
         \end{scope}
         \begin{scope}
             %Big circle on outside
-            \draw[-,dashed] plot[domain=0:400,samples=41,smooth]({2*sin(\x)},{2*cos(\x)});
-            %Basis vector lables
+            \draw[-,dashed] plot[domain=0:360,samples=37,smooth]({2*sin(\x)},{2*cos(\x)});
+            %Basis vector labels
             \node[mymagenta] at (-1.05,1.45) {\(\hat{\phi}\)};
             \node[mymagenta] at (-0.65,1.1) {\(\hat{\lambda}\)};
             \node[mymagenta] at (-1.5,0.95) {\(\hat{r}\)};
             %Coordinate labels
             \node at (-0.45,0.08) {\(\phi\)};
-            \node at (-0.4,-0.22) {\(\lambda\)};
+            % \node at (-0.4,-0.22) {\(\lambda\)};
             \node at (-0.3,0.5) {\(r\)};
         \end{scope}
     \end{tikzpicture}}
@@ -735,22 +738,30 @@ Second, we introduce the \textbf{spherical coordinate system}. Again, the origin
     \scalebox{1.4}{
     \begin{tikzpicture},
         \begin{scope}[3d view={110}{25.26}]
+            % Lambda Arc
+            % \tdplotsetmaincoords{0}{0}
+            \tdplotsetmaincoords{65.26}{110}
+            \tdplotdrawarc{(0,0,0)}{1}{0}{110}{anchor=north}{}
+            % \draw (0,0) -- (3,0) arc[start angle=0, end angle=90, radius=3cm] -- cycle;
+            % \drawfill[->,fill=myyellow] (0,0) -- (0.7,0.7) arc[start angle=0, end angle=225, radius=1cm] -- (0,0);
+        \end{scope}
+        \begin{scope}[3d view={110}{25.26}]
             % Global Cartesian Coordinate System
-            \draw[->,opacity=0.7] (0,0,0) -- (2,0,0) node[anchor=north] {\(x'\)};
-            \draw[->,opacity=0.7] (0,0,0) -- (0,2,0) node[anchor=north] {\(y'\)};
-            \draw[->,opacity=0.7] (0,0,0) -- (0,0,2) node[anchor=north west] {\(z'\)};
+            \draw[->,opacity=0.7] (0,0,0) -- (2,0,0) node[anchor=south] {\(x'\)};
+            \draw[->,opacity=0.7] (0,0,0) -- (0,2,0) node[anchor=south] {\(y'\)};
+            \draw[->,opacity=0.7] (0,0,0) -- (0,0,2) node[anchor= west] {\(z'\)};
             %Global Cartesian Basis Vectors
-            \draw[->,opacity=0.7,mydarkblue, thick] (0,0,0) -- (0.5,0,0) node[anchor=north] {\(\hat{x}'\)};
-            \draw[->,opacity=0.7,mydarkblue, thick] (0,0,0) -- (0,0.5,0) node[anchor=north] {\(\hat{y}'\)};
-            \draw[->,opacity=0.7,mydarkblue, thick] (0,0,0) -- (0,0,0.5) node[anchor=west] {\(\hat{z}'\)};
+            \draw[->,opacity=0.7,mydarkblue, thick] (0,0,0) -- (0.5,0,0) node[anchor=south] {\(\hat{x}'\)};
+            \draw[->,opacity=0.7,mydarkblue, thick] (0,0,0) -- (0,0.5,0) node[anchor=south] {\(\hat{y}'\)};
+            \draw[->,opacity=0.7,mydarkblue, thick] (0,0,0) -- (0,0,0.5) node[anchor=south west] {\(\hat{z}'\)};
         \end{scope}
         \begin{scope}[3d view={0}{25.26}]
             % Circle in x-y plane
-            \draw[-,dashed] plot[domain=0:400,samples=41,smooth]({2*sin(\x)},{2*cos(\x)},{0});
+            \draw[-,dashed] plot[domain=0:360,samples=37,smooth]({2*sin(\x)},{2*cos(\x)},{0});
             % Circle in x, z plane
             \draw[-,dashed] plot[domain=0:400,samples=41,smooth]({2*cos(0)*sin(\x)},{2*sin(0)*sin(\x)},{2*cos(\x)});
-            % Circle at top
-            \draw[-,dashed] plot[domain=0:360,samples=41,smooth]({1.414*sin(\x)},{1.414*cos(\x)},{-1.414});
+            % Circle at bottom
+            \draw[-,dashed] plot[domain=0:360,samples=37,smooth]({1.414*sin(\x)},{1.414*cos(\x)},{-1.414});
             %Spherical Basis Vectors
             \coordinate (A) at (1.414,0,-1.414);
             \draw[-] (0,0,0) -- (A);
@@ -762,19 +773,19 @@ Second, we introduce the \textbf{spherical coordinate system}. Again, the origin
             % \filldraw[fill=myorange,opacity=0.5] (0,0,0) -- (0.7071,0,0.7071) arc[start angle=45, end angle=0, radius=1cm] -- cycle;
             \filldraw[fill=myorange,opacity=0.5] (1,0,0) .. controls +(0,0,-0.5) and +(0.1,0,0.1) .. (0.7071,0,-0.7071) -- (0,0,0) -- cycle;
             %Lambda Arc
-            \filldraw[fill=myyellow,opacity=0.5] (1,0,0) .. controls +(0,0.5,0) and +(0.1,0.1,0) .. (0.866,0.5,0) -- (0,0,0) -- cycle;
+            % \filldraw[fill=myyellow,opacity=0.5] (1,0,0) .. controls +(0,0.5,0) and +(0.1,0.1,0) .. (0.866,0.5,0) -- (0,0,0) -- cycle;
         \end{scope}
         \begin{scope}
             %Big circle on outside
-            \draw[-,dashed] plot[domain=0:400,samples=41,smooth]({2*sin(\x)},{2*cos(\x)});
+            \draw[-,dashed] plot[domain=0:360,samples=37,smooth]({2*sin(\x)},{2*cos(\x)});
             %Basis vector lables
-            \node[mymagenta] at (-1.05,1.45) {\(\hat{\phi}\)};
-            \node[mymagenta] at (-0.65,1.1) {\(\hat{\lambda}\)};
-            \node[mymagenta] at (-1.5,0.95) {\(\hat{r}\)};
+            \node[mymagenta] at (1.9,-1) {\(\hat{\phi}\)};
+            \node[mymagenta] at (1.4,-0.85) {\(\hat{\lambda}\)};
+            \node[mymagenta] at (2,-1.5) {\(\hat{r}\)};
             %Coordinate labels
-            \node at (-0.45,0.08) {\(\phi\)};
-            \node at (-0.4,-0.22) {\(\lambda\)};
-            \node at (-0.3,0.5) {\(r\)};
+            \node at (0.75,-0.35) {\(\phi\)};
+            \node at (0.2,-0.6) {\(\lambda\)};
+            \node at (0.9,-1) {\(r\)};
         \end{scope}
     \end{tikzpicture}
     % \begin{tikzpicture},
@@ -802,37 +813,13 @@ Second, we introduce the \textbf{spherical coordinate system}. Again, the origin
     %     \end{scope}
     % \end{tikzpicture}
     }
-    \caption{Spherical Coordinates. \((x',y',z')\) indicate the directions of the basis vectors in the global cartesian coordinate system, while \(\hat{r},\hat{\phi},\hat{\lambda}\) indicate the basis vectors of the spherical coordinate system in magenta arrows. As seen, these basis vectors are space-dependent, and change direction depending on where you are on Earth.}
+    \caption{Spherical Coordinates. \((x',y',z')\) indicate the directions of the basis vectors in the global cartesian coordinate system, while \(\hat{r},\hat{\phi},\hat{\lambda}\) indicate the basis vectors of the spherical coordinate system in magenta arrows. Compare the image on the left to the image on the right: as you can see, the spherical basis vectors (the magenta arrows) are space-dependent, and point in different directions depending on where you are on Earth (i.e., they depend explicitly on the position vector \(\vec{r}\)).}
     \label{LocCartes}
 \end{figure}
 
 We identify the basis vectors \(\hat{r}\), \(\hat{\phi}\), \(\hat{\lambda}\) as pointing in the radial (upward away from the centre of the Earth), northward, and eastward directions.\footnote{
-    Note that I go against common mathematical convention here by using \(\phi=\frac{\pi}{2}-\theta\) where \(\theta=\) the polar angle. I do this here to follow convention in the GFD literature.
-}. We commonly refer to the east-west direction as the \textbf{zonal} direction (the direction of \(\hat{\lambda}\)) and the north-south direction (the direction of \(\hat{\phi}\)) as the \textbf{meridional} direction. Explicitly, they are given as follows (in matrix form for brevity):
-\begin{align*}
-    \left( \begin{array}{c}
-        \hat{r}
-        \\
-        \hat{\phi}
-        \\
-        \hat{\lambda}
-    \end{array} \right)
-    =
-    \left( \begin{array}{ccc}
-        \sin\phi\cos\lambda & \sin\phi\sin\lambda & \cos\phi
-        \\
-        \cos\phi\cos\lambda & \cos\phi\sin\lambda & -\sin\phi
-        \\
-        -\sin\lambda & -\cos\lambda & 0
-    \end{array} \right)
-    \left( \begin{array}{c}
-        \hat{x}
-        \\
-        \hat{y}
-        \\
-        \hat{z}
-    \end{array} \right)
-\end{align*}
+    Note that I go against common mathematical convention here by using \(\phi=\frac{\pi}{2}-\theta\) where \(\theta=\) the polar angle. I do this here to follow convention in the GFD literature. If you refer to, for example, \href{https://en.wikipedia.org/wiki/Vector_fields_in_cylindrical_and_spherical_coordinates}{this}  wikipedia page, you will notice some of the matrices look different. This is most likely due to the difference in polar angle definition, and to convert simply recall that \(\sin\theta = \cos\phi\) and \(\cos\theta = \sin\phi\).
+}. We commonly refer to the east-west direction as the \textbf{zonal} direction (the direction of \(\hat{\lambda}\)) and the north-south direction (the direction of \(\hat{\phi}\)) as the \textbf{meridional} direction.
 
 In this coordinate system, we define the position of a fluid parcel on the Earth by the coordinates \((r,\phi,\lambda)\), indicating the radial distance (from the centre of the Earth), the latitude \(\phi\in[-\frac{\pi}{2},\frac{\pi}{2}]\) (\(\phi=0\) indicates the equator, \(\phi=\pm\frac{\pi}{2}\) is the north/south pole), and the longitude \(\lambda\in[0,2\pi]\). The position vector is therefore given by: \(\vec{r}=r\,\hat{r}+\phi\,\hat{\phi}+\lambda\,\hat{\lambda}\). The coordinates reprsenting the velocity of the fluid parcel is given by \((u,v,w)\) as the velocity in the east, north, and radial directions. They are given explicitly as follows:
 
@@ -854,77 +841,118 @@ In this coordinate system, we define the position of a fluid parcel on the Earth
 \end{minipage}
 \vspace{1mm}
 
-Again, the velocity vector is given by: \(\vec{u}=w\,\hat{r}+v\,\hat{\phi}+u\,\hat{\lambda}\).
+Again, the velocity vector is given by: \(\vec{u}=w\,\hat{r}+v\,\hat{\phi}+u\,\hat{\lambda}\). The explicit form of the basis vectors are given in this\footnote{
+    The explicit form of the basis vectors \(\hat{r},\hat{\phi},\hat{\lambda}\) are given here. Note that I put this here for completeness, but all the intuition you need is in Figure \ref{LocCartes}. 
+    \begin{align*}
+        \left( \begin{array}{c}
+            \hat{r}
+            \\
+            \hat{\phi}
+            \\
+            \hat{\lambda}
+        \end{array} \right)
+        =
+        \left( \begin{array}{ccc}
+            \cos\phi\cos\lambda & \cos\phi\sin\lambda & \sin\phi
+            \\
+            \sin\phi\cos\lambda & \sin\phi\sin\lambda & -\cos\phi
+            \\
+            -\sin\lambda & \cos\lambda & 0
+        \end{array} \right)
+        \left( \begin{array}{c}
+            \hat{x}
+            \\
+            \hat{y}
+            \\
+            \hat{z}
+        \end{array} \right)
+    \end{align*}
+    with the inverse transformation being (the inverse is simply the transpose, since it is an orthogonal matrix):
+    \begin{align*}
+        \left( \begin{array}{c}
+            \hat{x}
+            \\
+            \hat{y}
+            \\
+            \hat{z}
+        \end{array} \right)
+        =
+        \left( \begin{array}{ccc}
+            \cos\phi\cos\lambda & \sin\phi\cos\lambda & -\sin\lambda
+            \\
+            \cos\phi\sin\lambda & \sin\phi\sin\lambda & \cos\lambda
+            \\
+            \sin\phi & -\cos\phi & 0
+        \end{array} \right)
+        \left( \begin{array}{c}
+            \hat{r}
+            \\
+            \hat{\phi}
+            \\
+            \hat{\lambda}
+        \end{array} \right)
+    \end{align*}
+} footnote.
 
-[UNDER CONSTRUCTION]
+% In this coordinate system, we define the position and velocity coordiates \((x,y,z)\) and \((u,v,w)\) as indicating distance and velocity in the east, north, and upwards directions, respectively. \(r=\) the radial coordinate, identifying the distance from the centre of the Earth, \(\) 
 
-In this coordinate system, we define the position and velocity coordiates \((x,y,z)\) and \((u,v,w)\) as indicating distance and velocity in the east, north, and upwards directions, respectively. \(r=\) the radial coordinate, identifying the distance from the centre of the Earth, \(\) 
+% We further define the latitude \(\phi\in[-\frac{\pi}{2},\frac{\pi}{2}]\) (\(\phi=0\) indicates the equator, \(\phi=\pm\frac{\pi}{2}\) is the north/south pole) and the radial distance \(r\) where \(r=a+z\) where \(a=\) the radius of the Earth (see Figure \ref{LocCartes}).
 
-We further define the latitude \(\phi\in[-\frac{\pi}{2},\frac{\pi}{2}]\) (\(\phi=0\) indicates the equator, \(\phi=\pm\frac{\pi}{2}\) is the north/south pole) and the radial distance \(r\) where \(r=a+z\) where \(a=\) the radius of the Earth (see Figure \ref{LocCartes}).
+% Explicitly, \(\vec{r}=(x,y,z)=x\,\hat{x}+y\,\hat{y}+z\,\hat{z}\) are given by (where \(\lambda=\) the longitude):
 
-Explicitly, \(\vec{r}=(x,y,z)=x\,\hat{x}+y\,\hat{y}+z\,\hat{z}\) are given by (where \(\lambda=\) the longitude):
+% \vspace{-4mm}
+% \begin{minipage}{.31\linewidth}
+% \begin{align*}
+%     x = r\cos\phi\sin\lambda
+% \end{align*}
+% \end{minipage}
+% \begin{minipage}{.31\linewidth}
+% \begin{align*}
+%     y = r\sin\phi
+% \end{align*}
+% \end{minipage}
+% \begin{minipage}{.31\linewidth}
+% \begin{align*}
+%     z = r-a
+% \end{align*}
+% \end{minipage}
 
-\vspace{-4mm}
-\begin{minipage}{.31\linewidth}
-\begin{align*}
-    x = r\cos\phi\sin\lambda
-\end{align*}
-\end{minipage}
-\begin{minipage}{.31\linewidth}
-\begin{align*}
-    y = r\sin\phi
-\end{align*}
-\end{minipage}
-\begin{minipage}{.31\linewidth}
-\begin{align*}
-    z = r-a
-\end{align*}
-\end{minipage}
+% \vspace{1mm}\noindent
+Our goal now is to derive which extra terms appear in the equations of motion if we write it in terms of this spherical coordinate system.
 
-\vspace{1mm}\noindent
-Our goal now is to derive which extra terms appear in the equations of motion if we write it in terms of this coordinate system. 
-
-The first step is to write out \(\vec{u}\) in this coordinate system:
-\begin{align*}
-    \vec{u}=\left( \begin{array}{c}
-        u\\
-        v\\
-        w
-    \end{array} \right)
-    =u\hat{x}+v\hat{y}+w\hat{z}
-\end{align*}
-
-The second step is to consider the material derivative \(\frac{D\vec{u}}{Dt}\), taking into account that it is not necessarily the case that \(\frac{D\hat{x}}{Dt}=0\) and again use product rule:
+The first step is to consider the material derivative \(\frac{D\vec{u}}{Dt}\), taking into account that it is not necessarily the case that \(\frac{D\hat{r}}{Dt}=\frac{D\hat{\phi}}{Dt}=\frac{D\hat{\lambda}}{Dt}=0\) and again use product rule:
 \begin{align*}
     \frac{D\vec{u}}{Dt} = 
-    \frac{Du}{Dt}\hat{x} +
-    \frac{Dv}{Dt}\hat{y} +
-    \frac{Dw}{Dt}\hat{z} +
-    u\frac{D\hat{x}}{Dt} +
-    v\frac{D\hat{y}}{Dt} +
-    w\frac{D\hat{z}}{Dt}
+    \frac{Du}{Dt}\hat{\lambda} +
+    \frac{Dv}{Dt}\hat{\phi} +
+    \frac{Dw}{Dt}\hat{r} +
+    u\frac{D\hat{\lambda}}{Dt} +
+    v\frac{D\hat{\phi}}{Dt} +
+    w\frac{D\hat{r}}{Dt}
 \end{align*}
-We now require knowledge about these basis vectors \(\hat{x}\), \(\hat{y}\), \(\hat{z}\) vary with the movement of the fluid parcel, i.e., the precise value of \(\frac{D\hat{x}}{Dt}\). Writing this out explicitly:
+We now require knowledge about these basis vectors \(\hat{\lambda}\), \(\hat{\phi}\), \(\hat{r}\) vary with the movement of the fluid parcel, i.e., the precise value of \(\frac{D\hat{\lambda}}{Dt}\). Writing this out explicitly\footnote{For an alternative treatment, refer to \href{https://farside.ph.utexas.edu/teaching/336L/Fluidhtml/node258.html}{this}.}:
 \begin{align*}
-    \frac{D\hat{x}}{Dt}
+    \frac{D\hat{\lambda}}{Dt}
     =
-    \frac{\partial \hat{x}}{\partial t}
+    \frac{\partial \hat{\lambda}}{\partial t}
     +
-    u\frac{\partial \hat{x}}{\partial x}
+    u\frac{1}{r\,\cos\phi}\frac{\partial \hat{\lambda}}{\partial \lambda}
     +
-    v\frac{\partial \hat{x}}{\partial y}
+    v\frac{1}{r}\frac{\partial \hat{\lambda}}{\partial \phi}
     +
-    w\frac{\partial \hat{x}}{\partial z}
+    w\frac{\partial \hat{\lambda}}{\partial r}
 \end{align*}
-The time derivatives are zero (\(\frac{\partial \hat{x}}{\partial t}=\frac{\partial \hat{y}}{\partial t}=\frac{\partial \hat{z}}{\partial t}=0\)) since the basis vectors do not change in time (relative to the rotating coordinates \(x',y',z'\)). The spatial derivatives can be found geometrically using some trigonometry (I, at this point in time, can't be bothered to write more than this). Therefore:
+The time derivatives are zero (\(\frac{\partial \hat{\lambda}}{\partial t}=\frac{\partial \hat{\phi}}{\partial t}=\frac{\partial \hat{r}}{\partial t}=0\)) since the basis vectors do not change in time (relative to the rotating coordinates \(x',y',z'\)). The spatial derivatives (exercise, but probably not worth it tbh) can be found geometrically by writing the spherical basis vectors in terms of the cartesian basis vectors (using the transformation in the footnote below), differentiating normally, then converting back to spherical coordinates (using the inverse transformation in the footnote below). Therefore: 
+[UNDER CONSTRUCTION]
 
+\vspace{-3mm}
 \begin{minipage}{.3\linewidth}
 \begin{align*}
-    &\frac{\partial \hat{x}}{\partial x}=\frac{1}{r}\tan(\phi) \, \hat{y}-\frac{1}{r}\hat{z}
+    &\frac{\partial \hat{\lambda}}{\partial \lambda}=-\sin(\phi) \, \hat{\phi}-\cos(\phi)\hat{r}
     \\
-    &\frac{\partial \hat{x}}{\partial y}=0
+    &\frac{\partial \hat{\lambda}}{\partial \phi}=0
     \\
-    &\frac{\partial \hat{x}}{\partial z}=0
+    &\frac{\partial \hat{\lambda}}{\partial r}=0
     \\
     \therefore\,
     &
@@ -933,11 +961,11 @@ The time derivatives are zero (\(\frac{\partial \hat{x}}{\partial t}=\frac{\part
 \end{minipage}
 \begin{minipage}{.3\linewidth}
 \begin{align*}
-    &\frac{\partial \hat{y}}{\partial x}=-\frac{1}{r}\tan(\phi)\,\hat{x}
+    &\frac{\partial \hat{\phi}}{\partial \lambda}=-\sin(\phi)\,\hat{\lambda}
     \\
-    &\frac{\partial \hat{y}}{\partial y}=-\frac{1}{r}\hat{z}
+    &\frac{\partial \hat{\phi}}{\partial \phi}=-\hat{r}
     \\
-    &\frac{\partial \hat{y}}{\partial z}=0
+    &\frac{\partial \hat{\phi}}{\partial r}=0
     \\
     \therefore\,
     &
@@ -946,11 +974,11 @@ The time derivatives are zero (\(\frac{\partial \hat{x}}{\partial t}=\frac{\part
 \end{minipage}
 \begin{minipage}{.3\linewidth}
 \begin{align*}
-    &\frac{\partial \hat{z}}{\partial x}=\frac{1}{r}\hat{x}
+    &\frac{\partial \hat{r}}{\partial \lambda}=\cos\phi\hat{\lambda}
     \\
-    &\frac{\partial \hat{z}}{\partial y}=\frac{1}{r}\hat{y}
+    &\frac{\partial \hat{r}}{\partial \phi}=\hat{\phi}
     \\
-    &\frac{\partial \hat{z}}{\partial z}=0
+    &\frac{\partial \hat{r}}{\partial r}=0
     \\
     \therefore\,
     &
@@ -960,25 +988,21 @@ The time derivatives are zero (\(\frac{\partial \hat{x}}{\partial t}=\frac{\part
 
 \vspace{2mm}Finally, we note that, in this coordinate system, \(\vec{\Omega}\) is given by:
 \begin{align*}
-    \vec{\Omega} = \Omega (\hat{y}\cos\phi+\hat{z}\sin\phi)
+    \vec{\Omega} = \Omega \,(\hat{\phi}\,\cos\phi+\hat{r}\,\sin\phi)
 \end{align*}
 
 Plugging into Equation \ref{Navier Stokes Rotating}, churning through the algebra, and equating components, we get:
 \begin{align*}
     \frac{Du}{Dt}-\left( 2\Omega+\frac{u}{r\cos\phi} \right)\left( v\sin\phi-w\cos\phi \right)+\frac{1}{\rho r \cos\phi}\frac{\partial p}{\partial \lambda}
-    =F_x
+    =F_\lambda
     \\
-    \frac{Dv}{Dt}+\frac{wv}{r}+\left( 2\Omega+\frac{u}{r\cos\phi} \right)u\sin\phi+\frac{1}{\rho r}\frac{\partial p}{\partial \phi}=F_y
+    \frac{Dv}{Dt}+\frac{wv}{r}+\left( 2\Omega+\frac{u}{r\cos\phi} \right)u\sin\phi+\frac{1}{\rho r}\frac{\partial p}{\partial \phi}=F_\phi
     \\
-    \frac{Dw}{Dt}-\frac{u^2+v^2}{r}-2\Omega u \cos\phi+\frac{1}{\rho}\frac{\partial p}{\partial r}+g=F_z
+    \frac{Dw}{Dt}-\frac{u^2+v^2}{r}-2\Omega u \cos\phi+\frac{1}{\rho}\frac{\partial p}{\partial r}+g=F_r
 \end{align*}
 where we have lumped together all the terms on the right-hand-side of \ref{Navier Stokes Rotating} into the \(F_x, F_y, F_z\). The terms with \(\Omega\) are what the coriolis force looks like in this coordinate system. All the extra terms \(\left( \text{e.g., the } \frac{wv}{r} \text{ term}\right)\), as well the strange form of the pressure gradient, are due to the fact that we have adopted a local cartesian system, in which the coordinate system changes as we move over the Earth.
 
-Note that, unlike before, Equations \ref{Mass Conservation} - \ref{Energy Equation} \textit{do} look substantially different, but only for the reason that the pressure gradient term looks different. The material derivative terms (e.g., the ) doesn't look different.
-
-Finally, we introduce the \textbf{Local Cartesian Coordinate System}. This coordinate system has the origin located not at the centre of the Earth, but about the location of interest on the sphere. The basis vectors, again, rotate with the Earth. However, the basis vectors are constant with space. The basis vectors for the \textbf{Local Cartesian Coordinate System} then, \textit{about a certain point}, are shown by the magenta arrows in Figure \ref{LocCartes}. 
-
-We identify the basis vectors \(\hat{x}\), \(\hat{y}\), \(\hat{z}\) as pointing in the eastward, northward, and upward (away from the centre of the Earth) directions \textit{at that very origin}. The further we stray from the origin, the more those basis vectors point in different directions! In this coordinate system, we define the position and velocity coordiates \((x,y,z)\) and \((u,v,w)\) as indicating distance and velocity in the east, north, and upwards directions, respectively. We also refer to the east-west direction as the \textbf{zonal} direction and the north-south direction as the \textbf{meridional} direction.
+Note that, unlike before, Equations \ref{Mass Conservation} - \ref{Energy Equation} \textit{do} look substantially different, but only for the reason that the pressure gradient term looks different. The material derivative terms (e.g., the \(\frac{D\rho}{Dt}\)) don't look different because scalars like \(\rho\) are unchanged under our coordinate transformation.
 
 \section{Simplifying the Equations of Motion}
 
@@ -1012,7 +1036,7 @@ Acceleration of Gravity & \(g\) & \(g\sim g\) & \qty{10}{\metre\per\second\squar
 \hline
 \end{tabular}\newline
 
-I do not write out all the details here, as they would easily take multiple pages. If you are curious about the details, refer to the mini-scale analysis I do in deriving \ref{Hydrostatic GFD}, which is analogous to what we do here. A more rigorous method would be non-dimensionalisation, but this is overkill for our purposes. Again, if you are curious about the details, refer to the mini-non-dimensionalisation I do in deriving the \hyperref[Rossby Number]{Rossby Number}. 
+I do not write out all the details here, as they would easily take multiple pages. If you are curious about the details, refer to the mini-scale analysis I do in deriving \ref{Hydrostatic GFD}, which is analogous to what we do here. A more rigorous method would be non-dimensionalisation, but this is overkill for our purposes. Again, if you are curious about the details, refer to the mini-non-dimensionalisation I do in deriving the \hyperref[Rossby Number]{Rossby Number}.
 
 Suffice it to say we eliminate and approximate many terms through this scale analysis. Most (but not all) of the eliminations/approximations are due to the fact that the following relations obtain (most due to the fact that atmospheric and oceanic motion has an extremely small aspect ratio: it's a lot wider than it is tall):
 
@@ -1054,6 +1078,10 @@ As a quick
 This allows us to substitute \(a\) for \(r\) in many places, neglect many terms including \(w\) since they're small compared to \(u,v\), and equate certain spatial derivatives. After eliminating the small terms, we arrive at our final set of simplified equations.
 
 \subsection{Space-Dependent Coordinate Systems Pt. 2: Local Cartesian Coordinate Systems}\label{s Local Cartesian Coordinates}
+
+We now, finally, post-scale analysis, introduce the third coordinate system: the \textbf{Local Cartesian Coordinate System}. This coordinate system has the origin located not at the centre of the Earth, but about the location of interest on the sphere. The basis vectors, again, rotate with the Earth. However, the basis vectors are constant with space. The basis vectors for the \textbf{Local Cartesian Coordinate System} then, \textit{about a certain point}, are shown by the magenta arrows in Figure \ref{LocCartes}. 
+
+We identify the basis vectors \(\hat{x}\), \(\hat{y}\), \(\hat{z}\) as pointing in the eastward, northward, and upward (away from the centre of the Earth) directions \textit{at that very origin}. The further we stray from the origin, the more those basis vectors point in different directions! In this coordinate system, we define the position and velocity coordiates \((x,y,z)\) and \((u,v,w)\) as indicating distance and velocity in the east, north, and upwards directions, respectively. We also refer to the east-west direction as the \textbf{zonal} direction and the north-south direction as the \textbf{meridional} direction.
 
 \section{The Simplified Equations of Motion}
 
@@ -2179,7 +2207,7 @@ In a way, we can think of \textbf{PV} as encoding the two important properties o
 
 \subsubsection{Derivation}
 
-We first take the \(z\) component of the curl Equation \ref{SW mom} (and recalling that \(f\neq const\)):
+We first take the \(z\)-component of the curl of Equation \ref{SW mom} (and recalling that \(f\neq const\)):
 \begin{align*}
     \frac{D_h}{Dt}\left( \frac{\partial v}{\partial x}- \frac{\partial u}{\partial y}\right) + \left( \frac{\partial (fv)}{\partial y} + \frac{\partial (fu)}{\partial x}\right) = 0
     \\
@@ -2223,11 +2251,11 @@ Using product rule, this implies the following:
 
 \subsubsection{Interpretation}\label{ss PV interpretation}
 
-We can interpret material conservation of potential vorticity by considering an infinitesimally thin column of fluid.
+We can interpret material conservation of potential vorticity by considering an fluid element: a column of fluid.
 
-This column of fluid lies between the bottom (\(z=b\)) and top (\(z=\eta\)) of the layer, and is infintesimally thin. We impose that the column is infinitesimally thin to ensure that \(u\), \(v\), and \(h\) do not vary appreciably over the entire column. However, we \textit{must} consider the entire column of fluid because our assumption (in the derivation) that \(u\) and \(v\) do not vary with \(z\).
+This column of fluid lies between the bottom (\(z=b\)) and top (\(z=\eta\)) of the layer, and is infintesimally thin. We impose that the column is infinitesimally thin to ensure that \(u\), \(v\), and \(h\) do not vary appreciably over the entire column. However, we are free to consider the entire column of fluid because of our assumption (in the derivation) that \(u\) and \(v\) do not vary with \(z\).
 
-As this column of fluid is advected around, it must conserve its angular momentum in the \(z\)-direction. Suppose the column is initially rotating with some (total) angular velocity. If the column is stretched (i.e., if \(h\) increases), it become thinner (because the total volume of the column remains constant), and so it must therefore rotate faster to conserve angular momentum.
+As this column of fluid is advected around, it must conserve its angular momentum in the \(z\)-direction (since ). Suppose the column is initially rotating with some (total) angular velocity. If the column is stretched (i.e., if \(h\) increases), it become thinner (because the total volume of the column remains constant), and so it must therefore rotate faster to conserve angular momentum.
 
 \begin{figure}[H]
     \centering
