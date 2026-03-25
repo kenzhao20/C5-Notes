@@ -159,7 +159,11 @@ Consider the case where \(\delta \vec{r}\) is perpendicular to \(\vec{\nabla}p\)
 
 \subsection{The Curl}
 
-We can only take the curl of a \textbf{vector field}, and the curl is always a \textbf{vector field}.
+We can only take the curl of a \textbf{vector field}, and the curl is always a \textbf{vector field}.\endnote{
+    I should note that we can talk about this more generally using the wedge product, in which case the curl of a vector field will always be a bivector field. This has the added benefit of being generalisable to two dimensional vector fields \(\vec{u}=(u,v)^T\) where the curl equals a (pseudo-)scalar $\zeta$. However, this has the downside of confusing the reader (and the author!) if they're not familiar with bivectors and wedge products.
+
+    You might ask how useful it is to talk about two-dimensional fluid flow, in which case I would say very, given certain properties of fluid flow on a rotating gravity-causing planet with a shallow atmosphere like ours!
+}
 
 Broadly, the curl measures the local rotation of the \textbf{vector field}. More specifically, at each point in space and time, the value of the curl is a vector with the following properties: the direction (in 3D space) of the vector is in the direction perpendicular to the plain of rotation (following the right-hand rule)\footnote{
     This is just a convention. The right hand rule means that if you form a thumbs up with your right hand, your thumb is parallel with the curl if and only if the rotation is in the direction from your knuckles to the end of your fingers (following your fingers). 
@@ -218,7 +222,7 @@ Broadly, the curl measures the local rotation of the \textbf{vector field}. More
     \caption{Paddleboard (\textcolor{mymagenta}{magenta triangle \rule{0.2cm}{0.2cm}}) demonstration of curl. The \textcolor{mydarkblue}{Dotted Blue Arrow \rule{0.2cm}{0.2cm}} indicates the direction of time evolution (the paddleboard is being advected by the velocity field \(\vec{u}(\vec{r})\)).}
 \end{figure}
 
-Note crucially that this only measures the \textbf{local} rotation, not the global rotation. The example often given to explain this distinction is a paddleboard: consider a very small paddleboard suspended in a fluid with a velocity field \(\vec{u}(\vec{r})\). The paddleboard is pushed around by the flow. The curl of \(\vec{u}\) encodes whether the paddleboard itself will turn, not whether it will follow a circular path.
+Note crucially that this only measures the \textbf{local} rotation, not the global rotation. The example often given to explain this distinction is a paddleboard: consider a very small paddleboard suspended in a fluid with a velocity field \(\vec{u}(\vec{r})\). The paddleboard is pushed around by the flow. The curl of \(\vec{u}\) encodes whether the paddleboard \textit{itself} will turn, not whether it will follow a circular path.
 
 \subsection{The Divergence}
 
@@ -1079,9 +1083,76 @@ This allows us to substitute \(a\) for \(r\) in many places, neglect many terms 
 
 \subsection{Space-Dependent Coordinate Systems Pt. 2: Local Cartesian Coordinate Systems}\label{s Local Cartesian Coordinates}
 
-We now, finally, post-scale analysis, introduce the third coordinate system: the \textbf{Local Cartesian Coordinate System}. This coordinate system has the origin located not at the centre of the Earth, but about the location of interest on the sphere. The basis vectors, again, rotate with the Earth. However, the basis vectors are constant with space. The basis vectors for the \textbf{Local Cartesian Coordinate System} then, \textit{about a certain point}, are shown by the magenta arrows in Figure \ref{LocCartes}. 
+We now, finally, post-scale analysis, introduce the third coordinate system: the \textbf{Local Cartesian Coordinate System}. This coordinate system has the origin located not at the centre of the Earth, but about the location of interest on the sphere. The basis vectors, again, rotate with the Earth. However, the basis vectors are constant with space. The basis vectors for the \textbf{Local Cartesian Coordinate System} then, \textit{about a certain point}, are shown by the magenta arrows in Figure \ref{LocCartes}.
 
-We identify the basis vectors \(\hat{x}\), \(\hat{y}\), \(\hat{z}\) as pointing in the eastward, northward, and upward (away from the centre of the Earth) directions \textit{at that very origin}. The further we stray from the origin, the more those basis vectors point in different directions! In this coordinate system, we define the position and velocity coordiates \((x,y,z)\) and \((u,v,w)\) as indicating distance and velocity in the east, north, and upwards directions, respectively. We also refer to the east-west direction as the \textbf{zonal} direction and the north-south direction as the \textbf{meridional} direction.
+Again, we identify the basis vectors \(\hat{x}\), \(\hat{y}\), \(\hat{z}\) as pointing in the eastward, northward, and upward (away from the centre of the Earth) directions \textit{at the origin} of the coordinate system. The further we stray from the origin, the more those basis vectors point in different directions! In this coordinate system, we define the position and velocity coordiates \((x,y,z)\) and \((u,v,w)\) as indicating distance and velocity in the east, north, and upwards directions, respectively. We also refer to the east-west direction as the \textbf{zonal} direction and the north-south direction as the \textbf{meridional} direction.
+
+I think this is how we define it in the lecture slides and in many textbooks. 
+
+I like to think of it another way, but, again, this is written by me so 
+
+Another way to think about this coordinate system is as mathematically (but not conceptually) approximating the derivatives: due to the shallow aspect ratio, we can approximate, for example, \(\frac{1}{r}\frac{\partial}{\partial\phi}\sim\frac{\partial}{\partial y}\).
+
+\begin{figure}[H]
+    \centering
+    \scalebox{1.4}{
+    \begin{tikzpicture},
+        \begin{scope}[3d view={110}{25.26}]
+            % Lambda Arc
+            % \tdplotsetmaincoords{0}{0}
+            \tdplotsetmaincoords{65.26}{110}
+            \tdplotdrawarc{(0,0,0)}{1}{0}{330}{anchor=north}{$\lambda$}
+            % \draw (0,0) -- (3,0) arc[start angle=0, end angle=90, radius=3cm] -- cycle;
+            % \drawfill[->,fill=myyellow] (0,0) -- (0.7,0.7) arc[start angle=0, end angle=225, radius=1cm] -- (0,0);
+        \end{scope}
+        \begin{scope}[3d view={110}{25.26}]
+            % Global Cartesian Coordinate System
+            \draw[->,opacity=0.7] (0,0,0) -- (2,0,0) node[anchor=north] {\(x'\)};
+            \draw[->,opacity=0.7] (0,0,0) -- (0,2,0) node[anchor=north] {\(y'\)};
+            \draw[->,opacity=0.7] (0,0,0) -- (0,0,2) node[anchor=north west] {\(z'\)};
+            %Global Cartesian Basis Vectors
+            \draw[->,opacity=0.7,mydarkblue, thick] (0,0,0) -- (0.5,0,0) node[anchor=north] {\(\hat{x}'\)};
+            \draw[->,opacity=0.7,mydarkblue, thick] (0,0,0) -- (0,0.5,0) node[anchor=north] {\(\hat{y}'\)};
+            \draw[->,opacity=0.7,mydarkblue, thick] (0,0,0) -- (0,0,0.5) node[anchor=south west] {\(\hat{z}'\)};
+        \end{scope}
+        \begin{scope}[3d view={140}{25.26}]
+            % Circle in x-y plane
+            \draw[-,dashed] plot[domain=0:360,samples=37,smooth]({2*sin(\x)},{2*cos(\x)},{0});
+            % Circle in x, z plane
+            \draw[-,dashed] plot[domain=0:360,samples=37,smooth]({2*cos(0)*sin(\x)},{2*sin(0)*sin(\x)},{2*cos(\x)});
+            % Circle at top
+            \draw[-,dashed] plot[domain=0:360,samples=37,smooth]({1.414*sin(\x)},{1.414*cos(\x)},{1.414});
+            %Spherical Basis Vectors
+            \coordinate (A) at (1.414,0,1.414);
+            \draw[-] (0,0,0) -- (A);
+            \draw[->,thick,mymagenta] (A) -- ++(-0.3536,0,0.3536);
+            \draw[->,thick,mymagenta] (A) -- ++ (0,0.5,0);
+            \draw[->,thick,mymagenta] (A) -- ++ (0.3536,0,0.3536);
+            %\filldraw[fill=myorange,opacity=0.5] (1,0,0) .. controls +(0,0,0.8) and +(0.5,0.2,0) .. (0.7071,0,0.7071) -- (0,0,0);
+            %Phi Arc
+            % \filldraw[fill=myorange,opacity=0.5] (0,0,0) -- (0.7071,0,0.7071) arc[start angle=45, end angle=0, radius=1cm] -- cycle;
+            \filldraw[fill=myorange,opacity=0.5] (1,0,0) .. controls +(0,0,0.5) and +(0.1,0,-0.1) .. (0.7071,0,0.7071) -- (0,0,0) -- cycle;
+            % %Lambda Arc
+            % \filldraw[fill=myyellow,opacity=0.5] (1,0,0) .. controls +(0,0.5,0) and +(0.1,0.1,0) .. (0.866,0.5,0) -- (0,0,0) -- cycle;
+        \end{scope}
+        \begin{scope}
+            %Big circle on outside
+            \draw[-,dashed] plot[domain=0:360,samples=37,smooth]({2*sin(\x)},{2*cos(\x)});
+            %Basis vector labels
+            \node[mymagenta] at (-1.05,1.45) {\(\hat{y}\)};
+            \node[mymagenta] at (-0.65,1.1) {\(\hat{x}\)};
+            \node[mymagenta] at (-1.5,0.95) {\(\hat{z}\)};
+            %Coordinate labels
+            \node at (-0.45,0.08) {\(\phi\)};
+            % \node at (-0.4,-0.22) {\(\lambda\)};
+            \node at (-0.3,0.5) {\(r\)};
+        \end{scope}
+    \end{tikzpicture}}
+    \caption{Local Cartesian Coordinates. \((x',y',z')\) indicate the directions of the basis vectors in the \textbf{global} cartesian coordinate system, while \(\hat{x},\hat{y},\hat{z}\) indicate the basis vectors of the \textbf{local} cartesian coordinate system in magenta arrows.}
+    \label{LocCartes2}
+\end{figure}
+
+We finally derive the simplified `primitive' equations of motion.
 
 \section{The Simplified Equations of Motion}
 
@@ -1191,15 +1262,19 @@ For an ideal gas, one can substitute for \(\rho\) using \ref{eq Ideal Gas}:
 
 Let us now consider the horizontal momentum equation \ref{Horizontal Approximate} and let \(\vec{F}_h\approx 0\) for now. We nondimensionalise the equations by defining dimensionless hatted variables and choosing characteristic scales such that the dimensionless hatted variables are of order 1:
 \begin{align*}
-    t=[t]\hat{t}\text{   ;   }
-    \vec{r}=L\vec{\hat{r}}\text{   ;   }
-    \vec{u}_h=[u_h]\vec{\hat{u}}_h\text{   ;   }
-    p=[p]\hat{p}
+    t=[t]\,\hat{t}\hspace{2mm}\text{;}\hspace{2mm}
+    \vec{r}=L\,\vec{\hat{r}}\hspace{2mm}\text{;}\hspace{2mm}
+    \vec{u}_h=[u_h]\,\vec{\hat{u}}_h\hspace{2mm}\text{;}\hspace{2mm}
+    p=[p]\,\hat{p}
 \end{align*}
 
-So, for example, \([t]= \) the timescale with dimensions of time and \(L= \) the lengthscale with dimesions of length, while \(\hat{t}\) and \(\vec{hat{r}}\)is the dimensionless time/position variables. We \textit{must} pick these scales \([t]\), \(L\), \([u_h]\), \([p]\) \textit{such that} the hatted variables (\(\hat{t}\),\(\vec{\hat{r}}\), \(\vec{\hat{u}}_h\), \(\hat{p}\)) are of order one, so we're constrained by the system under consideration.\footnote{
+So, for example, \([t]= \) the timescale with dimensions of time and \(L= \) the lengthscale with dimesions of length, while \(\hat{t}\) and \(\vec{\hat{r}}\) is the dimensionless time/position variables. We \textit{must} pick these scales \([t]\), \(L\), \([u_h]\), \([p]\) \textit{such that} the hatted variables (\(\hat{t}\), \(\vec{\hat{r}}\), \(\vec{\hat{u}}_h\), \(\hat{p}\)) are of order one, so we're constrained by the system under consideration.\footnote{
     In fact we've already made an implicit assumption that the system is roughly isotropic, which means that we can choose \([v]=[u]=[u_h]\) and \([x]=[y]=L\).  
-} We now substitute these variables into \ref{Horizontal Approximate}:
+} We now substitute these variables into \ref{Horizontal Approximate}\footnote{
+    The astute reader will notice the sleight of hand of replacing the \(\vec{u}\cdot\vec{nabla}\) term with a \(\vec{u}_h\cdot\vec{nabla}\). In other words, I've neglected vertical advection of horizontal momentum. I've done this to avoid getting too bogged down in the details.
+
+    If you do want to get bogged down in the details, we would have to introduce another vertical velocity and length scale \(W\) and \(H\) for vertical advection. We then must assume that \(\frac{W}{H}\sim\frac{U}{L}\), which will give us the same Rossby number. We can justify this latter assumption by, for example, assuming an advective timescale, or justifying this by scale analysis of Equation \ref{Mass Conservation}.
+}:
 \begin{align*}
     \frac{[u_h]}{[t]}\frac{\partial\vec{\hat{u}}_h}{\partial t}+\frac{[u_h]^2}{L}\left( \vec{\hat{u}}_h\cdot\vec{\hat{\nabla}} \right)\vec{\hat{u}}_h+[u_h]f\vec{k}\times\vec{\hat{u}}_h+[p]\frac{1}{\rho}\vec{\nabla}_h\hat{p}=0
 \end{align*}
@@ -2255,7 +2330,7 @@ We can interpret material conservation of potential vorticity by considering an 
 
 This column of fluid lies between the bottom (\(z=b\)) and top (\(z=\eta\)) of the layer, and is infintesimally thin. We impose that the column is infinitesimally thin to ensure that \(u\), \(v\), and \(h\) do not vary appreciably over the entire column. However, we are free to consider the entire column of fluid because of our assumption (in the derivation) that \(u\) and \(v\) do not vary with \(z\).
 
-As this column of fluid is advected around, it must conserve its angular momentum in the \(z\)-direction (since ). Suppose the column is initially rotating with some (total) angular velocity. If the column is stretched (i.e., if \(h\) increases), it become thinner (because the total volume of the column remains constant), and so it must therefore rotate faster to conserve angular momentum.
+As this column of fluid is advected around, it must conserve its angular momentum in the \(z\)-direction (since all forces are conservative and the fluid is inviscid). Suppose the column is initially rotating with some (total) angular velocity. If the column is stretched (i.e., if \(h\) increases), it become thinner (because the total volume of the column remains constant), and so it must therefore rotate faster to conserve angular momentum.
 
 \begin{figure}[H]
     \centering
