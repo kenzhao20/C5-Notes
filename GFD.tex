@@ -1271,7 +1271,7 @@ Let us now consider the horizontal momentum equation \ref{Horizontal Approximate
 So, for example, \([t]= \) the timescale with dimensions of time and \(L= \) the lengthscale with dimesions of length, while \(\hat{t}\) and \(\vec{\hat{r}}\) is the dimensionless time/position variables. We \textit{must} pick these scales \([t]\), \(L\), \([u_h]\), \([p]\) \textit{such that} the hatted variables (\(\hat{t}\), \(\vec{\hat{r}}\), \(\vec{\hat{u}}_h\), \(\hat{p}\)) are of order one, so we're constrained by the system under consideration.\footnote{
     In fact we've already made an implicit assumption that the system is roughly isotropic, which means that we can choose \([v]=[u]=[u_h]\) and \([x]=[y]=L\).  
 } We now substitute these variables into \ref{Horizontal Approximate}\footnote{
-    The astute reader will notice the sleight of hand of replacing the \(\vec{u}\cdot\vec{nabla}\) term with a \(\vec{u}_h\cdot\vec{nabla}\). In other words, I've neglected vertical advection of horizontal momentum. I've done this to avoid getting too bogged down in the details.
+    The astute reader will notice the sleight of hand of replacing the \(\vec{u}\cdot\vec{\nabla}\) term with a \(\vec{u}_h\cdot\vec{\nabla}\). In other words, I've neglected vertical advection of horizontal momentum. I've done this to avoid getting too bogged down in the details.
 
     If you do want to get bogged down in the details, we would have to introduce another vertical velocity and length scale \(W\) and \(H\) for vertical advection. We then must assume that \(\frac{W}{H}\sim\frac{U}{L}\), which will give us the same Rossby number. We can justify this latter assumption by, for example, assuming an advective timescale, or justifying this by scale analysis of Equation \ref{Mass Conservation}.
 }:
@@ -2025,12 +2025,13 @@ Writing this in pressure coordinates gives us:
 \end{align*}
 
 
-Recall Equation \ref{Mass Conservation} which states the following (for an incompressible fluid):
-\begin{align*}
-    \frac{D\rho}{Dt}=\left( \frac{\partial }{\partial t} + u\left( \frac{\partial}{\partial x} \right)_{z}+v\left( \frac{\partial}{\partial y} \right)_{z}+w_z \frac{\partial}{\partial z}\right)\rho = 0
-\end{align*}
+% Recall Equation \ref{Mass Conservation} which states the following (for an incompressible fluid):
+% \begin{align*}
+%     \frac{D\rho}{Dt}=\left( \frac{\partial }{\partial t} + u\left( \frac{\partial}{\partial x} \right)_{z}+v\left( \frac{\partial}{\partial y} \right)_{z}+w_z \frac{\partial}{\partial z}\right)\rho = 0
+% \end{align*}
 
 \begin{align}
+    \label{Mass Conservation Pressure}
     \BOX{
         \left( \vec{\nabla}_h \cdot\vec{u}_h \right)_p
         +
@@ -2040,9 +2041,17 @@ Recall Equation \ref{Mass Conservation} which states the following (for an incom
 
 \subsection{Some Pressure Coordinate Intuition}
 
-It's useful to just go over a single example to gain some intuition regarding pressure coordinates and this `geopotential height' object, and how the height \(z\) could enter dynamically into the equations of motion.
+It's useful to just go over some examples to gain some intuition regarding pressure coordinates. What is this `geopotential height' object (how could the height \(z\) enter dynamically into the equations of motion?) and why does mass conservation take such a simple and \textit{different} form in pressure coordinates?
 
-Consider a system, like the Earth for example, that has an area of high pressure at 
+Let's consider the first issue. From Equation \ref{Geostrophic Pressure}, we can see that the horizontal gradients of pressure (at constant height) are equal to horizontal gradients of geopotential (at constant pressure), up to a factor of \(rho\). Let's try to understand this by considering an example.
+
+Consider a system where a given pressure surface \(p\) (say, \qty{500}{\hecto\pascal}) is at some height \(z+\Delta z\) (say, \qty{6}{\kilo\meter}) at some position \((x,y)\), and its surroundings are at some lower height \(z\) (say, \qty{5}{\kilo\meter}). The system is approximately hydrostatic, so everywhere pressure monotonically increases with height. 
+
+[UNDER CONSTRUCTION]
+
+You can see in the next chapter that the intuition for pressure coordinates will be similar to how we think about the fluid height \(\eta\). This is not a coincidence -- the intuition is the same because both systems require hydrostasy: pressure is only a monotonic coordinate if the system is approximately hydrostatic, and the shallow water system assumes explicitly that the system is hydrostatic.
+
+We now turn to the second issue. Mass conservation takes a very different form in pressure coordinates (compare Equation \ref{Mass Conservation Pressure} to Equation \ref{Mass Conservation}). In the pressure coordinates version, there are no time-derivatives, while in the height corodinates version, there are time-derivatives! 
 
 [UNDER CONSTRUCTION]
 
@@ -3801,7 +3810,7 @@ We let one box represent the waters in the low-latitudes (\textcolor{myorange}{\
 
 Because the Earth is cooler at the poles than at the equator, we expect there to be \textcolor{mymagenta}{cooling} and \textcolor{mymagenta}{heating} at the poles and equator (respectively). We therefore set \(\textcolor{myorange}{T_2}<\textcolor{myorange}{T_1}\). Furthermore, there is net \textcolor{mydarkblue}{precipitation} and \textcolor{mydarkblue}{evaporation} at the poles and the equator (respectively), also partially because of the temperature difference.
 
-Finally, we 
+Finally, we
 
 \begin{figure}[H]
     \centering

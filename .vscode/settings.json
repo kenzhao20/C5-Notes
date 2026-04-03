@@ -1,0 +1,24 @@
+{
+  "latex-workshop.latex.tools": [
+    {
+      "name": "latexmk-c5notes",
+      "command": "latexmk",
+      "args": [
+        "-shell-escape",
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "-pdf",
+        "-jobname=C5-Notes",
+        "%DOC%"
+      ]
+    }
+  ],
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "latexmk (C5-Notes)",
+      "tools": ["latexmk-c5notes"]
+    }
+  ],
+  "latex-workshop.latex.recipe.default": "latexmk (C5-Notes)"
+}
