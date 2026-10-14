@@ -6,3 +6,4 @@ These are free to use, however, they are unfinished, so please do not distribute
 
 All references to figures or information from other books are under fair use. If there are any copyright issues, please do not sue me I cannot afford it. Instead just contact me and I'll try to fix or remove it!
 
+AI declaration: AI was used to help teach me how to do some specific things in tikz, because I hate tikz (jk I love it, but it is sometimes fiddly to get it to do exactly what you want).

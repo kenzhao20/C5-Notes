@@ -16,7 +16,7 @@ This section of the course was lectured by \href{https://users.physics.ox.ac.uk/
     \item \hyperref[Dry Thermodynamics]{Dry Thermodynamics}: 
     
         \begin{quote}
-            We focus primarily on the vertical temperature structure of the atmosphere. We predict and explain some observations by deriving the \hyperref[Dry Adiabat Box]{Dry Adiabat}, which governs the temperature of a convecting parcel of air. Next, we consider convection, and derive a \hyperref[Dry Stability Box]{criterion} of whether an atmosphere will be unstable to convection and define a \hyperref[Convection Box]{few terms} relating to convection.
+            We focus primarily on the vertical temperature structure of the atmosphere. We predict and explain some observations by deriving the \hyperref[Dry Adiabat Box]{Dry Adiabat}, which governs the temperature of a convecting parcel of (dry) air. Next, we consider convection: we derive a \hyperref[Dry Stability Box]{criterion} determining whether an atmospheric temperature profile will be unstable to convection and define a \hyperref[Convection Box]{few terms} relating to convection.
         \end{quote}
     
     \item \hyperref[Moist Thermodynamics]{Moist Thermodynamics}:
@@ -33,7 +33,7 @@ This section of the course was lectured by \href{https://users.physics.ox.ac.uk/
 
 We should review (or learn) the basic state variables of thermodynamics. 
 
-For Atmospheric and Oceanic Physics, we will almost always work with `\textit{Intensive}' variables. These are variables that are independent of the size of a system. For example, `number of particles' is not an intensive variable, because the number of particles changes (it doubles) if you double the size of the system. However, `number of particles \textit{per unit volume}' is an intensive variable, because this remains unchanged when you double the size of a system.
+For Atmospheric and Oceanic Physics, we will almost always work with `\textit{intensive}' variables. These are variables that are independent of the size of a system. For example, `number of particles' is not an intensive variable, because the number of particles changes (it doubles) if you double the size of the system. However, `number of particles \textit{per unit volume}' is an intensive variable, because this remains unchanged when you double the size of a system.
 
 As a brief review, we'll need to know the following \textit{intensive} variables:
 \begin{table}[h!]
@@ -57,7 +57,7 @@ As a brief review, we'll need to know the following \textit{intensive} variables
     \label{t Basic Thermo Vars}
 \end{table}
 
-Note that many resources present the molar mass \(M_a\) in units of \qty{}{\gram\per\mole} (grams per mole). This is in order to produce more pretty numbers: for example, the molar mass of N\(_2\) is \qty{28.01e-3}{\kilogram\per\mole} \(=\) \qty{28.01}{\gram\per\mole}. Be wary of units, and always remember to convert everything to SI units when performing calculations. In this case you can convert the molar mass from units of \qty{}{\gram\per\mole} to units of \qty{}{\kilogram\per\mole} by dividing by \(1000\):
+Note that many resources present the molar mass \(M_a\) in units of \qty{}{\gram\per\mole} (grams per mole). This is in order to produce prettier numbers: for example, the molar mass of N\(_2\) is \qty{28.01e-3}{\kilogram\per\mole} \(=\) \qty{28.01}{\gram\per\mole}. Be wary of units and always remember to convert everything to SI (or consistent) units when performing calculations. In this case you can convert the molar mass from units of \qty{}{\gram\per\mole} to units of \qty{}{\kilogram\per\mole} by dividing by \(1000\):
 \begin{align*}
     \underbrace{\textcolor{mydarkblue}{M_a}}_{\textcolor{mydarkblue}{M_a\text{ in SI units of \qty{}{\kilogram\per\mole}}}}
     =
@@ -153,7 +153,7 @@ In Earth's ocean, the absolute salinity in units of \qty{}{\gram\per\kilogram} i
 
 \subsection{Single Constituent Atmosphere}
 
-An \textbf{Ideal Gas} is a theoretical gas consisting of molecules which interact only via perfectly elastic collisions. No real gas is ideal, but many gases, including 99\% of Earth's atmosphere (Nitrogen, Oxygen, and Argon), behave approximately like ideal gases under atmospheric conditions like ours. Ideal gases obey the ideal gas law, and we'll start from the version of the ideal gas law that you've probably seen before (and assume that the gas is made up of a single constituent \(a\) for simplicity):
+An \textbf{Ideal Gas} is a theoretical gas consisting of molecules which interact only via perfectly elastic collisions. No real gas is ideal, but many gases, including 99\% of Earth's atmosphere (Nitrogen, Oxygen, and Argon) behave approximately like ideal gases under atmospheric conditions like ours. Ideal gases obey the ideal gas law, and we'll start from the version of the ideal gas law that you've probably seen before (and assume that the gas is made up of a single constituent \(a\) for simplicity):
 \begin{align}\label{eq Ideal Gas Primitive}
     \boxed{pV=N_ak_BT}
 \end{align}
@@ -192,15 +192,15 @@ What if we now have multiple constituents in an atmosphere, all with different m
 \end{align}
 So Equation \ref{Dalton's Law} says that the partial pressure (of an ideal gas) is set by the \textit{mole fraction}/\textit{molar concentration} \(x_a\)\footnote{
     In the dilute limit, it is equivalently set by the \textit{molar mixing ratio}.
-}: it is not affected in any way by the \textit{mass fraction} \(q_a\) or \textit{mass mixing ratio}. We can further verify that, according to Dalton's Law, \(p=\sum\limits_{i\in\mathbb{S}} p_i\) (since \(\sum\limits_{i\in\mathbb{S}} x_i=1\)): the total pressure is the sum of all the partial pressures.
+}: it is not affected in any way by the \textit{mass fraction} \(q_a\) or \textit{mass mixing ratio}. We can further verify that, according to Dalton's Law, \(p=\sum\limits_{i\in\mathbb{S}} p_i\) (since \(\sum\limits_{i\in\mathbb{S}} x_i=1\)): the total pressure is the sum of all the partial pressures. This might not be the case if the gases interacted, but ideal gases (by definition) do not.
 
-Now we apply the ideal gas law (Eqn. \ref{eq Ideal Gas Primitive}) individually to each constituent:
+Now we apply the ideal gas law (Eqn. \ref{eq Ideal Gas Primitive}) individually to each constituent (and assume they're all at the same temperature):
 \begin{align*}
     p_a&=n_ak_BT\\
     p_b&=n_bk_BT\\
     \vdots
 \end{align*}
-We then sum up the equation above for each constituent and recall that \(p=\sum\limits_{i\in\mathbb{S}} p_i\) (from \ref{Dalton's Law}) to get:
+We then sum the above equations and recall that \(p=\sum\limits_{i\in\mathbb{S}} p_i\) (from \ref{Dalton's Law}) to get:
 \begin{align*}
     p&=\left(\sum\limits_{i\in\mathbb{S}} n_i\right)k_BT
     &&
@@ -217,7 +217,7 @@ We then sum up the equation above for each constituent and recall that \(p=\sum\
     p&=\rho\, R \,T
     &\text{; }&\text{Define the \textbf{specific gas constant} \(R\)}
 \end{align*}
-We should focus on the last three lines of algebra to remember two key facts:
+We focus on the last three lines of algebra to remember two key facts:
 \begin{enumerate}
     \item The specific gas constant \(R\) for a gas consisting of multiple constituents is the gas constant \(R^*\) divided by the \textbf{total effective molar mass} \(\bar{M}\) (analogous to the single component case):
     \begin{align}
@@ -230,8 +230,7 @@ We should focus on the last three lines of algebra to remember two key facts:
     In the single component case, \(\bar{M}=M_a\).
 \end{enumerate}
 
-For the Earth (excercise: consider only Nitrogen, Oxygen, and Argon), \(\bar{M}\approx\) \qty{29e-3}{\kilogram\per\mole} so the \textbf{Specific Gas Constant} \(R\approx\) \qty{287}{\joule\per\kilogram\per\kelvin} (it will be on your formula sheet).
-
+For the Earth (excercise: consider only Nitrogen, Oxygen, and Argon), \(\bar{M}\approx\) \qty{29e-3}{\kilogram\per\mole} so the \textbf{Specific Gas Constant} \(R\approx\) \qty{287}{\joule\per\kilogram\per\kelvin} (it will be on your formula sheet). This means that if the composition of the gas changes, so too will \(\bar{M}\) and therefore \(R\). It is therefore \textit{not} the case that \(p\sim \rho T\), and related to this is why \textit{virtual temperature} is defined. We will, in this course, assume variations in \(\bar{M}\) to be negligible. 
 
 \section{Heat Capacity and the Equipartition Theorem}\label{Equipartition}
 
@@ -242,7 +241,7 @@ The heat capacity of an object is a measure of how much heat (which has dimensio
     \label{eq cp}
     c_p=\left(\frac{\dbar Q}{dT}\right)_p
 \end{align}
-where the subscripts of \(V\) and \(p\) mean that the volume and pressure, respectively, are held constant as heat is added/removed from the system. Notationally, when we write \(c_v\) or \(c_p\), we usually mean the specific heat capacities: the heat capacities per mole or, more commonly, per mass. In exactly the same way as the specfic gas constant \(R\), if not specified, assume that \(c_p\) and \(c_v\) denote the heat capacities \textit{per unit mass} (remember, \textit{intensive} variables!). For multiple constituents, we can calculate the specific heat capacities from molar heat capacities using the effective molar mass \(\bar{M}\).
+where the subscripts of \(V\) and \(p\) mean that the volume and pressure, respectively, are held constant as heat is added/removed from the system. Notationally, when we write \(c_v\) or \(c_p\), we usually mean the specific heat capacities: the heat capacities per mole or, more commonly, per mass. In exactly the same way as the specfic gas constant \(R\), if not specified, assume that \(c_p\) and \(c_v\) denote the heat capacities \textit{per unit mass}. For multiple constituents, we can calculate the specific heat capacities from molar heat capacities using the effective molar mass \(\bar{M}\).
 
 It's useful to remember that the heat capacity itself often depends on the temperature. However, sometimes we'll assume that it does not for analytical progress (and not realism).
 
@@ -304,7 +303,7 @@ where \(f=\) the number of \textit{fully excited} degrees of freedom an individu
         \caption{2 Vibrational Degrees of Freedom}
     \end{subfigure}
     \captionsetup{justification=centering}
-    \caption{The 7 Degrees of Freedom for a Diatomic Molecules. Degrees of Freedom are shown in \textcolor{mymagenta}{magenta arrows \rule{0.25cm}{0.25cm}}.}
+    \caption{The 7 Degrees of Freedom for a diatomic molecule. Degrees of Freedom are shown in \textcolor{mymagenta}{magenta arrows \rule{0.25cm}{0.25cm}}.}
     \label{7DoF}
 \end{figure}
 
@@ -312,7 +311,7 @@ where \(f=\) the number of \textit{fully excited} degrees of freedom an individu
 
 But what does it mean for a degree of freedom to be `\textit{fully excited}' or for the temperature to be `\textit{high enough}'? 
 
-To answer these questions, we must briefly discuss quantum mechanics, because the constituents of gases obey the laws of quantum mechanics (as do all things, we think). One way in which quantum mechanics differs from classical mechanics is that often (but not always) the energy that a system can have is \textbf{discretised} rather than \textbf{continuous}. For example, a system may only have energies specifically equal to \(0\), \(E\), \(1.8E\),\ldots This means that the system can only receive or give energy in discrete amounts called 'quanta' (equal to the difference in energy between two discretely spaced energy levels) – if the molecule cannot receive these exact amounts of energy, then the molecule cannot receive energy at all.
+To answer these questions, we must briefly discuss quantum mechanics, because the constituents of gases obey the laws of quantum mechanics (as do all things, we think). One way in which quantum mechanics differs from classical mechanics is that often (but not always) the energy that a system can have is \textbf{discretised} rather than \textbf{continuous}. For example, a system may only have energies specifically equal to \(0\), \(E\), \(1.8E\), \ldots. This means that the system can only receive or give energy in discrete amounts called 'quanta' (equal to the difference in energy between two discretely spaced energy levels) – if the molecule cannot receive these exact amounts of energy, then the molecule cannot receive energy at all.
 
 This leads to a uniquely quantum mechanical effect\footnote{
     This also explains the \href{https://en.wikipedia.org/wiki/Ultraviolet_catastrophe}{ultraviolet catastrophe}!
@@ -320,7 +319,7 @@ This leads to a uniquely quantum mechanical effect\footnote{
 
 The size of this quanta of energy \(E\) depends on the system, but for the constituents in atmospheres, the quanta for vibrational degrees of freedom tend to be very large. For example, the energy of the first vibrational mode of Nitrogen is \(E\sim\) \qty{4.7e-20}{\joule}. This seems small until you remember that this is \textit{per molecule}. The temperature required for \(k_BT\sim E\) is \(T\sim E/k_B\sim\) \qty{3400}{\kelvin}.
 
-Earth's atmosphere mainly consists of a diatomic gas, so we might expect \(f=7\). However, \(f\approx5\) because the translational degrees of freedom are all fully excited, but only \(2\) rotational degrees of freedom are excited and none of the vibrational degrees of freedom are (See Figure \ref{f=5}. I have drawn the excited degrees of freedom as thick magenta lines, and the frozen degrees of freedom as dashed thin magenta lines). 
+Earth's atmosphere mainly consists of a diatomic gas, so we might expect \(f=7\). However, \(f\approx5\) because one vibrational mode and one rotational mode are `frozen-out' because the temperature is too low (the temperature is, however, high enough to fully excite the remaining five modes, which are made up of three translational and two out of the three rotational degrees of freedom as in Figure \ref{f=5}).
 
 In reality, the heat capacity \textit{per mole} (and \textit{not} per mass) at constant volume and pressure are (respectively), \(c_v^*\approx\) \qty{20.83}{\joule\per\kelvin\per\mole} \(c_p^*\approx\) \qty{29.13}{\joule\per\kelvin\per\mole}\footnote{Source: the data sheet.}. \(R^*\approx\) \qty{8.314}{\joule\per\kelvin\per\mole}, so our predictions would be \(c_v^*\approx 5R^*/2\approx\) \qty{20.79}{\joule\per\kelvin\per\mole} and \(c_p^*\approx 7R^*/2\approx\) \qty{29.10}{\joule\per\kelvin\per\mole}, which are actually very close to the measured values!
 
@@ -374,7 +373,7 @@ In reality, the heat capacity \textit{per mole} (and \textit{not} per mass) at c
     \label{f=5}
 \end{figure}
 
-Of course, the \hyperref[eq Equipartition]{Equipartition Theorem} says nothing regarding situations in which a degree of freedom is not fully excited nor frozen out. We are (perhaps only by coincidence) lucky that the situation is relatively simple on Earth; since the temperature lies within a range such that certain degrees of freedom are very excited and others are very frozen, we can very easily explain and predict that the atmospheric heat capacity is approximately \(5R^*/2\) using the \hyperref[eq Equipartition]{Equipartition Theorem}. However, you should be aware that the situation is not so simple on many other planetary atmospheres.
+Of course, the \hyperref[eq Equipartition]{Equipartition Theorem} says nothing regarding situations in which a degree of freedom is not fully excited nor frozen out. Thankfully the transition between fully excited and frozen out is relatively abrupt due to the exponential nature of partition function \footnote{You're gonna have to trust me on this one.}, but still we are (perhaps only by coincidence) lucky that the situation is relatively simple on Earth; since the temperature lies within a range such that certain degrees of freedom are very excited and others are very frozen, we can very easily explain and predict that the atmospheric heat capacity is approximately \(5R^*/2\) using the \hyperref[eq Equipartition]{Equipartition Theorem}. However, you should be aware that the situation might not be so simple on many other planetary atmospheres.
 
 \section{Hydrostatic Balance}
 
@@ -389,7 +388,7 @@ We now consider the forces on a slab of atmosphere:
 \end{figure}
 
 The \textit{hydrostatic approximation} assumes that these are the dominant forces on the slab, and that the acceleration of the slab of air is negligible. These turn out to be good assumptions, but a full justification would be out of the scope of these notes.\footnote{
-    A full justification would have to start from \textit{dynamics}. One would have to show that, if an arbitrary system were \textit{not} in hydrostatic balance, then it would rapidly (relative to the timescales under consideration, which in this case might be days, months, or years) evolve to put itself approximately in hydrostatic balance.
+    Suffice it to say that this justified by both the stratification of the atmosphere (i.e., the rate at which \(\rho\) decreases with height) and the shallow aspect ratio of the atmosphere (\(\alpha \equiv \frac{H}{L} \ll 1\), where \(H\) and \(L\) are the vertical and horizontal lengthscales.)
 } Therefore:
 \begin{align*}
     0=p(z+\delta z)-\rho\, g\,\delta z+p(z)
@@ -406,7 +405,7 @@ Pressure decreases with altitude in order to balance the force of gravity.
 \end{fact}
 \noindent There are two very useful facts that we should note.
 
-First, note that \(\rho,g>0\), so \(\frac{dp}{dz}<0\) always. This means that \(p\) is monotonic in \(z\), implying that there is always a one-to-one relation between \(p\) and \(z\). This allows us to convert between \textbf{height coordinates} and \textbf{pressure coordinates}. For example, in \textit{height coordinates}, we might let \(\vec{u}=\vec{u}(x,y,z)\), \(p=p(x,y,z)\). In this case, we would have pressure \(p\) at some height \(z\) (and horizontal position) as  a variable. In \textit{pressure coordinates}, on the other hand, we let \(\vec{u}=\vec{u}(x,y,p)\), \(z=z(x,y,p)\). In this case, we would have the height \(z\) of some given pressure surface \(p\) (and horizontal position) as a variable.
+First, note that \(\rho,g>0\), so \(\frac{dp}{dz}<0\) always. This means that \(p\) is monotonic in \(z\), implying that there is always a one-to-one relation between \(p\) and \(z\), and so we can use \textbf{pressure} (rather than \textbf{height}) as a coordinate. For example, in \textit{height coordinates}, we might let \(\vec{u}=\vec{u}(x,y,z)\), \(p=p(x,y,z)\). In this case, we would have pressure \(p\) at some height \(z\) (and horizontal position) as  a variable. In \textit{pressure coordinates}, on the other hand, we let \(\vec{u}=\vec{u}(x,y,p)\), \(z=z(x,y,p)\). In this case, we would have the height \(z\) of some given pressure surface \(p\) (and horizontal position) as a variable.
 
 We will consistently be plotting atmospheric properties (e.g., humidity) in pressure coordinates (as opposed to height coordinates) throughout this course. This is for three reasons. First, it is much easier for instruments to measure the pressure than the height. (In fact, this is how airplanes measure `barometric' height using a pressure altimeter \cite{Altimeter}.) Second, most problems we'll encounter will only require knowledge of a variable's pressure-dependence. Third, pressure is a fundamental thermodynamic variable, so it also encodes information regarding the thermodynamic properties of the system, as well as the (rough) height. We convert to pressure coordinates explicitly in Section \ref{Pressure Coords}.
 

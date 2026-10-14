@@ -2,9 +2,9 @@
 
 \section*{Introduction}
 
-This section of the course was lectured by \href{https://www.physics.ox.ac.uk/our-people/woollings}{Tim Woollings}, covering Basic and Advanced Geophysical Fluid Dynamics (GFD). Basic GFD is covered in HT, while Advanced GFD is covered in Trinity term.\vspace{5 mm}
+This section of the course was lectured by \href{https://www.physics.ox.ac.uk/our-people/woollings}{Tim Woollings}, covering Basic and Advanced Geophysical Fluid Dynamics (GFD). Basic GFD is covered in Hilary term, while Advanced GFD is covered in Trinity term.\vspace{5 mm}
 
-\noindent This section consists of six chapters. Basic GFD covers the first four chapters, and Advanced GFD covers the last two:\vspace{5 mm}
+\noindent This section consists of six chapters. Basic GFD covers the second and third chapters\footnote{Chapters 1 and 2 are covered extremely quickly, and are mostly fleshed out by me, so they can be skipped should the reader feel the need to cut to the chase.}, and Advanced GFD covers the last two:\vspace{5 mm}
 
 \begin{enumerate}
     \item \hyperref[Prelim GFD]{Preliminaries}: 
@@ -360,7 +360,7 @@ Finally, we define the vorticity \(\vec{\omega}\) as the curl of the velocity:
     \label{eq Vorticity}
     \vec{\omega}=\vec{\nabla}\times\vec{u}
 \end{align}
-If you refer back to the box on \hyperref[VC Interp]{Vector Calculus Interpretation}, this should remind you that the curl of the velocity is the \textbf{local} rotation of the velocity field, not the \textbf{global} rotation. We will usually be considering the vertical component of the vorticity \([\vec{\omega}]_z\), which we will often write just as \(\xi\).
+If you refer back to the box on \hyperref[VC Interp]{Vector Calculus Interpretation}, this should remind you that the curl of the velocity is the \textbf{local} rotation of the velocity field, not the \textbf{global} rotation. We will usually be considering the radial component of the vorticity \([\vec{\omega}]_z\) (pointing away from the centre of the Earth), which we will write just as \(\xi\).
 
 As a summary:
 \begin{fact}{Fluid Mechanics Concepts}{Fluid Mechanics Box}\label{Fluid Mechanics Box}
@@ -380,19 +380,13 @@ As a summary:
 
 \section{Differential Heating: Why There Is Motion in the First Place}\label{Differential Heating}
 
-It's important to consider why there is motion in Atmospheres and Ocean in the first place.
+It's important to consider why there is motion in the atmosphere and ocean in the first place.
 
-Regarding the first point, if you are familiar with the \hyperref[Navier Stokes]{Navier Stokes Equations} governing fluid flow, then you will know that \(\vec{u}=\vec{\nabla}p=0\) is a solution, and is a solution a system will tend towards if there is friction and no forcing\footnote{This forcing can be encoded in the boundary conditions, for example.}, and planets certainly have friction. We therefore need a non-uniform energy source. In this case, it is the Sun, and it drives motion because it provides energy to the Earth unevenly. On small scales, this may be because of variations in absorptivity and reflectivity (albedo), but on large scales this is mostly due to the spherical geometry of the Earth: more solar radiation is absorbed at the equator than at the poles (think: \textbf{zenith angle} from \hyperref[Radiative Transfer]{Radiative Transfer}, which goes as \(\cos\zeta\)).
+If you are familiar with the \hyperref[Navier Stokes]{Navier Stokes Equations} governing fluid flow, then you will know that \(\vec{u}=\vec{\nabla}p=0\) is a solution, and is a solution a system will tend towards if there is friction and no forcing\footnote{This forcing can be encoded in the boundary conditions, for example.}, and planets certainly have friction. In the atmosphere and ocean, the forcing is provided as a non-uniform energy source from the Sun: the Sun drives motion because it provides energy to the Earth unevenly. Vertically the sun preferentially heats the ground because a (cloudless) atmosphere is mostly transparent. The energy is also unevenly distributed horizontally: on small scales, this may be because of variations in absorptivity and reflectivity (albedo), but on large scales this is mostly due to the spherical geometry of the Earth: more solar radiation is absorbed at the equator than at the poles (think: \textbf{zenith angle} from \hyperref[Radiative Transfer]{Radiative Transfer}, which goes as \(\cos\zeta\)).
 
-This differential heating causes horizontal temperature gradients, which in turn cause horizontal density and pressure gradients, which drive motion. Another way to think of it is as follows: in equilibrium, the Earth absorbs more solar radiation in the equator than in the poles (see Figure \ref{Diff Heating}). As such, there must be an energy transport mechanism from the equator to the poles, and this is what drives fluid motion.\footnote{
-    I'm personally somewhat ambivalent about this explanation, but I'm not very confident so be sceptical of what I'm about to say. Here's why: I cannot see why it must be the case that the variation in OLR cannot be identical to the variation in absorbed solar radiation. To put it another way, I cannot see why the dotted curve cannot be identical to the solid curve in Figure \ref{Diff Heating}, since surely the fluid dynamics itself also affects the OLR into space. Furthermore, even if this were the case, I don't see why the atmosphere/oceans should care about this global energy balance and conspire to move energy polewards.
-
-    I therefore see the former explanation as a kind of `logical deduction'-style explanation -- an argument for why we expect there to be poleward energy transport -- rather than a `mechanistic causal'-style explanation -- an argument for what causes atmospheric/oceanic motion.
-
-    For the latter type of explanation, I prefer the following. Assume that differential heating did not obtain, and that the poles and equator were in perfect equilibrium such that the absorbed solar at each point exactly balanced the OLR. Because the absorbed solar is more at the equator than the poles, that means the OLR must be more at the equator than the poles. Loosely following the properties of emission (recall \hyperref[Emission Box]{this information on emission}), this suggests that the poles must be colder than the equator. 
-
-    This implies that there must be horizontal temperature gradients, and where there are temperature gradients there are density gradients. These horizontal density gradients generate instability, because a system with the minimum amount of gravitational potential energy will only have \textit{vertical} density gradients: hence motion.
-}
+There are two explanations of motion that come from this. The first is more mechanistic and causal: differential heating causes horizontal temperature gradients, which in turn cause horizontal density and therefore pressure gradients, and these drive motion. The second explanation is from an energy budget perspective\footnote{
+    Which is useful in its own right but different. Energy budget explanations can be very powerful in telling you what is going on (as you can remain ignorant of many details) but aren't exactly causal or mechanistic, and therefore can't tell you why it must be this way, and not some other way (as an example, you can't predict the future from the energy alone\dots)
+}: in equilibrium, the Earth absorbs more solar radiation in the equator than in the poles (see Figure \ref{Diff Heating}). As such, there must be an energy transport mechanism from the equator to the poles, and this is accomplished by fluid motion.
 
 \begin{figure}[H]
     \centering
@@ -401,19 +395,21 @@ This differential heating causes horizontal temperature gradients, which in turn
     \label{Diff Heating}
 \end{figure}
 
-\section{Stratification and Rotation: The Main Effects in `Geophysical' Fluid Mechanics}\label{GFD Special}
+\section{Stratification and Rotation: Big Effects in `Geophysical' Fluid Mechanics}\label{GFD Special}
 
 It is also important to consider what sets \textbf{Geophysical Fluid Dynamics} apart from most other Fluid Dynamics. There are two important properties that \textbf{Geophysical Fluid Dynamics} aim to investigate: \textbf{stratification} and \textbf{rotation}. The effects of these will pop up again and again throughout this course in \hyperref[Geophysical Fluid Dynamics]{GFD}.
 
-This bit is technically off syllabus, but `Hadley's' model probably isn't, so don't skip that part if you're in a hurry. I include this section just because I think it provides quite a lot of unity to the GFD course, as these ideas will pop up again and again. You can ask yourself going forward regarding the models: which part of this model encodes the rotation, adn which bit encodes the stratification. How would the behaviour of the system differ if the system weren't rotating/weren't stratification (or, more accurately, if the rotation or stratification were weak in comparison to other dynamical effects).
+This bit is technically off syllabus, but `Hadley's' model probably isn't, so don't skip that part if you're in a hurry. I include this section just because I think it provides quite a lot of unity to the GFD course, as these ideas will pop up again and again. You can ask yourself going forward regarding the models: which part of this model encodes the rotation, which bit encodes the stratification, and crucially, how the behaviour of the system would differ if the system weren't rotating and/or stratified (or, more accurately, if the rotation or stratification were weak in comparison to other dynamical effects).
 
-\textbf{Rotation} is important because, generally, planets rotate, and this places constraints on the way that fluid parcels move. In the absensce of any torque, a fluid parcel will retain its angular momentum. On a non-rotating planet, this corresponds to moving in a straight line. On a \textit{rotating} planet, this will \textit{not} correspond to moving in a straight line (relative to the surface of the Earth).\footnote{
+Incredibly heuristically, both rotation and stratification provide a certain `stiffness' to the fluid, and constrain the way in which the fluid can move if there wre no stratification or rotation.
+
+For \textbf{Rotation}, the constraint is from a place of angular momentum: in the absence of any torque, a fluid parcel will retain its angular momentum. On a non-rotating planet, this corresponds to moving in a straight line. On a \textit{rotating} planet, this will \textit{not} correspond to moving in a straight line (relative to the surface of the Earth).\footnote{
     The situation is considerably complicated by the spherical (or more accurately oblate spheroid) nature of the Earth. For more details, see \cite{Andy_Coriolis_Optical_Illusion}.
 }
 
-Roughly, rotation also acts to remove vertical variation of fluid properties. In other words, it makes the flow look more two-dimensional, and this is shown by the Taylor-Proudman Effect (briefly explained in this \href{https://www.physics.ox.ac.uk/research/group/geophysical-and-astrophysical-fluid-dynamics/tutorials/0}{link}), where a fluid of constant density will have no velocity variation in the vertical if is rotating sufficiently fast enough.
+Roughly, rotation also acts to remove vertical variation of fluid properties. In other words, it makes the flow look more two-dimensional, and this is shown by the Taylor-Proudman Effect (briefly explained in this \href{https://www.physics.ox.ac.uk/research/group/geophysical-and-astrophysical-fluid-dynamics/tutorials/0}{link}), where a fluid of constant density will have no velocity variation in the vertical if it is rotating sufficiently fast enough.
 
-\textbf{Stratification} is important because the fluids in the atmospheres and oceans are a) subject to gravity and b) can vary in density (due to pressure, temperature, or salinity). This leads to (this is not an airtight argument) a fluid where the main variation in density is in the vertical. Among other effects, this acts to work against the Taylor-Proudman Effect (as density is no longer constant), 
+\textbf{Stratification} is important because the fluids in the atmospheres and oceans are a) subject to gravity and b) can vary in density (due to pressure, temperature, or salinity). In a fluid where the background state's density varies vertically, there is a restoring force to any vertical movements.
 
 \subsection{Rotation Pt. 2: `Hadley's' Model of the Trade Winds}
 
@@ -462,7 +458,7 @@ As the air parcel moves north (as \(\phi\) increases), the zonal velocity \(u\) 
 
 Of course, this model is highly unrealistic. Firstly, it predicts that \(u\to\infty\) at \(\cos\phi\to\pi/2\), which is clearly unphysical. Secondly, from observations, we pretty much never observe \(u\geq\qty{150}{\metre\per\second}\), so the model fails much earlier than \(u\to\infty\). In reality, our assumption that there were no zonal forces was a very inaccurate assumption: as horizontal velocities become arbitrarily large, these induce large shears (a shear is when a layer of stuff (e.g., air) is sliding over another layer of stuff (e.g., air)), which in turn induce large forces either from viscous or turbulent eddy stresses.\footnote{For a cursory look at the effect of vertical stresses, refer to this section on \hyperref[Ekman Transport]{Ekman Transport}!}
 
-That being said, I'm not sure this is the key reason why the model fails. The main issue (I think) is the fact that the air parcel moving East will generate forces (see Equation \ref{Horizontal Approximate}) that will act to deflect the parcel back equatorward. To keep the balance, the force that moves the parcel northward will need to become unrealistically large to keep the parcel moving northward. If the parcel were truly to conserve its angular momentum, it would trace out inertial oscillations (see the long-wave limit in Section \ref{2D Poincare})!
+That being said, there are other issues with this model. For example, note that we have neglected the air parcel's acceleration in the meridional direction! It turns out that a truly angular momentum conserving parcel would trace out inertial oscillations (see the long-wave limit in Section \ref{2D Poincare}), and so oscillate not only east-west but also north-south. In our model, this does not happen, because we implicitly assume that the meridional coriolis forces (see Equation \ref{Horizontal Approximate}) that act to deflect the parcel back equatorward are balanced by some other force (e.g., pressure gradient forces). To keep the balance, the force that moves the parcel northward will need to become unrealistically large.
 
 Regardless of whether this is the best example, the general moral of the story is: there are conservation laws that constrain motion on rotating planets which are not present on non-rotating planets.
 
@@ -497,9 +493,9 @@ For simplicity we ignore state variables like salinity, humidity, etc., and rest
 \end{gather}
 where \(\frac{D}{Dt}=\frac{\partial}{\partial t}+\vec{u}\cdot\vec{\nabla}\) is the \hyperref[Material Derivative]{material derivative}; \(\vec{F}_g=\) acceleration due to gravity; \(\nu=\) kinematic viscocity; \(\vec{F}=\) other forces per unit mass (e.g., friction); \(c_p=\) heat capacity per unit mass; \(\beta=-\frac{1}{\rho}\frac{\partial \rho}{\partial T}\) thermal expansion coefficient; and \(Q=\) heating per unit mass.
 
-However, the equations are currently not fit for purpose. First, these equations are written for a coordinate system that is \textit{inertial} (non-accelerating) and \textit{cartesian}. However, the surface of the Earth is curved and the Earth is rotating\footnote{or so NASA and the lizard overlords would have you think!}, and we wish to describe what is going on \textit{here} with us. Furthermore, it would be quite demanding (computationally and conceptually) to adopt an inertial non-curved coordinate system, as then you'd have to, for example, keep track of the fact that the mountains keep moving. 
+However, the equations are currently not fit for purpose. First, these equations are written for a coordinate system that is \textit{inertial} (non-accelerating) and \textit{cartesian}. However, the surface of the Earth is curved and the Earth is rotating\footnote{or so NASA and the lizard overlords would have you think!}, and we wish to describe what is going on \textit{here} with us. Furthermore, it would be quite demanding (computationally and conceptually) to adopt an inertial non-curved coordinate system, as then you'd have to, for example, keep track of the fact that the mountains (and places where people live!) keep moving. 
 
-Second, these equations are currently too complicated to be analytically tractable. We will make various approximations later to simplify the equations of motion, however we should note that many of the terms we neglect cannot be neglected in a weather forecast or climate model.
+Second, these equations are currently too complicated to be analytically tractable. We will make various approximations later to simplify the equations of motion, however we should note that many of the terms we neglect cannot be neglected in a weather or climate model.
 
 \section{Transforming Coordinate Systems}\label{s Transforming EoM}
 
@@ -679,7 +675,7 @@ We will now see that the equations of motion in general also look different if w
 
 We will introduce three coordinate systems, all of which rotate with the Earth.\footnote{We do not have to worry again here regarding this, as partial derivatives are linear, so we can just add the effects together.} This will be a bit convoluted, but we will only introduce the first two coordinate systems in this section (\hyperref[s Spherical Coordinates]{Space-Dependent Coordinate Systems Pt. 1}). We will then introduce the third coordinate system in \hyperref[s Local Cartesian Coordinates]{Space-Dependent Coordinate Systems Pt. 2}
 
-First is the \textbf{global cartesian coordinate system}, with basis vectors \(\hat{x}',\hat{y}',\hat{z}'\) in the directions shown in Figure \ref{LocCartes}. The origin is located at the centre of the Earth, and the basis vectors rotate with the Earth (i.e., they rotate with angular velocity \(\vec{\Omega}=|\Omega|\hat{z}'\)). The basis vectors do vary with time (as they're rotating with the Earth), but \textit{do not} vary with space. This is your classic 3D cartesian coordinate system, and the equations of motion in this frame of reference are straightforwardly the \(x\),\(y\), and \(z\) components of Equation \ref{Navier Stokes Rotating}.
+First is the \textbf{global cartesian coordinate system}, with basis vectors \(\hat{x}',\hat{y}',\hat{z}'\) in the directions shown in Figure \ref{LocCartes}. The origin is located at the centre of the Earth, and the basis vectors rotate with the Earth (i.e., they rotate with angular velocity \(\vec{\Omega}=|\Omega|\hat{z}'\)). The basis vectors do vary with time (as they're rotating with the Earth), but \textit{do not} vary with space. This is your classic 3D cartesian coordinate system, and the equations of motion in this frame of reference are straightforwardly the \(x\), \(y\), and \(z\) components of Equation \ref{Navier Stokes Rotating}.
 
 Second, we introduce the \textbf{spherical coordinate system}. Again, the origin is located at the centre of the Earth, and the basis vectors rotate with the Earth (i.e., they rotate with angular velocity \(\vec{\Omega}\)). However, this time, the basis vectors also \textit{vary with space}. The basis vectors at each point in space align themselves with the surface of the Earth as shown by the magenta arrows in Figure \ref{LocCartes}. Notice how the orientation of the magenta arrows change depending on the point. This is your classic 3D curvilinear spherical coordinate system.
 
@@ -823,9 +819,9 @@ Second, we introduce the \textbf{spherical coordinate system}. Again, the origin
 
 We identify the basis vectors \(\hat{r}\), \(\hat{\phi}\), \(\hat{\lambda}\) as pointing in the radial (upward away from the centre of the Earth), northward, and eastward directions.\footnote{
     Note that I go against common mathematical convention here by using \(\phi=\frac{\pi}{2}-\theta\) where \(\theta=\) the polar angle. I do this here to follow convention in the GFD literature. If you refer to, for example, \href{https://en.wikipedia.org/wiki/Vector_fields_in_cylindrical_and_spherical_coordinates}{this}  wikipedia page, you will notice some of the matrices look different. This is most likely due to the difference in polar angle definition, and to convert simply recall that \(\sin\theta = \cos\phi\) and \(\cos\theta = \sin\phi\).
-}. We commonly refer to the east-west direction as the \textbf{zonal} direction (the direction of \(\hat{\lambda}\)) and the north-south direction (the direction of \(\hat{\phi}\)) as the \textbf{meridional} direction.
+}. We refer to the east-west direction (the direction of \(\hat{\lambda}\)) as the \textbf{zonal} direction and the north-south direction (the direction of \(\hat{\phi}\)) as the \textbf{meridional} direction.
 
-In this coordinate system, we define the position of a fluid parcel on the Earth by the coordinates \((r,\phi,\lambda)\), indicating the radial distance (from the centre of the Earth), the latitude \(\phi\in[-\frac{\pi}{2},\frac{\pi}{2}]\) (\(\phi=0\) indicates the equator, \(\phi=\pm\frac{\pi}{2}\) is the north/south pole), and the longitude \(\lambda\in[0,2\pi]\). The position vector is therefore given by: \(\vec{r}=r\,\hat{r}+\phi\,\hat{\phi}+\lambda\,\hat{\lambda}\). The coordinates reprsenting the velocity of the fluid parcel is given by \((u,v,w)\) as the velocity in the east, north, and radial directions. They are given explicitly as follows:
+In this coordinate system, we define the position of a fluid parcel on the Earth by the coordinates \((r,\phi,\lambda)\), indicating the radial distance (from the centre of the Earth), the latitude \(\phi\in[-\frac{\pi}{2},\frac{\pi}{2}]\) (\(\phi=0\) indicates the equator, \(\phi=\pm\frac{\pi}{2}\) is the north/south pole), and the longitude \(\lambda\in[0,2\pi]\). The position vector is therefore given by: \(\vec{r}=r\,\hat{r}+\phi\,\hat{\phi}+\lambda\,\hat{\lambda}\). The coordinates representing the velocity of the fluid parcel is given by \((u,v,w)\) as the velocity in the east, north, and radial directions. They are given explicitly as follows:
 
 \vspace{-4mm}
 \begin{minipage}{.31\linewidth}
@@ -1249,12 +1245,14 @@ Hydrostatic Balance governs the vertical pressure variation in a fluid if we ass
 Pressure decreases with height in order to balance the force of gravity.
 \end{fact}
 
-Physically, hydrostatic balance is a force/momentum balance in the vertical direction, where the force of gravity is balanced by the vertical pressure gradient. Notice now the difference between the Hydrostatic Balance I have written here (\ref{Hydrostatic GFD}) and the Hydrostatic Balance I have written in the \hyperref[p Thermodynamics]{Thermodynamics} Part (\ref{Hydrostatic Balance}): I have written it here with a partial derivative. Strictly, it should have been a partial derivative before too, but I write it here to note that we are now considering horizontal variations as well as vertical variations.
+Physically, hydrostatic balance is a force/momentum balance in the vertical direction, where the force of gravity is balanced by the vertical pressure gradient.
 
 For an ideal gas, one can substitute for \(\rho\) using \ref{eq Ideal Gas}:
 \begin{align}\label{Hydrostatic Ideal Gas}
     \boxed{\frac{\partial \ln p}{\partial z}=-\frac{g}{RT}}
 \end{align}
+
+There is more to say about hydrostatic balance than this, however suffice it say first that these scaling relations obtain due to the fact that the aspect ratio of the atmosphere is small. The dimensionless parameter \(\alpha \equiv \frac{H}{L}\ll 1\), where \(H=\) the vertical length scale and \(L=\) the horizontal length scale, and second that this obtains for the \textit{dynamical} pressure and density fields too (i.e., if you removed the constant backgorund density/pressure fields). See \cite{Vallis} Ch. 2 for details.
 
 \section{Geostrophic Balance (Approximate Horizontal Momentum Balance)}\label{App Horiz Bal}
 
@@ -1334,12 +1332,12 @@ Much of what we will discuss here in GFD will require \(Ro\) to be small and for
 
 \subsection{Geostrophic Balance}
 
-If \(Ro\ll 1\) and all other forces are negligible, then rotation dominates dynamics. We can therefore neglect external forces (set \(\vec{F}_h\approx0\)) and acceleration and advection (set \(D\vec{u}_h/Dt\approx0\)) in Equation \ref{Horizontal Approximate nondim} (the horizontal momentum equation). Because the equation must equal \(0\), we are forced to conclude that \(P\) is of order one, so Equation \ref{Horizontal Approximate nondim} and therefore Equation \ref{Horizontal Approximate} must be a balance between the horizontal pressure gradient force and the coriolis force.\footnote{
+If \(Ro\ll 1\) and all other forces are negligible, then rotation dominates dynamics. We can therefore neglect external forces (set \(\vec{F}_h\approx0\)) and acceleration and advection (set \(D\vec{u}_h/Dt\approx0\)) in Equation \ref{Horizontal Approximate nondim}. Because the equation must equal \(0\), we are forced to conclude that \(P\) is of order one, so Equation \ref{Horizontal Approximate nondim} and therefore Equation \ref{Horizontal Approximate} must be a balance between the horizontal pressure gradient force and the coriolis force.\footnote{
     You might be suspicious from what I've said. After all, \(Ro\) depends on velocity-scale \(U\) and length-scale \(L\), which we expect should be set by the dynamics and governed by the underlying equations of motion!
 
     In other words, \textit{if} \(Ro\ll 1\), then we expect the system to be in geostrophic balance, but why is \(Ro\ll 1\) in the first place, and why would our atmosphere/ocean system tend towards a state such that \(Ro\ll 1\) holds? If we set \(Ro\ll 1\) \textit{a priori}, doesn't this mean we're putting in the answer by hand? Conversely, if we set \(Ro\ll 1\) \textit{a posteriori} (based on observations), then this seems like putting the cart before the horse: again, \(Ro\ll 1\) \textit{because} of the underlying equations of motion, not the other way around!
 
-    % The answer lies in the phenomenon of \hyperref[Geostrophic Adjustment]{Geostrophic Adjustment}.
+    The answer lies in the phenomenon of \hyperref[Geostrophic Adjustment]{Geostrophic Adjustment}, which I will briefly mention in the context of Shallow Water Systems.
 } 
 
 \begin{fact}{Geostrophic Balance}{Geostrophic Box}\label{Geostrophic Box}
@@ -1378,7 +1376,7 @@ We can use Equation \ref{eq Ideal Gas} to show that, for an ideal gas, geostroph
 
 \subsection{Cyclones and Anti-Cyclones}\label{Cyclones}
 
-The horizontal velocity field is thus set by the horizontal pressure field in Equation \ref{Geostrophic Balance}. 
+If a field is in geostrophic balance, then the horizontal velocity field is set by the horizontal pressure field as in Equation \ref{Geostrophic Balance}. 
 
 Recall from our \hyperref[VC Interp]{Vector Calculus Interpretation Box} that the contours of constant \(p\) are always perpendicular to the gradient \(\vec{\nabla}_h p\) of the pressure field \(p\), and point from areas of low pressure to areas of high pressure. Recall further that a cross product of two vectors \(\vec{a}\times\vec{b}\) is always perpendicular to both \(\vec{a}\) and \(\vec{b}\).\footnote{
     The way I like to remember how this works is the right-hand rule. Make a cartesian coordinate system with your right hand: first make a thumbs up with your right hand, then point your index finger away from you, then point your middle fingle to your left.
@@ -1660,7 +1658,9 @@ In the former case, this is associated with condensation, cloud formation, and t
 
 This is also an mechanism whereby cyclones and anti-cyclones are dissipated, but we're getting ahead of ourselves. If you are familiar with \hyperref[PV]{Potential Vorticity}, then vertical ascent/descent in cyclones/anti-cyclones leads to vortex squashing/stretching, which decreases/increases the relative vorticity which effectively spins down cyclones and anti-cyclones throughout the atmosphere.
 
-\section{Thermal Wind Balance}\label{s Thermal Wind}
+\section{Thermal Wind Balance: (Hydrostatic + Geostrophic Balance)}\label{s Thermal Wind}
+
+\subsubsection{Derivation}
 
 Now that we have covered the fundamental diagnostic relations of \hyperref[Hydrostatic GFD Box]{Hydrostatic Balance} and \hyperref[Geostrophic Box]{Geostrophic Balance}, we now aim to put these two pieces of information together to find a relation between the horizontal velocity \(\vec{u}_h\) and the temperature in an ideal gas atmosphere.\footnote{
     I should note that when oceanographers refer to the `\textbf{thermal wind relation}', they do not require the fluid to follow the ideal gas equation of state. This should be expected, as seawater has a different, horribly complicated equation of state. As such, the `\textbf{thermal wind relation}' is often written as a relation between the horizontal velocity \(\vec{u}_h\) and the density \(\rho\).
@@ -1734,7 +1734,7 @@ So we see that even though horizontal temperature gradients \(\vec{\nabla}_h T\)
 
 As such, we neglect\footnote{
     We do not actually have to neglect this term when we derive these equations in pressure coordinates!
-} the term on the left in the equation, and derive the \textbf{Thermal Wind Equations}:
+} the term on the left in the equation, and derive the \textbf{Thermal Wind Relation}:
 \begin{align}\label{Thermal Wind}
     \BOX{\frac{\partial\vec{u}_h}{\partial z}\approx\frac{g}{fT}\vec{k}\times\vec{\nabla}_hT}
 \end{align}
@@ -1755,7 +1755,15 @@ Written out, each component of \(\vec{u}_h=(u,v)^T\) is as follows:
     \end{align}
 \end{minipage}
 
-\vspace{2mm}The physical interpretation is as follows: if the system is approximately both \hyperref[Geostrophic Box]{Geostrophic} and \hyperref[Hydrostatic GFD Box]{Hydrostatic}, and obeys ideal gas law, then horizontal temperature gradients imply vertical velocity gradients (and vice versa). Another name for vertical velocity gradients is vertical wind shear.
+\subsubsection{Physical Interpretation}
+
+\vspace{2mm}The mathematical interpretation is as follows: if the system is approximately both \hyperref[Geostrophic Box]{Geostrophic} and \hyperref[Hydrostatic GFD Box]{Hydrostatic}, and obeys ideal gas law, then horizontal temperature gradients imply vertical velocity gradients (and vice versa). Another name for vertical velocity gradients is vertical wind shear.
+
+What is happening physically? Well we know from geostrophic balance that, at some given height, the horizontal wind field is flows along contours of constant pressure. Let us now consider another point that is higher in the air. Here, too, the horizontal wind flows along contours of constant pressure. The difference between the horizontal wind at these points (\(\frac{\partial \vec{u}_h}{\partial z}\)) therefore (from geostrophic balance) depends on the difference in pressure at these points (\(\frac{\partial p}{\partial z}\)), and it is this latter term that is given by hydrostatic balance. 
+
+For an ideal gas, Equation \ref{Hydrostatic Ideal Gas} says that the difference in pressure between two vertically spaced points is approximately inversely proportional to temperature. As such, if it is \textit{warmer}/\textit{colder} pressure decreases \textit{less}/\textit{more} with height. As such, if there is a horizontal pressure gradient, the \textit{warmer} side will 
+
+\subsubsection{Vorticity Shear}
 
 Let us now consider the vertical component of the vorticity. Recall that the voriticity is defined as follows: \(\vec{\omega}=\vec{\nabla}\times\vec{u}\). Therefore the vertical component is given by: \([\vec{\omega}]_z=\xi=\frac{\partial v}{\partial x}-\frac{\partial u}{\partial y}\). If we differentiate Equations \ref{u Thermal} and \ref{v Thermal} with respect to \(y\) and \(x\) (respectively), then subtract them we can find an equation governing \(\xi\):
 \begin{align}
@@ -1783,7 +1791,7 @@ Therefore, Equation \ref{Thermal Wind Vorticity} essentially says that the verti
 
 This might make more sense with a concrete example. Suppose that we have a blob of cold air, i.e., we have a temperature field \(T(\vec{r})\) that is minimum at the centre of the blob and warmer around the blob. If we consider \(\vec{\nabla}_h T(\vec{r})\) (which I remind you is a vector field which points from low \(T\) to high \(T\)), we would expect the vector field to look like arrows pointing away from the cold centre. Therefore the divergence of this vector field \(\vec{\nabla}_h^2 T\) will be \textbf{positive} at this cold blob.
 
-If you wan't to think of this in terms of curvature, since the temperature decreases then increases again when you pass through this cold blob, this implies that the temperature field \(T(\vec{r})\) must be curved.  
+If you want to think of this in terms of curvature, since the temperature decreases then increases again when you pass through this cold blob, this implies that the temperature field \(T(\vec{r})\) must be curved.  
 
 Using Equation \ref{Thermal Wind Vorticity} \(\vec{\nabla}_h^2 T>0\) therefore implies that \(\frac{\partial \xi}{\partial z}>0\) (in the northern hemisphere), therefore the vertical vorticity increases with height in this cold blob! Vice versa for a hot blob in the northern hemisphere: in a hot blob will have vorticity decreasing with height. A cyclone with a cold core (the storms we tend to get in the UK) then will have its vorticity increase with height, having stronger winds the higher you go, while a cyclone with a hot core (tropical cyclones/hurricanes that we don't tend to get in the UK) will have its vorticity decrease with height.
 
@@ -2059,13 +2067,13 @@ We now turn to the second issue. Mass conservation takes a very different form i
 
 \section{The Equations of Motion}
 
-In the previous chapter, we considered diagnostic relations: \hyperref[Hydrostatic GFD Box]{Hydrostatic Balance} and \hyperref[Geostrophic Box]{Geostrophic Balance}. These are very useful and important relations, but notice that there are no time derivatives in \ref{Hydrostatic GFD} and \ref{Geostrophic Balance}. If there are no time-derivatives, the equations cannot reproduce non-steady state solutions and time-evolution. However, clearly, the atmosphere and ocean evolve and are not in a steady state, and we wish to understand this.
+In the previous chapter, we considered diagnostic relations: \hyperref[Hydrostatic GFD Box]{Hydrostatic Balance} and \hyperref[Geostrophic Box]{Geostrophic Balance}. These are very useful and important relations, but notice that there are no time derivatives in \ref{Hydrostatic GFD} or \ref{Geostrophic Balance}. A set of equation with no time-derivatives cannot reproduce non-steady-state solutions and time-evolution.\footnote{Note, however, that this does not mean that Equations \ref{Hydrostatic GFD} and \ref{Geostrophic Balance} cannot be supplemented with an equation that \textit{does} contain time derivatives. In, for example, the Planetary Geostrophic equation this role is played by the Thermodynamic Equation.} Clearly, though, the atmosphere and ocean evolve and are not in a steady state, and we wish to understand this.
 
 Our first tool to consider time-dependent changes is the shallow water system. We consider a system governed the following equations and looks like this:
 
 \begin{fact}{The Shallow Water System}{shallow box}\label{shallow box}
 
-    The Shallow Water System is a simple two-dimensional time-varying system governing the evolution of a thin layer of incompressible fluid subject only to the pressure gradient and coriolis force.
+    The Shallow Water System is a simple two-dimensional time-varying system governing the evolution of a thin layer of constant density incompressible fluid subject only to the pressure gradient and coriolis force.
 
     The three state variables are the horizontal velocity \(\vec{u}_h(x,y,t)=(u,v)^T\) and the layer thickness \(h(x,y,t)\). Equivalently, we can express the state variables as the horizontal velocity \(\vec{u}_h(x,y,t)=(u,v)^T\) and the layer height \(\eta(x,y,t)\).
 
@@ -2101,7 +2109,7 @@ Our first tool to consider time-dependent changes is the shallow water system. W
 
 We now aim to derive these equations from three primitive (approximate) equations: the horizontal momentum equation (\ref{Horizontal Approximate}), the vertical momentum equation (\ref{Vertical Approximate}), and mass conservation (\ref{Mass Conservation}). First, we neglect all vertical and horizontal forces \(F_z\) and \(\vec{F}_h\) (e.g. neglect friction) other than gravity and pressure gradient forces.
 
-Second, we assume that the density is constant \(\rho=\rho_0\) for all time and at all points. This immediately implies (from Equation \ref{Mass Conservation}) that the \(\frac{D\rho}{Dt}\) term vanishes, so Equation \ref{Mass Conservation} turns into:
+Second, we assume that the density is constant \(\rho=\rho_0\) for all time and at all points within this layer. This immediately implies (from Equation \ref{Mass Conservation}) that the \(\frac{D\rho}{Dt}\) term vanishes, so Equation \ref{Mass Conservation} turns into:
 \begin{align}
     \label{Incompressibility}
     \vec{\nabla}\cdot\vec{u}=0
@@ -2116,7 +2124,7 @@ Third, we assume that the system is \textbf{shallow}: \(H/L\ll 1\) where \(H\) i
     \therefore \boxed{W \ll U}
 \end{align*}
 
-We take this as justification for our fourth assumption: that vertical acceleration and advection is small compared to gravity and pressure gradient forces. As such, the system is in approximately in \hyperref[Hydrostatic GFD]{Hydrostatic Balance} (we have simplified Equation \ref{Vertical Approximate} here). Importantly, though, we do \textit{not} assume that the vertical acceleration/advection is \(0\) everywhere. We simply assume that they are much smaller than vertical pressure gradients and gravity.
+We take this as justification for our fourth assumption: that vertical acceleration and advection is small compared to gravity and pressure gradient forces. As such, the system is in approximately in \hyperref[Hydrostatic GFD]{Hydrostatic Balance} (we have simplified Equation \ref{Vertical Approximate} here). Importantly, we only assume that vertical acceleration/advection the  are much smaller than vertical pressure gradients and gravity; we do \textit{not} assume that it is \(0\) everywhere.
 
 This allows us to integrate the hydrostatic relation from some reference height \(\eta\) (the height of the surface) and pressure \(p_s\) (the pressure at the surface) to find that the following holds (refer to Equation \ref{Const Density Hydrostatic} to see the derivation).
 \begin{align*}
@@ -2128,8 +2136,8 @@ Fifth, we assume that the fluid above the layer of fluid under consideration has
     \frac{D\vec{u}_h}{Dt}+f\vec{k}\times\vec{u}_h=g\vec{\nabla}_h\eta
 \end{align*}
 
-Notice that everything on the right hand side has no dependence on \(z\). However, it must hold for each all \(z\) within the layer, therefore, we can conclude that \(\vec{u}_h\) cannot depend on \(z\) either.\footnote{
-    If it did, then the \(f\vec{k}\times\vec{u}_h\) term would depend on \(z\) and so left hand side would depend on \(z\). Depending on \(z\) implies that its value would change depending on \(z\), but the right hand side cannot change its value depending on \(z\), and so the equation would not hold for some \(z\).
+Sixth, we assume that the initial conditions of the system are such that \(\vec{u}_h\) are independent of \(z\). This allows us to make the final simplification: since the the right hand side has no dependence on \(z\), and the initial condition of \(\vec{u}_h\) is independent of \(z\), the flow must remain independent of \(z\) for all time.\footnote{
+    One way to think of this is to think of the right hand side as a `forcing' on \(\vec{u}_h\). If the initial condition is independent of \(z\), it can only start depending on \(z\) if the forcing has some \(z\) dependence. So it can't! (Exercise, differentiate the equation wrt \(z\) to show that this is the case).
 } Therefore, we can neglect the vertical advection term in the material derivative:
 \begin{align*}
     \frac{D}{Dt}=\frac{\partial}{\partial t}+u\frac{\partial}{\partial x}
@@ -2142,14 +2150,14 @@ This allows us to derive Equation \ref{SW mom}, which is an approximation of the
 \end{align*}
 where \(\frac{D_h}{Dt}=\frac{\partial}{\partial t}+u\frac{\partial}{\partial x}+v\frac{\partial}{\partial y}\) is the horizontal material derivative.
 
-The interpretation is as follows: this is just horizontal momentum balance, where the horizontal acceleration is set by the coriolis force and the pressure gradient force, and no other forces. The pressure gradient force only depends on the height of the surface of the fluid, and the height affects the pressure through the hydrostatic relation.
+The interpretation is as follows: Equation \ref{SW mom} describes horizontal momentum balance of a vertically uniform layer, where the horizontal acceleration is set by the coriolis force and the pressure gradient force, and no other forces. Due to the hydrostatic relation, the pressure (and therefore pressure gradient) only depends on the mass of air above it, and the mass of air above it depends only on the height of the surface of the fluid.
 
 Let us now turn to Mass Conservation Equation \ref{Mass Conservation}. We already derived from the \(\rho=\rho_0=const\) assumption that the system must be incompressible, so the following holds:
 \begin{align*}
     \vec{\nabla}\cdot\vec{u}=\vec{\nabla}_h\cdot\vec{u}_h+\frac{\partial w}{\partial z}=0
 \end{align*}
 
-Let us integrate this equation with respect to \(z\) from \(z=b(x,y)\) to \(z=\eta(x,y,t)\) and recall first that \(\vec{u}_h\) is not a function of \(z\) and second that we assumed that \(w\) was much smaller than \(u,v\), not that \(w=0\). This allows us to derive the following:
+Integrating this equation with respect to \(z\) from \(z=b(x,y)\) to \(z=\eta(x,y,t)\), and recalling first that \(\vec{u}_h\) is not a function of \(z\) and second that we never assumed that \(w=0\) (only that \(w \ll u,v\)). This allows us to derive the following:
 \begin{align*}
     \int_{b}^{\eta} 0 \,dz &= \int_{b}^{\eta} \vec{\nabla}_h\cdot\vec{u}_h+\frac{\partial w}{\partial z}\, dz\\
     0&=h(x,y,t)\vec{\nabla}_h\cdot\vec{u}_h+\left[ w \right]_b^\eta\\
@@ -2159,7 +2167,7 @@ Let us integrate this equation with respect to \(z\) from \(z=b(x,y)\) to \(z=\e
     \therefore \boxed{0 = h\,\vec{\nabla}_h\cdot\vec{u}_h + w(z=\eta)-w(z=b)}
 \end{align*}
 
-Now it turns out (and this is justified by some fluid mechanical boundary conditions) that \(w(z=\eta)=\frac{D_h \eta}{Dt}\) and \(w(z=b)=\frac{D_h b}{Dt}\). The interpretation is as follows: the vertical velocity at an interface must be exactly equal to the change in interface height/depth following a fluid parcel, because if this weren't the case, we would get a fluid parcel phasing through the ground (as is the case at the bottom where \(z=b\)) or the fluid parcel is exactly what sets the change in the interface depth (as is the case at the top where \(z=\eta\)).
+Now it turns out (and this is justified by some fluid mechanical boundary conditions) that \(w(z=\eta)=\frac{D_h \eta}{Dt}\) and \(w(z=b)=\frac{D_h b}{Dt}\). The interpretation is as follows: the vertical velocity at an interface must be exactly equal to the change in interface height/depth following a fluid parcel. If this weren't the case, we would get a contradiction: in the case of the bottom (\(z=b\)), the fluid parcel would either leave a vacuum or penetrate into the ground, and in the case of the surface (\(z=\eta\)) this would be nonsensical, as the position of the fluid parcel is what defines the surface height itself.
 
 As such:
 \begin{align*}
@@ -2175,11 +2183,9 @@ Therefore, we get that:
     0&=\frac{\partial h}{\partial t}+\vec{\nabla}_h\cdot(h\vec{u}_h)
 \end{align*}
 
-We have derived Equation \ref{SW mass}. The interpretation for this equation is as follows: the height of a fluid can change, but it is constrained by the velocity of the fluid becauce the fluid is incompressible. If the height increases at some point, there must be more fluid flowing into that point than out of it, but since the fluid cannot compress, the height of the layer must increase.
+We have derived Equation \ref{SW mass}, which states that the height of a fluid changes in a way constrained by the velocity of the fluid (becauce the fluid is incompressible). If there is net convergence/divergence of mass (given by \(\rho_0 h \vec{u}_h\)) at that point (more fluid flowing into/out of that horizontal location than out of/into it), but since the fluid cannot compress, the height of the layer must increase/decrease.
 
-We have derived all the equations of motion for the Shallow Water System, but the crux of the issue is whether or not this is a faithful representation of time-dependent geophysical fluid dynamics. Sadly, the details are quite complicated, and I'm not sure if I'll even get to them. If I do, they are at the end of this chapter in Section \ref{SW Justification}.
-
-For now, just take this as granted, and let us start analysing this system.
+We have derived all the equations of motion for the Shallow Water System, but the crux of the issue is whether or not this is a faithful representation of time-dependent geophysical fluid dynamics. Happily, there is a ready analogy between this system and 1) the equations of motion in isentropic coordinates, and, 2) the normal modes of a (linearised) system governed by the \ref{Eqns for GFD Box}. The details are outside the scope of these notes, so for now you'll just have to take this as granted and start analysing this system.
 
 \section{Energetics}
 
@@ -2645,7 +2651,7 @@ Let us now interpret directly the mechanisms that control the propagation of thi
 
 To convince you of this fact, consider the following argument. Suppose that our horizontal velocity scale \(U\) is set by the speed at which gravitational waves propagate, i.e., \(U\sim\sqrt{gH}\). We know that the \hyperref[Rossby Box]{Rossby Number} indicates whether rotation is important relative to inertia: if \(Ro\ll 1\), then rotation is important and vice versa.
 
-\(Ro=1\) exactly when the lengthscale \(L=L_d\). Therefore if \(L\gg L_d\), then \(Ro\ll1\), therefore rotation is important, adn vice versa.
+\(Ro=1\) exactly when the lengthscale \(L=L_d\). Therefore if \(L\gg L_d\), then \(Ro\ll1\), therefore rotation is important, adn vice versa. 
 
 We now consider the large and small \(k\) limits. Recall that \(k\) is the wavenumber, and so the wavelength of the wave \(\lambda\sim 1/k\). Therefore the lengthscale of the wave \(L\sim\lambda\sim 1/k\). Therefore if \(k\) is very large, then the lengthscale \(L\) is very short, and vice versa. It is for this reason that we call the following limits the \textbf{short-wave} and \textbf{long-wave} limits.
 
@@ -2988,7 +2994,7 @@ However, recall that \(u\sim 1/f\) because it is geostrophic, therefore at the n
         \node[] at (-2,4) {\textbf{Westward Phase Propagation}};
         \draw[->,ultra thick,myorange] (-0.5,3.5) -- (-3.5,3.5); 
     \end{tikzpicture}
-    \caption{Alternative Explanation of the Westward Phase Propagation of Rossby Waves. Since \(\beta=\frac{df}{dy}>0\) and \(u\sim 1/f\), \(u_{\text{north}}<u_\text{south}\), therefore there is a convergence of fluid on the east and a divergence of fluid on the west. Solid black lines indicate \(\eta\) at time \(t=t\), while dotted black lines indicate \(\eta\) at time \(t=t+\delta t\).}
+    \caption{Alternative Explanation of the Westward Phase Propagation of Rossby Waves. Since \(\beta=\frac{df}{dy}>0\) and \(u\sim 1/f\), \(u_{\text{north}}<u_\text{south}\), therefore there is a convergence of fluid on the west and a diergence of fluid on the east. Solid black lines indicate \(\eta\) at time \(t=t\), while dotted black lines indicate \(\eta\) at time \(t=t+\delta t\).}
 \end{figure}
 
 \section{Kelvin Waves}\label{s Kelvin}
@@ -3763,7 +3769,7 @@ We now know that the ocean varies on much smaller lengthscales than originally a
 
     `Falsification' is often defined as a property a theory has if (and only if) there exist a set of observations that would rule the theory out. The essence of good scientific practice is then not only constructing falsifiable theories but also humbly abandoning a (possibly beautiful) theory if that theory is falsified. After all, evidence is the ultimate decider in science.
     
-    A common objection to this (and one I agree with) is that this criterion is too simplistic to vindicate what we think of as good scientific practice. The core of the objection is the idea of \href{https://en.wikipedia.org/wiki/Confirmation_holism}{confirmation holism}. Theories can never make predictions on their own, but must be supplanted with auxilliary hypotheses. For example, such auxilliary hypotheses could be the boundary conditions of the governing equations (like the details of the orography) or even the claim that observational instruments are working as intended.
+    A common objection to this (and one I agree with) is that this criterion is too simplistic to vindicate what we think of as good scientific practice. The core of the objection is the idea of \href{https://en.wikipedia.org/wiki/Confirmation_holism}{confirmation holism}. Theories can never make predictions on their own, but must be equipped with auxilliary hypotheses. For example, such auxilliary hypotheses could be the boundary conditions of the governing equations (like the details of the orography) or even the simple claim that observational instruments are working as intended.
 
     In this case, the `theory' (that there is a deep northward flowing boundary current) generated the `prediction' that a neutrally buoyant float should drift northward, but this prediction was only generated with the auxilliary hypothesis that the eddy transport would be negiligible!
 
@@ -3775,7 +3781,7 @@ We now know that the ocean varies on much smaller lengthscales than originally a
 
     In the first and third case, many scientists were unwilling (maybe to the extent of dogmatism) to give up the established theories of newtonian gravity or special relativity.
     
-    The second case is more interesting, given that special relativity at the time had not been thoroughly experimentally confirmed yet. In fact, Einstein himself knew of Kaufmann's experiments, but, unlike Lorentz, continued to advocate for his theories, and argued that more experiments were needed. Going even further, he argued that, prior to the completion of such experiments, other theories regarding the electron `should be ascribed a rather small probability because their basic assumptions about the mass of moving electrons are not made plausible by theoretical systems that encompass a wider complex of phenomena.' \cite{Histories_of_Relativity}. I am here arguing that this `unscientific' (by the falsification criterion) decision was indeed vindicated later on, and emphasising the strong role that theoretical (rather than purely empirical) factors can play. 
+    The second case is more interesting, given that special relativity at the time had not been thoroughly experimentally confirmed yet. In fact, Einstein himself knew of Kaufmann's experiments, but, unlike Lorentz, continued to advocate for his theories, and argued that more experiments were needed. Going even further, he argued that, prior to the completion of such experiments, other theories regarding the electron `should be ascribed a rather small probability because their basic assumptions about the mass of moving electrons are not made plausible by theoretical systems that encompass a wider complex of phenomena.' \cite{Histories_of_Relativity}. I agree (easy for me to say in hindsight), and am here arguing that this `unscientific' (by the falsification criterion) decision was indeed vindicated later on, and emphasising the strong role that theoretical (rather than purely empirical) factors can play. To reiterate Einstein's point, he is arguing that theoretical considerations like parsimonious explanations of a variety of phenomena \textit{should} play a role in theory selection/belief! 
 
     There are, of course, other objections to this form of falsificationism, but these are atmospheric/oceanic physics notes.
 }
